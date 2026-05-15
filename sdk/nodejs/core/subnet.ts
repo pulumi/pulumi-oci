@@ -176,6 +176,8 @@ export class Subnet extends pulumi.CustomResource {
      * * The prefixes must be valid.
      * * Multiple prefixes must not overlap each other or the on-premises network prefix.
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+     *
+     * When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
      */
     declare public readonly ipv6cidrBlocks: pulumi.Output<string[]>;
     /**
@@ -380,6 +382,8 @@ export interface SubnetState {
      * * The prefixes must be valid.
      * * Multiple prefixes must not overlap each other or the on-premises network prefix.
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+     *
+     * When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
      */
     ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -514,6 +518,8 @@ export interface SubnetArgs {
      * * The prefixes must be valid.
      * * Multiple prefixes must not overlap each other or the on-premises network prefix.
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+     *
+     * When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
      */
     ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

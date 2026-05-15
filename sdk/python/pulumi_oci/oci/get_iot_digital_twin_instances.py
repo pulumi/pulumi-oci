@@ -28,7 +28,10 @@ class GetIotDigitalTwinInstancesResult:
     """
     A collection of values returned by getIotDigitalTwinInstances.
     """
-    def __init__(__self__, digital_twin_instance_collections=None, digital_twin_model_id=None, digital_twin_model_spec_uri=None, display_name=None, filters=None, id=None, iot_domain_id=None, state=None):
+    def __init__(__self__, connectivity_type=None, digital_twin_instance_collections=None, digital_twin_model_id=None, digital_twin_model_spec_uri=None, display_name=None, filters=None, id=None, iot_domain_id=None, state=None):
+        if connectivity_type and not isinstance(connectivity_type, str):
+            raise TypeError("Expected argument 'connectivity_type' to be a str")
+        pulumi.set(__self__, "connectivity_type", connectivity_type)
         if digital_twin_instance_collections and not isinstance(digital_twin_instance_collections, list):
             raise TypeError("Expected argument 'digital_twin_instance_collections' to be a list")
         pulumi.set(__self__, "digital_twin_instance_collections", digital_twin_instance_collections)
@@ -53,6 +56,14 @@ class GetIotDigitalTwinInstancesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> Optional[_builtins.str]:
+        """
+        Connectivity type of the digital twin instance
+        """
+        return pulumi.get(self, "connectivity_type")
 
     @_builtins.property
     @pulumi.getter(name="digitalTwinInstanceCollections")
@@ -122,6 +133,7 @@ class AwaitableGetIotDigitalTwinInstancesResult(GetIotDigitalTwinInstancesResult
         if False:
             yield self
         return GetIotDigitalTwinInstancesResult(
+            connectivity_type=self.connectivity_type,
             digital_twin_instance_collections=self.digital_twin_instance_collections,
             digital_twin_model_id=self.digital_twin_model_id,
             digital_twin_model_spec_uri=self.digital_twin_model_spec_uri,
@@ -132,7 +144,8 @@ class AwaitableGetIotDigitalTwinInstancesResult(GetIotDigitalTwinInstancesResult
             state=self.state)
 
 
-def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str] = None,
+def get_iot_digital_twin_instances(connectivity_type: Optional[_builtins.str] = None,
+                                   digital_twin_model_id: Optional[_builtins.str] = None,
                                    digital_twin_model_spec_uri: Optional[_builtins.str] = None,
                                    display_name: Optional[_builtins.str] = None,
                                    filters: Optional[Sequence[Union['GetIotDigitalTwinInstancesFilterArgs', 'GetIotDigitalTwinInstancesFilterArgsDict']]] = None,
@@ -152,6 +165,7 @@ def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str
     import pulumi_oci as oci
 
     test_digital_twin_instances = oci.oci.get_iot_digital_twin_instances(iot_domain_id=test_iot_domain["id"],
+        connectivity_type=digital_twin_instance_connectivity_type,
         digital_twin_model_id=test_digital_twin_model["id"],
         digital_twin_model_spec_uri=digital_twin_instance_digital_twin_model_spec_uri,
         display_name=digital_twin_instance_display_name,
@@ -160,6 +174,7 @@ def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str
     ```
 
 
+    :param _builtins.str connectivity_type: Filter resources whose connectivityType matches the specified value.
     :param _builtins.str digital_twin_model_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
     :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
@@ -168,6 +183,7 @@ def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """
     __args__ = dict()
+    __args__['connectivityType'] = connectivity_type
     __args__['digitalTwinModelId'] = digital_twin_model_id
     __args__['digitalTwinModelSpecUri'] = digital_twin_model_spec_uri
     __args__['displayName'] = display_name
@@ -179,6 +195,7 @@ def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str
     __ret__ = pulumi.runtime.invoke('oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances', __args__, opts=opts, typ=GetIotDigitalTwinInstancesResult).value
 
     return AwaitableGetIotDigitalTwinInstancesResult(
+        connectivity_type=pulumi.get(__ret__, 'connectivity_type'),
         digital_twin_instance_collections=pulumi.get(__ret__, 'digital_twin_instance_collections'),
         digital_twin_model_id=pulumi.get(__ret__, 'digital_twin_model_id'),
         digital_twin_model_spec_uri=pulumi.get(__ret__, 'digital_twin_model_spec_uri'),
@@ -187,7 +204,8 @@ def get_iot_digital_twin_instances(digital_twin_model_id: Optional[_builtins.str
         id=pulumi.get(__ret__, 'id'),
         iot_domain_id=pulumi.get(__ret__, 'iot_domain_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_iot_digital_twin_instances_output(digital_twin_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_iot_digital_twin_instances_output(connectivity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          digital_twin_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           digital_twin_model_spec_uri: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinInstancesFilterArgs', 'GetIotDigitalTwinInstancesFilterArgsDict']]]]] = None,
@@ -207,6 +225,7 @@ def get_iot_digital_twin_instances_output(digital_twin_model_id: pulumi.Input[Op
     import pulumi_oci as oci
 
     test_digital_twin_instances = oci.oci.get_iot_digital_twin_instances(iot_domain_id=test_iot_domain["id"],
+        connectivity_type=digital_twin_instance_connectivity_type,
         digital_twin_model_id=test_digital_twin_model["id"],
         digital_twin_model_spec_uri=digital_twin_instance_digital_twin_model_spec_uri,
         display_name=digital_twin_instance_display_name,
@@ -215,6 +234,7 @@ def get_iot_digital_twin_instances_output(digital_twin_model_id: pulumi.Input[Op
     ```
 
 
+    :param _builtins.str connectivity_type: Filter resources whose connectivityType matches the specified value.
     :param _builtins.str digital_twin_model_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
     :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
@@ -223,6 +243,7 @@ def get_iot_digital_twin_instances_output(digital_twin_model_id: pulumi.Input[Op
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
     """
     __args__ = dict()
+    __args__['connectivityType'] = connectivity_type
     __args__['digitalTwinModelId'] = digital_twin_model_id
     __args__['digitalTwinModelSpecUri'] = digital_twin_model_spec_uri
     __args__['displayName'] = display_name
@@ -233,6 +254,7 @@ def get_iot_digital_twin_instances_output(digital_twin_model_id: pulumi.Input[Op
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances', __args__, opts=opts, typ=GetIotDigitalTwinInstancesResult)
     return __ret__.apply(lambda __response__: GetIotDigitalTwinInstancesResult(
+        connectivity_type=pulumi.get(__response__, 'connectivity_type'),
         digital_twin_instance_collections=pulumi.get(__response__, 'digital_twin_instance_collections'),
         digital_twin_model_id=pulumi.get(__response__, 'digital_twin_model_id'),
         digital_twin_model_spec_uri=pulumi.get(__response__, 'digital_twin_model_spec_uri'),

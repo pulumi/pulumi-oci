@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testDigitalTwinInstance = new oci.oci.IotDigitalTwinInstance("test_digital_twin_instance", {
  *     iotDomainId: testIotDomain.id,
  *     authId: testAuth.id,
+ *     connectivityType: digitalTwinInstanceConnectivityType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -33,6 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     gateways: digitalTwinInstanceGateways,
  * });
  * ```
  *
@@ -77,6 +79,10 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
      */
     declare public readonly authId: pulumi.Output<string>;
     /**
+     * Connectivity type of the digital twin instance
+     */
+    declare public readonly connectivityType: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
@@ -108,6 +114,10 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     */
+    declare public readonly gateways: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      *
@@ -147,6 +157,7 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IotDigitalTwinInstanceState | undefined;
             resourceInputs["authId"] = state?.authId;
+            resourceInputs["connectivityType"] = state?.connectivityType;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["digitalTwinAdapterId"] = state?.digitalTwinAdapterId;
@@ -155,6 +166,7 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["externalKey"] = state?.externalKey;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gateways"] = state?.gateways;
             resourceInputs["iotDomainId"] = state?.iotDomainId;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -166,6 +178,7 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
                 throw new Error("Missing required property 'iotDomainId'");
             }
             resourceInputs["authId"] = args?.authId;
+            resourceInputs["connectivityType"] = args?.connectivityType;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["digitalTwinAdapterId"] = args?.digitalTwinAdapterId;
@@ -174,6 +187,7 @@ export class IotDigitalTwinInstance extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["externalKey"] = args?.externalKey;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gateways"] = args?.gateways;
             resourceInputs["iotDomainId"] = args?.iotDomainId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -193,6 +207,10 @@ export interface IotDigitalTwinInstanceState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
      */
     authId?: pulumi.Input<string | undefined>;
+    /**
+     * Connectivity type of the digital twin instance
+     */
+    connectivityType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -225,6 +243,10 @@ export interface IotDigitalTwinInstanceState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     */
+    gateways?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      *
@@ -260,6 +282,10 @@ export interface IotDigitalTwinInstanceArgs {
      */
     authId?: pulumi.Input<string | undefined>;
     /**
+     * Connectivity type of the digital twin instance
+     */
+    connectivityType?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
@@ -291,6 +317,10 @@ export interface IotDigitalTwinInstanceArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     */
+    gateways?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      *

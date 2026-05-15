@@ -27,6 +27,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseToolsIdentity{}
 	case "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint":
 		r = &DatabaseToolsPrivateEndpoint{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential":
+		r = &RuntimeDatabaseToolsConnectionCredential{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee":
+		r = &RuntimeDatabaseToolsConnectionCredentialExecuteGrantee{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym:RuntimeDatabaseToolsConnectionCredentialPublicSynonym":
+		r = &RuntimeDatabaseToolsConnectionCredentialPublicSynonym{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionPropertySet:RuntimeDatabaseToolsConnectionPropertySet":
+		r = &RuntimeDatabaseToolsConnectionPropertySet{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal:RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal":
+		r = &RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool:RuntimeDatabaseToolsDatabaseApiGatewayConfigPool":
+		r = &RuntimeDatabaseToolsDatabaseApiGatewayConfigPool{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec":
+		r = &RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec{}
+	case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec":
+		r = &RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +69,46 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseTools/databaseToolsPrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsConnectionCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsConnectionPropertySet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
 		&module{version},
 	)
 }

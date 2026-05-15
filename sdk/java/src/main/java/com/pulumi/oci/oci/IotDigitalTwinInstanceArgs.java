@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,6 +31,21 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
      */
     public Optional<Output<String>> authId() {
         return Optional.ofNullable(this.authId);
+    }
+
+    /**
+     * Connectivity type of the digital twin instance
+     * 
+     */
+    @Import(name="connectivityType")
+    private @Nullable Output<String> connectivityType;
+
+    /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    public Optional<Output<String>> connectivityType() {
+        return Optional.ofNullable(this.connectivityType);
     }
 
     /**
@@ -153,6 +169,21 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    @Import(name="gateways")
+    private @Nullable Output<List<String>> gateways;
+
+    /**
+     * @return (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    public Optional<Output<List<String>>> gateways() {
+        return Optional.ofNullable(this.gateways);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      * 
      * ** IMPORTANT **
@@ -177,6 +208,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
 
     private IotDigitalTwinInstanceArgs(IotDigitalTwinInstanceArgs $) {
         this.authId = $.authId;
+        this.connectivityType = $.connectivityType;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.digitalTwinAdapterId = $.digitalTwinAdapterId;
@@ -185,6 +217,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         this.displayName = $.displayName;
         this.externalKey = $.externalKey;
         this.freeformTags = $.freeformTags;
+        this.gateways = $.gateways;
         this.iotDomainId = $.iotDomainId;
     }
 
@@ -225,6 +258,27 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
          */
         public Builder authId(String authId) {
             return authId(Output.of(authId));
+        }
+
+        /**
+         * @param connectivityType Connectivity type of the digital twin instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectivityType(@Nullable Output<String> connectivityType) {
+            $.connectivityType = connectivityType;
+            return this;
+        }
+
+        /**
+         * @param connectivityType Connectivity type of the digital twin instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectivityType(String connectivityType) {
+            return connectivityType(Output.of(connectivityType));
         }
 
         /**
@@ -393,6 +447,37 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param gateways (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gateways(@Nullable Output<List<String>> gateways) {
+            $.gateways = gateways;
+            return this;
+        }
+
+        /**
+         * @param gateways (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gateways(List<String> gateways) {
+            return gateways(Output.of(gateways));
+        }
+
+        /**
+         * @param gateways (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gateways(String... gateways) {
+            return gateways(List.of(gateways));
         }
 
         /**

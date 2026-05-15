@@ -32,12 +32,16 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
     /**
      * An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
      * 
+     * When updating `byoipv6cidrDetails`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
+     * 
      */
     @Import(name="ipv6cidrBlock", required=true)
     private Output<String> ipv6cidrBlock;
 
     /**
      * @return An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+     * 
+     * When updating `byoipv6cidrDetails`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
      * 
      */
     public Output<String> ipv6cidrBlock() {
@@ -93,6 +97,8 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
         /**
          * @param ipv6cidrBlock An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
          * 
+         * When updating `byoipv6cidrDetails`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
+         * 
          * @return builder
          * 
          */
@@ -103,6 +109,8 @@ public final class VcnByoipv6cidrDetailArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param ipv6cidrBlock An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+         * 
+         * When updating `byoipv6cidrDetails`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
          * 
          * @return builder
          * 

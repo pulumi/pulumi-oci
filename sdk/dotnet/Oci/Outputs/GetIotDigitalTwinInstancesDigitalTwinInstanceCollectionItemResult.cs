@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string AuthId;
         /// <summary>
+        /// Filter resources whose connectivityType matches the specified value.
+        /// </summary>
+        public readonly string ConnectivityType;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        /// </summary>
+        public readonly ImmutableArray<string> Gateways;
+        /// <summary>
         /// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
         /// </summary>
         public readonly string Id;
@@ -78,6 +86,8 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(
             string authId,
 
+            string connectivityType,
+
             ImmutableDictionary<string, string> definedTags,
 
             string description,
@@ -94,6 +104,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<string> gateways,
+
             string id,
 
             string iotDomainId,
@@ -107,6 +119,7 @@ namespace Pulumi.Oci.Oci.Outputs
             string timeUpdated)
         {
             AuthId = authId;
+            ConnectivityType = connectivityType;
             DefinedTags = definedTags;
             Description = description;
             DigitalTwinAdapterId = digitalTwinAdapterId;
@@ -115,6 +128,7 @@ namespace Pulumi.Oci.Oci.Outputs
             DisplayName = displayName;
             ExternalKey = externalKey;
             FreeformTags = freeformTags;
+            Gateways = gateways;
             Id = id;
             IotDomainId = iotDomainId;
             State = state;

@@ -9666,7 +9666,9 @@ class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "timeObserved":
+        if key == "contentRoot":
+            suggest = "content_root"
+        elif key == "timeObserved":
             suggest = "time_observed"
 
         if suggest:
@@ -9681,12 +9683,36 @@ class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 content_root: Optional[_builtins.str] = None,
+                 target: Optional[_builtins.str] = None,
                  time_observed: Optional[_builtins.str] = None):
         """
+        :param _builtins.str content_root: (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        :param _builtins.str target: (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
         :param _builtins.str time_observed: (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
         """
+        if content_root is not None:
+            pulumi.set(__self__, "content_root", content_root)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
         if time_observed is not None:
             pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="contentRoot")
+    def content_root(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        """
+        return pulumi.get(self, "content_root")
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        """
+        return pulumi.get(self, "target")
 
     @_builtins.property
     @pulumi.getter(name="timeObserved")
@@ -30533,11 +30559,33 @@ class GetIotDigitalTwinAdapterInboundEnvelopeResult(dict):
 @pulumi.output_type
 class GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult(dict):
     def __init__(__self__, *,
+                 content_root: _builtins.str,
+                 target: _builtins.str,
                  time_observed: _builtins.str):
         """
+        :param _builtins.str content_root: JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        :param _builtins.str target: Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
         :param _builtins.str time_observed: JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
         """
+        pulumi.set(__self__, "content_root", content_root)
+        pulumi.set(__self__, "target", target)
         pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="contentRoot")
+    def content_root(self) -> _builtins.str:
+        """
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        """
+        return pulumi.get(self, "content_root")
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> _builtins.str:
+        """
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        """
+        return pulumi.get(self, "target")
 
     @_builtins.property
     @pulumi.getter(name="timeObserved")
@@ -30873,11 +30921,33 @@ class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeRe
 @pulumi.output_type
 class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingResult(dict):
     def __init__(__self__, *,
+                 content_root: _builtins.str,
+                 target: _builtins.str,
                  time_observed: _builtins.str):
         """
+        :param _builtins.str content_root: JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        :param _builtins.str target: Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
         :param _builtins.str time_observed: JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
         """
+        pulumi.set(__self__, "content_root", content_root)
+        pulumi.set(__self__, "target", target)
         pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="contentRoot")
+    def content_root(self) -> _builtins.str:
+        """
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        """
+        return pulumi.get(self, "content_root")
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> _builtins.str:
+        """
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        """
+        return pulumi.get(self, "target")
 
     @_builtins.property
     @pulumi.getter(name="timeObserved")
@@ -31040,6 +31110,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionResult(dict):
 class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
                  auth_id: _builtins.str,
+                 connectivity_type: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  digital_twin_adapter_id: _builtins.str,
@@ -31048,6 +31119,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
                  display_name: _builtins.str,
                  external_key: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 gateways: Sequence[_builtins.str],
                  id: _builtins.str,
                  iot_domain_id: _builtins.str,
                  state: _builtins.str,
@@ -31056,6 +31128,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str auth_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param _builtins.str connectivity_type: Filter resources whose connectivityType matches the specified value.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: A short description of the resource.
         :param _builtins.str digital_twin_adapter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -31064,6 +31137,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
         :param _builtins.str display_name: Filter resources whose display name matches the specified value.
         :param _builtins.str external_key: A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence[_builtins.str] gateways: An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
         :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
         :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
         :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
@@ -31072,6 +31146,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
         :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "auth_id", auth_id)
+        pulumi.set(__self__, "connectivity_type", connectivity_type)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "digital_twin_adapter_id", digital_twin_adapter_id)
@@ -31080,6 +31155,7 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "external_key", external_key)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gateways", gateways)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "iot_domain_id", iot_domain_id)
         pulumi.set(__self__, "state", state)
@@ -31094,6 +31170,14 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
         """
         return pulumi.get(self, "auth_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> _builtins.str:
+        """
+        Filter resources whose connectivityType matches the specified value.
+        """
+        return pulumi.get(self, "connectivity_type")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -31158,6 +31242,14 @@ class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def gateways(self) -> Sequence[_builtins.str]:
+        """
+        An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        """
+        return pulumi.get(self, "gateways")
 
     @_builtins.property
     @pulumi.getter

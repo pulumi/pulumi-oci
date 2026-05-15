@@ -80,6 +80,8 @@ class SubnetArgs:
                * The prefixes must be valid.
                * Multiple prefixes must not overlap each other or the on-premises network prefix.
                * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+               
+               When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         :param pulumi.Input[_builtins.bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
                For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
@@ -293,6 +295,8 @@ class SubnetArgs:
         * The prefixes must be valid.
         * Multiple prefixes must not overlap each other or the on-premises network prefix.
         * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+
+        When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
@@ -424,6 +428,8 @@ class _SubnetState:
                * The prefixes must be valid.
                * Multiple prefixes must not overlap each other or the on-premises network prefix.
                * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+               
+               When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         :param pulumi.Input[_builtins.str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         :param pulumi.Input[_builtins.bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
@@ -646,6 +652,8 @@ class _SubnetState:
         * The prefixes must be valid.
         * Multiple prefixes must not overlap each other or the on-premises network prefix.
         * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+
+        When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
@@ -938,6 +946,8 @@ class Subnet(pulumi.CustomResource):
                * The prefixes must be valid.
                * Multiple prefixes must not overlap each other or the on-premises network prefix.
                * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+               
+               When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         :param pulumi.Input[_builtins.bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
                For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
@@ -1182,6 +1192,8 @@ class Subnet(pulumi.CustomResource):
                * The prefixes must be valid.
                * Multiple prefixes must not overlap each other or the on-premises network prefix.
                * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+               
+               When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         :param pulumi.Input[_builtins.str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         :param pulumi.Input[_builtins.bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
                
@@ -1347,6 +1359,8 @@ class Subnet(pulumi.CustomResource):
         * The prefixes must be valid.
         * Multiple prefixes must not overlap each other or the on-premises network prefix.
         * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+
+        When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidr_blocks` in one operation. A single pulumi up can also replace `ipv6cidr_block` with a different IPv6 prefix.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 

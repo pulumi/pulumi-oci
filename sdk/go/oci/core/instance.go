@@ -161,6 +161,7 @@ type Instance struct {
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringOutput `pulumi:"launchMode"`
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -372,6 +373,7 @@ type instanceState struct {
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode *string `pulumi:"launchMode"`
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -548,6 +550,7 @@ type InstanceState struct {
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringPtrInput
 	// (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -1191,6 +1194,7 @@ func (o InstanceOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
 // * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 // * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 // * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o InstanceOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.LaunchMode }).(pulumi.StringOutput)

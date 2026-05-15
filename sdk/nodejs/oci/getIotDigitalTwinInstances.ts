@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testDigitalTwinInstances = oci.oci.getIotDigitalTwinInstances({
  *     iotDomainId: testIotDomain.id,
+ *     connectivityType: digitalTwinInstanceConnectivityType,
  *     digitalTwinModelId: testDigitalTwinModel.id,
  *     digitalTwinModelSpecUri: digitalTwinInstanceDigitalTwinModelSpecUri,
  *     displayName: digitalTwinInstanceDisplayName,
@@ -30,6 +31,7 @@ import * as utilities from "../utilities";
 export function getIotDigitalTwinInstances(args: GetIotDigitalTwinInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetIotDigitalTwinInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances", {
+        "connectivityType": args.connectivityType,
         "digitalTwinModelId": args.digitalTwinModelId,
         "digitalTwinModelSpecUri": args.digitalTwinModelSpecUri,
         "displayName": args.displayName,
@@ -44,6 +46,10 @@ export function getIotDigitalTwinInstances(args: GetIotDigitalTwinInstancesArgs,
  * A collection of arguments for invoking getIotDigitalTwinInstances.
  */
 export interface GetIotDigitalTwinInstancesArgs {
+    /**
+     * Filter resources whose connectivityType matches the specified value.
+     */
+    connectivityType?: string;
     /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      */
@@ -75,6 +81,10 @@ export interface GetIotDigitalTwinInstancesArgs {
  * A collection of values returned by getIotDigitalTwinInstances.
  */
 export interface GetIotDigitalTwinInstancesResult {
+    /**
+     * Connectivity type of the digital twin instance
+     */
+    readonly connectivityType?: string;
     /**
      * The list of digital_twin_instance_collection.
      */
@@ -118,6 +128,7 @@ export interface GetIotDigitalTwinInstancesResult {
  *
  * const testDigitalTwinInstances = oci.oci.getIotDigitalTwinInstances({
  *     iotDomainId: testIotDomain.id,
+ *     connectivityType: digitalTwinInstanceConnectivityType,
  *     digitalTwinModelId: testDigitalTwinModel.id,
  *     digitalTwinModelSpecUri: digitalTwinInstanceDigitalTwinModelSpecUri,
  *     displayName: digitalTwinInstanceDisplayName,
@@ -129,6 +140,7 @@ export interface GetIotDigitalTwinInstancesResult {
 export function getIotDigitalTwinInstancesOutput(args: GetIotDigitalTwinInstancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIotDigitalTwinInstancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances", {
+        "connectivityType": args.connectivityType,
         "digitalTwinModelId": args.digitalTwinModelId,
         "digitalTwinModelSpecUri": args.digitalTwinModelSpecUri,
         "displayName": args.displayName,
@@ -143,6 +155,10 @@ export function getIotDigitalTwinInstancesOutput(args: GetIotDigitalTwinInstance
  * A collection of arguments for invoking getIotDigitalTwinInstances.
  */
 export interface GetIotDigitalTwinInstancesOutputArgs {
+    /**
+     * Filter resources whose connectivityType matches the specified value.
+     */
+    connectivityType?: pulumi.Input<string | undefined>;
     /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      */

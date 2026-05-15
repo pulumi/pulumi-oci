@@ -186,6 +186,8 @@ export class Vcn extends pulumi.CustomResource {
      * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+     *
+     * When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
      */
     declare public readonly ipv6privateCidrBlocks: pulumi.Output<string[]>;
     /**
@@ -193,7 +195,7 @@ export class Vcn extends pulumi.CustomResource {
      */
     declare public readonly isIpv6enabled: pulumi.Output<boolean>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     * Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
      */
     declare public readonly isOracleGuaAllocationEnabled: pulumi.Output<boolean>;
     /**
@@ -352,6 +354,8 @@ export interface VcnState {
      * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+     *
+     * When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
      */
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -359,7 +363,7 @@ export interface VcnState {
      */
     isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     * Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
      */
     isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -435,6 +439,8 @@ export interface VcnArgs {
      * * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+     *
+     * When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
      */
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -442,7 +448,7 @@ export interface VcnArgs {
      */
     isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+     * Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
      */
     isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
     /**

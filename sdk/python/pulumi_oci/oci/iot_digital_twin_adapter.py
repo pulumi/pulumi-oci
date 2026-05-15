@@ -448,6 +448,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
             inbound_envelope={
                 "reference_endpoint": digital_twin_adapter_inbound_envelope_reference_endpoint,
                 "envelope_mapping": {
+                    "content_root": digital_twin_adapter_inbound_envelope_envelope_mapping_content_root,
+                    "target": digital_twin_adapter_inbound_envelope_envelope_mapping_target,
                     "time_observed": digital_twin_adapter_inbound_envelope_envelope_mapping_time_observed,
                 },
                 "reference_payload": {
@@ -526,6 +528,8 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
             inbound_envelope={
                 "reference_endpoint": digital_twin_adapter_inbound_envelope_reference_endpoint,
                 "envelope_mapping": {
+                    "content_root": digital_twin_adapter_inbound_envelope_envelope_mapping_content_root,
+                    "target": digital_twin_adapter_inbound_envelope_envelope_mapping_target,
                     "time_observed": digital_twin_adapter_inbound_envelope_envelope_mapping_time_observed,
                 },
                 "reference_payload": {

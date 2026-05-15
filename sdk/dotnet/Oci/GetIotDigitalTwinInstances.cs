@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Oci
         ///     var testDigitalTwinInstances = Oci.Oci.GetIotDigitalTwinInstances.Invoke(new()
         ///     {
         ///         IotDomainId = testIotDomain.Id,
+        ///         ConnectivityType = digitalTwinInstanceConnectivityType,
         ///         DigitalTwinModelId = testDigitalTwinModel.Id,
         ///         DigitalTwinModelSpecUri = digitalTwinInstanceDigitalTwinModelSpecUri,
         ///         DisplayName = digitalTwinInstanceDisplayName,
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.Oci
         ///     var testDigitalTwinInstances = Oci.Oci.GetIotDigitalTwinInstances.Invoke(new()
         ///     {
         ///         IotDomainId = testIotDomain.Id,
+        ///         ConnectivityType = digitalTwinInstanceConnectivityType,
         ///         DigitalTwinModelId = testDigitalTwinModel.Id,
         ///         DigitalTwinModelSpecUri = digitalTwinInstanceDigitalTwinModelSpecUri,
         ///         DisplayName = digitalTwinInstanceDisplayName,
@@ -94,6 +96,7 @@ namespace Pulumi.Oci.Oci
         ///     var testDigitalTwinInstances = Oci.Oci.GetIotDigitalTwinInstances.Invoke(new()
         ///     {
         ///         IotDomainId = testIotDomain.Id,
+        ///         ConnectivityType = digitalTwinInstanceConnectivityType,
         ///         DigitalTwinModelId = testDigitalTwinModel.Id,
         ///         DigitalTwinModelSpecUri = digitalTwinInstanceDigitalTwinModelSpecUri,
         ///         DisplayName = digitalTwinInstanceDisplayName,
@@ -111,6 +114,12 @@ namespace Pulumi.Oci.Oci
 
     public sealed class GetIotDigitalTwinInstancesArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Filter resources whose connectivityType matches the specified value.
+        /// </summary>
+        [Input("connectivityType")]
+        public string? ConnectivityType { get; set; }
+
         /// <summary>
         /// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         /// </summary>
@@ -163,6 +172,12 @@ namespace Pulumi.Oci.Oci
 
     public sealed class GetIotDigitalTwinInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Filter resources whose connectivityType matches the specified value.
+        /// </summary>
+        [Input("connectivityType")]
+        public Input<string>? ConnectivityType { get; set; }
+
         /// <summary>
         /// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         /// </summary>
@@ -218,6 +233,10 @@ namespace Pulumi.Oci.Oci
     public sealed class GetIotDigitalTwinInstancesResult
     {
         /// <summary>
+        /// Connectivity type of the digital twin instance
+        /// </summary>
+        public readonly string? ConnectivityType;
+        /// <summary>
         /// The list of digital_twin_instance_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionResult> DigitalTwinInstanceCollections;
@@ -249,6 +268,8 @@ namespace Pulumi.Oci.Oci
 
         [OutputConstructor]
         private GetIotDigitalTwinInstancesResult(
+            string? connectivityType,
+
             ImmutableArray<Outputs.GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionResult> digitalTwinInstanceCollections,
 
             string? digitalTwinModelId,
@@ -265,6 +286,7 @@ namespace Pulumi.Oci.Oci
 
             string? state)
         {
+            ConnectivityType = connectivityType;
             DigitalTwinInstanceCollections = digitalTwinInstanceCollections;
             DigitalTwinModelId = digitalTwinModelId;
             DigitalTwinModelSpecUri = digitalTwinModelSpecUri;

@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetIotDigitalTwinInstancesResult {
     /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    private @Nullable String connectivityType;
+    /**
      * @return The list of digital_twin_instance_collection.
      * 
      */
@@ -53,6 +58,13 @@ public final class GetIotDigitalTwinInstancesResult {
     private @Nullable String state;
 
     private GetIotDigitalTwinInstancesResult() {}
+    /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    public Optional<String> connectivityType() {
+        return Optional.ofNullable(this.connectivityType);
+    }
     /**
      * @return The list of digital_twin_instance_collection.
      * 
@@ -115,6 +127,7 @@ public final class GetIotDigitalTwinInstancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String connectivityType;
         private List<GetIotDigitalTwinInstancesDigitalTwinInstanceCollection> digitalTwinInstanceCollections;
         private @Nullable String digitalTwinModelId;
         private @Nullable String digitalTwinModelSpecUri;
@@ -126,6 +139,7 @@ public final class GetIotDigitalTwinInstancesResult {
         public Builder() {}
         public Builder(GetIotDigitalTwinInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.connectivityType = defaults.connectivityType;
     	      this.digitalTwinInstanceCollections = defaults.digitalTwinInstanceCollections;
     	      this.digitalTwinModelId = defaults.digitalTwinModelId;
     	      this.digitalTwinModelSpecUri = defaults.digitalTwinModelSpecUri;
@@ -136,6 +150,12 @@ public final class GetIotDigitalTwinInstancesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder connectivityType(@Nullable String connectivityType) {
+
+            this.connectivityType = connectivityType;
+            return this;
+        }
         @CustomType.Setter
         public Builder digitalTwinInstanceCollections(List<GetIotDigitalTwinInstancesDigitalTwinInstanceCollection> digitalTwinInstanceCollections) {
             if (digitalTwinInstanceCollections == null) {
@@ -196,6 +216,7 @@ public final class GetIotDigitalTwinInstancesResult {
         }
         public GetIotDigitalTwinInstancesResult build() {
             final var _resultValue = new GetIotDigitalTwinInstancesResult();
+            _resultValue.connectivityType = connectivityType;
             _resultValue.digitalTwinInstanceCollections = digitalTwinInstanceCollections;
             _resultValue.digitalTwinModelId = digitalTwinModelId;
             _resultValue.digitalTwinModelSpecUri = digitalTwinModelSpecUri;

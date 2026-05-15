@@ -21,6 +21,7 @@ class IotDigitalTwinInstanceArgs:
     def __init__(__self__, *,
                  iot_domain_id: pulumi.Input[_builtins.str],
                  auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -28,7 +29,8 @@ class IotDigitalTwinInstanceArgs:
                  digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinInstance resource.
 
@@ -38,6 +40,7 @@ class IotDigitalTwinInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -46,10 +49,13 @@ class IotDigitalTwinInstanceArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] gateways: (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
         """
         pulumi.set(__self__, "iot_domain_id", iot_domain_id)
         if auth_id is not None:
             pulumi.set(__self__, "auth_id", auth_id)
+        if connectivity_type is not None:
+            pulumi.set(__self__, "connectivity_type", connectivity_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -66,6 +72,8 @@ class IotDigitalTwinInstanceArgs:
             pulumi.set(__self__, "external_key", external_key)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gateways is not None:
+            pulumi.set(__self__, "gateways", gateways)
 
     @_builtins.property
     @pulumi.getter(name="iotDomainId")
@@ -96,6 +104,18 @@ class IotDigitalTwinInstanceArgs:
         pulumi.set(self, "auth_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Connectivity type of the digital twin instance
+        """
+        return pulumi.get(self, "connectivity_type")
+
+    @connectivity_type.setter
+    def connectivity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "connectivity_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -191,11 +211,24 @@ class IotDigitalTwinInstanceArgs:
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter
+    def gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        """
+        return pulumi.get(self, "gateways")
+
+    @gateways.setter
+    def gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "gateways", value)
+
 
 @pulumi.input_type
 class _IotDigitalTwinInstanceState:
     def __init__(__self__, *,
                  auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -204,6 +237,7 @@ class _IotDigitalTwinInstanceState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -213,6 +247,7 @@ class _IotDigitalTwinInstanceState:
         Input properties used for looking up and filtering IotDigitalTwinInstance resources.
 
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -221,6 +256,7 @@ class _IotDigitalTwinInstanceState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] gateways: (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                
@@ -233,6 +269,8 @@ class _IotDigitalTwinInstanceState:
         """
         if auth_id is not None:
             pulumi.set(__self__, "auth_id", auth_id)
+        if connectivity_type is not None:
+            pulumi.set(__self__, "connectivity_type", connectivity_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -249,6 +287,8 @@ class _IotDigitalTwinInstanceState:
             pulumi.set(__self__, "external_key", external_key)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gateways is not None:
+            pulumi.set(__self__, "gateways", gateways)
         if iot_domain_id is not None:
             pulumi.set(__self__, "iot_domain_id", iot_domain_id)
         if state is not None:
@@ -273,6 +313,18 @@ class _IotDigitalTwinInstanceState:
         pulumi.set(self, "auth_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Connectivity type of the digital twin instance
+        """
+        return pulumi.get(self, "connectivity_type")
+
+    @connectivity_type.setter
+    def connectivity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "connectivity_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -367,6 +419,18 @@ class _IotDigitalTwinInstanceState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        """
+        return pulumi.get(self, "gateways")
+
+    @gateways.setter
+    def gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "gateways", value)
 
     @_builtins.property
     @pulumi.getter(name="iotDomainId")
@@ -440,6 +504,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -448,6 +513,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -467,6 +533,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         test_digital_twin_instance = oci.oci.IotDigitalTwinInstance("test_digital_twin_instance",
             iot_domain_id=test_iot_domain["id"],
             auth_id=test_auth["id"],
+            connectivity_type=digital_twin_instance_connectivity_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -478,7 +545,8 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             external_key=digital_twin_instance_external_key,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            gateways=digital_twin_instance_gateways)
         ```
 
         ## Import
@@ -493,6 +561,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -501,6 +570,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] gateways: (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                
@@ -530,6 +600,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         test_digital_twin_instance = oci.oci.IotDigitalTwinInstance("test_digital_twin_instance",
             iot_domain_id=test_iot_domain["id"],
             auth_id=test_auth["id"],
+            connectivity_type=digital_twin_instance_connectivity_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -541,7 +612,8 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             external_key=digital_twin_instance_external_key,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            gateways=digital_twin_instance_gateways)
         ```
 
         ## Import
@@ -569,6 +641,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -577,6 +650,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  external_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -588,6 +662,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             __props__ = IotDigitalTwinInstanceArgs.__new__(IotDigitalTwinInstanceArgs)
 
             __props__.__dict__["auth_id"] = auth_id
+            __props__.__dict__["connectivity_type"] = connectivity_type
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["digital_twin_adapter_id"] = digital_twin_adapter_id
@@ -596,6 +671,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["external_key"] = external_key
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["gateways"] = gateways
             if iot_domain_id is None and not opts.urn:
                 raise TypeError("Missing required property 'iot_domain_id'")
             __props__.__dict__["iot_domain_id"] = iot_domain_id
@@ -614,6 +690,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -622,6 +699,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             external_key: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -635,6 +713,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auth_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param pulumi.Input[_builtins.str] connectivity_type: Connectivity type of the digital twin instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the resource.
         :param pulumi.Input[_builtins.str] digital_twin_adapter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
@@ -643,6 +722,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] external_key: (Updatable) A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] gateways: (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
                
@@ -658,6 +738,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         __props__ = _IotDigitalTwinInstanceState.__new__(_IotDigitalTwinInstanceState)
 
         __props__.__dict__["auth_id"] = auth_id
+        __props__.__dict__["connectivity_type"] = connectivity_type
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["digital_twin_adapter_id"] = digital_twin_adapter_id
@@ -666,6 +747,7 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["external_key"] = external_key
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["gateways"] = gateways
         __props__.__dict__["iot_domain_id"] = iot_domain_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -680,6 +762,14 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
         """
         return pulumi.get(self, "auth_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Connectivity type of the digital twin instance
+        """
+        return pulumi.get(self, "connectivity_type")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -744,6 +834,14 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def gateways(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        """
+        return pulumi.get(self, "gateways")
 
     @_builtins.property
     @pulumi.getter(name="iotDomainId")

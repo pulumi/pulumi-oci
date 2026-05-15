@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Oci
     ///     {
     ///         IotDomainId = testIotDomain.Id,
     ///         AuthId = testAuth.Id,
+    ///         ConnectivityType = digitalTwinInstanceConnectivityType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -45,6 +46,7 @@ namespace Pulumi.Oci.Oci
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Gateways = digitalTwinInstanceGateways,
     ///     });
     /// 
     /// });
@@ -66,6 +68,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("authId")]
         public Output<string> AuthId { get; private set; } = null!;
+
+        /// <summary>
+        /// Connectivity type of the digital twin instance
+        /// </summary>
+        [Output("connectivityType")]
+        public Output<string> ConnectivityType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -114,6 +122,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        /// </summary>
+        [Output("gateways")]
+        public Output<ImmutableArray<string>> Gateways { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
@@ -201,6 +215,12 @@ namespace Pulumi.Oci.Oci
         [Input("authId")]
         public Input<string>? AuthId { get; set; }
 
+        /// <summary>
+        /// Connectivity type of the digital twin instance
+        /// </summary>
+        [Input("connectivityType")]
+        public Input<string>? ConnectivityType { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -259,6 +279,18 @@ namespace Pulumi.Oci.Oci
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
+        }
+
+        [Input("gateways")]
+        private InputList<string>? _gateways;
+
+        /// <summary>
+        /// (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        /// </summary>
+        public InputList<string> Gateways
+        {
+            get => _gateways ?? (_gateways = new InputList<string>());
+            set => _gateways = value;
         }
 
         /// <summary>
@@ -285,6 +317,12 @@ namespace Pulumi.Oci.Oci
         [Input("authId")]
         public Input<string>? AuthId { get; set; }
 
+        /// <summary>
+        /// Connectivity type of the digital twin instance
+        /// </summary>
+        [Input("connectivityType")]
+        public Input<string>? ConnectivityType { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -343,6 +381,18 @@ namespace Pulumi.Oci.Oci
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
+        }
+
+        [Input("gateways")]
+        private InputList<string>? _gateways;
+
+        /// <summary>
+        /// (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        /// </summary>
+        public InputList<string> Gateways
+        {
+            get => _gateways ?? (_gateways = new InputList<string>());
+            set => _gateways = value;
         }
 
         /// <summary>

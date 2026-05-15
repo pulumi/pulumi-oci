@@ -11707,6 +11707,14 @@ class IotDigitalTwinAdapterInboundEnvelopeArgs:
 
 
 class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict(TypedDict):
+    content_root: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+    """
+    target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+    """
     time_observed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
@@ -11715,12 +11723,44 @@ class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgsDict(TypedDict):
 @pulumi.input_type
 class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs:
     def __init__(__self__, *,
+                 content_root: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
                  time_observed: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] content_root: (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        :param pulumi.Input[_builtins.str] target: (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
         :param pulumi.Input[_builtins.str] time_observed: (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
         """
+        if content_root is not None:
+            pulumi.set(__self__, "content_root", content_root)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
         if time_observed is not None:
             pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="contentRoot")
+    def content_root(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        """
+        return pulumi.get(self, "content_root")
+
+    @content_root.setter
+    def content_root(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content_root", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="timeObserved")

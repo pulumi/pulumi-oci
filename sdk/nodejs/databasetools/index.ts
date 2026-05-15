@@ -60,6 +60,136 @@ export const getDatabaseToolsPrivateEndpoints: typeof import("./getDatabaseTools
 export const getDatabaseToolsPrivateEndpointsOutput: typeof import("./getDatabaseToolsPrivateEndpoints").getDatabaseToolsPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabaseToolsPrivateEndpoints","getDatabaseToolsPrivateEndpointsOutput"], () => require("./getDatabaseToolsPrivateEndpoints"));
 
+export { GetRuntimeDatabaseToolsConnectionCredentialArgs, GetRuntimeDatabaseToolsConnectionCredentialResult, GetRuntimeDatabaseToolsConnectionCredentialOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredential";
+export const getRuntimeDatabaseToolsConnectionCredential: typeof import("./getRuntimeDatabaseToolsConnectionCredential").getRuntimeDatabaseToolsConnectionCredential = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredential").getRuntimeDatabaseToolsConnectionCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredential","getRuntimeDatabaseToolsConnectionCredentialOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredential"));
+
+export { GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs, GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult, GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee";
+export const getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee: typeof import("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee").getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee").getRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee","getRuntimeDatabaseToolsConnectionCredentialExecuteGranteeOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee"));
+
+export { GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs, GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult, GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees";
+export const getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees: typeof import("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees").getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees").getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees","getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees"));
+
+export { GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs, GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult, GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredentialPublicSynonym";
+export const getRuntimeDatabaseToolsConnectionCredentialPublicSynonym: typeof import("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonym").getRuntimeDatabaseToolsConnectionCredentialPublicSynonym = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonym").getRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredentialPublicSynonym","getRuntimeDatabaseToolsConnectionCredentialPublicSynonymOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonym"));
+
+export { GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs, GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult, GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms";
+export const getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms: typeof import("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms").getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms").getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms","getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms"));
+
+export { GetRuntimeDatabaseToolsConnectionCredentialsArgs, GetRuntimeDatabaseToolsConnectionCredentialsResult, GetRuntimeDatabaseToolsConnectionCredentialsOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredentials";
+export const getRuntimeDatabaseToolsConnectionCredentials: typeof import("./getRuntimeDatabaseToolsConnectionCredentials").getRuntimeDatabaseToolsConnectionCredentials = null as any;
+export const getRuntimeDatabaseToolsConnectionCredentialsOutput: typeof import("./getRuntimeDatabaseToolsConnectionCredentials").getRuntimeDatabaseToolsConnectionCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionCredentials","getRuntimeDatabaseToolsConnectionCredentialsOutput"], () => require("./getRuntimeDatabaseToolsConnectionCredentials"));
+
+export { GetRuntimeDatabaseToolsConnectionPropertySetArgs, GetRuntimeDatabaseToolsConnectionPropertySetResult, GetRuntimeDatabaseToolsConnectionPropertySetOutputArgs } from "./getRuntimeDatabaseToolsConnectionPropertySet";
+export const getRuntimeDatabaseToolsConnectionPropertySet: typeof import("./getRuntimeDatabaseToolsConnectionPropertySet").getRuntimeDatabaseToolsConnectionPropertySet = null as any;
+export const getRuntimeDatabaseToolsConnectionPropertySetOutput: typeof import("./getRuntimeDatabaseToolsConnectionPropertySet").getRuntimeDatabaseToolsConnectionPropertySetOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionPropertySet","getRuntimeDatabaseToolsConnectionPropertySetOutput"], () => require("./getRuntimeDatabaseToolsConnectionPropertySet"));
+
+export { GetRuntimeDatabaseToolsConnectionUserCredentialArgs, GetRuntimeDatabaseToolsConnectionUserCredentialResult, GetRuntimeDatabaseToolsConnectionUserCredentialOutputArgs } from "./getRuntimeDatabaseToolsConnectionUserCredential";
+export const getRuntimeDatabaseToolsConnectionUserCredential: typeof import("./getRuntimeDatabaseToolsConnectionUserCredential").getRuntimeDatabaseToolsConnectionUserCredential = null as any;
+export const getRuntimeDatabaseToolsConnectionUserCredentialOutput: typeof import("./getRuntimeDatabaseToolsConnectionUserCredential").getRuntimeDatabaseToolsConnectionUserCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionUserCredential","getRuntimeDatabaseToolsConnectionUserCredentialOutput"], () => require("./getRuntimeDatabaseToolsConnectionUserCredential"));
+
+export { GetRuntimeDatabaseToolsConnectionUserCredentialsArgs, GetRuntimeDatabaseToolsConnectionUserCredentialsResult, GetRuntimeDatabaseToolsConnectionUserCredentialsOutputArgs } from "./getRuntimeDatabaseToolsConnectionUserCredentials";
+export const getRuntimeDatabaseToolsConnectionUserCredentials: typeof import("./getRuntimeDatabaseToolsConnectionUserCredentials").getRuntimeDatabaseToolsConnectionUserCredentials = null as any;
+export const getRuntimeDatabaseToolsConnectionUserCredentialsOutput: typeof import("./getRuntimeDatabaseToolsConnectionUserCredentials").getRuntimeDatabaseToolsConnectionUserCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsConnectionUserCredentials","getRuntimeDatabaseToolsConnectionUserCredentialsOutput"], () => require("./getRuntimeDatabaseToolsConnectionUserCredentials"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties").getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties").getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties","getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent").getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent").getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent","getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal").getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal").getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal","getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs"));
+
+export { GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult, GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsOutputArgs } from "./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools";
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools = null as any;
+export const getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsOutput: typeof import("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools").getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools","getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsOutput"], () => require("./getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools"));
+
+export { RuntimeDatabaseToolsConnectionCredentialArgs, RuntimeDatabaseToolsConnectionCredentialState } from "./runtimeDatabaseToolsConnectionCredential";
+export type RuntimeDatabaseToolsConnectionCredential = import("./runtimeDatabaseToolsConnectionCredential").RuntimeDatabaseToolsConnectionCredential;
+export const RuntimeDatabaseToolsConnectionCredential: typeof import("./runtimeDatabaseToolsConnectionCredential").RuntimeDatabaseToolsConnectionCredential = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsConnectionCredential"], () => require("./runtimeDatabaseToolsConnectionCredential"));
+
+export { RuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs, RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState } from "./runtimeDatabaseToolsConnectionCredentialExecuteGrantee";
+export type RuntimeDatabaseToolsConnectionCredentialExecuteGrantee = import("./runtimeDatabaseToolsConnectionCredentialExecuteGrantee").RuntimeDatabaseToolsConnectionCredentialExecuteGrantee;
+export const RuntimeDatabaseToolsConnectionCredentialExecuteGrantee: typeof import("./runtimeDatabaseToolsConnectionCredentialExecuteGrantee").RuntimeDatabaseToolsConnectionCredentialExecuteGrantee = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsConnectionCredentialExecuteGrantee"], () => require("./runtimeDatabaseToolsConnectionCredentialExecuteGrantee"));
+
+export { RuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs, RuntimeDatabaseToolsConnectionCredentialPublicSynonymState } from "./runtimeDatabaseToolsConnectionCredentialPublicSynonym";
+export type RuntimeDatabaseToolsConnectionCredentialPublicSynonym = import("./runtimeDatabaseToolsConnectionCredentialPublicSynonym").RuntimeDatabaseToolsConnectionCredentialPublicSynonym;
+export const RuntimeDatabaseToolsConnectionCredentialPublicSynonym: typeof import("./runtimeDatabaseToolsConnectionCredentialPublicSynonym").RuntimeDatabaseToolsConnectionCredentialPublicSynonym = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsConnectionCredentialPublicSynonym"], () => require("./runtimeDatabaseToolsConnectionCredentialPublicSynonym"));
+
+export { RuntimeDatabaseToolsConnectionPropertySetArgs, RuntimeDatabaseToolsConnectionPropertySetState } from "./runtimeDatabaseToolsConnectionPropertySet";
+export type RuntimeDatabaseToolsConnectionPropertySet = import("./runtimeDatabaseToolsConnectionPropertySet").RuntimeDatabaseToolsConnectionPropertySet;
+export const RuntimeDatabaseToolsConnectionPropertySet: typeof import("./runtimeDatabaseToolsConnectionPropertySet").RuntimeDatabaseToolsConnectionPropertySet = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsConnectionPropertySet"], () => require("./runtimeDatabaseToolsConnectionPropertySet"));
+
+export { RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState } from "./runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal";
+export type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal = import("./runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal").RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal;
+export const RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal: typeof import("./runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal").RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal"], () => require("./runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal"));
+
+export { RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState } from "./runtimeDatabaseToolsDatabaseApiGatewayConfigPool";
+export type RuntimeDatabaseToolsDatabaseApiGatewayConfigPool = import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPool").RuntimeDatabaseToolsDatabaseApiGatewayConfigPool;
+export const RuntimeDatabaseToolsDatabaseApiGatewayConfigPool: typeof import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPool").RuntimeDatabaseToolsDatabaseApiGatewayConfigPool = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsDatabaseApiGatewayConfigPool"], () => require("./runtimeDatabaseToolsDatabaseApiGatewayConfigPool"));
+
+export { RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecState } from "./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec";
+export type RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec").RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec;
+export const RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec: typeof import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec").RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"], () => require("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"));
+
+export { RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState } from "./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec";
+export type RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec").RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec;
+export const RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec: typeof import("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec").RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = null as any;
+utilities.lazyLoad(exports, ["RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"], () => require("./runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -71,6 +201,22 @@ const _module = {
                 return new DatabaseToolsIdentity(name, <any>undefined, { urn })
             case "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint":
                 return new DatabaseToolsPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential":
+                return new RuntimeDatabaseToolsConnectionCredential(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee":
+                return new RuntimeDatabaseToolsConnectionCredentialExecuteGrantee(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym:RuntimeDatabaseToolsConnectionCredentialPublicSynonym":
+                return new RuntimeDatabaseToolsConnectionCredentialPublicSynonym(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsConnectionPropertySet:RuntimeDatabaseToolsConnectionPropertySet":
+                return new RuntimeDatabaseToolsConnectionPropertySet(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal:RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal":
+                return new RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool:RuntimeDatabaseToolsDatabaseApiGatewayConfigPool":
+                return new RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec":
+                return new RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec":
+                return new RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -79,3 +225,11 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsConnection", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsIdentity", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionPropertySet", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", _module)

@@ -151,6 +151,8 @@ type Subnet struct {
 	// * The prefixes must be valid.
 	// * Multiple prefixes must not overlap each other or the on-premises network prefix.
 	// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+	//
+	// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 	Ipv6cidrBlocks pulumi.StringArrayOutput `pulumi:"ipv6cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
 	Ipv6virtualRouterIp pulumi.StringOutput `pulumi:"ipv6virtualRouterIp"`
@@ -272,6 +274,8 @@ type subnetState struct {
 	// * The prefixes must be valid.
 	// * Multiple prefixes must not overlap each other or the on-premises network prefix.
 	// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+	//
+	// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
 	Ipv6virtualRouterIp *string `pulumi:"ipv6virtualRouterIp"`
@@ -358,6 +362,8 @@ type SubnetState struct {
 	// * The prefixes must be valid.
 	// * Multiple prefixes must not overlap each other or the on-premises network prefix.
 	// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+	//
+	// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 	Ipv6cidrBlocks pulumi.StringArrayInput
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
 	Ipv6virtualRouterIp pulumi.StringPtrInput
@@ -448,6 +454,8 @@ type subnetArgs struct {
 	// * The prefixes must be valid.
 	// * Multiple prefixes must not overlap each other or the on-premises network prefix.
 	// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+	//
+	// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
 	// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
 	//
@@ -523,6 +531,8 @@ type SubnetArgs struct {
 	// * The prefixes must be valid.
 	// * Multiple prefixes must not overlap each other or the on-premises network prefix.
 	// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+	//
+	// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 	Ipv6cidrBlocks pulumi.StringArrayInput
 	// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
 	//
@@ -713,6 +723,8 @@ func (o SubnetOutput) Ipv6cidrBlock() pulumi.StringOutput {
 // * The prefixes must be valid.
 // * Multiple prefixes must not overlap each other or the on-premises network prefix.
 // * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+//
+// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `ipv6cidrBlocks` in one operation. A single pulumi up can also replace `ipv6cidrBlock` with a different IPv6 prefix.
 func (o SubnetOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.Ipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }

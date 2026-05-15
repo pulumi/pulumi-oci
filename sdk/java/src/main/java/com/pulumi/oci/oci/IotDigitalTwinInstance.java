@@ -11,6 +11,7 @@ import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.IotDigitalTwinInstanceArgs;
 import com.pulumi.oci.oci.inputs.IotDigitalTwinInstanceState;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  *         var testDigitalTwinInstance = new IotDigitalTwinInstance("testDigitalTwinInstance", IotDigitalTwinInstanceArgs.builder()
  *             .iotDomainId(testIotDomain.id())
  *             .authId(testAuth.id())
+ *             .connectivityType(digitalTwinInstanceConnectivityType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(digitalTwinInstanceDescription)
  *             .digitalTwinAdapterId(testDigitalTwinAdapter.id())
@@ -57,6 +59,7 @@ import javax.annotation.Nullable;
  *             .displayName(digitalTwinInstanceDisplayName)
  *             .externalKey(digitalTwinInstanceExternalKey)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .gateways(digitalTwinInstanceGateways)
  *             .build());
  * 
  *     }
@@ -88,6 +91,20 @@ public class IotDigitalTwinInstance extends com.pulumi.resources.CustomResource 
      */
     public Output<String> authId() {
         return this.authId;
+    }
+    /**
+     * Connectivity type of the digital twin instance
+     * 
+     */
+    @Export(name="connectivityType", refs={String.class}, tree="[0]")
+    private Output<String> connectivityType;
+
+    /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    public Output<String> connectivityType() {
+        return this.connectivityType;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -200,6 +217,20 @@ public class IotDigitalTwinInstance extends com.pulumi.resources.CustomResource 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    @Export(name="gateways", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> gateways;
+
+    /**
+     * @return (Updatable) An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    public Output<List<String>> gateways() {
+        return this.gateways;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.

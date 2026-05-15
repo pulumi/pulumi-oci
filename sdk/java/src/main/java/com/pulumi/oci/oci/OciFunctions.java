@@ -13994,6 +13994,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
      *             .iotDomainId(testIotDomain.id())
+     *             .connectivityType(digitalTwinInstanceConnectivityType)
      *             .digitalTwinModelId(testDigitalTwinModel.id())
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
@@ -14041,6 +14042,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
      *             .iotDomainId(testIotDomain.id())
+     *             .connectivityType(digitalTwinInstanceConnectivityType)
      *             .digitalTwinModelId(testDigitalTwinModel.id())
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
@@ -14088,6 +14090,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
      *             .iotDomainId(testIotDomain.id())
+     *             .connectivityType(digitalTwinInstanceConnectivityType)
      *             .digitalTwinModelId(testDigitalTwinModel.id())
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
@@ -14135,6 +14138,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
      *             .iotDomainId(testIotDomain.id())
+     *             .connectivityType(digitalTwinInstanceConnectivityType)
      *             .digitalTwinModelId(testDigitalTwinModel.id())
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
@@ -14182,6 +14186,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
      *             .iotDomainId(testIotDomain.id())
+     *             .connectivityType(digitalTwinInstanceConnectivityType)
      *             .digitalTwinModelId(testDigitalTwinModel.id())
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)

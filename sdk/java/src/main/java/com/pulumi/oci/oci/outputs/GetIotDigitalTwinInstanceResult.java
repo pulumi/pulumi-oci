@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -16,6 +17,11 @@ public final class GetIotDigitalTwinInstanceResult {
      * 
      */
     private String authId;
+    /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    private String connectivityType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -58,6 +64,11 @@ public final class GetIotDigitalTwinInstanceResult {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    private List<String> gateways;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
@@ -95,6 +106,13 @@ public final class GetIotDigitalTwinInstanceResult {
      */
     public String authId() {
         return this.authId;
+    }
+    /**
+     * @return Connectivity type of the digital twin instance
+     * 
+     */
+    public String connectivityType() {
+        return this.connectivityType;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -156,6 +174,13 @@ public final class GetIotDigitalTwinInstanceResult {
         return this.freeformTags;
     }
     /**
+     * @return An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    public List<String> gateways() {
+        return this.gateways;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
@@ -208,6 +233,7 @@ public final class GetIotDigitalTwinInstanceResult {
     @CustomType.Builder
     public static final class Builder {
         private String authId;
+        private String connectivityType;
         private Map<String,String> definedTags;
         private String description;
         private String digitalTwinAdapterId;
@@ -217,6 +243,7 @@ public final class GetIotDigitalTwinInstanceResult {
         private String displayName;
         private String externalKey;
         private Map<String,String> freeformTags;
+        private List<String> gateways;
         private String id;
         private String iotDomainId;
         private String state;
@@ -227,6 +254,7 @@ public final class GetIotDigitalTwinInstanceResult {
         public Builder(GetIotDigitalTwinInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authId = defaults.authId;
+    	      this.connectivityType = defaults.connectivityType;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.digitalTwinAdapterId = defaults.digitalTwinAdapterId;
@@ -236,6 +264,7 @@ public final class GetIotDigitalTwinInstanceResult {
     	      this.displayName = defaults.displayName;
     	      this.externalKey = defaults.externalKey;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.gateways = defaults.gateways;
     	      this.id = defaults.id;
     	      this.iotDomainId = defaults.iotDomainId;
     	      this.state = defaults.state;
@@ -250,6 +279,14 @@ public final class GetIotDigitalTwinInstanceResult {
               throw new MissingRequiredPropertyException("GetIotDigitalTwinInstanceResult", "authId");
             }
             this.authId = authId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectivityType(String connectivityType) {
+            if (connectivityType == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinInstanceResult", "connectivityType");
+            }
+            this.connectivityType = connectivityType;
             return this;
         }
         @CustomType.Setter
@@ -325,6 +362,17 @@ public final class GetIotDigitalTwinInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder gateways(List<String> gateways) {
+            if (gateways == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinInstanceResult", "gateways");
+            }
+            this.gateways = gateways;
+            return this;
+        }
+        public Builder gateways(String... gateways) {
+            return gateways(List.of(gateways));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetIotDigitalTwinInstanceResult", "id");
@@ -375,6 +423,7 @@ public final class GetIotDigitalTwinInstanceResult {
         public GetIotDigitalTwinInstanceResult build() {
             final var _resultValue = new GetIotDigitalTwinInstanceResult();
             _resultValue.authId = authId;
+            _resultValue.connectivityType = connectivityType;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.digitalTwinAdapterId = digitalTwinAdapterId;
@@ -384,6 +433,7 @@ public final class GetIotDigitalTwinInstanceResult {
             _resultValue.displayName = displayName;
             _resultValue.externalKey = externalKey;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.gateways = gateways;
             _resultValue.id = id;
             _resultValue.iotDomainId = iotDomainId;
             _resultValue.state = state;

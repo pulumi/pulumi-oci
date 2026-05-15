@@ -44,6 +44,7 @@ public final class InstanceLaunchOptions {
      * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
      * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
      * 
      */
     private @Nullable String networkType;
@@ -99,6 +100,7 @@ public final class InstanceLaunchOptions {
      * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
      * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
      * 
      */
     public Optional<String> networkType() {

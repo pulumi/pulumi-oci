@@ -19,6 +19,21 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
     public static final GetIotDigitalTwinInstancesArgs Empty = new GetIotDigitalTwinInstancesArgs();
 
     /**
+     * Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    @Import(name="connectivityType")
+    private @Nullable Output<String> connectivityType;
+
+    /**
+     * @return Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    public Optional<Output<String>> connectivityType() {
+        return Optional.ofNullable(this.connectivityType);
+    }
+
+    /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
@@ -118,6 +133,7 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
     private GetIotDigitalTwinInstancesArgs() {}
 
     private GetIotDigitalTwinInstancesArgs(GetIotDigitalTwinInstancesArgs $) {
+        this.connectivityType = $.connectivityType;
         this.digitalTwinModelId = $.digitalTwinModelId;
         this.digitalTwinModelSpecUri = $.digitalTwinModelSpecUri;
         this.displayName = $.displayName;
@@ -143,6 +159,27 @@ public final class GetIotDigitalTwinInstancesArgs extends com.pulumi.resources.I
 
         public Builder(GetIotDigitalTwinInstancesArgs defaults) {
             $ = new GetIotDigitalTwinInstancesArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param connectivityType Filter resources whose connectivityType matches the specified value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectivityType(@Nullable Output<String> connectivityType) {
+            $.connectivityType = connectivityType;
+            return this;
+        }
+
+        /**
+         * @param connectivityType Filter resources whose connectivityType matches the specified value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectivityType(String connectivityType) {
+            return connectivityType(Output.of(connectivityType));
         }
 
         /**

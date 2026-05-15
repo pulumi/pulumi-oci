@@ -60,6 +60,8 @@ type LookupIotDigitalTwinInstanceArgs struct {
 type LookupIotDigitalTwinInstanceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId string `pulumi:"authId"`
+	// Connectivity type of the digital twin instance
+	ConnectivityType string `pulumi:"connectivityType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the resource.
@@ -77,6 +79,8 @@ type LookupIotDigitalTwinInstanceResult struct {
 	ExternalKey string `pulumi:"externalKey"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+	Gateways []string `pulumi:"gateways"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
@@ -130,6 +134,11 @@ func (o LookupIotDigitalTwinInstanceResultOutput) AuthId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) string { return v.AuthId }).(pulumi.StringOutput)
 }
 
+// Connectivity type of the digital twin instance
+func (o LookupIotDigitalTwinInstanceResultOutput) ConnectivityType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) string { return v.ConnectivityType }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupIotDigitalTwinInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -172,6 +181,11 @@ func (o LookupIotDigitalTwinInstanceResultOutput) ExternalKey() pulumi.StringOut
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupIotDigitalTwinInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+func (o LookupIotDigitalTwinInstanceResultOutput) Gateways() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupIotDigitalTwinInstanceResult) []string { return v.Gateways }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.

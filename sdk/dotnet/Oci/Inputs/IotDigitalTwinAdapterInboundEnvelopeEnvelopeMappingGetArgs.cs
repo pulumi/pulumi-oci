@@ -13,6 +13,18 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+        /// </summary>
+        [Input("contentRoot")]
+        public Input<string>? ContentRoot { get; set; }
+
+        /// <summary>
+        /// (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+        /// </summary>
+        [Input("target")]
+        public Input<string>? Target { get; set; }
+
+        /// <summary>
         /// (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "&lt;timestamp&gt;","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
         /// </summary>
         [Input("timeObserved")]

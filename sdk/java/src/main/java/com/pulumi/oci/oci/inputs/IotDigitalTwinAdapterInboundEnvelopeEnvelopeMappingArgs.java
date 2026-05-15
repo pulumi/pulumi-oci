@@ -16,6 +16,36 @@ public final class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs exten
     public static final IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs Empty = new IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs();
 
     /**
+     * (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    @Import(name="contentRoot")
+    private @Nullable Output<String> contentRoot;
+
+    /**
+     * @return (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    public Optional<Output<String>> contentRoot() {
+        return Optional.ofNullable(this.contentRoot);
+    }
+
+    /**
+     * (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    @Import(name="target")
+    private @Nullable Output<String> target;
+
+    /**
+     * @return (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    public Optional<Output<String>> target() {
+        return Optional.ofNullable(this.target);
+    }
+
+    /**
      * (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{&#34;time&#34;: &#34;&lt;timestamp&gt;&#34;,&#34;temp&#34;: 65,&#34;hum&#34;: 55}` &#39;timeObserved&#39; can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
      * 
      */
@@ -33,6 +63,8 @@ public final class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs exten
     private IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs() {}
 
     private IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs $) {
+        this.contentRoot = $.contentRoot;
+        this.target = $.target;
         this.timeObserved = $.timeObserved;
     }
 
@@ -52,6 +84,48 @@ public final class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs exten
 
         public Builder(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs defaults) {
             $ = new IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param contentRoot (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentRoot(@Nullable Output<String> contentRoot) {
+            $.contentRoot = contentRoot;
+            return this;
+        }
+
+        /**
+         * @param contentRoot (Updatable) JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentRoot(String contentRoot) {
+            return contentRoot(Output.of(contentRoot));
+        }
+
+        /**
+         * @param target (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder target(@Nullable Output<String> target) {
+            $.target = target;
+            return this;
+        }
+
+        /**
+         * @param target (Updatable) Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder target(String target) {
+            return target(Output.of(target));
         }
 
         /**

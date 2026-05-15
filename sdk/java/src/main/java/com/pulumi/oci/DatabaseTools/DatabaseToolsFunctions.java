@@ -24,6 +24,42 @@ import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlainArgs;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServiceResult;
@@ -32,6 +68,24 @@ import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentitiesResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentityResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionPropertySetResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionUserCredentialResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -1800,5 +1854,3972 @@ public final class DatabaseToolsFunctions {
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", TypeShape.of(GetDatabaseToolsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialResult> getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredential(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialResult> getRuntimeDatabaseToolsConnectionCredentialPlain(GetRuntimeDatabaseToolsConnectionCredentialPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialResult> getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredential:getRuntimeDatabaseToolsConnectionCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialResult> getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredential:getRuntimeDatabaseToolsConnectionCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredential(GetRuntimeDatabaseToolsConnectionCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialResult> getRuntimeDatabaseToolsConnectionCredentialPlain(GetRuntimeDatabaseToolsConnectionCredentialPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredential:getRuntimeDatabaseToolsConnectionCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Execute Grantee resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential execute grantee
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Execute Grantee resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential execute grantee
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlain(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Execute Grantee resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential execute grantee
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Execute Grantee resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential execute grantee
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Execute Grantee resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a credential execute grantee
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantee = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .executeGranteeKey(databaseToolsConnectionCredentialExecuteGranteeExecuteGranteeKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlain(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantee", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all execute grantees
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all execute grantees
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlain(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all execute grantees
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all execute grantees
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Execute Grantees in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all execute grantees
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialExecuteGrantees = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult> getRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlain(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees:getRuntimeDatabaseToolsConnectionCredentialExecuteGrantees", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Public Synonym resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a public synonym
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Public Synonym resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a public synonym
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlain(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Public Synonym resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a public synonym
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonym:getRuntimeDatabaseToolsConnectionCredentialPublicSynonym", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Public Synonym resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a public synonym
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonym:getRuntimeDatabaseToolsConnectionCredentialPublicSynonym", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Credential Public Synonym resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a public synonym
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonym = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonym(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .publicSynonymKey(databaseToolsConnectionCredentialPublicSynonymPublicSynonymKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlain(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonym:getRuntimeDatabaseToolsConnectionCredentialPublicSynonym", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all public synonyms for the given credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all public synonyms for the given credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlain(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all public synonyms for the given credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms:getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all public synonyms for the given credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms:getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credential Public Synonyms in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a list of all public synonyms for the given credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentialPublicSynonyms = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsArgs.builder()
+     *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult> getRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlain(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms:getRuntimeDatabaseToolsConnectionCredentialPublicSynonyms", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of `CredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialsResult> getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentials(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of `CredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialsResult> getRuntimeDatabaseToolsConnectionCredentialsPlain(GetRuntimeDatabaseToolsConnectionCredentialsPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionCredentialsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of `CredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialsResult> getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentials:getRuntimeDatabaseToolsConnectionCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of `CredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionCredentialsResult> getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentials:getRuntimeDatabaseToolsConnectionCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of `CredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionCredentials(GetRuntimeDatabaseToolsConnectionCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionCredentialsResult> getRuntimeDatabaseToolsConnectionCredentialsPlain(GetRuntimeDatabaseToolsConnectionCredentialsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionCredentials:getRuntimeDatabaseToolsConnectionCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Property Set resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a property set
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionPropertySetResult> getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs args) {
+        return getRuntimeDatabaseToolsConnectionPropertySet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Property Set resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a property set
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionPropertySetResult> getRuntimeDatabaseToolsConnectionPropertySetPlain(GetRuntimeDatabaseToolsConnectionPropertySetPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionPropertySetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Property Set resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a property set
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionPropertySetResult> getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionPropertySet:getRuntimeDatabaseToolsConnectionPropertySet", TypeShape.of(GetRuntimeDatabaseToolsConnectionPropertySetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Property Set resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a property set
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionPropertySetResult> getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionPropertySet:getRuntimeDatabaseToolsConnectionPropertySet", TypeShape.of(GetRuntimeDatabaseToolsConnectionPropertySetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection Property Set resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a property set
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionPropertySetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionPropertySet = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionPropertySet(GetRuntimeDatabaseToolsConnectionPropertySetArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .propertySetKey(databaseToolsConnectionPropertySetPropertySetKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionPropertySetResult> getRuntimeDatabaseToolsConnectionPropertySetPlain(GetRuntimeDatabaseToolsConnectionPropertySetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionPropertySet:getRuntimeDatabaseToolsConnectionPropertySet", TypeShape.of(GetRuntimeDatabaseToolsConnectionPropertySetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection User Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a user credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialResult> getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs args) {
+        return getRuntimeDatabaseToolsConnectionUserCredential(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection User Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a user credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionUserCredentialResult> getRuntimeDatabaseToolsConnectionUserCredentialPlain(GetRuntimeDatabaseToolsConnectionUserCredentialPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionUserCredentialPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection User Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a user credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialResult> getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredential:getRuntimeDatabaseToolsConnectionUserCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection User Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a user credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialResult> getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredential:getRuntimeDatabaseToolsConnectionUserCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Connection User Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a user credential
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredential = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredential(GetRuntimeDatabaseToolsConnectionUserCredentialArgs.builder()
+     *             .credentialKey(databaseToolsConnectionUserCredentialCredentialKey)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionUserCredentialResult> getRuntimeDatabaseToolsConnectionUserCredentialPlain(GetRuntimeDatabaseToolsConnectionUserCredentialPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredential:getRuntimeDatabaseToolsConnectionUserCredential", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection User Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of user `UserCredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialsResult> getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs args) {
+        return getRuntimeDatabaseToolsConnectionUserCredentials(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection User Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of user `UserCredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionUserCredentialsResult> getRuntimeDatabaseToolsConnectionUserCredentialsPlain(GetRuntimeDatabaseToolsConnectionUserCredentialsPlainArgs args) {
+        return getRuntimeDatabaseToolsConnectionUserCredentialsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Connection User Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of user `UserCredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialsResult> getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredentials:getRuntimeDatabaseToolsConnectionUserCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection User Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of user `UserCredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsConnectionUserCredentialsResult> getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredentials:getRuntimeDatabaseToolsConnectionUserCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Connection User Credentials in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a paginated list of user `UserCredentialSummary` for the specified request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionUserCredentialsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnectionUserCredentials = DatabaseToolsFunctions.getRuntimeDatabaseToolsConnectionUserCredentials(GetRuntimeDatabaseToolsConnectionUserCredentialsArgs.builder()
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .userKey(databaseToolsConnectionUserCredentialUserKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsConnectionUserCredentialsResult> getRuntimeDatabaseToolsConnectionUserCredentialsPlain(GetRuntimeDatabaseToolsConnectionUserCredentialsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsConnectionUserCredentials:getRuntimeDatabaseToolsConnectionUserCredentials", TypeShape.of(GetRuntimeDatabaseToolsConnectionUserCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties() {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlain() {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties:getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties:getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Advanced Properties in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns list of database API gateway config setting descriptions to be provided as advanced properties.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties:getRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Content resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get the content of a Database Tools database API gateway config
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Content resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get the content of a Database Tools database API gateway config
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Content resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get the content of a Database Tools database API gateway config
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent:getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Content resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get the content of a Database Tools database API gateway config
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent:getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Content resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get the content of a Database Tools database API gateway config
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigContent = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent:getRuntimeDatabaseToolsDatabaseApiGatewayConfigContent", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Global resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config global resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Global resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config global resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Global resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config global resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal:getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Global resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config global resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal:getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Global resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config global resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigGlobal = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .globalKey(databaseToolsDatabaseApiGatewayConfigGlobalGlobalKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal:getRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config pool resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config pool resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config pool resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config pool resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config pool resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPool = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPool", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
+     *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
+     *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
+     *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
+     *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs.builder()
+     *             .apiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Auto Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config auto API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
+     *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Auto Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config auto API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
+     *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Auto Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config auto API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
+     *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Auto Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config auto API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
+     *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config Pool Auto Api Spec resource in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Get a Database Tools database API gateway config auto API spec resource
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
+     *             .autoApiSpecKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecAutoApiSpecKey)
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Auto Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config auto API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Auto Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config auto API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Auto Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config auto API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Auto Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config auto API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pool Auto Api Specs in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config auto API spec resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config pool resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config pool resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlainArgs args) {
+        return getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config pool resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config pool resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Config Pools in Oracle Cloud Infrastructure Database Tools Runtime service.
+     * 
+     * Returns a list of Database Tools database API gateway config pool resources
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigPools = DatabaseToolsFunctions.getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult> getRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlain(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools:getRuntimeDatabaseToolsDatabaseApiGatewayConfigPools", TypeShape.of(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsResult.class), args, Utilities.withVersion(options));
     }
 }

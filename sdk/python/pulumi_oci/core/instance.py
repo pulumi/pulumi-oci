@@ -907,6 +907,7 @@ class _InstanceState:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
@@ -1414,6 +1415,7 @@ class _InstanceState:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -2281,6 +2283,7 @@ class Instance(pulumi.CustomResource):
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
@@ -2640,6 +2643,7 @@ class Instance(pulumi.CustomResource):
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")

@@ -155,10 +155,12 @@ type Vcn struct {
 	// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 	//
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+	//
+	// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 	Ipv6privateCidrBlocks pulumi.StringArrayOutput `pulumi:"ipv6privateCidrBlocks"`
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolOutput `pulumi:"isIpv6enabled"`
-	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 	IsOracleGuaAllocationEnabled pulumi.BoolOutput `pulumi:"isOracleGuaAllocationEnabled"`
 	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
@@ -247,10 +249,12 @@ type vcnState struct {
 	// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 	//
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+	//
+	// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 	Ipv6privateCidrBlocks []string `pulumi:"ipv6privateCidrBlocks"`
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled *bool `pulumi:"isIpv6enabled"`
-	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
 	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
@@ -307,10 +311,12 @@ type VcnState struct {
 	// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 	//
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+	//
+	// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 	Ipv6privateCidrBlocks pulumi.StringArrayInput
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolPtrInput
-	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
 	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
@@ -361,10 +367,12 @@ type vcnArgs struct {
 	// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 	//
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+	//
+	// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 	Ipv6privateCidrBlocks []string `pulumi:"ipv6privateCidrBlocks"`
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled *bool `pulumi:"isIpv6enabled"`
-	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 	IsOracleGuaAllocationEnabled *bool `pulumi:"isOracleGuaAllocationEnabled"`
 	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
@@ -406,10 +414,12 @@ type VcnArgs struct {
 	// * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 	//
 	// **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+	//
+	// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 	Ipv6privateCidrBlocks pulumi.StringArrayInput
 	// Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
 	IsIpv6enabled pulumi.BoolPtrInput
-	// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+	// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
 	// (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	//
@@ -585,6 +595,8 @@ func (o VcnOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 // * The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 //
 // **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
+//
+// When updating `ipv6privateCidrBlocks`, Terraform can add, remove, or replace multiple IPv6 private CIDR blocks in a single `pulumi up`. You can also mix several list changes together in the same update instead of applying them one at a time.
 func (o VcnOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Vcn) pulumi.StringArrayOutput { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -594,7 +606,7 @@ func (o VcnOutput) IsIpv6enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsIpv6enabled }).(pulumi.BoolOutput)
 }
 
-// Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
+// Specifies whether Oracle allocates an IPv6 global unicast address (GUA) prefix to the VCN. By default, Oracle allocates one GUA prefix of /56 size for an IPv6-enabled VCN if this value is not explicitly set to false. When this value is changed from `true` to `false` on an existing VCN, the provider removes that prefix from the existing VCN. Customers must manage `isOracleGuaAllocationEnabled` exclusively through Terraform. Changing Oracle GUA allocation outside Terraform can cause Terraform state to differ from the VCN configuration in Oracle Cloud Infrastructure and can result in unexpected plans or failed updates.
 func (o VcnOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Vcn) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
 }

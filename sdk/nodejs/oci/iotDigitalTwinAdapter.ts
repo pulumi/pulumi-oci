@@ -35,6 +35,8 @@ import * as utilities from "../utilities";
  *     inboundEnvelope: {
  *         referenceEndpoint: digitalTwinAdapterInboundEnvelopeReferenceEndpoint,
  *         envelopeMapping: {
+ *             contentRoot: digitalTwinAdapterInboundEnvelopeEnvelopeMappingContentRoot,
+ *             target: digitalTwinAdapterInboundEnvelopeEnvelopeMappingTarget,
  *             timeObserved: digitalTwinAdapterInboundEnvelopeEnvelopeMappingTimeObserved,
  *         },
  *         referencePayload: {

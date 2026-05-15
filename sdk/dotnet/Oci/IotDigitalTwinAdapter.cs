@@ -47,6 +47,8 @@ namespace Pulumi.Oci.Oci
     ///             ReferenceEndpoint = digitalTwinAdapterInboundEnvelopeReferenceEndpoint,
     ///             EnvelopeMapping = new Oci.Oci.Inputs.IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs
     ///             {
+    ///                 ContentRoot = digitalTwinAdapterInboundEnvelopeEnvelopeMappingContentRoot,
+    ///                 Target = digitalTwinAdapterInboundEnvelopeEnvelopeMappingTarget,
     ///                 TimeObserved = digitalTwinAdapterInboundEnvelopeEnvelopeMappingTimeObserved,
     ///             },
     ///             ReferencePayload = new Oci.Oci.Inputs.IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs

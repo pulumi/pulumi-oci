@@ -185,6 +185,8 @@ namespace Pulumi.Oci.Core
         /// * The prefixes must be valid.
         /// * Multiple prefixes must not overlap each other or the on-premises network prefix.
         /// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+        /// 
+        /// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `Ipv6cidrBlocks` in one operation. A single pulumi up can also replace `Ipv6cidrBlock` with a different IPv6 prefix.
         /// </summary>
         [Output("ipv6cidrBlocks")]
         public Output<ImmutableArray<string>> Ipv6cidrBlocks { get; private set; } = null!;
@@ -424,6 +426,8 @@ namespace Pulumi.Oci.Core
         /// * The prefixes must be valid.
         /// * Multiple prefixes must not overlap each other or the on-premises network prefix.
         /// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+        /// 
+        /// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `Ipv6cidrBlocks` in one operation. A single pulumi up can also replace `Ipv6cidrBlock` with a different IPv6 prefix.
         /// </summary>
         public InputList<string> Ipv6cidrBlocks
         {
@@ -598,6 +602,8 @@ namespace Pulumi.Oci.Core
         /// * The prefixes must be valid.
         /// * Multiple prefixes must not overlap each other or the on-premises network prefix.
         /// * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
+        /// 
+        /// When updating subnet IPv6 prefixes, the provider can apply the full requested IPv6 change set in a single pulumi up. This includes adding, removing, or replacing multiple entries in `Ipv6cidrBlocks` in one operation. A single pulumi up can also replace `Ipv6cidrBlock` with a different IPv6 prefix.
         /// </summary>
         public InputList<string> Ipv6cidrBlocks
         {

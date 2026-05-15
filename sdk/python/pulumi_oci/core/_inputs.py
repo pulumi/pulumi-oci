@@ -6405,6 +6405,7 @@ class ImageLaunchOptionArgsDict(TypedDict):
     * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
     * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
     * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+    * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
     """
     remote_data_volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -6441,6 +6442,7 @@ class ImageLaunchOptionArgs:
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param pulumi.Input[_builtins.str] remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -6524,6 +6526,7 @@ class ImageLaunchOptionArgs:
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -14375,6 +14378,7 @@ class InstanceLaunchOptionsArgsDict(TypedDict):
     * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
     * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
     * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+    * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
     """
     remote_data_volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -14411,6 +14415,7 @@ class InstanceLaunchOptionsArgs:
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param pulumi.Input[_builtins.str] remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -14494,6 +14499,7 @@ class InstanceLaunchOptionsArgs:
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -19147,7 +19153,9 @@ class VcnByoipv6cidrDetailArgsDict(TypedDict):
     """
     ipv6cidr_block: pulumi.Input[_builtins.str]
     """
-    An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+    An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+
+    When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
     """
 
 @pulumi.input_type
@@ -19157,7 +19165,9 @@ class VcnByoipv6cidrDetailArgs:
                  ipv6cidr_block: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param pulumi.Input[_builtins.str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        :param pulumi.Input[_builtins.str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+               
+               When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
@@ -19178,7 +19188,9 @@ class VcnByoipv6cidrDetailArgs:
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> pulumi.Input[_builtins.str]:
         """
-        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+
+        When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
         return pulumi.get(self, "ipv6cidr_block")
 

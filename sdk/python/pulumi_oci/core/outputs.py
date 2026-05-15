@@ -5662,6 +5662,7 @@ class ImageLaunchOption(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -5729,6 +5730,7 @@ class ImageLaunchOption(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -12027,6 +12029,7 @@ class InstanceLaunchOptions(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -12094,6 +12097,7 @@ class InstanceLaunchOptions(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -15822,7 +15826,9 @@ class VcnByoipv6cidrDetail(dict):
                  ipv6cidr_block: _builtins.str):
         """
         :param _builtins.str byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+               
+               When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
         pulumi.set(__self__, "byoipv6range_id", byoipv6range_id)
         pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
@@ -15839,7 +15845,9 @@ class VcnByoipv6cidrDetail(dict):
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> _builtins.str:
         """
-        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
+        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+
+        When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
         return pulumi.get(self, "ipv6cidr_block")
 
@@ -30250,6 +30258,7 @@ class GetImageLaunchOptionResult(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -30311,6 +30320,7 @@ class GetImageLaunchOptionResult(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -30585,6 +30595,7 @@ class GetImagesImageResult(dict):
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetImagesImageLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param _builtins.str listing_type: The listing type of the image. The default value is "NONE".
@@ -30704,6 +30715,7 @@ class GetImagesImageResult(dict):
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -30890,6 +30902,7 @@ class GetImagesImageLaunchOptionResult(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -30951,6 +30964,7 @@ class GetImagesImageLaunchOptionResult(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -31578,6 +31592,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
@@ -31775,6 +31790,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -32235,6 +32251,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -32296,6 +32313,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -33244,6 +33262,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
@@ -33441,6 +33460,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -33901,6 +33921,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -33962,6 +33983,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -35563,6 +35585,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
@@ -35760,6 +35783,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -36220,6 +36244,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -36281,6 +36306,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -37229,6 +37255,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
@@ -37426,6 +37453,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -37886,6 +37914,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -37947,6 +37976,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -39338,6 +39368,7 @@ class GetInstanceLaunchOptionResult(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -39399,6 +39430,7 @@ class GetInstanceLaunchOptionResult(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 
@@ -41897,6 +41929,7 @@ class GetInstancesInstanceResult(dict):
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
                * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstancesInstanceLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with the instance.
@@ -42166,6 +42199,7 @@ class GetInstancesInstanceResult(dict):
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
@@ -42652,6 +42686,7 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
                * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         :param _builtins.str remote_data_volume_type: Emulation type for volume.
                * `ISCSI` - ISCSI attached block storage device.
                * `SCSI` - Emulated SCSI disk.
@@ -42713,6 +42748,7 @@ class GetInstancesInstanceLaunchOptionResult(dict):
         * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         """
         return pulumi.get(self, "network_type")
 

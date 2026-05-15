@@ -48,6 +48,8 @@ import (
 //				InboundEnvelope: &oci.IotDigitalTwinAdapterInboundEnvelopeArgs{
 //					ReferenceEndpoint: pulumi.Any(digitalTwinAdapterInboundEnvelopeReferenceEndpoint),
 //					EnvelopeMapping: &oci.IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs{
+//						ContentRoot:  pulumi.Any(digitalTwinAdapterInboundEnvelopeEnvelopeMappingContentRoot),
+//						Target:       pulumi.Any(digitalTwinAdapterInboundEnvelopeEnvelopeMappingTarget),
 //						TimeObserved: pulumi.Any(digitalTwinAdapterInboundEnvelopeEnvelopeMappingTimeObserved),
 //					},
 //					ReferencePayload: &oci.IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs{

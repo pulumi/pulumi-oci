@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -16,6 +17,11 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
      * 
      */
     private String authId;
+    /**
+     * @return Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    private String connectivityType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -57,6 +63,11 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    private List<String> gateways;
+    /**
      * @return Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
      * 
      */
@@ -94,6 +105,13 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
      */
     public String authId() {
         return this.authId;
+    }
+    /**
+     * @return Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    public String connectivityType() {
+        return this.connectivityType;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -152,6 +170,13 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
         return this.freeformTags;
     }
     /**
+     * @return An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+     * 
+     */
+    public List<String> gateways() {
+        return this.gateways;
+    }
+    /**
      * @return Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
      * 
      */
@@ -204,6 +229,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String authId;
+        private String connectivityType;
         private Map<String,String> definedTags;
         private String description;
         private String digitalTwinAdapterId;
@@ -212,6 +238,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
         private String displayName;
         private String externalKey;
         private Map<String,String> freeformTags;
+        private List<String> gateways;
         private String id;
         private String iotDomainId;
         private String state;
@@ -222,6 +249,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
         public Builder(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authId = defaults.authId;
+    	      this.connectivityType = defaults.connectivityType;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.digitalTwinAdapterId = defaults.digitalTwinAdapterId;
@@ -230,6 +258,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.externalKey = defaults.externalKey;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.gateways = defaults.gateways;
     	      this.id = defaults.id;
     	      this.iotDomainId = defaults.iotDomainId;
     	      this.state = defaults.state;
@@ -244,6 +273,14 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
               throw new MissingRequiredPropertyException("GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem", "authId");
             }
             this.authId = authId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectivityType(String connectivityType) {
+            if (connectivityType == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem", "connectivityType");
+            }
+            this.connectivityType = connectivityType;
             return this;
         }
         @CustomType.Setter
@@ -311,6 +348,17 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder gateways(List<String> gateways) {
+            if (gateways == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem", "gateways");
+            }
+            this.gateways = gateways;
+            return this;
+        }
+        public Builder gateways(String... gateways) {
+            return gateways(List.of(gateways));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem", "id");
@@ -361,6 +409,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
         public GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem build() {
             final var _resultValue = new GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem();
             _resultValue.authId = authId;
+            _resultValue.connectivityType = connectivityType;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.digitalTwinAdapterId = digitalTwinAdapterId;
@@ -369,6 +418,7 @@ public final class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.externalKey = externalKey;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.gateways = gateways;
             _resultValue.id = id;
             _resultValue.iotDomainId = iotDomainId;
             _resultValue.state = state;

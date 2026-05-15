@@ -3935,6 +3935,70 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsConnectionCredential",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential": "RuntimeDatabaseToolsConnectionCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee": "RuntimeDatabaseToolsConnectionCredentialExecuteGrantee"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym:RuntimeDatabaseToolsConnectionCredentialPublicSynonym": "RuntimeDatabaseToolsConnectionCredentialPublicSynonym"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsConnectionPropertySet",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsConnectionPropertySet:RuntimeDatabaseToolsConnectionPropertySet": "RuntimeDatabaseToolsConnectionPropertySet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal:RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal": "RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool:RuntimeDatabaseToolsDatabaseApiGatewayConfigPool": "RuntimeDatabaseToolsDatabaseApiGatewayConfigPool"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec": "RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec": "RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Dblm/vulnerabilityScan",
   "fqn": "pulumi_oci.dblm",
   "classes": {

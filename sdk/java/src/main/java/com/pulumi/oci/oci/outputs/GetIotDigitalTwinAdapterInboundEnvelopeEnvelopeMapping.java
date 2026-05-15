@@ -11,12 +11,36 @@ import java.util.Objects;
 @CustomType
 public final class GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
     /**
+     * @return JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    private String contentRoot;
+    /**
+     * @return Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    private String target;
+    /**
      * @return JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{&#34;time&#34;: &#34;&lt;timestamp&gt;&#34;,&#34;temp&#34;: 65,&#34;hum&#34;: 55}` &#39;timeObserved&#39; can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
      * 
      */
     private String timeObserved;
 
     private GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping() {}
+    /**
+     * @return JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     * 
+     */
+    public String contentRoot() {
+        return this.contentRoot;
+    }
+    /**
+     * @return Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+     * 
+     */
+    public String target() {
+        return this.target;
+    }
     /**
      * @return JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{&#34;time&#34;: &#34;&lt;timestamp&gt;&#34;,&#34;temp&#34;: 65,&#34;hum&#34;: 55}` &#39;timeObserved&#39; can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
      * 
@@ -34,13 +58,33 @@ public final class GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String contentRoot;
+        private String target;
         private String timeObserved;
         public Builder() {}
         public Builder(GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.contentRoot = defaults.contentRoot;
+    	      this.target = defaults.target;
     	      this.timeObserved = defaults.timeObserved;
         }
 
+        @CustomType.Setter
+        public Builder contentRoot(String contentRoot) {
+            if (contentRoot == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping", "contentRoot");
+            }
+            this.contentRoot = contentRoot;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder target(String target) {
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping", "target");
+            }
+            this.target = target;
+            return this;
+        }
         @CustomType.Setter
         public Builder timeObserved(String timeObserved) {
             if (timeObserved == null) {
@@ -51,6 +95,8 @@ public final class GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
         }
         public GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping build() {
             final var _resultValue = new GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping();
+            _resultValue.contentRoot = contentRoot;
+            _resultValue.target = target;
             _resultValue.timeObserved = timeObserved;
             return _resultValue;
         }

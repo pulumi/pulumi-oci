@@ -1462,6 +1462,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail st
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -1541,6 +1542,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailArg
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -1749,6 +1751,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 // * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 // * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 // * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail) string {
@@ -2705,6 +2708,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType string `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -2746,6 +2750,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLau
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -2846,6 +2851,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 // * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 // * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption) string {
 		return v.NetworkType
@@ -5018,6 +5024,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -5097,6 +5104,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -5305,6 +5313,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 // * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 // * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 // * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
@@ -6261,6 +6270,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType string `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -6302,6 +6312,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -6402,6 +6413,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 // * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 // * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
 		return v.NetworkType
@@ -9461,6 +9473,7 @@ type GetInstanceLaunchOption struct {
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType string `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -9502,6 +9515,7 @@ type GetInstanceLaunchOptionArgs struct {
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -9594,6 +9608,7 @@ func (o GetInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.B
 // * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 // * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 func (o GetInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceLaunchOption) string { return v.NetworkType }).(pulumi.StringOutput)
 }
@@ -15118,6 +15133,7 @@ type GetInstancesInstance struct {
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -15228,6 +15244,7 @@ type GetInstancesInstanceArgs struct {
 	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -15452,6 +15469,7 @@ func (o GetInstancesInstanceOutput) IsPvEncryptionInTransitEnabled() pulumi.Bool
 // * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
 // * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 // * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o GetInstancesInstanceOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstance) string { return v.LaunchMode }).(pulumi.StringOutput)
@@ -16363,6 +16381,7 @@ type GetInstancesInstanceLaunchOption struct {
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType string `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -16404,6 +16423,7 @@ type GetInstancesInstanceLaunchOptionArgs struct {
 	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
 	// Emulation type for volume.
 	// * `ISCSI` - ISCSI attached block storage device.
@@ -16496,6 +16516,7 @@ func (o GetInstancesInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled()
 // * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
 // * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
 // * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
 func (o GetInstancesInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.NetworkType }).(pulumi.StringOutput)
 }

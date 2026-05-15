@@ -153,6 +153,7 @@ public final class GetInstancesInstance {
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
@@ -430,6 +431,7 @@ public final class GetInstancesInstance {
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */

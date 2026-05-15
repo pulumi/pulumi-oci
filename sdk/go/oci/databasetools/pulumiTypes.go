@@ -1690,6 +1690,873 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 	}).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput)
 }
 
+type RuntimeDatabaseToolsConnectionCredentialRelatedResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier *string `pulumi:"identifier"`
+	// (Updatable) The type of credential.
+	Type *string `pulumi:"type"`
+}
+
+// RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput is an input type that accepts RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs and RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput` via:
+//
+//	RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{...}
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput
+	ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput
+}
+
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// (Updatable) The type of credential.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return i.ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput)
+}
+
+// RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput is an input type that accepts RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray and RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput` via:
+//
+//	RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray{ RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{...} }
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput
+	ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput
+}
+
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray []RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput
+
+func (RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return i.ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput)
+}
+
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionCredentialRelatedResource) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of credential.
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionCredentialRelatedResource) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ToRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) Index(i pulumi.IntInput) RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuntimeDatabaseToolsConnectionCredentialRelatedResource {
+		return vs[0].([]RuntimeDatabaseToolsConnectionCredentialRelatedResource)[vs[1].(int)]
+	}).(RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProvider struct {
+	// (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+	Configs map[string]string `pulumi:"configs"`
+	// (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+	Type string `pulumi:"type"`
+}
+
+// RuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput is an input type that accepts RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs and RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput` via:
+//
+//	RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{...}
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput
+	ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs struct {
+	// (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+	Configs pulumi.StringMapInput `pulumi:"configs"`
+	// (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return i.ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput)
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return i.ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput).ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(ctx)
+}
+
+// RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrInput is an input type that accepts RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs, RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtr and RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrInput` via:
+//
+//	        RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput
+	ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput
+}
+
+type runtimeDatabaseToolsConnectionPropertySetIdentityProviderPtrType RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs
+
+func RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtr(v *RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrInput {
+	return (*runtimeDatabaseToolsConnectionPropertySetIdentityProviderPtrType)(v)
+}
+
+func (*runtimeDatabaseToolsConnectionPropertySetIdentityProviderPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (i *runtimeDatabaseToolsConnectionPropertySetIdentityProviderPtrType) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return i.ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(context.Background())
+}
+
+func (i *runtimeDatabaseToolsConnectionPropertySetIdentityProviderPtrType) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return o.ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(context.Background())
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) *RuntimeDatabaseToolsConnectionPropertySetIdentityProvider {
+		return &v
+	}).(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput)
+}
+
+// (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) Configs() pulumi.StringMapOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) map[string]string { return v.Configs }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) ToRuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) Elem() RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) RuntimeDatabaseToolsConnectionPropertySetIdentityProvider {
+		if v != nil {
+			return *v
+		}
+		var ret RuntimeDatabaseToolsConnectionPropertySetIdentityProvider
+		return ret
+	}).(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput)
+}
+
+// (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) Configs() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Configs
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+func (o RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsConnectionPropertySetIdentityProvider) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck struct {
+	// Status indicating the outcome of the prerequisites check.
+	Status *string `pulumi:"status"`
+	// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+	StatusDetails []string `pulumi:"statusDetails"`
+}
+
+// RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput is an input type that accepts RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs and RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput` via:
+//
+//	RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{...}
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput
+	ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs struct {
+	// Status indicating the outcome of the prerequisites check.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+	StatusDetails pulumi.StringArrayInput `pulumi:"statusDetails"`
+}
+
+func (RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return i.ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput)
+}
+
+// RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput is an input type that accepts RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray and RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput` via:
+//
+//	RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray{ RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{...} }
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput
+	ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray []RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput
+
+func (RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return i.ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return o
+}
+
+// Status indicating the outcome of the prerequisites check.
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) StatusDetails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck) []string { return v.StatusDetails }).(pulumi.StringArrayOutput)
+}
+
+type RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ToRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(ctx context.Context) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) Index(i pulumi.IntInput) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck {
+		return vs[0].([]RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)[vs[1].(int)]
+	}).(RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle struct {
+	// (Updatable) Describes a certificate private key file to be used with SSL
+	CertificatePrivateKey *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey `pulumi:"certificatePrivateKey"`
+	// (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+	CertificatePublic *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic `pulumi:"certificatePublic"`
+	// (Updatable) The type of the certificate.
+	Type string `pulumi:"type"`
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput` via:
+//
+//	RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{...}
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs struct {
+	// (Updatable) Describes a certificate private key file to be used with SSL
+	CertificatePrivateKey RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput `pulumi:"certificatePrivateKey"`
+	// (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+	CertificatePublic RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput `pulumi:"certificatePublic"`
+	// (Updatable) The type of the certificate.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput)
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput).ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(ctx)
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtr and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrInput` via:
+//
+//	        RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput
+}
+
+type runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrType RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs
+
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtr(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrInput {
+	return (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrType)(v)
+}
+
+func (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(context.Background())
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return o.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(context.Background())
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle {
+		return &v
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput)
+}
+
+// (Updatable) Describes a certificate private key file to be used with SSL
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) CertificatePrivateKey() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		return v.CertificatePrivateKey
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput)
+}
+
+// (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) CertificatePublic() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		return v.CertificatePublic
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput)
+}
+
+// (Updatable) The type of the certificate.
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) Elem() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle {
+		if v != nil {
+			return *v
+		}
+		var ret RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle
+		return ret
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput)
+}
+
+// (Updatable) Describes a certificate private key file to be used with SSL
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) CertificatePrivateKey() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		if v == nil {
+			return nil
+		}
+		return v.CertificatePrivateKey
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput)
+}
+
+// (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) CertificatePublic() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		if v == nil {
+			return nil
+		}
+		return v.CertificatePublic
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput)
+}
+
+// (Updatable) The type of the certificate.
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey struct {
+	// (Updatable) The format of the file
+	Format *string `pulumi:"format"`
+	// (Updatable) The path to the file
+	Path *string `pulumi:"path"`
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput` via:
+//
+//	RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{...}
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs struct {
+	// (Updatable) The format of the file
+	Format pulumi.StringPtrInput `pulumi:"format"`
+	// (Updatable) The path to the file
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput)
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput).ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(ctx)
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtr and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput` via:
+//
+//	        RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput
+}
+
+type runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrType RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs
+
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtr(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput {
+	return (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrType)(v)
+}
+
+func (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(context.Background())
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		return &v
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput)
+}
+
+// (Updatable) The format of the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) *string {
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The path to the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) *string {
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) Elem() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		if v != nil {
+			return *v
+		}
+		var ret RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey
+		return ret
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput)
+}
+
+// (Updatable) The format of the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The path to the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic struct {
+	// (Updatable) The format of the file
+	Format *string `pulumi:"format"`
+	// (Updatable) The path to the file
+	Path *string `pulumi:"path"`
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput` via:
+//
+//	RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{...}
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs struct {
+	// (Updatable) The format of the file
+	Format pulumi.StringPtrInput `pulumi:"format"`
+	// (Updatable) The path to the file
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput)
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(context.Background())
+}
+
+func (i RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput).ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(ctx)
+}
+
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput is an input type that accepts RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs, RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtr and RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput values.
+// You can construct a concrete instance of `RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput` via:
+//
+//	        RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput interface {
+	pulumi.Input
+
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput
+	ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput
+}
+
+type runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrType RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs
+
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtr(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput {
+	return (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrType)(v)
+}
+
+func (*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return i.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(context.Background())
+}
+
+func (i *runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrType) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o.ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(context.Background())
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		return &v
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput)
+}
+
+// (Updatable) The format of the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) *string {
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The path to the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) *string {
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput struct{ *pulumi.OutputState }
+
+func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) ToRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutputWithContext(ctx context.Context) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput {
+	return o
+}
+
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) Elem() RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		if v != nil {
+			return *v
+		}
+		var ret RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic
+		return ret
+	}).(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput)
+}
+
+// (Updatable) The format of the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Format
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The path to the file
+func (o RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetDatabaseToolsConnectionKeyStore struct {
 	// The key store content.
 	KeyStoreContents []GetDatabaseToolsConnectionKeyStoreKeyStoreContent `pulumi:"keyStoreContents"`
@@ -6341,6 +7208,4169 @@ func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInp
 	}).(GetDatabaseToolsPrivateEndpointsFilterOutput)
 }
 
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection struct {
+	Items []GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray{ GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray []GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput) Items() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection) []GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem struct {
+	// The name of the credential
+	CredentialKey string `pulumi:"credentialKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// The name of the user to grant the EXECUTE privilege on the credential.
+	Key string `pulumi:"key"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs struct {
+	// The name of the credential
+	CredentialKey pulumi.StringInput `pulumi:"credentialKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// The name of the user to grant the EXECUTE privilege on the credential.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray{ GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray []GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput {
+	return o
+}
+
+// The name of the credential
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) CredentialKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem) string {
+		return v.CredentialKey
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The name of the user to grant the EXECUTE privilege on the credential.
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray and GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray{ GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray []GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection struct {
+	Items []GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray{ GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray []GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput) Items() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection) []GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem struct {
+	// The name of the credential
+	CredentialKey string `pulumi:"credentialKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// The name of the public synonym for the credential
+	Key string `pulumi:"key"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs struct {
+	// The name of the credential
+	CredentialKey pulumi.StringInput `pulumi:"credentialKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// The name of the public synonym for the credential
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray{ GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray []GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput {
+	return o
+}
+
+// The name of the credential
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) CredentialKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem) string {
+		return v.CredentialKey
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The name of the public synonym for the credential
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray and GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray{ GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray []GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+	// The related resource type.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs and GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The related resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray and GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray{ GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray []GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialRelatedResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The related resource type.
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialRelatedResource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialRelatedResource {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialRelatedResource)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection struct {
+	Items []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray{ GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput) Items() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection) []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+	Enabled string `pulumi:"enabled"`
+	// Name of the credential
+	Key string `pulumi:"key"`
+	// Indicates whether this refers to a public synonym or not.
+	KeyType string `pulumi:"keyType"`
+	// Owner of the credential
+	Owner    string `pulumi:"owner"`
+	Password string `pulumi:"password"`
+	// A related resource for a credential.
+	RelatedResources []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource `pulumi:"relatedResources"`
+	// The related resource type.
+	Type string `pulumi:"type"`
+	// Name of the user that will be used to log in to the remote database or the remote or local operating system
+	UserName string `pulumi:"userName"`
+	// For a Windows target, the Windows domain to use when logging in
+	WindowsDomain string `pulumi:"windowsDomain"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+	Enabled pulumi.StringInput `pulumi:"enabled"`
+	// Name of the credential
+	Key pulumi.StringInput `pulumi:"key"`
+	// Indicates whether this refers to a public synonym or not.
+	KeyType pulumi.StringInput `pulumi:"keyType"`
+	// Owner of the credential
+	Owner    pulumi.StringInput `pulumi:"owner"`
+	Password pulumi.StringInput `pulumi:"password"`
+	// A related resource for a credential.
+	RelatedResources GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
+	// The related resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Name of the user that will be used to log in to the remote database or the remote or local operating system
+	UserName pulumi.StringInput `pulumi:"userName"`
+	// For a Windows target, the Windows domain to use when logging in
+	WindowsDomain pulumi.StringInput `pulumi:"windowsDomain"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray{ GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) Enabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.Enabled }).(pulumi.StringOutput)
+}
+
+// Name of the credential
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Indicates whether this refers to a public synonym or not.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) KeyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.KeyType }).(pulumi.StringOutput)
+}
+
+// Owner of the credential
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// A related resource for a credential.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) RelatedResources() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource {
+		return v.RelatedResources
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput)
+}
+
+// The related resource type.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Name of the user that will be used to log in to the remote database or the remote or local operating system
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+// For a Windows target, the Windows domain to use when logging in
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput) WindowsDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem) string {
+		return v.WindowsDomain
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+	// The related resource type.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The related resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray and GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray{ GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray []GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// The related resource type.
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResource)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsFilterInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs and GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs{...}
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionCredentialsFilterArray and GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionCredentialsFilterArray{ GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs{...} }
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterArray []GetRuntimeDatabaseToolsConnectionCredentialsFilterInput
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionCredentialsFilterArray) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionCredentialsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionCredentialsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider struct {
+	// External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+	Configs map[string]string `pulumi:"configs"`
+	// External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput is an input type that accepts GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs and GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{...}
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput
+	ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs struct {
+	// External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+	Configs pulumi.StringMapInput `pulumi:"configs"`
+	// External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray and GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray{ GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{...} }
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray []GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return o
+}
+
+// External identity provider configuration parameters. Simple key-value pair Example: { "tenantId": "...", "applicationIdUri": "...", ... }
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) Configs() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider) map[string]string {
+		return v.Configs
+	}).(pulumi.StringMapOutput)
+}
+
+// External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionPropertySetIdentityProvider)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck struct {
+	// Status indicating the outcome of the prerequisites check.
+	Status string `pulumi:"status"`
+	// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+	StatusDetails []string `pulumi:"statusDetails"`
+}
+
+// GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput is an input type that accepts GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs and GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{...}
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput
+	ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs struct {
+	// Status indicating the outcome of the prerequisites check.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+	StatusDetails pulumi.StringArrayInput `pulumi:"statusDetails"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray and GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray{ GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{...} }
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray []GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return o
+}
+
+// Status indicating the outcome of the prerequisites check.
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput) StatusDetails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck) []string {
+		return v.StatusDetails
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput() GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) ToGetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+	// The related resource type.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs and GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs{...}
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The related resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray and GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray{ GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs{...} }
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray []GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceInput
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The related resource type.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResource)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsFilterInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs and GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs{...}
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray and GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray{ GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs{...} }
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray []GetRuntimeDatabaseToolsConnectionUserCredentialsFilterInput
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionUserCredentialsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionUserCredentialsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection struct {
+	Items []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs{...}
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray{ GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs{...} }
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionInput
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput) Items() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection) []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem struct {
+	// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+	Enabled string `pulumi:"enabled"`
+	// Name of the credential
+	Key string `pulumi:"key"`
+	// Indicates whether this refers to a public synonym or not.
+	KeyType string `pulumi:"keyType"`
+	// Owner of the credential
+	Owner string `pulumi:"owner"`
+	// A related resource for a credential.
+	RelatedResources []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource `pulumi:"relatedResources"`
+	// Name of the user that will be used to log in to the remote database or the remote or local operating system
+	UserName string `pulumi:"userName"`
+	// For a Windows target, the Windows domain to use when logging in
+	WindowsDomain string `pulumi:"windowsDomain"`
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs struct {
+	// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+	Enabled pulumi.StringInput `pulumi:"enabled"`
+	// Name of the credential
+	Key pulumi.StringInput `pulumi:"key"`
+	// Indicates whether this refers to a public synonym or not.
+	KeyType pulumi.StringInput `pulumi:"keyType"`
+	// Owner of the credential
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// A related resource for a credential.
+	RelatedResources GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
+	// Name of the user that will be used to log in to the remote database or the remote or local operating system
+	UserName pulumi.StringInput `pulumi:"userName"`
+	// For a Windows target, the Windows domain to use when logging in
+	WindowsDomain pulumi.StringInput `pulumi:"windowsDomain"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray{ GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemInput
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput {
+	return o
+}
+
+// Indicates whether this credential is enabled (TRUE) or not (FALSE)
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) Enabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.Enabled
+	}).(pulumi.StringOutput)
+}
+
+// Name of the credential
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether this refers to a public synonym or not.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) KeyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.KeyType
+	}).(pulumi.StringOutput)
+}
+
+// Owner of the credential
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.Owner
+	}).(pulumi.StringOutput)
+}
+
+// A related resource for a credential.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) RelatedResources() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource {
+		return v.RelatedResources
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput)
+}
+
+// Name of the user that will be used to log in to the remote database or the remote or local operating system
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+// For a Windows target, the Windows domain to use when logging in
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput) WindowsDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem) string {
+		return v.WindowsDomain
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+	// The related resource type.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs{...}
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The related resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput)
+}
+
+// GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayInput is an input type that accepts GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray and GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray{ GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs{...} }
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput
+	ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray []GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceInput
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+// The related resource type.
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput() GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput) ToGetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource {
+		return vs[0].([]GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResource)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection struct {
+	// List of database API gateway config setting descriptions to be provided as advanced properties.
+	Items []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs struct {
+	// List of database API gateway config setting descriptions to be provided as advanced properties.
+	Items GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput {
+	return o
+}
+
+// List of database API gateway config setting descriptions to be provided as advanced properties.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput) Items() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem struct {
+	// A user-friendly name of a category.
+	CategoryDisplayName string `pulumi:"categoryDisplayName"`
+	// The category of the Database Tools database API gateway config global setting.
+	CategoryKey string `pulumi:"categoryKey"`
+	// The config types that support this advanced property. The supported types are GLOBAL and POOL.
+	ConfigTypes []string `pulumi:"configTypes"`
+	// The data type of a database API gateway config setting.
+	DataType string `pulumi:"dataType"`
+	// The type of database (as determined by a type of Database Tools connection) to which this setting applies.  The advancedProperty applies to all types of Database Tools connection when null. This is only applicable when configTypes includes POOL.
+	DatabaseToolsConnectionTypes []string `pulumi:"databaseToolsConnectionTypes"`
+	// The default value (if applicable) of a database API gateway config setting.
+	DefaultValue string `pulumi:"defaultValue"`
+	// A user-friendly description of a database API gateway config setting.
+	Description string `pulumi:"description"`
+	// A user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Uniform resource locator (URL) of documentation related to this setting.
+	DocumentationUrl string `pulumi:"documentationUrl"`
+	// Hint text for a database API gateway config setting.
+	HintText string `pulumi:"hintText"`
+	// A string that uniquely identifies a Database Tools database API gateway config global settings resource.
+	Key string `pulumi:"key"`
+	// A list of string values (if applicable) supported by this database API gateway config setting.
+	ListOfValues []string `pulumi:"listOfValues"`
+	// A maximum numeric value (if applicable) of a database API gateway config setting.
+	MaxValue int `pulumi:"maxValue"`
+	// A minimum numeric value (if applicable) of a database API gateway config setting.
+	MinValue int `pulumi:"minValue"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs struct {
+	// A user-friendly name of a category.
+	CategoryDisplayName pulumi.StringInput `pulumi:"categoryDisplayName"`
+	// The category of the Database Tools database API gateway config global setting.
+	CategoryKey pulumi.StringInput `pulumi:"categoryKey"`
+	// The config types that support this advanced property. The supported types are GLOBAL and POOL.
+	ConfigTypes pulumi.StringArrayInput `pulumi:"configTypes"`
+	// The data type of a database API gateway config setting.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// The type of database (as determined by a type of Database Tools connection) to which this setting applies.  The advancedProperty applies to all types of Database Tools connection when null. This is only applicable when configTypes includes POOL.
+	DatabaseToolsConnectionTypes pulumi.StringArrayInput `pulumi:"databaseToolsConnectionTypes"`
+	// The default value (if applicable) of a database API gateway config setting.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// A user-friendly description of a database API gateway config setting.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Uniform resource locator (URL) of documentation related to this setting.
+	DocumentationUrl pulumi.StringInput `pulumi:"documentationUrl"`
+	// Hint text for a database API gateway config setting.
+	HintText pulumi.StringInput `pulumi:"hintText"`
+	// A string that uniquely identifies a Database Tools database API gateway config global settings resource.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A list of string values (if applicable) supported by this database API gateway config setting.
+	ListOfValues pulumi.StringArrayInput `pulumi:"listOfValues"`
+	// A maximum numeric value (if applicable) of a database API gateway config setting.
+	MaxValue pulumi.IntInput `pulumi:"maxValue"`
+	// A minimum numeric value (if applicable) of a database API gateway config setting.
+	MinValue pulumi.IntInput `pulumi:"minValue"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput {
+	return o
+}
+
+// A user-friendly name of a category.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) CategoryDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.CategoryDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The category of the Database Tools database API gateway config global setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) CategoryKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.CategoryKey
+	}).(pulumi.StringOutput)
+}
+
+// The config types that support this advanced property. The supported types are GLOBAL and POOL.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) ConfigTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) []string {
+		return v.ConfigTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The data type of a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.DataType
+	}).(pulumi.StringOutput)
+}
+
+// The type of database (as determined by a type of Database Tools connection) to which this setting applies.  The advancedProperty applies to all types of Database Tools connection when null. This is only applicable when configTypes includes POOL.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) DatabaseToolsConnectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) []string {
+		return v.DatabaseToolsConnectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The default value (if applicable) of a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.DefaultValue
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly description of a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Uniform resource locator (URL) of documentation related to this setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) DocumentationUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.DocumentationUrl
+	}).(pulumi.StringOutput)
+}
+
+// Hint text for a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) HintText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.HintText
+	}).(pulumi.StringOutput)
+}
+
+// A string that uniquely identifies a Database Tools database API gateway config global settings resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// A list of string values (if applicable) supported by this database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) ListOfValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) []string {
+		return v.ListOfValues
+	}).(pulumi.StringArrayOutput)
+}
+
+// A maximum numeric value (if applicable) of a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) MaxValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) int {
+		return v.MaxValue
+	}).(pulumi.IntOutput)
+}
+
+// A minimum numeric value (if applicable) of a database API gateway config setting.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput) MinValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem) int {
+		return v.MinValue
+	}).(pulumi.IntOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle struct {
+	// Describes a certificate private key file to be used with SSL
+	CertificatePrivateKeys []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey `pulumi:"certificatePrivateKeys"`
+	// Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+	CertificatePublics []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic `pulumi:"certificatePublics"`
+	// The type of the Database Tools database API gateway config global settings resource.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs struct {
+	// Describes a certificate private key file to be used with SSL
+	CertificatePrivateKeys GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayInput `pulumi:"certificatePrivateKeys"`
+	// Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+	CertificatePublics GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayInput `pulumi:"certificatePublics"`
+	// The type of the Database Tools database API gateway config global settings resource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return o
+}
+
+// Describes a certificate private key file to be used with SSL
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) CertificatePrivateKeys() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		return v.CertificatePrivateKeys
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput)
+}
+
+// Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) CertificatePublics() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		return v.CertificatePublics
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput)
+}
+
+// The type of the Database Tools database API gateway config global settings resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey struct {
+	// The format of the file
+	Format string `pulumi:"format"`
+	// The path to the file
+	Path string `pulumi:"path"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs struct {
+	// The format of the file
+	Format pulumi.StringInput `pulumi:"format"`
+	// The path to the file
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return o
+}
+
+// The format of the file
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) string {
+		return v.Format
+	}).(pulumi.StringOutput)
+}
+
+// The path to the file
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey) string {
+		return v.Path
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic struct {
+	// The format of the file
+	Format string `pulumi:"format"`
+	// The path to the file
+	Path string `pulumi:"path"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs struct {
+	// The format of the file
+	Format pulumi.StringInput `pulumi:"format"`
+	// The path to the file
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return o
+}
+
+// The format of the file
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) string {
+		return v.Format
+	}).(pulumi.StringOutput)
+}
+
+// The path to the file
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic) string {
+		return v.Path
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection struct {
+	Items []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput) Items() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem struct {
+	// The content of a string-escaped Open API spec in JSON format.
+	Content string `pulumi:"content"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId string `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	Id          string `pulumi:"id"`
+	// A system generated string that uniquely identifies an API spec sub resource within a given pool.
+	Key string `pulumi:"key"`
+	// The key of the pool config.
+	PoolKey string `pulumi:"poolKey"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config API spec sub resource.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs struct {
+	// The content of a string-escaped Open API spec in JSON format.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId pulumi.StringInput `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	Id          pulumi.StringInput `pulumi:"id"`
+	// A system generated string that uniquely identifies an API spec sub resource within a given pool.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The key of the pool config.
+	PoolKey pulumi.StringInput `pulumi:"poolKey"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config API spec sub resource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput {
+	return o
+}
+
+// The content of a string-escaped Open API spec in JSON format.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.Content
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) DatabaseToolsDatabaseApiGatewayConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.DatabaseToolsDatabaseApiGatewayConfigId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// A system generated string that uniquely identifies an API spec sub resource within a given pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The key of the pool config.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) PoolKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.PoolKey
+	}).(pulumi.StringOutput)
+}
+
+// The time the resource was created. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the resource was updated. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The type of the Database Tools database API gateway config API spec sub resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection struct {
+	Items []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput) Items() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem struct {
+	// Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
+	Alias string `pulumi:"alias"`
+	// The name of the database object.
+	DatabaseObjectName string `pulumi:"databaseObjectName"`
+	// The type of the database object.
+	DatabaseObjectType string `pulumi:"databaseObjectType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId string `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// Description of the autoApiSpec.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// A system generated string that uniquely identifies an auto API spec sub resource within a given pool.
+	Key string `pulumi:"key"`
+	// The operations to limit access to this resource. If not specified then the default is ["READ","WRITE"].
+	Operations []string `pulumi:"operations"`
+	// The key of the pool config.
+	PoolKey string `pulumi:"poolKey"`
+	// The name of the database API gateway config roles protecting the resource. Only valid for RBAC JWT Profile pools and BEARER securitySchemes.
+	Roles []string `pulumi:"roles"`
+	// The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
+	Scope string `pulumi:"scope"`
+	// The security schemes that can access this resource. If not specified then the resource is public.
+	SecuritySchemes []string `pulumi:"securitySchemes"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config auto API spec sub resource.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs struct {
+	// Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
+	Alias pulumi.StringInput `pulumi:"alias"`
+	// The name of the database object.
+	DatabaseObjectName pulumi.StringInput `pulumi:"databaseObjectName"`
+	// The type of the database object.
+	DatabaseObjectType pulumi.StringInput `pulumi:"databaseObjectType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId pulumi.StringInput `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// Description of the autoApiSpec.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A system generated string that uniquely identifies an auto API spec sub resource within a given pool.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The operations to limit access to this resource. If not specified then the default is ["READ","WRITE"].
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+	// The key of the pool config.
+	PoolKey pulumi.StringInput `pulumi:"poolKey"`
+	// The name of the database API gateway config roles protecting the resource. Only valid for RBAC JWT Profile pools and BEARER securitySchemes.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// The security schemes that can access this resource. If not specified then the resource is public.
+	SecuritySchemes pulumi.StringArrayInput `pulumi:"securitySchemes"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config auto API spec sub resource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput {
+	return o
+}
+
+// Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.Alias
+	}).(pulumi.StringOutput)
+}
+
+// The name of the database object.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) DatabaseObjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.DatabaseObjectName
+	}).(pulumi.StringOutput)
+}
+
+// The type of the database object.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) DatabaseObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.DatabaseObjectType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) DatabaseToolsDatabaseApiGatewayConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.DatabaseToolsDatabaseApiGatewayConfigId
+	}).(pulumi.StringOutput)
+}
+
+// Description of the autoApiSpec.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// A system generated string that uniquely identifies an auto API spec sub resource within a given pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The operations to limit access to this resource. If not specified then the default is ["READ","WRITE"].
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+// The key of the pool config.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) PoolKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.PoolKey
+	}).(pulumi.StringOutput)
+}
+
+// The name of the database API gateway config roles protecting the resource. Only valid for RBAC JWT Profile pools and BEARER securitySchemes.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) []string {
+		return v.Roles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.Scope
+	}).(pulumi.StringOutput)
+}
+
+// The security schemes that can access this resource. If not specified then the resource is public.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) SecuritySchemes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) []string {
+		return v.SecuritySchemes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The time the resource was created. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the resource was updated. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The type of the Database Tools database API gateway config auto API spec sub resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection struct {
+	Items []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem `pulumi:"items"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs struct {
+	Items GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput) Items() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection) []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem {
+		return v.Items
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollection)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem struct {
+	// Advanced pool properties.
+	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
+	// Specifies to enable the Database Actions feature.
+	DatabaseActionsStatus string `pulumi:"databaseActionsStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection. Specifies the Oracle Cloud Infrastructure database tools connection ocid to build the connection pool from.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId string `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Specifies the initial size for the number of database connections that will be created for the pool.
+	InitialPoolSize int `pulumi:"initialPoolSize"`
+	// Specifies the expected audience for the JWT token. This value is used to validate the aud claim in the JWT token.
+	JwtProfileAudience string `pulumi:"jwtProfileAudience"`
+	// Specifies the issuer of the JWT token. This value is used to validate the iss claim in the JWT token.
+	JwtProfileIssuer string `pulumi:"jwtProfileIssuer"`
+	// Specifies the URL of the JSON Web Key (JWK) that is used to verify the signature of the JWT token.
+	JwtProfileJwkUrl string `pulumi:"jwtProfileJwkUrl"`
+	// Specifies the JSON pointer to the claim in the JWT token that contains the roles of the users.
+	JwtProfileRoleClaimName string `pulumi:"jwtProfileRoleClaimName"`
+	// A system generated string that uniquely identifies a pool sub resource.
+	Key string `pulumi:"key"`
+	// Specifies the maximum number of database connections allowed for the pool.
+	MaxPoolSize int `pulumi:"maxPoolSize"`
+	// Specifies the minimum number of database connections allowed for the pool.
+	MinPoolSize int `pulumi:"minPoolSize"`
+	// The pool route value provided in requests to target this pool.
+	PoolRouteValue string `pulumi:"poolRouteValue"`
+	// Specifies whether the REST-Enabled SQL service is active.
+	RestEnabledSqlStatus string `pulumi:"restEnabledSqlStatus"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config pool sub resource.
+	Type string `pulumi:"type"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs struct {
+	// Advanced pool properties.
+	AdvancedProperties pulumi.StringMapInput `pulumi:"advancedProperties"`
+	// Specifies to enable the Database Actions feature.
+	DatabaseActionsStatus pulumi.StringInput `pulumi:"databaseActionsStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection. Specifies the Oracle Cloud Infrastructure database tools connection ocid to build the connection pool from.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+	DatabaseToolsDatabaseApiGatewayConfigId pulumi.StringInput `pulumi:"databaseToolsDatabaseApiGatewayConfigId"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Specifies the initial size for the number of database connections that will be created for the pool.
+	InitialPoolSize pulumi.IntInput `pulumi:"initialPoolSize"`
+	// Specifies the expected audience for the JWT token. This value is used to validate the aud claim in the JWT token.
+	JwtProfileAudience pulumi.StringInput `pulumi:"jwtProfileAudience"`
+	// Specifies the issuer of the JWT token. This value is used to validate the iss claim in the JWT token.
+	JwtProfileIssuer pulumi.StringInput `pulumi:"jwtProfileIssuer"`
+	// Specifies the URL of the JSON Web Key (JWK) that is used to verify the signature of the JWT token.
+	JwtProfileJwkUrl pulumi.StringInput `pulumi:"jwtProfileJwkUrl"`
+	// Specifies the JSON pointer to the claim in the JWT token that contains the roles of the users.
+	JwtProfileRoleClaimName pulumi.StringInput `pulumi:"jwtProfileRoleClaimName"`
+	// A system generated string that uniquely identifies a pool sub resource.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Specifies the maximum number of database connections allowed for the pool.
+	MaxPoolSize pulumi.IntInput `pulumi:"maxPoolSize"`
+	// Specifies the minimum number of database connections allowed for the pool.
+	MinPoolSize pulumi.IntInput `pulumi:"minPoolSize"`
+	// The pool route value provided in requests to target this pool.
+	PoolRouteValue pulumi.StringInput `pulumi:"poolRouteValue"`
+	// Specifies whether the REST-Enabled SQL service is active.
+	RestEnabledSqlStatus pulumi.StringInput `pulumi:"restEnabledSqlStatus"`
+	// The time the resource was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the Database Tools database API gateway config pool sub resource.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput {
+	return o
+}
+
+// Advanced pool properties.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) AdvancedProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) map[string]string {
+		return v.AdvancedProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Specifies to enable the Database Actions feature.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) DatabaseActionsStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.DatabaseActionsStatus
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection. Specifies the Oracle Cloud Infrastructure database tools connection ocid to build the connection pool from.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) DatabaseToolsDatabaseApiGatewayConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.DatabaseToolsDatabaseApiGatewayConfigId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the initial size for the number of database connections that will be created for the pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) InitialPoolSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) int {
+		return v.InitialPoolSize
+	}).(pulumi.IntOutput)
+}
+
+// Specifies the expected audience for the JWT token. This value is used to validate the aud claim in the JWT token.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) JwtProfileAudience() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.JwtProfileAudience
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the issuer of the JWT token. This value is used to validate the iss claim in the JWT token.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) JwtProfileIssuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.JwtProfileIssuer
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the URL of the JSON Web Key (JWK) that is used to verify the signature of the JWT token.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) JwtProfileJwkUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.JwtProfileJwkUrl
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the JSON pointer to the claim in the JWT token that contains the roles of the users.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) JwtProfileRoleClaimName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.JwtProfileRoleClaimName
+	}).(pulumi.StringOutput)
+}
+
+// A system generated string that uniquely identifies a pool sub resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the maximum number of database connections allowed for the pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) MaxPoolSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) int {
+		return v.MaxPoolSize
+	}).(pulumi.IntOutput)
+}
+
+// Specifies the minimum number of database connections allowed for the pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) MinPoolSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) int {
+		return v.MinPoolSize
+	}).(pulumi.IntOutput)
+}
+
+// The pool route value provided in requests to target this pool.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) PoolRouteValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.PoolRouteValue
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether the REST-Enabled SQL service is active.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) RestEnabledSqlStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.RestEnabledSqlStatus
+	}).(pulumi.StringOutput)
+}
+
+// The time the resource was created. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the resource was updated. An RFC3339 formatted datetime string.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The type of the Database Tools database API gateway config pool sub resource.
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItem)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs{...}
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput)
+}
+
+// GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayInput is an input type that accepts GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray and GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayInput` via:
+//
+//	GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray{ GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs{...} }
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput
+	ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutputWithContext(context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray []GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterInput
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter)(nil)).Elem()
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput {
+	return i.ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter)(nil)).Elem()
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput() GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput) ToGetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutputWithContext(ctx context.Context) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter {
+		return vs[0].([]GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilter)[vs[1].(int)]
+	}).(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionKeyStoreInput)(nil)).Elem(), DatabaseToolsConnectionKeyStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionKeyStoreArrayInput)(nil)).Elem(), DatabaseToolsConnectionKeyStoreArray{})
@@ -6366,6 +11396,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrInput)(nil)).Elem(), RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreKeyStoreContentInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs{})
@@ -6438,6 +11480,72 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsFilterInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArray{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreKeyStoreContentOutput{})
@@ -6462,6 +11570,18 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderPtrOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundlePtrOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyPtrOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput{})
+	pulumi.RegisterOutputType(RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicPtrOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput{})
@@ -6534,4 +11654,70 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArrayOutput{})
 }

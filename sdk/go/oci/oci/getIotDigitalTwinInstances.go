@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetIotDigitalTwinInstances(ctx, &oci.GetIotDigitalTwinInstancesArgs{
 //				IotDomainId:             testIotDomain.Id,
+//				ConnectivityType:        pulumi.StringRef(digitalTwinInstanceConnectivityType),
 //				DigitalTwinModelId:      pulumi.StringRef(testDigitalTwinModel.Id),
 //				DigitalTwinModelSpecUri: pulumi.StringRef(digitalTwinInstanceDigitalTwinModelSpecUri),
 //				DisplayName:             pulumi.StringRef(digitalTwinInstanceDisplayName),
@@ -57,6 +58,8 @@ func GetIotDigitalTwinInstances(ctx *pulumi.Context, args *GetIotDigitalTwinInst
 
 // A collection of arguments for invoking getIotDigitalTwinInstances.
 type GetIotDigitalTwinInstancesArgs struct {
+	// Filter resources whose connectivityType matches the specified value.
+	ConnectivityType *string `pulumi:"connectivityType"`
 	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId *string `pulumi:"digitalTwinModelId"`
 	// Filter resources that match the specified URI (DTMI) of the digital twin model.
@@ -74,6 +77,8 @@ type GetIotDigitalTwinInstancesArgs struct {
 
 // A collection of values returned by getIotDigitalTwinInstances.
 type GetIotDigitalTwinInstancesResult struct {
+	// Connectivity type of the digital twin instance
+	ConnectivityType *string `pulumi:"connectivityType"`
 	// The list of digital_twin_instance_collection.
 	DigitalTwinInstanceCollections []GetIotDigitalTwinInstancesDigitalTwinInstanceCollection `pulumi:"digitalTwinInstanceCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
@@ -102,6 +107,8 @@ func GetIotDigitalTwinInstancesOutput(ctx *pulumi.Context, args GetIotDigitalTwi
 
 // A collection of arguments for invoking getIotDigitalTwinInstances.
 type GetIotDigitalTwinInstancesOutputArgs struct {
+	// Filter resources whose connectivityType matches the specified value.
+	ConnectivityType pulumi.StringPtrInput `pulumi:"connectivityType"`
 	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId pulumi.StringPtrInput `pulumi:"digitalTwinModelId"`
 	// Filter resources that match the specified URI (DTMI) of the digital twin model.
@@ -134,6 +141,11 @@ func (o GetIotDigitalTwinInstancesResultOutput) ToGetIotDigitalTwinInstancesResu
 
 func (o GetIotDigitalTwinInstancesResultOutput) ToGetIotDigitalTwinInstancesResultOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesResultOutput {
 	return o
+}
+
+// Connectivity type of the digital twin instance
+func (o GetIotDigitalTwinInstancesResultOutput) ConnectivityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesResult) *string { return v.ConnectivityType }).(pulumi.StringPtrOutput)
 }
 
 // The list of digital_twin_instance_collection.

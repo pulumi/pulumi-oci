@@ -65,6 +65,8 @@ import javax.annotation.Nullable;
  *             .inboundEnvelope(IotDigitalTwinAdapterInboundEnvelopeArgs.builder()
  *                 .referenceEndpoint(digitalTwinAdapterInboundEnvelopeReferenceEndpoint)
  *                 .envelopeMapping(IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs.builder()
+ *                     .contentRoot(digitalTwinAdapterInboundEnvelopeEnvelopeMappingContentRoot)
+ *                     .target(digitalTwinAdapterInboundEnvelopeEnvelopeMappingTarget)
  *                     .timeObserved(digitalTwinAdapterInboundEnvelopeEnvelopeMappingTimeObserved)
  *                     .build())
  *                 .referencePayload(IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs.builder()

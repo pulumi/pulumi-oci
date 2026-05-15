@@ -28,6 +28,12 @@ __all__ = [
     'DatabaseToolsPrivateEndpointLock',
     'DatabaseToolsPrivateEndpointReverseConnectionConfiguration',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp',
+    'RuntimeDatabaseToolsConnectionCredentialRelatedResource',
+    'RuntimeDatabaseToolsConnectionPropertySetIdentityProvider',
+    'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic',
     'GetDatabaseToolsConnectionKeyStoreResult',
     'GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult',
     'GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult',
@@ -64,6 +70,39 @@ __all__ = [
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult',
     'GetDatabaseToolsPrivateEndpointsFilterResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceResult',
+    'GetRuntimeDatabaseToolsConnectionCredentialsFilterResult',
+    'GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderResult',
+    'GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckResult',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceResult',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterResult',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionResult',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemResult',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemResult',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterResult',
 ]
 
 @pulumi.output_type
@@ -744,6 +783,238 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
         The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         """
         return pulumi.get(self, "source_ip")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsConnectionCredentialRelatedResource(dict):
+    def __init__(__self__, *,
+                 identifier: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param _builtins.str type: (Updatable) The type of credential.
+        """
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The type of credential.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsConnectionPropertySetIdentityProvider(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 configs: Optional[Mapping[str, _builtins.str]] = None):
+        """
+        :param _builtins.str type: (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        :param Mapping[str, _builtins.str] configs: (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        """
+        pulumi.set(__self__, "type", type)
+        if configs is not None:
+            pulumi.set(__self__, "configs", configs)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        """
+        return pulumi.get(self, "configs")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "statusDetails":
+            suggest = "status_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 status: Optional[_builtins.str] = None,
+                 status_details: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str status: Status indicating the outcome of the prerequisites check.
+        :param Sequence[_builtins.str] status_details: Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_details is not None:
+            pulumi.set(__self__, "status_details", status_details)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        Status indicating the outcome of the prerequisites check.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        return pulumi.get(self, "status_details")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificatePrivateKey":
+            suggest = "certificate_private_key"
+        elif key == "certificatePublic":
+            suggest = "certificate_public"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 certificate_private_key: Optional['outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey'] = None,
+                 certificate_public: Optional['outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic'] = None):
+        """
+        :param _builtins.str type: (Updatable) The type of the certificate.
+        :param 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs' certificate_private_key: (Updatable) Describes a certificate private key file to be used with SSL
+        :param 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs' certificate_public: (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        """
+        pulumi.set(__self__, "type", type)
+        if certificate_private_key is not None:
+            pulumi.set(__self__, "certificate_private_key", certificate_private_key)
+        if certificate_public is not None:
+            pulumi.set(__self__, "certificate_public", certificate_public)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) The type of the certificate.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePrivateKey")
+    def certificate_private_key(self) -> Optional['outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey']:
+        """
+        (Updatable) Describes a certificate private key file to be used with SSL
+        """
+        return pulumi.get(self, "certificate_private_key")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePublic")
+    def certificate_public(self) -> Optional['outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic']:
+        """
+        (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        """
+        return pulumi.get(self, "certificate_public")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKey(dict):
+    def __init__(__self__, *,
+                 format: Optional[_builtins.str] = None,
+                 path: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str format: (Updatable) The format of the file
+        :param _builtins.str path: (Updatable) The path to the file
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The path to the file
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublic(dict):
+    def __init__(__self__, *,
+                 format: Optional[_builtins.str] = None,
+                 path: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str format: (Updatable) The format of the file
+        :param _builtins.str path: (Updatable) The path to the file
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The path to the file
+        """
+        return pulumi.get(self, "path")
 
 
 @pulumi.output_type
@@ -2553,6 +2824,1513 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
 
 @pulumi.output_type
 class GetDatabaseToolsPrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 credential_key: _builtins.str,
+                 database_tools_connection_id: _builtins.str,
+                 key: _builtins.str):
+        """
+        :param _builtins.str credential_key: The name of the credential
+        :param _builtins.str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        :param _builtins.str key: The name of the user to grant the EXECUTE privilege on the credential.
+        """
+        pulumi.set(__self__, "credential_key", credential_key)
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialKey")
+    def credential_key(self) -> _builtins.str:
+        """
+        The name of the credential
+        """
+        return pulumi.get(self, "credential_key")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The name of the user to grant the EXECUTE privilege on the credential.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsCredentialPublicSynonymCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 credential_key: _builtins.str,
+                 database_tools_connection_id: _builtins.str,
+                 key: _builtins.str):
+        """
+        :param _builtins.str credential_key: The name of the credential
+        :param _builtins.str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        :param _builtins.str key: The name of the public synonym for the credential
+        """
+        pulumi.set(__self__, "credential_key", credential_key)
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialKey")
+    def credential_key(self) -> _builtins.str:
+        """
+        The name of the credential
+        """
+        return pulumi.get(self, "credential_key")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The name of the public synonym for the credential
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 identifier: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param _builtins.str type: The related resource type.
+        """
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The related resource type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 database_tools_connection_id: _builtins.str,
+                 enabled: _builtins.str,
+                 key: _builtins.str,
+                 key_type: _builtins.str,
+                 owner: _builtins.str,
+                 password: _builtins.str,
+                 related_resources: Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceResult'],
+                 type: _builtins.str,
+                 user_name: _builtins.str,
+                 windows_domain: _builtins.str):
+        """
+        :param _builtins.str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        :param _builtins.str enabled: Indicates whether this credential is enabled (TRUE) or not (FALSE)
+        :param _builtins.str key: Name of the credential
+        :param _builtins.str key_type: Indicates whether this refers to a public synonym or not.
+        :param _builtins.str owner: Owner of the credential
+        :param Sequence['GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceArgs'] related_resources: A related resource for a credential.
+        :param _builtins.str type: The related resource type.
+        :param _builtins.str user_name: Name of the user that will be used to log in to the remote database or the remote or local operating system
+        :param _builtins.str windows_domain: For a Windows target, the Windows domain to use when logging in
+        """
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "related_resources", related_resources)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "windows_domain", windows_domain)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def enabled(self) -> _builtins.str:
+        """
+        Indicates whether this credential is enabled (TRUE) or not (FALSE)
+        """
+        return pulumi.get(self, "enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the credential
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> _builtins.str:
+        """
+        Indicates whether this refers to a public synonym or not.
+        """
+        return pulumi.get(self, "key_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        """
+        Owner of the credential
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResources")
+    def related_resources(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceResult']:
+        """
+        A related resource for a credential.
+        """
+        return pulumi.get(self, "related_resources")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The related resource type.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        Name of the user that will be used to log in to the remote database or the remote or local operating system
+        """
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="windowsDomain")
+    def windows_domain(self) -> _builtins.str:
+        """
+        For a Windows target, the Windows domain to use when logging in
+        """
+        return pulumi.get(self, "windows_domain")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialsCredentialCollectionItemRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 identifier: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param _builtins.str type: The related resource type.
+        """
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The related resource type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionCredentialsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionPropertySetIdentityProviderResult(dict):
+    def __init__(__self__, *,
+                 configs: Mapping[str, _builtins.str],
+                 type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] configs: External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        :param _builtins.str type: External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        """
+        pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Mapping[str, _builtins.str]:
+        """
+        External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        """
+        return pulumi.get(self, "configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckResult(dict):
+    def __init__(__self__, *,
+                 status: _builtins.str,
+                 status_details: Sequence[_builtins.str]):
+        """
+        :param _builtins.str status: Status indicating the outcome of the prerequisites check.
+        :param Sequence[_builtins.str] status_details: Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "status_details", status_details)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status indicating the outcome of the prerequisites check.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> Sequence[_builtins.str]:
+        """
+        Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        return pulumi.get(self, "status_details")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 identifier: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param _builtins.str type: The related resource type.
+        """
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The related resource type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 enabled: _builtins.str,
+                 key: _builtins.str,
+                 key_type: _builtins.str,
+                 owner: _builtins.str,
+                 related_resources: Sequence['outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceResult'],
+                 user_name: _builtins.str,
+                 windows_domain: _builtins.str):
+        """
+        :param _builtins.str enabled: Indicates whether this credential is enabled (TRUE) or not (FALSE)
+        :param _builtins.str key: Name of the credential
+        :param _builtins.str key_type: Indicates whether this refers to a public synonym or not.
+        :param _builtins.str owner: Owner of the credential
+        :param Sequence['GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceArgs'] related_resources: A related resource for a credential.
+        :param _builtins.str user_name: Name of the user that will be used to log in to the remote database or the remote or local operating system
+        :param _builtins.str windows_domain: For a Windows target, the Windows domain to use when logging in
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "related_resources", related_resources)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "windows_domain", windows_domain)
+
+    @_builtins.property
+    @pulumi.getter
+    def enabled(self) -> _builtins.str:
+        """
+        Indicates whether this credential is enabled (TRUE) or not (FALSE)
+        """
+        return pulumi.get(self, "enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Name of the credential
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> _builtins.str:
+        """
+        Indicates whether this refers to a public synonym or not.
+        """
+        return pulumi.get(self, "key_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        """
+        Owner of the credential
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResources")
+    def related_resources(self) -> Sequence['outputs.GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceResult']:
+        """
+        A related resource for a credential.
+        """
+        return pulumi.get(self, "related_resources")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        Name of the user that will be used to log in to the remote database or the remote or local operating system
+        """
+        return pulumi.get(self, "user_name")
+
+    @_builtins.property
+    @pulumi.getter(name="windowsDomain")
+    def windows_domain(self) -> _builtins.str:
+        """
+        For a Windows target, the Windows domain to use when logging in
+        """
+        return pulumi.get(self, "windows_domain")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialsUserCredentialCollectionItemRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 identifier: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param _builtins.str type: The related resource type.
+        """
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The related resource type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemResult']):
+        """
+        :param Sequence['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemArgs'] items: List of database API gateway config setting descriptions to be provided as advanced properties.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemResult']:
+        """
+        List of database API gateway config setting descriptions to be provided as advanced properties.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category_display_name: _builtins.str,
+                 category_key: _builtins.str,
+                 config_types: Sequence[_builtins.str],
+                 data_type: _builtins.str,
+                 database_tools_connection_types: Sequence[_builtins.str],
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 documentation_url: _builtins.str,
+                 hint_text: _builtins.str,
+                 key: _builtins.str,
+                 list_of_values: Sequence[_builtins.str],
+                 max_value: _builtins.int,
+                 min_value: _builtins.int):
+        """
+        :param _builtins.str category_display_name: A user-friendly name of a category.
+        :param _builtins.str category_key: The category of the Database Tools database API gateway config global setting.
+        :param Sequence[_builtins.str] config_types: The config types that support this advanced property. The supported types are GLOBAL and POOL.
+        :param _builtins.str data_type: The data type of a database API gateway config setting.
+        :param Sequence[_builtins.str] database_tools_connection_types: The type of database (as determined by a type of Database Tools connection) to which this setting applies.  The advancedProperty applies to all types of Database Tools connection when null. This is only applicable when configTypes includes POOL.
+        :param _builtins.str default_value: The default value (if applicable) of a database API gateway config setting.
+        :param _builtins.str description: A user-friendly description of a database API gateway config setting.
+        :param _builtins.str display_name: A user-friendly name.
+        :param _builtins.str documentation_url: Uniform resource locator (URL) of documentation related to this setting.
+        :param _builtins.str hint_text: Hint text for a database API gateway config setting.
+        :param _builtins.str key: A string that uniquely identifies a Database Tools database API gateway config global settings resource.
+        :param Sequence[_builtins.str] list_of_values: A list of string values (if applicable) supported by this database API gateway config setting.
+        :param _builtins.int max_value: A maximum numeric value (if applicable) of a database API gateway config setting.
+        :param _builtins.int min_value: A minimum numeric value (if applicable) of a database API gateway config setting.
+        """
+        pulumi.set(__self__, "category_display_name", category_display_name)
+        pulumi.set(__self__, "category_key", category_key)
+        pulumi.set(__self__, "config_types", config_types)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "database_tools_connection_types", database_tools_connection_types)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "documentation_url", documentation_url)
+        pulumi.set(__self__, "hint_text", hint_text)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "list_of_values", list_of_values)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_value", min_value)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryDisplayName")
+    def category_display_name(self) -> _builtins.str:
+        """
+        A user-friendly name of a category.
+        """
+        return pulumi.get(self, "category_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="categoryKey")
+    def category_key(self) -> _builtins.str:
+        """
+        The category of the Database Tools database API gateway config global setting.
+        """
+        return pulumi.get(self, "category_key")
+
+    @_builtins.property
+    @pulumi.getter(name="configTypes")
+    def config_types(self) -> Sequence[_builtins.str]:
+        """
+        The config types that support this advanced property. The supported types are GLOBAL and POOL.
+        """
+        return pulumi.get(self, "config_types")
+
+    @_builtins.property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> _builtins.str:
+        """
+        The data type of a database API gateway config setting.
+        """
+        return pulumi.get(self, "data_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionTypes")
+    def database_tools_connection_types(self) -> Sequence[_builtins.str]:
+        """
+        The type of database (as determined by a type of Database Tools connection) to which this setting applies.  The advancedProperty applies to all types of Database Tools connection when null. This is only applicable when configTypes includes POOL.
+        """
+        return pulumi.get(self, "database_tools_connection_types")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value (if applicable) of a database API gateway config setting.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A user-friendly description of a database API gateway config setting.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="documentationUrl")
+    def documentation_url(self) -> _builtins.str:
+        """
+        Uniform resource locator (URL) of documentation related to this setting.
+        """
+        return pulumi.get(self, "documentation_url")
+
+    @_builtins.property
+    @pulumi.getter(name="hintText")
+    def hint_text(self) -> _builtins.str:
+        """
+        Hint text for a database API gateway config setting.
+        """
+        return pulumi.get(self, "hint_text")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        A string that uniquely identifies a Database Tools database API gateway config global settings resource.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="listOfValues")
+    def list_of_values(self) -> Sequence[_builtins.str]:
+        """
+        A list of string values (if applicable) supported by this database API gateway config setting.
+        """
+        return pulumi.get(self, "list_of_values")
+
+    @_builtins.property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> _builtins.int:
+        """
+        A maximum numeric value (if applicable) of a database API gateway config setting.
+        """
+        return pulumi.get(self, "max_value")
+
+    @_builtins.property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> _builtins.int:
+        """
+        A minimum numeric value (if applicable) of a database API gateway config setting.
+        """
+        return pulumi.get(self, "min_value")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleResult(dict):
+    def __init__(__self__, *,
+                 certificate_private_keys: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyResult'],
+                 certificate_publics: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicResult'],
+                 type: _builtins.str):
+        """
+        :param Sequence['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs'] certificate_private_keys: Describes a certificate private key file to be used with SSL
+        :param Sequence['GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs'] certificate_publics: Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        :param _builtins.str type: The type of the Database Tools database API gateway config global settings resource.
+        """
+        pulumi.set(__self__, "certificate_private_keys", certificate_private_keys)
+        pulumi.set(__self__, "certificate_publics", certificate_publics)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePrivateKeys")
+    def certificate_private_keys(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyResult']:
+        """
+        Describes a certificate private key file to be used with SSL
+        """
+        return pulumi.get(self, "certificate_private_keys")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePublics")
+    def certificate_publics(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicResult']:
+        """
+        Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        """
+        return pulumi.get(self, "certificate_publics")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the Database Tools database API gateway config global settings resource.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyResult(dict):
+    def __init__(__self__, *,
+                 format: _builtins.str,
+                 path: _builtins.str):
+        """
+        :param _builtins.str format: The format of the file
+        :param _builtins.str path: The path to the file
+        """
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> _builtins.str:
+        """
+        The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        The path to the file
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicResult(dict):
+    def __init__(__self__, *,
+                 format: _builtins.str,
+                 path: _builtins.str):
+        """
+        :param _builtins.str format: The format of the file
+        :param _builtins.str path: The path to the file
+        """
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> _builtins.str:
+        """
+        The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        The path to the file
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 content: _builtins.str,
+                 database_tools_database_api_gateway_config_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 key: _builtins.str,
+                 pool_key: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str content: The content of a string-escaped Open API spec in JSON format.
+        :param _builtins.str database_tools_database_api_gateway_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.str key: A system generated string that uniquely identifies an API spec sub resource within a given pool.
+        :param _builtins.str pool_key: The key of the pool config.
+        :param _builtins.str time_created: The time the resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The type of the Database Tools database API gateway config API spec sub resource.
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "database_tools_database_api_gateway_config_id", database_tools_database_api_gateway_config_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "pool_key", pool_key)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> _builtins.str:
+        """
+        The content of a string-escaped Open API spec in JSON format.
+        """
+        return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsDatabaseApiGatewayConfigId")
+    def database_tools_database_api_gateway_config_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        """
+        return pulumi.get(self, "database_tools_database_api_gateway_config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        A system generated string that uniquely identifies an API spec sub resource within a given pool.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="poolKey")
+    def pool_key(self) -> _builtins.str:
+        """
+        The key of the pool config.
+        """
+        return pulumi.get(self, "pool_key")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the resource was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the Database Tools database API gateway config API spec sub resource.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 alias: _builtins.str,
+                 database_object_name: _builtins.str,
+                 database_object_type: _builtins.str,
+                 database_tools_database_api_gateway_config_id: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 key: _builtins.str,
+                 operations: Sequence[_builtins.str],
+                 pool_key: _builtins.str,
+                 roles: Sequence[_builtins.str],
+                 scope: _builtins.str,
+                 security_schemes: Sequence[_builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str alias: Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
+        :param _builtins.str database_object_name: The name of the database object.
+        :param _builtins.str database_object_type: The type of the database object.
+        :param _builtins.str database_tools_database_api_gateway_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        :param _builtins.str description: Description of the autoApiSpec.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.str key: A system generated string that uniquely identifies an auto API spec sub resource within a given pool.
+        :param Sequence[_builtins.str] operations: The operations to limit access to this resource. If not specified then the default is ["READ","WRITE"].
+        :param _builtins.str pool_key: The key of the pool config.
+        :param Sequence[_builtins.str] roles: The name of the database API gateway config roles protecting the resource. Only valid for RBAC JWT Profile pools and BEARER securitySchemes.
+        :param _builtins.str scope: The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
+        :param Sequence[_builtins.str] security_schemes: The security schemes that can access this resource. If not specified then the resource is public.
+        :param _builtins.str time_created: The time the resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The type of the Database Tools database API gateway config auto API spec sub resource.
+        """
+        pulumi.set(__self__, "alias", alias)
+        pulumi.set(__self__, "database_object_name", database_object_name)
+        pulumi.set(__self__, "database_object_type", database_object_type)
+        pulumi.set(__self__, "database_tools_database_api_gateway_config_id", database_tools_database_api_gateway_config_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operations", operations)
+        pulumi.set(__self__, "pool_key", pool_key)
+        pulumi.set(__self__, "roles", roles)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "security_schemes", security_schemes)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> _builtins.str:
+        """
+        Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
+        """
+        return pulumi.get(self, "alias")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseObjectName")
+    def database_object_name(self) -> _builtins.str:
+        """
+        The name of the database object.
+        """
+        return pulumi.get(self, "database_object_name")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseObjectType")
+    def database_object_type(self) -> _builtins.str:
+        """
+        The type of the database object.
+        """
+        return pulumi.get(self, "database_object_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsDatabaseApiGatewayConfigId")
+    def database_tools_database_api_gateway_config_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        """
+        return pulumi.get(self, "database_tools_database_api_gateway_config_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the autoApiSpec.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        A system generated string that uniquely identifies an auto API spec sub resource within a given pool.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def operations(self) -> Sequence[_builtins.str]:
+        """
+        The operations to limit access to this resource. If not specified then the default is ["READ","WRITE"].
+        """
+        return pulumi.get(self, "operations")
+
+    @_builtins.property
+    @pulumi.getter(name="poolKey")
+    def pool_key(self) -> _builtins.str:
+        """
+        The key of the pool config.
+        """
+        return pulumi.get(self, "pool_key")
+
+    @_builtins.property
+    @pulumi.getter
+    def roles(self) -> Sequence[_builtins.str]:
+        """
+        The name of the database API gateway config roles protecting the resource. Only valid for RBAC JWT Profile pools and BEARER securitySchemes.
+        """
+        return pulumi.get(self, "roles")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="securitySchemes")
+    def security_schemes(self) -> Sequence[_builtins.str]:
+        """
+        The security schemes that can access this resource. If not specified then the resource is public.
+        """
+        return pulumi.get(self, "security_schemes")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the resource was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the Database Tools database API gateway config auto API spec sub resource.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsDatabaseToolsDatabaseApiGatewayConfigPoolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 advanced_properties: Mapping[str, _builtins.str],
+                 database_actions_status: _builtins.str,
+                 database_tools_connection_id: _builtins.str,
+                 database_tools_database_api_gateway_config_id: _builtins.str,
+                 display_name: _builtins.str,
+                 initial_pool_size: _builtins.int,
+                 jwt_profile_audience: _builtins.str,
+                 jwt_profile_issuer: _builtins.str,
+                 jwt_profile_jwk_url: _builtins.str,
+                 jwt_profile_role_claim_name: _builtins.str,
+                 key: _builtins.str,
+                 max_pool_size: _builtins.int,
+                 min_pool_size: _builtins.int,
+                 pool_route_value: _builtins.str,
+                 rest_enabled_sql_status: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] advanced_properties: Advanced pool properties.
+        :param _builtins.str database_actions_status: Specifies to enable the Database Actions feature.
+        :param _builtins.str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection. Specifies the Oracle Cloud Infrastructure database tools connection ocid to build the connection pool from.
+        :param _builtins.str database_tools_database_api_gateway_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.int initial_pool_size: Specifies the initial size for the number of database connections that will be created for the pool.
+        :param _builtins.str jwt_profile_audience: Specifies the expected audience for the JWT token. This value is used to validate the aud claim in the JWT token.
+        :param _builtins.str jwt_profile_issuer: Specifies the issuer of the JWT token. This value is used to validate the iss claim in the JWT token.
+        :param _builtins.str jwt_profile_jwk_url: Specifies the URL of the JSON Web Key (JWK) that is used to verify the signature of the JWT token.
+        :param _builtins.str jwt_profile_role_claim_name: Specifies the JSON pointer to the claim in the JWT token that contains the roles of the users.
+        :param _builtins.str key: A system generated string that uniquely identifies a pool sub resource.
+        :param _builtins.int max_pool_size: Specifies the maximum number of database connections allowed for the pool.
+        :param _builtins.int min_pool_size: Specifies the minimum number of database connections allowed for the pool.
+        :param _builtins.str pool_route_value: The pool route value provided in requests to target this pool.
+        :param _builtins.str rest_enabled_sql_status: Specifies whether the REST-Enabled SQL service is active.
+        :param _builtins.str time_created: The time the resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The type of the Database Tools database API gateway config pool sub resource.
+        """
+        pulumi.set(__self__, "advanced_properties", advanced_properties)
+        pulumi.set(__self__, "database_actions_status", database_actions_status)
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "database_tools_database_api_gateway_config_id", database_tools_database_api_gateway_config_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "initial_pool_size", initial_pool_size)
+        pulumi.set(__self__, "jwt_profile_audience", jwt_profile_audience)
+        pulumi.set(__self__, "jwt_profile_issuer", jwt_profile_issuer)
+        pulumi.set(__self__, "jwt_profile_jwk_url", jwt_profile_jwk_url)
+        pulumi.set(__self__, "jwt_profile_role_claim_name", jwt_profile_role_claim_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "max_pool_size", max_pool_size)
+        pulumi.set(__self__, "min_pool_size", min_pool_size)
+        pulumi.set(__self__, "pool_route_value", pool_route_value)
+        pulumi.set(__self__, "rest_enabled_sql_status", rest_enabled_sql_status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="advancedProperties")
+    def advanced_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Advanced pool properties.
+        """
+        return pulumi.get(self, "advanced_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseActionsStatus")
+    def database_actions_status(self) -> _builtins.str:
+        """
+        Specifies to enable the Database Actions feature.
+        """
+        return pulumi.get(self, "database_actions_status")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Database Tools connection. Specifies the Oracle Cloud Infrastructure database tools connection ocid to build the connection pool from.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsDatabaseApiGatewayConfigId")
+    def database_tools_database_api_gateway_config_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools database API gateway config.
+        """
+        return pulumi.get(self, "database_tools_database_api_gateway_config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="initialPoolSize")
+    def initial_pool_size(self) -> _builtins.int:
+        """
+        Specifies the initial size for the number of database connections that will be created for the pool.
+        """
+        return pulumi.get(self, "initial_pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="jwtProfileAudience")
+    def jwt_profile_audience(self) -> _builtins.str:
+        """
+        Specifies the expected audience for the JWT token. This value is used to validate the aud claim in the JWT token.
+        """
+        return pulumi.get(self, "jwt_profile_audience")
+
+    @_builtins.property
+    @pulumi.getter(name="jwtProfileIssuer")
+    def jwt_profile_issuer(self) -> _builtins.str:
+        """
+        Specifies the issuer of the JWT token. This value is used to validate the iss claim in the JWT token.
+        """
+        return pulumi.get(self, "jwt_profile_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="jwtProfileJwkUrl")
+    def jwt_profile_jwk_url(self) -> _builtins.str:
+        """
+        Specifies the URL of the JSON Web Key (JWK) that is used to verify the signature of the JWT token.
+        """
+        return pulumi.get(self, "jwt_profile_jwk_url")
+
+    @_builtins.property
+    @pulumi.getter(name="jwtProfileRoleClaimName")
+    def jwt_profile_role_claim_name(self) -> _builtins.str:
+        """
+        Specifies the JSON pointer to the claim in the JWT token that contains the roles of the users.
+        """
+        return pulumi.get(self, "jwt_profile_role_claim_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        A system generated string that uniquely identifies a pool sub resource.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="maxPoolSize")
+    def max_pool_size(self) -> _builtins.int:
+        """
+        Specifies the maximum number of database connections allowed for the pool.
+        """
+        return pulumi.get(self, "max_pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="minPoolSize")
+    def min_pool_size(self) -> _builtins.int:
+        """
+        Specifies the minimum number of database connections allowed for the pool.
+        """
+        return pulumi.get(self, "min_pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="poolRouteValue")
+    def pool_route_value(self) -> _builtins.str:
+        """
+        The pool route value provided in requests to target this pool.
+        """
+        return pulumi.get(self, "pool_route_value")
+
+    @_builtins.property
+    @pulumi.getter(name="restEnabledSqlStatus")
+    def rest_enabled_sql_status(self) -> _builtins.str:
+        """
+        Specifies whether the REST-Enabled SQL service is active.
+        """
+        return pulumi.get(self, "rest_enabled_sql_status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the resource was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the Database Tools database API gateway config pool sub resource.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

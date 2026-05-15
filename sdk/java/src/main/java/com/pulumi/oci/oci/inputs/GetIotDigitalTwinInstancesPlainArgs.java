@@ -18,6 +18,21 @@ public final class GetIotDigitalTwinInstancesPlainArgs extends com.pulumi.resour
     public static final GetIotDigitalTwinInstancesPlainArgs Empty = new GetIotDigitalTwinInstancesPlainArgs();
 
     /**
+     * Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    @Import(name="connectivityType")
+    private @Nullable String connectivityType;
+
+    /**
+     * @return Filter resources whose connectivityType matches the specified value.
+     * 
+     */
+    public Optional<String> connectivityType() {
+        return Optional.ofNullable(this.connectivityType);
+    }
+
+    /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
@@ -117,6 +132,7 @@ public final class GetIotDigitalTwinInstancesPlainArgs extends com.pulumi.resour
     private GetIotDigitalTwinInstancesPlainArgs() {}
 
     private GetIotDigitalTwinInstancesPlainArgs(GetIotDigitalTwinInstancesPlainArgs $) {
+        this.connectivityType = $.connectivityType;
         this.digitalTwinModelId = $.digitalTwinModelId;
         this.digitalTwinModelSpecUri = $.digitalTwinModelSpecUri;
         this.displayName = $.displayName;
@@ -142,6 +158,17 @@ public final class GetIotDigitalTwinInstancesPlainArgs extends com.pulumi.resour
 
         public Builder(GetIotDigitalTwinInstancesPlainArgs defaults) {
             $ = new GetIotDigitalTwinInstancesPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param connectivityType Filter resources whose connectivityType matches the specified value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectivityType(@Nullable String connectivityType) {
+            $.connectivityType = connectivityType;
+            return this;
         }
 
         /**

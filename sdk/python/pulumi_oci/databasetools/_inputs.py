@@ -39,6 +39,18 @@ __all__ = [
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict',
+    'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs',
+    'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict',
+    'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs',
+    'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict',
+    'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs',
+    'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgsDict',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs',
+    'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgsDict',
     'GetDatabaseToolsConnectionsFilterArgs',
     'GetDatabaseToolsConnectionsFilterArgsDict',
     'GetDatabaseToolsEndpointServicesFilterArgs',
@@ -47,6 +59,22 @@ __all__ = [
     'GetDatabaseToolsIdentitiesFilterArgsDict',
     'GetDatabaseToolsPrivateEndpointsFilterArgs',
     'GetDatabaseToolsPrivateEndpointsFilterArgsDict',
+    'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs',
+    'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict',
+    'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs',
+    'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict',
+    'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs',
+    'GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs',
+    'GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgsDict',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs',
+    'GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict',
 ]
 
 class DatabaseToolsConnectionKeyStoreArgsDict(TypedDict):
@@ -779,6 +807,318 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
         pulumi.set(self, "source_ip", value)
 
 
+class RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict(TypedDict):
+    identifier: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The type of credential.
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs:
+    def __init__(__self__, *,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
+        """
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "identifier", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The type of credential.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+    """
+    configs: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 configs: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] configs: (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        """
+        pulumi.set(__self__, "type", type)
+        if configs is not None:
+            pulumi.set(__self__, "configs", configs)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) External identity type provider.  Supported values - OCI_IAM, AZURE_AD, NONE.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) External identity provider configuration parameters. Simple key-value pair Example: { "tenant_id": "...", "application_id_uri": "...", ... }
+        """
+        return pulumi.get(self, "configs")
+
+    @configs.setter
+    def configs(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "configs", value)
+
+
+class RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict(TypedDict):
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Status indicating the outcome of the prerequisites check.
+    """
+    status_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs:
+    def __init__(__self__, *,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] status: Status indicating the outcome of the prerequisites check.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] status_details: Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_details is not None:
+            pulumi.set(__self__, "status_details", status_details)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Status indicating the outcome of the prerequisites check.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="statusDetails")
+    def status_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Messages describing the prerequisites check outcome. Messages can provide actionable information when the status indicates a failure.
+        """
+        return pulumi.get(self, "status_details")
+
+    @status_details.setter
+    def status_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "status_details", value)
+
+
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the certificate.
+    """
+    certificate_private_key: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs']]]
+    """
+    (Updatable) Describes a certificate private key file to be used with SSL
+    """
+    certificate_public: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs']]]
+    """
+    (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 certificate_private_key: pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs']] = None,
+                 certificate_public: pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the certificate.
+        :param pulumi.Input['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs'] certificate_private_key: (Updatable) Describes a certificate private key file to be used with SSL
+        :param pulumi.Input['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs'] certificate_public: (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        """
+        pulumi.set(__self__, "type", type)
+        if certificate_private_key is not None:
+            pulumi.set(__self__, "certificate_private_key", certificate_private_key)
+        if certificate_public is not None:
+            pulumi.set(__self__, "certificate_public", certificate_public)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of the certificate.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePrivateKey")
+    def certificate_private_key(self) -> pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs']]:
+        """
+        (Updatable) Describes a certificate private key file to be used with SSL
+        """
+        return pulumi.get(self, "certificate_private_key")
+
+    @certificate_private_key.setter
+    def certificate_private_key(self, value: pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs']]):
+        pulumi.set(self, "certificate_private_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePublic")
+    def certificate_public(self) -> pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs']]:
+        """
+        (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
+        """
+        return pulumi.get(self, "certificate_public")
+
+    @certificate_public.setter
+    def certificate_public(self, value: pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs']]):
+        pulumi.set(self, "certificate_public", value)
+
+
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgsDict(TypedDict):
+    format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The format of the file
+    """
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The path to the file
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs:
+    def __init__(__self__, *,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] format: (Updatable) The format of the file
+        :param pulumi.Input[_builtins.str] path: (Updatable) The path to the file
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "format", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The path to the file
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "path", value)
+
+
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgsDict(TypedDict):
+    format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The format of the file
+    """
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The path to the file
+    """
+
+@pulumi.input_type
+class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs:
+    def __init__(__self__, *,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] format: (Updatable) The format of the file
+        :param pulumi.Input[_builtins.str] path: (Updatable) The path to the file
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The format of the file
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "format", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The path to the file
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "path", value)
+
+
 class GetDatabaseToolsConnectionsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -927,6 +1267,358 @@ class GetDatabaseToolsPrivateEndpointsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetDatabaseToolsPrivateEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsConnectionCredentialsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsConnectionCredentialsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsConnectionUserCredentialsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

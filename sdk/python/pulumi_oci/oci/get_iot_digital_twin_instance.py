@@ -26,10 +26,13 @@ class GetIotDigitalTwinInstanceResult:
     """
     A collection of values returned by getIotDigitalTwinInstance.
     """
-    def __init__(__self__, auth_id=None, defined_tags=None, description=None, digital_twin_adapter_id=None, digital_twin_instance_id=None, digital_twin_model_id=None, digital_twin_model_spec_uri=None, display_name=None, external_key=None, freeform_tags=None, id=None, iot_domain_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, auth_id=None, connectivity_type=None, defined_tags=None, description=None, digital_twin_adapter_id=None, digital_twin_instance_id=None, digital_twin_model_id=None, digital_twin_model_spec_uri=None, display_name=None, external_key=None, freeform_tags=None, gateways=None, id=None, iot_domain_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if auth_id and not isinstance(auth_id, str):
             raise TypeError("Expected argument 'auth_id' to be a str")
         pulumi.set(__self__, "auth_id", auth_id)
+        if connectivity_type and not isinstance(connectivity_type, str):
+            raise TypeError("Expected argument 'connectivity_type' to be a str")
+        pulumi.set(__self__, "connectivity_type", connectivity_type)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -57,6 +60,9 @@ class GetIotDigitalTwinInstanceResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gateways and not isinstance(gateways, list):
+            raise TypeError("Expected argument 'gateways' to be a list")
+        pulumi.set(__self__, "gateways", gateways)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -83,6 +89,14 @@ class GetIotDigitalTwinInstanceResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
         """
         return pulumi.get(self, "auth_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityType")
+    def connectivity_type(self) -> _builtins.str:
+        """
+        Connectivity type of the digital twin instance
+        """
+        return pulumi.get(self, "connectivity_type")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -155,6 +169,14 @@ class GetIotDigitalTwinInstanceResult:
 
     @_builtins.property
     @pulumi.getter
+    def gateways(self) -> Sequence[_builtins.str]:
+        """
+        An array of unique ids ([OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the IoT digital twin instances with connectivityType equals to GATEWAY.
+        """
+        return pulumi.get(self, "gateways")
+
+    @_builtins.property
+    @pulumi.getter
     def id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
@@ -209,6 +231,7 @@ class AwaitableGetIotDigitalTwinInstanceResult(GetIotDigitalTwinInstanceResult):
             yield self
         return GetIotDigitalTwinInstanceResult(
             auth_id=self.auth_id,
+            connectivity_type=self.connectivity_type,
             defined_tags=self.defined_tags,
             description=self.description,
             digital_twin_adapter_id=self.digital_twin_adapter_id,
@@ -218,6 +241,7 @@ class AwaitableGetIotDigitalTwinInstanceResult(GetIotDigitalTwinInstanceResult):
             display_name=self.display_name,
             external_key=self.external_key,
             freeform_tags=self.freeform_tags,
+            gateways=self.gateways,
             id=self.id,
             iot_domain_id=self.iot_domain_id,
             state=self.state,
@@ -252,6 +276,7 @@ def get_iot_digital_twin_instance(digital_twin_instance_id: Optional[_builtins.s
 
     return AwaitableGetIotDigitalTwinInstanceResult(
         auth_id=pulumi.get(__ret__, 'auth_id'),
+        connectivity_type=pulumi.get(__ret__, 'connectivity_type'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         digital_twin_adapter_id=pulumi.get(__ret__, 'digital_twin_adapter_id'),
@@ -261,6 +286,7 @@ def get_iot_digital_twin_instance(digital_twin_instance_id: Optional[_builtins.s
         display_name=pulumi.get(__ret__, 'display_name'),
         external_key=pulumi.get(__ret__, 'external_key'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gateways=pulumi.get(__ret__, 'gateways'),
         id=pulumi.get(__ret__, 'id'),
         iot_domain_id=pulumi.get(__ret__, 'iot_domain_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -292,6 +318,7 @@ def get_iot_digital_twin_instance_output(digital_twin_instance_id: pulumi.Input[
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getIotDigitalTwinInstance:getIotDigitalTwinInstance', __args__, opts=opts, typ=GetIotDigitalTwinInstanceResult)
     return __ret__.apply(lambda __response__: GetIotDigitalTwinInstanceResult(
         auth_id=pulumi.get(__response__, 'auth_id'),
+        connectivity_type=pulumi.get(__response__, 'connectivity_type'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         digital_twin_adapter_id=pulumi.get(__response__, 'digital_twin_adapter_id'),
@@ -301,6 +328,7 @@ def get_iot_digital_twin_instance_output(digital_twin_instance_id: pulumi.Input[
         display_name=pulumi.get(__response__, 'display_name'),
         external_key=pulumi.get(__response__, 'external_key'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gateways=pulumi.get(__response__, 'gateways'),
         id=pulumi.get(__response__, 'id'),
         iot_domain_id=pulumi.get(__response__, 'iot_domain_id'),
         state=pulumi.get(__response__, 'state'),

@@ -23,6 +23,11 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private Map<String,String> advancedProperties;
     /**
+     * @return Specifies the authentication type used to connect to the database.
+     * 
+     */
+    private String authenticationType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
@@ -89,7 +94,7 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private String runtimeEndpoint;
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     private String runtimeIdentity;
@@ -129,7 +134,7 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private String url;
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     private String userName;
@@ -146,6 +151,13 @@ public final class GetDatabaseToolsConnectionResult {
      */
     public Map<String,String> advancedProperties() {
         return this.advancedProperties;
+    }
+    /**
+     * @return Specifies the authentication type used to connect to the database.
+     * 
+     */
+    public String authenticationType() {
+        return this.authenticationType;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -242,7 +254,7 @@ public final class GetDatabaseToolsConnectionResult {
         return this.runtimeEndpoint;
     }
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     public String runtimeIdentity() {
@@ -298,7 +310,7 @@ public final class GetDatabaseToolsConnectionResult {
         return this.url;
     }
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     public String userName() {
@@ -322,6 +334,7 @@ public final class GetDatabaseToolsConnectionResult {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> advancedProperties;
+        private String authenticationType;
         private String compartmentId;
         private String connectionString;
         private String databaseToolsConnectionId;
@@ -350,6 +363,7 @@ public final class GetDatabaseToolsConnectionResult {
         public Builder(GetDatabaseToolsConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advancedProperties = defaults.advancedProperties;
+    	      this.authenticationType = defaults.authenticationType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionString = defaults.connectionString;
     	      this.databaseToolsConnectionId = defaults.databaseToolsConnectionId;
@@ -382,6 +396,14 @@ public final class GetDatabaseToolsConnectionResult {
               throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionResult", "advancedProperties");
             }
             this.advancedProperties = advancedProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder authenticationType(String authenticationType) {
+            if (authenticationType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionResult", "authenticationType");
+            }
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
@@ -594,6 +616,7 @@ public final class GetDatabaseToolsConnectionResult {
         public GetDatabaseToolsConnectionResult build() {
             final var _resultValue = new GetDatabaseToolsConnectionResult();
             _resultValue.advancedProperties = advancedProperties;
+            _resultValue.authenticationType = authenticationType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionString = connectionString;
             _resultValue.databaseToolsConnectionId = databaseToolsConnectionId;

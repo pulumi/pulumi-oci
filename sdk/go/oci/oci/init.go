@@ -37,6 +37,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BatchBatchTaskEnvironment{}
 	case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
 		r = &BatchBatchTaskProfile{}
+	case "oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription":
+		r = &CostadCostAlertSubscription{}
+	case "oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent":
+		r = &CostadCostAnomalyEvent{}
+	case "oci:oci/costadCostAnomalyMonitor:CostadCostAnomalyMonitor":
+		r = &CostadCostAnomalyMonitor{}
+	case "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement":
+		r = &CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement{}
 	case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
 		r = &DbmulticloudMultiCloudResourceDiscovery{}
 	case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -156,6 +164,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/batchBatchTaskProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/costadCostAlertSubscription",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/costadCostAnomalyEvent",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/costadCostAnomalyMonitor",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

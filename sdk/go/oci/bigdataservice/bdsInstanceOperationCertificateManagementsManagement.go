@@ -34,10 +34,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstanceOperationCertificateManagementsManagement(ctx, "test_bds_instance_operation_certificate_managements_management", &bigdataservice.BdsInstanceOperationCertificateManagementsManagementArgs{
 //				BdsInstanceId:                        pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword:                 pulumi.Any(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword),
 //				Services:                             pulumi.Any(bdsInstanceOperationCertificateManagementsManagementServices),
 //				EnableOperationCertificateManagement: pulumi.Any(enableOperationCertificateManagement),
 //				RenewOperationCertificateManagement:  pulumi.Any(renewOperationCertificateManagement),
+//				ClusterAdminPassword:                 pulumi.Any(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword),
 //				HostCertDetails: bigdataservice.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{
 //					&bigdataservice.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{
 //						Certificate: pulumi.Any(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate),
@@ -46,6 +46,7 @@ import (
 //					},
 //				},
 //				RootCertificate:   pulumi.Any(bdsInstanceOperationCertificateManagementsManagementRootCertificate),
+//				SecretId:          testSecret.Id,
 //				ServerKeyPassword: pulumi.Any(bdsInstanceOperationCertificateManagementsManagementServerKeyPassword),
 //			})
 //			if err != nil {

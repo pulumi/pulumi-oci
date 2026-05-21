@@ -96,6 +96,8 @@ type LookupBdsInstanceResult struct {
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured bool `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused bool `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
 	IsSecure          bool                            `pulumi:"isSecure"`
 	KafkaBrokerNodes  []GetBdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNodes"`
@@ -110,14 +112,19 @@ type LookupBdsInstanceResult struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot int                                     `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          string                                  `pulumi:"osPatchVersion"`
-	RemoveNode                              string                                  `pulumi:"removeNode"`
-	StartClusterShapeConfigs                []GetBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
+	NumberOfNodesRequiringMaintenanceReboot int      `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string   `pulumi:"osPatchVersion"`
+	RemoveNode                              string   `pulumi:"removeNode"`
+	RemoveNodes                             []string `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 string                                  `pulumi:"secretId"`
+	StartClusterShapeConfigs []GetBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration string `pulumi:"timeEarliestCertificateExpiration"`
 	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated string                     `pulumi:"timeUpdated"`
 	UtilNodes   []GetBdsInstanceUtilNode   `pulumi:"utilNodes"`
@@ -267,6 +274,11 @@ func (o LookupBdsInstanceResultOutput) IsKafkaConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsKafkaConfigured }).(pulumi.BoolOutput)
 }
 
+// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+func (o LookupBdsInstanceResultOutput) IsSecretReused() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsSecretReused }).(pulumi.BoolOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o LookupBdsInstanceResultOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsSecure }).(pulumi.BoolOutput)
@@ -317,6 +329,15 @@ func (o LookupBdsInstanceResultOutput) RemoveNode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.RemoveNode }).(pulumi.StringOutput)
 }
 
+func (o LookupBdsInstanceResultOutput) RemoveNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) []string { return v.RemoveNodes }).(pulumi.StringArrayOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o LookupBdsInstanceResultOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
 func (o LookupBdsInstanceResultOutput) StartClusterShapeConfigs() GetBdsInstanceStartClusterShapeConfigArrayOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceStartClusterShapeConfig {
 		return v.StartClusterShapeConfigs
@@ -331,6 +352,11 @@ func (o LookupBdsInstanceResultOutput) State() pulumi.StringOutput {
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o LookupBdsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+func (o LookupBdsInstanceResultOutput) TimeEarliestCertificateExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.TimeEarliestCertificateExpiration }).(pulumi.StringOutput)
 }
 
 // The time the cluster was updated, shown as an RFC 3339 formatted datetime string.

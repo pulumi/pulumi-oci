@@ -22,9 +22,9 @@ import * as utilities from "../utilities";
  *
  * const testAutoScalingConfiguration = new oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: autoScalingConfigurationClusterAdminPassword,
  *     isEnabled: autoScalingConfigurationIsEnabled === "true",
  *     nodeType: autoScalingConfigurationNodeType,
+ *     clusterAdminPassword: autoScalingConfigurationClusterAdminPassword,
  *     displayName: autoScalingConfigurationDisplayName,
  *     policyDetails: {
  *         policyType: autoScalingConfigurationPolicyDetailsPolicyType,
@@ -57,6 +57,7 @@ import * as utilities from "../utilities";
  *             ocpuStepSize: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize),
  *         },
  *     },
+ *     secretId: testSecret.id,
  * });
  * ```
  *
@@ -135,6 +136,14 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      */
     declare public readonly policyDetails: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
     /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly secretId: pulumi.Output<string>;
+    /**
      * The state of the autoscale configuration.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -167,6 +176,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             resourceInputs["nodeType"] = state?.nodeType;
             resourceInputs["policy"] = state?.policy;
             resourceInputs["policyDetails"] = state?.policyDetails;
+            resourceInputs["secretId"] = state?.secretId;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
@@ -174,9 +184,6 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             const args = argsOrState as AutoScalingConfigurationArgs | undefined;
             if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
-            }
-            if (args?.clusterAdminPassword === undefined && !opts.urn) {
-                throw new Error("Missing required property 'clusterAdminPassword'");
             }
             if (args?.isEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
@@ -191,6 +198,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
             resourceInputs["nodeType"] = args?.nodeType;
             resourceInputs["policy"] = args?.policy;
             resourceInputs["policyDetails"] = args?.policyDetails;
+            resourceInputs["secretId"] = args?.secretId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -245,6 +253,14 @@ export interface AutoScalingConfigurationState {
      */
     policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
     /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    secretId?: pulumi.Input<string | undefined>;
+    /**
      * The state of the autoscale configuration.
      */
     state?: pulumi.Input<string | undefined>;
@@ -269,7 +285,7 @@ export interface AutoScalingConfigurationArgs {
     /**
      * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
-    clusterAdminPassword: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
@@ -300,4 +316,12 @@ export interface AutoScalingConfigurationArgs {
      * An autoscaling configuration can have one of above supported policies.
      */
     policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
+    /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    secretId?: pulumi.Input<string | undefined>;
 }

@@ -16,9 +16,11 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource replaces the node with the given hostname, in Oracle Cloud Infrastructure Big Data Service cluster.
+ * Invokes the Big Data Service replace node action for a cluster node.
  * 
- * Replace the node with the given host name in the cluster.
+ * Use this action resource to replace a node identified by `nodeHostName`. You can optionally provide a specific node backup to restore from, a target shape for the replacement node, and either `clusterAdminPassword` or `secretId` for authentication.
+ * 
+ * When `nodeBackupId` is omitted, the service uses the latest available node backup. If no suitable backup is available, or the original node is already in a failed or terminated state, the service attempts to recover from the last saved boot volume state.
  * 
  * ## Example Usage
  * 
@@ -45,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceReplaceNodeAction = new BdsInstanceReplaceNodeAction("testBdsInstanceReplaceNodeAction", BdsInstanceReplaceNodeActionArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
- *             .nodeHostName(bdsInstanceReplaceNodeAction.nodeHostName())
- *             .nodeBackupId(bdsInstanceReplaceNodeAction.nodeBackupId())
- *             .clusterAdminPassword(testBdsInstance.clusterAdminPassword())
+ *             .bdsInstanceId(bdsInstanceId)
+ *             .nodeHostName(nodeHostName)
+ *             .clusterAdminPassword("T3JhY2xlVGVhbVVTQSExMjM=")
+ *             .nodeBackupId(nodeBackupId)
  *             .shape(shape)
  *             .build());
  * 
@@ -61,76 +63,90 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction")
 public class BdsInstanceReplaceNodeAction extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the cluster.
+     * The OCID of the Big Data Service cluster.
      * 
      */
     @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
     /**
-     * @return The OCID of the cluster.
+     * @return The OCID of the Big Data Service cluster.
      * 
      */
     public Output<String> bdsInstanceId() {
         return this.bdsInstanceId;
     }
     /**
-     * Base-64 encoded password for the cluster admin user.
+     * Base64-encoded cluster admin password. Use this or `secretId`.
      * 
      */
     @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster admin user.
+     * @return Base64-encoded cluster admin password. Use this or `secretId`.
      * 
      */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
     }
     /**
-     * The id of the nodeBackup to use for replacing the node.
+     * The OCID of the node backup to use for replacement.
      * 
      */
     @Export(name="nodeBackupId", refs={String.class}, tree="[0]")
-    private Output<String> nodeBackupId;
+    private Output</* @Nullable */ String> nodeBackupId;
 
     /**
-     * @return The id of the nodeBackup to use for replacing the node.
+     * @return The OCID of the node backup to use for replacement.
      * 
      */
-    public Output<String> nodeBackupId() {
-        return this.nodeBackupId;
+    public Output<Optional<String>> nodeBackupId() {
+        return Codegen.optional(this.nodeBackupId);
     }
     /**
-     * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+     * Host name of the node to replace.
      * 
      */
     @Export(name="nodeHostName", refs={String.class}, tree="[0]")
     private Output<String> nodeHostName;
 
     /**
-     * @return Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+     * @return Host name of the node to replace.
      * 
      */
     public Output<String> nodeHostName() {
         return this.nodeHostName;
     }
     /**
-     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+     * The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="secretId", refs={String.class}, tree="[0]")
+    private Output<String> secretId;
+
+    /**
+     * @return The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
+    }
+    /**
+     * The shape to use for the replacement node. If not specified, the existing node shape is used.
+     * 
+     * **IMPORTANT**
+     * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> shape;
 
     /**
-     * @return Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+     * @return The shape to use for the replacement node. If not specified, the existing node shape is used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * **IMPORTANT**
+     * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
      * 
      */
     public Output<Optional<String>> shape() {

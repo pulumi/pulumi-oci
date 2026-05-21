@@ -12,6 +12,10 @@ import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicePlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
@@ -20,10 +24,24 @@ import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteePlainArgs;
@@ -62,12 +80,21 @@ import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGat
 import com.pulumi.oci.DatabaseTools.inputs.GetRuntimeDatabaseToolsDatabaseApiGatewayConfigPoolsPlainArgs;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsDatabaseApiGatewayConfigResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsDatabaseApiGatewayConfigsResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServiceResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServicesResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentitiesResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentityResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsMcpServerResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsMcpServersResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsMcpToolsetResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsMcpToolsetVersionsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsMcpToolsetsResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsSqlReportResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsSqlReportsResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteeResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymResult;
@@ -539,6 +566,441 @@ public final class DatabaseToolsFunctions {
      */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", TypeShape.of(GetDatabaseToolsConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools database API gateway config.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigResult> getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs args) {
+        return getDatabaseToolsDatabaseApiGatewayConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools database API gateway config.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsDatabaseApiGatewayConfigResult> getDatabaseToolsDatabaseApiGatewayConfigPlain(GetDatabaseToolsDatabaseApiGatewayConfigPlainArgs args) {
+        return getDatabaseToolsDatabaseApiGatewayConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools database API gateway config.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigResult> getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfig:getDatabaseToolsDatabaseApiGatewayConfig", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools database API gateway config.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigResult> getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfig:getDatabaseToolsDatabaseApiGatewayConfig", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Database Api Gateway Config resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools database API gateway config.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfig = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfig(GetDatabaseToolsDatabaseApiGatewayConfigArgs.builder()
+     *             .databaseToolsDatabaseApiGatewayConfigId(testDatabaseToolsDatabaseApiGatewayConfigOciDatabaseToolsDatabaseToolsDatabaseApiGatewayConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsDatabaseApiGatewayConfigResult> getDatabaseToolsDatabaseApiGatewayConfigPlain(GetDatabaseToolsDatabaseApiGatewayConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfig:getDatabaseToolsDatabaseApiGatewayConfig", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Configs in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools database API gateway configs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigs = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigDisplayName)
+     *             .state(databaseToolsDatabaseApiGatewayConfigState)
+     *             .types(databaseToolsDatabaseApiGatewayConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigsResult> getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs args) {
+        return getDatabaseToolsDatabaseApiGatewayConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Configs in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools database API gateway configs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigs = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigDisplayName)
+     *             .state(databaseToolsDatabaseApiGatewayConfigState)
+     *             .types(databaseToolsDatabaseApiGatewayConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsDatabaseApiGatewayConfigsResult> getDatabaseToolsDatabaseApiGatewayConfigsPlain(GetDatabaseToolsDatabaseApiGatewayConfigsPlainArgs args) {
+        return getDatabaseToolsDatabaseApiGatewayConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Configs in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools database API gateway configs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigs = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigDisplayName)
+     *             .state(databaseToolsDatabaseApiGatewayConfigState)
+     *             .types(databaseToolsDatabaseApiGatewayConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigsResult> getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfigs:getDatabaseToolsDatabaseApiGatewayConfigs", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Configs in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools database API gateway configs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigs = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigDisplayName)
+     *             .state(databaseToolsDatabaseApiGatewayConfigState)
+     *             .types(databaseToolsDatabaseApiGatewayConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsDatabaseApiGatewayConfigsResult> getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfigs:getDatabaseToolsDatabaseApiGatewayConfigs", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Database Api Gateway Configs in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools database API gateway configs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsDatabaseApiGatewayConfigsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsDatabaseApiGatewayConfigs = DatabaseToolsFunctions.getDatabaseToolsDatabaseApiGatewayConfigs(GetDatabaseToolsDatabaseApiGatewayConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsDatabaseApiGatewayConfigDisplayName)
+     *             .state(databaseToolsDatabaseApiGatewayConfigState)
+     *             .types(databaseToolsDatabaseApiGatewayConfigType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsDatabaseApiGatewayConfigsResult> getDatabaseToolsDatabaseApiGatewayConfigsPlain(GetDatabaseToolsDatabaseApiGatewayConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsDatabaseApiGatewayConfigs:getDatabaseToolsDatabaseApiGatewayConfigs", TypeShape.of(GetDatabaseToolsDatabaseApiGatewayConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
@@ -1416,6 +1878,1111 @@ public final class DatabaseToolsFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", TypeShape.of(GetDatabaseToolsIdentityResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Database Tools Mcp Server resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools mcpserver.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServerResult> getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs args) {
+        return getDatabaseToolsMcpServer(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Server resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools mcpserver.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpServerResult> getDatabaseToolsMcpServerPlain(GetDatabaseToolsMcpServerPlainArgs args) {
+        return getDatabaseToolsMcpServerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Server resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools mcpserver.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServerResult> getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpServer:getDatabaseToolsMcpServer", TypeShape.of(GetDatabaseToolsMcpServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Server resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools mcpserver.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServerResult> getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpServer:getDatabaseToolsMcpServer", TypeShape.of(GetDatabaseToolsMcpServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Server resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools mcpserver.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServerArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServer = DatabaseToolsFunctions.getDatabaseToolsMcpServer(GetDatabaseToolsMcpServerArgs.builder()
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServerOciDatabaseToolsDatabaseToolsMcpServer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpServerResult> getDatabaseToolsMcpServerPlain(GetDatabaseToolsMcpServerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsMcpServer:getDatabaseToolsMcpServer", TypeShape.of(GetDatabaseToolsMcpServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Servers in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools MCP servers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsMcpServerDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
+     *             .state(databaseToolsMcpServerState)
+     *             .types(databaseToolsMcpServerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServersResult> getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs args) {
+        return getDatabaseToolsMcpServers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Servers in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools MCP servers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsMcpServerDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
+     *             .state(databaseToolsMcpServerState)
+     *             .types(databaseToolsMcpServerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpServersResult> getDatabaseToolsMcpServersPlain(GetDatabaseToolsMcpServersPlainArgs args) {
+        return getDatabaseToolsMcpServersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Servers in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools MCP servers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsMcpServerDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
+     *             .state(databaseToolsMcpServerState)
+     *             .types(databaseToolsMcpServerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServersResult> getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpServers:getDatabaseToolsMcpServers", TypeShape.of(GetDatabaseToolsMcpServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Servers in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools MCP servers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsMcpServerDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
+     *             .state(databaseToolsMcpServerState)
+     *             .types(databaseToolsMcpServerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpServersResult> getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpServers:getDatabaseToolsMcpServers", TypeShape.of(GetDatabaseToolsMcpServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Servers in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools MCP servers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpServersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpServers = DatabaseToolsFunctions.getDatabaseToolsMcpServers(GetDatabaseToolsMcpServersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsMcpServerDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsMcpServerRelatedResourceIdentifier)
+     *             .state(databaseToolsMcpServerState)
+     *             .types(databaseToolsMcpServerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpServersResult> getDatabaseToolsMcpServersPlain(GetDatabaseToolsMcpServersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsMcpServers:getDatabaseToolsMcpServers", TypeShape.of(GetDatabaseToolsMcpServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Toolset resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools MCP Toolset.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetResult> getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs args) {
+        return getDatabaseToolsMcpToolset(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Toolset resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools MCP Toolset.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetResult> getDatabaseToolsMcpToolsetPlain(GetDatabaseToolsMcpToolsetPlainArgs args) {
+        return getDatabaseToolsMcpToolsetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Toolset resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools MCP Toolset.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetResult> getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolset:getDatabaseToolsMcpToolset", TypeShape.of(GetDatabaseToolsMcpToolsetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Toolset resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools MCP Toolset.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetResult> getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolset:getDatabaseToolsMcpToolset", TypeShape.of(GetDatabaseToolsMcpToolsetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Mcp Toolset resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools MCP Toolset.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolset = DatabaseToolsFunctions.getDatabaseToolsMcpToolset(GetDatabaseToolsMcpToolsetArgs.builder()
+     *             .databaseToolsMcpToolsetId(testDatabaseToolsMcpToolsetOciDatabaseToolsDatabaseToolsMcpToolset.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetResult> getDatabaseToolsMcpToolsetPlain(GetDatabaseToolsMcpToolsetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsMcpToolset:getDatabaseToolsMcpToolset", TypeShape.of(GetDatabaseToolsMcpToolsetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolset versions
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetVersionsResult> getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs args) {
+        return getDatabaseToolsMcpToolsetVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolset versions
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetVersionsResult> getDatabaseToolsMcpToolsetVersionsPlain(GetDatabaseToolsMcpToolsetVersionsPlainArgs args) {
+        return getDatabaseToolsMcpToolsetVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolset versions
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetVersionsResult> getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolsetVersions:getDatabaseToolsMcpToolsetVersions", TypeShape.of(GetDatabaseToolsMcpToolsetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolset versions
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetVersionsResult> getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolsetVersions:getDatabaseToolsMcpToolsetVersions", TypeShape.of(GetDatabaseToolsMcpToolsetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolset Versions in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolset versions
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetVersionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsetVersions = DatabaseToolsFunctions.getDatabaseToolsMcpToolsetVersions(GetDatabaseToolsMcpToolsetVersionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetVersionDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetVersionsResult> getDatabaseToolsMcpToolsetVersionsPlain(GetDatabaseToolsMcpToolsetVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsMcpToolsetVersions:getDatabaseToolsMcpToolsetVersions", TypeShape.of(GetDatabaseToolsMcpToolsetVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolsets in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolsets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetDisplayName)
+     *             .state(databaseToolsMcpToolsetState)
+     *             .types(databaseToolsMcpToolsetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetsResult> getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs args) {
+        return getDatabaseToolsMcpToolsets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolsets in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolsets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetDisplayName)
+     *             .state(databaseToolsMcpToolsetState)
+     *             .types(databaseToolsMcpToolsetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetsResult> getDatabaseToolsMcpToolsetsPlain(GetDatabaseToolsMcpToolsetsPlainArgs args) {
+        return getDatabaseToolsMcpToolsetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolsets in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolsets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetDisplayName)
+     *             .state(databaseToolsMcpToolsetState)
+     *             .types(databaseToolsMcpToolsetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetsResult> getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolsets:getDatabaseToolsMcpToolsets", TypeShape.of(GetDatabaseToolsMcpToolsetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolsets in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolsets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetDisplayName)
+     *             .state(databaseToolsMcpToolsetState)
+     *             .types(databaseToolsMcpToolsetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsMcpToolsetsResult> getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsMcpToolsets:getDatabaseToolsMcpToolsets", TypeShape.of(GetDatabaseToolsMcpToolsetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Mcp Toolsets in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools Toolsets.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsMcpToolsetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsMcpToolsets = DatabaseToolsFunctions.getDatabaseToolsMcpToolsets(GetDatabaseToolsMcpToolsetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsMcpServerId(testDatabaseToolsMcpServer.id())
+     *             .displayName(databaseToolsMcpToolsetDisplayName)
+     *             .state(databaseToolsMcpToolsetState)
+     *             .types(databaseToolsMcpToolsetType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsMcpToolsetsResult> getDatabaseToolsMcpToolsetsPlain(GetDatabaseToolsMcpToolsetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsMcpToolsets:getDatabaseToolsMcpToolsets", TypeShape.of(GetDatabaseToolsMcpToolsetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
      * 
      * Gets details of a specified Database Tools private endpoint.
@@ -1854,6 +3421,441 @@ public final class DatabaseToolsFunctions {
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", TypeShape.of(GetDatabaseToolsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools SQL report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportResult> getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs args) {
+        return getDatabaseToolsSqlReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools SQL report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsSqlReportResult> getDatabaseToolsSqlReportPlain(GetDatabaseToolsSqlReportPlainArgs args) {
+        return getDatabaseToolsSqlReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools SQL report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportResult> getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsSqlReport:getDatabaseToolsSqlReport", TypeShape.of(GetDatabaseToolsSqlReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools SQL report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportResult> getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsSqlReport:getDatabaseToolsSqlReport", TypeShape.of(GetDatabaseToolsSqlReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Sql Report resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools SQL report.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReport = DatabaseToolsFunctions.getDatabaseToolsSqlReport(GetDatabaseToolsSqlReportArgs.builder()
+     *             .databaseToolsSqlReportId(testDatabaseToolsSqlReportOciDatabaseToolsDatabaseToolsSqlReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsSqlReportResult> getDatabaseToolsSqlReportPlain(GetDatabaseToolsSqlReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsSqlReport:getDatabaseToolsSqlReport", TypeShape.of(GetDatabaseToolsSqlReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Sql Reports in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools SQL reports.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReports = DatabaseToolsFunctions.getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsSqlReportDisplayName)
+     *             .state(databaseToolsSqlReportState)
+     *             .types(databaseToolsSqlReportType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportsResult> getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs args) {
+        return getDatabaseToolsSqlReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Sql Reports in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools SQL reports.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReports = DatabaseToolsFunctions.getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsSqlReportDisplayName)
+     *             .state(databaseToolsSqlReportState)
+     *             .types(databaseToolsSqlReportType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsSqlReportsResult> getDatabaseToolsSqlReportsPlain(GetDatabaseToolsSqlReportsPlainArgs args) {
+        return getDatabaseToolsSqlReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Sql Reports in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools SQL reports.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReports = DatabaseToolsFunctions.getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsSqlReportDisplayName)
+     *             .state(databaseToolsSqlReportState)
+     *             .types(databaseToolsSqlReportType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportsResult> getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsSqlReports:getDatabaseToolsSqlReports", TypeShape.of(GetDatabaseToolsSqlReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Sql Reports in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools SQL reports.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReports = DatabaseToolsFunctions.getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsSqlReportDisplayName)
+     *             .state(databaseToolsSqlReportState)
+     *             .types(databaseToolsSqlReportType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsSqlReportsResult> getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsSqlReports:getDatabaseToolsSqlReports", TypeShape.of(GetDatabaseToolsSqlReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Sql Reports in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools SQL reports.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsSqlReportsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsSqlReports = DatabaseToolsFunctions.getDatabaseToolsSqlReports(GetDatabaseToolsSqlReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsSqlReportDisplayName)
+     *             .state(databaseToolsSqlReportState)
+     *             .types(databaseToolsSqlReportType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsSqlReportsResult> getDatabaseToolsSqlReportsPlain(GetDatabaseToolsSqlReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsSqlReports:getDatabaseToolsSqlReports", TypeShape.of(GetDatabaseToolsSqlReportsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Database Tools Connection Credential resource in Oracle Cloud Infrastructure Database Tools Runtime service.

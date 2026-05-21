@@ -13,6 +13,2527 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetMulticloudNetworkAnchorOciMetadataItemSubnet struct {
+	// Subnet label. CSP can set this property
+	Label string `pulumi:"label"`
+	// OCID for existing the subnet. CSP can not set this property.
+	SubnetId string `pulumi:"subnetId"`
+	// Defines if the subnet is the primary or backup for the network
+	Type string `pulumi:"type"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemSubnetInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs and GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemSubnetInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs struct {
+	// Subnet label. CSP can set this property
+	Label pulumi.StringInput `pulumi:"label"`
+	// OCID for existing the subnet. CSP can not set this property.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Defines if the subnet is the primary or backup for the network
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemSubnetArray and GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemSubnetArray{ GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArray []GetMulticloudNetworkAnchorOciMetadataItemSubnetInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemSubnetArray) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return o
+}
+
+// Subnet label. CSP can set this property
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.Label }).(pulumi.StringOutput)
+}
+
+// OCID for existing the subnet. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Defines if the subnet is the primary or backup for the network
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemSubnet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemSubnet)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemSubnet {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemSubnet)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcn struct {
+	// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+	BackupCidrBlocks []string `pulumi:"backupCidrBlocks"`
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+	DnsLabel string `pulumi:"dnsLabel"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId string `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName string `pulumi:"vcnName"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemVcnInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemVcnArgs and GetMulticloudNetworkAnchorOciMetadataItemVcnOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemVcnInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemVcnInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArgs struct {
+	// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+	BackupCidrBlocks pulumi.StringArrayInput `pulumi:"backupCidrBlocks"`
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+	DnsLabel pulumi.StringInput `pulumi:"dnsLabel"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemVcnArray and GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemVcnArray{ GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArray []GetMulticloudNetworkAnchorOciMetadataItemVcnInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemVcnArray) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) BackupCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) []string { return v.BackupCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// An Azure/GCP/AWS cidrBlocks
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) DnsLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.DnsLabel }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Name of the VCN associated to the Network Anchor.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.VcnName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemVcn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemVcn {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemVcn)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollection struct {
+	// List of NetworkAnchorSummary
+	Items []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs and GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{...}
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs struct {
+	// List of NetworkAnchorSummary
+	Items GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput)
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray and GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray{ GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{...} }
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray []GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return o
+}
+
+// List of NetworkAnchorSummary
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput) Items() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollection) []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
+		return v.Items
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorsNetworkAnchorCollection {
+		return vs[0].([]GetMulticloudNetworkAnchorsNetworkAnchorCollection)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
+	// The CPG ID in which Network Anchor will be created.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	CompartmentId string `pulumi:"compartmentId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Network Anchor Id in the Cloud Service Provider.
+	CspNetworkAnchorId string `pulumi:"cspNetworkAnchorId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Defines status of the Network Anchor.
+	NetworkAnchorConnectionStatus string `pulumi:"networkAnchorConnectionStatus"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	NetworkAnchorLifecycleState string `pulumi:"networkAnchorLifecycleState"`
+	// CSP network anchor Uri
+	NetworkAnchorUri string `pulumi:"networkAnchorUri"`
+	// Oracle Cloud Infrastructure resource anchor Id (OCID).
+	ResourceAnchorId string `pulumi:"resourceAnchorId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType string `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId string `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName string `pulumi:"vcnName"`
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs and GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{...}
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
+	// The CPG ID in which Network Anchor will be created.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Network Anchor Id in the Cloud Service Provider.
+	CspNetworkAnchorId pulumi.StringInput `pulumi:"cspNetworkAnchorId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Defines status of the Network Anchor.
+	NetworkAnchorConnectionStatus pulumi.StringInput `pulumi:"networkAnchorConnectionStatus"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	NetworkAnchorLifecycleState pulumi.StringInput `pulumi:"networkAnchorLifecycleState"`
+	// CSP network anchor Uri
+	NetworkAnchorUri pulumi.StringInput `pulumi:"networkAnchorUri"`
+	// Oracle Cloud Infrastructure resource anchor Id (OCID).
+	ResourceAnchorId pulumi.StringInput `pulumi:"resourceAnchorId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
+}
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput)
+}
+
+// GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray and GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray{ GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{...} }
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput
+	ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray []GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return o
+}
+
+// The CPG ID in which Network Anchor will be created.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Network Anchor Id in the Cloud Service Provider.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CspNetworkAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CspNetworkAnchorId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Defines status of the Network Anchor.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorConnectionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.NetworkAnchorConnectionStatus
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.NetworkAnchorLifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// CSP network anchor Uri
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.NetworkAnchorUri }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure resource anchor Id (OCID).
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.ResourceAnchorId }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Subscription Type.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.SubscriptionType }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Name of the VCN associated to the Network Anchor.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.VcnName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput() GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) ToGetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
+		return vs[0].([]GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection struct {
+	// List of MultiCloudMetadataSummary
+	Items []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{...}
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs struct {
+	// List of MultiCloudMetadataSummary
+	Items GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput)
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray{ GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{...} }
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return o
+}
+
+// List of MultiCloudMetadataSummary
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput) Items() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection) []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem {
+		return v.Items
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection {
+		return vs[0].([]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection)[vs[1].(int)]
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure subscriptionId.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{...}
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure subscriptionId.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput)
+}
+
+// GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput is an input type that accepts GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray and GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput` via:
+//
+//	GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray{ GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{...} }
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput
+	ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray []GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return i.ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure subscriptionId.
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput() GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) ToGetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem {
+		return vs[0].([]GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesFilterInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesFilterArgs and GetMulticloudOmHubMulticloudResourcesFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesFilterInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesFilterArgs{...}
+type GetMulticloudOmHubMulticloudResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput
+	ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArgs) ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArgs) ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesFilterOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesFilterArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesFilterArray and GetMulticloudOmHubMulticloudResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesFilterArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesFilterArray{ GetMulticloudOmHubMulticloudResourcesFilterArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArray []GetMulticloudOmHubMulticloudResourcesFilterInput
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArray) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArray) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesFilterArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesFilter {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesFilter)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesFilterOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection struct {
+	// List of MulticloudResourceSummary.
+	Items []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{...}
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs struct {
+	// List of MulticloudResourceSummary.
+	Items GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray{ GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return o
+}
+
+// List of MulticloudResourceSummary.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) Items() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection) []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem {
+		return v.Items
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Compartment name associated the resource.
+	CompartmentName string `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Resource Id that comes from the Multi Cloud Control Plane
+	CspResourceId string `pulumi:"cspResourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the multicloud resource.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// OCID of the Network Anchor
+	NetworkAnchorId string `pulumi:"networkAnchorId"`
+	// Name of the network anchor associated to the resource.
+	NetworkAnchorName string `pulumi:"networkAnchorName"`
+	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	ResourceDisplayName string `pulumi:"resourceDisplayName"`
+	// The Id of the multicloud resource.
+	ResourceId string `pulumi:"resourceId"`
+	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	ResourceType string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Id of the Virtual Cloud Network associated to the resource.
+	VcnId string `pulumi:"vcnId"`
+	// Resource Anchor name.
+	VcnName string `pulumi:"vcnName"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{...}
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Compartment name associated the resource.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Resource Id that comes from the Multi Cloud Control Plane
+	CspResourceId pulumi.StringInput `pulumi:"cspResourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the multicloud resource.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// OCID of the Network Anchor
+	NetworkAnchorId pulumi.StringInput `pulumi:"networkAnchorId"`
+	// Name of the network anchor associated to the resource.
+	NetworkAnchorName pulumi.StringInput `pulumi:"networkAnchorName"`
+	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	ResourceDisplayName pulumi.StringInput `pulumi:"resourceDisplayName"`
+	// The Id of the multicloud resource.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Id of the Virtual Cloud Network associated to the resource.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Resource Anchor name.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray{ GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Compartment name associated the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CompartmentName
+	}).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Resource Id that comes from the Multi Cloud Control Plane
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CspResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the multicloud resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the Network Anchor
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.NetworkAnchorId
+	}).(pulumi.StringOutput)
+}
+
+// Name of the network anchor associated to the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.NetworkAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Id of the multicloud resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceId
+	}).(pulumi.StringOutput)
+}
+
+// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Id of the Virtual Cloud Network associated to the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Resource Anchor name.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItem struct {
+	// AWS accountId that was used for creating this resource anchor resource.
+	AccountId string `pulumi:"accountId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId string `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName string `pulumi:"cspResourceAnchorName"`
+	// GCP project number that was used for creating this resource anchor resource.
+	ProjectNumber string `pulumi:"projectNumber"`
+	// Oracle Cloud Infrastructure Region that resource is created.
+	Region string `pulumi:"region"`
+	// Oracle Cloud Infrastructure resource anchor name.
+	ResourceAnchorName string `pulumi:"resourceAnchorName"`
+	// CSP resource anchor Uri.
+	ResourceAnchorUri string `pulumi:"resourceAnchorUri"`
+	// Azure resource group that was used for creating this resource.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Azure subscription that was used for creating this resource.
+	Subscription string `pulumi:"subscription"`
+	// subscription type
+	SubscriptionType string `pulumi:"subscriptionType"`
+}
+
+// GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput is an input type that accepts GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs and GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput` via:
+//
+//	GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{...}
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs struct {
+	// AWS accountId that was used for creating this resource anchor resource.
+	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId pulumi.StringInput `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName pulumi.StringInput `pulumi:"cspResourceAnchorName"`
+	// GCP project number that was used for creating this resource anchor resource.
+	ProjectNumber pulumi.StringInput `pulumi:"projectNumber"`
+	// Oracle Cloud Infrastructure Region that resource is created.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Oracle Cloud Infrastructure resource anchor name.
+	ResourceAnchorName pulumi.StringInput `pulumi:"resourceAnchorName"`
+	// CSP resource anchor Uri.
+	ResourceAnchorUri pulumi.StringInput `pulumi:"resourceAnchorUri"`
+	// Azure resource group that was used for creating this resource.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Azure subscription that was used for creating this resource.
+	Subscription pulumi.StringInput `pulumi:"subscription"`
+	// subscription type
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
+}
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return i.ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+// GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput is an input type that accepts GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray and GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput` via:
+//
+//	GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray{ GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{...} }
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput
+	ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray []GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return i.ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+// AWS accountId that was used for creating this resource anchor resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) AccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.AccountId }).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// CSP resource anchor ID.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.CspResourceAnchorId
+	}).(pulumi.StringOutput)
+}
+
+// CSP resource anchor name.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.CspResourceAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// GCP project number that was used for creating this resource anchor resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ProjectNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ProjectNumber }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Region that resource is created.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure resource anchor name.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.ResourceAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// CSP resource anchor Uri.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ResourceAnchorUri }).(pulumi.StringOutput)
+}
+
+// Azure resource group that was used for creating this resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Azure subscription that was used for creating this resource.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Subscription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.Subscription }).(pulumi.StringOutput)
+}
+
+// subscription type
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.SubscriptionType }).(pulumi.StringOutput)
+}
+
+type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
+		return vs[0].([]GetMulticloudResourceAnchorCloudServiceProviderMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+type GetMulticloudResourceAnchorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudResourceAnchorsFilterInput is an input type that accepts GetMulticloudResourceAnchorsFilterArgs and GetMulticloudResourceAnchorsFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsFilterInput` via:
+//
+//	GetMulticloudResourceAnchorsFilterArgs{...}
+type GetMulticloudResourceAnchorsFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput
+	ToGetMulticloudResourceAnchorsFilterOutputWithContext(context.Context) GetMulticloudResourceAnchorsFilterOutput
+}
+
+type GetMulticloudResourceAnchorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudResourceAnchorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsFilterArgs) ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput {
+	return i.ToGetMulticloudResourceAnchorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsFilterArgs) ToGetMulticloudResourceAnchorsFilterOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsFilterOutput)
+}
+
+// GetMulticloudResourceAnchorsFilterArrayInput is an input type that accepts GetMulticloudResourceAnchorsFilterArray and GetMulticloudResourceAnchorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsFilterArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsFilterArray{ GetMulticloudResourceAnchorsFilterArgs{...} }
+type GetMulticloudResourceAnchorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput
+	ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsFilterArrayOutput
+}
+
+type GetMulticloudResourceAnchorsFilterArray []GetMulticloudResourceAnchorsFilterInput
+
+func (GetMulticloudResourceAnchorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsFilterArray) ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsFilterArray) ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsFilterArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) ToGetMulticloudResourceAnchorsFilterOutput() GetMulticloudResourceAnchorsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) ToGetMulticloudResourceAnchorsFilterOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudResourceAnchorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) ToGetMulticloudResourceAnchorsFilterArrayOutput() GetMulticloudResourceAnchorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) ToGetMulticloudResourceAnchorsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsFilter {
+		return vs[0].([]GetMulticloudResourceAnchorsFilter)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsFilterOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollection struct {
+	// List of ResourceAnchorSummary
+	Items []GetMulticloudResourceAnchorsResourceAnchorCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionArgs and GetMulticloudResourceAnchorsResourceAnchorCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{...}
+type GetMulticloudResourceAnchorsResourceAnchorCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArgs struct {
+	// List of ResourceAnchorSummary
+	Items GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput)
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionArray and GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionArray{ GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{...} }
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArray []GetMulticloudResourceAnchorsResourceAnchorCollectionInput
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return o
+}
+
+// List of ResourceAnchorSummary
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionOutput) Items() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollection) []GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
+		return v.Items
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsResourceAnchorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsResourceAnchorCollection {
+		return vs[0].([]GetMulticloudResourceAnchorsResourceAnchorCollection)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The name assigned to the compartment during creation.
+	CompartmentName string `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId string `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName string `pulumi:"cspResourceAnchorName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	Id string `pulumi:"id"`
+	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the ResourceAnchor.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+	LinkedCompartmentId string `pulumi:"linkedCompartmentId"`
+	// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+	LinkedCompartmentName string `pulumi:"linkedCompartmentName"`
+	// Partner Cloud Account Identifier of the Cloud Service Provider.
+	PartnerCloudAccountIdentifier string `pulumi:"partnerCloudAccountIdentifier"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs and GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{...}
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name assigned to the compartment during creation.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId pulumi.StringInput `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName pulumi.StringInput `pulumi:"cspResourceAnchorName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the ResourceAnchor.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+	LinkedCompartmentId pulumi.StringInput `pulumi:"linkedCompartmentId"`
+	// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+	LinkedCompartmentName pulumi.StringInput `pulumi:"linkedCompartmentName"`
+	// Partner Cloud Account Identifier of the Cloud Service Provider.
+	PartnerCloudAccountIdentifier pulumi.StringInput `pulumi:"partnerCloudAccountIdentifier"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput)
+}
+
+// GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput is an input type that accepts GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray and GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput` via:
+//
+//	GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray{ GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{...} }
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput
+	ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray []GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return i.ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name assigned to the compartment during creation.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// CSP resource anchor ID.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CspResourceAnchorId }).(pulumi.StringOutput)
+}
+
+// CSP resource anchor name.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.CspResourceAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the ResourceAnchor.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LinkedCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LinkedCompartmentId }).(pulumi.StringOutput)
+}
+
+// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LinkedCompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.LinkedCompartmentName
+	}).(pulumi.StringOutput)
+}
+
+// Partner Cloud Account Identifier of the Cloud Service Provider.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) PartnerCloudAccountIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.PartnerCloudAccountIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput() GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) ToGetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
+		return vs[0].([]GetMulticloudResourceAnchorsResourceAnchorCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput)
+}
+
+type GetPsaPrivateServiceAccessesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPrivateServiceAccessesFilterInput is an input type that accepts GetPsaPrivateServiceAccessesFilterArgs and GetPsaPrivateServiceAccessesFilterOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesFilterInput` via:
+//
+//	GetPsaPrivateServiceAccessesFilterArgs{...}
+type GetPsaPrivateServiceAccessesFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput
+	ToGetPsaPrivateServiceAccessesFilterOutputWithContext(context.Context) GetPsaPrivateServiceAccessesFilterOutput
+}
+
+type GetPsaPrivateServiceAccessesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPrivateServiceAccessesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArgs) ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput {
+	return i.ToGetPsaPrivateServiceAccessesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArgs) ToGetPsaPrivateServiceAccessesFilterOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesFilterOutput)
+}
+
+// GetPsaPrivateServiceAccessesFilterArrayInput is an input type that accepts GetPsaPrivateServiceAccessesFilterArray and GetPsaPrivateServiceAccessesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesFilterArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesFilterArray{ GetPsaPrivateServiceAccessesFilterArgs{...} }
+type GetPsaPrivateServiceAccessesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput
+	ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesFilterArray []GetPsaPrivateServiceAccessesFilterInput
+
+func (GetPsaPrivateServiceAccessesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArray) ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArray) ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesFilterArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) ToGetPsaPrivateServiceAccessesFilterOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesFilter {
+		return vs[0].([]GetPsaPrivateServiceAccessesFilter)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesFilterOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollection struct {
+	Items []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem `pulumi:"items"`
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{...}
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs struct {
+	Items GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput)
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray{ GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{...} }
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) Items() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollection) []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem {
+		return v.Items
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesPrivateServiceAccessCollection {
+		return vs[0].([]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem struct {
+	CompartmentId      string            `pulumi:"compartmentId"`
+	DefinedTags        map[string]string `pulumi:"definedTags"`
+	Description        string            `pulumi:"description"`
+	DisplayName        string            `pulumi:"displayName"`
+	Fqdns              []string          `pulumi:"fqdns"`
+	FreeformTags       map[string]string `pulumi:"freeformTags"`
+	Id                 string            `pulumi:"id"`
+	Ipv4ip             string            `pulumi:"ipv4ip"`
+	NsgIds             []string          `pulumi:"nsgIds"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	ServiceId          string            `pulumi:"serviceId"`
+	State              string            `pulumi:"state"`
+	SubnetId           string            `pulumi:"subnetId"`
+	SystemTags         map[string]string `pulumi:"systemTags"`
+	TimeCreated        string            `pulumi:"timeCreated"`
+	TimeUpdated        string            `pulumi:"timeUpdated"`
+	VcnId              string            `pulumi:"vcnId"`
+	VnicId             string            `pulumi:"vnicId"`
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{...}
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs struct {
+	CompartmentId      pulumi.StringInput      `pulumi:"compartmentId"`
+	DefinedTags        pulumi.StringMapInput   `pulumi:"definedTags"`
+	Description        pulumi.StringInput      `pulumi:"description"`
+	DisplayName        pulumi.StringInput      `pulumi:"displayName"`
+	Fqdns              pulumi.StringArrayInput `pulumi:"fqdns"`
+	FreeformTags       pulumi.StringMapInput   `pulumi:"freeformTags"`
+	Id                 pulumi.StringInput      `pulumi:"id"`
+	Ipv4ip             pulumi.StringInput      `pulumi:"ipv4ip"`
+	NsgIds             pulumi.StringArrayInput `pulumi:"nsgIds"`
+	SecurityAttributes pulumi.StringMapInput   `pulumi:"securityAttributes"`
+	ServiceId          pulumi.StringInput      `pulumi:"serviceId"`
+	State              pulumi.StringInput      `pulumi:"state"`
+	SubnetId           pulumi.StringInput      `pulumi:"subnetId"`
+	SystemTags         pulumi.StringMapInput   `pulumi:"systemTags"`
+	TimeCreated        pulumi.StringInput      `pulumi:"timeCreated"`
+	TimeUpdated        pulumi.StringInput      `pulumi:"timeUpdated"`
+	VcnId              pulumi.StringInput      `pulumi:"vcnId"`
+	VnicId             pulumi.StringInput      `pulumi:"vnicId"`
+}
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput)
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray{ GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{...} }
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Fqdns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) []string { return v.Fqdns }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Ipv4ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Ipv4ip }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.ServiceId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem {
+		return vs[0].([]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput)
+}
+
+type GetPsaPsaServicesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaServicesFilterInput is an input type that accepts GetPsaPsaServicesFilterArgs and GetPsaPsaServicesFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesFilterInput` via:
+//
+//	GetPsaPsaServicesFilterArgs{...}
+type GetPsaPsaServicesFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput
+	ToGetPsaPsaServicesFilterOutputWithContext(context.Context) GetPsaPsaServicesFilterOutput
+}
+
+type GetPsaPsaServicesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaServicesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesFilterArgs) ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput {
+	return i.ToGetPsaPsaServicesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesFilterArgs) ToGetPsaPsaServicesFilterOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesFilterOutput)
+}
+
+// GetPsaPsaServicesFilterArrayInput is an input type that accepts GetPsaPsaServicesFilterArray and GetPsaPsaServicesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesFilterArrayInput` via:
+//
+//	GetPsaPsaServicesFilterArray{ GetPsaPsaServicesFilterArgs{...} }
+type GetPsaPsaServicesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput
+	ToGetPsaPsaServicesFilterArrayOutputWithContext(context.Context) GetPsaPsaServicesFilterArrayOutput
+}
+
+type GetPsaPsaServicesFilterArray []GetPsaPsaServicesFilterInput
+
+func (GetPsaPsaServicesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesFilterArray) ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput {
+	return i.ToGetPsaPsaServicesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesFilterArray) ToGetPsaPsaServicesFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesFilterArrayOutput)
+}
+
+type GetPsaPsaServicesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesFilterOutput) ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterOutput) ToGetPsaPsaServicesFilterOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaServicesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaServicesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaServicesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) ToGetPsaPsaServicesFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesFilter {
+		return vs[0].([]GetPsaPsaServicesFilter)[vs[1].(int)]
+	}).(GetPsaPsaServicesFilterOutput)
+}
+
 type GetPsaPsaServicesPsaServiceCollection struct {
 	// List of PsaServiceSummary.
 	Items []GetPsaPsaServicesPsaServiceCollectionItem `pulumi:"items"`
@@ -1995,6 +4516,7 @@ type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceColl
 	AdwId string `pulumi:"adwId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	ComputeCount  int    `pulumi:"computeCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the ResourceAnalyticsInstance instance.
@@ -2040,6 +4562,7 @@ type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceColl
 	AdwId pulumi.StringInput `pulumi:"adwId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	ComputeCount  pulumi.IntInput    `pulumi:"computeCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the ResourceAnalyticsInstance instance.
@@ -2137,6 +4660,12 @@ func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceC
 	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
 		return v.CompartmentId
 	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) int {
+		return v.ComputeCount
+	}).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -2372,6 +4901,262 @@ func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceC
 	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
 }
 
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegion struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId string `pulumi:"regionId"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return o
+}
+
+// Data population status for a monitored region in the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) DataPopulations() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
+		return v.DataPopulations
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
+}
+
+// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) string { return v.RegionId }).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegion {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount int `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status string `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount int `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount int `pulumi:"totalCount"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...}
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount pulumi.IntInput `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount pulumi.IntInput `pulumi:"totalCount"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+// The number of data population tasks currently in progress.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) InProgressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
+		return v.InProgressCount
+	}).(pulumi.IntOutput)
+}
+
+// The overall status of the data population from the monitored region of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The number of data population tasks that have succeeded.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) SucceededCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
+		return v.SucceededCount
+	}).(pulumi.IntOutput)
+}
+
+// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The total number of data population tasks.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int { return v.TotalCount }).(pulumi.IntOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
+}
+
 type GetResourceAnalyticsTenancyAttachmentsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -2575,6 +5360,8 @@ func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOu
 }
 
 type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus string `pulumi:"dataPopulationStatus"`
 	// A description of the tenancy.
 	Description string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
@@ -2583,6 +5370,8 @@ type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struc
 	IsReportingTenancy bool `pulumi:"isReportingTenancy"`
 	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion `pulumi:"monitoredRegions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -2593,6 +5382,10 @@ type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struc
 	TenancyId string `pulumi:"tenancyId"`
 	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded string `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted string `pulumi:"timeDataPopulationStarted"`
 	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -2609,6 +5402,8 @@ type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput 
 }
 
 type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus pulumi.StringInput `pulumi:"dataPopulationStatus"`
 	// A description of the tenancy.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
@@ -2617,6 +5412,8 @@ type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs s
 	IsReportingTenancy pulumi.BoolInput `pulumi:"isReportingTenancy"`
 	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput `pulumi:"monitoredRegions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -2627,6 +5424,10 @@ type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs s
 	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded pulumi.StringInput `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted pulumi.StringInput `pulumi:"timeDataPopulationStarted"`
 	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
@@ -2682,6 +5483,13 @@ func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOut
 	return o
 }
 
+// The overall status of the data population from the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) DataPopulationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.DataPopulationStatus
+	}).(pulumi.StringOutput)
+}
+
 // A description of the tenancy.
 func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
@@ -2706,6 +5514,13 @@ func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOut
 	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
 		return v.LifecycleDetails
 	}).(pulumi.StringOutput)
+}
+
+// List of monitored regions with their data population status.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) MonitoredRegions() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion {
+		return v.MonitoredRegions
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
@@ -2741,6 +5556,20 @@ func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
+// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeDataPopulationEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeDataPopulationStarted
+	}).(pulumi.StringOutput)
+}
+
 // The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
@@ -2766,6 +5595,424 @@ func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
 		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)[vs[1].(int)]
 	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId string `pulumi:"regionId"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return o
+}
+
+// Data population status for a monitored region in the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) DataPopulations() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation {
+		return v.DataPopulations
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput)
+}
+
+// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion) string {
+		return v.RegionId
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount int `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status string `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount int `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount int `pulumi:"totalCount"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount pulumi.IntInput `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount pulumi.IntInput `pulumi:"totalCount"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+// The number of data population tasks currently in progress.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) InProgressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.InProgressCount
+	}).(pulumi.IntOutput)
+}
+
+// The overall status of the data population from the monitored region of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// The number of data population tasks that have succeeded.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) SucceededCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.SucceededCount
+	}).(pulumi.IntOutput)
+}
+
+// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.TimeEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The total number of data population tasks.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput) TotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation) int {
+		return v.TotalCount
+	}).(pulumi.IntOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput)
+}
+
+type GetResourceSearchResult struct {
+	AdditionalDetails  map[string]string `pulumi:"additionalDetails"`
+	AvailabilityDomain string            `pulumi:"availabilityDomain"`
+	CompartmentId      string            `pulumi:"compartmentId"`
+	DefinedTags        map[string]string `pulumi:"definedTags"`
+	DisplayName        string            `pulumi:"displayName"`
+	FreeformTags       map[string]string `pulumi:"freeformTags"`
+	Identifier         string            `pulumi:"identifier"`
+	ResourceType       string            `pulumi:"resourceType"`
+	State              string            `pulumi:"state"`
+	SystemTags         map[string]string `pulumi:"systemTags"`
+	TimeCreated        string            `pulumi:"timeCreated"`
+}
+
+// GetResourceSearchResultInput is an input type that accepts GetResourceSearchResultArgs and GetResourceSearchResultOutput values.
+// You can construct a concrete instance of `GetResourceSearchResultInput` via:
+//
+//	GetResourceSearchResultArgs{...}
+type GetResourceSearchResultInput interface {
+	pulumi.Input
+
+	ToGetResourceSearchResultOutput() GetResourceSearchResultOutput
+	ToGetResourceSearchResultOutputWithContext(context.Context) GetResourceSearchResultOutput
+}
+
+type GetResourceSearchResultArgs struct {
+	AdditionalDetails  pulumi.StringMapInput `pulumi:"additionalDetails"`
+	AvailabilityDomain pulumi.StringInput    `pulumi:"availabilityDomain"`
+	CompartmentId      pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags        pulumi.StringMapInput `pulumi:"definedTags"`
+	DisplayName        pulumi.StringInput    `pulumi:"displayName"`
+	FreeformTags       pulumi.StringMapInput `pulumi:"freeformTags"`
+	Identifier         pulumi.StringInput    `pulumi:"identifier"`
+	ResourceType       pulumi.StringInput    `pulumi:"resourceType"`
+	State              pulumi.StringInput    `pulumi:"state"`
+	SystemTags         pulumi.StringMapInput `pulumi:"systemTags"`
+	TimeCreated        pulumi.StringInput    `pulumi:"timeCreated"`
+}
+
+func (GetResourceSearchResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceSearchResult)(nil)).Elem()
+}
+
+func (i GetResourceSearchResultArgs) ToGetResourceSearchResultOutput() GetResourceSearchResultOutput {
+	return i.ToGetResourceSearchResultOutputWithContext(context.Background())
+}
+
+func (i GetResourceSearchResultArgs) ToGetResourceSearchResultOutputWithContext(ctx context.Context) GetResourceSearchResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceSearchResultOutput)
+}
+
+// GetResourceSearchResultArrayInput is an input type that accepts GetResourceSearchResultArray and GetResourceSearchResultArrayOutput values.
+// You can construct a concrete instance of `GetResourceSearchResultArrayInput` via:
+//
+//	GetResourceSearchResultArray{ GetResourceSearchResultArgs{...} }
+type GetResourceSearchResultArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput
+	ToGetResourceSearchResultArrayOutputWithContext(context.Context) GetResourceSearchResultArrayOutput
+}
+
+type GetResourceSearchResultArray []GetResourceSearchResultInput
+
+func (GetResourceSearchResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceSearchResult)(nil)).Elem()
+}
+
+func (i GetResourceSearchResultArray) ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput {
+	return i.ToGetResourceSearchResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceSearchResultArray) ToGetResourceSearchResultArrayOutputWithContext(ctx context.Context) GetResourceSearchResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceSearchResultArrayOutput)
+}
+
+type GetResourceSearchResultOutput struct{ *pulumi.OutputState }
+
+func (GetResourceSearchResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceSearchResult)(nil)).Elem()
+}
+
+func (o GetResourceSearchResultOutput) ToGetResourceSearchResultOutput() GetResourceSearchResultOutput {
+	return o
+}
+
+func (o GetResourceSearchResultOutput) ToGetResourceSearchResultOutputWithContext(ctx context.Context) GetResourceSearchResultOutput {
+	return o
+}
+
+func (o GetResourceSearchResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetResourceSearchResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetResourceSearchResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceSearchResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetResourceSearchResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceSearchResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceSearchResult)(nil)).Elem()
+}
+
+func (o GetResourceSearchResultArrayOutput) ToGetResourceSearchResultArrayOutput() GetResourceSearchResultArrayOutput {
+	return o
+}
+
+func (o GetResourceSearchResultArrayOutput) ToGetResourceSearchResultArrayOutputWithContext(ctx context.Context) GetResourceSearchResultArrayOutput {
+	return o
+}
+
+func (o GetResourceSearchResultArrayOutput) Index(i pulumi.IntInput) GetResourceSearchResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceSearchResult {
+		return vs[0].([]GetResourceSearchResult)[vs[1].(int)]
+	}).(GetResourceSearchResultOutput)
 }
 
 type GetSelfPartnerSubscriptionsFilter struct {
@@ -10326,6 +13573,40 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcnInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilterInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilterArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsFilterInput)(nil)).Elem(), GetMulticloudResourceAnchorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsFilterArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesFilterInput)(nil)).Elem(), GetPsaPrivateServiceAccessesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesFilterArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesFilterInput)(nil)).Elem(), GetPsaPsaServicesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesFilterArrayInput)(nil)).Elem(), GetPsaPsaServicesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionArrayInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItemInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionItemArgs{})
@@ -10364,12 +13645,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceSearchResultInput)(nil)).Elem(), GetResourceSearchResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceSearchResultArrayInput)(nil)).Elem(), GetResourceSearchResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsFilterInput)(nil)).Elem(), GetSelfPartnerSubscriptionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsFilterArrayInput)(nil)).Elem(), GetSelfPartnerSubscriptionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfPartnerSubscriptionsListingSubscriptionsCollectionInput)(nil)).Elem(), GetSelfPartnerSubscriptionsListingSubscriptionsCollectionArgs{})
@@ -10488,6 +13779,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionItemOutput{})
@@ -10526,12 +13851,22 @@ func init() {
 	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceSearchResultOutput{})
+	pulumi.RegisterOutputType(GetResourceSearchResultArrayOutput{})
 	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsFilterOutput{})
 	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSelfPartnerSubscriptionsListingSubscriptionsCollectionOutput{})

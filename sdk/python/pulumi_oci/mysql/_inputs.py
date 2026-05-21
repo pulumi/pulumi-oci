@@ -127,6 +127,10 @@ __all__ = [
     'MysqlDbSystemSecureConnectionsArgsDict',
     'MysqlDbSystemSourceArgs',
     'MysqlDbSystemSourceArgsDict',
+    'MysqlDbSystemSourceChannelArgs',
+    'MysqlDbSystemSourceChannelArgsDict',
+    'MysqlDbSystemSourceChannelSslCaCertificateArgs',
+    'MysqlDbSystemSourceChannelSslCaCertificateArgsDict',
     'MysqlDbSystemTelemetryConfigurationArgs',
     'MysqlDbSystemTelemetryConfigurationArgsDict',
     'MysqlDbSystemTelemetryConfigurationLogArgs',
@@ -8389,6 +8393,10 @@ class MysqlDbSystemSourceArgsDict(TypedDict):
     """
     The OCID of the backup to be used as the source for the new DB System.
     """
+    channel: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelArgs']]]
+    """
+    Properties to setup a replication channel with the source (cloned) DB system.
+    """
     db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
@@ -8396,6 +8404,10 @@ class MysqlDbSystemSourceArgsDict(TypedDict):
     recovery_point: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
     """
     source_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -8407,23 +8419,31 @@ class MysqlDbSystemSourceArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[_builtins.str],
                  backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 channel: pulumi.Input[Optional['MysqlDbSystemSourceChannelArgs']] = None,
                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
                  source_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         :param pulumi.Input[_builtins.str] backup_id: The OCID of the backup to be used as the source for the new DB System.
+        :param pulumi.Input['MysqlDbSystemSourceChannelArgs'] channel: Properties to setup a replication channel with the source (cloned) DB system.
         :param pulumi.Input[_builtins.str] db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         :param pulumi.Input[_builtins.str] recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+        :param pulumi.Input[_builtins.str] region: The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] source_url: The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
         """
         pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
+        if channel is not None:
+            pulumi.set(__self__, "channel", channel)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
         if recovery_point is not None:
             pulumi.set(__self__, "recovery_point", recovery_point)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
         if source_url is not None:
             pulumi.set(__self__, "source_url", source_url)
 
@@ -8452,6 +8472,18 @@ class MysqlDbSystemSourceArgs:
         pulumi.set(self, "backup_id", value)
 
     @_builtins.property
+    @pulumi.getter
+    def channel(self) -> pulumi.Input[Optional['MysqlDbSystemSourceChannelArgs']]:
+        """
+        Properties to setup a replication channel with the source (cloned) DB system.
+        """
+        return pulumi.get(self, "channel")
+
+    @channel.setter
+    def channel(self, value: pulumi.Input[Optional['MysqlDbSystemSourceChannelArgs']]):
+        pulumi.set(self, "channel", value)
+
+    @_builtins.property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -8476,6 +8508,18 @@ class MysqlDbSystemSourceArgs:
         pulumi.set(self, "recovery_point", value)
 
     @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
     @pulumi.getter(name="sourceUrl")
     def source_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -8486,6 +8530,162 @@ class MysqlDbSystemSourceArgs:
     @source_url.setter
     def source_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_url", value)
+
+
+class MysqlDbSystemSourceChannelArgsDict(TypedDict):
+    applier_username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The username for the replication applier of the created MySQL DB System.
+    """
+    source_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+    """
+    source_username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+    """
+    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgs']]]
+    """
+    The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+    """
+    ssl_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The SSL mode of the Channel.
+    """
+
+@pulumi.input_type
+class MysqlDbSystemSourceChannelArgs:
+    def __init__(__self__, *,
+                 applier_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_ca_certificate: pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgs']] = None,
+                 ssl_mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] applier_username: The username for the replication applier of the created MySQL DB System.
+        :param pulumi.Input[_builtins.str] source_password: The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        :param pulumi.Input[_builtins.str] source_username: The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+        :param pulumi.Input['MysqlDbSystemSourceChannelSslCaCertificateArgs'] ssl_ca_certificate: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        :param pulumi.Input[_builtins.str] ssl_mode: The SSL mode of the Channel.
+        """
+        if applier_username is not None:
+            pulumi.set(__self__, "applier_username", applier_username)
+        if source_password is not None:
+            pulumi.set(__self__, "source_password", source_password)
+        if source_username is not None:
+            pulumi.set(__self__, "source_username", source_username)
+        if ssl_ca_certificate is not None:
+            pulumi.set(__self__, "ssl_ca_certificate", ssl_ca_certificate)
+        if ssl_mode is not None:
+            pulumi.set(__self__, "ssl_mode", ssl_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="applierUsername")
+    def applier_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The username for the replication applier of the created MySQL DB System.
+        """
+        return pulumi.get(self, "applier_username")
+
+    @applier_username.setter
+    def applier_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "applier_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePassword")
+    def source_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+        """
+        return pulumi.get(self, "source_password")
+
+    @source_password.setter
+    def source_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUsername")
+    def source_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+        """
+        return pulumi.get(self, "source_username")
+
+    @source_username.setter
+    def source_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sslCaCertificate")
+    def ssl_ca_certificate(self) -> pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgs']]:
+        """
+        The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+        """
+        return pulumi.get(self, "ssl_ca_certificate")
+
+    @ssl_ca_certificate.setter
+    def ssl_ca_certificate(self, value: pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgs']]):
+        pulumi.set(self, "ssl_ca_certificate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The SSL mode of the Channel.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+    @ssl_mode.setter
+    def ssl_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ssl_mode", value)
+
+
+class MysqlDbSystemSourceChannelSslCaCertificateArgsDict(TypedDict):
+    certificate_type: pulumi.Input[_builtins.str]
+    """
+    The type of CA certificate.
+    """
+    contents: pulumi.Input[_builtins.str]
+    """
+    The string containing the CA certificate in PEM format.
+    """
+
+@pulumi.input_type
+class MysqlDbSystemSourceChannelSslCaCertificateArgs:
+    def __init__(__self__, *,
+                 certificate_type: pulumi.Input[_builtins.str],
+                 contents: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] certificate_type: The type of CA certificate.
+        :param pulumi.Input[_builtins.str] contents: The string containing the CA certificate in PEM format.
+        """
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "contents", contents)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of CA certificate.
+        """
+        return pulumi.get(self, "certificate_type")
+
+    @certificate_type.setter
+    def certificate_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "certificate_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def contents(self) -> pulumi.Input[_builtins.str]:
+        """
+        The string containing the CA certificate in PEM format.
+        """
+        return pulumi.get(self, "contents")
+
+    @contents.setter
+    def contents(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "contents", value)
 
 
 class MysqlDbSystemTelemetryConfigurationArgsDict(TypedDict):

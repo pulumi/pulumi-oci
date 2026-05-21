@@ -38,15 +38,15 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
      * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
-    @Import(name="clusterAdminPassword", required=true)
-    private Output<String> clusterAdminPassword;
+    @Import(name="clusterAdminPassword")
+    private @Nullable Output<String> clusterAdminPassword;
 
     /**
      * @return (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
-    public Output<String> clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<Output<String>> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
 
     /**
@@ -144,6 +144,27 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.policyDetails);
     }
 
+    /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
     private AutoScalingConfigurationArgs() {}
 
     private AutoScalingConfigurationArgs(AutoScalingConfigurationArgs $) {
@@ -154,6 +175,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         this.nodeType = $.nodeType;
         this.policy = $.policy;
         this.policyDetails = $.policyDetails;
+        this.secretId = $.secretId;
     }
 
     public static Builder builder() {
@@ -201,7 +223,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder clusterAdminPassword(Output<String> clusterAdminPassword) {
+        public Builder clusterAdminPassword(@Nullable Output<String> clusterAdminPassword) {
             $.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
@@ -341,12 +363,36 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
             return policyDetails(Output.of(policyDetails));
         }
 
+        /**
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
         public AutoScalingConfigurationArgs build() {
             if ($.bdsInstanceId == null) {
                 throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "bdsInstanceId");
-            }
-            if ($.clusterAdminPassword == null) {
-                throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "clusterAdminPassword");
             }
             if ($.isEnabled == null) {
                 throw new MissingRequiredPropertyException("AutoScalingConfigurationArgs", "isEnabled");

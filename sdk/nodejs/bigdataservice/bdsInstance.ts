@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstance = new oci.bigdataservice.BdsInstance("test_bds_instance", {
- *     clusterAdminPassword: bdsInstanceClusterAdminPassword,
  *     clusterPublicKey: bdsInstanceClusterPublicKey,
  *     clusterVersion: bdsInstanceClusterVersion,
  *     compartmentId: compartmentId,
@@ -99,9 +98,11 @@ import * as utilities from "../utilities";
  *         odhVersion: bdsInstanceBdsClusterVersionSummaryOdhVersion,
  *     },
  *     bootstrapScriptUrl: bdsInstanceBootstrapScriptUrl,
+ *     clusterAdminPassword: bdsInstanceClusterAdminPassword,
  *     clusterProfile: bdsInstanceClusterProfile,
  *     definedTags: bdsInstanceDefinedTags,
  *     freeformTags: bdsInstanceFreeformTags,
+ *     isSecretReused: bdsInstanceIsSecretReused === "true",
  *     kerberosRealmName: bdsInstanceKerberosRealmName,
  *     kmsKeyId: bdsInstanceKmsKeyId,
  *     ignoreExistingNodesShapes: ignoreExistingNodesShape,
@@ -109,6 +110,7 @@ import * as utilities from "../utilities";
  *         cidrBlock: bdsInstanceNetworkConfigCidrBlock,
  *         isNatGatewayRequired: bdsInstanceNetworkConfigIsNatGatewayRequired === "true",
  *     },
+ *     secretId: testSecret.id,
  * });
  * ```
  *
@@ -161,7 +163,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public readonly cloudSqlDetails: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[]>;
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      */
     declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
@@ -224,6 +226,10 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     declare public readonly isKafkaConfigured: pulumi.Output<boolean | undefined>;
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     */
+    declare public readonly isSecretReused: pulumi.Output<boolean>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     declare public readonly isSecure: pulumi.Output<boolean>;
@@ -267,6 +273,11 @@ export class BdsInstance extends pulumi.CustomResource {
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     declare public readonly removeNode: pulumi.Output<string | undefined>;
+    declare public readonly removeNodes: pulumi.Output<string[] | undefined>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    declare public readonly secretId: pulumi.Output<string>;
     declare public readonly startClusterShapeConfigs: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -276,6 +287,10 @@ export class BdsInstance extends pulumi.CustomResource {
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     */
+    declare public /*out*/ readonly timeEarliestCertificateExpiration: pulumi.Output<string>;
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      */
@@ -320,6 +335,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isForceStopJobs"] = state?.isForceStopJobs;
             resourceInputs["isHighAvailability"] = state?.isHighAvailability;
             resourceInputs["isKafkaConfigured"] = state?.isKafkaConfigured;
+            resourceInputs["isSecretReused"] = state?.isSecretReused;
             resourceInputs["isSecure"] = state?.isSecure;
             resourceInputs["kafkaBrokerNode"] = state?.kafkaBrokerNode;
             resourceInputs["kerberosRealmName"] = state?.kerberosRealmName;
@@ -331,17 +347,17 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state?.numberOfNodesRequiringMaintenanceReboot;
             resourceInputs["osPatchVersion"] = state?.osPatchVersion;
             resourceInputs["removeNode"] = state?.removeNode;
+            resourceInputs["removeNodes"] = state?.removeNodes;
+            resourceInputs["secretId"] = state?.secretId;
             resourceInputs["startClusterShapeConfigs"] = state?.startClusterShapeConfigs;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeEarliestCertificateExpiration"] = state?.timeEarliestCertificateExpiration;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["utilNode"] = state?.utilNode;
             resourceInputs["workerNode"] = state?.workerNode;
         } else {
             const args = argsOrState as BdsInstanceArgs | undefined;
-            if (args?.clusterAdminPassword === undefined && !opts.urn) {
-                throw new Error("Missing required property 'clusterAdminPassword'");
-            }
             if (args?.clusterPublicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterPublicKey'");
             }
@@ -388,6 +404,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isForceStopJobs"] = args?.isForceStopJobs;
             resourceInputs["isHighAvailability"] = args?.isHighAvailability;
             resourceInputs["isKafkaConfigured"] = args?.isKafkaConfigured;
+            resourceInputs["isSecretReused"] = args?.isSecretReused;
             resourceInputs["isSecure"] = args?.isSecure;
             resourceInputs["kafkaBrokerNode"] = args?.kafkaBrokerNode;
             resourceInputs["kerberosRealmName"] = args?.kerberosRealmName;
@@ -396,6 +413,8 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["networkConfig"] = args?.networkConfig;
             resourceInputs["osPatchVersion"] = args?.osPatchVersion;
             resourceInputs["removeNode"] = args?.removeNode;
+            resourceInputs["removeNodes"] = args?.removeNodes;
+            resourceInputs["secretId"] = args?.secretId;
             resourceInputs["startClusterShapeConfigs"] = args?.startClusterShapeConfigs;
             resourceInputs["state"] = args?.state;
             resourceInputs["utilNode"] = args?.utilNode;
@@ -406,6 +425,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["numberOfNodes"] = undefined /*out*/;
             resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeEarliestCertificateExpiration"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -432,7 +452,7 @@ export interface BdsInstanceState {
      */
     cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[] | undefined>;
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      */
     clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
@@ -495,6 +515,10 @@ export interface BdsInstanceState {
      */
     isKafkaConfigured?: pulumi.Input<boolean | undefined>;
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     */
+    isSecretReused?: pulumi.Input<boolean | undefined>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     isSecure?: pulumi.Input<boolean | undefined>;
@@ -538,6 +562,11 @@ export interface BdsInstanceState {
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     removeNode?: pulumi.Input<string | undefined>;
+    removeNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -547,6 +576,10 @@ export interface BdsInstanceState {
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
     timeCreated?: pulumi.Input<string | undefined>;
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     */
+    timeEarliestCertificateExpiration?: pulumi.Input<string | undefined>;
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      */
@@ -575,9 +608,9 @@ export interface BdsInstanceArgs {
      */
     cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[] | undefined>;
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      */
-    clusterAdminPassword: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * Profile of the Big Data Service cluster.
      */
@@ -630,6 +663,10 @@ export interface BdsInstanceArgs {
      */
     isKafkaConfigured?: pulumi.Input<boolean | undefined>;
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     */
+    isSecretReused?: pulumi.Input<boolean | undefined>;
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
     isSecure: pulumi.Input<boolean>;
@@ -661,6 +698,11 @@ export interface BdsInstanceArgs {
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
     removeNode?: pulumi.Input<string | undefined>;
+    removeNodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
     startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.

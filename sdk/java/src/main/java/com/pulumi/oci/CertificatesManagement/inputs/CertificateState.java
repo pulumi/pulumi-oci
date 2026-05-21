@@ -98,18 +98,33 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     @Import(name="configType")
     private @Nullable Output<String> configType;
 
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public Optional<Output<String>> configType() {
         return Optional.ofNullable(this.configType);
+    }
+
+    /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    @Import(name="currentVersionNumber")
+    private @Nullable Output<String> currentVersionNumber;
+
+    /**
+     * @return (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    public Optional<Output<String>> currentVersionNumber() {
+        return Optional.ofNullable(this.currentVersionNumber);
     }
 
     /**
@@ -322,6 +337,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         this.certificateRules = $.certificateRules;
         this.compartmentId = $.compartmentId;
         this.configType = $.configType;
+        this.currentVersionNumber = $.currentVersionNumber;
         this.currentVersions = $.currentVersions;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -481,7 +497,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+         * @param configType The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
          * 
          * @return builder
          * 
@@ -492,13 +508,34 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+         * @param configType The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
          * 
          * @return builder
          * 
          */
         public Builder configType(String configType) {
             return configType(Output.of(configType));
+        }
+
+        /**
+         * @param currentVersionNumber (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentVersionNumber(@Nullable Output<String> currentVersionNumber) {
+            $.currentVersionNumber = currentVersionNumber;
+            return this;
+        }
+
+        /**
+         * @param currentVersionNumber (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentVersionNumber(String currentVersionNumber) {
+            return currentVersionNumber(Output.of(currentVersionNumber));
         }
 
         /**

@@ -24,11 +24,16 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
     private String displayName;
     private Integer forceRefreshResourcePrincipalTrigger;
     /**
-     * @return The id of the ResourcePrincipalConfiguration.
+     * @return The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      * 
      */
     private String id;
     private String resourcePrincipalConfigurationId;
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    private String secretId;
     /**
      * @return Life span in hours of each resource principal session token.
      * 
@@ -82,7 +87,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
         return this.forceRefreshResourcePrincipalTrigger;
     }
     /**
-     * @return The id of the ResourcePrincipalConfiguration.
+     * @return The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      * 
      */
     public String id() {
@@ -90,6 +95,13 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
     }
     public String resourcePrincipalConfigurationId() {
         return this.resourcePrincipalConfigurationId;
+    }
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public String secretId() {
+        return this.secretId;
     }
     /**
      * @return Life span in hours of each resource principal session token.
@@ -149,6 +161,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
         private Integer forceRefreshResourcePrincipalTrigger;
         private String id;
         private String resourcePrincipalConfigurationId;
+        private String secretId;
         private Integer sessionTokenLifeSpanDurationInHours;
         private String state;
         private String timeCreated;
@@ -164,6 +177,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
     	      this.forceRefreshResourcePrincipalTrigger = defaults.forceRefreshResourcePrincipalTrigger;
     	      this.id = defaults.id;
     	      this.resourcePrincipalConfigurationId = defaults.resourcePrincipalConfigurationId;
+    	      this.secretId = defaults.secretId;
     	      this.sessionTokenLifeSpanDurationInHours = defaults.sessionTokenLifeSpanDurationInHours;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -218,6 +232,14 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
               throw new MissingRequiredPropertyException("GetBdsInstanceResourcePrincipalConfigurationResult", "resourcePrincipalConfigurationId");
             }
             this.resourcePrincipalConfigurationId = resourcePrincipalConfigurationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResourcePrincipalConfigurationResult", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
@@ -276,6 +298,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationResult {
             _resultValue.forceRefreshResourcePrincipalTrigger = forceRefreshResourcePrincipalTrigger;
             _resultValue.id = id;
             _resultValue.resourcePrincipalConfigurationId = resourcePrincipalConfigurationId;
+            _resultValue.secretId = secretId;
             _resultValue.sessionTokenLifeSpanDurationInHours = sessionTokenLifeSpanDurationInHours;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

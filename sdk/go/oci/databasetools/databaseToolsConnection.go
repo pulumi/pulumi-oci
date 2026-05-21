@@ -19,6 +19,86 @@ import (
 //
 // Creates a new Database Tools connection.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/databasetools"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasetools.NewDatabaseToolsConnection(ctx, "test_database_tools_connection", &databasetools.DatabaseToolsConnectionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(databaseToolsConnectionDisplayName),
+//				Type:          pulumi.Any(databaseToolsConnectionType),
+//				UserName:      pulumi.Any(testUser.Name),
+//				UserPassword: &databasetools.DatabaseToolsConnectionUserPasswordArgs{
+//					SecretId:  pulumi.Any(testSecret.Id),
+//					ValueType: pulumi.Any(databaseToolsConnectionUserPasswordValueType),
+//				},
+//				AdvancedProperties: pulumi.Any(databaseToolsConnectionAdvancedProperties),
+//				AuthenticationType: pulumi.Any(databaseToolsConnectionAuthenticationType),
+//				ConnectionString:   pulumi.Any(databaseToolsConnectionConnectionString),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				KeyStores: databasetools.DatabaseToolsConnectionKeyStoreArray{
+//					&databasetools.DatabaseToolsConnectionKeyStoreArgs{
+//						KeyStoreContent: &databasetools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{
+//							ValueType: pulumi.Any(databaseToolsConnectionKeyStoresKeyStoreContentValueType),
+//							SecretId:  pulumi.Any(testSecret.Id),
+//						},
+//						KeyStorePassword: &databasetools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{
+//							ValueType: pulumi.Any(databaseToolsConnectionKeyStoresKeyStorePasswordValueType),
+//							SecretId:  pulumi.Any(testSecret.Id),
+//						},
+//						KeyStoreType: pulumi.Any(databaseToolsConnectionKeyStoresKeyStoreType),
+//					},
+//				},
+//				Locks: databasetools.DatabaseToolsConnectionLockArray{
+//					&databasetools.DatabaseToolsConnectionLockArgs{
+//						Type:              pulumi.Any(databaseToolsConnectionLocksType),
+//						Message:           pulumi.Any(databaseToolsConnectionLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(databaseToolsConnectionLocksTimeCreated),
+//					},
+//				},
+//				PrivateEndpointId: pulumi.Any(testDatabaseToolsPrivateEndpoint.Id),
+//				ProxyClient: &databasetools.DatabaseToolsConnectionProxyClientArgs{
+//					ProxyAuthenticationType: pulumi.Any(databaseToolsConnectionProxyClientProxyAuthenticationType),
+//					Roles:                   pulumi.Any(databaseToolsConnectionProxyClientRoles),
+//					UserName:                pulumi.Any(testUser.Name),
+//					UserPassword: &databasetools.DatabaseToolsConnectionProxyClientUserPasswordArgs{
+//						SecretId:  pulumi.Any(testSecret.Id),
+//						ValueType: pulumi.Any(databaseToolsConnectionProxyClientUserPasswordValueType),
+//					},
+//				},
+//				RelatedResource: &databasetools.DatabaseToolsConnectionRelatedResourceArgs{
+//					EntityType: pulumi.Any(databaseToolsConnectionRelatedResourceEntityType),
+//					Identifier: pulumi.Any(databaseToolsConnectionRelatedResourceIdentifier),
+//				},
+//				RuntimeIdentity: pulumi.Any(databaseToolsConnectionRuntimeIdentity),
+//				RuntimeSupport:  pulumi.Any(databaseToolsConnectionRuntimeSupport),
+//				Url:             pulumi.Any(databaseToolsConnectionUrl),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // DatabaseToolsConnections can be imported using the `id`, e.g.
@@ -31,6 +111,8 @@ type DatabaseToolsConnection struct {
 
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.StringMapOutput `pulumi:"advancedProperties"`
+	// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+	AuthenticationType pulumi.StringOutput `pulumi:"authenticationType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -55,7 +137,7 @@ type DatabaseToolsConnection struct {
 	RelatedResource DatabaseToolsConnectionRelatedResourceOutput `pulumi:"relatedResource"`
 	// Specifies the Database Tools Runtime endpoint.
 	RuntimeEndpoint pulumi.StringOutput `pulumi:"runtimeEndpoint"`
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity pulumi.StringOutput `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringOutput `pulumi:"runtimeSupport"`
@@ -72,9 +154,9 @@ type DatabaseToolsConnection struct {
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringOutput `pulumi:"url"`
 	// (Updatable) The database user name.
-	UserName pulumi.StringOutput `pulumi:"userName"`
+	UserName pulumi.StringPtrOutput `pulumi:"userName"`
 	// (Updatable) The database user password.
-	UserPassword DatabaseToolsConnectionUserPasswordOutput `pulumi:"userPassword"`
+	UserPassword DatabaseToolsConnectionUserPasswordPtrOutput `pulumi:"userPassword"`
 }
 
 // NewDatabaseToolsConnection registers a new resource with the given unique name, arguments, and options.
@@ -92,12 +174,6 @@ func NewDatabaseToolsConnection(ctx *pulumi.Context,
 	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
-	}
-	if args.UserName == nil {
-		return nil, errors.New("invalid value for required argument 'UserName'")
-	}
-	if args.UserPassword == nil {
-		return nil, errors.New("invalid value for required argument 'UserPassword'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DatabaseToolsConnection
@@ -124,6 +200,8 @@ func GetDatabaseToolsConnection(ctx *pulumi.Context,
 type databaseToolsConnectionState struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
+	// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+	AuthenticationType *string `pulumi:"authenticationType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -148,7 +226,7 @@ type databaseToolsConnectionState struct {
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
 	// Specifies the Database Tools Runtime endpoint.
 	RuntimeEndpoint *string `pulumi:"runtimeEndpoint"`
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity *string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport *string `pulumi:"runtimeSupport"`
@@ -173,6 +251,8 @@ type databaseToolsConnectionState struct {
 type DatabaseToolsConnectionState struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.StringMapInput
+	// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+	AuthenticationType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -197,7 +277,7 @@ type DatabaseToolsConnectionState struct {
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
 	// Specifies the Database Tools Runtime endpoint.
 	RuntimeEndpoint pulumi.StringPtrInput
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity pulumi.StringPtrInput
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringPtrInput
@@ -226,6 +306,8 @@ func (DatabaseToolsConnectionState) ElementType() reflect.Type {
 type databaseToolsConnectionArgs struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
+	// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+	AuthenticationType *string `pulumi:"authenticationType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -246,7 +328,7 @@ type databaseToolsConnectionArgs struct {
 	ProxyClient *DatabaseToolsConnectionProxyClient `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity *string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport *string `pulumi:"runtimeSupport"`
@@ -255,15 +337,17 @@ type databaseToolsConnectionArgs struct {
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url *string `pulumi:"url"`
 	// (Updatable) The database user name.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// (Updatable) The database user password.
-	UserPassword DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
+	UserPassword *DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
 }
 
 // The set of arguments for constructing a DatabaseToolsConnection resource.
 type DatabaseToolsConnectionArgs struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.StringMapInput
+	// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+	AuthenticationType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
@@ -284,7 +368,7 @@ type DatabaseToolsConnectionArgs struct {
 	ProxyClient DatabaseToolsConnectionProxyClientPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity pulumi.StringPtrInput
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport pulumi.StringPtrInput
@@ -293,9 +377,9 @@ type DatabaseToolsConnectionArgs struct {
 	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringPtrInput
 	// (Updatable) The database user name.
-	UserName pulumi.StringInput
+	UserName pulumi.StringPtrInput
 	// (Updatable) The database user password.
-	UserPassword DatabaseToolsConnectionUserPasswordInput
+	UserPassword DatabaseToolsConnectionUserPasswordPtrInput
 }
 
 func (DatabaseToolsConnectionArgs) ElementType() reflect.Type {
@@ -390,6 +474,11 @@ func (o DatabaseToolsConnectionOutput) AdvancedProperties() pulumi.StringMapOutp
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringMapOutput { return v.AdvancedProperties }).(pulumi.StringMapOutput)
 }
 
+// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+func (o DatabaseToolsConnectionOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 func (o DatabaseToolsConnectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -452,7 +541,7 @@ func (o DatabaseToolsConnectionOutput) RuntimeEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeEndpoint }).(pulumi.StringOutput)
 }
 
-// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 func (o DatabaseToolsConnectionOutput) RuntimeIdentity() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeIdentity }).(pulumi.StringOutput)
 }
@@ -493,13 +582,13 @@ func (o DatabaseToolsConnectionOutput) Url() pulumi.StringOutput {
 }
 
 // (Updatable) The database user name.
-func (o DatabaseToolsConnectionOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringPtrOutput { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The database user password.
-func (o DatabaseToolsConnectionOutput) UserPassword() DatabaseToolsConnectionUserPasswordOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionUserPasswordOutput { return v.UserPassword }).(DatabaseToolsConnectionUserPasswordOutput)
+func (o DatabaseToolsConnectionOutput) UserPassword() DatabaseToolsConnectionUserPasswordPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionUserPasswordPtrOutput { return v.UserPassword }).(DatabaseToolsConnectionUserPasswordPtrOutput)
 }
 
 type DatabaseToolsConnectionArrayOutput struct{ *pulumi.OutputState }

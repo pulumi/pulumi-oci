@@ -18,30 +18,62 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs e
 
     public static final ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs Empty = new ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs();
 
+    /**
+     * Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+     * 
+     */
     @Import(name="attachmentDetails")
     private @Nullable Output<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs> attachmentDetails;
 
+    /**
+     * @return Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+     * 
+     */
     public Optional<Output<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs>> attachmentDetails() {
         return Optional.ofNullable(this.attachmentDetails);
     }
 
+    /**
+     * The type of attachment the OAC instance is using. Example: `MANAGED`
+     * 
+     */
     @Import(name="attachmentType")
     private @Nullable Output<String> attachmentType;
 
+    /**
+     * @return The type of attachment the OAC instance is using. Example: `MANAGED`
+     * 
+     */
     public Optional<Output<String>> attachmentType() {
         return Optional.ofNullable(this.attachmentType);
     }
 
+    /**
+     * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     * 
+     */
     @Import(name="enableOac", required=true)
     private Output<Boolean> enableOac;
 
+    /**
+     * @return (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     * 
+     */
     public Output<Boolean> enableOac() {
         return this.enableOac;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     * 
+     */
     @Import(name="resourceAnalyticsInstanceId", required=true)
     private Output<String> resourceAnalyticsInstanceId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     * 
+     */
     public Output<String> resourceAnalyticsInstanceId() {
         return this.resourceAnalyticsInstanceId;
     }
@@ -73,38 +105,86 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs e
             $ = new ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attachmentDetails Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachmentDetails(@Nullable Output<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs> attachmentDetails) {
             $.attachmentDetails = attachmentDetails;
             return this;
         }
 
+        /**
+         * @param attachmentDetails Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachmentDetails(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs attachmentDetails) {
             return attachmentDetails(Output.of(attachmentDetails));
         }
 
+        /**
+         * @param attachmentType The type of attachment the OAC instance is using. Example: `MANAGED`
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachmentType(@Nullable Output<String> attachmentType) {
             $.attachmentType = attachmentType;
             return this;
         }
 
+        /**
+         * @param attachmentType The type of attachment the OAC instance is using. Example: `MANAGED`
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachmentType(String attachmentType) {
             return attachmentType(Output.of(attachmentType));
         }
 
+        /**
+         * @param enableOac (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableOac(Output<Boolean> enableOac) {
             $.enableOac = enableOac;
             return this;
         }
 
+        /**
+         * @param enableOac (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+         * 
+         * @return builder
+         * 
+         */
         public Builder enableOac(Boolean enableOac) {
             return enableOac(Output.of(enableOac));
         }
 
+        /**
+         * @param resourceAnalyticsInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceAnalyticsInstanceId(Output<String> resourceAnalyticsInstanceId) {
             $.resourceAnalyticsInstanceId = resourceAnalyticsInstanceId;
             return this;
         }
 
+        /**
+         * @param resourceAnalyticsInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourceAnalyticsInstanceId(String resourceAnalyticsInstanceId) {
             return resourceAnalyticsInstanceId(Output.of(resourceAnalyticsInstanceId));
         }

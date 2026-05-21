@@ -51,7 +51,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceNodeReplaceConfiguration = new BdsInstanceNodeReplaceConfiguration("testBdsInstanceNodeReplaceConfiguration", BdsInstanceNodeReplaceConfigurationArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
- *             .clusterAdminPassword(bdsInstanceNodeReplaceConfigurationClusterAdminPassword)
  *             .durationInMinutes(bdsInstanceNodeReplaceConfigurationDurationInMinutes)
  *             .levelTypeDetails(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs.builder()
  *                 .levelType(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType)
@@ -59,7 +58,9 @@ import javax.annotation.Nullable;
  *                 .nodeType(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeType)
  *                 .build())
  *             .metricType(bdsInstanceNodeReplaceConfigurationMetricType)
+ *             .clusterAdminPassword(bdsInstanceNodeReplaceConfigurationClusterAdminPassword)
  *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+ *             .secretId(testSecret.id())
  *             .build());
  * 
  *     }
@@ -161,6 +162,20 @@ public class BdsInstanceNodeReplaceConfiguration extends com.pulumi.resources.Cu
      */
     public Output<String> metricType() {
         return this.metricType;
+    }
+    /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Export(name="secretId", refs={String.class}, tree="[0]")
+    private Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
     }
     /**
      * The state of the NodeReplaceConfiguration.

@@ -63,6 +63,7 @@ type LookupResourceAnalyticsResourceAnalyticsInstanceResult struct {
 	AdwId string `pulumi:"adwId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	ComputeCount  int    `pulumi:"computeCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the ResourceAnalyticsInstance instance.
@@ -140,6 +141,10 @@ func (o LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput) AdwId() pu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResourceAnalyticsResourceAnalyticsInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupResourceAnalyticsResourceAnalyticsInstanceResultOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupResourceAnalyticsResourceAnalyticsInstanceResult) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

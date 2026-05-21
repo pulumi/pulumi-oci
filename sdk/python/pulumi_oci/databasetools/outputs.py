@@ -24,10 +24,26 @@ __all__ = [
     'DatabaseToolsConnectionProxyClientUserPassword',
     'DatabaseToolsConnectionRelatedResource',
     'DatabaseToolsConnectionUserPassword',
+    'DatabaseToolsDatabaseApiGatewayConfigLock',
     'DatabaseToolsIdentityLock',
+    'DatabaseToolsMcpServerBuiltInRole',
+    'DatabaseToolsMcpServerCustomRole',
+    'DatabaseToolsMcpServerEndpoint',
+    'DatabaseToolsMcpServerLock',
+    'DatabaseToolsMcpServerRelatedResource',
+    'DatabaseToolsMcpServerStorage',
+    'DatabaseToolsMcpServerStorageBucket',
+    'DatabaseToolsMcpToolsetLock',
+    'DatabaseToolsMcpToolsetReport',
+    'DatabaseToolsMcpToolsetSource',
+    'DatabaseToolsMcpToolsetTool',
+    'DatabaseToolsMcpToolsetVariable',
     'DatabaseToolsPrivateEndpointLock',
     'DatabaseToolsPrivateEndpointReverseConnectionConfiguration',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp',
+    'DatabaseToolsSqlReportColumn',
+    'DatabaseToolsSqlReportLock',
+    'DatabaseToolsSqlReportVariable',
     'RuntimeDatabaseToolsConnectionCredentialRelatedResource',
     'RuntimeDatabaseToolsConnectionPropertySetIdentityProvider',
     'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck',
@@ -53,6 +69,11 @@ __all__ = [
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult',
     'GetDatabaseToolsConnectionsFilterResult',
+    'GetDatabaseToolsDatabaseApiGatewayConfigLockResult',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionResult',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemResult',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockResult',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsFilterResult',
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult',
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult',
     'GetDatabaseToolsEndpointServicesFilterResult',
@@ -61,6 +82,41 @@ __all__ = [
     'GetDatabaseToolsIdentitiesDatabaseToolsIdentityCollectionItemLockResult',
     'GetDatabaseToolsIdentitiesFilterResult',
     'GetDatabaseToolsIdentityLockResult',
+    'GetDatabaseToolsMcpServerBuiltInRoleResult',
+    'GetDatabaseToolsMcpServerCustomRoleResult',
+    'GetDatabaseToolsMcpServerEndpointResult',
+    'GetDatabaseToolsMcpServerLockResult',
+    'GetDatabaseToolsMcpServerRelatedResourceResult',
+    'GetDatabaseToolsMcpServerStorageResult',
+    'GetDatabaseToolsMcpServerStorageBucketResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageResult',
+    'GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketResult',
+    'GetDatabaseToolsMcpServersFilterResult',
+    'GetDatabaseToolsMcpToolsetLockResult',
+    'GetDatabaseToolsMcpToolsetReportResult',
+    'GetDatabaseToolsMcpToolsetSourceResult',
+    'GetDatabaseToolsMcpToolsetToolResult',
+    'GetDatabaseToolsMcpToolsetVariableResult',
+    'GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionResult',
+    'GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemResult',
+    'GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionResult',
+    'GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolResult',
+    'GetDatabaseToolsMcpToolsetVersionsFilterResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolResult',
+    'GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableResult',
+    'GetDatabaseToolsMcpToolsetsFilterResult',
     'GetDatabaseToolsPrivateEndpointLockResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult',
@@ -70,6 +126,15 @@ __all__ = [
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult',
     'GetDatabaseToolsPrivateEndpointsFilterResult',
+    'GetDatabaseToolsSqlReportColumnResult',
+    'GetDatabaseToolsSqlReportLockResult',
+    'GetDatabaseToolsSqlReportVariableResult',
+    'GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionResult',
+    'GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemResult',
+    'GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnResult',
+    'GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockResult',
+    'GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableResult',
+    'GetDatabaseToolsSqlReportsFilterResult',
     'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionResult',
     'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemResult',
     'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterResult',
@@ -568,6 +633,79 @@ class DatabaseToolsConnectionUserPassword(dict):
 
 
 @pulumi.output_type
+class DatabaseToolsDatabaseApiGatewayConfigLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsDatabaseApiGatewayConfigLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsDatabaseApiGatewayConfigLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsDatabaseApiGatewayConfigLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class DatabaseToolsIdentityLock(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -638,6 +776,592 @@ class DatabaseToolsIdentityLock(dict):
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerBuiltInRole(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpServerBuiltInRole. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpServerBuiltInRole.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpServerBuiltInRole.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: (Updatable) A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerCustomRole(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpServerCustomRole. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpServerCustomRole.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpServerCustomRole.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str description: (Updatable) The description of the custom role.
+        :param _builtins.str display_name: (Updatable) The display name of the custom role.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        (Updatable) The description of the custom role.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        (Updatable) The display name of the custom role.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerEndpoint(dict):
+    def __init__(__self__, *,
+                 endpoint: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str endpoint: The URI endpoint of the MCP server
+        :param _builtins.str type: (Updatable) The Database Tools MCP server type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> Optional[_builtins.str]:
+        """
+        The URI endpoint of the MCP server
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Database Tools MCP server type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpServerLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpServerLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpServerLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerRelatedResource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityType":
+            suggest = "entity_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpServerRelatedResource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpServerRelatedResource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpServerRelatedResource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 entity_type: Optional[_builtins.str] = None,
+                 identifier: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str entity_type: The resource entity type.
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[_builtins.str]:
+        """
+        The resource entity type.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerStorage(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 bucket: Optional['outputs.DatabaseToolsMcpServerStorageBucket'] = None):
+        """
+        :param _builtins.str type: (Updatable) The type of storage used for asynchronous tool calls.
+        :param 'DatabaseToolsMcpServerStorageBucketArgs' bucket: (Updatable) A Cloud Storage bucket for an MCP Server.
+        """
+        pulumi.set(__self__, "type", type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) The type of storage used for asynchronous tool calls.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional['outputs.DatabaseToolsMcpServerStorageBucket']:
+        """
+        (Updatable) A Cloud Storage bucket for an MCP Server.
+        """
+        return pulumi.get(self, "bucket")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpServerStorageBucket(dict):
+    def __init__(__self__, *,
+                 bucket: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bucket: (Updatable) The Object Storage bucket to use.
+        :param _builtins.str namespace: (Updatable) The Object Storage namespace to use.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Object Storage namespace to use.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpToolsetLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpToolsetLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpToolsetLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpToolsetLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpToolsetReport(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedRoles":
+            suggest = "allowed_roles"
+        elif key == "databaseToolsSqlReportId":
+            suggest = "database_tools_sql_report_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpToolsetReport. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpToolsetReport.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpToolsetReport.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_roles: Optional[Sequence[_builtins.str]] = None,
+                 database_tools_sql_report_id: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] allowed_roles: (Updatable) The roles granted access to this report
+        :param _builtins.str database_tools_sql_report_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        if allowed_roles is not None:
+            pulumi.set(__self__, "allowed_roles", allowed_roles)
+        if database_tools_sql_report_id is not None:
+            pulumi.set(__self__, "database_tools_sql_report_id", database_tools_sql_report_id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The roles granted access to this report
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsSqlReportId")
+    def database_tools_sql_report_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        return pulumi.get(self, "database_tools_sql_report_id")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpToolsetSource(dict):
+    def __init__(__self__, *,
+                 type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: (Updatable) The sql toolset sources type. INLINE is the only possible value.
+        :param _builtins.str value: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The sql toolset sources type. INLINE is the only possible value.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpToolsetTool(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowedRoles":
+            suggest = "allowed_roles"
+        elif key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsMcpToolsetTool. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsMcpToolsetTool.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsMcpToolsetTool.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowed_roles: Optional[Sequence[_builtins.str]] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] allowed_roles: (Updatable) The roles granted access to this tool
+        :param _builtins.str display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        :param _builtins.str name: (Updatable) The name of the tool
+        :param _builtins.str status: (Updatable) The status of the tool
+        """
+        if allowed_roles is not None:
+            pulumi.set(__self__, "allowed_roles", allowed_roles)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The roles granted access to this tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the tool
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The status of the tool
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class DatabaseToolsMcpToolsetVariable(dict):
+    def __init__(__self__, *,
+                 description: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str description: (Updatable) The description of the variable
+        :param _builtins.str name: (Updatable) The name of the variable
+        :param _builtins.str type: (Updatable) The type of the variable
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The type of the variable
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -783,6 +1507,167 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
         The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         """
         return pulumi.get(self, "source_ip")
+
+
+@pulumi.output_type
+class DatabaseToolsSqlReportColumn(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: (Updatable) The description of the column
+        :param _builtins.str name: (Updatable) The name of the column
+        :param _builtins.str type: (Updatable) The type of the column
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        (Updatable) The description of the column
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the column
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) The type of the column
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class DatabaseToolsSqlReportLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsSqlReportLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsSqlReportLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsSqlReportLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DatabaseToolsSqlReportVariable(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: (Updatable) The description of the variable
+        :param _builtins.str name: (Updatable) The name of the variable
+        :param _builtins.str type: (Updatable) The type of the variable
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        (Updatable) The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) The type of the variable
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1176,7 +2061,7 @@ class GetDatabaseToolsConnectionProxyClientResult(dict):
         """
         :param _builtins.str proxy_authentication_type: The proxy authentication type.
         :param Sequence[_builtins.str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
-        :param _builtins.str user_name: The database user name.
+        :param _builtins.str user_name: The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         :param Sequence['GetDatabaseToolsConnectionProxyClientUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
@@ -1204,7 +2089,7 @@ class GetDatabaseToolsConnectionProxyClientResult(dict):
     @pulumi.getter(name="userName")
     def user_name(self) -> _builtins.str:
         """
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         """
         return pulumi.get(self, "user_name")
 
@@ -1320,6 +2205,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult(dict):
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
                  advanced_properties: Mapping[str, _builtins.str],
+                 authentication_type: _builtins.str,
                  compartment_id: _builtins.str,
                  connection_string: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -1345,6 +2231,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
         """
         :param Mapping[str, _builtins.str] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
+        :param _builtins.str authentication_type: Specifies the authentication type used to connect to the database.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param _builtins.str connection_string: The connect descriptor or Easy Connect Naming method used to connect to the database.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1366,10 +2253,11 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         :param _builtins.str time_updated: The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         :param _builtins.str type: A filter to return only resources their type matches the specified type.
         :param _builtins.str url: The JDBC URL used to connect to the Generic JDBC database system.
-        :param _builtins.str user_name: The database user name.
+        :param _builtins.str user_name: The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "advanced_properties", advanced_properties)
+        pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_string", connection_string)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1401,6 +2289,14 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> _builtins.str:
+        """
+        Specifies the authentication type used to connect to the database.
+        """
+        return pulumi.get(self, "authentication_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1574,7 +2470,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
     @pulumi.getter(name="userName")
     def user_name(self) -> _builtins.str:
         """
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         """
         return pulumi.get(self, "user_name")
 
@@ -1746,7 +2642,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClien
         """
         :param _builtins.str proxy_authentication_type: The proxy authentication type.
         :param Sequence[_builtins.str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
-        :param _builtins.str user_name: The database user name.
+        :param _builtins.str user_name: The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs'] user_passwords: The database user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
@@ -1774,7 +2670,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClien
     @pulumi.getter(name="userName")
     def user_name(self) -> _builtins.str:
         """
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         """
         return pulumi.get(self, "user_name")
 
@@ -1876,6 +2772,297 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswo
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseToolsDatabaseApiGatewayConfigLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The Database Tools database API gateway config type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The Database Tools database API gateway config type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockResult'],
+                 metadata_source: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools database API gateway config.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param _builtins.str metadata_source: The RESTful service definition location.
+        :param _builtins.str state: A filter to return resources only when their `lifecycleState` matches the specified `lifecycleState`.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools database API gateway config was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "metadata_source", metadata_source)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools database API gateway config.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter(name="metadataSource")
+    def metadata_source(self) -> _builtins.str:
+        """
+        The RESTful service definition location.
+        """
+        return pulumi.get(self, "metadata_source")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources only when their `lifecycleState` matches the specified `lifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Database Tools database API gateway config was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsDatabaseApiGatewayConfigsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -2388,6 +3575,1708 @@ class GetDatabaseToolsIdentityLockResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseToolsMcpServerBuiltInRoleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str description: A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerCustomRoleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str description: A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerEndpointResult(dict):
+    def __init__(__self__, *,
+                 endpoint: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str endpoint: The URI endpoint of the MCP server
+        :param _builtins.str type: The Database Tools MCP server type.
+        """
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        The URI endpoint of the MCP server
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The Database Tools MCP server type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The Database Tools MCP server type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The Database Tools MCP server type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 entity_type: _builtins.str,
+                 identifier: _builtins.str):
+        """
+        :param _builtins.str entity_type: The resource entity type.
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "identifier", identifier)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        The resource entity type.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerStorageResult(dict):
+    def __init__(__self__, *,
+                 buckets: Sequence['outputs.GetDatabaseToolsMcpServerStorageBucketResult'],
+                 type: _builtins.str):
+        """
+        :param Sequence['GetDatabaseToolsMcpServerStorageBucketArgs'] buckets: The Object Storage bucket to use.
+        :param _builtins.str type: The Database Tools MCP server type.
+        """
+        pulumi.set(__self__, "buckets", buckets)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def buckets(self) -> Sequence['outputs.GetDatabaseToolsMcpServerStorageBucketResult']:
+        """
+        The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "buckets")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The Database Tools MCP server type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServerStorageBucketResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str):
+        """
+        :param _builtins.str bucket: The Object Storage bucket to use.
+        :param _builtins.str namespace: The Object Storage namespace to use.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace to use.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 access_token_expiry_in_seconds: _builtins.int,
+                 built_in_roles: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleResult'],
+                 compartment_id: _builtins.str,
+                 custom_roles: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleResult'],
+                 database_tools_connection_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 domain_app_id: _builtins.str,
+                 domain_id: _builtins.str,
+                 endpoints: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockResult'],
+                 refresh_token_expiry_in_seconds: _builtins.int,
+                 related_resources: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceResult'],
+                 runtime_identity: _builtins.str,
+                 state: _builtins.str,
+                 storages: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.int access_token_expiry_in_seconds: Access token expiry in seconds
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs'] built_in_roles: Built-in roles associated with the MCP Server.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs'] custom_roles: Custom roles associated with the MCP Server.
+        :param _builtins.str database_tools_connection_id: A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.str domain_app_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
+        :param _builtins.str domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs'] endpoints: Invoke endpoints for the MCP server.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP server.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param _builtins.int refresh_token_expiry_in_seconds: Refresh token expiry in seconds
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs'] related_resources: A related resource
+        :param _builtins.str runtime_identity: Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        :param _builtins.str state: A filter to return resources only when their `databaseToolsMcpServerLifecycleState` matches the specified `databaseToolsMcpServerLifecycleState`.
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs'] storages: The storage option used when running a tool asynchronously.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "access_token_expiry_in_seconds", access_token_expiry_in_seconds)
+        pulumi.set(__self__, "built_in_roles", built_in_roles)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "custom_roles", custom_roles)
+        pulumi.set(__self__, "database_tools_connection_id", database_tools_connection_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain_app_id", domain_app_id)
+        pulumi.set(__self__, "domain_id", domain_id)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "refresh_token_expiry_in_seconds", refresh_token_expiry_in_seconds)
+        pulumi.set(__self__, "related_resources", related_resources)
+        pulumi.set(__self__, "runtime_identity", runtime_identity)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storages", storages)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessTokenExpiryInSeconds")
+    def access_token_expiry_in_seconds(self) -> _builtins.int:
+        """
+        Access token expiry in seconds
+        """
+        return pulumi.get(self, "access_token_expiry_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="builtInRoles")
+    def built_in_roles(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleResult']:
+        """
+        Built-in roles associated with the MCP Server.
+        """
+        return pulumi.get(self, "built_in_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customRoles")
+    def custom_roles(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleResult']:
+        """
+        Custom roles associated with the MCP Server.
+        """
+        return pulumi.get(self, "custom_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsConnectionId")
+    def database_tools_connection_id(self) -> _builtins.str:
+        """
+        A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+        """
+        return pulumi.get(self, "database_tools_connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="domainAppId")
+    def domain_app_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
+        """
+        return pulumi.get(self, "domain_app_id")
+
+    @_builtins.property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointResult']:
+        """
+        Invoke endpoints for the MCP server.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter(name="refreshTokenExpiryInSeconds")
+    def refresh_token_expiry_in_seconds(self) -> _builtins.int:
+        """
+        Refresh token expiry in seconds
+        """
+        return pulumi.get(self, "refresh_token_expiry_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResources")
+    def related_resources(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceResult']:
+        """
+        A related resource
+        """
+        return pulumi.get(self, "related_resources")
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> _builtins.str:
+        """
+        Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources only when their `databaseToolsMcpServerLifecycleState` matches the specified `databaseToolsMcpServerLifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def storages(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageResult']:
+        """
+        The storage option used when running a tool asynchronously.
+        """
+        return pulumi.get(self, "storages")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str description: A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str description: A human-readable description of the Database Tools MCP server.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointResult(dict):
+    def __init__(__self__, *,
+                 endpoint: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str endpoint: The URI endpoint of the MCP server
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        The URI endpoint of the MCP server
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceResult(dict):
+    def __init__(__self__, *,
+                 entity_type: _builtins.str,
+                 identifier: _builtins.str):
+        """
+        :param _builtins.str entity_type: The resource entity type.
+        :param _builtins.str identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "identifier", identifier)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        The resource entity type.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageResult(dict):
+    def __init__(__self__, *,
+                 buckets: Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketResult'],
+                 type: _builtins.str):
+        """
+        :param Sequence['GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs'] buckets: The Object Storage bucket to use.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "buckets", buckets)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def buckets(self) -> Sequence['outputs.GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketResult']:
+        """
+        The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "buckets")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str):
+        """
+        :param _builtins.str bucket: The Object Storage bucket to use.
+        :param _builtins.str namespace: The Object Storage namespace to use.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace to use.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpServersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The type of the variable
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetReportResult(dict):
+    def __init__(__self__, *,
+                 allowed_roles: Sequence[_builtins.str],
+                 database_tools_sql_report_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowed_roles: The roles granted access to this MCP tool
+        :param _builtins.str database_tools_sql_report_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        pulumi.set(__self__, "allowed_roles", allowed_roles)
+        pulumi.set(__self__, "database_tools_sql_report_id", database_tools_sql_report_id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this MCP tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsSqlReportId")
+    def database_tools_sql_report_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        return pulumi.get(self, "database_tools_sql_report_id")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetSourceResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str type: The type of the variable
+        :param _builtins.str value: The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetToolResult(dict):
+    def __init__(__self__, *,
+                 allowed_roles: Sequence[_builtins.str],
+                 display_name: _builtins.str,
+                 name: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowed_roles: The roles granted access to this MCP tool
+        :param _builtins.str display_name: The display name of the tool
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str status: The status of the tool
+        """
+        pulumi.set(__self__, "allowed_roles", allowed_roles)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this MCP tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The display name of the tool
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of the tool
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVariableResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: The type of the variable
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemResult']):
+        """
+        :param Sequence['GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs'] items: Array of MCP toolset type version summary items.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemResult']:
+        """
+        Array of MCP toolset type version summary items.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 default_version: _builtins.int,
+                 type: _builtins.str,
+                 versions: Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionResult']):
+        """
+        :param _builtins.int default_version: The default version for this toolset type.
+        :param _builtins.str type: The MCP toolset type.
+        :param Sequence['GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs'] versions: The version configurations available for this toolset type.
+        """
+        pulumi.set(__self__, "default_version", default_version)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultVersion")
+    def default_version(self) -> _builtins.int:
+        """
+        The default version for this toolset type.
+        """
+        return pulumi.get(self, "default_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The MCP toolset type.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionResult']:
+        """
+        The version configurations available for this toolset type.
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionResult(dict):
+    def __init__(__self__, *,
+                 default_allowed_roles: Sequence[_builtins.str],
+                 default_report_allowed_roles: Sequence[_builtins.str],
+                 description: _builtins.str,
+                 features: Sequence[_builtins.str],
+                 tools: Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolResult'],
+                 version: _builtins.int):
+        """
+        :param Sequence[_builtins.str] default_allowed_roles: The roles granted access to this tool by default.
+        :param Sequence[_builtins.str] default_report_allowed_roles: The roles granted access to this toolset version by default.
+        :param _builtins.str description: The description of the tool.
+        :param Sequence[_builtins.str] features: Optional feature flags or attributes for this version.
+        :param Sequence['GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs'] tools: The tools available in this version.
+        :param _builtins.int version: The version number.
+        """
+        pulumi.set(__self__, "default_allowed_roles", default_allowed_roles)
+        pulumi.set(__self__, "default_report_allowed_roles", default_report_allowed_roles)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "features", features)
+        pulumi.set(__self__, "tools", tools)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultAllowedRoles")
+    def default_allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this tool by default.
+        """
+        return pulumi.get(self, "default_allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultReportAllowedRoles")
+    def default_report_allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this toolset version by default.
+        """
+        return pulumi.get(self, "default_report_allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the tool.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        Optional feature flags or attributes for this version.
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
+    @pulumi.getter
+    def tools(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolResult']:
+        """
+        The tools available in this version.
+        """
+        return pulumi.get(self, "tools")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The version number.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolResult(dict):
+    def __init__(__self__, *,
+                 default_allowed_roles: Sequence[_builtins.str],
+                 default_status: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param Sequence[_builtins.str] default_allowed_roles: The roles granted access to this tool by default.
+        :param _builtins.str default_status: The default status of the tool in this version.
+        :param _builtins.str description: The description of the tool.
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.str name: The unique name of the tool.
+        """
+        pulumi.set(__self__, "default_allowed_roles", default_allowed_roles)
+        pulumi.set(__self__, "default_status", default_status)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultAllowedRoles")
+    def default_allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this tool by default.
+        """
+        return pulumi.get(self, "default_allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultStatus")
+    def default_status(self) -> _builtins.str:
+        """
+        The default status of the tool in this version.
+        """
+        return pulumi.get(self, "default_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the tool.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The unique name of the tool.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The unique name of the tool.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The unique name of the tool.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 allowed_roles: Sequence[_builtins.str],
+                 compartment_id: _builtins.str,
+                 database_tools_mcp_server_id: _builtins.str,
+                 default_execution_type: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 generative_ai_semantic_store_id: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockResult'],
+                 reports: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportResult'],
+                 sources: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 tool_description: _builtins.str,
+                 tool_name: _builtins.str,
+                 tools: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolResult'],
+                 type: _builtins.str,
+                 variables: Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableResult'],
+                 version: _builtins.int):
+        """
+        :param Sequence[_builtins.str] allowed_roles: The roles granted access to this MCP tool
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str database_tools_mcp_server_id: A filter to return only resources matching the specified `databaseToolsMcpServerId`.
+        :param _builtins.str default_execution_type: The default execution type for the toolset. The default value is SYNCHRONOUS.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str generative_ai_semantic_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP Toolsets.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param Sequence['GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs'] reports: List of Database Tools Customizable reporting tools
+        :param Sequence['GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs'] sources: The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        :param _builtins.str state: A filter to return resources only when their `databaseToolsMcpToolsetLifecycleState` matches the specified `databaseToolsMcpToolsetLifecycleState`.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str tool_description: Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
+        :param _builtins.str tool_name: Name of the tool returned by the MCP Server
+        :param Sequence['GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs'] tools: List of Database Tools Customizable reporting tools
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        :param Sequence['GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs'] variables: The variables to use with the query
+        :param _builtins.int version: The MCP toolset version
+        """
+        pulumi.set(__self__, "allowed_roles", allowed_roles)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_tools_mcp_server_id", database_tools_mcp_server_id)
+        pulumi.set(__self__, "default_execution_type", default_execution_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "generative_ai_semantic_store_id", generative_ai_semantic_store_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "reports", reports)
+        pulumi.set(__self__, "sources", sources)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "tool_description", tool_description)
+        pulumi.set(__self__, "tool_name", tool_name)
+        pulumi.set(__self__, "tools", tools)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "variables", variables)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this MCP tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsMcpServerId")
+    def database_tools_mcp_server_id(self) -> _builtins.str:
+        """
+        A filter to return only resources matching the specified `databaseToolsMcpServerId`.
+        """
+        return pulumi.get(self, "database_tools_mcp_server_id")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultExecutionType")
+    def default_execution_type(self) -> _builtins.str:
+        """
+        The default execution type for the toolset. The default value is SYNCHRONOUS.
+        """
+        return pulumi.get(self, "default_execution_type")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="generativeAiSemanticStoreId")
+    def generative_ai_semantic_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
+        """
+        return pulumi.get(self, "generative_ai_semantic_store_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP Toolsets.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
+    def reports(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportResult']:
+        """
+        List of Database Tools Customizable reporting tools
+        """
+        return pulumi.get(self, "reports")
+
+    @_builtins.property
+    @pulumi.getter
+    def sources(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceResult']:
+        """
+        The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        return pulumi.get(self, "sources")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources only when their `databaseToolsMcpToolsetLifecycleState` matches the specified `databaseToolsMcpToolsetLifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="toolDescription")
+    def tool_description(self) -> _builtins.str:
+        """
+        Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
+        """
+        return pulumi.get(self, "tool_description")
+
+    @_builtins.property
+    @pulumi.getter(name="toolName")
+    def tool_name(self) -> _builtins.str:
+        """
+        Name of the tool returned by the MCP Server
+        """
+        return pulumi.get(self, "tool_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def tools(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolResult']:
+        """
+        List of Database Tools Customizable reporting tools
+        """
+        return pulumi.get(self, "tools")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableResult']:
+        """
+        The variables to use with the query
+        """
+        return pulumi.get(self, "variables")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.int:
+        """
+        The MCP toolset version
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportResult(dict):
+    def __init__(__self__, *,
+                 allowed_roles: Sequence[_builtins.str],
+                 database_tools_sql_report_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowed_roles: The roles granted access to this MCP tool
+        :param _builtins.str database_tools_sql_report_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        pulumi.set(__self__, "allowed_roles", allowed_roles)
+        pulumi.set(__self__, "database_tools_sql_report_id", database_tools_sql_report_id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this MCP tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsSqlReportId")
+    def database_tools_sql_report_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        return pulumi.get(self, "database_tools_sql_report_id")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        :param _builtins.str value: The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolResult(dict):
+    def __init__(__self__, *,
+                 allowed_roles: Sequence[_builtins.str],
+                 display_name: _builtins.str,
+                 name: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowed_roles: The roles granted access to this MCP tool
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str status: The status of the tool
+        """
+        pulumi.set(__self__, "allowed_roles", allowed_roles)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> Sequence[_builtins.str]:
+        """
+        The roles granted access to this MCP tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of the tool
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsMcpToolsetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the variable
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDatabaseToolsPrivateEndpointLockResult(dict):
     def __init__(__self__, *,
                  message: _builtins.str,
@@ -2836,6 +5725,518 @@ class GetDatabaseToolsPrivateEndpointsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportColumnResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: The type of the variable
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: The type of the variable
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportVariableResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: The type of the variable
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 columns: Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnResult'],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 instructions: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockResult'],
+                 purpose: _builtins.str,
+                 source: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str,
+                 variables: Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableResult']):
+        """
+        :param Sequence['GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs'] columns: Descriptive information on columns referenced in the Database Tools SQL Report source.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str display_name: A filter to return only resources that match the entire specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools SQL report.
+        :param _builtins.str instructions: Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail.
+        :param Sequence['GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs'] locks: Locks associated with this resource.
+        :param _builtins.str purpose: Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
+        :param _builtins.str source: SQL query executed to generate the report.
+        :param _builtins.str state: A filter to return resources only when their `databaseToolsSqlReportLifecycleState` matches the specified `databaseToolsSqlReportLifecycleState`.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        :param _builtins.str time_updated: The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        :param Sequence['GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs'] variables: Variables referenced in the Database Tools SQL Report source.
+        """
+        pulumi.set(__self__, "columns", columns)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instructions", instructions)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "purpose", purpose)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "variables", variables)
+
+    @_builtins.property
+    @pulumi.getter
+    def columns(self) -> Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnResult']:
+        """
+        Descriptive information on columns referenced in the Database Tools SQL Report source.
+        """
+        return pulumi.get(self, "columns")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools SQL report.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def instructions(self) -> _builtins.str:
+        """
+        Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
+        """
+        return pulumi.get(self, "instructions")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
+    def purpose(self) -> _builtins.str:
+        """
+        Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
+        """
+        return pulumi.get(self, "purpose")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        SQL query executed to generate the report.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources only when their `databaseToolsSqlReportLifecycleState` matches the specified `databaseToolsSqlReportLifecycleState`.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableResult']:
+        """
+        Variables referenced in the Database Tools SQL Report source.
+        """
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param _builtins.str time_created: The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str description: The description of the variable
+        :param _builtins.str name: The name of the variable
+        :param _builtins.str type: A filter to return only resources with one of the specified type values.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        A filter to return only resources with one of the specified type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsSqlReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the variable
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property

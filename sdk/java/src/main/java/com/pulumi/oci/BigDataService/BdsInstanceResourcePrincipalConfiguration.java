@@ -50,8 +50,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceResourcePrincipalConfiguration = new BdsInstanceResourcePrincipalConfiguration("testBdsInstanceResourcePrincipalConfiguration", BdsInstanceResourcePrincipalConfigurationArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
- *             .clusterAdminPassword(bdsInstanceResourcePrincipalConfigurationClusterAdminPassword)
  *             .displayName(bdsInstanceResourcePrincipalConfigurationDisplayName)
+ *             .clusterAdminPassword(bdsInstanceResourcePrincipalConfigurationClusterAdminPassword)
+ *             .secretId(testSecret.id())
  *             .sessionTokenLifeSpanDurationInHours(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours)
  *             .build());
  * 
@@ -126,6 +127,20 @@ public class BdsInstanceResourcePrincipalConfiguration extends com.pulumi.resour
      */
     public Output<Optional<Integer>> forceRefreshResourcePrincipalTrigger() {
         return Codegen.optional(this.forceRefreshResourcePrincipalTrigger);
+    }
+    /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Export(name="secretId", refs={String.class}, tree="[0]")
+    private Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
     }
     /**
      * (Updatable) Life span in hours for the resource principal session token.

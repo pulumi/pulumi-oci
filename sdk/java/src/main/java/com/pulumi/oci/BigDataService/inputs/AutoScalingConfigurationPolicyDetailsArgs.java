@@ -130,18 +130,12 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
     /**
      * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="timezone")
     private @Nullable Output<String> timezone;
 
     /**
      * @return (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timezone() {
@@ -355,9 +349,6 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
         /**
          * @param timezone (Updatable) The time zone of the execution schedule, in IANA time zone database name format
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -368,9 +359,6 @@ public final class AutoScalingConfigurationPolicyDetailsArgs extends com.pulumi.
 
         /**
          * @param timezone (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

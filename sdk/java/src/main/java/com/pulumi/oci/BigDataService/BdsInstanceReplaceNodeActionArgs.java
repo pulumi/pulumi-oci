@@ -17,14 +17,14 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
     public static final BdsInstanceReplaceNodeActionArgs Empty = new BdsInstanceReplaceNodeActionArgs();
 
     /**
-     * The OCID of the cluster.
+     * The OCID of the Big Data Service cluster.
      * 
      */
     @Import(name="bdsInstanceId", required=true)
     private Output<String> bdsInstanceId;
 
     /**
-     * @return The OCID of the cluster.
+     * @return The OCID of the Big Data Service cluster.
      * 
      */
     public Output<String> bdsInstanceId() {
@@ -32,44 +32,44 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
     }
 
     /**
-     * Base-64 encoded password for the cluster admin user.
+     * Base64-encoded cluster admin password. Use this or `secretId`.
      * 
      */
-    @Import(name="clusterAdminPassword", required=true)
-    private Output<String> clusterAdminPassword;
+    @Import(name="clusterAdminPassword")
+    private @Nullable Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster admin user.
+     * @return Base64-encoded cluster admin password. Use this or `secretId`.
      * 
      */
-    public Output<String> clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<Output<String>> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
 
     /**
-     * The id of the nodeBackup to use for replacing the node.
+     * The OCID of the node backup to use for replacement.
      * 
      */
-    @Import(name="nodeBackupId", required=true)
-    private Output<String> nodeBackupId;
+    @Import(name="nodeBackupId")
+    private @Nullable Output<String> nodeBackupId;
 
     /**
-     * @return The id of the nodeBackup to use for replacing the node.
+     * @return The OCID of the node backup to use for replacement.
      * 
      */
-    public Output<String> nodeBackupId() {
-        return this.nodeBackupId;
+    public Optional<Output<String>> nodeBackupId() {
+        return Optional.ofNullable(this.nodeBackupId);
     }
 
     /**
-     * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+     * Host name of the node to replace.
      * 
      */
     @Import(name="nodeHostName", required=true)
     private Output<String> nodeHostName;
 
     /**
-     * @return Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+     * @return Host name of the node to replace.
      * 
      */
     public Output<String> nodeHostName() {
@@ -77,20 +77,35 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
     }
 
     /**
-     * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+     * The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
+     * The shape to use for the replacement node. If not specified, the existing node shape is used.
+     * 
+     * **IMPORTANT**
+     * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+     * @return The shape to use for the replacement node. If not specified, the existing node shape is used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * **IMPORTANT**
+     * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -104,6 +119,7 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         this.clusterAdminPassword = $.clusterAdminPassword;
         this.nodeBackupId = $.nodeBackupId;
         this.nodeHostName = $.nodeHostName;
+        this.secretId = $.secretId;
         this.shape = $.shape;
     }
 
@@ -126,7 +142,7 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param bdsInstanceId The OCID of the cluster.
+         * @param bdsInstanceId The OCID of the Big Data Service cluster.
          * 
          * @return builder
          * 
@@ -137,7 +153,7 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param bdsInstanceId The OCID of the cluster.
+         * @param bdsInstanceId The OCID of the Big Data Service cluster.
          * 
          * @return builder
          * 
@@ -147,18 +163,18 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * @param clusterAdminPassword Base64-encoded cluster admin password. Use this or `secretId`.
          * 
          * @return builder
          * 
          */
-        public Builder clusterAdminPassword(Output<String> clusterAdminPassword) {
+        public Builder clusterAdminPassword(@Nullable Output<String> clusterAdminPassword) {
             $.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster admin user.
+         * @param clusterAdminPassword Base64-encoded cluster admin password. Use this or `secretId`.
          * 
          * @return builder
          * 
@@ -168,18 +184,18 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeBackupId The id of the nodeBackup to use for replacing the node.
+         * @param nodeBackupId The OCID of the node backup to use for replacement.
          * 
          * @return builder
          * 
          */
-        public Builder nodeBackupId(Output<String> nodeBackupId) {
+        public Builder nodeBackupId(@Nullable Output<String> nodeBackupId) {
             $.nodeBackupId = nodeBackupId;
             return this;
         }
 
         /**
-         * @param nodeBackupId The id of the nodeBackup to use for replacing the node.
+         * @param nodeBackupId The OCID of the node backup to use for replacement.
          * 
          * @return builder
          * 
@@ -189,7 +205,7 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeHostName Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+         * @param nodeHostName Host name of the node to replace.
          * 
          * @return builder
          * 
@@ -200,7 +216,7 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param nodeHostName Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+         * @param nodeHostName Host name of the node to replace.
          * 
          * @return builder
          * 
@@ -210,10 +226,31 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param shape Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+         * @param secretId The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The OCID of the secret that stores the cluster admin password. Use this or `clusterAdminPassword`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
+        /**
+         * @param shape The shape to use for the replacement node. If not specified, the existing node shape is used.
+         * 
+         * **IMPORTANT**
+         * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
          * 
          * @return builder
          * 
@@ -224,10 +261,10 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param shape Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+         * @param shape The shape to use for the replacement node. If not specified, the existing node shape is used.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * **IMPORTANT**
+         * This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
          * 
          * @return builder
          * 
@@ -239,12 +276,6 @@ public final class BdsInstanceReplaceNodeActionArgs extends com.pulumi.resources
         public BdsInstanceReplaceNodeActionArgs build() {
             if ($.bdsInstanceId == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceReplaceNodeActionArgs", "bdsInstanceId");
-            }
-            if ($.clusterAdminPassword == null) {
-                throw new MissingRequiredPropertyException("BdsInstanceReplaceNodeActionArgs", "clusterAdminPassword");
-            }
-            if ($.nodeBackupId == null) {
-                throw new MissingRequiredPropertyException("BdsInstanceReplaceNodeActionArgs", "nodeBackupId");
             }
             if ($.nodeHostName == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceReplaceNodeActionArgs", "nodeHostName");

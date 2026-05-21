@@ -67,9 +67,11 @@ type LookupBdsInstanceResourcePrincipalConfigurationResult struct {
 	// A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName                          string `pulumi:"displayName"`
 	ForceRefreshResourcePrincipalTrigger int    `pulumi:"forceRefreshResourcePrincipalTrigger"`
-	// The id of the ResourcePrincipalConfiguration.
+	// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 	Id                               string `pulumi:"id"`
 	ResourcePrincipalConfigurationId string `pulumi:"resourcePrincipalConfigurationId"`
+	// The secretId for the clusterAdminPassword.
+	SecretId string `pulumi:"secretId"`
 	// Life span in hours of each resource principal session token.
 	SessionTokenLifeSpanDurationInHours int `pulumi:"sessionTokenLifeSpanDurationInHours"`
 	// The state of the ResourcePrincipalConfiguration.
@@ -140,7 +142,7 @@ func (o LookupBdsInstanceResourcePrincipalConfigurationResultOutput) ForceRefres
 	}).(pulumi.IntOutput)
 }
 
-// The id of the ResourcePrincipalConfiguration.
+// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 func (o LookupBdsInstanceResourcePrincipalConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResourcePrincipalConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -149,6 +151,11 @@ func (o LookupBdsInstanceResourcePrincipalConfigurationResultOutput) ResourcePri
 	return o.ApplyT(func(v LookupBdsInstanceResourcePrincipalConfigurationResult) string {
 		return v.ResourcePrincipalConfigurationId
 	}).(pulumi.StringOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o LookupBdsInstanceResourcePrincipalConfigurationResultOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResourcePrincipalConfigurationResult) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // Life span in hours of each resource principal session token.

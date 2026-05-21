@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ResourceAnalyticsTenancyAttachmentArgs', 'ResourceAnalyticsTenancyAttachment']
 
@@ -82,21 +84,27 @@ class ResourceAnalyticsTenancyAttachmentArgs:
 @pulumi.input_type
 class _ResourceAnalyticsTenancyAttachmentState:
     def __init__(__self__, *,
+                 data_population_status: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitored_regions: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs']]]] = None,
                  resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_data_population_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_data_population_started: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsTenancyAttachment resources.
 
+        :param pulumi.Input[_builtins.str] data_population_status: The overall status of the data population from the tenancy.
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the tenancy.
         :param pulumi.Input[_builtins.bool] is_reporting_tenancy: Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs']]] monitored_regions: List of monitored regions with their data population status.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
         :param pulumi.Input[_builtins.str] state: The current state of the TenancyAttachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -106,14 +114,20 @@ class _ResourceAnalyticsTenancyAttachmentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_data_population_ended: The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_data_population_started: The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        if data_population_status is not None:
+            pulumi.set(__self__, "data_population_status", data_population_status)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if is_reporting_tenancy is not None:
             pulumi.set(__self__, "is_reporting_tenancy", is_reporting_tenancy)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if monitored_regions is not None:
+            pulumi.set(__self__, "monitored_regions", monitored_regions)
         if resource_analytics_instance_id is not None:
             pulumi.set(__self__, "resource_analytics_instance_id", resource_analytics_instance_id)
         if state is not None:
@@ -124,8 +138,24 @@ class _ResourceAnalyticsTenancyAttachmentState:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_data_population_ended is not None:
+            pulumi.set(__self__, "time_data_population_ended", time_data_population_ended)
+        if time_data_population_started is not None:
+            pulumi.set(__self__, "time_data_population_started", time_data_population_started)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="dataPopulationStatus")
+    def data_population_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The overall status of the data population from the tenancy.
+        """
+        return pulumi.get(self, "data_population_status")
+
+    @data_population_status.setter
+    def data_population_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "data_population_status", value)
 
     @_builtins.property
     @pulumi.getter
@@ -162,6 +192,18 @@ class _ResourceAnalyticsTenancyAttachmentState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monitoredRegions")
+    def monitored_regions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs']]]]:
+        """
+        List of monitored regions with their data population status.
+        """
+        return pulumi.get(self, "monitored_regions")
+
+    @monitored_regions.setter
+    def monitored_regions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs']]]]):
+        pulumi.set(self, "monitored_regions", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
@@ -226,6 +268,30 @@ class _ResourceAnalyticsTenancyAttachmentState:
     @time_created.setter
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeDataPopulationEnded")
+    def time_data_population_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_ended")
+
+    @time_data_population_ended.setter
+    def time_data_population_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_data_population_ended", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeDataPopulationStarted")
+    def time_data_population_started(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_started")
+
+    @time_data_population_started.setter
+    def time_data_population_started(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_data_population_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -358,11 +424,15 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
             if tenancy_id is None and not opts.urn:
                 raise TypeError("Missing required property 'tenancy_id'")
             __props__.__dict__["tenancy_id"] = tenancy_id
+            __props__.__dict__["data_population_status"] = None
             __props__.__dict__["is_reporting_tenancy"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["monitored_regions"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_data_population_ended"] = None
+            __props__.__dict__["time_data_population_started"] = None
             __props__.__dict__["time_updated"] = None
         super(ResourceAnalyticsTenancyAttachment, __self__).__init__(
             'oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment',
@@ -374,14 +444,18 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            data_population_status: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_regions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict']]]]] = None,
             resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_data_population_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_data_population_started: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ResourceAnalyticsTenancyAttachment':
         """
         Get an existing ResourceAnalyticsTenancyAttachment resource's state with the given name, id, and optional extra
@@ -390,9 +464,11 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] data_population_status: The overall status of the data population from the tenancy.
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the tenancy.
         :param pulumi.Input[_builtins.bool] is_reporting_tenancy: Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict']]]] monitored_regions: List of monitored regions with their data population status.
         :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
         :param pulumi.Input[_builtins.str] state: The current state of the TenancyAttachment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -402,22 +478,36 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_data_population_ended: The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_data_population_started: The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ResourceAnalyticsTenancyAttachmentState.__new__(_ResourceAnalyticsTenancyAttachmentState)
 
+        __props__.__dict__["data_population_status"] = data_population_status
         __props__.__dict__["description"] = description
         __props__.__dict__["is_reporting_tenancy"] = is_reporting_tenancy
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["monitored_regions"] = monitored_regions
         __props__.__dict__["resource_analytics_instance_id"] = resource_analytics_instance_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["tenancy_id"] = tenancy_id
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_data_population_ended"] = time_data_population_ended
+        __props__.__dict__["time_data_population_started"] = time_data_population_started
         __props__.__dict__["time_updated"] = time_updated
         return ResourceAnalyticsTenancyAttachment(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="dataPopulationStatus")
+    def data_population_status(self) -> pulumi.Output[_builtins.str]:
+        """
+        The overall status of the data population from the tenancy.
+        """
+        return pulumi.get(self, "data_population_status")
 
     @_builtins.property
     @pulumi.getter
@@ -442,6 +532,14 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="monitoredRegions")
+    def monitored_regions(self) -> pulumi.Output[Sequence['outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion']]:
+        """
+        List of monitored regions with their data population status.
+        """
+        return pulumi.get(self, "monitored_regions")
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
@@ -486,6 +584,22 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDataPopulationEnded")
+    def time_data_population_ended(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDataPopulationStarted")
+    def time_data_population_started(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_started")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")

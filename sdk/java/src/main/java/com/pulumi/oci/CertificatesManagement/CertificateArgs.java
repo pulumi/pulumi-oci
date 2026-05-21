@@ -66,6 +66,21 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    @Import(name="currentVersionNumber")
+    private @Nullable Output<String> currentVersionNumber;
+
+    /**
+     * @return (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    public Optional<Output<String>> currentVersionNumber() {
+        return Optional.ofNullable(this.currentVersionNumber);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -137,6 +152,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         this.certificateConfig = $.certificateConfig;
         this.certificateRules = $.certificateRules;
         this.compartmentId = $.compartmentId;
+        this.currentVersionNumber = $.currentVersionNumber;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.freeformTags = $.freeformTags;
@@ -232,6 +248,27 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param currentVersionNumber (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentVersionNumber(@Nullable Output<String> currentVersionNumber) {
+            $.currentVersionNumber = currentVersionNumber;
+            return this;
+        }
+
+        /**
+         * @param currentVersionNumber (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentVersionNumber(String currentVersionNumber) {
+            return currentVersionNumber(Output.of(currentVersionNumber));
         }
 
         /**

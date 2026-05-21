@@ -204,8 +204,8 @@ class BdsInstancePatchAction(pulumi.CustomResource):
 
         test_bds_instance_patch_action = oci.bigdataservice.BdsInstancePatchAction("test_bds_instance_patch_action",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             version=bds_instance_patch_action_version,
+            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             patching_config={
                 "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
                 "batch_size": int(bds_instance_patch_action_patching_config_batch_size),
@@ -213,7 +213,8 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                 "tolerance_threshold_per_domain": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_domain),
                 "wait_time_between_batch_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds),
                 "wait_time_between_domain_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds),
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -254,8 +255,8 @@ class BdsInstancePatchAction(pulumi.CustomResource):
 
         test_bds_instance_patch_action = oci.bigdataservice.BdsInstancePatchAction("test_bds_instance_patch_action",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             version=bds_instance_patch_action_version,
+            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             patching_config={
                 "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
                 "batch_size": int(bds_instance_patch_action_patching_config_batch_size),
@@ -263,7 +264,8 @@ class BdsInstancePatchAction(pulumi.CustomResource):
                 "tolerance_threshold_per_domain": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_domain),
                 "wait_time_between_batch_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds),
                 "wait_time_between_domain_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds),
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import

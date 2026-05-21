@@ -10,15 +10,35 @@ export type DatabaseToolsConnection = import("./databaseToolsConnection").Databa
 export const DatabaseToolsConnection: typeof import("./databaseToolsConnection").DatabaseToolsConnection = null as any;
 utilities.lazyLoad(exports, ["DatabaseToolsConnection"], () => require("./databaseToolsConnection"));
 
+export { DatabaseToolsDatabaseApiGatewayConfigArgs, DatabaseToolsDatabaseApiGatewayConfigState } from "./databaseToolsDatabaseApiGatewayConfig";
+export type DatabaseToolsDatabaseApiGatewayConfig = import("./databaseToolsDatabaseApiGatewayConfig").DatabaseToolsDatabaseApiGatewayConfig;
+export const DatabaseToolsDatabaseApiGatewayConfig: typeof import("./databaseToolsDatabaseApiGatewayConfig").DatabaseToolsDatabaseApiGatewayConfig = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsDatabaseApiGatewayConfig"], () => require("./databaseToolsDatabaseApiGatewayConfig"));
+
 export { DatabaseToolsIdentityArgs, DatabaseToolsIdentityState } from "./databaseToolsIdentity";
 export type DatabaseToolsIdentity = import("./databaseToolsIdentity").DatabaseToolsIdentity;
 export const DatabaseToolsIdentity: typeof import("./databaseToolsIdentity").DatabaseToolsIdentity = null as any;
 utilities.lazyLoad(exports, ["DatabaseToolsIdentity"], () => require("./databaseToolsIdentity"));
 
+export { DatabaseToolsMcpServerArgs, DatabaseToolsMcpServerState } from "./databaseToolsMcpServer";
+export type DatabaseToolsMcpServer = import("./databaseToolsMcpServer").DatabaseToolsMcpServer;
+export const DatabaseToolsMcpServer: typeof import("./databaseToolsMcpServer").DatabaseToolsMcpServer = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsMcpServer"], () => require("./databaseToolsMcpServer"));
+
+export { DatabaseToolsMcpToolsetArgs, DatabaseToolsMcpToolsetState } from "./databaseToolsMcpToolset";
+export type DatabaseToolsMcpToolset = import("./databaseToolsMcpToolset").DatabaseToolsMcpToolset;
+export const DatabaseToolsMcpToolset: typeof import("./databaseToolsMcpToolset").DatabaseToolsMcpToolset = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsMcpToolset"], () => require("./databaseToolsMcpToolset"));
+
 export { DatabaseToolsPrivateEndpointArgs, DatabaseToolsPrivateEndpointState } from "./databaseToolsPrivateEndpoint";
 export type DatabaseToolsPrivateEndpoint = import("./databaseToolsPrivateEndpoint").DatabaseToolsPrivateEndpoint;
 export const DatabaseToolsPrivateEndpoint: typeof import("./databaseToolsPrivateEndpoint").DatabaseToolsPrivateEndpoint = null as any;
 utilities.lazyLoad(exports, ["DatabaseToolsPrivateEndpoint"], () => require("./databaseToolsPrivateEndpoint"));
+
+export { DatabaseToolsSqlReportArgs, DatabaseToolsSqlReportState } from "./databaseToolsSqlReport";
+export type DatabaseToolsSqlReport = import("./databaseToolsSqlReport").DatabaseToolsSqlReport;
+export const DatabaseToolsSqlReport: typeof import("./databaseToolsSqlReport").DatabaseToolsSqlReport = null as any;
+utilities.lazyLoad(exports, ["DatabaseToolsSqlReport"], () => require("./databaseToolsSqlReport"));
 
 export { GetDatabaseToolsConnectionArgs, GetDatabaseToolsConnectionResult, GetDatabaseToolsConnectionOutputArgs } from "./getDatabaseToolsConnection";
 export const getDatabaseToolsConnection: typeof import("./getDatabaseToolsConnection").getDatabaseToolsConnection = null as any;
@@ -29,6 +49,16 @@ export { GetDatabaseToolsConnectionsArgs, GetDatabaseToolsConnectionsResult, Get
 export const getDatabaseToolsConnections: typeof import("./getDatabaseToolsConnections").getDatabaseToolsConnections = null as any;
 export const getDatabaseToolsConnectionsOutput: typeof import("./getDatabaseToolsConnections").getDatabaseToolsConnectionsOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabaseToolsConnections","getDatabaseToolsConnectionsOutput"], () => require("./getDatabaseToolsConnections"));
+
+export { GetDatabaseToolsDatabaseApiGatewayConfigArgs, GetDatabaseToolsDatabaseApiGatewayConfigResult, GetDatabaseToolsDatabaseApiGatewayConfigOutputArgs } from "./getDatabaseToolsDatabaseApiGatewayConfig";
+export const getDatabaseToolsDatabaseApiGatewayConfig: typeof import("./getDatabaseToolsDatabaseApiGatewayConfig").getDatabaseToolsDatabaseApiGatewayConfig = null as any;
+export const getDatabaseToolsDatabaseApiGatewayConfigOutput: typeof import("./getDatabaseToolsDatabaseApiGatewayConfig").getDatabaseToolsDatabaseApiGatewayConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsDatabaseApiGatewayConfig","getDatabaseToolsDatabaseApiGatewayConfigOutput"], () => require("./getDatabaseToolsDatabaseApiGatewayConfig"));
+
+export { GetDatabaseToolsDatabaseApiGatewayConfigsArgs, GetDatabaseToolsDatabaseApiGatewayConfigsResult, GetDatabaseToolsDatabaseApiGatewayConfigsOutputArgs } from "./getDatabaseToolsDatabaseApiGatewayConfigs";
+export const getDatabaseToolsDatabaseApiGatewayConfigs: typeof import("./getDatabaseToolsDatabaseApiGatewayConfigs").getDatabaseToolsDatabaseApiGatewayConfigs = null as any;
+export const getDatabaseToolsDatabaseApiGatewayConfigsOutput: typeof import("./getDatabaseToolsDatabaseApiGatewayConfigs").getDatabaseToolsDatabaseApiGatewayConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsDatabaseApiGatewayConfigs","getDatabaseToolsDatabaseApiGatewayConfigsOutput"], () => require("./getDatabaseToolsDatabaseApiGatewayConfigs"));
 
 export { GetDatabaseToolsEndpointServiceArgs, GetDatabaseToolsEndpointServiceResult, GetDatabaseToolsEndpointServiceOutputArgs } from "./getDatabaseToolsEndpointService";
 export const getDatabaseToolsEndpointService: typeof import("./getDatabaseToolsEndpointService").getDatabaseToolsEndpointService = null as any;
@@ -50,6 +80,31 @@ export const getDatabaseToolsIdentity: typeof import("./getDatabaseToolsIdentity
 export const getDatabaseToolsIdentityOutput: typeof import("./getDatabaseToolsIdentity").getDatabaseToolsIdentityOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabaseToolsIdentity","getDatabaseToolsIdentityOutput"], () => require("./getDatabaseToolsIdentity"));
 
+export { GetDatabaseToolsMcpServerArgs, GetDatabaseToolsMcpServerResult, GetDatabaseToolsMcpServerOutputArgs } from "./getDatabaseToolsMcpServer";
+export const getDatabaseToolsMcpServer: typeof import("./getDatabaseToolsMcpServer").getDatabaseToolsMcpServer = null as any;
+export const getDatabaseToolsMcpServerOutput: typeof import("./getDatabaseToolsMcpServer").getDatabaseToolsMcpServerOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsMcpServer","getDatabaseToolsMcpServerOutput"], () => require("./getDatabaseToolsMcpServer"));
+
+export { GetDatabaseToolsMcpServersArgs, GetDatabaseToolsMcpServersResult, GetDatabaseToolsMcpServersOutputArgs } from "./getDatabaseToolsMcpServers";
+export const getDatabaseToolsMcpServers: typeof import("./getDatabaseToolsMcpServers").getDatabaseToolsMcpServers = null as any;
+export const getDatabaseToolsMcpServersOutput: typeof import("./getDatabaseToolsMcpServers").getDatabaseToolsMcpServersOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsMcpServers","getDatabaseToolsMcpServersOutput"], () => require("./getDatabaseToolsMcpServers"));
+
+export { GetDatabaseToolsMcpToolsetArgs, GetDatabaseToolsMcpToolsetResult, GetDatabaseToolsMcpToolsetOutputArgs } from "./getDatabaseToolsMcpToolset";
+export const getDatabaseToolsMcpToolset: typeof import("./getDatabaseToolsMcpToolset").getDatabaseToolsMcpToolset = null as any;
+export const getDatabaseToolsMcpToolsetOutput: typeof import("./getDatabaseToolsMcpToolset").getDatabaseToolsMcpToolsetOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsMcpToolset","getDatabaseToolsMcpToolsetOutput"], () => require("./getDatabaseToolsMcpToolset"));
+
+export { GetDatabaseToolsMcpToolsetVersionsArgs, GetDatabaseToolsMcpToolsetVersionsResult, GetDatabaseToolsMcpToolsetVersionsOutputArgs } from "./getDatabaseToolsMcpToolsetVersions";
+export const getDatabaseToolsMcpToolsetVersions: typeof import("./getDatabaseToolsMcpToolsetVersions").getDatabaseToolsMcpToolsetVersions = null as any;
+export const getDatabaseToolsMcpToolsetVersionsOutput: typeof import("./getDatabaseToolsMcpToolsetVersions").getDatabaseToolsMcpToolsetVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsMcpToolsetVersions","getDatabaseToolsMcpToolsetVersionsOutput"], () => require("./getDatabaseToolsMcpToolsetVersions"));
+
+export { GetDatabaseToolsMcpToolsetsArgs, GetDatabaseToolsMcpToolsetsResult, GetDatabaseToolsMcpToolsetsOutputArgs } from "./getDatabaseToolsMcpToolsets";
+export const getDatabaseToolsMcpToolsets: typeof import("./getDatabaseToolsMcpToolsets").getDatabaseToolsMcpToolsets = null as any;
+export const getDatabaseToolsMcpToolsetsOutput: typeof import("./getDatabaseToolsMcpToolsets").getDatabaseToolsMcpToolsetsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsMcpToolsets","getDatabaseToolsMcpToolsetsOutput"], () => require("./getDatabaseToolsMcpToolsets"));
+
 export { GetDatabaseToolsPrivateEndpointArgs, GetDatabaseToolsPrivateEndpointResult, GetDatabaseToolsPrivateEndpointOutputArgs } from "./getDatabaseToolsPrivateEndpoint";
 export const getDatabaseToolsPrivateEndpoint: typeof import("./getDatabaseToolsPrivateEndpoint").getDatabaseToolsPrivateEndpoint = null as any;
 export const getDatabaseToolsPrivateEndpointOutput: typeof import("./getDatabaseToolsPrivateEndpoint").getDatabaseToolsPrivateEndpointOutput = null as any;
@@ -59,6 +114,16 @@ export { GetDatabaseToolsPrivateEndpointsArgs, GetDatabaseToolsPrivateEndpointsR
 export const getDatabaseToolsPrivateEndpoints: typeof import("./getDatabaseToolsPrivateEndpoints").getDatabaseToolsPrivateEndpoints = null as any;
 export const getDatabaseToolsPrivateEndpointsOutput: typeof import("./getDatabaseToolsPrivateEndpoints").getDatabaseToolsPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabaseToolsPrivateEndpoints","getDatabaseToolsPrivateEndpointsOutput"], () => require("./getDatabaseToolsPrivateEndpoints"));
+
+export { GetDatabaseToolsSqlReportArgs, GetDatabaseToolsSqlReportResult, GetDatabaseToolsSqlReportOutputArgs } from "./getDatabaseToolsSqlReport";
+export const getDatabaseToolsSqlReport: typeof import("./getDatabaseToolsSqlReport").getDatabaseToolsSqlReport = null as any;
+export const getDatabaseToolsSqlReportOutput: typeof import("./getDatabaseToolsSqlReport").getDatabaseToolsSqlReportOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsSqlReport","getDatabaseToolsSqlReportOutput"], () => require("./getDatabaseToolsSqlReport"));
+
+export { GetDatabaseToolsSqlReportsArgs, GetDatabaseToolsSqlReportsResult, GetDatabaseToolsSqlReportsOutputArgs } from "./getDatabaseToolsSqlReports";
+export const getDatabaseToolsSqlReports: typeof import("./getDatabaseToolsSqlReports").getDatabaseToolsSqlReports = null as any;
+export const getDatabaseToolsSqlReportsOutput: typeof import("./getDatabaseToolsSqlReports").getDatabaseToolsSqlReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseToolsSqlReports","getDatabaseToolsSqlReportsOutput"], () => require("./getDatabaseToolsSqlReports"));
 
 export { GetRuntimeDatabaseToolsConnectionCredentialArgs, GetRuntimeDatabaseToolsConnectionCredentialResult, GetRuntimeDatabaseToolsConnectionCredentialOutputArgs } from "./getRuntimeDatabaseToolsConnectionCredential";
 export const getRuntimeDatabaseToolsConnectionCredential: typeof import("./getRuntimeDatabaseToolsConnectionCredential").getRuntimeDatabaseToolsConnectionCredential = null as any;
@@ -197,10 +262,18 @@ const _module = {
         switch (type) {
             case "oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection":
                 return new DatabaseToolsConnection(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/databaseToolsDatabaseApiGatewayConfig:DatabaseToolsDatabaseApiGatewayConfig":
+                return new DatabaseToolsDatabaseApiGatewayConfig(name, <any>undefined, { urn })
             case "oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity":
                 return new DatabaseToolsIdentity(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/databaseToolsMcpServer:DatabaseToolsMcpServer":
+                return new DatabaseToolsMcpServer(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/databaseToolsMcpToolset:DatabaseToolsMcpToolset":
+                return new DatabaseToolsMcpToolset(name, <any>undefined, { urn })
             case "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint":
                 return new DatabaseToolsPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:DatabaseTools/databaseToolsSqlReport:DatabaseToolsSqlReport":
+                return new DatabaseToolsSqlReport(name, <any>undefined, { urn })
             case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential":
                 return new RuntimeDatabaseToolsConnectionCredential(name, <any>undefined, { urn })
             case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee":
@@ -223,8 +296,12 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsConnection", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsDatabaseApiGatewayConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsIdentity", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsMcpServer", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsMcpToolset", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseTools/databaseToolsSqlReport", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym", _module)

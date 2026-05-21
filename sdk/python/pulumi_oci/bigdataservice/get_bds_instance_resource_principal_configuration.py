@@ -26,7 +26,7 @@ class GetBdsInstanceResourcePrincipalConfigurationResult:
     """
     A collection of values returned by getBdsInstanceResourcePrincipalConfiguration.
     """
-    def __init__(__self__, bds_instance_id=None, cluster_admin_password=None, display_name=None, force_refresh_resource_principal_trigger=None, id=None, resource_principal_configuration_id=None, session_token_life_span_duration_in_hours=None, state=None, time_created=None, time_token_expiry=None, time_token_refreshed=None, time_updated=None):
+    def __init__(__self__, bds_instance_id=None, cluster_admin_password=None, display_name=None, force_refresh_resource_principal_trigger=None, id=None, resource_principal_configuration_id=None, secret_id=None, session_token_life_span_duration_in_hours=None, state=None, time_created=None, time_token_expiry=None, time_token_refreshed=None, time_updated=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -45,6 +45,9 @@ class GetBdsInstanceResourcePrincipalConfigurationResult:
         if resource_principal_configuration_id and not isinstance(resource_principal_configuration_id, str):
             raise TypeError("Expected argument 'resource_principal_configuration_id' to be a str")
         pulumi.set(__self__, "resource_principal_configuration_id", resource_principal_configuration_id)
+        if secret_id and not isinstance(secret_id, str):
+            raise TypeError("Expected argument 'secret_id' to be a str")
+        pulumi.set(__self__, "secret_id", secret_id)
         if session_token_life_span_duration_in_hours and not isinstance(session_token_life_span_duration_in_hours, int):
             raise TypeError("Expected argument 'session_token_life_span_duration_in_hours' to be a int")
         pulumi.set(__self__, "session_token_life_span_duration_in_hours", session_token_life_span_duration_in_hours)
@@ -94,7 +97,7 @@ class GetBdsInstanceResourcePrincipalConfigurationResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the ResourcePrincipalConfiguration.
+        The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
 
@@ -102,6 +105,14 @@ class GetBdsInstanceResourcePrincipalConfigurationResult:
     @pulumi.getter(name="resourcePrincipalConfigurationId")
     def resource_principal_configuration_id(self) -> _builtins.str:
         return pulumi.get(self, "resource_principal_configuration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")
@@ -164,6 +175,7 @@ class AwaitableGetBdsInstanceResourcePrincipalConfigurationResult(GetBdsInstance
             force_refresh_resource_principal_trigger=self.force_refresh_resource_principal_trigger,
             id=self.id,
             resource_principal_configuration_id=self.resource_principal_configuration_id,
+            secret_id=self.secret_id,
             session_token_life_span_duration_in_hours=self.session_token_life_span_duration_in_hours,
             state=self.state,
             time_created=self.time_created,
@@ -207,6 +219,7 @@ def get_bds_instance_resource_principal_configuration(bds_instance_id: Optional[
         force_refresh_resource_principal_trigger=pulumi.get(__ret__, 'force_refresh_resource_principal_trigger'),
         id=pulumi.get(__ret__, 'id'),
         resource_principal_configuration_id=pulumi.get(__ret__, 'resource_principal_configuration_id'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
         session_token_life_span_duration_in_hours=pulumi.get(__ret__, 'session_token_life_span_duration_in_hours'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -247,6 +260,7 @@ def get_bds_instance_resource_principal_configuration_output(bds_instance_id: pu
         force_refresh_resource_principal_trigger=pulumi.get(__response__, 'force_refresh_resource_principal_trigger'),
         id=pulumi.get(__response__, 'id'),
         resource_principal_configuration_id=pulumi.get(__response__, 'resource_principal_configuration_id'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
         session_token_life_span_duration_in_hours=pulumi.get(__response__, 'session_token_life_span_duration_in_hours'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),

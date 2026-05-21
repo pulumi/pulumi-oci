@@ -132,6 +132,7 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly int ComputeCount;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -190,6 +191,8 @@ namespace Pulumi.Oci.Oci
 
             string compartmentId,
 
+            int computeCount,
+
             ImmutableDictionary<string, string> definedTags,
 
             string description,
@@ -225,6 +228,7 @@ namespace Pulumi.Oci.Oci
             AdwAdminPasswords = adwAdminPasswords;
             AdwId = adwId;
             CompartmentId = compartmentId;
+            ComputeCount = computeCount;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

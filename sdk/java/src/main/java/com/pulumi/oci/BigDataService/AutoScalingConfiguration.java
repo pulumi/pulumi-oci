@@ -58,9 +58,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
- *             .clusterAdminPassword(autoScalingConfigurationClusterAdminPassword)
  *             .isEnabled(autoScalingConfigurationIsEnabled)
  *             .nodeType(autoScalingConfigurationNodeType)
+ *             .clusterAdminPassword(autoScalingConfigurationClusterAdminPassword)
  *             .displayName(autoScalingConfigurationDisplayName)
  *             .policyDetails(AutoScalingConfigurationPolicyDetailsArgs.builder()
  *                 .policyType(autoScalingConfigurationPolicyDetailsPolicyType)
@@ -93,6 +93,7 @@ import javax.annotation.Nullable;
  *                     .ocpuStepSize(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize)
  *                     .build())
  *                 .build())
+ *             .secretId(testSecret.id())
  *             .build());
  * 
  *     }
@@ -228,6 +229,26 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      */
     public Output<AutoScalingConfigurationPolicyDetails> policyDetails() {
         return this.policyDetails;
+    }
+    /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="secretId", refs={String.class}, tree="[0]")
+    private Output<String> secretId;
+
+    /**
+     * @return (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
     }
     /**
      * The state of the autoscale configuration.

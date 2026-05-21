@@ -25,6 +25,7 @@ public final class GetShapeShape {
     private String gpuDescription;
     private Integer gpus;
     private Boolean isBilledForStoppedInstance;
+    private Boolean isCnic;
     private Boolean isFlexible;
     private Boolean isLiveMigrationSupported;
     private Boolean isSubcore;
@@ -66,6 +67,9 @@ public final class GetShapeShape {
     }
     public Boolean isBilledForStoppedInstance() {
         return this.isBilledForStoppedInstance;
+    }
+    public Boolean isCnic() {
+        return this.isCnic;
     }
     public Boolean isFlexible() {
         return this.isFlexible;
@@ -157,6 +161,7 @@ public final class GetShapeShape {
         private String gpuDescription;
         private Integer gpus;
         private Boolean isBilledForStoppedInstance;
+        private Boolean isCnic;
         private Boolean isFlexible;
         private Boolean isLiveMigrationSupported;
         private Boolean isSubcore;
@@ -190,6 +195,7 @@ public final class GetShapeShape {
     	      this.gpuDescription = defaults.gpuDescription;
     	      this.gpus = defaults.gpus;
     	      this.isBilledForStoppedInstance = defaults.isBilledForStoppedInstance;
+    	      this.isCnic = defaults.isCnic;
     	      this.isFlexible = defaults.isFlexible;
     	      this.isLiveMigrationSupported = defaults.isLiveMigrationSupported;
     	      this.isSubcore = defaults.isSubcore;
@@ -258,6 +264,14 @@ public final class GetShapeShape {
               throw new MissingRequiredPropertyException("GetShapeShape", "isBilledForStoppedInstance");
             }
             this.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCnic(Boolean isCnic) {
+            if (isCnic == null) {
+              throw new MissingRequiredPropertyException("GetShapeShape", "isCnic");
+            }
+            this.isCnic = isCnic;
             return this;
         }
         @CustomType.Setter
@@ -494,6 +508,7 @@ public final class GetShapeShape {
             _resultValue.gpuDescription = gpuDescription;
             _resultValue.gpus = gpus;
             _resultValue.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            _resultValue.isCnic = isCnic;
             _resultValue.isFlexible = isFlexible;
             _resultValue.isLiveMigrationSupported = isLiveMigrationSupported;
             _resultValue.isSubcore = isSubcore;

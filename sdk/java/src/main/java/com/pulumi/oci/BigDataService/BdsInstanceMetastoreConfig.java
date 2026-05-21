@@ -52,9 +52,10 @@ import javax.annotation.Nullable;
  *             .bdsApiKeyId(testApiKey.id())
  *             .bdsApiKeyPassphrase(bdsInstanceMetastoreConfigBdsApiKeyPassphrase)
  *             .bdsInstanceId(testBdsInstance.id())
- *             .clusterAdminPassword(bdsInstanceMetastoreConfigClusterAdminPassword)
  *             .metastoreId(testMetastore.id())
+ *             .clusterAdminPassword(bdsInstanceMetastoreConfigClusterAdminPassword)
  *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+ *             .secretId(testSecret.id())
  *             .build());
  * 
  *     }

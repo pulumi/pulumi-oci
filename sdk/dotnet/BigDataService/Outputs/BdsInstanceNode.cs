@@ -86,7 +86,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? SshFingerprint;
         /// <summary>
-        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         public readonly string? State;
         /// <summary>

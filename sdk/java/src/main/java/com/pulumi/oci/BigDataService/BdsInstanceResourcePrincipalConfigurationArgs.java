@@ -36,15 +36,15 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
      * Base-64 encoded Cluster Admin Password for cluster admin user.
      * 
      */
-    @Import(name="clusterAdminPassword", required=true)
-    private Output<String> clusterAdminPassword;
+    @Import(name="clusterAdminPassword")
+    private @Nullable Output<String> clusterAdminPassword;
 
     /**
      * @return Base-64 encoded Cluster Admin Password for cluster admin user.
      * 
      */
-    public Output<String> clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<Output<String>> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
 
     /**
@@ -78,6 +78,21 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
     }
 
     /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
      * (Updatable) Life span in hours for the resource principal session token.
      * 
      */
@@ -99,6 +114,7 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
         this.clusterAdminPassword = $.clusterAdminPassword;
         this.displayName = $.displayName;
         this.forceRefreshResourcePrincipalTrigger = $.forceRefreshResourcePrincipalTrigger;
+        this.secretId = $.secretId;
         this.sessionTokenLifeSpanDurationInHours = $.sessionTokenLifeSpanDurationInHours;
     }
 
@@ -147,7 +163,7 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
          * @return builder
          * 
          */
-        public Builder clusterAdminPassword(Output<String> clusterAdminPassword) {
+        public Builder clusterAdminPassword(@Nullable Output<String> clusterAdminPassword) {
             $.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
@@ -205,6 +221,27 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
         }
 
         /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
+        /**
          * @param sessionTokenLifeSpanDurationInHours (Updatable) Life span in hours for the resource principal session token.
          * 
          * @return builder
@@ -228,9 +265,6 @@ public final class BdsInstanceResourcePrincipalConfigurationArgs extends com.pul
         public BdsInstanceResourcePrincipalConfigurationArgs build() {
             if ($.bdsInstanceId == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceResourcePrincipalConfigurationArgs", "bdsInstanceId");
-            }
-            if ($.clusterAdminPassword == null) {
-                throw new MissingRequiredPropertyException("BdsInstanceResourcePrincipalConfigurationArgs", "clusterAdminPassword");
             }
             if ($.displayName == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceResourcePrincipalConfigurationArgs", "displayName");

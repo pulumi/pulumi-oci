@@ -58,10 +58,14 @@ export interface GetBdsInstanceResourcePrincipalConfigurationResult {
     readonly displayName: string;
     readonly forceRefreshResourcePrincipalTrigger: number;
     /**
-     * The id of the ResourcePrincipalConfiguration.
+     * The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      */
     readonly id: string;
     readonly resourcePrincipalConfigurationId: string;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    readonly secretId: string;
     /**
      * Life span in hours of each resource principal session token.
      */

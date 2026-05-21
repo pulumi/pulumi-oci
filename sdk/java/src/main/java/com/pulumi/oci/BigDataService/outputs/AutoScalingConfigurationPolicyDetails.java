@@ -56,9 +56,6 @@ public final class AutoScalingConfigurationPolicyDetails {
     /**
      * @return (Updatable) The time zone of the execution schedule, in IANA time zone database name format
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private @Nullable String timezone;
     /**
@@ -119,9 +116,6 @@ public final class AutoScalingConfigurationPolicyDetails {
     }
     /**
      * @return (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> timezone() {

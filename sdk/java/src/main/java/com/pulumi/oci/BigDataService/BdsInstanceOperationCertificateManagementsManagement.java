@@ -50,16 +50,17 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", BdsInstanceOperationCertificateManagementsManagementArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
- *             .clusterAdminPassword(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword)
  *             .services(bdsInstanceOperationCertificateManagementsManagementServices)
  *             .enableOperationCertificateManagement(enableOperationCertificateManagement)
  *             .renewOperationCertificateManagement(renewOperationCertificateManagement)
+ *             .clusterAdminPassword(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword)
  *             .hostCertDetails(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs.builder()
  *                 .certificate(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate)
  *                 .hostName(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName)
  *                 .privateKey(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey)
  *                 .build())
  *             .rootCertificate(bdsInstanceOperationCertificateManagementsManagementRootCertificate)
+ *             .secretId(testSecret.id())
  *             .serverKeyPassword(bdsInstanceOperationCertificateManagementsManagementServerKeyPassword)
  *             .build());
  * 

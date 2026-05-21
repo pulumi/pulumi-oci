@@ -21,7 +21,6 @@ __all__ = ['BdsInstanceArgs', 'BdsInstance']
 @pulumi.input_type
 class BdsInstanceArgs:
     def __init__(__self__, *,
-                 cluster_admin_password: pulumi.Input[_builtins.str],
                  cluster_public_key: pulumi.Input[_builtins.str],
                  cluster_version: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
@@ -34,6 +33,7 @@ class BdsInstanceArgs:
                  bds_cluster_version_summary: pulumi.Input[Optional['BdsInstanceBdsClusterVersionSummaryArgs']] = None,
                  bootstrap_script_url: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_sql_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_profile: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_only_worker_node: pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -44,18 +44,20 @@ class BdsInstanceArgs:
                  is_force_remove_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  kafka_broker_node: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_config: pulumi.Input[Optional['BdsInstanceNetworkConfigArgs']] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
 
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[_builtins.str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment
@@ -67,6 +69,7 @@ class BdsInstanceArgs:
         :param pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summary: Cluster version details including bds and odh version information.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -74,15 +77,16 @@ class BdsInstanceArgs:
         :param pulumi.Input[_builtins.bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[_builtins.bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input['BdsInstanceKafkaBrokerNodeArgs'] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: (Updatable) Additional configuration of the user's network.
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[_builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "cluster_public_key", cluster_public_key)
         pulumi.set(__self__, "cluster_version", cluster_version)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -98,6 +102,8 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
             pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
+        if cluster_admin_password is not None:
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if cluster_profile is not None:
             pulumi.set(__self__, "cluster_profile", cluster_profile)
         if compute_only_worker_node is not None:
@@ -118,6 +124,8 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         if is_kafka_configured is not None:
             pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+        if is_secret_reused is not None:
+            pulumi.set(__self__, "is_secret_reused", is_secret_reused)
         if kafka_broker_node is not None:
             pulumi.set(__self__, "kafka_broker_node", kafka_broker_node)
         if kerberos_realm_name is not None:
@@ -130,22 +138,14 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "os_patch_version", os_patch_version)
         if remove_node is not None:
             pulumi.set(__self__, "remove_node", remove_node)
+        if remove_nodes is not None:
+            pulumi.set(__self__, "remove_nodes", remove_nodes)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if start_cluster_shape_configs is not None:
             pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
         if state is not None:
             pulumi.set(__self__, "state", state)
-
-    @_builtins.property
-    @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        """
-        return pulumi.get(self, "cluster_admin_password")
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPublicKey")
@@ -289,6 +289,18 @@ class BdsInstanceArgs:
         pulumi.set(self, "cloud_sql_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
+        """
+        return pulumi.get(self, "cluster_admin_password")
+
+    @cluster_admin_password.setter
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_admin_password", value)
+
+    @_builtins.property
     @pulumi.getter(name="clusterProfile")
     def cluster_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -400,6 +412,18 @@ class BdsInstanceArgs:
         pulumi.set(self, "is_kafka_configured", value)
 
     @_builtins.property
+    @pulumi.getter(name="isSecretReused")
+    def is_secret_reused(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        """
+        return pulumi.get(self, "is_secret_reused")
+
+    @is_secret_reused.setter
+    def is_secret_reused(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_secret_reused", value)
+
+    @_builtins.property
     @pulumi.getter(name="kafkaBrokerNode")
     def kafka_broker_node(self) -> pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']]:
         """
@@ -472,6 +496,27 @@ class BdsInstanceArgs:
         pulumi.set(self, "remove_node", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeNodes")
+    def remove_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "remove_nodes")
+
+    @remove_nodes.setter
+    def remove_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "remove_nodes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
     def start_cluster_shape_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
         return pulumi.get(self, "start_cluster_shape_configs")
@@ -517,6 +562,7 @@ class _BdsInstanceState:
                  is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
                  kafka_broker_node: pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeArgs']] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -528,9 +574,12 @@ class _BdsInstanceState:
                  number_of_nodes_requiring_maintenance_reboot: pulumi.Input[Optional[_builtins.int]] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_earliest_certificate_expiration: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None,
                  util_node: pulumi.Input[Optional['BdsInstanceUtilNodeArgs']] = None,
                  worker_node: pulumi.Input[Optional['BdsInstanceWorkerNodeArgs']] = None):
@@ -540,7 +589,7 @@ class _BdsInstanceState:
         :param pulumi.Input['BdsInstanceBdsClusterVersionSummaryArgs'] bds_cluster_version_summary: Cluster version details including bds and odh version information.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]] cluster_details: Specific info about a Hadoop cluster
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
@@ -555,6 +604,7 @@ class _BdsInstanceState:
         :param pulumi.Input[_builtins.bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[_builtins.bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input[_builtins.bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input['BdsInstanceKafkaBrokerNodeArgs'] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
@@ -566,8 +616,10 @@ class _BdsInstanceState:
         :param pulumi.Input[_builtins.int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[_builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[_builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_earliest_certificate_expiration: The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
         :param pulumi.Input[_builtins.str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input['BdsInstanceUtilNodeArgs'] util_node: The utility node in the BDS instance
         """
@@ -613,6 +665,8 @@ class _BdsInstanceState:
             pulumi.set(__self__, "is_high_availability", is_high_availability)
         if is_kafka_configured is not None:
             pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+        if is_secret_reused is not None:
+            pulumi.set(__self__, "is_secret_reused", is_secret_reused)
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
         if kafka_broker_node is not None:
@@ -635,12 +689,18 @@ class _BdsInstanceState:
             pulumi.set(__self__, "os_patch_version", os_patch_version)
         if remove_node is not None:
             pulumi.set(__self__, "remove_node", remove_node)
+        if remove_nodes is not None:
+            pulumi.set(__self__, "remove_nodes", remove_nodes)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if start_cluster_shape_configs is not None:
             pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_earliest_certificate_expiration is not None:
+            pulumi.set(__self__, "time_earliest_certificate_expiration", time_earliest_certificate_expiration)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if util_node is not None:
@@ -688,7 +748,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -892,6 +952,18 @@ class _BdsInstanceState:
         pulumi.set(self, "is_kafka_configured", value)
 
     @_builtins.property
+    @pulumi.getter(name="isSecretReused")
+    def is_secret_reused(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        """
+        return pulumi.get(self, "is_secret_reused")
+
+    @is_secret_reused.setter
+    def is_secret_reused(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_secret_reused", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -1024,6 +1096,27 @@ class _BdsInstanceState:
         pulumi.set(self, "remove_node", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeNodes")
+    def remove_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "remove_nodes")
+
+    @remove_nodes.setter
+    def remove_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "remove_nodes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
     def start_cluster_shape_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigArgs']]]]:
         return pulumi.get(self, "start_cluster_shape_configs")
@@ -1055,6 +1148,18 @@ class _BdsInstanceState:
     @time_created.setter
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEarliestCertificateExpiration")
+    def time_earliest_certificate_expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        """
+        return pulumi.get(self, "time_earliest_certificate_expiration")
+
+    @time_earliest_certificate_expiration.setter
+    def time_earliest_certificate_expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_earliest_certificate_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -1115,6 +1220,7 @@ class BdsInstance(pulumi.CustomResource):
                  is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
                  kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1123,6 +1229,8 @@ class BdsInstance(pulumi.CustomResource):
                  network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
@@ -1143,7 +1251,6 @@ class BdsInstance(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_bds_instance = oci.bigdataservice.BdsInstance("test_bds_instance",
-            cluster_admin_password=bds_instance_cluster_admin_password,
             cluster_public_key=bds_instance_cluster_public_key,
             cluster_version=bds_instance_cluster_version,
             compartment_id=compartment_id,
@@ -1221,16 +1328,19 @@ class BdsInstance(pulumi.CustomResource):
                 "odh_version": bds_instance_bds_cluster_version_summary_odh_version,
             },
             bootstrap_script_url=bds_instance_bootstrap_script_url,
+            cluster_admin_password=bds_instance_cluster_admin_password,
             cluster_profile=bds_instance_cluster_profile,
             defined_tags=bds_instance_defined_tags,
             freeform_tags=bds_instance_freeform_tags,
+            is_secret_reused=bds_instance_is_secret_reused == "true",
             kerberos_realm_name=bds_instance_kerberos_realm_name,
             kms_key_id=bds_instance_kms_key_id,
             ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
             network_config={
                 "cidr_block": bds_instance_network_config_cidr_block,
                 "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required == "true",
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -1247,7 +1357,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']] bds_cluster_version_summary: Cluster version details including bds and odh version information.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]] cloud_sql_details: The information about added Cloud SQL capability
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[_builtins.str] cluster_version: Version of the Hadoop distribution
@@ -1260,6 +1370,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[_builtins.bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input[_builtins.bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
@@ -1268,6 +1379,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']] network_config: (Updatable) Additional configuration of the user's network.
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[_builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']] util_node: The utility node in the BDS instance
         """
@@ -1292,7 +1404,6 @@ class BdsInstance(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_bds_instance = oci.bigdataservice.BdsInstance("test_bds_instance",
-            cluster_admin_password=bds_instance_cluster_admin_password,
             cluster_public_key=bds_instance_cluster_public_key,
             cluster_version=bds_instance_cluster_version,
             compartment_id=compartment_id,
@@ -1370,16 +1481,19 @@ class BdsInstance(pulumi.CustomResource):
                 "odh_version": bds_instance_bds_cluster_version_summary_odh_version,
             },
             bootstrap_script_url=bds_instance_bootstrap_script_url,
+            cluster_admin_password=bds_instance_cluster_admin_password,
             cluster_profile=bds_instance_cluster_profile,
             defined_tags=bds_instance_defined_tags,
             freeform_tags=bds_instance_freeform_tags,
+            is_secret_reused=bds_instance_is_secret_reused == "true",
             kerberos_realm_name=bds_instance_kerberos_realm_name,
             kms_key_id=bds_instance_kms_key_id,
             ignore_existing_nodes_shapes=ignore_existing_nodes_shape,
             network_config={
                 "cidr_block": bds_instance_network_config_cidr_block,
                 "is_nat_gateway_required": bds_instance_network_config_is_nat_gateway_required == "true",
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -1425,6 +1539,7 @@ class BdsInstance(pulumi.CustomResource):
                  is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
                  kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
                  kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1433,6 +1548,8 @@ class BdsInstance(pulumi.CustomResource):
                  network_config: pulumi.Input[Optional[Union['BdsInstanceNetworkConfigArgs', 'BdsInstanceNetworkConfigArgsDict']]] = None,
                  os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
@@ -1449,8 +1566,6 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["bds_cluster_version_summary"] = bds_cluster_version_summary
             __props__.__dict__["bootstrap_script_url"] = bootstrap_script_url
             __props__.__dict__["cloud_sql_details"] = cloud_sql_details
-            if cluster_admin_password is None and not opts.urn:
-                raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
             __props__.__dict__["cluster_profile"] = cluster_profile
             if cluster_public_key is None and not opts.urn:
@@ -1477,6 +1592,7 @@ class BdsInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'is_high_availability'")
             __props__.__dict__["is_high_availability"] = is_high_availability
             __props__.__dict__["is_kafka_configured"] = is_kafka_configured
+            __props__.__dict__["is_secret_reused"] = is_secret_reused
             if is_secure is None and not opts.urn:
                 raise TypeError("Missing required property 'is_secure'")
             __props__.__dict__["is_secure"] = is_secure
@@ -1489,6 +1605,8 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["network_config"] = network_config
             __props__.__dict__["os_patch_version"] = os_patch_version
             __props__.__dict__["remove_node"] = remove_node
+            __props__.__dict__["remove_nodes"] = remove_nodes
+            __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["start_cluster_shape_configs"] = start_cluster_shape_configs
             __props__.__dict__["state"] = state
             if util_node is None and not opts.urn:
@@ -1503,6 +1621,7 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["number_of_nodes"] = None
             __props__.__dict__["number_of_nodes_requiring_maintenance_reboot"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_earliest_certificate_expiration"] = None
             __props__.__dict__["time_updated"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clusterAdminPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -1537,6 +1656,7 @@ class BdsInstance(pulumi.CustomResource):
             is_force_stop_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
             is_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
             is_kafka_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_secret_reused: pulumi.Input[Optional[_builtins.bool]] = None,
             is_secure: pulumi.Input[Optional[_builtins.bool]] = None,
             kafka_broker_node: pulumi.Input[Optional[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']]] = None,
             kerberos_realm_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1548,9 +1668,12 @@ class BdsInstance(pulumi.CustomResource):
             number_of_nodes_requiring_maintenance_reboot: pulumi.Input[Optional[_builtins.int]] = None,
             os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
             remove_node: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             start_cluster_shape_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceStartClusterShapeConfigArgs', 'BdsInstanceStartClusterShapeConfigArgsDict']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_earliest_certificate_expiration: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             util_node: pulumi.Input[Optional[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']]] = None,
             worker_node: pulumi.Input[Optional[Union['BdsInstanceWorkerNodeArgs', 'BdsInstanceWorkerNodeArgsDict']]] = None) -> 'BdsInstance':
@@ -1564,7 +1687,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['BdsInstanceBdsClusterVersionSummaryArgs', 'BdsInstanceBdsClusterVersionSummaryArgsDict']] bds_cluster_version_summary: Cluster version details including bds and odh version information.
         :param pulumi.Input[_builtins.str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceCloudSqlDetailArgs', 'BdsInstanceCloudSqlDetailArgsDict']]]] cloud_sql_details: The information about added Cloud SQL capability
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceClusterDetailArgs', 'BdsInstanceClusterDetailArgsDict']]]] cluster_details: Specific info about a Hadoop cluster
         :param pulumi.Input[_builtins.str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[_builtins.str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
@@ -1579,6 +1702,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[_builtins.bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[_builtins.bool] is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param pulumi.Input[_builtins.bool] is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param pulumi.Input[_builtins.bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input[Union['BdsInstanceKafkaBrokerNodeArgs', 'BdsInstanceKafkaBrokerNodeArgsDict']] kafka_broker_node: The kafka broker node in the BDS instance
         :param pulumi.Input[_builtins.str] kerberos_realm_name: The user-defined kerberos realm name.
@@ -1590,8 +1714,10 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[_builtins.str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[_builtins.str] remove_node: (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[_builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] time_earliest_certificate_expiration: The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
         :param pulumi.Input[_builtins.str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[Union['BdsInstanceUtilNodeArgs', 'BdsInstanceUtilNodeArgsDict']] util_node: The utility node in the BDS instance
         """
@@ -1620,6 +1746,7 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
         __props__.__dict__["is_high_availability"] = is_high_availability
         __props__.__dict__["is_kafka_configured"] = is_kafka_configured
+        __props__.__dict__["is_secret_reused"] = is_secret_reused
         __props__.__dict__["is_secure"] = is_secure
         __props__.__dict__["kafka_broker_node"] = kafka_broker_node
         __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
@@ -1631,9 +1758,12 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["number_of_nodes_requiring_maintenance_reboot"] = number_of_nodes_requiring_maintenance_reboot
         __props__.__dict__["os_patch_version"] = os_patch_version
         __props__.__dict__["remove_node"] = remove_node
+        __props__.__dict__["remove_nodes"] = remove_nodes
+        __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["start_cluster_shape_configs"] = start_cluster_shape_configs
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_earliest_certificate_expiration"] = time_earliest_certificate_expiration
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["util_node"] = util_node
         __props__.__dict__["worker_node"] = worker_node
@@ -1667,7 +1797,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[_builtins.str]:
         """
-        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -1799,6 +1929,14 @@ class BdsInstance(pulumi.CustomResource):
         return pulumi.get(self, "is_kafka_configured")
 
     @_builtins.property
+    @pulumi.getter(name="isSecretReused")
+    def is_secret_reused(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        """
+        return pulumi.get(self, "is_secret_reused")
+
+    @_builtins.property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -1887,6 +2025,19 @@ class BdsInstance(pulumi.CustomResource):
         return pulumi.get(self, "remove_node")
 
     @_builtins.property
+    @pulumi.getter(name="removeNodes")
+    def remove_nodes(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        return pulumi.get(self, "remove_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
     def start_cluster_shape_configs(self) -> pulumi.Output[Optional[Sequence['outputs.BdsInstanceStartClusterShapeConfig']]]:
         return pulumi.get(self, "start_cluster_shape_configs")
@@ -1906,6 +2057,14 @@ class BdsInstance(pulumi.CustomResource):
         The time the BDS instance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEarliestCertificateExpiration")
+    def time_earliest_certificate_expiration(self) -> pulumi.Output[_builtins.str]:
+        """
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        """
+        return pulumi.get(self, "time_earliest_certificate_expiration")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")

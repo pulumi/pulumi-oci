@@ -87,7 +87,7 @@ type GetDatabaseToolsConnectionsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                        string  `pulumi:"id"`
 	RelatedResourceIdentifier *string `pulumi:"relatedResourceIdentifier"`
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentities []string `pulumi:"runtimeIdentities"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupports []string `pulumi:"runtimeSupports"`
@@ -174,7 +174,7 @@ func (o GetDatabaseToolsConnectionsResultOutput) RelatedResourceIdentifier() pul
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) *string { return v.RelatedResourceIdentifier }).(pulumi.StringPtrOutput)
 }
 
-// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 func (o GetDatabaseToolsConnectionsResultOutput) RuntimeIdentities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) []string { return v.RuntimeIdentities }).(pulumi.StringArrayOutput)
 }

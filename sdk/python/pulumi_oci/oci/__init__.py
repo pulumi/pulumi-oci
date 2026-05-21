@@ -14,6 +14,10 @@ from .batch_batch_context import *
 from .batch_batch_job_pool import *
 from .batch_batch_task_environment import *
 from .batch_batch_task_profile import *
+from .costad_cost_alert_subscription import *
+from .costad_cost_anomaly_event import *
+from .costad_cost_anomaly_monitor import *
+from .costad_cost_anomaly_monitor_costanomalymonitorenabletoggles_management import *
 from .dbmulticloud_multi_cloud_resource_discovery import *
 from .dbmulticloud_oracle_db_aws_identity_connector import *
 from .dbmulticloud_oracle_db_aws_key import *
@@ -49,6 +53,13 @@ from .get_batch_batch_task_environment import *
 from .get_batch_batch_task_environments import *
 from .get_batch_batch_task_profile import *
 from .get_batch_batch_task_profiles import *
+from .get_costad_cost_alert_subscription import *
+from .get_costad_cost_alert_subscriptions import *
+from .get_costad_cost_anomaly_event import *
+from .get_costad_cost_anomaly_event_analytics import *
+from .get_costad_cost_anomaly_events import *
+from .get_costad_cost_anomaly_monitor import *
+from .get_costad_cost_anomaly_monitors import *
 from .get_dbmulticloud_multi_cloud_resource_discoveries import *
 from .get_dbmulticloud_multi_cloud_resource_discovery import *
 from .get_dbmulticloud_oracle_db_aws_identity_connector import *
@@ -130,6 +141,7 @@ from .get_resource_analytics_resource_analytics_instance import *
 from .get_resource_analytics_resource_analytics_instances import *
 from .get_resource_analytics_tenancy_attachment import *
 from .get_resource_analytics_tenancy_attachments import *
+from .get_resource_search import *
 from .get_self_partner_subscriptions import *
 from .get_self_subscription import *
 from .get_self_subscription_token import *

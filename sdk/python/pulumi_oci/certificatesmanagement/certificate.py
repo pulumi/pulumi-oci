@@ -24,6 +24,7 @@ class CertificateArgs:
                  certificate_config: pulumi.Input['CertificateCertificateConfigArgs'],
                  compartment_id: pulumi.Input[_builtins.str],
                  certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]]] = None,
+                 current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -34,6 +35,7 @@ class CertificateArgs:
         :param pulumi.Input['CertificateCertificateConfigArgs'] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
+        :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -47,6 +49,8 @@ class CertificateArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         if certificate_rules is not None:
             pulumi.set(__self__, "certificate_rules", certificate_rules)
+        if current_version_number is not None:
+            pulumi.set(__self__, "current_version_number", current_version_number)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -91,6 +95,18 @@ class CertificateArgs:
     @certificate_rules.setter
     def certificate_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]]]):
         pulumi.set(self, "certificate_rules", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentVersionNumber")
+    def current_version_number(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
+        """
+        return pulumi.get(self, "current_version_number")
+
+    @current_version_number.setter
+    def current_version_number(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -154,6 +170,7 @@ class _CertificateState:
                  certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  current_versions: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionArgs']]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -175,7 +192,8 @@ class _CertificateState:
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailArgs']]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
-        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+        :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCurrentVersionArgs']]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -206,6 +224,8 @@ class _CertificateState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if current_version_number is not None:
+            pulumi.set(__self__, "current_version_number", current_version_number)
         if current_versions is not None:
             pulumi.set(__self__, "current_versions", current_versions)
         if defined_tags is not None:
@@ -297,13 +317,25 @@ class _CertificateState:
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
     def config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentVersionNumber")
+    def current_version_number(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
+        """
+        return pulumi.get(self, "current_version_number")
+
+    @current_version_number.setter
+    def current_version_number(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current_version_number", value)
 
     @_builtins.property
     @pulumi.getter(name="currentVersions")
@@ -475,6 +507,7 @@ class Certificate(pulumi.CustomResource):
                  certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']]] = None,
                  certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -506,6 +539,7 @@ class Certificate(pulumi.CustomResource):
                 "private_key_pem": certificate_certificate_config_private_key_pem,
                 "private_key_pem_passphrase": certificate_certificate_config_private_key_pem_passphrase,
                 "signature_algorithm": certificate_certificate_config_signature_algorithm,
+                "stage": certificate_certificate_config_stage,
                 "subject": {
                     "common_name": certificate_certificate_config_subject_common_name,
                     "country": certificate_certificate_config_subject_country,
@@ -565,6 +599,7 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']] certificate_config: (Updatable) The details of the contents of the certificate and certificate metadata.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
+        :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -606,6 +641,7 @@ class Certificate(pulumi.CustomResource):
                 "private_key_pem": certificate_certificate_config_private_key_pem,
                 "private_key_pem_passphrase": certificate_certificate_config_private_key_pem_passphrase,
                 "signature_algorithm": certificate_certificate_config_signature_algorithm,
+                "stage": certificate_certificate_config_stage,
                 "subject": {
                     "common_name": certificate_certificate_config_subject_common_name,
                     "country": certificate_certificate_config_subject_country,
@@ -678,6 +714,7 @@ class Certificate(pulumi.CustomResource):
                  certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict']]] = None,
                  certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -698,6 +735,7 @@ class Certificate(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["current_version_number"] = current_version_number
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
@@ -730,6 +768,7 @@ class Certificate(pulumi.CustomResource):
             certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
             current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict']]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -755,7 +794,8 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict']]]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
-        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+        :param pulumi.Input[_builtins.str] current_version_number: (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict']]]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -784,6 +824,7 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["certificate_rules"] = certificate_rules
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["config_type"] = config_type
+        __props__.__dict__["current_version_number"] = current_version_number
         __props__.__dict__["current_versions"] = current_versions
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -843,9 +884,17 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="currentVersionNumber")
+    def current_version_number(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificate_config`, `description`, `defined_tags`, `freeform_tags`, or `certificate_rules`.
+        """
+        return pulumi.get(self, "current_version_number")
 
     @_builtins.property
     @pulumi.getter(name="currentVersions")

@@ -144,6 +144,27 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return (Updatable) The secretId for the clusterAdminPassword.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
      * The state of the autoscale configuration.
      * 
      */
@@ -198,6 +219,7 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
         this.nodeType = $.nodeType;
         this.policy = $.policy;
         this.policyDetails = $.policyDetails;
+        this.secretId = $.secretId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -386,6 +408,33 @@ public final class AutoScalingConfigurationState extends com.pulumi.resources.Re
          */
         public Builder policyDetails(AutoScalingConfigurationPolicyDetailsArgs policyDetails) {
             return policyDetails(Output.of(policyDetails));
+        }
+
+        /**
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
         }
 
         /**

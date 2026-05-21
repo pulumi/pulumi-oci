@@ -35,8 +35,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstancePatchAction(ctx, "test_bds_instance_patch_action", &bigdataservice.BdsInstancePatchActionArgs{
 //				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword: pulumi.Any(bdsInstancePatchActionClusterAdminPassword),
 //				Version:              pulumi.Any(bdsInstancePatchActionVersion),
+//				ClusterAdminPassword: pulumi.Any(bdsInstancePatchActionClusterAdminPassword),
 //				PatchingConfig: &bigdataservice.BdsInstancePatchActionPatchingConfigArgs{
 //					PatchingConfigStrategy:         pulumi.Any(bdsInstancePatchActionPatchingConfigPatchingConfigStrategy),
 //					BatchSize:                      pulumi.Any(bdsInstancePatchActionPatchingConfigBatchSize),
@@ -45,6 +45,7 @@ import (
 //					WaitTimeBetweenBatchInSeconds:  pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
 //					WaitTimeBetweenDomainInSeconds: pulumi.Any(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
 //				},
+//				SecretId: testSecret.Id,
 //			})
 //			if err != nil {
 //				return err

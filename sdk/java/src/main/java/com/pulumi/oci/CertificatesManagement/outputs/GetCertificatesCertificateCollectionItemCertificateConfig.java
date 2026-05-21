@@ -14,13 +14,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCertificatesCertificateCollectionItemCertificateConfig {
+    private String certChainPem;
+    private String certificatePem;
     /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
     private String certificateProfileType;
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     private String configType;
@@ -35,11 +37,14 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
      * 
      */
     private String keyAlgorithm;
+    private String privateKeyPem;
+    private String privateKeyPemPassphrase;
     /**
      * @return The algorithm used to sign the public key certificate.
      * 
      */
     private String signatureAlgorithm;
+    private String stage;
     /**
      * @return A list of subject alternative names.
      * 
@@ -62,6 +67,12 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
     private String versionName;
 
     private GetCertificatesCertificateCollectionItemCertificateConfig() {}
+    public String certChainPem() {
+        return this.certChainPem;
+    }
+    public String certificatePem() {
+        return this.certificatePem;
+    }
     /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
@@ -70,7 +81,7 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         return this.certificateProfileType;
     }
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public String configType() {
@@ -93,12 +104,21 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
     public String keyAlgorithm() {
         return this.keyAlgorithm;
     }
+    public String privateKeyPem() {
+        return this.privateKeyPem;
+    }
+    public String privateKeyPemPassphrase() {
+        return this.privateKeyPemPassphrase;
+    }
     /**
      * @return The algorithm used to sign the public key certificate.
      * 
      */
     public String signatureAlgorithm() {
         return this.signatureAlgorithm;
+    }
+    public String stage() {
+        return this.stage;
     }
     /**
      * @return A list of subject alternative names.
@@ -138,12 +158,17 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String certChainPem;
+        private String certificatePem;
         private String certificateProfileType;
         private String configType;
         private String csrPem;
         private String issuerCertificateAuthorityId;
         private String keyAlgorithm;
+        private String privateKeyPem;
+        private String privateKeyPemPassphrase;
         private String signatureAlgorithm;
+        private String stage;
         private List<GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
         private List<GetCertificatesCertificateCollectionItemCertificateConfigSubject> subjects;
         private List<GetCertificatesCertificateCollectionItemCertificateConfigValidity> validities;
@@ -151,18 +176,39 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCertificateConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.certChainPem = defaults.certChainPem;
+    	      this.certificatePem = defaults.certificatePem;
     	      this.certificateProfileType = defaults.certificateProfileType;
     	      this.configType = defaults.configType;
     	      this.csrPem = defaults.csrPem;
     	      this.issuerCertificateAuthorityId = defaults.issuerCertificateAuthorityId;
     	      this.keyAlgorithm = defaults.keyAlgorithm;
+    	      this.privateKeyPem = defaults.privateKeyPem;
+    	      this.privateKeyPemPassphrase = defaults.privateKeyPemPassphrase;
     	      this.signatureAlgorithm = defaults.signatureAlgorithm;
+    	      this.stage = defaults.stage;
     	      this.subjectAlternativeNames = defaults.subjectAlternativeNames;
     	      this.subjects = defaults.subjects;
     	      this.validities = defaults.validities;
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
+        public Builder certChainPem(String certChainPem) {
+            if (certChainPem == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "certChainPem");
+            }
+            this.certChainPem = certChainPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder certificatePem(String certificatePem) {
+            if (certificatePem == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "certificatePem");
+            }
+            this.certificatePem = certificatePem;
+            return this;
+        }
         @CustomType.Setter
         public Builder certificateProfileType(String certificateProfileType) {
             if (certificateProfileType == null) {
@@ -204,11 +250,35 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder privateKeyPem(String privateKeyPem) {
+            if (privateKeyPem == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "privateKeyPem");
+            }
+            this.privateKeyPem = privateKeyPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
+            if (privateKeyPemPassphrase == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "privateKeyPemPassphrase");
+            }
+            this.privateKeyPemPassphrase = privateKeyPemPassphrase;
+            return this;
+        }
+        @CustomType.Setter
         public Builder signatureAlgorithm(String signatureAlgorithm) {
             if (signatureAlgorithm == null) {
               throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "signatureAlgorithm");
             }
             this.signatureAlgorithm = signatureAlgorithm;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stage(String stage) {
+            if (stage == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfig", "stage");
+            }
+            this.stage = stage;
             return this;
         }
         @CustomType.Setter
@@ -254,12 +324,17 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
         }
         public GetCertificatesCertificateCollectionItemCertificateConfig build() {
             final var _resultValue = new GetCertificatesCertificateCollectionItemCertificateConfig();
+            _resultValue.certChainPem = certChainPem;
+            _resultValue.certificatePem = certificatePem;
             _resultValue.certificateProfileType = certificateProfileType;
             _resultValue.configType = configType;
             _resultValue.csrPem = csrPem;
             _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             _resultValue.keyAlgorithm = keyAlgorithm;
+            _resultValue.privateKeyPem = privateKeyPem;
+            _resultValue.privateKeyPemPassphrase = privateKeyPemPassphrase;
             _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.stage = stage;
             _resultValue.subjectAlternativeNames = subjectAlternativeNames;
             _resultValue.subjects = subjects;
             _resultValue.validities = validities;

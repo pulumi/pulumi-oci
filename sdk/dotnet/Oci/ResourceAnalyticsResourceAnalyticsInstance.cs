@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Oci
     ///         },
     ///         CompartmentId = compartmentId,
     ///         SubnetId = testSubnet.Id,
+    ///         ComputeCount = resourceAnalyticsInstanceComputeCount,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -83,6 +84,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute amount (CPUs) available to the Autonomous Database.
+        /// </summary>
+        [Output("computeCount")]
+        public Output<int> ComputeCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -230,6 +237,12 @@ namespace Pulumi.Oci.Oci
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// The compute amount (CPUs) available to the Autonomous Database.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -325,6 +338,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The compute amount (CPUs) available to the Autonomous Database.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;

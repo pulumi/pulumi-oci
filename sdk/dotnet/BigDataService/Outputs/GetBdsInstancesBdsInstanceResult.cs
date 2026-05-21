@@ -81,6 +81,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly bool IsKafkaConfigured;
         /// <summary>
+        /// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        /// </summary>
+        public readonly bool IsSecretReused;
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be set up as secure.
         /// </summary>
         public readonly bool IsSecure;
@@ -109,6 +113,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
         public readonly int NumberOfNodesRequiringMaintenanceReboot;
         public readonly string OsPatchVersion;
         public readonly string RemoveNode;
+        public readonly ImmutableArray<string> RemoveNodes;
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        public readonly string SecretId;
         public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult> StartClusterShapeConfigs;
         /// <summary>
         /// The state of the cluster.
@@ -118,6 +127,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        /// </summary>
+        public readonly string TimeEarliestCertificateExpiration;
         /// <summary>
         /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
@@ -171,6 +184,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             bool isKafkaConfigured,
 
+            bool isSecretReused,
+
             bool isSecure,
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeResult> kafkaBrokerNodes,
@@ -193,11 +208,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string removeNode,
 
+            ImmutableArray<string> removeNodes,
+
+            string secretId,
+
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult> startClusterShapeConfigs,
 
             string state,
 
             string timeCreated,
+
+            string timeEarliestCertificateExpiration,
 
             string timeUpdated,
 
@@ -227,6 +248,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
             IsKafkaConfigured = isKafkaConfigured;
+            IsSecretReused = isSecretReused;
             IsSecure = isSecure;
             KafkaBrokerNodes = kafkaBrokerNodes;
             KerberosRealmName = kerberosRealmName;
@@ -238,9 +260,12 @@ namespace Pulumi.Oci.BigDataService.Outputs
             NumberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             OsPatchVersion = osPatchVersion;
             RemoveNode = removeNode;
+            RemoveNodes = removeNodes;
+            SecretId = secretId;
             StartClusterShapeConfigs = startClusterShapeConfigs;
             State = state;
             TimeCreated = timeCreated;
+            TimeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
             TimeUpdated = timeUpdated;
             UtilNodes = utilNodes;
             WorkerNodes = workerNodes;

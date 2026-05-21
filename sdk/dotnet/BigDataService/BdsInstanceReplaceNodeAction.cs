@@ -10,9 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource replaces the node with the given hostname, in Oracle Cloud Infrastructure Big Data Service cluster.
+    /// Invokes the Big Data Service replace node action for a cluster node.
     /// 
-    /// Replace the node with the given host name in the cluster.
+    /// Use this action resource to replace a node identified by `NodeHostName`. You can optionally provide a specific node backup to restore from, a target shape for the replacement node, and either `ClusterAdminPassword` or `SecretId` for authentication.
+    /// 
+    /// When `NodeBackupId` is omitted, the service uses the latest available node backup. If no suitable backup is available, or the original node is already in a failed or terminated state, the service attempts to recover from the last saved boot volume state.
     /// 
     /// ## Example Usage
     /// 
@@ -26,10 +28,10 @@ namespace Pulumi.Oci.BigDataService
     /// {
     ///     var testBdsInstanceReplaceNodeAction = new Oci.BigDataService.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action", new()
     ///     {
-    ///         BdsInstanceId = testBdsInstance.Id,
-    ///         NodeHostName = bdsInstanceReplaceNodeAction.NodeHostName,
-    ///         NodeBackupId = bdsInstanceReplaceNodeAction.NodeBackupId,
-    ///         ClusterAdminPassword = testBdsInstance.ClusterAdminPassword,
+    ///         BdsInstanceId = bdsInstanceId,
+    ///         NodeHostName = nodeHostName,
+    ///         ClusterAdminPassword = "T3JhY2xlVGVhbVVTQSExMjM=",
+    ///         NodeBackupId = nodeBackupId,
     ///         Shape = shape,
     ///     });
     /// 
@@ -40,35 +42,40 @@ namespace Pulumi.Oci.BigDataService
     public partial class BdsInstanceReplaceNodeAction : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the cluster.
+        /// The OCID of the Big Data Service cluster.
         /// </summary>
         [Output("bdsInstanceId")]
         public Output<string> BdsInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster admin user.
+        /// Base64-encoded cluster admin password. Use this or `SecretId`.
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
 
         /// <summary>
-        /// The id of the nodeBackup to use for replacing the node.
+        /// The OCID of the node backup to use for replacement.
         /// </summary>
         [Output("nodeBackupId")]
-        public Output<string> NodeBackupId { get; private set; } = null!;
+        public Output<string?> NodeBackupId { get; private set; } = null!;
 
         /// <summary>
-        /// Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        /// Host name of the node to replace.
         /// </summary>
         [Output("nodeHostName")]
         public Output<string> NodeHostName { get; private set; } = null!;
 
         /// <summary>
-        /// Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        /// The OCID of the secret that stores the cluster admin password. Use this or `ClusterAdminPassword`.
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// The shape to use for the replacement node. If not specified, the existing node shape is used.
         /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// **IMPORTANT**
+        /// This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         /// </summary>
         [Output("shape")]
         public Output<string?> Shape { get; private set; } = null!;
@@ -124,16 +131,16 @@ namespace Pulumi.Oci.BigDataService
     public sealed class BdsInstanceReplaceNodeActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the cluster.
+        /// The OCID of the Big Data Service cluster.
         /// </summary>
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
-        [Input("clusterAdminPassword", required: true)]
+        [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster admin user.
+        /// Base64-encoded cluster admin password. Use this or `SecretId`.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -146,23 +153,28 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The id of the nodeBackup to use for replacing the node.
+        /// The OCID of the node backup to use for replacement.
         /// </summary>
-        [Input("nodeBackupId", required: true)]
-        public Input<string> NodeBackupId { get; set; } = null!;
+        [Input("nodeBackupId")]
+        public Input<string>? NodeBackupId { get; set; }
 
         /// <summary>
-        /// Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        /// Host name of the node to replace.
         /// </summary>
         [Input("nodeHostName", required: true)]
         public Input<string> NodeHostName { get; set; } = null!;
 
         /// <summary>
-        /// Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        /// The OCID of the secret that stores the cluster admin password. Use this or `ClusterAdminPassword`.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
+
+        /// <summary>
+        /// The shape to use for the replacement node. If not specified, the existing node shape is used.
         /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// **IMPORTANT**
+        /// This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
@@ -176,7 +188,7 @@ namespace Pulumi.Oci.BigDataService
     public sealed class BdsInstanceReplaceNodeActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the cluster.
+        /// The OCID of the Big Data Service cluster.
         /// </summary>
         [Input("bdsInstanceId")]
         public Input<string>? BdsInstanceId { get; set; }
@@ -185,7 +197,7 @@ namespace Pulumi.Oci.BigDataService
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster admin user.
+        /// Base64-encoded cluster admin password. Use this or `SecretId`.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -198,23 +210,28 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The id of the nodeBackup to use for replacing the node.
+        /// The OCID of the node backup to use for replacement.
         /// </summary>
         [Input("nodeBackupId")]
         public Input<string>? NodeBackupId { get; set; }
 
         /// <summary>
-        /// Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        /// Host name of the node to replace.
         /// </summary>
         [Input("nodeHostName")]
         public Input<string>? NodeHostName { get; set; }
 
         /// <summary>
-        /// Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        /// The OCID of the secret that stores the cluster admin password. Use this or `ClusterAdminPassword`.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
+
+        /// <summary>
+        /// The shape to use for the replacement node. If not specified, the existing node shape is used.
         /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// **IMPORTANT**
+        /// This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

@@ -35,13 +35,14 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstanceIdentityConfiguration(ctx, "test_bds_instance_identity_configuration", &bigdataservice.BdsInstanceIdentityConfigurationArgs{
 //				BdsInstanceId:             pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword:      pulumi.Any(bdsInstanceIdentityConfigurationClusterAdminPassword),
 //				ConfidentialApplicationId: pulumi.Any(testApplication.Id),
 //				DisplayName:               pulumi.Any(bdsInstanceIdentityConfigurationDisplayName),
 //				IdentityDomainId:          pulumi.Any(testDomain.Id),
+//				ClusterAdminPassword:      pulumi.Any(bdsInstanceIdentityConfigurationClusterAdminPassword),
 //				IamUserSyncConfigurationDetails: &bigdataservice.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs{
 //					IsPosixAttributesAdditionRequired: pulumi.Any(bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired),
 //				},
+//				SecretId: testSecret.Id,
 //				UpstConfigurationDetails: &bigdataservice.BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs{
 //					MasterEncryptionKeyId: pulumi.Any(testKey.Id),
 //					VaultId:               pulumi.Any(testVault.Id),

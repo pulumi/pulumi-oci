@@ -117,6 +117,8 @@ __all__ = [
     'GetBdsClusterVersionsFilterResult',
     'GetBdsInstanceApiKeysBdsApiKeyResult',
     'GetBdsInstanceApiKeysFilterResult',
+    'GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationResult',
+    'GetBdsInstanceBdsCertificateConfigurationsFilterResult',
     'GetBdsInstanceBdsClusterVersionSummaryResult',
     'GetBdsInstanceCloudSqlDetailResult',
     'GetBdsInstanceCloudSqlDetailKerberosDetailResult',
@@ -296,10 +298,6 @@ class AutoScalingConfigurationPolicyDetails(dict):
         :param 'AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs' scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
         :param Sequence['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs'] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param _builtins.str timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str trigger_type: The type of autoscaling trigger.
         """
         pulumi.set(__self__, "policy_type", policy_type)
@@ -381,10 +379,6 @@ class AutoScalingConfigurationPolicyDetails(dict):
     def timezone(self) -> Optional[_builtins.str]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone")
 
@@ -2616,7 +2610,7 @@ class BdsInstanceIdentityConfigurationUpstConfiguration(dict):
         """
         :param _builtins.str keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
         :param _builtins.str master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
-        :param _builtins.str secret_id: Secret ID for token exchange keytab
+        :param _builtins.str secret_id: (Updatable) The secretId for the clusterAdminPassword.
         :param _builtins.str state: Lifecycle state of the UPST config
         :param _builtins.str time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
         :param _builtins.str time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
@@ -2663,7 +2657,7 @@ class BdsInstanceIdentityConfigurationUpstConfiguration(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[_builtins.str]:
         """
-        Secret ID for token exchange keytab
+        (Updatable) The secretId for the clusterAdminPassword.
         """
         return pulumi.get(self, "secret_id")
 
@@ -3199,7 +3193,7 @@ class BdsInstanceNode(dict):
         :param _builtins.str os_version: BDS-assigned Operating System version for the node.
         :param _builtins.str shape: (Updatable) Shape of the node.
         :param _builtins.str ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param _builtins.str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        :param _builtins.str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         :param _builtins.str subnet_id: The OCID of the subnet in which the node will be created.
         :param _builtins.str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param _builtins.str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
@@ -3397,7 +3391,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
@@ -5157,6 +5151,7 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
                  node_type: _builtins.str,
                  policies: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult'],
                  policy_details: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult'],
+                 secret_id: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
@@ -5168,6 +5163,7 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
         pulumi.set(__self__, "node_type", node_type)
         pulumi.set(__self__, "policies", policies)
         pulumi.set(__self__, "policy_details", policy_details)
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -5211,6 +5207,11 @@ class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
     @pulumi.getter(name="policyDetails")
     def policy_details(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult']:
         return pulumi.get(self, "policy_details")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter
@@ -5989,6 +5990,210 @@ class GetBdsInstanceApiKeysBdsApiKeyResult(dict):
 
 @pulumi.output_type
 class GetBdsInstanceApiKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bds_instance_id: _builtins.str,
+                 certificate_authority_id: _builtins.str,
+                 certificate_type: _builtins.str,
+                 cluster_admin_password: _builtins.str,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_default_configuration: _builtins.bool,
+                 is_missing_nodes_only: _builtins.bool,
+                 issue_certificate_trigger: _builtins.str,
+                 renew_certificate_trigger: _builtins.str,
+                 secret_id: _builtins.str,
+                 set_default_trigger: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_refreshed_or_generated: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str bds_instance_id: The OCID of the cluster.
+        :param _builtins.str certificate_authority_id: The OCID of the certificate authority which is associated with this certificate configuration. The value is Null when this BDS certificate configuration type is SELF_SIGNED.
+        :param _builtins.str compartment_id: The OCID of the compartment of the certificate authority connecting to this certificate configuration.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str id: The ID of the BDS certificate configuration defined under BDS resources, not OCID.
+        :param _builtins.bool is_default_configuration: If this BDS certificate configuration is a default configuration or not. There will be only one Default certificate configuration per BDS cluster.
+        :param _builtins.str state: The state of the BdsCertificateConfiguration.
+        :param _builtins.str time_created: The time when the BDS certificate configuration was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_last_refreshed_or_generated: The last time the BDS certificate configuration was used to generate or renew the certificate(s).
+        :param _builtins.str time_updated: The time the BDS certificate configuration was updated, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str type: The type of the BDS certificate configuration, also the type of the BDS certificates which will be generated by the BDS certificate configuration.
+        """
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+        pulumi.set(__self__, "certificate_type", certificate_type)
+        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_default_configuration", is_default_configuration)
+        pulumi.set(__self__, "is_missing_nodes_only", is_missing_nodes_only)
+        pulumi.set(__self__, "issue_certificate_trigger", issue_certificate_trigger)
+        pulumi.set(__self__, "renew_certificate_trigger", renew_certificate_trigger)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "set_default_trigger", set_default_trigger)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_refreshed_or_generated", time_last_refreshed_or_generated)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateAuthorityId")
+    def certificate_authority_id(self) -> _builtins.str:
+        """
+        The OCID of the certificate authority which is associated with this certificate configuration. The value is Null when this BDS certificate configuration type is SELF_SIGNED.
+        """
+        return pulumi.get(self, "certificate_authority_id")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateType")
+    def certificate_type(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> _builtins.str:
+        return pulumi.get(self, "cluster_admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment of the certificate authority connecting to this certificate configuration.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The ID of the BDS certificate configuration defined under BDS resources, not OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isDefaultConfiguration")
+    def is_default_configuration(self) -> _builtins.bool:
+        """
+        If this BDS certificate configuration is a default configuration or not. There will be only one Default certificate configuration per BDS cluster.
+        """
+        return pulumi.get(self, "is_default_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="isMissingNodesOnly")
+    def is_missing_nodes_only(self) -> _builtins.bool:
+        return pulumi.get(self, "is_missing_nodes_only")
+
+    @_builtins.property
+    @pulumi.getter(name="issueCertificateTrigger")
+    def issue_certificate_trigger(self) -> _builtins.str:
+        return pulumi.get(self, "issue_certificate_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="renewCertificateTrigger")
+    def renew_certificate_trigger(self) -> _builtins.str:
+        return pulumi.get(self, "renew_certificate_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="setDefaultTrigger")
+    def set_default_trigger(self) -> _builtins.str:
+        return pulumi.get(self, "set_default_trigger")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the BdsCertificateConfiguration.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time when the BDS certificate configuration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastRefreshedOrGenerated")
+    def time_last_refreshed_or_generated(self) -> _builtins.str:
+        """
+        The last time the BDS certificate configuration was used to generate or renew the certificate(s).
+        """
+        return pulumi.get(self, "time_last_refreshed_or_generated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the BDS certificate configuration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the BDS certificate configuration, also the type of the BDS certificates which will be generated by the BDS certificate configuration.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBdsInstanceBdsCertificateConfigurationsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -8030,7 +8235,7 @@ class GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationResult(dict):
         :param _builtins.str backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         :param _builtins.str bds_instance_id: The OCID of the cluster.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-        :param _builtins.str id: The unique identifier for the NodeBackupConfiguration.
+        :param _builtins.str id: The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
         :param Sequence['GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param _builtins.int number_of_backups_to_retain: Number of backup copies to retain.
         :param _builtins.str schedule: Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
@@ -8079,7 +8284,7 @@ class GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The unique identifier for the NodeBackupConfiguration.
+        The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
 
@@ -8390,6 +8595,7 @@ class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict
                  id: _builtins.str,
                  level_type_details: Sequence['outputs.GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailResult'],
                  metric_type: _builtins.str,
+                 secret_id: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
@@ -8397,9 +8603,10 @@ class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict
         :param _builtins.str bds_instance_id: The OCID of the cluster.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param _builtins.int duration_in_minutes: This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
-        :param _builtins.str id: The unique identifier for the NodeReplaceConfiguration.
+        :param _builtins.str id: The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
         :param Sequence['GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param _builtins.str metric_type: Type of compute instance health metric to use for node replacement
+        :param _builtins.str secret_id: The secretId for the clusterAdminPassword.
         :param _builtins.str state: The state of the NodeReplaceConfiguration.
         :param _builtins.str time_created: The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
         :param _builtins.str time_updated: The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
@@ -8411,6 +8618,7 @@ class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "level_type_details", level_type_details)
         pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -8448,7 +8656,7 @@ class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The unique identifier for the NodeReplaceConfiguration.
+        The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
 
@@ -8467,6 +8675,14 @@ class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict
         Type of compute instance health metric to use for node replacement
         """
         return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter
@@ -8702,6 +8918,7 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
                  display_name: _builtins.str,
                  force_refresh_resource_principal_trigger: _builtins.int,
                  id: _builtins.str,
+                 secret_id: _builtins.str,
                  session_token_life_span_duration_in_hours: _builtins.int,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -8711,7 +8928,8 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
         """
         :param _builtins.str bds_instance_id: The OCID of the cluster.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-        :param _builtins.str id: The id of the ResourcePrincipalConfiguration.
+        :param _builtins.str id: The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
+        :param _builtins.str secret_id: The secretId for the clusterAdminPassword.
         :param _builtins.int session_token_life_span_duration_in_hours: Life span in hours of each resource principal session token.
         :param _builtins.str state: The state of the ResourcePrincipalConfiguration.
         :param _builtins.str time_created: The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -8724,6 +8942,7 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "force_refresh_resource_principal_trigger", force_refresh_resource_principal_trigger)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "session_token_life_span_duration_in_hours", session_token_life_span_duration_in_hours)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -8761,9 +8980,17 @@ class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguratio
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the ResourcePrincipalConfiguration.
+        The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")
@@ -9190,6 +9417,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  is_force_stop_jobs: _builtins.bool,
                  is_high_availability: _builtins.bool,
                  is_kafka_configured: _builtins.bool,
+                 is_secret_reused: _builtins.bool,
                  is_secure: _builtins.bool,
                  kafka_broker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceKafkaBrokerNodeResult'],
                  kerberos_realm_name: _builtins.str,
@@ -9201,9 +9429,12 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  number_of_nodes_requiring_maintenance_reboot: _builtins.int,
                  os_patch_version: _builtins.str,
                  remove_node: _builtins.str,
+                 remove_nodes: Sequence[_builtins.str],
+                 secret_id: _builtins.str,
                  start_cluster_shape_configs: Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult'],
                  state: _builtins.str,
                  time_created: _builtins.str,
+                 time_earliest_certificate_expiration: _builtins.str,
                  time_updated: _builtins.str,
                  util_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceUtilNodeResult'],
                  worker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceWorkerNodeResult']):
@@ -9223,14 +9454,17 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param _builtins.bool is_cloud_sql_configured: Boolean flag specifying whether or not Cloud SQL should be configured.
         :param _builtins.bool is_high_availability: Boolean flag specifying whether or not the cluster is highly available (HA)
         :param _builtins.bool is_kafka_configured: Boolean flag specifying whether or not Kafka should be configured.
+        :param _builtins.bool is_secret_reused: Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
         :param _builtins.bool is_secure: Boolean flag specifying whether or not the cluster should be set up as secure.
         :param _builtins.str kms_key_id: The OCID of the Key Management master encryption key.
         :param Sequence['GetBdsInstancesBdsInstanceNetworkConfigArgs'] network_configs: Additional configuration of the user's network.
         :param Sequence['GetBdsInstancesBdsInstanceNodeArgs'] nodes: The list of nodes in the cluster.
         :param _builtins.int number_of_nodes: The number of nodes that form the cluster.
         :param _builtins.int number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
+        :param _builtins.str secret_id: The secretId for the clusterAdminPassword.
         :param _builtins.str state: The state of the cluster.
         :param _builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        :param _builtins.str time_earliest_certificate_expiration: The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
         :param _builtins.str time_updated: The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         """
         pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
@@ -9255,6 +9489,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         pulumi.set(__self__, "is_high_availability", is_high_availability)
         pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+        pulumi.set(__self__, "is_secret_reused", is_secret_reused)
         pulumi.set(__self__, "is_secure", is_secure)
         pulumi.set(__self__, "kafka_broker_nodes", kafka_broker_nodes)
         pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
@@ -9266,9 +9501,12 @@ class GetBdsInstancesBdsInstanceResult(dict):
         pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
         pulumi.set(__self__, "os_patch_version", os_patch_version)
         pulumi.set(__self__, "remove_node", remove_node)
+        pulumi.set(__self__, "remove_nodes", remove_nodes)
+        pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_earliest_certificate_expiration", time_earliest_certificate_expiration)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "util_nodes", util_nodes)
         pulumi.set(__self__, "worker_nodes", worker_nodes)
@@ -9429,6 +9667,14 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "is_kafka_configured")
 
     @_builtins.property
+    @pulumi.getter(name="isSecretReused")
+    def is_secret_reused(self) -> _builtins.bool:
+        """
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        """
+        return pulumi.get(self, "is_secret_reused")
+
+    @_builtins.property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> _builtins.bool:
         """
@@ -9502,6 +9748,19 @@ class GetBdsInstancesBdsInstanceResult(dict):
         return pulumi.get(self, "remove_node")
 
     @_builtins.property
+    @pulumi.getter(name="removeNodes")
+    def remove_nodes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "remove_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
     def start_cluster_shape_configs(self) -> Sequence['outputs.GetBdsInstancesBdsInstanceStartClusterShapeConfigResult']:
         return pulumi.get(self, "start_cluster_shape_configs")
@@ -9521,6 +9780,14 @@ class GetBdsInstancesBdsInstanceResult(dict):
         The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEarliestCertificateExpiration")
+    def time_earliest_certificate_expiration(self) -> _builtins.str:
+        """
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        """
+        return pulumi.get(self, "time_earliest_certificate_expiration")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")

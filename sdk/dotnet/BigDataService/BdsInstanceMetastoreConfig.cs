@@ -32,9 +32,10 @@ namespace Pulumi.Oci.BigDataService
     ///         BdsApiKeyId = testApiKey.Id,
     ///         BdsApiKeyPassphrase = bdsInstanceMetastoreConfigBdsApiKeyPassphrase,
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstanceMetastoreConfigClusterAdminPassword,
     ///         MetastoreId = testMetastore.Id,
+    ///         ClusterAdminPassword = bdsInstanceMetastoreConfigClusterAdminPassword,
     ///         DisplayName = bdsInstanceMetastoreConfigDisplayName,
+    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });
@@ -53,7 +54,6 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -175,7 +175,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -248,7 +247,6 @@ namespace Pulumi.Oci.BigDataService
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

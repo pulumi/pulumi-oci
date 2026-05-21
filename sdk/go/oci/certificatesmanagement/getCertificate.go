@@ -69,8 +69,9 @@ type LookupCertificateResult struct {
 	CertificateRules []GetCertificateCertificateRule `pulumi:"certificateRules"`
 	// The OCID of the compartment where you want to create the certificate.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
-	ConfigType string `pulumi:"configType"`
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+	ConfigType           string `pulumi:"configType"`
+	CurrentVersionNumber string `pulumi:"currentVersionNumber"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificateCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -166,9 +167,13 @@ func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o LookupCertificateResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+func (o LookupCertificateResultOutput) CurrentVersionNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCertificateResult) string { return v.CurrentVersionNumber }).(pulumi.StringOutput)
 }
 
 // The details of the certificate version. This object does not contain the certificate contents.

@@ -18,6 +18,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -27,6 +28,93 @@ import javax.annotation.Nullable;
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
  * 
  * Creates a new Database Tools connection.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsConnection;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsConnectionArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionUserPasswordArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionLockArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientUserPasswordArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionRelatedResourceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseToolsConnection = new DatabaseToolsConnection("testDatabaseToolsConnection", DatabaseToolsConnectionArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .displayName(databaseToolsConnectionDisplayName)
+ *             .type(databaseToolsConnectionType)
+ *             .userName(testUser.name())
+ *             .userPassword(DatabaseToolsConnectionUserPasswordArgs.builder()
+ *                 .secretId(testSecret.id())
+ *                 .valueType(databaseToolsConnectionUserPasswordValueType)
+ *                 .build())
+ *             .advancedProperties(databaseToolsConnectionAdvancedProperties)
+ *             .authenticationType(databaseToolsConnectionAuthenticationType)
+ *             .connectionString(databaseToolsConnectionConnectionString)
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
+ *             .keyStores(DatabaseToolsConnectionKeyStoreArgs.builder()
+ *                 .keyStoreContent(DatabaseToolsConnectionKeyStoreKeyStoreContentArgs.builder()
+ *                     .valueType(databaseToolsConnectionKeyStoresKeyStoreContentValueType)
+ *                     .secretId(testSecret.id())
+ *                     .build())
+ *                 .keyStorePassword(DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs.builder()
+ *                     .valueType(databaseToolsConnectionKeyStoresKeyStorePasswordValueType)
+ *                     .secretId(testSecret.id())
+ *                     .build())
+ *                 .keyStoreType(databaseToolsConnectionKeyStoresKeyStoreType)
+ *                 .build())
+ *             .locks(DatabaseToolsConnectionLockArgs.builder()
+ *                 .type(databaseToolsConnectionLocksType)
+ *                 .message(databaseToolsConnectionLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(databaseToolsConnectionLocksTimeCreated)
+ *                 .build())
+ *             .privateEndpointId(testDatabaseToolsPrivateEndpoint.id())
+ *             .proxyClient(DatabaseToolsConnectionProxyClientArgs.builder()
+ *                 .proxyAuthenticationType(databaseToolsConnectionProxyClientProxyAuthenticationType)
+ *                 .roles(databaseToolsConnectionProxyClientRoles)
+ *                 .userName(testUser.name())
+ *                 .userPassword(DatabaseToolsConnectionProxyClientUserPasswordArgs.builder()
+ *                     .secretId(testSecret.id())
+ *                     .valueType(databaseToolsConnectionProxyClientUserPasswordValueType)
+ *                     .build())
+ *                 .build())
+ *             .relatedResource(DatabaseToolsConnectionRelatedResourceArgs.builder()
+ *                 .entityType(databaseToolsConnectionRelatedResourceEntityType)
+ *                 .identifier(databaseToolsConnectionRelatedResourceIdentifier)
+ *                 .build())
+ *             .runtimeIdentity(databaseToolsConnectionRuntimeIdentity)
+ *             .runtimeSupport(databaseToolsConnectionRuntimeSupport)
+ *             .url(databaseToolsConnectionUrl)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * 
  * ## Import
  * 
@@ -52,6 +140,20 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      */
     public Output<Map<String,String>> advancedProperties() {
         return this.advancedProperties;
+    }
+    /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    @Export(name="authenticationType", refs={String.class}, tree="[0]")
+    private Output<String> authenticationType;
+
+    /**
+     * @return Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    public Output<String> authenticationType() {
+        return this.authenticationType;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -222,14 +324,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.runtimeEndpoint;
     }
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     @Export(name="runtimeIdentity", refs={String.class}, tree="[0]")
     private Output<String> runtimeIdentity;
 
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     public Output<String> runtimeIdentity() {
@@ -338,28 +440,28 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
-    private Output<String> userName;
+    private Output</* @Nullable */ String> userName;
 
     /**
      * @return (Updatable) The database user name.
      * 
      */
-    public Output<String> userName() {
-        return this.userName;
+    public Output<Optional<String>> userName() {
+        return Codegen.optional(this.userName);
     }
     /**
      * (Updatable) The database user password.
      * 
      */
     @Export(name="userPassword", refs={DatabaseToolsConnectionUserPassword.class}, tree="[0]")
-    private Output<DatabaseToolsConnectionUserPassword> userPassword;
+    private Output</* @Nullable */ DatabaseToolsConnectionUserPassword> userPassword;
 
     /**
      * @return (Updatable) The database user password.
      * 
      */
-    public Output<DatabaseToolsConnectionUserPassword> userPassword() {
-        return this.userPassword;
+    public Output<Optional<DatabaseToolsConnectionUserPassword>> userPassword() {
+        return Codegen.optional(this.userPassword);
     }
 
     /**

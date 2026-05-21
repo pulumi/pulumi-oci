@@ -74,6 +74,10 @@ export interface GetAutoScalingConfigurationResult {
      */
     readonly policyDetails: outputs.BigDataService.GetAutoScalingConfigurationPolicyDetail[];
     /**
+     * The secretId for the clusterAdminPassword.
+     */
+    readonly secretId: string;
+    /**
      * The state of the autoscale configuration.
      */
     readonly state: string;

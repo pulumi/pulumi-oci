@@ -38,7 +38,7 @@ public final class GetDatabaseToolsConnectionsResult {
     private String id;
     private @Nullable String relatedResourceIdentifier;
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     private @Nullable List<String> runtimeIdentities;
@@ -94,7 +94,7 @@ public final class GetDatabaseToolsConnectionsResult {
         return Optional.ofNullable(this.relatedResourceIdentifier);
     }
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     public List<String> runtimeIdentities() {

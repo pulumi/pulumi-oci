@@ -24,6 +24,7 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
                  adw_admin_password: pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs'],
                  compartment_id: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -41,6 +42,7 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the ResourceAnalyticsInstance instance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -52,6 +54,8 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
         pulumi.set(__self__, "adw_admin_password", adw_admin_password)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -106,6 +110,18 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The compute amount (CPUs) available to the Autonomous Database.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -198,6 +214,7 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
                  adw_admin_password: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs']] = None,
                  adw_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -218,6 +235,7 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
         :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs'] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] adw_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
+        :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the ResourceAnalyticsInstance instance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -243,6 +261,8 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
             pulumi.set(__self__, "adw_id", adw_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -307,6 +327,18 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The compute amount (CPUs) available to the Autonomous Database.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -489,6 +521,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -520,6 +553,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             },
             compartment_id=compartment_id,
             subnet_id=test_subnet["id"],
+            compute_count=int(resource_analytics_instance_compute_count),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -546,6 +580,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
+        :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the ResourceAnalyticsInstance instance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -587,6 +622,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             },
             compartment_id=compartment_id,
             subnet_id=test_subnet["id"],
+            compute_count=int(resource_analytics_instance_compute_count),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -626,6 +662,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -649,6 +686,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_count"] = compute_count
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
@@ -679,6 +717,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
             adw_admin_password: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']]] = None,
             adw_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -703,6 +742,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs', 'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgsDict']] adw_admin_password: Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
         :param pulumi.Input[_builtins.str] adw_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
+        :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the ResourceAnalyticsInstance instance.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -729,6 +769,7 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         __props__.__dict__["adw_admin_password"] = adw_admin_password
         __props__.__dict__["adw_id"] = adw_id
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_count"] = compute_count
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -768,6 +809,14 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The compute amount (CPUs) available to the Autonomous Database.
+        """
+        return pulumi.get(self, "compute_count")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

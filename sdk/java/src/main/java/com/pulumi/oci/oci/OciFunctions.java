@@ -49,6 +49,20 @@ import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilePlainArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
 import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
@@ -211,6 +225,8 @@ import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceSearchArgs;
+import com.pulumi.oci.oci.inputs.GetResourceSearchPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsArgs;
 import com.pulumi.oci.oci.inputs.GetSelfPartnerSubscriptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetSelfSubscriptionArgs;
@@ -273,6 +289,13 @@ import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentsResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfileResult;
 import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfilesResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAlertSubscriptionResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAlertSubscriptionsResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventAnalyticsResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventsResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyMonitorResult;
+import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyMonitorsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorResult;
@@ -354,6 +377,7 @@ import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceR
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstancesResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentsResult;
+import com.pulumi.oci.oci.outputs.GetResourceSearchInvokeResult;
 import com.pulumi.oci.oci.outputs.GetSelfPartnerSubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionResult;
 import com.pulumi.oci.oci.outputs.GetSelfSubscriptionTokenResult;
@@ -5679,6 +5703,1586 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfilesPlain(GetBatchBatchTaskProfilesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskProfiles:getBatchBatchTaskProfiles", TypeShape.of(GetBatchBatchTaskProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionResult> getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs args) {
+        return getCostadCostAlertSubscription(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAlertSubscriptionResult> getCostadCostAlertSubscriptionPlain(GetCostadCostAlertSubscriptionPlainArgs args) {
+        return getCostadCostAlertSubscriptionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionResult> getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAlertSubscription:getCostadCostAlertSubscription", TypeShape.of(GetCostadCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionResult> getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAlertSubscription:getCostadCostAlertSubscription", TypeShape.of(GetCostadCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAlertSubscriptionResult> getCostadCostAlertSubscriptionPlain(GetCostadCostAlertSubscriptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAlertSubscription:getCostadCostAlertSubscription", TypeShape.of(GetCostadCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = OciFunctions.getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionsResult> getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs args) {
+        return getCostadCostAlertSubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = OciFunctions.getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAlertSubscriptionsResult> getCostadCostAlertSubscriptionsPlain(GetCostadCostAlertSubscriptionsPlainArgs args) {
+        return getCostadCostAlertSubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = OciFunctions.getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionsResult> getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAlertSubscriptions:getCostadCostAlertSubscriptions", TypeShape.of(GetCostadCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = OciFunctions.getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAlertSubscriptionsResult> getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAlertSubscriptions:getCostadCostAlertSubscriptions", TypeShape.of(GetCostadCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAlertSubscriptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = OciFunctions.getCostadCostAlertSubscriptions(GetCostadCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAlertSubscriptionsResult> getCostadCostAlertSubscriptionsPlain(GetCostadCostAlertSubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAlertSubscriptions:getCostadCostAlertSubscriptions", TypeShape.of(GetCostadCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventResult> getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs args) {
+        return getCostadCostAnomalyEvent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventResult> getCostadCostAnomalyEventPlain(GetCostadCostAnomalyEventPlainArgs args) {
+        return getCostadCostAnomalyEventPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventResult> getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEvent:getCostadCostAnomalyEvent", TypeShape.of(GetCostadCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventResult> getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEvent:getCostadCostAnomalyEvent", TypeShape.of(GetCostadCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventResult> getCostadCostAnomalyEventPlain(GetCostadCostAnomalyEventPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyEvent:getCostadCostAnomalyEvent", TypeShape.of(GetCostadCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventAnalyticsResult> getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs args) {
+        return getCostadCostAnomalyEventAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventAnalyticsResult> getCostadCostAnomalyEventAnalyticsPlain(GetCostadCostAnomalyEventAnalyticsPlainArgs args) {
+        return getCostadCostAnomalyEventAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventAnalyticsResult> getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEventAnalytics:getCostadCostAnomalyEventAnalytics", TypeShape.of(GetCostadCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventAnalyticsResult> getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEventAnalytics:getCostadCostAnomalyEventAnalytics", TypeShape.of(GetCostadCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventAnalyticsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventAnalyticsResult> getCostadCostAnomalyEventAnalyticsPlain(GetCostadCostAnomalyEventAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyEventAnalytics:getCostadCostAnomalyEventAnalytics", TypeShape.of(GetCostadCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventsResult> getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs args) {
+        return getCostadCostAnomalyEvents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventsResult> getCostadCostAnomalyEventsPlain(GetCostadCostAnomalyEventsPlainArgs args) {
+        return getCostadCostAnomalyEventsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventsResult> getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEvents:getCostadCostAnomalyEvents", TypeShape.of(GetCostadCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyEventsResult> getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyEvents:getCostadCostAnomalyEvents", TypeShape.of(GetCostadCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyEventsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyEventsResult> getCostadCostAnomalyEventsPlain(GetCostadCostAnomalyEventsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyEvents:getCostadCostAnomalyEvents", TypeShape.of(GetCostadCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorResult> getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs args) {
+        return getCostadCostAnomalyMonitor(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyMonitorResult> getCostadCostAnomalyMonitorPlain(GetCostadCostAnomalyMonitorPlainArgs args) {
+        return getCostadCostAnomalyMonitorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorResult> getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyMonitor:getCostadCostAnomalyMonitor", TypeShape.of(GetCostadCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorResult> getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyMonitor:getCostadCostAnomalyMonitor", TypeShape.of(GetCostadCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyMonitorResult> getCostadCostAnomalyMonitorPlain(GetCostadCostAnomalyMonitorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyMonitor:getCostadCostAnomalyMonitor", TypeShape.of(GetCostadCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = OciFunctions.getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs args) {
+        return getCostadCostAnomalyMonitors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = OciFunctions.getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitorsPlain(GetCostadCostAnomalyMonitorsPlainArgs args) {
+        return getCostadCostAnomalyMonitorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = OciFunctions.getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyMonitors:getCostadCostAnomalyMonitors", TypeShape.of(GetCostadCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = OciFunctions.getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getCostadCostAnomalyMonitors:getCostadCostAnomalyMonitors", TypeShape.of(GetCostadCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = OciFunctions.getCostadCostAnomalyMonitors(GetCostadCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitorsPlain(GetCostadCostAnomalyMonitorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyMonitors:getCostadCostAnomalyMonitors", TypeShape.of(GetCostadCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -23370,6 +24974,21 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachmentsPlain(GetResourceAnalyticsTenancyAttachmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", TypeShape.of(GetResourceAnalyticsTenancyAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetResourceSearchInvokeResult> getResourceSearch(GetResourceSearchArgs args) {
+        return getResourceSearch(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetResourceSearchInvokeResult> getResourceSearchPlain(GetResourceSearchPlainArgs args) {
+        return getResourceSearchPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetResourceSearchInvokeResult> getResourceSearch(GetResourceSearchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceSearch:getResourceSearch", TypeShape.of(GetResourceSearchInvokeResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetResourceSearchInvokeResult> getResourceSearch(GetResourceSearchArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceSearch:getResourceSearch", TypeShape.of(GetResourceSearchInvokeResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetResourceSearchInvokeResult> getResourceSearchPlain(GetResourceSearchPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceSearch:getResourceSearch", TypeShape.of(GetResourceSearchInvokeResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Partner Subscriptions in Oracle Cloud Infrastructure Self service.

@@ -127,7 +127,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? SshFingerprint { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -27,7 +27,7 @@ class GetBdsInstanceNodeReplaceConfigurationResult:
     """
     A collection of values returned by getBdsInstanceNodeReplaceConfiguration.
     """
-    def __init__(__self__, bds_instance_id=None, cluster_admin_password=None, display_name=None, duration_in_minutes=None, id=None, level_type_details=None, metric_type=None, node_replace_configuration_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, bds_instance_id=None, cluster_admin_password=None, display_name=None, duration_in_minutes=None, id=None, level_type_details=None, metric_type=None, node_replace_configuration_id=None, secret_id=None, state=None, time_created=None, time_updated=None):
         if bds_instance_id and not isinstance(bds_instance_id, str):
             raise TypeError("Expected argument 'bds_instance_id' to be a str")
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -52,6 +52,9 @@ class GetBdsInstanceNodeReplaceConfigurationResult:
         if node_replace_configuration_id and not isinstance(node_replace_configuration_id, str):
             raise TypeError("Expected argument 'node_replace_configuration_id' to be a str")
         pulumi.set(__self__, "node_replace_configuration_id", node_replace_configuration_id)
+        if secret_id and not isinstance(secret_id, str):
+            raise TypeError("Expected argument 'secret_id' to be a str")
+        pulumi.set(__self__, "secret_id", secret_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -95,7 +98,7 @@ class GetBdsInstanceNodeReplaceConfigurationResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The unique identifier for the NodeReplaceConfiguration.
+        The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
 
@@ -119,6 +122,14 @@ class GetBdsInstanceNodeReplaceConfigurationResult:
     @pulumi.getter(name="nodeReplaceConfigurationId")
     def node_replace_configuration_id(self) -> _builtins.str:
         return pulumi.get(self, "node_replace_configuration_id")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter
@@ -159,6 +170,7 @@ class AwaitableGetBdsInstanceNodeReplaceConfigurationResult(GetBdsInstanceNodeRe
             level_type_details=self.level_type_details,
             metric_type=self.metric_type,
             node_replace_configuration_id=self.node_replace_configuration_id,
+            secret_id=self.secret_id,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -201,6 +213,7 @@ def get_bds_instance_node_replace_configuration(bds_instance_id: Optional[_built
         level_type_details=pulumi.get(__ret__, 'level_type_details'),
         metric_type=pulumi.get(__ret__, 'metric_type'),
         node_replace_configuration_id=pulumi.get(__ret__, 'node_replace_configuration_id'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -240,6 +253,7 @@ def get_bds_instance_node_replace_configuration_output(bds_instance_id: pulumi.I
         level_type_details=pulumi.get(__response__, 'level_type_details'),
         metric_type=pulumi.get(__response__, 'metric_type'),
         node_replace_configuration_id=pulumi.get(__response__, 'node_replace_configuration_id'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

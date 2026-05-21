@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdvancedProperties;
         /// <summary>
+        /// Specifies the authentication type used to connect to the database.
+        /// </summary>
+        public readonly string AuthenticationType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -102,7 +106,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string Url;
         /// <summary>
-        /// The database user name.
+        /// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         /// </summary>
         public readonly string UserName;
         /// <summary>
@@ -113,6 +117,8 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         [OutputConstructor]
         private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(
             ImmutableDictionary<string, string> advancedProperties,
+
+            string authenticationType,
 
             string compartmentId,
 
@@ -161,6 +167,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult> userPasswords)
         {
             AdvancedProperties = advancedProperties;
+            AuthenticationType = authenticationType;
             CompartmentId = compartmentId;
             ConnectionString = connectionString;
             DefinedTags = definedTags;

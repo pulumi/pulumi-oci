@@ -10,8 +10,10 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.ResourceAnalyticsTenancyAttachmentArgs;
 import com.pulumi.oci.oci.inputs.ResourceAnalyticsTenancyAttachmentState;
+import com.pulumi.oci.oci.outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -70,6 +72,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment")
 public class ResourceAnalyticsTenancyAttachment extends com.pulumi.resources.CustomResource {
     /**
+     * The overall status of the data population from the tenancy.
+     * 
+     */
+    @Export(name="dataPopulationStatus", refs={String.class}, tree="[0]")
+    private Output<String> dataPopulationStatus;
+
+    /**
+     * @return The overall status of the data population from the tenancy.
+     * 
+     */
+    public Output<String> dataPopulationStatus() {
+        return this.dataPopulationStatus;
+    }
+    /**
      * (Updatable) A description of the tenancy.
      * 
      */
@@ -110,6 +126,20 @@ public class ResourceAnalyticsTenancyAttachment extends com.pulumi.resources.Cus
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * List of monitored regions with their data population status.
+     * 
+     */
+    @Export(name="monitoredRegions", refs={List.class,ResourceAnalyticsTenancyAttachmentMonitoredRegion.class}, tree="[0,1]")
+    private Output<List<ResourceAnalyticsTenancyAttachmentMonitoredRegion>> monitoredRegions;
+
+    /**
+     * @return List of monitored regions with their data population status.
+     * 
+     */
+    public Output<List<ResourceAnalyticsTenancyAttachmentMonitoredRegion>> monitoredRegions() {
+        return this.monitoredRegions;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
@@ -186,6 +216,34 @@ public class ResourceAnalyticsTenancyAttachment extends com.pulumi.resources.Cus
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Export(name="timeDataPopulationEnded", refs={String.class}, tree="[0]")
+    private Output<String> timeDataPopulationEnded;
+
+    /**
+     * @return The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Output<String> timeDataPopulationEnded() {
+        return this.timeDataPopulationEnded;
+    }
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Export(name="timeDataPopulationStarted", refs={String.class}, tree="[0]")
+    private Output<String> timeDataPopulationStarted;
+
+    /**
+     * @return The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Output<String> timeDataPopulationStarted() {
+        return this.timeDataPopulationStarted;
     }
     /**
      * The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

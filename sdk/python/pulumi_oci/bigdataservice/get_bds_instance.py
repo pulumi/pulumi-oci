@@ -27,7 +27,7 @@ class GetBdsInstanceResult:
     """
     A collection of values returned by getBdsInstance.
     """
-    def __init__(__self__, bds_cluster_version_summaries=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_remove_enabled=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_node=None, start_cluster_shape_configs=None, state=None, time_created=None, time_updated=None, util_nodes=None, worker_nodes=None):
+    def __init__(__self__, bds_cluster_version_summaries=None, bds_instance_id=None, bootstrap_script_url=None, cloud_sql_details=None, cluster_admin_password=None, cluster_details=None, cluster_profile=None, cluster_public_key=None, cluster_version=None, compartment_id=None, compute_only_worker_nodes=None, created_by=None, defined_tags=None, display_name=None, edge_nodes=None, freeform_tags=None, id=None, ignore_existing_nodes_shapes=None, is_cloud_sql_configured=None, is_force_remove_enabled=None, is_force_stop_jobs=None, is_high_availability=None, is_kafka_configured=None, is_secret_reused=None, is_secure=None, kafka_broker_nodes=None, kerberos_realm_name=None, kms_key_id=None, master_nodes=None, network_configs=None, nodes=None, number_of_nodes=None, number_of_nodes_requiring_maintenance_reboot=None, os_patch_version=None, remove_node=None, remove_nodes=None, secret_id=None, start_cluster_shape_configs=None, state=None, time_created=None, time_earliest_certificate_expiration=None, time_updated=None, util_nodes=None, worker_nodes=None):
         if bds_cluster_version_summaries and not isinstance(bds_cluster_version_summaries, list):
             raise TypeError("Expected argument 'bds_cluster_version_summaries' to be a list")
         pulumi.set(__self__, "bds_cluster_version_summaries", bds_cluster_version_summaries)
@@ -97,6 +97,9 @@ class GetBdsInstanceResult:
         if is_kafka_configured and not isinstance(is_kafka_configured, bool):
             raise TypeError("Expected argument 'is_kafka_configured' to be a bool")
         pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+        if is_secret_reused and not isinstance(is_secret_reused, bool):
+            raise TypeError("Expected argument 'is_secret_reused' to be a bool")
+        pulumi.set(__self__, "is_secret_reused", is_secret_reused)
         if is_secure and not isinstance(is_secure, bool):
             raise TypeError("Expected argument 'is_secure' to be a bool")
         pulumi.set(__self__, "is_secure", is_secure)
@@ -130,6 +133,12 @@ class GetBdsInstanceResult:
         if remove_node and not isinstance(remove_node, str):
             raise TypeError("Expected argument 'remove_node' to be a str")
         pulumi.set(__self__, "remove_node", remove_node)
+        if remove_nodes and not isinstance(remove_nodes, list):
+            raise TypeError("Expected argument 'remove_nodes' to be a list")
+        pulumi.set(__self__, "remove_nodes", remove_nodes)
+        if secret_id and not isinstance(secret_id, str):
+            raise TypeError("Expected argument 'secret_id' to be a str")
+        pulumi.set(__self__, "secret_id", secret_id)
         if start_cluster_shape_configs and not isinstance(start_cluster_shape_configs, list):
             raise TypeError("Expected argument 'start_cluster_shape_configs' to be a list")
         pulumi.set(__self__, "start_cluster_shape_configs", start_cluster_shape_configs)
@@ -139,6 +148,9 @@ class GetBdsInstanceResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_earliest_certificate_expiration and not isinstance(time_earliest_certificate_expiration, str):
+            raise TypeError("Expected argument 'time_earliest_certificate_expiration' to be a str")
+        pulumi.set(__self__, "time_earliest_certificate_expiration", time_earliest_certificate_expiration)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -310,6 +322,14 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "is_kafka_configured")
 
     @_builtins.property
+    @pulumi.getter(name="isSecretReused")
+    def is_secret_reused(self) -> _builtins.bool:
+        """
+        Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        """
+        return pulumi.get(self, "is_secret_reused")
+
+    @_builtins.property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> _builtins.bool:
         """
@@ -383,6 +403,19 @@ class GetBdsInstanceResult:
         return pulumi.get(self, "remove_node")
 
     @_builtins.property
+    @pulumi.getter(name="removeNodes")
+    def remove_nodes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "remove_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
     @pulumi.getter(name="startClusterShapeConfigs")
     def start_cluster_shape_configs(self) -> Sequence['outputs.GetBdsInstanceStartClusterShapeConfigResult']:
         return pulumi.get(self, "start_cluster_shape_configs")
@@ -402,6 +435,14 @@ class GetBdsInstanceResult:
         The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEarliestCertificateExpiration")
+    def time_earliest_certificate_expiration(self) -> _builtins.str:
+        """
+        The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        """
+        return pulumi.get(self, "time_earliest_certificate_expiration")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -451,6 +492,7 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             is_force_stop_jobs=self.is_force_stop_jobs,
             is_high_availability=self.is_high_availability,
             is_kafka_configured=self.is_kafka_configured,
+            is_secret_reused=self.is_secret_reused,
             is_secure=self.is_secure,
             kafka_broker_nodes=self.kafka_broker_nodes,
             kerberos_realm_name=self.kerberos_realm_name,
@@ -462,9 +504,12 @@ class AwaitableGetBdsInstanceResult(GetBdsInstanceResult):
             number_of_nodes_requiring_maintenance_reboot=self.number_of_nodes_requiring_maintenance_reboot,
             os_patch_version=self.os_patch_version,
             remove_node=self.remove_node,
+            remove_nodes=self.remove_nodes,
+            secret_id=self.secret_id,
             start_cluster_shape_configs=self.start_cluster_shape_configs,
             state=self.state,
             time_created=self.time_created,
+            time_earliest_certificate_expiration=self.time_earliest_certificate_expiration,
             time_updated=self.time_updated,
             util_nodes=self.util_nodes,
             worker_nodes=self.worker_nodes)
@@ -518,6 +563,7 @@ def get_bds_instance(bds_instance_id: Optional[_builtins.str] = None,
         is_force_stop_jobs=pulumi.get(__ret__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__ret__, 'is_high_availability'),
         is_kafka_configured=pulumi.get(__ret__, 'is_kafka_configured'),
+        is_secret_reused=pulumi.get(__ret__, 'is_secret_reused'),
         is_secure=pulumi.get(__ret__, 'is_secure'),
         kafka_broker_nodes=pulumi.get(__ret__, 'kafka_broker_nodes'),
         kerberos_realm_name=pulumi.get(__ret__, 'kerberos_realm_name'),
@@ -529,9 +575,12 @@ def get_bds_instance(bds_instance_id: Optional[_builtins.str] = None,
         number_of_nodes_requiring_maintenance_reboot=pulumi.get(__ret__, 'number_of_nodes_requiring_maintenance_reboot'),
         os_patch_version=pulumi.get(__ret__, 'os_patch_version'),
         remove_node=pulumi.get(__ret__, 'remove_node'),
+        remove_nodes=pulumi.get(__ret__, 'remove_nodes'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
         start_cluster_shape_configs=pulumi.get(__ret__, 'start_cluster_shape_configs'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_earliest_certificate_expiration=pulumi.get(__ret__, 'time_earliest_certificate_expiration'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         util_nodes=pulumi.get(__ret__, 'util_nodes'),
         worker_nodes=pulumi.get(__ret__, 'worker_nodes'))
@@ -582,6 +631,7 @@ def get_bds_instance_output(bds_instance_id: pulumi.Input[Optional[_builtins.str
         is_force_stop_jobs=pulumi.get(__response__, 'is_force_stop_jobs'),
         is_high_availability=pulumi.get(__response__, 'is_high_availability'),
         is_kafka_configured=pulumi.get(__response__, 'is_kafka_configured'),
+        is_secret_reused=pulumi.get(__response__, 'is_secret_reused'),
         is_secure=pulumi.get(__response__, 'is_secure'),
         kafka_broker_nodes=pulumi.get(__response__, 'kafka_broker_nodes'),
         kerberos_realm_name=pulumi.get(__response__, 'kerberos_realm_name'),
@@ -593,9 +643,12 @@ def get_bds_instance_output(bds_instance_id: pulumi.Input[Optional[_builtins.str
         number_of_nodes_requiring_maintenance_reboot=pulumi.get(__response__, 'number_of_nodes_requiring_maintenance_reboot'),
         os_patch_version=pulumi.get(__response__, 'os_patch_version'),
         remove_node=pulumi.get(__response__, 'remove_node'),
+        remove_nodes=pulumi.get(__response__, 'remove_nodes'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
         start_cluster_shape_configs=pulumi.get(__response__, 'start_cluster_shape_configs'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_earliest_certificate_expiration=pulumi.get(__response__, 'time_earliest_certificate_expiration'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         util_nodes=pulumi.get(__response__, 'util_nodes'),
         worker_nodes=pulumi.get(__response__, 'worker_nodes')))

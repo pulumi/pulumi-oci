@@ -27,6 +27,11 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
                  attachment_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource.
+
+        :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs'] attachment_details: Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
         """
         pulumi.set(__self__, "enable_oac", enable_oac)
         pulumi.set(__self__, "resource_analytics_instance_id", resource_analytics_instance_id)
@@ -38,6 +43,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
     @_builtins.property
     @pulumi.getter(name="enableOac")
     def enable_oac(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
         return pulumi.get(self, "enable_oac")
 
     @enable_oac.setter
@@ -47,6 +55,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
     def resource_analytics_instance_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        """
         return pulumi.get(self, "resource_analytics_instance_id")
 
     @resource_analytics_instance_id.setter
@@ -56,6 +67,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
+        """
+        Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        """
         return pulumi.get(self, "attachment_details")
 
     @attachment_details.setter
@@ -65,6 +79,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs:
     @_builtins.property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of attachment the OAC instance is using. Example: `MANAGED`
+        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -82,6 +99,12 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstanceOacManagement resources.
+
+        :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs'] attachment_details: Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
+        :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
         """
         if attachment_details is not None:
             pulumi.set(__self__, "attachment_details", attachment_details)
@@ -97,6 +120,9 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs']]:
+        """
+        Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        """
         return pulumi.get(self, "attachment_details")
 
     @attachment_details.setter
@@ -106,6 +132,9 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @_builtins.property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of attachment the OAC instance is using. Example: `MANAGED`
+        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -115,6 +144,9 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @_builtins.property
     @pulumi.getter(name="enableOac")
     def enable_oac(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
         return pulumi.get(self, "enable_oac")
 
     @enable_oac.setter
@@ -124,6 +156,9 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
     def resource_analytics_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        """
         return pulumi.get(self, "resource_analytics_instance_id")
 
     @resource_analytics_instance_id.setter
@@ -133,6 +168,9 @@ class _ResourceAnalyticsResourceAnalyticsInstanceOacManagementState:
     @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The current state of the ResourceAnalyticsInstance.
+        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -152,10 +190,40 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
                  resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource with the given unique name, props, and options.
+        This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+        Attaches an OAC instance to a ResourceAnalyticsInstance.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_resource_analytics_instance_oac_management = oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management",
+            attachment_type=resource_analytics_instance_oac_management_attachment_type,
+            resource_analytics_instance_id=test_resource_analytics_instance["id"],
+            enable_oac=enable_oac == "true",
+            attachment_details={
+                "idcs_domain_id": test_domain["id"],
+                "capacity_type": resource_analytics_instance_oac_management_attachment_details_capacity_type,
+                "capacity_value": int(resource_analytics_instance_oac_management_attachment_details_capacity_value),
+                "license_model": resource_analytics_instance_oac_management_attachment_details_license_model,
+                "network_details": {
+                    "subnet_id": test_subnet["id"],
+                    "nsg_ids": resource_analytics_instance_oac_management_attachment_details_network_details_nsg_ids,
+                },
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']] attachment_details: Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
+        :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
         """
         ...
     @overload
@@ -164,7 +232,33 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
                  args: ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource with the given unique name, props, and options.
+        This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+        Attaches an OAC instance to a ResourceAnalyticsInstance.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_resource_analytics_instance_oac_management = oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management",
+            attachment_type=resource_analytics_instance_oac_management_attachment_type,
+            resource_analytics_instance_id=test_resource_analytics_instance["id"],
+            enable_oac=enable_oac == "true",
+            attachment_details={
+                "idcs_domain_id": test_domain["id"],
+                "capacity_type": resource_analytics_instance_oac_management_attachment_details_capacity_type,
+                "capacity_value": int(resource_analytics_instance_oac_management_attachment_details_capacity_value),
+                "license_model": resource_analytics_instance_oac_management_attachment_details_license_model,
+                "network_details": {
+                    "subnet_id": test_subnet["id"],
+                    "nsg_ids": resource_analytics_instance_oac_management_attachment_details_network_details_nsg_ids,
+                },
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs args: The arguments to use to populate this resource's properties.
@@ -225,6 +319,11 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict']] attachment_details: Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        :param pulumi.Input[_builtins.str] attachment_type: The type of attachment the OAC instance is using. Example: `MANAGED`
+        :param pulumi.Input[_builtins.bool] enable_oac: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[_builtins.str] resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -240,25 +339,40 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> pulumi.Output['outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails']:
+        """
+        Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        """
         return pulumi.get(self, "attachment_details")
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of attachment the OAC instance is using. Example: `MANAGED`
+        """
         return pulumi.get(self, "attachment_type")
 
     @_builtins.property
     @pulumi.getter(name="enableOac")
     def enable_oac(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
         return pulumi.get(self, "enable_oac")
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
     def resource_analytics_instance_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        """
         return pulumi.get(self, "resource_analytics_instance_id")
 
     @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
+        """
+        The current state of the ResourceAnalyticsInstance.
+        """
         return pulumi.get(self, "state")
 

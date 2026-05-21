@@ -1709,7 +1709,15 @@ class CertificateAuthoritySubjectArgs:
 class CertificateCertificateConfigArgsDict(TypedDict):
     config_type: pulumi.Input[_builtins.str]
     """
-    (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+    (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+    """
+    cert_chain_pem: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    , `certificate_pem`, `private_key_pem`, `private_key_pem_passphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+    """
+    certificate_pem: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The leaf certificate (in PEM format).
     """
     certificate_profile_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1727,9 +1735,21 @@ class CertificateCertificateConfigArgsDict(TypedDict):
     """
     The algorithm to use to create key pairs.
     """
+    private_key_pem: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The private key (in PEM format). This value is sensitive.
+    """
+    private_key_pem_passphrase: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+    """
     signature_algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The algorithm to use to sign the public key certificate.
+    """
+    stage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
     """
     subject: NotRequired[pulumi.Input[Optional['CertificateCertificateConfigSubjectArgs']]]
     """
@@ -1752,28 +1772,42 @@ class CertificateCertificateConfigArgsDict(TypedDict):
 class CertificateCertificateConfigArgs:
     def __init__(__self__, *,
                  config_type: pulumi.Input[_builtins.str],
+                 cert_chain_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  certificate_profile_type: pulumi.Input[Optional[_builtins.str]] = None,
                  csr_pem: pulumi.Input[Optional[_builtins.str]] = None,
                  issuer_certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_pem_passphrase: pulumi.Input[Optional[_builtins.str]] = None,
                  signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 stage: pulumi.Input[Optional[_builtins.str]] = None,
                  subject: pulumi.Input[Optional['CertificateCertificateConfigSubjectArgs']] = None,
                  subject_alternative_names: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateConfigSubjectAlternativeNameArgs']]]] = None,
                  validity: pulumi.Input[Optional['CertificateCertificateConfigValidityArgs']] = None,
                  version_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] config_type: (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param pulumi.Input[_builtins.str] config_type: (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+        :param pulumi.Input[_builtins.str] cert_chain_pem: , `certificate_pem`, `private_key_pem`, `private_key_pem_passphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+        :param pulumi.Input[_builtins.str] certificate_pem: (Updatable) The leaf certificate (in PEM format).
         :param pulumi.Input[_builtins.str] certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
         :param pulumi.Input[_builtins.str] csr_pem: (Updatable) The certificate signing request (in PEM format).
         :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the private CA.
         :param pulumi.Input[_builtins.str] key_algorithm: The algorithm to use to create key pairs.
+        :param pulumi.Input[_builtins.str] private_key_pem: (Updatable) The private key (in PEM format). This value is sensitive.
+        :param pulumi.Input[_builtins.str] private_key_pem_passphrase: (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
         :param pulumi.Input[_builtins.str] signature_algorithm: The algorithm to use to sign the public key certificate.
+        :param pulumi.Input[_builtins.str] stage: (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
         :param pulumi.Input['CertificateCertificateConfigSubjectArgs'] subject: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateConfigSubjectAlternativeNameArgs']]] subject_alternative_names: A list of subject alternative names.
         :param pulumi.Input['CertificateCertificateConfigValidityArgs'] validity: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param pulumi.Input[_builtins.str] version_name: (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
         """
         pulumi.set(__self__, "config_type", config_type)
+        if cert_chain_pem is not None:
+            pulumi.set(__self__, "cert_chain_pem", cert_chain_pem)
+        if certificate_pem is not None:
+            pulumi.set(__self__, "certificate_pem", certificate_pem)
         if certificate_profile_type is not None:
             pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
         if csr_pem is not None:
@@ -1782,8 +1816,14 @@ class CertificateCertificateConfigArgs:
             pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
         if key_algorithm is not None:
             pulumi.set(__self__, "key_algorithm", key_algorithm)
+        if private_key_pem is not None:
+            pulumi.set(__self__, "private_key_pem", private_key_pem)
+        if private_key_pem_passphrase is not None:
+            pulumi.set(__self__, "private_key_pem_passphrase", private_key_pem_passphrase)
         if signature_algorithm is not None:
             pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if stage is not None:
+            pulumi.set(__self__, "stage", stage)
         if subject is not None:
             pulumi.set(__self__, "subject", subject)
         if subject_alternative_names is not None:
@@ -1797,13 +1837,37 @@ class CertificateCertificateConfigArgs:
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
     def config_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "config_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certChainPem")
+    def cert_chain_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        , `certificate_pem`, `private_key_pem`, `private_key_pem_passphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+        """
+        return pulumi.get(self, "cert_chain_pem")
+
+    @cert_chain_pem.setter
+    def cert_chain_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cert_chain_pem", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The leaf certificate (in PEM format).
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @certificate_pem.setter
+    def certificate_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateProfileType")
@@ -1854,6 +1918,30 @@ class CertificateCertificateConfigArgs:
         pulumi.set(self, "key_algorithm", value)
 
     @_builtins.property
+    @pulumi.getter(name="privateKeyPem")
+    def private_key_pem(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The private key (in PEM format). This value is sensitive.
+        """
+        return pulumi.get(self, "private_key_pem")
+
+    @private_key_pem.setter
+    def private_key_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key_pem", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPemPassphrase")
+    def private_key_pem_passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+        """
+        return pulumi.get(self, "private_key_pem_passphrase")
+
+    @private_key_pem_passphrase.setter
+    def private_key_pem_passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key_pem_passphrase", value)
+
+    @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1864,6 +1952,18 @@ class CertificateCertificateConfigArgs:
     @signature_algorithm.setter
     def signature_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def stage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+        """
+        return pulumi.get(self, "stage")
+
+    @stage.setter
+    def stage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "stage", value)
 
     @_builtins.property
     @pulumi.getter

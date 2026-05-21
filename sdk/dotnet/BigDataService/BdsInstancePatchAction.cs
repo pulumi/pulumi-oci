@@ -30,8 +30,8 @@ namespace Pulumi.Oci.BigDataService
     ///     var testBdsInstancePatchAction = new Oci.BigDataService.BdsInstancePatchAction("test_bds_instance_patch_action", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstancePatchActionClusterAdminPassword,
     ///         Version = bdsInstancePatchActionVersion,
+    ///         ClusterAdminPassword = bdsInstancePatchActionClusterAdminPassword,
     ///         PatchingConfig = new Oci.BigDataService.Inputs.BdsInstancePatchActionPatchingConfigArgs
     ///         {
     ///             PatchingConfigStrategy = bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
@@ -41,6 +41,7 @@ namespace Pulumi.Oci.BigDataService
     ///             WaitTimeBetweenBatchInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds,
     ///             WaitTimeBetweenDomainInSeconds = bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds,
     ///         },
+    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });

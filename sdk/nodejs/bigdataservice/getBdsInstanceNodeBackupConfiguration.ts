@@ -62,7 +62,7 @@ export interface GetBdsInstanceNodeBackupConfigurationResult {
      */
     readonly displayName: string;
     /**
-     * The unique identifier for the NodeBackupConfiguration.
+     * The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
      */
     readonly id: string;
     /**

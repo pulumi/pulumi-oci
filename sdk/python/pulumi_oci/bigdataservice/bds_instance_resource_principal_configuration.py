@@ -20,24 +20,29 @@ __all__ = ['BdsInstanceResourcePrincipalConfigurationArgs', 'BdsInstanceResource
 class BdsInstanceResourcePrincipalConfigurationArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[_builtins.str],
-                 cluster_admin_password: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a BdsInstanceResourcePrincipalConfiguration resource.
 
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.int] force_refresh_resource_principal_trigger: (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.int] session_token_life_span_duration_in_hours: (Updatable) Life span in hours for the resource principal session token.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "display_name", display_name)
+        if cluster_admin_password is not None:
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if force_refresh_resource_principal_trigger is not None:
             pulumi.set(__self__, "force_refresh_resource_principal_trigger", force_refresh_resource_principal_trigger)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if session_token_life_span_duration_in_hours is not None:
             pulumi.set(__self__, "session_token_life_span_duration_in_hours", session_token_life_span_duration_in_hours)
 
@@ -54,18 +59,6 @@ class BdsInstanceResourcePrincipalConfigurationArgs:
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        Base-64 encoded Cluster Admin Password for cluster admin user.
-        """
-        return pulumi.get(self, "cluster_admin_password")
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cluster_admin_password", value)
-
-    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
@@ -78,6 +71,18 @@ class BdsInstanceResourcePrincipalConfigurationArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Base-64 encoded Cluster Admin Password for cluster admin user.
+        """
+        return pulumi.get(self, "cluster_admin_password")
+
+    @cluster_admin_password.setter
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_admin_password", value)
+
+    @_builtins.property
     @pulumi.getter(name="forceRefreshResourcePrincipalTrigger")
     def force_refresh_resource_principal_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -88,6 +93,18 @@ class BdsInstanceResourcePrincipalConfigurationArgs:
     @force_refresh_resource_principal_trigger.setter
     def force_refresh_resource_principal_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "force_refresh_resource_principal_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")
@@ -109,6 +126,7 @@ class _BdsInstanceResourcePrincipalConfigurationState:
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -122,6 +140,7 @@ class _BdsInstanceResourcePrincipalConfigurationState:
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] force_refresh_resource_principal_trigger: (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.int] session_token_life_span_duration_in_hours: (Updatable) Life span in hours for the resource principal session token.
         :param pulumi.Input[_builtins.str] state: The state of the ResourcePrincipalConfiguration.
         :param pulumi.Input[_builtins.str] time_created: The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -137,6 +156,8 @@ class _BdsInstanceResourcePrincipalConfigurationState:
             pulumi.set(__self__, "display_name", display_name)
         if force_refresh_resource_principal_trigger is not None:
             pulumi.set(__self__, "force_refresh_resource_principal_trigger", force_refresh_resource_principal_trigger)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if session_token_life_span_duration_in_hours is not None:
             pulumi.set(__self__, "session_token_life_span_duration_in_hours", session_token_life_span_duration_in_hours)
         if state is not None:
@@ -197,6 +218,18 @@ class _BdsInstanceResourcePrincipalConfigurationState:
     @force_refresh_resource_principal_trigger.setter
     def force_refresh_resource_principal_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "force_refresh_resource_principal_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")
@@ -281,6 +314,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -299,8 +333,9 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
 
         test_bds_instance_resource_principal_configuration = oci.bigdataservice.BdsInstanceResourcePrincipalConfiguration("test_bds_instance_resource_principal_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
             display_name=bds_instance_resource_principal_configuration_display_name,
+            cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
+            secret_id=test_secret["id"],
             session_token_life_span_duration_in_hours=int(bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours))
         ```
 
@@ -319,6 +354,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] force_refresh_resource_principal_trigger: (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.int] session_token_life_span_duration_in_hours: (Updatable) Life span in hours for the resource principal session token.
         """
         ...
@@ -343,8 +379,9 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
 
         test_bds_instance_resource_principal_configuration = oci.bigdataservice.BdsInstanceResourcePrincipalConfiguration("test_bds_instance_resource_principal_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
             display_name=bds_instance_resource_principal_configuration_display_name,
+            cluster_admin_password=bds_instance_resource_principal_configuration_cluster_admin_password,
+            secret_id=test_secret["id"],
             session_token_life_span_duration_in_hours=int(bds_instance_resource_principal_configuration_session_token_life_span_duration_in_hours))
         ```
 
@@ -376,6 +413,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -389,13 +427,12 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
             if bds_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'bds_instance_id'")
             __props__.__dict__["bds_instance_id"] = bds_instance_id
-            if cluster_admin_password is None and not opts.urn:
-                raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["force_refresh_resource_principal_trigger"] = force_refresh_resource_principal_trigger
+            __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["session_token_life_span_duration_in_hours"] = session_token_life_span_duration_in_hours
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -418,6 +455,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
             cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -435,6 +473,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded Cluster Admin Password for cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input[_builtins.int] force_refresh_resource_principal_trigger: (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.int] session_token_life_span_duration_in_hours: (Updatable) Life span in hours for the resource principal session token.
         :param pulumi.Input[_builtins.str] state: The state of the ResourcePrincipalConfiguration.
         :param pulumi.Input[_builtins.str] time_created: The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -450,6 +489,7 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         __props__.__dict__["cluster_admin_password"] = cluster_admin_password
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["force_refresh_resource_principal_trigger"] = force_refresh_resource_principal_trigger
+        __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["session_token_life_span_duration_in_hours"] = session_token_life_span_duration_in_hours
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -489,6 +529,14 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
         """
         return pulumi.get(self, "force_refresh_resource_principal_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter(name="sessionTokenLifeSpanDurationInHours")

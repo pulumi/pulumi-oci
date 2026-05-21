@@ -29668,6 +29668,7 @@ type GetShapeShape struct {
 	GpuDescription                string                                   `pulumi:"gpuDescription"`
 	Gpus                          int                                      `pulumi:"gpus"`
 	IsBilledForStoppedInstance    bool                                     `pulumi:"isBilledForStoppedInstance"`
+	IsCnic                        bool                                     `pulumi:"isCnic"`
 	IsFlexible                    bool                                     `pulumi:"isFlexible"`
 	IsLiveMigrationSupported      bool                                     `pulumi:"isLiveMigrationSupported"`
 	IsSubcore                     bool                                     `pulumi:"isSubcore"`
@@ -29712,6 +29713,7 @@ type GetShapeShapeArgs struct {
 	GpuDescription                pulumi.StringInput                               `pulumi:"gpuDescription"`
 	Gpus                          pulumi.IntInput                                  `pulumi:"gpus"`
 	IsBilledForStoppedInstance    pulumi.BoolInput                                 `pulumi:"isBilledForStoppedInstance"`
+	IsCnic                        pulumi.BoolInput                                 `pulumi:"isCnic"`
 	IsFlexible                    pulumi.BoolInput                                 `pulumi:"isFlexible"`
 	IsLiveMigrationSupported      pulumi.BoolInput                                 `pulumi:"isLiveMigrationSupported"`
 	IsSubcore                     pulumi.BoolInput                                 `pulumi:"isSubcore"`
@@ -29808,6 +29810,10 @@ func (o GetShapeShapeOutput) Gpus() pulumi.IntOutput {
 
 func (o GetShapeShapeOutput) IsBilledForStoppedInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetShapeShape) bool { return v.IsBilledForStoppedInstance }).(pulumi.BoolOutput)
+}
+
+func (o GetShapeShapeOutput) IsCnic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapeShape) bool { return v.IsCnic }).(pulumi.BoolOutput)
 }
 
 func (o GetShapeShapeOutput) IsFlexible() pulumi.BoolOutput {
@@ -31774,6 +31780,8 @@ type GetShapesShape struct {
 	Gpus int `pulumi:"gpus"`
 	// Whether billing continues when the instances that use this shape are in the stopped state.
 	IsBilledForStoppedInstance bool `pulumi:"isBilledForStoppedInstance"`
+	// Whether the shape supports CNIC networking.
+	IsCnic bool `pulumi:"isCnic"`
 	// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
 	IsFlexible bool `pulumi:"isFlexible"`
 	// Whether live migration is supported for this shape.
@@ -31848,6 +31856,8 @@ type GetShapesShapeArgs struct {
 	Gpus pulumi.IntInput `pulumi:"gpus"`
 	// Whether billing continues when the instances that use this shape are in the stopped state.
 	IsBilledForStoppedInstance pulumi.BoolInput `pulumi:"isBilledForStoppedInstance"`
+	// Whether the shape supports CNIC networking.
+	IsCnic pulumi.BoolInput `pulumi:"isCnic"`
 	// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
 	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// Whether live migration is supported for this shape.
@@ -31974,6 +31984,11 @@ func (o GetShapesShapeOutput) Gpus() pulumi.IntOutput {
 // Whether billing continues when the instances that use this shape are in the stopped state.
 func (o GetShapesShapeOutput) IsBilledForStoppedInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetShapesShape) bool { return v.IsBilledForStoppedInstance }).(pulumi.BoolOutput)
+}
+
+// Whether the shape supports CNIC networking.
+func (o GetShapesShapeOutput) IsCnic() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShapesShape) bool { return v.IsCnic }).(pulumi.BoolOutput)
 }
 
 // Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.

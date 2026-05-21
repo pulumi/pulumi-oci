@@ -65,9 +65,10 @@ export interface GetCertificateResult {
      */
     readonly compartmentId: string;
     /**
-     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      */
     readonly configType: string;
+    readonly currentVersionNumber: string;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */

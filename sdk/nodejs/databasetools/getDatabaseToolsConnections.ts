@@ -100,7 +100,7 @@ export interface GetDatabaseToolsConnectionsResult {
     readonly id: string;
     readonly relatedResourceIdentifier?: string;
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      */
     readonly runtimeIdentities?: string[];
     /**

@@ -49,6 +49,12 @@ namespace Pulumi.Oci.Oci
     public partial class ResourceAnalyticsTenancyAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The overall status of the data population from the tenancy.
+        /// </summary>
+        [Output("dataPopulationStatus")]
+        public Output<string> DataPopulationStatus { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A description of the tenancy.
         /// </summary>
         [Output("description")]
@@ -65,6 +71,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// List of monitored regions with their data population status.
+        /// </summary>
+        [Output("monitoredRegions")]
+        public Output<ImmutableArray<Outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion>> MonitoredRegions { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
@@ -99,6 +111,18 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Output("timeDataPopulationEnded")]
+        public Output<string> TimeDataPopulationEnded { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Output("timeDataPopulationStarted")]
+        public Output<string> TimeDataPopulationStarted { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -183,6 +207,12 @@ namespace Pulumi.Oci.Oci
     public sealed class ResourceAnalyticsTenancyAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The overall status of the data population from the tenancy.
+        /// </summary>
+        [Input("dataPopulationStatus")]
+        public Input<string>? DataPopulationStatus { get; set; }
+
+        /// <summary>
         /// (Updatable) A description of the tenancy.
         /// </summary>
         [Input("description")]
@@ -199,6 +229,18 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("monitoredRegions")]
+        private InputList<Inputs.ResourceAnalyticsTenancyAttachmentMonitoredRegionGetArgs>? _monitoredRegions;
+
+        /// <summary>
+        /// List of monitored regions with their data population status.
+        /// </summary>
+        public InputList<Inputs.ResourceAnalyticsTenancyAttachmentMonitoredRegionGetArgs> MonitoredRegions
+        {
+            get => _monitoredRegions ?? (_monitoredRegions = new InputList<Inputs.ResourceAnalyticsTenancyAttachmentMonitoredRegionGetArgs>());
+            set => _monitoredRegions = value;
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
@@ -239,6 +281,18 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Input("timeDataPopulationEnded")]
+        public Input<string>? TimeDataPopulationEnded { get; set; }
+
+        /// <summary>
+        /// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Input("timeDataPopulationStarted")]
+        public Input<string>? TimeDataPopulationStarted { get; set; }
 
         /// <summary>
         /// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

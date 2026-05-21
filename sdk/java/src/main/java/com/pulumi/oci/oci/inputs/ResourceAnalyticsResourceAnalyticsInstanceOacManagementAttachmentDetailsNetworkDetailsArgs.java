@@ -16,16 +16,38 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
 
     public static final ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs Empty = new ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs();
 
+    /**
+     * List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
+    /**
+     * @return List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     public Optional<Output<List<String>>> nsgIds() {
         return Optional.ofNullable(this.nsgIds);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
@@ -55,24 +77,60 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
             $ = new ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param nsgIds List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
             $.nsgIds = nsgIds;
             return this;
         }
 
+        /**
+         * @param nsgIds List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(List<String> nsgIds) {
             return nsgIds(Output.of(nsgIds));
         }
 
+        /**
+         * @param nsgIds List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
 
+        /**
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
         }
 
+        /**
+         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }

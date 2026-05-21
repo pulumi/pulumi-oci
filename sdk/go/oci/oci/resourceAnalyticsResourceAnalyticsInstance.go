@@ -41,6 +41,7 @@ import (
 //				},
 //				CompartmentId: pulumi.Any(compartmentId),
 //				SubnetId:      pulumi.Any(testSubnet.Id),
+//				ComputeCount:  pulumi.Any(resourceAnalyticsInstanceComputeCount),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -78,6 +79,8 @@ type ResourceAnalyticsResourceAnalyticsInstance struct {
 	AdwId pulumi.StringOutput `pulumi:"adwId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The compute amount (CPUs) available to the Autonomous Database.
+	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the ResourceAnalyticsInstance instance.
@@ -156,6 +159,8 @@ type resourceAnalyticsResourceAnalyticsInstanceState struct {
 	AdwId *string `pulumi:"adwId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// The compute amount (CPUs) available to the Autonomous Database.
+	ComputeCount *int `pulumi:"computeCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the ResourceAnalyticsInstance instance.
@@ -196,6 +201,8 @@ type ResourceAnalyticsResourceAnalyticsInstanceState struct {
 	AdwId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 	CompartmentId pulumi.StringPtrInput
+	// The compute amount (CPUs) available to the Autonomous Database.
+	ComputeCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the ResourceAnalyticsInstance instance.
@@ -238,6 +245,8 @@ type resourceAnalyticsResourceAnalyticsInstanceArgs struct {
 	AdwAdminPassword ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword `pulumi:"adwAdminPassword"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The compute amount (CPUs) available to the Autonomous Database.
+	ComputeCount *int `pulumi:"computeCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the ResourceAnalyticsInstance instance.
@@ -265,6 +274,8 @@ type ResourceAnalyticsResourceAnalyticsInstanceArgs struct {
 	AdwAdminPassword ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 	CompartmentId pulumi.StringInput
+	// The compute amount (CPUs) available to the Autonomous Database.
+	ComputeCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the ResourceAnalyticsInstance instance.
@@ -388,6 +399,11 @@ func (o ResourceAnalyticsResourceAnalyticsInstanceOutput) AdwId() pulumi.StringO
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
 func (o ResourceAnalyticsResourceAnalyticsInstanceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstance) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute amount (CPUs) available to the Autonomous Database.
+func (o ResourceAnalyticsResourceAnalyticsInstanceOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstance) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

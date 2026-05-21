@@ -30,9 +30,9 @@ namespace Pulumi.Oci.BigDataService
     ///     var testAutoScalingConfiguration = new Oci.BigDataService.AutoScalingConfiguration("test_auto_scaling_configuration", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = autoScalingConfigurationClusterAdminPassword,
     ///         IsEnabled = autoScalingConfigurationIsEnabled,
     ///         NodeType = autoScalingConfigurationNodeType,
+    ///         ClusterAdminPassword = autoScalingConfigurationClusterAdminPassword,
     ///         DisplayName = autoScalingConfigurationDisplayName,
     ///         PolicyDetails = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsArgs
     ///         {
@@ -72,6 +72,7 @@ namespace Pulumi.Oci.BigDataService
     ///                 OcpuStepSize = autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize,
     ///             },
     ///         },
+    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });
@@ -139,6 +140,16 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("policyDetails")]
         public Output<Outputs.AutoScalingConfigurationPolicyDetails> PolicyDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The secretId for the clusterAdminPassword.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// The state of the autoscale configuration.
@@ -214,7 +225,7 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
-        [Input("clusterAdminPassword", required: true)]
+        [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
@@ -269,6 +280,16 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("policyDetails")]
         public Input<Inputs.AutoScalingConfigurationPolicyDetailsArgs>? PolicyDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The secretId for the clusterAdminPassword.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         public AutoScalingConfigurationArgs()
         {
@@ -339,6 +360,16 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("policyDetails")]
         public Input<Inputs.AutoScalingConfigurationPolicyDetailsGetArgs>? PolicyDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The secretId for the clusterAdminPassword.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// The state of the autoscale configuration.

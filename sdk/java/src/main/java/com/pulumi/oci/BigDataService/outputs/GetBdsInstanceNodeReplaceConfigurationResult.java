@@ -30,7 +30,7 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
      */
     private Integer durationInMinutes;
     /**
-     * @return The unique identifier for the NodeReplaceConfiguration.
+     * @return The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
      * 
      */
     private String id;
@@ -45,6 +45,11 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
      */
     private String metricType;
     private String nodeReplaceConfigurationId;
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    private String secretId;
     /**
      * @return The state of the NodeReplaceConfiguration.
      * 
@@ -87,7 +92,7 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
         return this.durationInMinutes;
     }
     /**
-     * @return The unique identifier for the NodeReplaceConfiguration.
+     * @return The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
      * 
      */
     public String id() {
@@ -109,6 +114,13 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
     }
     public String nodeReplaceConfigurationId() {
         return this.nodeReplaceConfigurationId;
+    }
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public String secretId() {
+        return this.secretId;
     }
     /**
      * @return The state of the NodeReplaceConfiguration.
@@ -149,6 +161,7 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
         private List<GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail> levelTypeDetails;
         private String metricType;
         private String nodeReplaceConfigurationId;
+        private String secretId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -163,6 +176,7 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
     	      this.levelTypeDetails = defaults.levelTypeDetails;
     	      this.metricType = defaults.metricType;
     	      this.nodeReplaceConfigurationId = defaults.nodeReplaceConfigurationId;
+    	      this.secretId = defaults.secretId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -236,6 +250,14 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNodeReplaceConfigurationResult", "secretId");
+            }
+            this.secretId = secretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceNodeReplaceConfigurationResult", "state");
@@ -269,6 +291,7 @@ public final class GetBdsInstanceNodeReplaceConfigurationResult {
             _resultValue.levelTypeDetails = levelTypeDetails;
             _resultValue.metricType = metricType;
             _resultValue.nodeReplaceConfigurationId = nodeReplaceConfigurationId;
+            _resultValue.secretId = secretId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

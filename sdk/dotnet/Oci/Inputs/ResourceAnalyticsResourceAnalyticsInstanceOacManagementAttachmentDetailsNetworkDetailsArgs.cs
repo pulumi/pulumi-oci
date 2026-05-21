@@ -14,12 +14,23 @@ namespace Pulumi.Oci.Oci.Inputs
     {
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 

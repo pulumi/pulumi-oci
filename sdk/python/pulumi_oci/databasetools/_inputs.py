@@ -31,14 +31,46 @@ __all__ = [
     'DatabaseToolsConnectionRelatedResourceArgsDict',
     'DatabaseToolsConnectionUserPasswordArgs',
     'DatabaseToolsConnectionUserPasswordArgsDict',
+    'DatabaseToolsDatabaseApiGatewayConfigLockArgs',
+    'DatabaseToolsDatabaseApiGatewayConfigLockArgsDict',
     'DatabaseToolsIdentityLockArgs',
     'DatabaseToolsIdentityLockArgsDict',
+    'DatabaseToolsMcpServerBuiltInRoleArgs',
+    'DatabaseToolsMcpServerBuiltInRoleArgsDict',
+    'DatabaseToolsMcpServerCustomRoleArgs',
+    'DatabaseToolsMcpServerCustomRoleArgsDict',
+    'DatabaseToolsMcpServerEndpointArgs',
+    'DatabaseToolsMcpServerEndpointArgsDict',
+    'DatabaseToolsMcpServerLockArgs',
+    'DatabaseToolsMcpServerLockArgsDict',
+    'DatabaseToolsMcpServerRelatedResourceArgs',
+    'DatabaseToolsMcpServerRelatedResourceArgsDict',
+    'DatabaseToolsMcpServerStorageArgs',
+    'DatabaseToolsMcpServerStorageArgsDict',
+    'DatabaseToolsMcpServerStorageBucketArgs',
+    'DatabaseToolsMcpServerStorageBucketArgsDict',
+    'DatabaseToolsMcpToolsetLockArgs',
+    'DatabaseToolsMcpToolsetLockArgsDict',
+    'DatabaseToolsMcpToolsetReportArgs',
+    'DatabaseToolsMcpToolsetReportArgsDict',
+    'DatabaseToolsMcpToolsetSourceArgs',
+    'DatabaseToolsMcpToolsetSourceArgsDict',
+    'DatabaseToolsMcpToolsetToolArgs',
+    'DatabaseToolsMcpToolsetToolArgsDict',
+    'DatabaseToolsMcpToolsetVariableArgs',
+    'DatabaseToolsMcpToolsetVariableArgsDict',
     'DatabaseToolsPrivateEndpointLockArgs',
     'DatabaseToolsPrivateEndpointLockArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict',
+    'DatabaseToolsSqlReportColumnArgs',
+    'DatabaseToolsSqlReportColumnArgsDict',
+    'DatabaseToolsSqlReportLockArgs',
+    'DatabaseToolsSqlReportLockArgsDict',
+    'DatabaseToolsSqlReportVariableArgs',
+    'DatabaseToolsSqlReportVariableArgsDict',
     'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs',
     'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict',
     'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs',
@@ -53,12 +85,22 @@ __all__ = [
     'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgsDict',
     'GetDatabaseToolsConnectionsFilterArgs',
     'GetDatabaseToolsConnectionsFilterArgsDict',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs',
+    'GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgsDict',
     'GetDatabaseToolsEndpointServicesFilterArgs',
     'GetDatabaseToolsEndpointServicesFilterArgsDict',
     'GetDatabaseToolsIdentitiesFilterArgs',
     'GetDatabaseToolsIdentitiesFilterArgsDict',
+    'GetDatabaseToolsMcpServersFilterArgs',
+    'GetDatabaseToolsMcpServersFilterArgsDict',
+    'GetDatabaseToolsMcpToolsetVersionsFilterArgs',
+    'GetDatabaseToolsMcpToolsetVersionsFilterArgsDict',
+    'GetDatabaseToolsMcpToolsetsFilterArgs',
+    'GetDatabaseToolsMcpToolsetsFilterArgsDict',
     'GetDatabaseToolsPrivateEndpointsFilterArgs',
     'GetDatabaseToolsPrivateEndpointsFilterArgsDict',
+    'GetDatabaseToolsSqlReportsFilterArgs',
+    'GetDatabaseToolsSqlReportsFilterArgsDict',
     'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgs',
     'GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesFilterArgsDict',
     'GetRuntimeDatabaseToolsConnectionCredentialPublicSynonymsFilterArgs',
@@ -573,6 +615,94 @@ class DatabaseToolsConnectionUserPasswordArgs:
         pulumi.set(self, "value_type", value)
 
 
+class DatabaseToolsDatabaseApiGatewayConfigLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When the lock was created.
+    """
+
+@pulumi.input_type
+class DatabaseToolsDatabaseApiGatewayConfigLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
 class DatabaseToolsIdentityLockArgsDict(TypedDict):
     type: pulumi.Input[_builtins.str]
     """
@@ -659,6 +789,741 @@ class DatabaseToolsIdentityLockArgs:
     @time_created.setter
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+
+class DatabaseToolsMcpServerBuiltInRoleArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) A human-readable description of the Database Tools MCP server.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerBuiltInRoleArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: (Updatable) A human-readable description of the Database Tools MCP server.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) A human-readable description of the Database Tools MCP server.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+
+class DatabaseToolsMcpServerCustomRoleArgsDict(TypedDict):
+    description: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The description of the custom role.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The display name of the custom role.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerCustomRoleArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[_builtins.str],
+                 display_name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the custom role.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the custom role.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The description of the custom role.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The display name of the custom role.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "display_name", value)
+
+
+class DatabaseToolsMcpServerEndpointArgsDict(TypedDict):
+    endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URI endpoint of the MCP server
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Database Tools MCP server type.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerEndpointArgs:
+    def __init__(__self__, *,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] endpoint: The URI endpoint of the MCP server
+        :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URI endpoint of the MCP server
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Database Tools MCP server type.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class DatabaseToolsMcpServerLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When the lock was created.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+class DatabaseToolsMcpServerRelatedResourceArgsDict(TypedDict):
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The resource entity type.
+    """
+    identifier: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerRelatedResourceArgs:
+    def __init__(__self__, *,
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] entity_type: The resource entity type.
+        :param pulumi.Input[_builtins.str] identifier: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource entity type.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @identifier.setter
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "identifier", value)
+
+
+class DatabaseToolsMcpServerStorageArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of storage used for asynchronous tool calls.
+    """
+    bucket: NotRequired[pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgs']]]
+    """
+    (Updatable) A Cloud Storage bucket for an MCP Server.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerStorageArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 bucket: pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of storage used for asynchronous tool calls.
+        :param pulumi.Input['DatabaseToolsMcpServerStorageBucketArgs'] bucket: (Updatable) A Cloud Storage bucket for an MCP Server.
+        """
+        pulumi.set(__self__, "type", type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of storage used for asynchronous tool calls.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgs']]:
+        """
+        (Updatable) A Cloud Storage bucket for an MCP Server.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgs']]):
+        pulumi.set(self, "bucket", value)
+
+
+class DatabaseToolsMcpServerStorageBucketArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Object Storage bucket to use.
+    """
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Object Storage namespace to use.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpServerStorageBucketArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bucket: (Updatable) The Object Storage bucket to use.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace to use.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Object Storage bucket to use.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Object Storage namespace to use.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+
+class DatabaseToolsMcpToolsetLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When the lock was created.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpToolsetLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+class DatabaseToolsMcpToolsetReportArgsDict(TypedDict):
+    allowed_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) The roles granted access to this report
+    """
+    database_tools_sql_report_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpToolsetReportArgs:
+    def __init__(__self__, *,
+                 allowed_roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 database_tools_sql_report_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_roles: (Updatable) The roles granted access to this report
+        :param pulumi.Input[_builtins.str] database_tools_sql_report_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        if allowed_roles is not None:
+            pulumi.set(__self__, "allowed_roles", allowed_roles)
+        if database_tools_sql_report_id is not None:
+            pulumi.set(__self__, "database_tools_sql_report_id", database_tools_sql_report_id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The roles granted access to this report
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @allowed_roles.setter
+    def allowed_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowed_roles", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseToolsSqlReportId")
+    def database_tools_sql_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+        """
+        return pulumi.get(self, "database_tools_sql_report_id")
+
+    @database_tools_sql_report_id.setter
+    def database_tools_sql_report_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "database_tools_sql_report_id", value)
+
+
+class DatabaseToolsMcpToolsetSourceArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The sql toolset sources type. INLINE is the only possible value.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpToolsetSourceArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) The sql toolset sources type. INLINE is the only possible value.
+        :param pulumi.Input[_builtins.str] value: (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The sql toolset sources type. INLINE is the only possible value.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DatabaseToolsMcpToolsetToolArgsDict(TypedDict):
+    allowed_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) The roles granted access to this tool
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the tool
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The status of the tool
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpToolsetToolArgs:
+    def __init__(__self__, *,
+                 allowed_roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_roles: (Updatable) The roles granted access to this tool
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the tool
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the tool
+        """
+        if allowed_roles is not None:
+            pulumi.set(__self__, "allowed_roles", allowed_roles)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedRoles")
+    def allowed_roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The roles granted access to this tool
+        """
+        return pulumi.get(self, "allowed_roles")
+
+    @allowed_roles.setter
+    def allowed_roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowed_roles", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the tool
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The status of the tool
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class DatabaseToolsMcpToolsetVariableArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The description of the variable
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the variable
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The type of the variable
+    """
+
+@pulumi.input_type
+class DatabaseToolsMcpToolsetVariableArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the variable
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the variable
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the variable
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The type of the variable
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
 
 
 class DatabaseToolsPrivateEndpointLockArgsDict(TypedDict):
@@ -805,6 +1670,238 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
     @source_ip.setter
     def source_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_ip", value)
+
+
+class DatabaseToolsSqlReportColumnArgsDict(TypedDict):
+    description: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The description of the column
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the column
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the column
+    """
+
+@pulumi.input_type
+class DatabaseToolsSqlReportColumnArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[_builtins.str],
+                 name: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the column
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the column
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the column
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The description of the column
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the column
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of the column
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+class DatabaseToolsSqlReportLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When the lock was created.
+    """
+
+@pulumi.input_type
+class DatabaseToolsSqlReportLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+class DatabaseToolsSqlReportVariableArgsDict(TypedDict):
+    description: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The description of the variable
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the variable
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the variable
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DatabaseToolsSqlReportVariableArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[_builtins.str],
+                 name: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the variable
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the variable
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of the variable
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The description of the variable
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of the variable
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
 
 
 class RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict(TypedDict):
@@ -1163,6 +2260,50 @@ class GetDatabaseToolsConnectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+class GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetDatabaseToolsEndpointServicesFilterArgsDict(TypedDict):
     name: _builtins.str
     """
@@ -1260,6 +2401,156 @@ class GetDatabaseToolsIdentitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+class GetDatabaseToolsMcpServersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDatabaseToolsMcpServersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDatabaseToolsMcpToolsetVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The unique name of the tool.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDatabaseToolsMcpToolsetVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The unique name of the tool.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The unique name of the tool.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDatabaseToolsMcpToolsetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the variable
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDatabaseToolsMcpToolsetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the variable
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetDatabaseToolsPrivateEndpointsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -1279,6 +2570,59 @@ class GetDatabaseToolsPrivateEndpointsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDatabaseToolsSqlReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the variable
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDatabaseToolsSqlReportsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the variable
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable
+        """
         return pulumi.get(self, "name")
 
     @name.setter

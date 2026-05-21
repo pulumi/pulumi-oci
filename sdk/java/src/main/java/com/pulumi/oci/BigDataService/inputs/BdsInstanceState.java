@@ -77,14 +77,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      * 
      */
     @Import(name="clusterAdminPassword")
     private @Nullable Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      * 
      */
     public Optional<Output<String>> clusterAdminPassword() {
@@ -323,6 +323,21 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    @Import(name="isSecretReused")
+    private @Nullable Output<Boolean> isSecretReused;
+
+    /**
+     * @return Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    public Optional<Output<Boolean>> isSecretReused() {
+        return Optional.ofNullable(this.isSecretReused);
+    }
+
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
@@ -487,6 +502,28 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.removeNode);
     }
 
+    @Import(name="removeNodes")
+    private @Nullable Output<List<String>> removeNodes;
+
+    public Optional<Output<List<String>>> removeNodes() {
+        return Optional.ofNullable(this.removeNodes);
+    }
+
+    /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
     @Import(name="startClusterShapeConfigs")
     private @Nullable Output<List<BdsInstanceStartClusterShapeConfigArgs>> startClusterShapeConfigs;
 
@@ -522,6 +559,21 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
+    }
+
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    @Import(name="timeEarliestCertificateExpiration")
+    private @Nullable Output<String> timeEarliestCertificateExpiration;
+
+    /**
+     * @return The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    public Optional<Output<String>> timeEarliestCertificateExpiration() {
+        return Optional.ofNullable(this.timeEarliestCertificateExpiration);
     }
 
     /**
@@ -585,6 +637,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
         this.isKafkaConfigured = $.isKafkaConfigured;
+        this.isSecretReused = $.isSecretReused;
         this.isSecure = $.isSecure;
         this.kafkaBrokerNode = $.kafkaBrokerNode;
         this.kerberosRealmName = $.kerberosRealmName;
@@ -596,9 +649,12 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         this.numberOfNodesRequiringMaintenanceReboot = $.numberOfNodesRequiringMaintenanceReboot;
         this.osPatchVersion = $.osPatchVersion;
         this.removeNode = $.removeNode;
+        this.removeNodes = $.removeNodes;
+        this.secretId = $.secretId;
         this.startClusterShapeConfigs = $.startClusterShapeConfigs;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.timeEarliestCertificateExpiration = $.timeEarliestCertificateExpiration;
         this.timeUpdated = $.timeUpdated;
         this.utilNode = $.utilNode;
         this.workerNode = $.workerNode;
@@ -696,7 +752,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
          * 
          * @return builder
          * 
@@ -707,7 +763,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         * @param clusterAdminPassword (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
          * 
          * @return builder
          * 
@@ -1058,6 +1114,27 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isSecretReused Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSecretReused(@Nullable Output<Boolean> isSecretReused) {
+            $.isSecretReused = isSecretReused;
+            return this;
+        }
+
+        /**
+         * @param isSecretReused Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSecretReused(Boolean isSecretReused) {
+            return isSecretReused(Output.of(isSecretReused));
+        }
+
+        /**
          * @param isSecure Boolean flag specifying whether or not the cluster should be setup as secure.
          * 
          * @return builder
@@ -1298,6 +1375,40 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
             return removeNode(Output.of(removeNode));
         }
 
+        public Builder removeNodes(@Nullable Output<List<String>> removeNodes) {
+            $.removeNodes = removeNodes;
+            return this;
+        }
+
+        public Builder removeNodes(List<String> removeNodes) {
+            return removeNodes(Output.of(removeNodes));
+        }
+
+        public Builder removeNodes(String... removeNodes) {
+            return removeNodes(List.of(removeNodes));
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
         public Builder startClusterShapeConfigs(@Nullable Output<List<BdsInstanceStartClusterShapeConfigArgs>> startClusterShapeConfigs) {
             $.startClusterShapeConfigs = startClusterShapeConfigs;
             return this;
@@ -1351,6 +1462,27 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeEarliestCertificateExpiration The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEarliestCertificateExpiration(@Nullable Output<String> timeEarliestCertificateExpiration) {
+            $.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
+            return this;
+        }
+
+        /**
+         * @param timeEarliestCertificateExpiration The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeEarliestCertificateExpiration(String timeEarliestCertificateExpiration) {
+            return timeEarliestCertificateExpiration(Output.of(timeEarliestCertificateExpiration));
         }
 
         /**

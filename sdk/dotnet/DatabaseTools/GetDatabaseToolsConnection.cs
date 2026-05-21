@@ -128,6 +128,10 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdvancedProperties;
         /// <summary>
+        /// Specifies the authentication type used to connect to the database.
+        /// </summary>
+        public readonly string AuthenticationType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         /// </summary>
         public readonly string CompartmentId;
@@ -181,7 +185,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string RuntimeEndpoint;
         /// <summary>
-        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         /// </summary>
         public readonly string RuntimeIdentity;
         /// <summary>
@@ -213,7 +217,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string Url;
         /// <summary>
-        /// The database user name.
+        /// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         /// </summary>
         public readonly string UserName;
         /// <summary>
@@ -224,6 +228,8 @@ namespace Pulumi.Oci.DatabaseTools
         [OutputConstructor]
         private GetDatabaseToolsConnectionResult(
             ImmutableDictionary<string, string> advancedProperties,
+
+            string authenticationType,
 
             string compartmentId,
 
@@ -274,6 +280,7 @@ namespace Pulumi.Oci.DatabaseTools
             ImmutableArray<Outputs.GetDatabaseToolsConnectionUserPasswordResult> userPasswords)
         {
             AdvancedProperties = advancedProperties;
+            AuthenticationType = authenticationType;
             CompartmentId = compartmentId;
             ConnectionString = connectionString;
             DatabaseToolsConnectionId = databaseToolsConnectionId;

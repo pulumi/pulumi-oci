@@ -13,12 +13,14 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
     [OutputType]
     public sealed class GetCertificatesCertificateCollectionItemCertificateConfigResult
     {
+        public readonly string CertChainPem;
+        public readonly string CertificatePem;
         /// <summary>
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
         /// </summary>
         public readonly string CertificateProfileType;
         /// <summary>
-        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         public readonly string ConfigType;
         public readonly string CsrPem;
@@ -30,10 +32,13 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// The algorithm used to create key pairs.
         /// </summary>
         public readonly string KeyAlgorithm;
+        public readonly string PrivateKeyPem;
+        public readonly string PrivateKeyPemPassphrase;
         /// <summary>
         /// The algorithm used to sign the public key certificate.
         /// </summary>
         public readonly string SignatureAlgorithm;
+        public readonly string Stage;
         /// <summary>
         /// A list of subject alternative names.
         /// </summary>
@@ -53,6 +58,10 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
         [OutputConstructor]
         private GetCertificatesCertificateCollectionItemCertificateConfigResult(
+            string certChainPem,
+
+            string certificatePem,
+
             string certificateProfileType,
 
             string configType,
@@ -63,7 +72,13 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string keyAlgorithm,
 
+            string privateKeyPem,
+
+            string privateKeyPemPassphrase,
+
             string signatureAlgorithm,
+
+            string stage,
 
             ImmutableArray<Outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult> subjectAlternativeNames,
 
@@ -73,12 +88,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string versionName)
         {
+            CertChainPem = certChainPem;
+            CertificatePem = certificatePem;
             CertificateProfileType = certificateProfileType;
             ConfigType = configType;
             CsrPem = csrPem;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;
             KeyAlgorithm = keyAlgorithm;
+            PrivateKeyPem = privateKeyPem;
+            PrivateKeyPemPassphrase = privateKeyPemPassphrase;
             SignatureAlgorithm = signatureAlgorithm;
+            Stage = stage;
             SubjectAlternativeNames = subjectAlternativeNames;
             Subjects = subjects;
             Validities = validities;

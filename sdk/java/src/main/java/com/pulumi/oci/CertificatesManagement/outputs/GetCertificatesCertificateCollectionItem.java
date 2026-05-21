@@ -39,10 +39,11 @@ public final class GetCertificatesCertificateCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     private String configType;
+    private String currentVersionNumber;
     /**
      * @return The details of the certificate version. This object does not contain the certificate contents.
      * 
@@ -147,11 +148,14 @@ public final class GetCertificatesCertificateCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public String configType() {
         return this.configType;
+    }
+    public String currentVersionNumber() {
+        return this.currentVersionNumber;
     }
     /**
      * @return The details of the certificate version. This object does not contain the certificate contents.
@@ -267,6 +271,7 @@ public final class GetCertificatesCertificateCollectionItem {
         private List<GetCertificatesCertificateCollectionItemCertificateRule> certificateRules;
         private String compartmentId;
         private String configType;
+        private String currentVersionNumber;
         private List<GetCertificatesCertificateCollectionItemCurrentVersion> currentVersions;
         private Map<String,String> definedTags;
         private String description;
@@ -290,6 +295,7 @@ public final class GetCertificatesCertificateCollectionItem {
     	      this.certificateRules = defaults.certificateRules;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configType = defaults.configType;
+    	      this.currentVersionNumber = defaults.currentVersionNumber;
     	      this.currentVersions = defaults.currentVersions;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -361,6 +367,14 @@ public final class GetCertificatesCertificateCollectionItem {
               throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItem", "configType");
             }
             this.configType = configType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder currentVersionNumber(String currentVersionNumber) {
+            if (currentVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItem", "currentVersionNumber");
+            }
+            this.currentVersionNumber = currentVersionNumber;
             return this;
         }
         @CustomType.Setter
@@ -489,6 +503,7 @@ public final class GetCertificatesCertificateCollectionItem {
             _resultValue.certificateRules = certificateRules;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configType = configType;
+            _resultValue.currentVersionNumber = currentVersionNumber;
             _resultValue.currentVersions = currentVersions;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

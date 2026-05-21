@@ -109,6 +109,11 @@ public final class GetBdsInstancesBdsInstance {
      */
     private Boolean isKafkaConfigured;
     /**
+     * @return Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    private Boolean isSecretReused;
+    /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
@@ -143,6 +148,12 @@ public final class GetBdsInstancesBdsInstance {
     private Integer numberOfNodesRequiringMaintenanceReboot;
     private String osPatchVersion;
     private String removeNode;
+    private List<String> removeNodes;
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    private String secretId;
     private List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
     /**
      * @return The state of the cluster.
@@ -154,6 +165,11 @@ public final class GetBdsInstancesBdsInstance {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    private String timeEarliestCertificateExpiration;
     /**
      * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
@@ -290,6 +306,13 @@ public final class GetBdsInstancesBdsInstance {
         return this.isKafkaConfigured;
     }
     /**
+     * @return Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    public Boolean isSecretReused() {
+        return this.isSecretReused;
+    }
+    /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
@@ -346,6 +369,16 @@ public final class GetBdsInstancesBdsInstance {
     public String removeNode() {
         return this.removeNode;
     }
+    public List<String> removeNodes() {
+        return this.removeNodes;
+    }
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public String secretId() {
+        return this.secretId;
+    }
     public List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs() {
         return this.startClusterShapeConfigs;
     }
@@ -362,6 +395,13 @@ public final class GetBdsInstancesBdsInstance {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    public String timeEarliestCertificateExpiration() {
+        return this.timeEarliestCertificateExpiration;
     }
     /**
      * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
@@ -408,6 +448,7 @@ public final class GetBdsInstancesBdsInstance {
         private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
         private Boolean isKafkaConfigured;
+        private Boolean isSecretReused;
         private Boolean isSecure;
         private List<GetBdsInstancesBdsInstanceKafkaBrokerNode> kafkaBrokerNodes;
         private String kerberosRealmName;
@@ -419,9 +460,12 @@ public final class GetBdsInstancesBdsInstance {
         private Integer numberOfNodesRequiringMaintenanceReboot;
         private String osPatchVersion;
         private String removeNode;
+        private List<String> removeNodes;
+        private String secretId;
         private List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs;
         private String state;
         private String timeCreated;
+        private String timeEarliestCertificateExpiration;
         private String timeUpdated;
         private List<GetBdsInstancesBdsInstanceUtilNode> utilNodes;
         private List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
@@ -450,6 +494,7 @@ public final class GetBdsInstancesBdsInstance {
     	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isKafkaConfigured = defaults.isKafkaConfigured;
+    	      this.isSecretReused = defaults.isSecretReused;
     	      this.isSecure = defaults.isSecure;
     	      this.kafkaBrokerNodes = defaults.kafkaBrokerNodes;
     	      this.kerberosRealmName = defaults.kerberosRealmName;
@@ -461,9 +506,12 @@ public final class GetBdsInstancesBdsInstance {
     	      this.numberOfNodesRequiringMaintenanceReboot = defaults.numberOfNodesRequiringMaintenanceReboot;
     	      this.osPatchVersion = defaults.osPatchVersion;
     	      this.removeNode = defaults.removeNode;
+    	      this.removeNodes = defaults.removeNodes;
+    	      this.secretId = defaults.secretId;
     	      this.startClusterShapeConfigs = defaults.startClusterShapeConfigs;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeEarliestCertificateExpiration = defaults.timeEarliestCertificateExpiration;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.utilNodes = defaults.utilNodes;
     	      this.workerNodes = defaults.workerNodes;
@@ -664,6 +712,14 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder isSecretReused(Boolean isSecretReused) {
+            if (isSecretReused == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isSecretReused");
+            }
+            this.isSecretReused = isSecretReused;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isSecure(Boolean isSecure) {
             if (isSecure == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "isSecure");
@@ -764,6 +820,25 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder removeNodes(List<String> removeNodes) {
+            if (removeNodes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "removeNodes");
+            }
+            this.removeNodes = removeNodes;
+            return this;
+        }
+        public Builder removeNodes(String... removeNodes) {
+            return removeNodes(List.of(removeNodes));
+        }
+        @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "secretId");
+            }
+            this.secretId = secretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder startClusterShapeConfigs(List<GetBdsInstancesBdsInstanceStartClusterShapeConfig> startClusterShapeConfigs) {
             if (startClusterShapeConfigs == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "startClusterShapeConfigs");
@@ -788,6 +863,14 @@ public final class GetBdsInstancesBdsInstance {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeEarliestCertificateExpiration(String timeEarliestCertificateExpiration) {
+            if (timeEarliestCertificateExpiration == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "timeEarliestCertificateExpiration");
+            }
+            this.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
             return this;
         }
         @CustomType.Setter
@@ -844,6 +927,7 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.isForceStopJobs = isForceStopJobs;
             _resultValue.isHighAvailability = isHighAvailability;
             _resultValue.isKafkaConfigured = isKafkaConfigured;
+            _resultValue.isSecretReused = isSecretReused;
             _resultValue.isSecure = isSecure;
             _resultValue.kafkaBrokerNodes = kafkaBrokerNodes;
             _resultValue.kerberosRealmName = kerberosRealmName;
@@ -855,9 +939,12 @@ public final class GetBdsInstancesBdsInstance {
             _resultValue.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
             _resultValue.osPatchVersion = osPatchVersion;
             _resultValue.removeNode = removeNode;
+            _resultValue.removeNodes = removeNodes;
+            _resultValue.secretId = secretId;
             _resultValue.startClusterShapeConfigs = startClusterShapeConfigs;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeEarliestCertificateExpiration = timeEarliestCertificateExpiration;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.utilNodes = utilNodes;
             _resultValue.workerNodes = workerNodes;

@@ -108,6 +108,21 @@ public final class BdsInstanceNodeReplaceConfigurationState extends com.pulumi.r
     }
 
     /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
      * The state of the NodeReplaceConfiguration.
      * 
      */
@@ -161,6 +176,7 @@ public final class BdsInstanceNodeReplaceConfigurationState extends com.pulumi.r
         this.durationInMinutes = $.durationInMinutes;
         this.levelTypeDetails = $.levelTypeDetails;
         this.metricType = $.metricType;
+        this.secretId = $.secretId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -308,6 +324,27 @@ public final class BdsInstanceNodeReplaceConfigurationState extends com.pulumi.r
          */
         public Builder metricType(String metricType) {
             return metricType(Output.of(metricType));
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
         }
 
         /**

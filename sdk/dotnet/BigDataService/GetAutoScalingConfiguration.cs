@@ -166,6 +166,10 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailResult> PolicyDetails;
         /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        public readonly string SecretId;
+        /// <summary>
         /// The state of the autoscale configuration.
         /// </summary>
         public readonly string State;
@@ -198,6 +202,8 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailResult> policyDetails,
 
+            string secretId,
+
             string state,
 
             string timeCreated,
@@ -213,6 +219,7 @@ namespace Pulumi.Oci.BigDataService
             NodeType = nodeType;
             Policies = policies;
             PolicyDetails = policyDetails;
+            SecretId = secretId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

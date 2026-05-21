@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstancePatchAction = new oci.bigdataservice.BdsInstancePatchAction("test_bds_instance_patch_action", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: bdsInstancePatchActionClusterAdminPassword,
  *     version: bdsInstancePatchActionVersion,
+ *     clusterAdminPassword: bdsInstancePatchActionClusterAdminPassword,
  *     patchingConfig: {
  *         patchingConfigStrategy: bdsInstancePatchActionPatchingConfigPatchingConfigStrategy,
  *         batchSize: Number(bdsInstancePatchActionPatchingConfigBatchSize),
@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *         waitTimeBetweenBatchInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds),
  *         waitTimeBetweenDomainInSeconds: Number(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds),
  *     },
+ *     secretId: testSecret.id,
  * });
  * ```
  *

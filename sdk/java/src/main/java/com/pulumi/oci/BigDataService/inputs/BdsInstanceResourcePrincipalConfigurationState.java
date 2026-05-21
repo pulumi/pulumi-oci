@@ -77,6 +77,21 @@ public final class BdsInstanceResourcePrincipalConfigurationState extends com.pu
     }
 
     /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
+    /**
      * (Updatable) Life span in hours for the resource principal session token.
      * 
      */
@@ -173,6 +188,7 @@ public final class BdsInstanceResourcePrincipalConfigurationState extends com.pu
         this.clusterAdminPassword = $.clusterAdminPassword;
         this.displayName = $.displayName;
         this.forceRefreshResourcePrincipalTrigger = $.forceRefreshResourcePrincipalTrigger;
+        this.secretId = $.secretId;
         this.sessionTokenLifeSpanDurationInHours = $.sessionTokenLifeSpanDurationInHours;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -281,6 +297,27 @@ public final class BdsInstanceResourcePrincipalConfigurationState extends com.pu
          */
         public Builder forceRefreshResourcePrincipalTrigger(Integer forceRefreshResourcePrincipalTrigger) {
             return forceRefreshResourcePrincipalTrigger(Output.of(forceRefreshResourcePrincipalTrigger));
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
         }
 
         /**

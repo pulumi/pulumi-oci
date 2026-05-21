@@ -41,6 +41,7 @@ namespace Pulumi.Oci.CertificatesManagement
     ///             PrivateKeyPem = certificateCertificateConfigPrivateKeyPem,
     ///             PrivateKeyPemPassphrase = certificateCertificateConfigPrivateKeyPemPassphrase,
     ///             SignatureAlgorithm = certificateCertificateConfigSignatureAlgorithm,
+    ///             Stage = certificateCertificateConfigStage,
     ///             Subject = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigSubjectArgs
     ///             {
     ///                 CommonName = certificateCertificateConfigSubjectCommonName,
@@ -143,10 +144,16 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         [Output("configType")]
         public Output<string> ConfigType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The target current certificate version number. This update cannot be combined with updates to `CertificateConfig`, `Description`, `DefinedTags`, `FreeformTags`, or `CertificateRules`.
+        /// </summary>
+        [Output("currentVersionNumber")]
+        public Output<string> CurrentVersionNumber { get; private set; } = null!;
 
         /// <summary>
         /// The details of the certificate version. This object does not contain the certificate contents.
@@ -300,6 +307,12 @@ namespace Pulumi.Oci.CertificatesManagement
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The target current certificate version number. This update cannot be combined with updates to `CertificateConfig`, `Description`, `DefinedTags`, `FreeformTags`, or `CertificateRules`.
+        /// </summary>
+        [Input("currentVersionNumber")]
+        public Input<string>? CurrentVersionNumber { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -391,10 +404,16 @@ namespace Pulumi.Oci.CertificatesManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The target current certificate version number. This update cannot be combined with updates to `CertificateConfig`, `Description`, `DefinedTags`, `FreeformTags`, or `CertificateRules`.
+        /// </summary>
+        [Input("currentVersionNumber")]
+        public Input<string>? CurrentVersionNumber { get; set; }
 
         [Input("currentVersions")]
         private InputList<Inputs.CertificateCurrentVersionGetArgs>? _currentVersions;

@@ -23,10 +23,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection":
 		r = &DatabaseToolsConnection{}
+	case "oci:DatabaseTools/databaseToolsDatabaseApiGatewayConfig:DatabaseToolsDatabaseApiGatewayConfig":
+		r = &DatabaseToolsDatabaseApiGatewayConfig{}
 	case "oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity":
 		r = &DatabaseToolsIdentity{}
+	case "oci:DatabaseTools/databaseToolsMcpServer:DatabaseToolsMcpServer":
+		r = &DatabaseToolsMcpServer{}
+	case "oci:DatabaseTools/databaseToolsMcpToolset:DatabaseToolsMcpToolset":
+		r = &DatabaseToolsMcpToolset{}
 	case "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint":
 		r = &DatabaseToolsPrivateEndpoint{}
+	case "oci:DatabaseTools/databaseToolsSqlReport:DatabaseToolsSqlReport":
+		r = &DatabaseToolsSqlReport{}
 	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential":
 		r = &RuntimeDatabaseToolsConnectionCredential{}
 	case "oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee":
@@ -63,12 +71,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseTools/databaseToolsDatabaseApiGatewayConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseTools/databaseToolsIdentity",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseTools/databaseToolsMcpServer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/databaseToolsMcpToolset",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseTools/databaseToolsPrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/databaseToolsSqlReport",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

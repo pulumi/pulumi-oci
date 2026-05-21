@@ -27,10 +27,13 @@ class GetDatabaseToolsConnectionResult:
     """
     A collection of values returned by getDatabaseToolsConnection.
     """
-    def __init__(__self__, advanced_properties=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, locks=None, private_endpoint_id=None, proxy_clients=None, related_resources=None, runtime_endpoint=None, runtime_identity=None, runtime_support=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, url=None, user_name=None, user_passwords=None):
+    def __init__(__self__, advanced_properties=None, authentication_type=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, locks=None, private_endpoint_id=None, proxy_clients=None, related_resources=None, runtime_endpoint=None, runtime_identity=None, runtime_support=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, url=None, user_name=None, user_passwords=None):
         if advanced_properties and not isinstance(advanced_properties, dict):
             raise TypeError("Expected argument 'advanced_properties' to be a dict")
         pulumi.set(__self__, "advanced_properties", advanced_properties)
+        if authentication_type and not isinstance(authentication_type, str):
+            raise TypeError("Expected argument 'authentication_type' to be a str")
+        pulumi.set(__self__, "authentication_type", authentication_type)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -111,6 +114,14 @@ class GetDatabaseToolsConnectionResult:
         The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> _builtins.str:
+        """
+        Specifies the authentication type used to connect to the database.
+        """
+        return pulumi.get(self, "authentication_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -225,7 +236,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="runtimeIdentity")
     def runtime_identity(self) -> _builtins.str:
         """
-        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         """
         return pulumi.get(self, "runtime_identity")
 
@@ -289,7 +300,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> _builtins.str:
         """
-        The database user name.
+        The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         """
         return pulumi.get(self, "user_name")
 
@@ -309,6 +320,7 @@ class AwaitableGetDatabaseToolsConnectionResult(GetDatabaseToolsConnectionResult
             yield self
         return GetDatabaseToolsConnectionResult(
             advanced_properties=self.advanced_properties,
+            authentication_type=self.authentication_type,
             compartment_id=self.compartment_id,
             connection_string=self.connection_string,
             database_tools_connection_id=self.database_tools_connection_id,
@@ -361,6 +373,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[_builti
 
     return AwaitableGetDatabaseToolsConnectionResult(
         advanced_properties=pulumi.get(__ret__, 'advanced_properties'),
+        authentication_type=pulumi.get(__ret__, 'authentication_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_string=pulumi.get(__ret__, 'connection_string'),
         database_tools_connection_id=pulumi.get(__ret__, 'database_tools_connection_id'),
@@ -410,6 +423,7 @@ def get_database_tools_connection_output(database_tools_connection_id: pulumi.In
     __ret__ = pulumi.runtime.invoke_output('oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection', __args__, opts=opts, typ=GetDatabaseToolsConnectionResult)
     return __ret__.apply(lambda __response__: GetDatabaseToolsConnectionResult(
         advanced_properties=pulumi.get(__response__, 'advanced_properties'),
+        authentication_type=pulumi.get(__response__, 'authentication_type'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_string=pulumi.get(__response__, 'connection_string'),
         database_tools_connection_id=pulumi.get(__response__, 'database_tools_connection_id'),

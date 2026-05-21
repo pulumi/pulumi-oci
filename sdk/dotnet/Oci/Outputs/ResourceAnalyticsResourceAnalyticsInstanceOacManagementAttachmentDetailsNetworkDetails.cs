@@ -13,7 +13,17 @@ namespace Pulumi.Oci.Oci.Outputs
     [OutputType]
     public sealed class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails
     {
+        /// <summary>
+        /// List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         public readonly string? SubnetId;
 
         [OutputConstructor]

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? MasterEncryptionKeyId { get; set; }
 
         /// <summary>
-        /// Secret ID for token exchange keytab
+        /// (Updatable) The secretId for the clusterAdminPassword.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }

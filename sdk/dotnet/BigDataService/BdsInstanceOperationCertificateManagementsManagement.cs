@@ -29,10 +29,10 @@ namespace Pulumi.Oci.BigDataService
     ///     var testBdsInstanceOperationCertificateManagementsManagement = new Oci.BigDataService.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
     ///         Services = bdsInstanceOperationCertificateManagementsManagementServices,
     ///         EnableOperationCertificateManagement = enableOperationCertificateManagement,
     ///         RenewOperationCertificateManagement = renewOperationCertificateManagement,
+    ///         ClusterAdminPassword = bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
     ///         HostCertDetails = new[]
     ///         {
     ///             new Oci.BigDataService.Inputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs
@@ -43,6 +43,7 @@ namespace Pulumi.Oci.BigDataService
     ///             },
     ///         },
     ///         RootCertificate = bdsInstanceOperationCertificateManagementsManagementRootCertificate,
+    ///         SecretId = testSecret.Id,
     ///         ServerKeyPassword = bdsInstanceOperationCertificateManagementsManagementServerKeyPassword,
     ///     });
     /// 

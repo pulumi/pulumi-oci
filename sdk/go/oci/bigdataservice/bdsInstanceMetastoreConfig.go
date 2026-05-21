@@ -37,9 +37,10 @@ import (
 //				BdsApiKeyId:          pulumi.Any(testApiKey.Id),
 //				BdsApiKeyPassphrase:  pulumi.Any(bdsInstanceMetastoreConfigBdsApiKeyPassphrase),
 //				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword: pulumi.Any(bdsInstanceMetastoreConfigClusterAdminPassword),
 //				MetastoreId:          pulumi.Any(testMetastore.Id),
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceMetastoreConfigClusterAdminPassword),
 //				DisplayName:          pulumi.Any(bdsInstanceMetastoreConfigDisplayName),
+//				SecretId:             testSecret.Id,
 //			})
 //			if err != nil {
 //				return err

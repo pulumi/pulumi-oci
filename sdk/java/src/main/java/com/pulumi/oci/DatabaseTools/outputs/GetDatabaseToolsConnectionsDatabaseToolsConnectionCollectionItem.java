@@ -23,6 +23,11 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private Map<String,String> advancedProperties;
     /**
+     * @return Specifies the authentication type used to connect to the database.
+     * 
+     */
+    private String authenticationType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
@@ -128,7 +133,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private String url;
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     private String userName;
@@ -145,6 +150,13 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     public Map<String,String> advancedProperties() {
         return this.advancedProperties;
+    }
+    /**
+     * @return Specifies the authentication type used to connect to the database.
+     * 
+     */
+    public String authenticationType() {
+        return this.authenticationType;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -294,7 +306,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.url;
     }
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     public String userName() {
@@ -318,6 +330,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> advancedProperties;
+        private String authenticationType;
         private String compartmentId;
         private String connectionString;
         private Map<String,String> definedTags;
@@ -345,6 +358,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         public Builder(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advancedProperties = defaults.advancedProperties;
+    	      this.authenticationType = defaults.authenticationType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionString = defaults.connectionString;
     	      this.definedTags = defaults.definedTags;
@@ -376,6 +390,14 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
               throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "advancedProperties");
             }
             this.advancedProperties = advancedProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder authenticationType(String authenticationType) {
+            if (authenticationType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "authenticationType");
+            }
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
@@ -580,6 +602,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem build() {
             final var _resultValue = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem();
             _resultValue.advancedProperties = advancedProperties;
+            _resultValue.authenticationType = authenticationType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionString = connectionString;
             _resultValue.definedTags = definedTags;

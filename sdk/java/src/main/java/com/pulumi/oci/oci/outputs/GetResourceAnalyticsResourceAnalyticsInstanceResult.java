@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
      * 
      */
     private String compartmentId;
+    private Integer computeCount;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -103,6 +105,9 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Integer computeCount() {
+        return this.computeCount;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -209,6 +214,7 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
         private List<GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword> adwAdminPasswords;
         private String adwId;
         private String compartmentId;
+        private Integer computeCount;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -231,6 +237,7 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
     	      this.adwAdminPasswords = defaults.adwAdminPasswords;
     	      this.adwId = defaults.adwId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeCount = defaults.computeCount;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -274,6 +281,14 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
               throw new MissingRequiredPropertyException("GetResourceAnalyticsResourceAnalyticsInstanceResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeCount(Integer computeCount) {
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetResourceAnalyticsResourceAnalyticsInstanceResult", "computeCount");
+            }
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
@@ -412,6 +427,7 @@ public final class GetResourceAnalyticsResourceAnalyticsInstanceResult {
             _resultValue.adwAdminPasswords = adwAdminPasswords;
             _resultValue.adwId = adwId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCount = computeCount;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

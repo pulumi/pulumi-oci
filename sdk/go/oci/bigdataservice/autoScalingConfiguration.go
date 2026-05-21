@@ -35,9 +35,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &bigdataservice.AutoScalingConfigurationArgs{
 //				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword: pulumi.Any(autoScalingConfigurationClusterAdminPassword),
 //				IsEnabled:            pulumi.Any(autoScalingConfigurationIsEnabled),
 //				NodeType:             pulumi.Any(autoScalingConfigurationNodeType),
+//				ClusterAdminPassword: pulumi.Any(autoScalingConfigurationClusterAdminPassword),
 //				DisplayName:          pulumi.Any(autoScalingConfigurationDisplayName),
 //				PolicyDetails: &bigdataservice.AutoScalingConfigurationPolicyDetailsArgs{
 //					PolicyType: pulumi.Any(autoScalingConfigurationPolicyDetailsPolicyType),
@@ -70,6 +70,7 @@ import (
 //						OcpuStepSize: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize),
 //					},
 //				},
+//				SecretId: pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -114,6 +115,11 @@ type AutoScalingConfiguration struct {
 	//
 	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsOutput `pulumi:"policyDetails"`
+	// (Updatable) The secretId for the clusterAdminPassword.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecretId pulumi.StringOutput `pulumi:"secretId"`
 	// The state of the autoscale configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -132,9 +138,6 @@ func NewAutoScalingConfiguration(ctx *pulumi.Context,
 	if args.BdsInstanceId == nil {
 		return nil, errors.New("invalid value for required argument 'BdsInstanceId'")
 	}
-	if args.ClusterAdminPassword == nil {
-		return nil, errors.New("invalid value for required argument 'ClusterAdminPassword'")
-	}
 	if args.IsEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'IsEnabled'")
 	}
@@ -142,7 +145,7 @@ func NewAutoScalingConfiguration(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'NodeType'")
 	}
 	if args.ClusterAdminPassword != nil {
-		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"clusterAdminPassword",
@@ -195,6 +198,11 @@ type autoScalingConfigurationState struct {
 	//
 	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
+	// (Updatable) The secretId for the clusterAdminPassword.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecretId *string `pulumi:"secretId"`
 	// The state of the autoscale configuration.
 	State *string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -228,6 +236,11 @@ type AutoScalingConfigurationState struct {
 	//
 	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
+	// (Updatable) The secretId for the clusterAdminPassword.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecretId pulumi.StringPtrInput
 	// The state of the autoscale configuration.
 	State pulumi.StringPtrInput
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -244,7 +257,7 @@ type autoScalingConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Whether the autoscale configuration is enabled.
@@ -265,6 +278,11 @@ type autoScalingConfigurationArgs struct {
 	//
 	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails *AutoScalingConfigurationPolicyDetails `pulumi:"policyDetails"`
+	// (Updatable) The secretId for the clusterAdminPassword.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecretId *string `pulumi:"secretId"`
 }
 
 // The set of arguments for constructing a AutoScalingConfiguration resource.
@@ -272,7 +290,7 @@ type AutoScalingConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput
 	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-	ClusterAdminPassword pulumi.StringInput
+	ClusterAdminPassword pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Whether the autoscale configuration is enabled.
@@ -293,6 +311,11 @@ type AutoScalingConfigurationArgs struct {
 	//
 	// An autoscaling configuration can have one of above supported policies.
 	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrInput
+	// (Updatable) The secretId for the clusterAdminPassword.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecretId pulumi.StringPtrInput
 }
 
 func (AutoScalingConfigurationArgs) ElementType() reflect.Type {
@@ -425,6 +448,14 @@ func (o AutoScalingConfigurationOutput) Policy() AutoScalingConfigurationPolicyO
 // An autoscaling configuration can have one of above supported policies.
 func (o AutoScalingConfigurationOutput) PolicyDetails() AutoScalingConfigurationPolicyDetailsOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyDetailsOutput { return v.PolicyDetails }).(AutoScalingConfigurationPolicyDetailsOutput)
+}
+
+// (Updatable) The secretId for the clusterAdminPassword.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AutoScalingConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // The state of the autoscale configuration.

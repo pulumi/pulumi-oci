@@ -22,19 +22,20 @@ __all__ = ['AutoScalingConfigurationArgs', 'AutoScalingConfiguration']
 class AutoScalingConfigurationArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[_builtins.str],
-                 cluster_admin_password: pulumi.Input[_builtins.str],
                  is_enabled: pulumi.Input[_builtins.bool],
                  node_type: pulumi.Input[_builtins.str],
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']] = None,
-                 policy_details: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']] = None):
+                 policy_details: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
 
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
         :param pulumi.Input[_builtins.str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
@@ -48,17 +49,25 @@ class AutoScalingConfigurationArgs:
                * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
                
                An autoscaling configuration can have one of above supported policies.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "node_type", node_type)
+        if cluster_admin_password is not None:
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if policy is not None:
             pulumi.set(__self__, "policy", policy)
         if policy_details is not None:
             pulumi.set(__self__, "policy_details", policy_details)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
@@ -71,18 +80,6 @@ class AutoScalingConfigurationArgs:
     @bds_instance_id.setter
     def bds_instance_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "bds_instance_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        """
-        return pulumi.get(self, "cluster_admin_password")
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
@@ -107,6 +104,18 @@ class AutoScalingConfigurationArgs:
     @node_type.setter
     def node_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "node_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        """
+        return pulumi.get(self, "cluster_admin_password")
+
+    @cluster_admin_password.setter
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -154,6 +163,22 @@ class AutoScalingConfigurationArgs:
     def policy_details(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']]):
         pulumi.set(self, "policy_details", value)
 
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The secretId for the clusterAdminPassword.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
 
 @pulumi.input_type
 class _AutoScalingConfigurationState:
@@ -165,6 +190,7 @@ class _AutoScalingConfigurationState:
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']] = None,
                  policy_details: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
@@ -188,6 +214,11 @@ class _AutoScalingConfigurationState:
                * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
                
                An autoscaling configuration can have one of above supported policies.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The state of the autoscale configuration.
         :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -206,6 +237,8 @@ class _AutoScalingConfigurationState:
             pulumi.set(__self__, "policy", policy)
         if policy_details is not None:
             pulumi.set(__self__, "policy_details", policy_details)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -308,6 +341,22 @@ class _AutoScalingConfigurationState:
         pulumi.set(self, "policy_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The secretId for the clusterAdminPassword.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -357,6 +406,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
                  policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -374,9 +424,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
 
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
             is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
+            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
@@ -408,7 +458,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     },
                     "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -439,6 +490,11 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
                
                An autoscaling configuration can have one of above supported policies.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -462,9 +518,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
 
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
             is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
+            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
@@ -496,7 +552,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     },
                     "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
-            })
+            },
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -530,6 +587,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  node_type: pulumi.Input[Optional[_builtins.str]] = None,
                  policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
                  policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -542,8 +600,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             if bds_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'bds_instance_id'")
             __props__.__dict__["bds_instance_id"] = bds_instance_id
-            if cluster_admin_password is None and not opts.urn:
-                raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
             __props__.__dict__["display_name"] = display_name
             if is_enabled is None and not opts.urn:
@@ -554,6 +610,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             __props__.__dict__["node_type"] = node_type
             __props__.__dict__["policy"] = policy
             __props__.__dict__["policy_details"] = policy_details
+            __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -576,6 +633,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             node_type: pulumi.Input[Optional[_builtins.str]] = None,
             policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
             policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutoScalingConfiguration':
@@ -603,6 +661,11 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
                
                An autoscaling configuration can have one of above supported policies.
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The state of the autoscale configuration.
         :param pulumi.Input[_builtins.str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
@@ -618,6 +681,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         __props__.__dict__["node_type"] = node_type
         __props__.__dict__["policy"] = policy
         __props__.__dict__["policy_details"] = policy_details
+        __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -688,6 +752,18 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         An autoscaling configuration can have one of above supported policies.
         """
         return pulumi.get(self, "policy_details")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The secretId for the clusterAdminPassword.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter

@@ -30,7 +30,6 @@ namespace Pulumi.Oci.BigDataService
     ///     var testBdsInstanceNodeReplaceConfiguration = new Oci.BigDataService.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
     ///         DurationInMinutes = bdsInstanceNodeReplaceConfigurationDurationInMinutes,
     ///         LevelTypeDetails = new Oci.BigDataService.Inputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs
     ///         {
@@ -39,7 +38,9 @@ namespace Pulumi.Oci.BigDataService
     ///             NodeType = bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeType,
     ///         },
     ///         MetricType = bdsInstanceNodeReplaceConfigurationMetricType,
+    ///         ClusterAdminPassword = bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
     ///         DisplayName = bdsInstanceNodeReplaceConfigurationDisplayName,
+    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });
@@ -91,6 +92,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("metricType")]
         public Output<string> MetricType { get; private set; } = null!;
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// The state of the NodeReplaceConfiguration.
@@ -166,7 +173,7 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
-        [Input("clusterAdminPassword", required: true)]
+        [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
@@ -205,6 +212,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("metricType", required: true)]
         public Input<string> MetricType { get; set; } = null!;
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         public BdsInstanceNodeReplaceConfigurationArgs()
         {
@@ -259,6 +272,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("metricType")]
         public Input<string>? MetricType { get; set; }
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// The state of the NodeReplaceConfiguration.

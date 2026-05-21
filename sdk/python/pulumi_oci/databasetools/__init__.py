@@ -7,16 +7,29 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .database_tools_connection import *
+from .database_tools_database_api_gateway_config import *
 from .database_tools_identity import *
+from .database_tools_mcp_server import *
+from .database_tools_mcp_toolset import *
 from .database_tools_private_endpoint import *
+from .database_tools_sql_report import *
 from .get_database_tools_connection import *
 from .get_database_tools_connections import *
+from .get_database_tools_database_api_gateway_config import *
+from .get_database_tools_database_api_gateway_configs import *
 from .get_database_tools_endpoint_service import *
 from .get_database_tools_endpoint_services import *
 from .get_database_tools_identities import *
 from .get_database_tools_identity import *
+from .get_database_tools_mcp_server import *
+from .get_database_tools_mcp_servers import *
+from .get_database_tools_mcp_toolset import *
+from .get_database_tools_mcp_toolset_versions import *
+from .get_database_tools_mcp_toolsets import *
 from .get_database_tools_private_endpoint import *
 from .get_database_tools_private_endpoints import *
+from .get_database_tools_sql_report import *
+from .get_database_tools_sql_reports import *
 from .get_runtime_database_tools_connection_credential import *
 from .get_runtime_database_tools_connection_credential_execute_grantee import *
 from .get_runtime_database_tools_connection_credential_execute_grantees import *

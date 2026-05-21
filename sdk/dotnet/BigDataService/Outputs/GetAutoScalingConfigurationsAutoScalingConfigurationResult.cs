@@ -21,6 +21,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         public readonly string NodeType;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult> Policies;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult> PolicyDetails;
+        public readonly string SecretId;
         public readonly string State;
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
@@ -43,6 +44,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailResult> policyDetails,
 
+            string secretId,
+
             string state,
 
             string timeCreated,
@@ -57,6 +60,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             NodeType = nodeType;
             Policies = policies;
             PolicyDetails = policyDetails;
+            SecretId = secretId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

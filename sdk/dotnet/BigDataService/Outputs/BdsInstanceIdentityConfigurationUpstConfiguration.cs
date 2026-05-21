@@ -22,7 +22,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? MasterEncryptionKeyId;
         /// <summary>
-        /// Secret ID for token exchange keytab
+        /// (Updatable) The secretId for the clusterAdminPassword.
         /// </summary>
         public readonly string? SecretId;
         /// <summary>

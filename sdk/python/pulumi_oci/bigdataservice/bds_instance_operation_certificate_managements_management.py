@@ -333,16 +333,17 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
 
         test_bds_instance_operation_certificate_managements_management = oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
             enable_operation_certificate_management=enable_operation_certificate_management == "true",
             renew_operation_certificate_management=renew_operation_certificate_management == "true",
+            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
                 "private_key": bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
             }],
             root_certificate=bds_instance_operation_certificate_managements_management_root_certificate,
+            secret_id=test_secret["id"],
             server_key_password=bds_instance_operation_certificate_managements_management_server_key_password)
         ```
 
@@ -383,16 +384,17 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
 
         test_bds_instance_operation_certificate_managements_management = oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
             enable_operation_certificate_management=enable_operation_certificate_management == "true",
             renew_operation_certificate_management=renew_operation_certificate_management == "true",
+            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
                 "private_key": bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
             }],
             root_certificate=bds_instance_operation_certificate_managements_management_root_certificate,
+            secret_id=test_secret["id"],
             server_key_password=bds_instance_operation_certificate_managements_management_server_key_password)
         ```
 

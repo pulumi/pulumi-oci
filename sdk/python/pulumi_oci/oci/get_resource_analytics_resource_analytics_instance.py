@@ -27,7 +27,7 @@ class GetResourceAnalyticsResourceAnalyticsInstanceResult:
     """
     A collection of values returned by getResourceAnalyticsResourceAnalyticsInstance.
     """
-    def __init__(__self__, adw_admin_passwords=None, adw_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_mutual_tls_required=None, license_model=None, lifecycle_details=None, nsg_ids=None, oac_id=None, resource_analytics_instance_id=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, adw_admin_passwords=None, adw_id=None, compartment_id=None, compute_count=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_mutual_tls_required=None, license_model=None, lifecycle_details=None, nsg_ids=None, oac_id=None, resource_analytics_instance_id=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if adw_admin_passwords and not isinstance(adw_admin_passwords, list):
             raise TypeError("Expected argument 'adw_admin_passwords' to be a list")
         pulumi.set(__self__, "adw_admin_passwords", adw_admin_passwords)
@@ -37,6 +37,9 @@ class GetResourceAnalyticsResourceAnalyticsInstanceResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_count and not isinstance(compute_count, int):
+            raise TypeError("Expected argument 'compute_count' to be a int")
+        pulumi.set(__self__, "compute_count", compute_count)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -106,6 +109,11 @@ class GetResourceAnalyticsResourceAnalyticsInstanceResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> _builtins.int:
+        return pulumi.get(self, "compute_count")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -230,6 +238,7 @@ class AwaitableGetResourceAnalyticsResourceAnalyticsInstanceResult(GetResourceAn
             adw_admin_passwords=self.adw_admin_passwords,
             adw_id=self.adw_id,
             compartment_id=self.compartment_id,
+            compute_count=self.compute_count,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -276,6 +285,7 @@ def get_resource_analytics_resource_analytics_instance(resource_analytics_instan
         adw_admin_passwords=pulumi.get(__ret__, 'adw_admin_passwords'),
         adw_id=pulumi.get(__ret__, 'adw_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compute_count=pulumi.get(__ret__, 'compute_count'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -319,6 +329,7 @@ def get_resource_analytics_resource_analytics_instance_output(resource_analytics
         adw_admin_passwords=pulumi.get(__response__, 'adw_admin_passwords'),
         adw_id=pulumi.get(__response__, 'adw_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compute_count=pulumi.get(__response__, 'compute_count'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),

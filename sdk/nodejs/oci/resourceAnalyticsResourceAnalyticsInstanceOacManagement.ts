@@ -6,6 +6,35 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * Attaches an OAC instance to a ResourceAnalyticsInstance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResourceAnalyticsInstanceOacManagement = new oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management", {
+ *     attachmentType: resourceAnalyticsInstanceOacManagementAttachmentType,
+ *     resourceAnalyticsInstanceId: testResourceAnalyticsInstance.id,
+ *     enableOac: enableOac === "true",
+ *     attachmentDetails: {
+ *         idcsDomainId: testDomain.id,
+ *         capacityType: resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityType,
+ *         capacityValue: Number(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue),
+ *         licenseModel: resourceAnalyticsInstanceOacManagementAttachmentDetailsLicenseModel,
+ *         networkDetails: {
+ *             subnetId: testSubnet.id,
+ *             nsgIds: resourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsNsgIds,
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends pulumi.CustomResource {
     /**
      * Get an existing ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource's state with the given name, ID, and optional extra
@@ -34,10 +63,25 @@ export class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends pul
         return obj['__pulumiType'] === ResourceAnalyticsResourceAnalyticsInstanceOacManagement.__pulumiType;
     }
 
+    /**
+     * Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+     */
     declare public readonly attachmentDetails: pulumi.Output<outputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails>;
+    /**
+     * The type of attachment the OAC instance is using. Example: `MANAGED`
+     */
     declare public readonly attachmentType: pulumi.Output<string>;
+    /**
+     * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     */
     declare public readonly enableOac: pulumi.Output<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     */
     declare public readonly resourceAnalyticsInstanceId: pulumi.Output<string>;
+    /**
+     * The current state of the ResourceAnalyticsInstance.
+     */
     declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
@@ -81,10 +125,25 @@ export class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends pul
  * Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstanceOacManagement resources.
  */
 export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementState {
+    /**
+     * Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+     */
     attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails | undefined>;
+    /**
+     * The type of attachment the OAC instance is using. Example: `MANAGED`
+     */
     attachmentType?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     */
     enableOac?: pulumi.Input<boolean | undefined>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     */
     resourceAnalyticsInstanceId?: pulumi.Input<string | undefined>;
+    /**
+     * The current state of the ResourceAnalyticsInstance.
+     */
     state?: pulumi.Input<string | undefined>;
 }
 
@@ -92,8 +151,20 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementState {
  * The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource.
  */
 export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs {
+    /**
+     * Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+     */
     attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails | undefined>;
+    /**
+     * The type of attachment the OAC instance is using. Example: `MANAGED`
+     */
     attachmentType?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     */
     enableOac: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     */
     resourceAnalyticsInstanceId: pulumi.Input<string>;
 }

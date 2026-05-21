@@ -43,6 +43,8 @@ __all__ = [
     'BatchBatchTaskEnvironmentVolumeArgsDict',
     'BatchBatchTaskProfileExtendedInformationArgs',
     'BatchBatchTaskProfileExtendedInformationArgsDict',
+    'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs',
+    'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs',
@@ -245,6 +247,10 @@ __all__ = [
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs',
     'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict',
+    'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs',
+    'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict',
+    'ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs',
+    'ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgsDict',
     'SelfSubscriptionAdditionalDetailArgs',
     'SelfSubscriptionAdditionalDetailArgsDict',
     'SelfSubscriptionSubscriptionDetailsArgs',
@@ -281,6 +287,14 @@ __all__ = [
     'GetBatchBatchTaskEnvironmentsFilterArgsDict',
     'GetBatchBatchTaskProfilesFilterArgs',
     'GetBatchBatchTaskProfilesFilterArgsDict',
+    'GetCostadCostAlertSubscriptionsFilterArgs',
+    'GetCostadCostAlertSubscriptionsFilterArgsDict',
+    'GetCostadCostAnomalyEventAnalyticsFilterArgs',
+    'GetCostadCostAnomalyEventAnalyticsFilterArgsDict',
+    'GetCostadCostAnomalyEventsFilterArgs',
+    'GetCostadCostAnomalyEventsFilterArgsDict',
+    'GetCostadCostAnomalyMonitorsFilterArgs',
+    'GetCostadCostAnomalyMonitorsFilterArgsDict',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs',
@@ -1465,6 +1479,95 @@ class BatchBatchTaskProfileExtendedInformationArgs:
     @shape_name.setter
     def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
+
+
+class CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict(TypedDict):
+    cost_alert_subscription_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+    """
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The filter operator. Example: 'AND', 'OR'.
+    """
+    threshold_absolute_value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The absolute threshold value.
+    """
+    threshold_relative_percent: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The relative percentage threshold value.
+    """
+
+@pulumi.input_type
+class CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs:
+    def __init__(__self__, *,
+                 cost_alert_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold_absolute_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 threshold_relative_percent: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cost_alert_subscription_id: (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+        :param pulumi.Input[_builtins.str] operator: (Updatable) The filter operator. Example: 'AND', 'OR'.
+        :param pulumi.Input[_builtins.int] threshold_absolute_value: (Updatable) The absolute threshold value.
+        :param pulumi.Input[_builtins.int] threshold_relative_percent: (Updatable) The relative percentage threshold value.
+        """
+        if cost_alert_subscription_id is not None:
+            pulumi.set(__self__, "cost_alert_subscription_id", cost_alert_subscription_id)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if threshold_absolute_value is not None:
+            pulumi.set(__self__, "threshold_absolute_value", threshold_absolute_value)
+        if threshold_relative_percent is not None:
+            pulumi.set(__self__, "threshold_relative_percent", threshold_relative_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="costAlertSubscriptionId")
+    def cost_alert_subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+        """
+        return pulumi.get(self, "cost_alert_subscription_id")
+
+    @cost_alert_subscription_id.setter
+    def cost_alert_subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cost_alert_subscription_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The filter operator. Example: 'AND', 'OR'.
+        """
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "operator", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdAbsoluteValue")
+    def threshold_absolute_value(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The absolute threshold value.
+        """
+        return pulumi.get(self, "threshold_absolute_value")
+
+    @threshold_absolute_value.setter
+    def threshold_absolute_value(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threshold_absolute_value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdRelativePercent")
+    def threshold_relative_percent(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The relative percentage threshold value.
+        """
+        return pulumi.get(self, "threshold_relative_percent")
+
+    @threshold_relative_percent.setter
+    def threshold_relative_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threshold_relative_percent", value)
 
 
 class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
@@ -12391,20 +12494,66 @@ class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs:
 
 
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict(TypedDict):
+    capacity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The capacity model to use for the Analytics Instance.
+    """
+    capacity_value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+    """
     idcs_domain_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+    """
     license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Oracle license model that applies to the OAC instance.
+    """
     network_details: NotRequired[pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']]]
+    """
+    Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
+    """
     nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+    """
     subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs:
     def __init__(__self__, *,
+                 capacity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_value: pulumi.Input[Optional[_builtins.int]] = None,
                  idcs_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  network_details: pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] capacity_type: The capacity model to use for the Analytics Instance.
+        :param pulumi.Input[_builtins.int] capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+        :param pulumi.Input[_builtins.str] idcs_domain_id: IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+        :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the OAC instance.
+        :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs'] network_details: Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if capacity_type is not None:
+            pulumi.set(__self__, "capacity_type", capacity_type)
+        if capacity_value is not None:
+            pulumi.set(__self__, "capacity_value", capacity_value)
         if idcs_domain_id is not None:
             pulumi.set(__self__, "idcs_domain_id", idcs_domain_id)
         if license_model is not None:
@@ -12417,8 +12566,35 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
             pulumi.set(__self__, "subnet_id", subnet_id)
 
     @_builtins.property
+    @pulumi.getter(name="capacityType")
+    def capacity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The capacity model to use for the Analytics Instance.
+        """
+        return pulumi.get(self, "capacity_type")
+
+    @capacity_type.setter
+    def capacity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityValue")
+    def capacity_value(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+        """
+        return pulumi.get(self, "capacity_value")
+
+    @capacity_value.setter
+    def capacity_value(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "capacity_value", value)
+
+    @_builtins.property
     @pulumi.getter(name="idcsDomainId")
     def idcs_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+        """
         return pulumi.get(self, "idcs_domain_id")
 
     @idcs_domain_id.setter
@@ -12428,6 +12604,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
     @_builtins.property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Oracle license model that applies to the OAC instance.
+        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -12437,6 +12616,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
     @_builtins.property
     @pulumi.getter(name="networkDetails")
     def network_details(self) -> pulumi.Input[Optional['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs']]:
+        """
+        Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
+        """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
@@ -12446,6 +12628,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -12455,6 +12640,13 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -12464,13 +12656,31 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
 
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgsDict(TypedDict):
     nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+    """
     subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs:
     def __init__(__self__, *,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if subnet_id is not None:
@@ -12479,6 +12689,9 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -12488,11 +12701,196 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
+
+
+class ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict(TypedDict):
+    data_populations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs']]]]]
+    """
+    Data population status for a monitored region in the tenancy.
+    """
+    region_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+    """
+
+@pulumi.input_type
+class ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs:
+    def __init__(__self__, *,
+                 data_populations: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs']]]] = None,
+                 region_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs']]] data_populations: Data population status for a monitored region in the tenancy.
+        :param pulumi.Input[_builtins.str] region_id: The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+        """
+        if data_populations is not None:
+            pulumi.set(__self__, "data_populations", data_populations)
+        if region_id is not None:
+            pulumi.set(__self__, "region_id", region_id)
+
+    @_builtins.property
+    @pulumi.getter(name="dataPopulations")
+    def data_populations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs']]]]:
+        """
+        Data population status for a monitored region in the tenancy.
+        """
+        return pulumi.get(self, "data_populations")
+
+    @data_populations.setter
+    def data_populations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs']]]]):
+        pulumi.set(self, "data_populations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="regionId")
+    def region_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+        """
+        return pulumi.get(self, "region_id")
+
+    @region_id.setter
+    def region_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region_id", value)
+
+
+class ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgsDict(TypedDict):
+    in_progress_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of data population tasks currently in progress.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The overall status of the data population from the monitored region of the tenancy.
+    """
+    succeeded_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of data population tasks that have succeeded.
+    """
+    time_ended: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+    """
+    time_started: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+    """
+    total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of data population tasks.
+    """
+
+@pulumi.input_type
+class ResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs:
+    def __init__(__self__, *,
+                 in_progress_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 succeeded_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] in_progress_count: The number of data population tasks currently in progress.
+        :param pulumi.Input[_builtins.str] status: The overall status of the data population from the monitored region of the tenancy.
+        :param pulumi.Input[_builtins.int] succeeded_count: The number of data population tasks that have succeeded.
+        :param pulumi.Input[_builtins.str] time_ended: The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_started: The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.int] total_count: The total number of data population tasks.
+        """
+        if in_progress_count is not None:
+            pulumi.set(__self__, "in_progress_count", in_progress_count)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if succeeded_count is not None:
+            pulumi.set(__self__, "succeeded_count", succeeded_count)
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if total_count is not None:
+            pulumi.set(__self__, "total_count", total_count)
+
+    @_builtins.property
+    @pulumi.getter(name="inProgressCount")
+    def in_progress_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of data population tasks currently in progress.
+        """
+        return pulumi.get(self, "in_progress_count")
+
+    @in_progress_count.setter
+    def in_progress_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "in_progress_count", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The overall status of the data population from the monitored region of the tenancy.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="succeededCount")
+    def succeeded_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of data population tasks that have succeeded.
+        """
+        return pulumi.get(self, "succeeded_count")
+
+    @succeeded_count.setter
+    def succeeded_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "succeeded_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @time_ended.setter
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_ended", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @time_started.setter
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_started", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalCount")
+    def total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of data population tasks.
+        """
+        return pulumi.get(self, "total_count")
+
+    @total_count.setter
+    def total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_count", value)
 
 
 class SelfSubscriptionAdditionalDetailArgsDict(TypedDict):
@@ -13561,6 +13959,218 @@ class GetBatchBatchTaskProfilesFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCostadCostAlertSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCostadCostAlertSubscriptionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCostadCostAnomalyEventAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCostadCostAnomalyEventAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCostadCostAnomalyEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCostadCostAnomalyEventsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetCostadCostAnomalyMonitorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique, non-changeable resource name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetCostadCostAnomalyMonitorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

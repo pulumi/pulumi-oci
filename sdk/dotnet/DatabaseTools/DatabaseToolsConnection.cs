@@ -17,6 +17,90 @@ namespace Pulumi.Oci.DatabaseTools
     /// 
     /// Creates a new Database Tools connection.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDatabaseToolsConnection = new Oci.DatabaseTools.DatabaseToolsConnection("test_database_tools_connection", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = databaseToolsConnectionDisplayName,
+    ///         Type = databaseToolsConnectionType,
+    ///         UserName = testUser.Name,
+    ///         UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionUserPasswordArgs
+    ///         {
+    ///             SecretId = testSecret.Id,
+    ///             ValueType = databaseToolsConnectionUserPasswordValueType,
+    ///         },
+    ///         AdvancedProperties = databaseToolsConnectionAdvancedProperties,
+    ///         AuthenticationType = databaseToolsConnectionAuthenticationType,
+    ///         ConnectionString = databaseToolsConnectionConnectionString,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         KeyStores = new[]
+    ///         {
+    ///             new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreArgs
+    ///             {
+    ///                 KeyStoreContent = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs
+    ///                 {
+    ///                     ValueType = databaseToolsConnectionKeyStoresKeyStoreContentValueType,
+    ///                     SecretId = testSecret.Id,
+    ///                 },
+    ///                 KeyStorePassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs
+    ///                 {
+    ///                     ValueType = databaseToolsConnectionKeyStoresKeyStorePasswordValueType,
+    ///                     SecretId = testSecret.Id,
+    ///                 },
+    ///                 KeyStoreType = databaseToolsConnectionKeyStoresKeyStoreType,
+    ///             },
+    ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionLockArgs
+    ///             {
+    ///                 Type = databaseToolsConnectionLocksType,
+    ///                 Message = databaseToolsConnectionLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = databaseToolsConnectionLocksTimeCreated,
+    ///             },
+    ///         },
+    ///         PrivateEndpointId = testDatabaseToolsPrivateEndpoint.Id,
+    ///         ProxyClient = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionProxyClientArgs
+    ///         {
+    ///             ProxyAuthenticationType = databaseToolsConnectionProxyClientProxyAuthenticationType,
+    ///             Roles = databaseToolsConnectionProxyClientRoles,
+    ///             UserName = testUser.Name,
+    ///             UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionProxyClientUserPasswordArgs
+    ///             {
+    ///                 SecretId = testSecret.Id,
+    ///                 ValueType = databaseToolsConnectionProxyClientUserPasswordValueType,
+    ///             },
+    ///         },
+    ///         RelatedResource = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionRelatedResourceArgs
+    ///         {
+    ///             EntityType = databaseToolsConnectionRelatedResourceEntityType,
+    ///             Identifier = databaseToolsConnectionRelatedResourceIdentifier,
+    ///         },
+    ///         RuntimeIdentity = databaseToolsConnectionRuntimeIdentity,
+    ///         RuntimeSupport = databaseToolsConnectionRuntimeSupport,
+    ///         Url = databaseToolsConnectionUrl,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// DatabaseToolsConnections can be imported using the `Id`, e.g.
@@ -33,6 +117,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         [Output("advancedProperties")]
         public Output<ImmutableDictionary<string, string>> AdvancedProperties { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+        /// </summary>
+        [Output("authenticationType")]
+        public Output<string> AuthenticationType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -107,7 +197,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> RuntimeEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         /// </summary>
         [Output("runtimeIdentity")]
         public Output<string> RuntimeIdentity { get; private set; } = null!;
@@ -158,13 +248,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) The database user name.
         /// </summary>
         [Output("userName")]
-        public Output<string> UserName { get; private set; } = null!;
+        public Output<string?> UserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The database user password.
         /// </summary>
         [Output("userPassword")]
-        public Output<Outputs.DatabaseToolsConnectionUserPassword> UserPassword { get; private set; } = null!;
+        public Output<Outputs.DatabaseToolsConnectionUserPassword?> UserPassword { get; private set; } = null!;
 
 
         /// <summary>
@@ -223,6 +313,12 @@ namespace Pulumi.Oci.DatabaseTools
             get => _advancedProperties ?? (_advancedProperties = new InputMap<string>());
             set => _advancedProperties = value;
         }
+
+        /// <summary>
+        /// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+        /// </summary>
+        [Input("authenticationType")]
+        public Input<string>? AuthenticationType { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -309,7 +405,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceArgs>? RelatedResource { get; set; }
 
         /// <summary>
-        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         /// </summary>
         [Input("runtimeIdentity")]
         public Input<string>? RuntimeIdentity { get; set; }
@@ -335,14 +431,14 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// (Updatable) The database user name.
         /// </summary>
-        [Input("userName", required: true)]
-        public Input<string> UserName { get; set; } = null!;
+        [Input("userName")]
+        public Input<string>? UserName { get; set; }
 
         /// <summary>
         /// (Updatable) The database user password.
         /// </summary>
-        [Input("userPassword", required: true)]
-        public Input<Inputs.DatabaseToolsConnectionUserPasswordArgs> UserPassword { get; set; } = null!;
+        [Input("userPassword")]
+        public Input<Inputs.DatabaseToolsConnectionUserPasswordArgs>? UserPassword { get; set; }
 
         public DatabaseToolsConnectionArgs()
         {
@@ -363,6 +459,12 @@ namespace Pulumi.Oci.DatabaseTools
             get => _advancedProperties ?? (_advancedProperties = new InputMap<string>());
             set => _advancedProperties = value;
         }
+
+        /// <summary>
+        /// Specifies the authentication type used by the Database Tools service to authenticate with the database.
+        /// </summary>
+        [Input("authenticationType")]
+        public Input<string>? AuthenticationType { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -461,7 +563,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? RuntimeEndpoint { get; set; }
 
         /// <summary>
-        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
         /// </summary>
         [Input("runtimeIdentity")]
         public Input<string>? RuntimeIdentity { get; set; }

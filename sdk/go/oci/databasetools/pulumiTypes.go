@@ -1244,6 +1244,130 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) ValueType() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+type DatabaseToolsDatabaseApiGatewayConfigLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsDatabaseApiGatewayConfigLockInput is an input type that accepts DatabaseToolsDatabaseApiGatewayConfigLockArgs and DatabaseToolsDatabaseApiGatewayConfigLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsDatabaseApiGatewayConfigLockInput` via:
+//
+//	DatabaseToolsDatabaseApiGatewayConfigLockArgs{...}
+type DatabaseToolsDatabaseApiGatewayConfigLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsDatabaseApiGatewayConfigLockOutput() DatabaseToolsDatabaseApiGatewayConfigLockOutput
+	ToDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(context.Context) DatabaseToolsDatabaseApiGatewayConfigLockOutput
+}
+
+type DatabaseToolsDatabaseApiGatewayConfigLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsDatabaseApiGatewayConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsDatabaseApiGatewayConfigLockArgs) ToDatabaseToolsDatabaseApiGatewayConfigLockOutput() DatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return i.ToDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsDatabaseApiGatewayConfigLockArgs) ToDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(ctx context.Context) DatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsDatabaseApiGatewayConfigLockOutput)
+}
+
+// DatabaseToolsDatabaseApiGatewayConfigLockArrayInput is an input type that accepts DatabaseToolsDatabaseApiGatewayConfigLockArray and DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsDatabaseApiGatewayConfigLockArrayInput` via:
+//
+//	DatabaseToolsDatabaseApiGatewayConfigLockArray{ DatabaseToolsDatabaseApiGatewayConfigLockArgs{...} }
+type DatabaseToolsDatabaseApiGatewayConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput
+	ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(context.Context) DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput
+}
+
+type DatabaseToolsDatabaseApiGatewayConfigLockArray []DatabaseToolsDatabaseApiGatewayConfigLockInput
+
+func (DatabaseToolsDatabaseApiGatewayConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsDatabaseApiGatewayConfigLockArray) ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return i.ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsDatabaseApiGatewayConfigLockArray) ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(ctx context.Context) DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput)
+}
+
+type DatabaseToolsDatabaseApiGatewayConfigLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsDatabaseApiGatewayConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) ToDatabaseToolsDatabaseApiGatewayConfigLockOutput() DatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return o
+}
+
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) ToDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(ctx context.Context) DatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsDatabaseApiGatewayConfigLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsDatabaseApiGatewayConfigLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsDatabaseApiGatewayConfigLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsDatabaseApiGatewayConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsDatabaseApiGatewayConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ToDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(ctx context.Context) DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsDatabaseApiGatewayConfigLock {
+		return vs[0].([]DatabaseToolsDatabaseApiGatewayConfigLock)[vs[1].(int)]
+	}).(DatabaseToolsDatabaseApiGatewayConfigLockOutput)
+}
+
 type DatabaseToolsIdentityLock struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message *string `pulumi:"message"`
@@ -1366,6 +1490,1500 @@ func (o DatabaseToolsIdentityLockArrayOutput) Index(i pulumi.IntInput) DatabaseT
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsIdentityLock {
 		return vs[0].([]DatabaseToolsIdentityLock)[vs[1].(int)]
 	}).(DatabaseToolsIdentityLockOutput)
+}
+
+type DatabaseToolsMcpServerBuiltInRole struct {
+	// (Updatable) A human-readable description of the Database Tools MCP server.
+	Description *string `pulumi:"description"`
+	// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+}
+
+// DatabaseToolsMcpServerBuiltInRoleInput is an input type that accepts DatabaseToolsMcpServerBuiltInRoleArgs and DatabaseToolsMcpServerBuiltInRoleOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerBuiltInRoleInput` via:
+//
+//	DatabaseToolsMcpServerBuiltInRoleArgs{...}
+type DatabaseToolsMcpServerBuiltInRoleInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerBuiltInRoleOutput() DatabaseToolsMcpServerBuiltInRoleOutput
+	ToDatabaseToolsMcpServerBuiltInRoleOutputWithContext(context.Context) DatabaseToolsMcpServerBuiltInRoleOutput
+}
+
+type DatabaseToolsMcpServerBuiltInRoleArgs struct {
+	// (Updatable) A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+}
+
+func (DatabaseToolsMcpServerBuiltInRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerBuiltInRoleArgs) ToDatabaseToolsMcpServerBuiltInRoleOutput() DatabaseToolsMcpServerBuiltInRoleOutput {
+	return i.ToDatabaseToolsMcpServerBuiltInRoleOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerBuiltInRoleArgs) ToDatabaseToolsMcpServerBuiltInRoleOutputWithContext(ctx context.Context) DatabaseToolsMcpServerBuiltInRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerBuiltInRoleOutput)
+}
+
+// DatabaseToolsMcpServerBuiltInRoleArrayInput is an input type that accepts DatabaseToolsMcpServerBuiltInRoleArray and DatabaseToolsMcpServerBuiltInRoleArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerBuiltInRoleArrayInput` via:
+//
+//	DatabaseToolsMcpServerBuiltInRoleArray{ DatabaseToolsMcpServerBuiltInRoleArgs{...} }
+type DatabaseToolsMcpServerBuiltInRoleArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerBuiltInRoleArrayOutput() DatabaseToolsMcpServerBuiltInRoleArrayOutput
+	ToDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(context.Context) DatabaseToolsMcpServerBuiltInRoleArrayOutput
+}
+
+type DatabaseToolsMcpServerBuiltInRoleArray []DatabaseToolsMcpServerBuiltInRoleInput
+
+func (DatabaseToolsMcpServerBuiltInRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerBuiltInRoleArray) ToDatabaseToolsMcpServerBuiltInRoleArrayOutput() DatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return i.ToDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerBuiltInRoleArray) ToDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerBuiltInRoleArrayOutput)
+}
+
+type DatabaseToolsMcpServerBuiltInRoleOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerBuiltInRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerBuiltInRoleOutput) ToDatabaseToolsMcpServerBuiltInRoleOutput() DatabaseToolsMcpServerBuiltInRoleOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerBuiltInRoleOutput) ToDatabaseToolsMcpServerBuiltInRoleOutputWithContext(ctx context.Context) DatabaseToolsMcpServerBuiltInRoleOutput {
+	return o
+}
+
+// (Updatable) A human-readable description of the Database Tools MCP server.
+func (o DatabaseToolsMcpServerBuiltInRoleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerBuiltInRole) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+func (o DatabaseToolsMcpServerBuiltInRoleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerBuiltInRole) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpServerBuiltInRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerBuiltInRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerBuiltInRoleArrayOutput) ToDatabaseToolsMcpServerBuiltInRoleArrayOutput() DatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerBuiltInRoleArrayOutput) ToDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerBuiltInRoleArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpServerBuiltInRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpServerBuiltInRole {
+		return vs[0].([]DatabaseToolsMcpServerBuiltInRole)[vs[1].(int)]
+	}).(DatabaseToolsMcpServerBuiltInRoleOutput)
+}
+
+type DatabaseToolsMcpServerCustomRole struct {
+	// (Updatable) The description of the custom role.
+	Description string `pulumi:"description"`
+	// (Updatable) The display name of the custom role.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// DatabaseToolsMcpServerCustomRoleInput is an input type that accepts DatabaseToolsMcpServerCustomRoleArgs and DatabaseToolsMcpServerCustomRoleOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerCustomRoleInput` via:
+//
+//	DatabaseToolsMcpServerCustomRoleArgs{...}
+type DatabaseToolsMcpServerCustomRoleInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerCustomRoleOutput() DatabaseToolsMcpServerCustomRoleOutput
+	ToDatabaseToolsMcpServerCustomRoleOutputWithContext(context.Context) DatabaseToolsMcpServerCustomRoleOutput
+}
+
+type DatabaseToolsMcpServerCustomRoleArgs struct {
+	// (Updatable) The description of the custom role.
+	Description pulumi.StringInput `pulumi:"description"`
+	// (Updatable) The display name of the custom role.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (DatabaseToolsMcpServerCustomRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerCustomRoleArgs) ToDatabaseToolsMcpServerCustomRoleOutput() DatabaseToolsMcpServerCustomRoleOutput {
+	return i.ToDatabaseToolsMcpServerCustomRoleOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerCustomRoleArgs) ToDatabaseToolsMcpServerCustomRoleOutputWithContext(ctx context.Context) DatabaseToolsMcpServerCustomRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerCustomRoleOutput)
+}
+
+// DatabaseToolsMcpServerCustomRoleArrayInput is an input type that accepts DatabaseToolsMcpServerCustomRoleArray and DatabaseToolsMcpServerCustomRoleArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerCustomRoleArrayInput` via:
+//
+//	DatabaseToolsMcpServerCustomRoleArray{ DatabaseToolsMcpServerCustomRoleArgs{...} }
+type DatabaseToolsMcpServerCustomRoleArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerCustomRoleArrayOutput() DatabaseToolsMcpServerCustomRoleArrayOutput
+	ToDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(context.Context) DatabaseToolsMcpServerCustomRoleArrayOutput
+}
+
+type DatabaseToolsMcpServerCustomRoleArray []DatabaseToolsMcpServerCustomRoleInput
+
+func (DatabaseToolsMcpServerCustomRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerCustomRoleArray) ToDatabaseToolsMcpServerCustomRoleArrayOutput() DatabaseToolsMcpServerCustomRoleArrayOutput {
+	return i.ToDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerCustomRoleArray) ToDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerCustomRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerCustomRoleArrayOutput)
+}
+
+type DatabaseToolsMcpServerCustomRoleOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerCustomRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerCustomRoleOutput) ToDatabaseToolsMcpServerCustomRoleOutput() DatabaseToolsMcpServerCustomRoleOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerCustomRoleOutput) ToDatabaseToolsMcpServerCustomRoleOutputWithContext(ctx context.Context) DatabaseToolsMcpServerCustomRoleOutput {
+	return o
+}
+
+// (Updatable) The description of the custom role.
+func (o DatabaseToolsMcpServerCustomRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerCustomRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) The display name of the custom role.
+func (o DatabaseToolsMcpServerCustomRoleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerCustomRole) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsMcpServerCustomRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerCustomRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerCustomRoleArrayOutput) ToDatabaseToolsMcpServerCustomRoleArrayOutput() DatabaseToolsMcpServerCustomRoleArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerCustomRoleArrayOutput) ToDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerCustomRoleArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerCustomRoleArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpServerCustomRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpServerCustomRole {
+		return vs[0].([]DatabaseToolsMcpServerCustomRole)[vs[1].(int)]
+	}).(DatabaseToolsMcpServerCustomRoleOutput)
+}
+
+type DatabaseToolsMcpServerEndpoint struct {
+	// The URI endpoint of the MCP server
+	Endpoint *string `pulumi:"endpoint"`
+	// (Updatable) The Database Tools MCP server type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type *string `pulumi:"type"`
+}
+
+// DatabaseToolsMcpServerEndpointInput is an input type that accepts DatabaseToolsMcpServerEndpointArgs and DatabaseToolsMcpServerEndpointOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerEndpointInput` via:
+//
+//	DatabaseToolsMcpServerEndpointArgs{...}
+type DatabaseToolsMcpServerEndpointInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerEndpointOutput() DatabaseToolsMcpServerEndpointOutput
+	ToDatabaseToolsMcpServerEndpointOutputWithContext(context.Context) DatabaseToolsMcpServerEndpointOutput
+}
+
+type DatabaseToolsMcpServerEndpointArgs struct {
+	// The URI endpoint of the MCP server
+	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
+	// (Updatable) The Database Tools MCP server type.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DatabaseToolsMcpServerEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerEndpointArgs) ToDatabaseToolsMcpServerEndpointOutput() DatabaseToolsMcpServerEndpointOutput {
+	return i.ToDatabaseToolsMcpServerEndpointOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerEndpointArgs) ToDatabaseToolsMcpServerEndpointOutputWithContext(ctx context.Context) DatabaseToolsMcpServerEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerEndpointOutput)
+}
+
+// DatabaseToolsMcpServerEndpointArrayInput is an input type that accepts DatabaseToolsMcpServerEndpointArray and DatabaseToolsMcpServerEndpointArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerEndpointArrayInput` via:
+//
+//	DatabaseToolsMcpServerEndpointArray{ DatabaseToolsMcpServerEndpointArgs{...} }
+type DatabaseToolsMcpServerEndpointArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerEndpointArrayOutput() DatabaseToolsMcpServerEndpointArrayOutput
+	ToDatabaseToolsMcpServerEndpointArrayOutputWithContext(context.Context) DatabaseToolsMcpServerEndpointArrayOutput
+}
+
+type DatabaseToolsMcpServerEndpointArray []DatabaseToolsMcpServerEndpointInput
+
+func (DatabaseToolsMcpServerEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerEndpointArray) ToDatabaseToolsMcpServerEndpointArrayOutput() DatabaseToolsMcpServerEndpointArrayOutput {
+	return i.ToDatabaseToolsMcpServerEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerEndpointArray) ToDatabaseToolsMcpServerEndpointArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerEndpointArrayOutput)
+}
+
+type DatabaseToolsMcpServerEndpointOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerEndpointOutput) ToDatabaseToolsMcpServerEndpointOutput() DatabaseToolsMcpServerEndpointOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerEndpointOutput) ToDatabaseToolsMcpServerEndpointOutputWithContext(ctx context.Context) DatabaseToolsMcpServerEndpointOutput {
+	return o
+}
+
+// The URI endpoint of the MCP server
+func (o DatabaseToolsMcpServerEndpointOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerEndpoint) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Database Tools MCP server type.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DatabaseToolsMcpServerEndpointOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerEndpoint) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpServerEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerEndpointArrayOutput) ToDatabaseToolsMcpServerEndpointArrayOutput() DatabaseToolsMcpServerEndpointArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerEndpointArrayOutput) ToDatabaseToolsMcpServerEndpointArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerEndpointArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerEndpointArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpServerEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpServerEndpoint {
+		return vs[0].([]DatabaseToolsMcpServerEndpoint)[vs[1].(int)]
+	}).(DatabaseToolsMcpServerEndpointOutput)
+}
+
+type DatabaseToolsMcpServerLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsMcpServerLockInput is an input type that accepts DatabaseToolsMcpServerLockArgs and DatabaseToolsMcpServerLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerLockInput` via:
+//
+//	DatabaseToolsMcpServerLockArgs{...}
+type DatabaseToolsMcpServerLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerLockOutput() DatabaseToolsMcpServerLockOutput
+	ToDatabaseToolsMcpServerLockOutputWithContext(context.Context) DatabaseToolsMcpServerLockOutput
+}
+
+type DatabaseToolsMcpServerLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsMcpServerLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerLockArgs) ToDatabaseToolsMcpServerLockOutput() DatabaseToolsMcpServerLockOutput {
+	return i.ToDatabaseToolsMcpServerLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerLockArgs) ToDatabaseToolsMcpServerLockOutputWithContext(ctx context.Context) DatabaseToolsMcpServerLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerLockOutput)
+}
+
+// DatabaseToolsMcpServerLockArrayInput is an input type that accepts DatabaseToolsMcpServerLockArray and DatabaseToolsMcpServerLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerLockArrayInput` via:
+//
+//	DatabaseToolsMcpServerLockArray{ DatabaseToolsMcpServerLockArgs{...} }
+type DatabaseToolsMcpServerLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerLockArrayOutput() DatabaseToolsMcpServerLockArrayOutput
+	ToDatabaseToolsMcpServerLockArrayOutputWithContext(context.Context) DatabaseToolsMcpServerLockArrayOutput
+}
+
+type DatabaseToolsMcpServerLockArray []DatabaseToolsMcpServerLockInput
+
+func (DatabaseToolsMcpServerLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerLockArray) ToDatabaseToolsMcpServerLockArrayOutput() DatabaseToolsMcpServerLockArrayOutput {
+	return i.ToDatabaseToolsMcpServerLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerLockArray) ToDatabaseToolsMcpServerLockArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerLockArrayOutput)
+}
+
+type DatabaseToolsMcpServerLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerLockOutput) ToDatabaseToolsMcpServerLockOutput() DatabaseToolsMcpServerLockOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerLockOutput) ToDatabaseToolsMcpServerLockOutputWithContext(ctx context.Context) DatabaseToolsMcpServerLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsMcpServerLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsMcpServerLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsMcpServerLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsMcpServerLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsMcpServerLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerLockArrayOutput) ToDatabaseToolsMcpServerLockArrayOutput() DatabaseToolsMcpServerLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerLockArrayOutput) ToDatabaseToolsMcpServerLockArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpServerLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpServerLock {
+		return vs[0].([]DatabaseToolsMcpServerLock)[vs[1].(int)]
+	}).(DatabaseToolsMcpServerLockOutput)
+}
+
+type DatabaseToolsMcpServerRelatedResource struct {
+	// The resource entity type.
+	EntityType *string `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier *string `pulumi:"identifier"`
+}
+
+// DatabaseToolsMcpServerRelatedResourceInput is an input type that accepts DatabaseToolsMcpServerRelatedResourceArgs and DatabaseToolsMcpServerRelatedResourceOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerRelatedResourceInput` via:
+//
+//	DatabaseToolsMcpServerRelatedResourceArgs{...}
+type DatabaseToolsMcpServerRelatedResourceInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerRelatedResourceOutput() DatabaseToolsMcpServerRelatedResourceOutput
+	ToDatabaseToolsMcpServerRelatedResourceOutputWithContext(context.Context) DatabaseToolsMcpServerRelatedResourceOutput
+}
+
+type DatabaseToolsMcpServerRelatedResourceArgs struct {
+	// The resource entity type.
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+}
+
+func (DatabaseToolsMcpServerRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerRelatedResourceArgs) ToDatabaseToolsMcpServerRelatedResourceOutput() DatabaseToolsMcpServerRelatedResourceOutput {
+	return i.ToDatabaseToolsMcpServerRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerRelatedResourceArgs) ToDatabaseToolsMcpServerRelatedResourceOutputWithContext(ctx context.Context) DatabaseToolsMcpServerRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerRelatedResourceOutput)
+}
+
+// DatabaseToolsMcpServerRelatedResourceArrayInput is an input type that accepts DatabaseToolsMcpServerRelatedResourceArray and DatabaseToolsMcpServerRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerRelatedResourceArrayInput` via:
+//
+//	DatabaseToolsMcpServerRelatedResourceArray{ DatabaseToolsMcpServerRelatedResourceArgs{...} }
+type DatabaseToolsMcpServerRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerRelatedResourceArrayOutput() DatabaseToolsMcpServerRelatedResourceArrayOutput
+	ToDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(context.Context) DatabaseToolsMcpServerRelatedResourceArrayOutput
+}
+
+type DatabaseToolsMcpServerRelatedResourceArray []DatabaseToolsMcpServerRelatedResourceInput
+
+func (DatabaseToolsMcpServerRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerRelatedResourceArray) ToDatabaseToolsMcpServerRelatedResourceArrayOutput() DatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return i.ToDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerRelatedResourceArray) ToDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerRelatedResourceArrayOutput)
+}
+
+type DatabaseToolsMcpServerRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerRelatedResourceOutput) ToDatabaseToolsMcpServerRelatedResourceOutput() DatabaseToolsMcpServerRelatedResourceOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerRelatedResourceOutput) ToDatabaseToolsMcpServerRelatedResourceOutputWithContext(ctx context.Context) DatabaseToolsMcpServerRelatedResourceOutput {
+	return o
+}
+
+// The resource entity type.
+func (o DatabaseToolsMcpServerRelatedResourceOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerRelatedResource) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o DatabaseToolsMcpServerRelatedResourceOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerRelatedResource) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpServerRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerRelatedResourceArrayOutput) ToDatabaseToolsMcpServerRelatedResourceArrayOutput() DatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerRelatedResourceArrayOutput) ToDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerRelatedResourceArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpServerRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpServerRelatedResource {
+		return vs[0].([]DatabaseToolsMcpServerRelatedResource)[vs[1].(int)]
+	}).(DatabaseToolsMcpServerRelatedResourceOutput)
+}
+
+type DatabaseToolsMcpServerStorage struct {
+	// (Updatable) A Cloud Storage bucket for an MCP Server.
+	Bucket *DatabaseToolsMcpServerStorageBucket `pulumi:"bucket"`
+	// (Updatable) The type of storage used for asynchronous tool calls.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsMcpServerStorageInput is an input type that accepts DatabaseToolsMcpServerStorageArgs and DatabaseToolsMcpServerStorageOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerStorageInput` via:
+//
+//	DatabaseToolsMcpServerStorageArgs{...}
+type DatabaseToolsMcpServerStorageInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerStorageOutput() DatabaseToolsMcpServerStorageOutput
+	ToDatabaseToolsMcpServerStorageOutputWithContext(context.Context) DatabaseToolsMcpServerStorageOutput
+}
+
+type DatabaseToolsMcpServerStorageArgs struct {
+	// (Updatable) A Cloud Storage bucket for an MCP Server.
+	Bucket DatabaseToolsMcpServerStorageBucketPtrInput `pulumi:"bucket"`
+	// (Updatable) The type of storage used for asynchronous tool calls.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsMcpServerStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerStorageArgs) ToDatabaseToolsMcpServerStorageOutput() DatabaseToolsMcpServerStorageOutput {
+	return i.ToDatabaseToolsMcpServerStorageOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerStorageArgs) ToDatabaseToolsMcpServerStorageOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStorageOutput)
+}
+
+func (i DatabaseToolsMcpServerStorageArgs) ToDatabaseToolsMcpServerStoragePtrOutput() DatabaseToolsMcpServerStoragePtrOutput {
+	return i.ToDatabaseToolsMcpServerStoragePtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerStorageArgs) ToDatabaseToolsMcpServerStoragePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStorageOutput).ToDatabaseToolsMcpServerStoragePtrOutputWithContext(ctx)
+}
+
+// DatabaseToolsMcpServerStoragePtrInput is an input type that accepts DatabaseToolsMcpServerStorageArgs, DatabaseToolsMcpServerStoragePtr and DatabaseToolsMcpServerStoragePtrOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerStoragePtrInput` via:
+//
+//	        DatabaseToolsMcpServerStorageArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseToolsMcpServerStoragePtrInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerStoragePtrOutput() DatabaseToolsMcpServerStoragePtrOutput
+	ToDatabaseToolsMcpServerStoragePtrOutputWithContext(context.Context) DatabaseToolsMcpServerStoragePtrOutput
+}
+
+type databaseToolsMcpServerStoragePtrType DatabaseToolsMcpServerStorageArgs
+
+func DatabaseToolsMcpServerStoragePtr(v *DatabaseToolsMcpServerStorageArgs) DatabaseToolsMcpServerStoragePtrInput {
+	return (*databaseToolsMcpServerStoragePtrType)(v)
+}
+
+func (*databaseToolsMcpServerStoragePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (i *databaseToolsMcpServerStoragePtrType) ToDatabaseToolsMcpServerStoragePtrOutput() DatabaseToolsMcpServerStoragePtrOutput {
+	return i.ToDatabaseToolsMcpServerStoragePtrOutputWithContext(context.Background())
+}
+
+func (i *databaseToolsMcpServerStoragePtrType) ToDatabaseToolsMcpServerStoragePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStoragePtrOutput)
+}
+
+type DatabaseToolsMcpServerStorageOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerStorageOutput) ToDatabaseToolsMcpServerStorageOutput() DatabaseToolsMcpServerStorageOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageOutput) ToDatabaseToolsMcpServerStorageOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageOutput) ToDatabaseToolsMcpServerStoragePtrOutput() DatabaseToolsMcpServerStoragePtrOutput {
+	return o.ToDatabaseToolsMcpServerStoragePtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseToolsMcpServerStorageOutput) ToDatabaseToolsMcpServerStoragePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStoragePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsMcpServerStorage) *DatabaseToolsMcpServerStorage {
+		return &v
+	}).(DatabaseToolsMcpServerStoragePtrOutput)
+}
+
+// (Updatable) A Cloud Storage bucket for an MCP Server.
+func (o DatabaseToolsMcpServerStorageOutput) Bucket() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerStorage) *DatabaseToolsMcpServerStorageBucket { return v.Bucket }).(DatabaseToolsMcpServerStorageBucketPtrOutput)
+}
+
+// (Updatable) The type of storage used for asynchronous tool calls.
+func (o DatabaseToolsMcpServerStorageOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerStorage) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsMcpServerStoragePtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerStoragePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerStoragePtrOutput) ToDatabaseToolsMcpServerStoragePtrOutput() DatabaseToolsMcpServerStoragePtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStoragePtrOutput) ToDatabaseToolsMcpServerStoragePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStoragePtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStoragePtrOutput) Elem() DatabaseToolsMcpServerStorageOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorage) DatabaseToolsMcpServerStorage {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseToolsMcpServerStorage
+		return ret
+	}).(DatabaseToolsMcpServerStorageOutput)
+}
+
+// (Updatable) A Cloud Storage bucket for an MCP Server.
+func (o DatabaseToolsMcpServerStoragePtrOutput) Bucket() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorage) *DatabaseToolsMcpServerStorageBucket {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(DatabaseToolsMcpServerStorageBucketPtrOutput)
+}
+
+// (Updatable) The type of storage used for asynchronous tool calls.
+func (o DatabaseToolsMcpServerStoragePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorage) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpServerStorageBucket struct {
+	// (Updatable) The Object Storage bucket to use.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace to use.
+	Namespace *string `pulumi:"namespace"`
+}
+
+// DatabaseToolsMcpServerStorageBucketInput is an input type that accepts DatabaseToolsMcpServerStorageBucketArgs and DatabaseToolsMcpServerStorageBucketOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerStorageBucketInput` via:
+//
+//	DatabaseToolsMcpServerStorageBucketArgs{...}
+type DatabaseToolsMcpServerStorageBucketInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerStorageBucketOutput() DatabaseToolsMcpServerStorageBucketOutput
+	ToDatabaseToolsMcpServerStorageBucketOutputWithContext(context.Context) DatabaseToolsMcpServerStorageBucketOutput
+}
+
+type DatabaseToolsMcpServerStorageBucketArgs struct {
+	// (Updatable) The Object Storage bucket to use.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace to use.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+}
+
+func (DatabaseToolsMcpServerStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpServerStorageBucketArgs) ToDatabaseToolsMcpServerStorageBucketOutput() DatabaseToolsMcpServerStorageBucketOutput {
+	return i.ToDatabaseToolsMcpServerStorageBucketOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerStorageBucketArgs) ToDatabaseToolsMcpServerStorageBucketOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStorageBucketOutput)
+}
+
+func (i DatabaseToolsMcpServerStorageBucketArgs) ToDatabaseToolsMcpServerStorageBucketPtrOutput() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return i.ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpServerStorageBucketArgs) ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStorageBucketOutput).ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(ctx)
+}
+
+// DatabaseToolsMcpServerStorageBucketPtrInput is an input type that accepts DatabaseToolsMcpServerStorageBucketArgs, DatabaseToolsMcpServerStorageBucketPtr and DatabaseToolsMcpServerStorageBucketPtrOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpServerStorageBucketPtrInput` via:
+//
+//	        DatabaseToolsMcpServerStorageBucketArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseToolsMcpServerStorageBucketPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpServerStorageBucketPtrOutput() DatabaseToolsMcpServerStorageBucketPtrOutput
+	ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(context.Context) DatabaseToolsMcpServerStorageBucketPtrOutput
+}
+
+type databaseToolsMcpServerStorageBucketPtrType DatabaseToolsMcpServerStorageBucketArgs
+
+func DatabaseToolsMcpServerStorageBucketPtr(v *DatabaseToolsMcpServerStorageBucketArgs) DatabaseToolsMcpServerStorageBucketPtrInput {
+	return (*databaseToolsMcpServerStorageBucketPtrType)(v)
+}
+
+func (*databaseToolsMcpServerStorageBucketPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (i *databaseToolsMcpServerStorageBucketPtrType) ToDatabaseToolsMcpServerStorageBucketPtrOutput() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return i.ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseToolsMcpServerStorageBucketPtrType) ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpServerStorageBucketPtrOutput)
+}
+
+type DatabaseToolsMcpServerStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerStorageBucketOutput) ToDatabaseToolsMcpServerStorageBucketOutput() DatabaseToolsMcpServerStorageBucketOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageBucketOutput) ToDatabaseToolsMcpServerStorageBucketOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageBucketOutput) ToDatabaseToolsMcpServerStorageBucketPtrOutput() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o.ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseToolsMcpServerStorageBucketOutput) ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsMcpServerStorageBucket) *DatabaseToolsMcpServerStorageBucket {
+		return &v
+	}).(DatabaseToolsMcpServerStorageBucketPtrOutput)
+}
+
+// (Updatable) The Object Storage bucket to use.
+func (o DatabaseToolsMcpServerStorageBucketOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerStorageBucket) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage namespace to use.
+func (o DatabaseToolsMcpServerStorageBucketOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpServerStorageBucket) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpServerStorageBucketPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpServerStorageBucketPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpServerStorageBucketPtrOutput) ToDatabaseToolsMcpServerStorageBucketPtrOutput() DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageBucketPtrOutput) ToDatabaseToolsMcpServerStorageBucketPtrOutputWithContext(ctx context.Context) DatabaseToolsMcpServerStorageBucketPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpServerStorageBucketPtrOutput) Elem() DatabaseToolsMcpServerStorageBucketOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorageBucket) DatabaseToolsMcpServerStorageBucket {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseToolsMcpServerStorageBucket
+		return ret
+	}).(DatabaseToolsMcpServerStorageBucketOutput)
+}
+
+// (Updatable) The Object Storage bucket to use.
+func (o DatabaseToolsMcpServerStorageBucketPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage namespace to use.
+func (o DatabaseToolsMcpServerStorageBucketPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpServerStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsMcpToolsetLockInput is an input type that accepts DatabaseToolsMcpToolsetLockArgs and DatabaseToolsMcpToolsetLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetLockInput` via:
+//
+//	DatabaseToolsMcpToolsetLockArgs{...}
+type DatabaseToolsMcpToolsetLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetLockOutput() DatabaseToolsMcpToolsetLockOutput
+	ToDatabaseToolsMcpToolsetLockOutputWithContext(context.Context) DatabaseToolsMcpToolsetLockOutput
+}
+
+type DatabaseToolsMcpToolsetLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsMcpToolsetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetLockArgs) ToDatabaseToolsMcpToolsetLockOutput() DatabaseToolsMcpToolsetLockOutput {
+	return i.ToDatabaseToolsMcpToolsetLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetLockArgs) ToDatabaseToolsMcpToolsetLockOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetLockOutput)
+}
+
+// DatabaseToolsMcpToolsetLockArrayInput is an input type that accepts DatabaseToolsMcpToolsetLockArray and DatabaseToolsMcpToolsetLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetLockArrayInput` via:
+//
+//	DatabaseToolsMcpToolsetLockArray{ DatabaseToolsMcpToolsetLockArgs{...} }
+type DatabaseToolsMcpToolsetLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetLockArrayOutput() DatabaseToolsMcpToolsetLockArrayOutput
+	ToDatabaseToolsMcpToolsetLockArrayOutputWithContext(context.Context) DatabaseToolsMcpToolsetLockArrayOutput
+}
+
+type DatabaseToolsMcpToolsetLockArray []DatabaseToolsMcpToolsetLockInput
+
+func (DatabaseToolsMcpToolsetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetLockArray) ToDatabaseToolsMcpToolsetLockArrayOutput() DatabaseToolsMcpToolsetLockArrayOutput {
+	return i.ToDatabaseToolsMcpToolsetLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetLockArray) ToDatabaseToolsMcpToolsetLockArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetLockArrayOutput)
+}
+
+type DatabaseToolsMcpToolsetLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetLockOutput) ToDatabaseToolsMcpToolsetLockOutput() DatabaseToolsMcpToolsetLockOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetLockOutput) ToDatabaseToolsMcpToolsetLockOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsMcpToolsetLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsMcpToolsetLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsMcpToolsetLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsMcpToolsetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsMcpToolsetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetLockArrayOutput) ToDatabaseToolsMcpToolsetLockArrayOutput() DatabaseToolsMcpToolsetLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetLockArrayOutput) ToDatabaseToolsMcpToolsetLockArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpToolsetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpToolsetLock {
+		return vs[0].([]DatabaseToolsMcpToolsetLock)[vs[1].(int)]
+	}).(DatabaseToolsMcpToolsetLockOutput)
+}
+
+type DatabaseToolsMcpToolsetReport struct {
+	// (Updatable) The roles granted access to this report
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId *string `pulumi:"databaseToolsSqlReportId"`
+}
+
+// DatabaseToolsMcpToolsetReportInput is an input type that accepts DatabaseToolsMcpToolsetReportArgs and DatabaseToolsMcpToolsetReportOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetReportInput` via:
+//
+//	DatabaseToolsMcpToolsetReportArgs{...}
+type DatabaseToolsMcpToolsetReportInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetReportOutput() DatabaseToolsMcpToolsetReportOutput
+	ToDatabaseToolsMcpToolsetReportOutputWithContext(context.Context) DatabaseToolsMcpToolsetReportOutput
+}
+
+type DatabaseToolsMcpToolsetReportArgs struct {
+	// (Updatable) The roles granted access to this report
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId pulumi.StringPtrInput `pulumi:"databaseToolsSqlReportId"`
+}
+
+func (DatabaseToolsMcpToolsetReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetReportArgs) ToDatabaseToolsMcpToolsetReportOutput() DatabaseToolsMcpToolsetReportOutput {
+	return i.ToDatabaseToolsMcpToolsetReportOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetReportArgs) ToDatabaseToolsMcpToolsetReportOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetReportOutput)
+}
+
+// DatabaseToolsMcpToolsetReportArrayInput is an input type that accepts DatabaseToolsMcpToolsetReportArray and DatabaseToolsMcpToolsetReportArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetReportArrayInput` via:
+//
+//	DatabaseToolsMcpToolsetReportArray{ DatabaseToolsMcpToolsetReportArgs{...} }
+type DatabaseToolsMcpToolsetReportArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetReportArrayOutput() DatabaseToolsMcpToolsetReportArrayOutput
+	ToDatabaseToolsMcpToolsetReportArrayOutputWithContext(context.Context) DatabaseToolsMcpToolsetReportArrayOutput
+}
+
+type DatabaseToolsMcpToolsetReportArray []DatabaseToolsMcpToolsetReportInput
+
+func (DatabaseToolsMcpToolsetReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetReportArray) ToDatabaseToolsMcpToolsetReportArrayOutput() DatabaseToolsMcpToolsetReportArrayOutput {
+	return i.ToDatabaseToolsMcpToolsetReportArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetReportArray) ToDatabaseToolsMcpToolsetReportArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetReportArrayOutput)
+}
+
+type DatabaseToolsMcpToolsetReportOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetReportOutput) ToDatabaseToolsMcpToolsetReportOutput() DatabaseToolsMcpToolsetReportOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetReportOutput) ToDatabaseToolsMcpToolsetReportOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetReportOutput {
+	return o
+}
+
+// (Updatable) The roles granted access to this report
+func (o DatabaseToolsMcpToolsetReportOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetReport) []string { return v.AllowedRoles }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+func (o DatabaseToolsMcpToolsetReportOutput) DatabaseToolsSqlReportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetReport) *string { return v.DatabaseToolsSqlReportId }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetReportArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetReportArrayOutput) ToDatabaseToolsMcpToolsetReportArrayOutput() DatabaseToolsMcpToolsetReportArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetReportArrayOutput) ToDatabaseToolsMcpToolsetReportArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetReportArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetReportArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpToolsetReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpToolsetReport {
+		return vs[0].([]DatabaseToolsMcpToolsetReport)[vs[1].(int)]
+	}).(DatabaseToolsMcpToolsetReportOutput)
+}
+
+type DatabaseToolsMcpToolsetSource struct {
+	// (Updatable) The sql toolset sources type. INLINE is the only possible value.
+	Type *string `pulumi:"type"`
+	// (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value *string `pulumi:"value"`
+}
+
+// DatabaseToolsMcpToolsetSourceInput is an input type that accepts DatabaseToolsMcpToolsetSourceArgs and DatabaseToolsMcpToolsetSourceOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetSourceInput` via:
+//
+//	DatabaseToolsMcpToolsetSourceArgs{...}
+type DatabaseToolsMcpToolsetSourceInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetSourceOutput() DatabaseToolsMcpToolsetSourceOutput
+	ToDatabaseToolsMcpToolsetSourceOutputWithContext(context.Context) DatabaseToolsMcpToolsetSourceOutput
+}
+
+type DatabaseToolsMcpToolsetSourceArgs struct {
+	// (Updatable) The sql toolset sources type. INLINE is the only possible value.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DatabaseToolsMcpToolsetSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetSourceArgs) ToDatabaseToolsMcpToolsetSourceOutput() DatabaseToolsMcpToolsetSourceOutput {
+	return i.ToDatabaseToolsMcpToolsetSourceOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetSourceArgs) ToDatabaseToolsMcpToolsetSourceOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetSourceOutput)
+}
+
+func (i DatabaseToolsMcpToolsetSourceArgs) ToDatabaseToolsMcpToolsetSourcePtrOutput() DatabaseToolsMcpToolsetSourcePtrOutput {
+	return i.ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetSourceArgs) ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetSourceOutput).ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(ctx)
+}
+
+// DatabaseToolsMcpToolsetSourcePtrInput is an input type that accepts DatabaseToolsMcpToolsetSourceArgs, DatabaseToolsMcpToolsetSourcePtr and DatabaseToolsMcpToolsetSourcePtrOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetSourcePtrInput` via:
+//
+//	        DatabaseToolsMcpToolsetSourceArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseToolsMcpToolsetSourcePtrInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetSourcePtrOutput() DatabaseToolsMcpToolsetSourcePtrOutput
+	ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(context.Context) DatabaseToolsMcpToolsetSourcePtrOutput
+}
+
+type databaseToolsMcpToolsetSourcePtrType DatabaseToolsMcpToolsetSourceArgs
+
+func DatabaseToolsMcpToolsetSourcePtr(v *DatabaseToolsMcpToolsetSourceArgs) DatabaseToolsMcpToolsetSourcePtrInput {
+	return (*databaseToolsMcpToolsetSourcePtrType)(v)
+}
+
+func (*databaseToolsMcpToolsetSourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (i *databaseToolsMcpToolsetSourcePtrType) ToDatabaseToolsMcpToolsetSourcePtrOutput() DatabaseToolsMcpToolsetSourcePtrOutput {
+	return i.ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(context.Background())
+}
+
+func (i *databaseToolsMcpToolsetSourcePtrType) ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetSourcePtrOutput)
+}
+
+type DatabaseToolsMcpToolsetSourceOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetSourceOutput) ToDatabaseToolsMcpToolsetSourceOutput() DatabaseToolsMcpToolsetSourceOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetSourceOutput) ToDatabaseToolsMcpToolsetSourceOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourceOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetSourceOutput) ToDatabaseToolsMcpToolsetSourcePtrOutput() DatabaseToolsMcpToolsetSourcePtrOutput {
+	return o.ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseToolsMcpToolsetSourceOutput) ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourcePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsMcpToolsetSource) *DatabaseToolsMcpToolsetSource {
+		return &v
+	}).(DatabaseToolsMcpToolsetSourcePtrOutput)
+}
+
+// (Updatable) The sql toolset sources type. INLINE is the only possible value.
+func (o DatabaseToolsMcpToolsetSourceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetSource) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+func (o DatabaseToolsMcpToolsetSourceOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetSource) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetSourcePtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetSourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetSourcePtrOutput) ToDatabaseToolsMcpToolsetSourcePtrOutput() DatabaseToolsMcpToolsetSourcePtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetSourcePtrOutput) ToDatabaseToolsMcpToolsetSourcePtrOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetSourcePtrOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetSourcePtrOutput) Elem() DatabaseToolsMcpToolsetSourceOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpToolsetSource) DatabaseToolsMcpToolsetSource {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseToolsMcpToolsetSource
+		return ret
+	}).(DatabaseToolsMcpToolsetSourceOutput)
+}
+
+// (Updatable) The sql toolset sources type. INLINE is the only possible value.
+func (o DatabaseToolsMcpToolsetSourcePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpToolsetSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+func (o DatabaseToolsMcpToolsetSourcePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsMcpToolsetSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetTool struct {
+	// (Updatable) The roles granted access to this tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The name of the tool
+	Name *string `pulumi:"name"`
+	// (Updatable) The status of the tool
+	Status *string `pulumi:"status"`
+}
+
+// DatabaseToolsMcpToolsetToolInput is an input type that accepts DatabaseToolsMcpToolsetToolArgs and DatabaseToolsMcpToolsetToolOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetToolInput` via:
+//
+//	DatabaseToolsMcpToolsetToolArgs{...}
+type DatabaseToolsMcpToolsetToolInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetToolOutput() DatabaseToolsMcpToolsetToolOutput
+	ToDatabaseToolsMcpToolsetToolOutputWithContext(context.Context) DatabaseToolsMcpToolsetToolOutput
+}
+
+type DatabaseToolsMcpToolsetToolArgs struct {
+	// (Updatable) The roles granted access to this tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) The name of the tool
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The status of the tool
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (DatabaseToolsMcpToolsetToolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetToolArgs) ToDatabaseToolsMcpToolsetToolOutput() DatabaseToolsMcpToolsetToolOutput {
+	return i.ToDatabaseToolsMcpToolsetToolOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetToolArgs) ToDatabaseToolsMcpToolsetToolOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetToolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetToolOutput)
+}
+
+// DatabaseToolsMcpToolsetToolArrayInput is an input type that accepts DatabaseToolsMcpToolsetToolArray and DatabaseToolsMcpToolsetToolArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetToolArrayInput` via:
+//
+//	DatabaseToolsMcpToolsetToolArray{ DatabaseToolsMcpToolsetToolArgs{...} }
+type DatabaseToolsMcpToolsetToolArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetToolArrayOutput() DatabaseToolsMcpToolsetToolArrayOutput
+	ToDatabaseToolsMcpToolsetToolArrayOutputWithContext(context.Context) DatabaseToolsMcpToolsetToolArrayOutput
+}
+
+type DatabaseToolsMcpToolsetToolArray []DatabaseToolsMcpToolsetToolInput
+
+func (DatabaseToolsMcpToolsetToolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetToolArray) ToDatabaseToolsMcpToolsetToolArrayOutput() DatabaseToolsMcpToolsetToolArrayOutput {
+	return i.ToDatabaseToolsMcpToolsetToolArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetToolArray) ToDatabaseToolsMcpToolsetToolArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetToolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetToolArrayOutput)
+}
+
+type DatabaseToolsMcpToolsetToolOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetToolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetToolOutput) ToDatabaseToolsMcpToolsetToolOutput() DatabaseToolsMcpToolsetToolOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetToolOutput) ToDatabaseToolsMcpToolsetToolOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetToolOutput {
+	return o
+}
+
+// (Updatable) The roles granted access to this tool
+func (o DatabaseToolsMcpToolsetToolOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetTool) []string { return v.AllowedRoles }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+func (o DatabaseToolsMcpToolsetToolOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetTool) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the tool
+func (o DatabaseToolsMcpToolsetToolOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetTool) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The status of the tool
+func (o DatabaseToolsMcpToolsetToolOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetTool) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetToolArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetToolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetToolArrayOutput) ToDatabaseToolsMcpToolsetToolArrayOutput() DatabaseToolsMcpToolsetToolArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetToolArrayOutput) ToDatabaseToolsMcpToolsetToolArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetToolArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetToolArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpToolsetToolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpToolsetTool {
+		return vs[0].([]DatabaseToolsMcpToolsetTool)[vs[1].(int)]
+	}).(DatabaseToolsMcpToolsetToolOutput)
+}
+
+type DatabaseToolsMcpToolsetVariable struct {
+	// (Updatable) The description of the variable
+	Description *string `pulumi:"description"`
+	// (Updatable) The name of the variable
+	Name *string `pulumi:"name"`
+	// (Updatable) The type of the variable
+	Type *string `pulumi:"type"`
+}
+
+// DatabaseToolsMcpToolsetVariableInput is an input type that accepts DatabaseToolsMcpToolsetVariableArgs and DatabaseToolsMcpToolsetVariableOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetVariableInput` via:
+//
+//	DatabaseToolsMcpToolsetVariableArgs{...}
+type DatabaseToolsMcpToolsetVariableInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetVariableOutput() DatabaseToolsMcpToolsetVariableOutput
+	ToDatabaseToolsMcpToolsetVariableOutputWithContext(context.Context) DatabaseToolsMcpToolsetVariableOutput
+}
+
+type DatabaseToolsMcpToolsetVariableArgs struct {
+	// (Updatable) The description of the variable
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) The name of the variable
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The type of the variable
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DatabaseToolsMcpToolsetVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetVariableArgs) ToDatabaseToolsMcpToolsetVariableOutput() DatabaseToolsMcpToolsetVariableOutput {
+	return i.ToDatabaseToolsMcpToolsetVariableOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetVariableArgs) ToDatabaseToolsMcpToolsetVariableOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetVariableOutput)
+}
+
+// DatabaseToolsMcpToolsetVariableArrayInput is an input type that accepts DatabaseToolsMcpToolsetVariableArray and DatabaseToolsMcpToolsetVariableArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsMcpToolsetVariableArrayInput` via:
+//
+//	DatabaseToolsMcpToolsetVariableArray{ DatabaseToolsMcpToolsetVariableArgs{...} }
+type DatabaseToolsMcpToolsetVariableArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsMcpToolsetVariableArrayOutput() DatabaseToolsMcpToolsetVariableArrayOutput
+	ToDatabaseToolsMcpToolsetVariableArrayOutputWithContext(context.Context) DatabaseToolsMcpToolsetVariableArrayOutput
+}
+
+type DatabaseToolsMcpToolsetVariableArray []DatabaseToolsMcpToolsetVariableInput
+
+func (DatabaseToolsMcpToolsetVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (i DatabaseToolsMcpToolsetVariableArray) ToDatabaseToolsMcpToolsetVariableArrayOutput() DatabaseToolsMcpToolsetVariableArrayOutput {
+	return i.ToDatabaseToolsMcpToolsetVariableArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsMcpToolsetVariableArray) ToDatabaseToolsMcpToolsetVariableArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsMcpToolsetVariableArrayOutput)
+}
+
+type DatabaseToolsMcpToolsetVariableOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetVariableOutput) ToDatabaseToolsMcpToolsetVariableOutput() DatabaseToolsMcpToolsetVariableOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetVariableOutput) ToDatabaseToolsMcpToolsetVariableOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetVariableOutput {
+	return o
+}
+
+// (Updatable) The description of the variable
+func (o DatabaseToolsMcpToolsetVariableOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetVariable) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the variable
+func (o DatabaseToolsMcpToolsetVariableOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetVariable) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of the variable
+func (o DatabaseToolsMcpToolsetVariableOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsMcpToolsetVariable) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsMcpToolsetVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsMcpToolsetVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (o DatabaseToolsMcpToolsetVariableArrayOutput) ToDatabaseToolsMcpToolsetVariableArrayOutput() DatabaseToolsMcpToolsetVariableArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetVariableArrayOutput) ToDatabaseToolsMcpToolsetVariableArrayOutputWithContext(ctx context.Context) DatabaseToolsMcpToolsetVariableArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsMcpToolsetVariableArrayOutput) Index(i pulumi.IntInput) DatabaseToolsMcpToolsetVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsMcpToolsetVariable {
+		return vs[0].([]DatabaseToolsMcpToolsetVariable)[vs[1].(int)]
+	}).(DatabaseToolsMcpToolsetVariableOutput)
 }
 
 type DatabaseToolsPrivateEndpointLock struct {
@@ -1688,6 +3306,369 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp {
 		return vs[0].([]DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp)[vs[1].(int)]
 	}).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput)
+}
+
+type DatabaseToolsSqlReportColumn struct {
+	// (Updatable) The description of the column
+	Description string `pulumi:"description"`
+	// (Updatable) The name of the column
+	Name string `pulumi:"name"`
+	// (Updatable) The type of the column
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsSqlReportColumnInput is an input type that accepts DatabaseToolsSqlReportColumnArgs and DatabaseToolsSqlReportColumnOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportColumnInput` via:
+//
+//	DatabaseToolsSqlReportColumnArgs{...}
+type DatabaseToolsSqlReportColumnInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportColumnOutput() DatabaseToolsSqlReportColumnOutput
+	ToDatabaseToolsSqlReportColumnOutputWithContext(context.Context) DatabaseToolsSqlReportColumnOutput
+}
+
+type DatabaseToolsSqlReportColumnArgs struct {
+	// (Updatable) The description of the column
+	Description pulumi.StringInput `pulumi:"description"`
+	// (Updatable) The name of the column
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The type of the column
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsSqlReportColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportColumnArgs) ToDatabaseToolsSqlReportColumnOutput() DatabaseToolsSqlReportColumnOutput {
+	return i.ToDatabaseToolsSqlReportColumnOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportColumnArgs) ToDatabaseToolsSqlReportColumnOutputWithContext(ctx context.Context) DatabaseToolsSqlReportColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportColumnOutput)
+}
+
+// DatabaseToolsSqlReportColumnArrayInput is an input type that accepts DatabaseToolsSqlReportColumnArray and DatabaseToolsSqlReportColumnArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportColumnArrayInput` via:
+//
+//	DatabaseToolsSqlReportColumnArray{ DatabaseToolsSqlReportColumnArgs{...} }
+type DatabaseToolsSqlReportColumnArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportColumnArrayOutput() DatabaseToolsSqlReportColumnArrayOutput
+	ToDatabaseToolsSqlReportColumnArrayOutputWithContext(context.Context) DatabaseToolsSqlReportColumnArrayOutput
+}
+
+type DatabaseToolsSqlReportColumnArray []DatabaseToolsSqlReportColumnInput
+
+func (DatabaseToolsSqlReportColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportColumnArray) ToDatabaseToolsSqlReportColumnArrayOutput() DatabaseToolsSqlReportColumnArrayOutput {
+	return i.ToDatabaseToolsSqlReportColumnArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportColumnArray) ToDatabaseToolsSqlReportColumnArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportColumnArrayOutput)
+}
+
+type DatabaseToolsSqlReportColumnOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportColumnOutput) ToDatabaseToolsSqlReportColumnOutput() DatabaseToolsSqlReportColumnOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportColumnOutput) ToDatabaseToolsSqlReportColumnOutputWithContext(ctx context.Context) DatabaseToolsSqlReportColumnOutput {
+	return o
+}
+
+// (Updatable) The description of the column
+func (o DatabaseToolsSqlReportColumnOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportColumn) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the column
+func (o DatabaseToolsSqlReportColumnOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportColumn) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of the column
+func (o DatabaseToolsSqlReportColumnOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportColumn) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsSqlReportColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportColumnArrayOutput) ToDatabaseToolsSqlReportColumnArrayOutput() DatabaseToolsSqlReportColumnArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportColumnArrayOutput) ToDatabaseToolsSqlReportColumnArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportColumnArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportColumnArrayOutput) Index(i pulumi.IntInput) DatabaseToolsSqlReportColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsSqlReportColumn {
+		return vs[0].([]DatabaseToolsSqlReportColumn)[vs[1].(int)]
+	}).(DatabaseToolsSqlReportColumnOutput)
+}
+
+type DatabaseToolsSqlReportLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsSqlReportLockInput is an input type that accepts DatabaseToolsSqlReportLockArgs and DatabaseToolsSqlReportLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportLockInput` via:
+//
+//	DatabaseToolsSqlReportLockArgs{...}
+type DatabaseToolsSqlReportLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportLockOutput() DatabaseToolsSqlReportLockOutput
+	ToDatabaseToolsSqlReportLockOutputWithContext(context.Context) DatabaseToolsSqlReportLockOutput
+}
+
+type DatabaseToolsSqlReportLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsSqlReportLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportLockArgs) ToDatabaseToolsSqlReportLockOutput() DatabaseToolsSqlReportLockOutput {
+	return i.ToDatabaseToolsSqlReportLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportLockArgs) ToDatabaseToolsSqlReportLockOutputWithContext(ctx context.Context) DatabaseToolsSqlReportLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportLockOutput)
+}
+
+// DatabaseToolsSqlReportLockArrayInput is an input type that accepts DatabaseToolsSqlReportLockArray and DatabaseToolsSqlReportLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportLockArrayInput` via:
+//
+//	DatabaseToolsSqlReportLockArray{ DatabaseToolsSqlReportLockArgs{...} }
+type DatabaseToolsSqlReportLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportLockArrayOutput() DatabaseToolsSqlReportLockArrayOutput
+	ToDatabaseToolsSqlReportLockArrayOutputWithContext(context.Context) DatabaseToolsSqlReportLockArrayOutput
+}
+
+type DatabaseToolsSqlReportLockArray []DatabaseToolsSqlReportLockInput
+
+func (DatabaseToolsSqlReportLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportLockArray) ToDatabaseToolsSqlReportLockArrayOutput() DatabaseToolsSqlReportLockArrayOutput {
+	return i.ToDatabaseToolsSqlReportLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportLockArray) ToDatabaseToolsSqlReportLockArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportLockArrayOutput)
+}
+
+type DatabaseToolsSqlReportLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportLockOutput) ToDatabaseToolsSqlReportLockOutput() DatabaseToolsSqlReportLockOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportLockOutput) ToDatabaseToolsSqlReportLockOutputWithContext(ctx context.Context) DatabaseToolsSqlReportLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsSqlReportLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsSqlReportLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsSqlReportLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsSqlReportLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsSqlReportLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportLockArrayOutput) ToDatabaseToolsSqlReportLockArrayOutput() DatabaseToolsSqlReportLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportLockArrayOutput) ToDatabaseToolsSqlReportLockArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsSqlReportLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsSqlReportLock {
+		return vs[0].([]DatabaseToolsSqlReportLock)[vs[1].(int)]
+	}).(DatabaseToolsSqlReportLockOutput)
+}
+
+type DatabaseToolsSqlReportVariable struct {
+	// (Updatable) The description of the variable
+	Description string `pulumi:"description"`
+	// (Updatable) The name of the variable
+	Name string `pulumi:"name"`
+	// (Updatable) The type of the variable
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsSqlReportVariableInput is an input type that accepts DatabaseToolsSqlReportVariableArgs and DatabaseToolsSqlReportVariableOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportVariableInput` via:
+//
+//	DatabaseToolsSqlReportVariableArgs{...}
+type DatabaseToolsSqlReportVariableInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportVariableOutput() DatabaseToolsSqlReportVariableOutput
+	ToDatabaseToolsSqlReportVariableOutputWithContext(context.Context) DatabaseToolsSqlReportVariableOutput
+}
+
+type DatabaseToolsSqlReportVariableArgs struct {
+	// (Updatable) The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// (Updatable) The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) The type of the variable
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsSqlReportVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportVariableArgs) ToDatabaseToolsSqlReportVariableOutput() DatabaseToolsSqlReportVariableOutput {
+	return i.ToDatabaseToolsSqlReportVariableOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportVariableArgs) ToDatabaseToolsSqlReportVariableOutputWithContext(ctx context.Context) DatabaseToolsSqlReportVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportVariableOutput)
+}
+
+// DatabaseToolsSqlReportVariableArrayInput is an input type that accepts DatabaseToolsSqlReportVariableArray and DatabaseToolsSqlReportVariableArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsSqlReportVariableArrayInput` via:
+//
+//	DatabaseToolsSqlReportVariableArray{ DatabaseToolsSqlReportVariableArgs{...} }
+type DatabaseToolsSqlReportVariableArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsSqlReportVariableArrayOutput() DatabaseToolsSqlReportVariableArrayOutput
+	ToDatabaseToolsSqlReportVariableArrayOutputWithContext(context.Context) DatabaseToolsSqlReportVariableArrayOutput
+}
+
+type DatabaseToolsSqlReportVariableArray []DatabaseToolsSqlReportVariableInput
+
+func (DatabaseToolsSqlReportVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (i DatabaseToolsSqlReportVariableArray) ToDatabaseToolsSqlReportVariableArrayOutput() DatabaseToolsSqlReportVariableArrayOutput {
+	return i.ToDatabaseToolsSqlReportVariableArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsSqlReportVariableArray) ToDatabaseToolsSqlReportVariableArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsSqlReportVariableArrayOutput)
+}
+
+type DatabaseToolsSqlReportVariableOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportVariableOutput) ToDatabaseToolsSqlReportVariableOutput() DatabaseToolsSqlReportVariableOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportVariableOutput) ToDatabaseToolsSqlReportVariableOutputWithContext(ctx context.Context) DatabaseToolsSqlReportVariableOutput {
+	return o
+}
+
+// (Updatable) The description of the variable
+func (o DatabaseToolsSqlReportVariableOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportVariable) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the variable
+func (o DatabaseToolsSqlReportVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of the variable
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DatabaseToolsSqlReportVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsSqlReportVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsSqlReportVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsSqlReportVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (o DatabaseToolsSqlReportVariableArrayOutput) ToDatabaseToolsSqlReportVariableArrayOutput() DatabaseToolsSqlReportVariableArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportVariableArrayOutput) ToDatabaseToolsSqlReportVariableArrayOutputWithContext(ctx context.Context) DatabaseToolsSqlReportVariableArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsSqlReportVariableArrayOutput) Index(i pulumi.IntInput) DatabaseToolsSqlReportVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsSqlReportVariable {
+		return vs[0].([]DatabaseToolsSqlReportVariable)[vs[1].(int)]
+	}).(DatabaseToolsSqlReportVariableOutput)
 }
 
 type RuntimeDatabaseToolsConnectionCredentialRelatedResource struct {
@@ -3017,7 +4998,7 @@ type GetDatabaseToolsConnectionProxyClient struct {
 	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
 	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles []string `pulumi:"roles"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName string `pulumi:"userName"`
 	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPasswords"`
@@ -3039,7 +5020,7 @@ type GetDatabaseToolsConnectionProxyClientArgs struct {
 	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
 	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName pulumi.StringInput `pulumi:"userName"`
 	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
@@ -3106,7 +5087,7 @@ func (o GetDatabaseToolsConnectionProxyClientOutput) Roles() pulumi.StringArrayO
 	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) []string { return v.Roles }).(pulumi.StringArrayOutput)
 }
 
-// The database user name.
+// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 func (o GetDatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -3555,6 +5536,8 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
+	// Specifies the authentication type used to connect to the database.
+	AuthenticationType string `pulumi:"authenticationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
@@ -3597,7 +5580,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	Type string `pulumi:"type"`
 	// The JDBC URL used to connect to the Generic JDBC database system.
 	Url string `pulumi:"url"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName string `pulumi:"userName"`
 	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword `pulumi:"userPasswords"`
@@ -3617,6 +5600,8 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput inter
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties pulumi.StringMapInput `pulumi:"advancedProperties"`
+	// Specifies the authentication type used to connect to the database.
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
@@ -3659,7 +5644,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	Type pulumi.StringInput `pulumi:"type"`
 	// The JDBC URL used to connect to the Generic JDBC database system.
 	Url pulumi.StringInput `pulumi:"url"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName pulumi.StringInput `pulumi:"userName"`
 	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput `pulumi:"userPasswords"`
@@ -3721,6 +5706,13 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]string {
 		return v.AdvancedProperties
 	}).(pulumi.StringMapOutput)
+}
+
+// Specifies the authentication type used to connect to the database.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
+		return v.AuthenticationType
+	}).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -3856,7 +5848,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The database user name.
+// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -4362,7 +6354,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient
 	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
 	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles []string `pulumi:"roles"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName string `pulumi:"userName"`
 	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword `pulumi:"userPasswords"`
@@ -4384,7 +6376,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient
 	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
 	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName pulumi.StringInput `pulumi:"userName"`
 	// The database user password.
 	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
@@ -4455,7 +6447,7 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyCli
 	}).(pulumi.StringArrayOutput)
 }
 
-// The database user name.
+// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) string {
 		return v.UserName
@@ -4923,6 +6915,695 @@ func (o GetDatabaseToolsConnectionsFilterArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsFilter {
 		return vs[0].([]GetDatabaseToolsConnectionsFilter)[vs[1].(int)]
 	}).(GetDatabaseToolsConnectionsFilterOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The Database Tools database API gateway config type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigLockInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigLockArgs and GetDatabaseToolsDatabaseApiGatewayConfigLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigLockInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigLockArgs{...}
+type GetDatabaseToolsDatabaseApiGatewayConfigLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The Database Tools database API gateway config type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigLockArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigLockArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigLockOutput)
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigLockArrayInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigLockArray and GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigLockArrayInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigLockArray{ GetDatabaseToolsDatabaseApiGatewayConfigLockArgs{...} }
+type GetDatabaseToolsDatabaseApiGatewayConfigLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigLockArray []GetDatabaseToolsDatabaseApiGatewayConfigLockInput
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigLockArray) ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigLockArray) ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigLockOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The Database Tools database API gateway config type.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsDatabaseApiGatewayConfigLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsDatabaseApiGatewayConfigLock {
+		return vs[0].([]GetDatabaseToolsDatabaseApiGatewayConfigLock)[vs[1].(int)]
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigLockOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection struct {
+	Items []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs{...}
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs struct {
+	Items GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput)
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray{ GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs{...} }
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionInput
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput) Items() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection) []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection {
+		return vs[0].([]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools database API gateway config.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock `pulumi:"locks"`
+	// The RESTful service definition location.
+	MetadataSource string `pulumi:"metadataSource"`
+	// A filter to return resources only when their `lifecycleState` matches the specified `lifecycleState`.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Database Tools database API gateway config was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs{...}
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools database API gateway config.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayInput `pulumi:"locks"`
+	// The RESTful service definition location.
+	MetadataSource pulumi.StringInput `pulumi:"metadataSource"`
+	// A filter to return resources only when their `lifecycleState` matches the specified `lifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Database Tools database API gateway config was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput)
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray{ GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs{...} }
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemInput
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools database API gateway config.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) Locks() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput)
+}
+
+// The RESTful service definition location.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) MetadataSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.MetadataSource
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources only when their `lifecycleState` matches the specified `lifecycleState`.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools database API gateway config was updated. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem {
+		return vs[0].([]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs{...}
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray and GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray{ GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs{...} }
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray []GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockInput
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools database API gateway config was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsFilterInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs and GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsFilterInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs{...}
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput)
+}
+
+// GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayInput is an input type that accepts GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray and GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayInput` via:
+//
+//	GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray{ GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs{...} }
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput
+	ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutputWithContext(context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray []GetDatabaseToolsDatabaseApiGatewayConfigsFilterInput
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput {
+	return i.ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsDatabaseApiGatewayConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsDatabaseApiGatewayConfigsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput() GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput) ToGetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsDatabaseApiGatewayConfigsFilter {
+		return vs[0].([]GetDatabaseToolsDatabaseApiGatewayConfigsFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput)
 }
 
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection struct {
@@ -6024,6 +8705,4413 @@ func (o GetDatabaseToolsIdentityLockArrayOutput) Index(i pulumi.IntInput) GetDat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsIdentityLock {
 		return vs[0].([]GetDatabaseToolsIdentityLock)[vs[1].(int)]
 	}).(GetDatabaseToolsIdentityLockOutput)
+}
+
+type GetDatabaseToolsMcpServerBuiltInRole struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// GetDatabaseToolsMcpServerBuiltInRoleInput is an input type that accepts GetDatabaseToolsMcpServerBuiltInRoleArgs and GetDatabaseToolsMcpServerBuiltInRoleOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerBuiltInRoleInput` via:
+//
+//	GetDatabaseToolsMcpServerBuiltInRoleArgs{...}
+type GetDatabaseToolsMcpServerBuiltInRoleInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerBuiltInRoleOutput() GetDatabaseToolsMcpServerBuiltInRoleOutput
+	ToGetDatabaseToolsMcpServerBuiltInRoleOutputWithContext(context.Context) GetDatabaseToolsMcpServerBuiltInRoleOutput
+}
+
+type GetDatabaseToolsMcpServerBuiltInRoleArgs struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (GetDatabaseToolsMcpServerBuiltInRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerBuiltInRoleArgs) ToGetDatabaseToolsMcpServerBuiltInRoleOutput() GetDatabaseToolsMcpServerBuiltInRoleOutput {
+	return i.ToGetDatabaseToolsMcpServerBuiltInRoleOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerBuiltInRoleArgs) ToGetDatabaseToolsMcpServerBuiltInRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerBuiltInRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerBuiltInRoleOutput)
+}
+
+// GetDatabaseToolsMcpServerBuiltInRoleArrayInput is an input type that accepts GetDatabaseToolsMcpServerBuiltInRoleArray and GetDatabaseToolsMcpServerBuiltInRoleArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerBuiltInRoleArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerBuiltInRoleArray{ GetDatabaseToolsMcpServerBuiltInRoleArgs{...} }
+type GetDatabaseToolsMcpServerBuiltInRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutput() GetDatabaseToolsMcpServerBuiltInRoleArrayOutput
+	ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerBuiltInRoleArrayOutput
+}
+
+type GetDatabaseToolsMcpServerBuiltInRoleArray []GetDatabaseToolsMcpServerBuiltInRoleInput
+
+func (GetDatabaseToolsMcpServerBuiltInRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerBuiltInRoleArray) ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutput() GetDatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerBuiltInRoleArray) ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerBuiltInRoleArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerBuiltInRoleOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerBuiltInRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerBuiltInRoleOutput) ToGetDatabaseToolsMcpServerBuiltInRoleOutput() GetDatabaseToolsMcpServerBuiltInRoleOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerBuiltInRoleOutput) ToGetDatabaseToolsMcpServerBuiltInRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerBuiltInRoleOutput {
+	return o
+}
+
+// A human-readable description of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServerBuiltInRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerBuiltInRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+func (o GetDatabaseToolsMcpServerBuiltInRoleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerBuiltInRole) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerBuiltInRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerBuiltInRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerBuiltInRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerBuiltInRoleArrayOutput) ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutput() GetDatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerBuiltInRoleArrayOutput) ToGetDatabaseToolsMcpServerBuiltInRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerBuiltInRoleArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerBuiltInRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerBuiltInRole {
+		return vs[0].([]GetDatabaseToolsMcpServerBuiltInRole)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerBuiltInRoleOutput)
+}
+
+type GetDatabaseToolsMcpServerCustomRole struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description string `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// GetDatabaseToolsMcpServerCustomRoleInput is an input type that accepts GetDatabaseToolsMcpServerCustomRoleArgs and GetDatabaseToolsMcpServerCustomRoleOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerCustomRoleInput` via:
+//
+//	GetDatabaseToolsMcpServerCustomRoleArgs{...}
+type GetDatabaseToolsMcpServerCustomRoleInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerCustomRoleOutput() GetDatabaseToolsMcpServerCustomRoleOutput
+	ToGetDatabaseToolsMcpServerCustomRoleOutputWithContext(context.Context) GetDatabaseToolsMcpServerCustomRoleOutput
+}
+
+type GetDatabaseToolsMcpServerCustomRoleArgs struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (GetDatabaseToolsMcpServerCustomRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerCustomRoleArgs) ToGetDatabaseToolsMcpServerCustomRoleOutput() GetDatabaseToolsMcpServerCustomRoleOutput {
+	return i.ToGetDatabaseToolsMcpServerCustomRoleOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerCustomRoleArgs) ToGetDatabaseToolsMcpServerCustomRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerCustomRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerCustomRoleOutput)
+}
+
+// GetDatabaseToolsMcpServerCustomRoleArrayInput is an input type that accepts GetDatabaseToolsMcpServerCustomRoleArray and GetDatabaseToolsMcpServerCustomRoleArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerCustomRoleArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerCustomRoleArray{ GetDatabaseToolsMcpServerCustomRoleArgs{...} }
+type GetDatabaseToolsMcpServerCustomRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerCustomRoleArrayOutput() GetDatabaseToolsMcpServerCustomRoleArrayOutput
+	ToGetDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerCustomRoleArrayOutput
+}
+
+type GetDatabaseToolsMcpServerCustomRoleArray []GetDatabaseToolsMcpServerCustomRoleInput
+
+func (GetDatabaseToolsMcpServerCustomRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerCustomRoleArray) ToGetDatabaseToolsMcpServerCustomRoleArrayOutput() GetDatabaseToolsMcpServerCustomRoleArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerCustomRoleArray) ToGetDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerCustomRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerCustomRoleArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerCustomRoleOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerCustomRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerCustomRoleOutput) ToGetDatabaseToolsMcpServerCustomRoleOutput() GetDatabaseToolsMcpServerCustomRoleOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerCustomRoleOutput) ToGetDatabaseToolsMcpServerCustomRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerCustomRoleOutput {
+	return o
+}
+
+// A human-readable description of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServerCustomRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerCustomRole) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique and can be updated. Avoid entering confidential information.
+func (o GetDatabaseToolsMcpServerCustomRoleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerCustomRole) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerCustomRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerCustomRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerCustomRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerCustomRoleArrayOutput) ToGetDatabaseToolsMcpServerCustomRoleArrayOutput() GetDatabaseToolsMcpServerCustomRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerCustomRoleArrayOutput) ToGetDatabaseToolsMcpServerCustomRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerCustomRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerCustomRoleArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerCustomRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerCustomRole {
+		return vs[0].([]GetDatabaseToolsMcpServerCustomRole)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerCustomRoleOutput)
+}
+
+type GetDatabaseToolsMcpServerEndpoint struct {
+	// The URI endpoint of the MCP server
+	Endpoint string `pulumi:"endpoint"`
+	// The Database Tools MCP server type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServerEndpointInput is an input type that accepts GetDatabaseToolsMcpServerEndpointArgs and GetDatabaseToolsMcpServerEndpointOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerEndpointInput` via:
+//
+//	GetDatabaseToolsMcpServerEndpointArgs{...}
+type GetDatabaseToolsMcpServerEndpointInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerEndpointOutput() GetDatabaseToolsMcpServerEndpointOutput
+	ToGetDatabaseToolsMcpServerEndpointOutputWithContext(context.Context) GetDatabaseToolsMcpServerEndpointOutput
+}
+
+type GetDatabaseToolsMcpServerEndpointArgs struct {
+	// The URI endpoint of the MCP server
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// The Database Tools MCP server type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServerEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerEndpointArgs) ToGetDatabaseToolsMcpServerEndpointOutput() GetDatabaseToolsMcpServerEndpointOutput {
+	return i.ToGetDatabaseToolsMcpServerEndpointOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerEndpointArgs) ToGetDatabaseToolsMcpServerEndpointOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerEndpointOutput)
+}
+
+// GetDatabaseToolsMcpServerEndpointArrayInput is an input type that accepts GetDatabaseToolsMcpServerEndpointArray and GetDatabaseToolsMcpServerEndpointArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerEndpointArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerEndpointArray{ GetDatabaseToolsMcpServerEndpointArgs{...} }
+type GetDatabaseToolsMcpServerEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerEndpointArrayOutput() GetDatabaseToolsMcpServerEndpointArrayOutput
+	ToGetDatabaseToolsMcpServerEndpointArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerEndpointArrayOutput
+}
+
+type GetDatabaseToolsMcpServerEndpointArray []GetDatabaseToolsMcpServerEndpointInput
+
+func (GetDatabaseToolsMcpServerEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerEndpointArray) ToGetDatabaseToolsMcpServerEndpointArrayOutput() GetDatabaseToolsMcpServerEndpointArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerEndpointArray) ToGetDatabaseToolsMcpServerEndpointArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerEndpointArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerEndpointOutput) ToGetDatabaseToolsMcpServerEndpointOutput() GetDatabaseToolsMcpServerEndpointOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerEndpointOutput) ToGetDatabaseToolsMcpServerEndpointOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerEndpointOutput {
+	return o
+}
+
+// The URI endpoint of the MCP server
+func (o GetDatabaseToolsMcpServerEndpointOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerEndpoint) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// The Database Tools MCP server type.
+func (o GetDatabaseToolsMcpServerEndpointOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerEndpoint) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerEndpoint)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerEndpointArrayOutput) ToGetDatabaseToolsMcpServerEndpointArrayOutput() GetDatabaseToolsMcpServerEndpointArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerEndpointArrayOutput) ToGetDatabaseToolsMcpServerEndpointArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerEndpointArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerEndpointArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerEndpoint {
+		return vs[0].([]GetDatabaseToolsMcpServerEndpoint)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerEndpointOutput)
+}
+
+type GetDatabaseToolsMcpServerLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The Database Tools MCP server type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServerLockInput is an input type that accepts GetDatabaseToolsMcpServerLockArgs and GetDatabaseToolsMcpServerLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerLockInput` via:
+//
+//	GetDatabaseToolsMcpServerLockArgs{...}
+type GetDatabaseToolsMcpServerLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerLockOutput() GetDatabaseToolsMcpServerLockOutput
+	ToGetDatabaseToolsMcpServerLockOutputWithContext(context.Context) GetDatabaseToolsMcpServerLockOutput
+}
+
+type GetDatabaseToolsMcpServerLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The Database Tools MCP server type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServerLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerLockArgs) ToGetDatabaseToolsMcpServerLockOutput() GetDatabaseToolsMcpServerLockOutput {
+	return i.ToGetDatabaseToolsMcpServerLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerLockArgs) ToGetDatabaseToolsMcpServerLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerLockOutput)
+}
+
+// GetDatabaseToolsMcpServerLockArrayInput is an input type that accepts GetDatabaseToolsMcpServerLockArray and GetDatabaseToolsMcpServerLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerLockArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerLockArray{ GetDatabaseToolsMcpServerLockArgs{...} }
+type GetDatabaseToolsMcpServerLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerLockArrayOutput() GetDatabaseToolsMcpServerLockArrayOutput
+	ToGetDatabaseToolsMcpServerLockArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerLockArrayOutput
+}
+
+type GetDatabaseToolsMcpServerLockArray []GetDatabaseToolsMcpServerLockInput
+
+func (GetDatabaseToolsMcpServerLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerLockArray) ToGetDatabaseToolsMcpServerLockArrayOutput() GetDatabaseToolsMcpServerLockArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerLockArray) ToGetDatabaseToolsMcpServerLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerLockArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerLockOutput) ToGetDatabaseToolsMcpServerLockOutput() GetDatabaseToolsMcpServerLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerLockOutput) ToGetDatabaseToolsMcpServerLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsMcpServerLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsMcpServerLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpServerLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The Database Tools MCP server type.
+func (o GetDatabaseToolsMcpServerLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerLockArrayOutput) ToGetDatabaseToolsMcpServerLockArrayOutput() GetDatabaseToolsMcpServerLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerLockArrayOutput) ToGetDatabaseToolsMcpServerLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerLock {
+		return vs[0].([]GetDatabaseToolsMcpServerLock)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerLockOutput)
+}
+
+type GetDatabaseToolsMcpServerRelatedResource struct {
+	// The resource entity type.
+	EntityType string `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+}
+
+// GetDatabaseToolsMcpServerRelatedResourceInput is an input type that accepts GetDatabaseToolsMcpServerRelatedResourceArgs and GetDatabaseToolsMcpServerRelatedResourceOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerRelatedResourceInput` via:
+//
+//	GetDatabaseToolsMcpServerRelatedResourceArgs{...}
+type GetDatabaseToolsMcpServerRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerRelatedResourceOutput() GetDatabaseToolsMcpServerRelatedResourceOutput
+	ToGetDatabaseToolsMcpServerRelatedResourceOutputWithContext(context.Context) GetDatabaseToolsMcpServerRelatedResourceOutput
+}
+
+type GetDatabaseToolsMcpServerRelatedResourceArgs struct {
+	// The resource entity type.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+}
+
+func (GetDatabaseToolsMcpServerRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerRelatedResourceArgs) ToGetDatabaseToolsMcpServerRelatedResourceOutput() GetDatabaseToolsMcpServerRelatedResourceOutput {
+	return i.ToGetDatabaseToolsMcpServerRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerRelatedResourceArgs) ToGetDatabaseToolsMcpServerRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerRelatedResourceOutput)
+}
+
+// GetDatabaseToolsMcpServerRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsMcpServerRelatedResourceArray and GetDatabaseToolsMcpServerRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerRelatedResourceArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerRelatedResourceArray{ GetDatabaseToolsMcpServerRelatedResourceArgs{...} }
+type GetDatabaseToolsMcpServerRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerRelatedResourceArrayOutput() GetDatabaseToolsMcpServerRelatedResourceArrayOutput
+	ToGetDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerRelatedResourceArrayOutput
+}
+
+type GetDatabaseToolsMcpServerRelatedResourceArray []GetDatabaseToolsMcpServerRelatedResourceInput
+
+func (GetDatabaseToolsMcpServerRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerRelatedResourceArray) ToGetDatabaseToolsMcpServerRelatedResourceArrayOutput() GetDatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerRelatedResourceArray) ToGetDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerRelatedResourceArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerRelatedResourceOutput) ToGetDatabaseToolsMcpServerRelatedResourceOutput() GetDatabaseToolsMcpServerRelatedResourceOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerRelatedResourceOutput) ToGetDatabaseToolsMcpServerRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerRelatedResourceOutput {
+	return o
+}
+
+// The resource entity type.
+func (o GetDatabaseToolsMcpServerRelatedResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerRelatedResource) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetDatabaseToolsMcpServerRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerRelatedResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerRelatedResource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerRelatedResourceArrayOutput) ToGetDatabaseToolsMcpServerRelatedResourceArrayOutput() GetDatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerRelatedResourceArrayOutput) ToGetDatabaseToolsMcpServerRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerRelatedResource {
+		return vs[0].([]GetDatabaseToolsMcpServerRelatedResource)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerRelatedResourceOutput)
+}
+
+type GetDatabaseToolsMcpServerStorage struct {
+	// The Object Storage bucket to use.
+	Buckets []GetDatabaseToolsMcpServerStorageBucket `pulumi:"buckets"`
+	// The Database Tools MCP server type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServerStorageInput is an input type that accepts GetDatabaseToolsMcpServerStorageArgs and GetDatabaseToolsMcpServerStorageOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerStorageInput` via:
+//
+//	GetDatabaseToolsMcpServerStorageArgs{...}
+type GetDatabaseToolsMcpServerStorageInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerStorageOutput() GetDatabaseToolsMcpServerStorageOutput
+	ToGetDatabaseToolsMcpServerStorageOutputWithContext(context.Context) GetDatabaseToolsMcpServerStorageOutput
+}
+
+type GetDatabaseToolsMcpServerStorageArgs struct {
+	// The Object Storage bucket to use.
+	Buckets GetDatabaseToolsMcpServerStorageBucketArrayInput `pulumi:"buckets"`
+	// The Database Tools MCP server type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServerStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerStorageArgs) ToGetDatabaseToolsMcpServerStorageOutput() GetDatabaseToolsMcpServerStorageOutput {
+	return i.ToGetDatabaseToolsMcpServerStorageOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerStorageArgs) ToGetDatabaseToolsMcpServerStorageOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerStorageOutput)
+}
+
+// GetDatabaseToolsMcpServerStorageArrayInput is an input type that accepts GetDatabaseToolsMcpServerStorageArray and GetDatabaseToolsMcpServerStorageArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerStorageArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerStorageArray{ GetDatabaseToolsMcpServerStorageArgs{...} }
+type GetDatabaseToolsMcpServerStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerStorageArrayOutput() GetDatabaseToolsMcpServerStorageArrayOutput
+	ToGetDatabaseToolsMcpServerStorageArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerStorageArrayOutput
+}
+
+type GetDatabaseToolsMcpServerStorageArray []GetDatabaseToolsMcpServerStorageInput
+
+func (GetDatabaseToolsMcpServerStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerStorageArray) ToGetDatabaseToolsMcpServerStorageArrayOutput() GetDatabaseToolsMcpServerStorageArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerStorageArray) ToGetDatabaseToolsMcpServerStorageArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerStorageArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerStorageOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerStorageOutput) ToGetDatabaseToolsMcpServerStorageOutput() GetDatabaseToolsMcpServerStorageOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageOutput) ToGetDatabaseToolsMcpServerStorageOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageOutput {
+	return o
+}
+
+// The Object Storage bucket to use.
+func (o GetDatabaseToolsMcpServerStorageOutput) Buckets() GetDatabaseToolsMcpServerStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerStorage) []GetDatabaseToolsMcpServerStorageBucket { return v.Buckets }).(GetDatabaseToolsMcpServerStorageBucketArrayOutput)
+}
+
+// The Database Tools MCP server type.
+func (o GetDatabaseToolsMcpServerStorageOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerStorage) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerStorage)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerStorageArrayOutput) ToGetDatabaseToolsMcpServerStorageArrayOutput() GetDatabaseToolsMcpServerStorageArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageArrayOutput) ToGetDatabaseToolsMcpServerStorageArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerStorage {
+		return vs[0].([]GetDatabaseToolsMcpServerStorage)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerStorageOutput)
+}
+
+type GetDatabaseToolsMcpServerStorageBucket struct {
+	// The Object Storage bucket to use.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace to use.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetDatabaseToolsMcpServerStorageBucketInput is an input type that accepts GetDatabaseToolsMcpServerStorageBucketArgs and GetDatabaseToolsMcpServerStorageBucketOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerStorageBucketInput` via:
+//
+//	GetDatabaseToolsMcpServerStorageBucketArgs{...}
+type GetDatabaseToolsMcpServerStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerStorageBucketOutput() GetDatabaseToolsMcpServerStorageBucketOutput
+	ToGetDatabaseToolsMcpServerStorageBucketOutputWithContext(context.Context) GetDatabaseToolsMcpServerStorageBucketOutput
+}
+
+type GetDatabaseToolsMcpServerStorageBucketArgs struct {
+	// The Object Storage bucket to use.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace to use.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetDatabaseToolsMcpServerStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerStorageBucketArgs) ToGetDatabaseToolsMcpServerStorageBucketOutput() GetDatabaseToolsMcpServerStorageBucketOutput {
+	return i.ToGetDatabaseToolsMcpServerStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerStorageBucketArgs) ToGetDatabaseToolsMcpServerStorageBucketOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerStorageBucketOutput)
+}
+
+// GetDatabaseToolsMcpServerStorageBucketArrayInput is an input type that accepts GetDatabaseToolsMcpServerStorageBucketArray and GetDatabaseToolsMcpServerStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServerStorageBucketArrayInput` via:
+//
+//	GetDatabaseToolsMcpServerStorageBucketArray{ GetDatabaseToolsMcpServerStorageBucketArgs{...} }
+type GetDatabaseToolsMcpServerStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServerStorageBucketArrayOutput() GetDatabaseToolsMcpServerStorageBucketArrayOutput
+	ToGetDatabaseToolsMcpServerStorageBucketArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServerStorageBucketArrayOutput
+}
+
+type GetDatabaseToolsMcpServerStorageBucketArray []GetDatabaseToolsMcpServerStorageBucketInput
+
+func (GetDatabaseToolsMcpServerStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServerStorageBucketArray) ToGetDatabaseToolsMcpServerStorageBucketArrayOutput() GetDatabaseToolsMcpServerStorageBucketArrayOutput {
+	return i.ToGetDatabaseToolsMcpServerStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServerStorageBucketArray) ToGetDatabaseToolsMcpServerStorageBucketArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServerStorageBucketArrayOutput)
+}
+
+type GetDatabaseToolsMcpServerStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerStorageBucketOutput) ToGetDatabaseToolsMcpServerStorageBucketOutput() GetDatabaseToolsMcpServerStorageBucketOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageBucketOutput) ToGetDatabaseToolsMcpServerStorageBucketOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageBucketOutput {
+	return o
+}
+
+// The Object Storage bucket to use.
+func (o GetDatabaseToolsMcpServerStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerStorageBucket) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace to use.
+func (o GetDatabaseToolsMcpServerStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServerStorageBucket) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServerStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServerStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServerStorageBucket)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServerStorageBucketArrayOutput) ToGetDatabaseToolsMcpServerStorageBucketArrayOutput() GetDatabaseToolsMcpServerStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageBucketArrayOutput) ToGetDatabaseToolsMcpServerStorageBucketArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServerStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServerStorageBucketArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServerStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServerStorageBucket {
+		return vs[0].([]GetDatabaseToolsMcpServerStorageBucket)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServerStorageBucketOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection struct {
+	Items []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs struct {
+	Items GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput) Items() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem struct {
+	// Access token expiry in seconds
+	AccessTokenExpiryInSeconds int `pulumi:"accessTokenExpiryInSeconds"`
+	// Built-in roles associated with the MCP Server.
+	BuiltInRoles []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole `pulumi:"builtInRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Custom roles associated with the MCP Server.
+	CustomRoles []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole `pulumi:"customRoles"`
+	// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A human-readable description of the Database Tools MCP server.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
+	DomainAppId string `pulumi:"domainAppId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
+	DomainId string `pulumi:"domainId"`
+	// Invoke endpoints for the MCP server.
+	Endpoints []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint `pulumi:"endpoints"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP server.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock `pulumi:"locks"`
+	// Refresh token expiry in seconds
+	RefreshTokenExpiryInSeconds int `pulumi:"refreshTokenExpiryInSeconds"`
+	// A related resource
+	RelatedResources []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource `pulumi:"relatedResources"`
+	// Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity string `pulumi:"runtimeIdentity"`
+	// A filter to return resources only when their `databaseToolsMcpServerLifecycleState` matches the specified `databaseToolsMcpServerLifecycleState`.
+	State string `pulumi:"state"`
+	// The storage option used when running a tool asynchronously.
+	Storages []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage `pulumi:"storages"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs struct {
+	// Access token expiry in seconds
+	AccessTokenExpiryInSeconds pulumi.IntInput `pulumi:"accessTokenExpiryInSeconds"`
+	// Built-in roles associated with the MCP Server.
+	BuiltInRoles GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayInput `pulumi:"builtInRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Custom roles associated with the MCP Server.
+	CustomRoles GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayInput `pulumi:"customRoles"`
+	// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+	DatabaseToolsConnectionId pulumi.StringInput `pulumi:"databaseToolsConnectionId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
+	DomainAppId pulumi.StringInput `pulumi:"domainAppId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
+	DomainId pulumi.StringInput `pulumi:"domainId"`
+	// Invoke endpoints for the MCP server.
+	Endpoints GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayInput `pulumi:"endpoints"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP server.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayInput `pulumi:"locks"`
+	// Refresh token expiry in seconds
+	RefreshTokenExpiryInSeconds pulumi.IntInput `pulumi:"refreshTokenExpiryInSeconds"`
+	// A related resource
+	RelatedResources GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
+	// Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity pulumi.StringInput `pulumi:"runtimeIdentity"`
+	// A filter to return resources only when their `databaseToolsMcpServerLifecycleState` matches the specified `databaseToolsMcpServerLifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// The storage option used when running a tool asynchronously.
+	Storages GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayInput `pulumi:"storages"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput {
+	return o
+}
+
+// Access token expiry in seconds
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) AccessTokenExpiryInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) int {
+		return v.AccessTokenExpiryInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Built-in roles associated with the MCP Server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) BuiltInRoles() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole {
+		return v.BuiltInRoles
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Custom roles associated with the MCP Server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) CustomRoles() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole {
+		return v.CustomRoles
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput)
+}
+
+// A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) DatabaseToolsConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string {
+		return v.DatabaseToolsConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A human-readable description of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated domain application (Oracle Cloud Service).
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) DomainAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.DomainAppId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated identity domain.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.DomainId }).(pulumi.StringOutput)
+}
+
+// Invoke endpoints for the MCP server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Endpoints() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint {
+		return v.Endpoints
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Locks() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput)
+}
+
+// Refresh token expiry in seconds
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) RefreshTokenExpiryInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) int {
+		return v.RefreshTokenExpiryInSeconds
+	}).(pulumi.IntOutput)
+}
+
+// A related resource
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) RelatedResources() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource {
+		return v.RelatedResources
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput)
+}
+
+// Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) RuntimeIdentity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string {
+		return v.RuntimeIdentity
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return resources only when their `databaseToolsMcpServerLifecycleState` matches the specified `databaseToolsMcpServerLifecycleState`.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The storage option used when running a tool asynchronously.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Storages() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage {
+		return v.Storages
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput {
+	return o
+}
+
+// A human-readable description of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRole)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs struct {
+	// A human-readable description of the Database Tools MCP server.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput {
+	return o
+}
+
+// A human-readable description of the Database Tools MCP server.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRole)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint struct {
+	// The URI endpoint of the MCP server
+	Endpoint string `pulumi:"endpoint"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs struct {
+	// The URI endpoint of the MCP server
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput {
+	return o
+}
+
+// The URI endpoint of the MCP server
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint) string {
+		return v.Endpoint
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpoint)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource struct {
+	// The resource entity type.
+	EntityType string `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier string `pulumi:"identifier"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs struct {
+	// The resource entity type.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput {
+	return o
+}
+
+// The resource entity type.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource) string {
+		return v.Identifier
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResource)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage struct {
+	// The Object Storage bucket to use.
+	Buckets []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket `pulumi:"buckets"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs struct {
+	// The Object Storage bucket to use.
+	Buckets GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayInput `pulumi:"buckets"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput {
+	return o
+}
+
+// The Object Storage bucket to use.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput) Buckets() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage) []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket {
+		return v.Buckets
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorage)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket struct {
+	// The Object Storage bucket to use.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace to use.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs{...}
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs struct {
+	// The Object Storage bucket to use.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace to use.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput)
+}
+
+// GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayInput is an input type that accepts GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray and GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray{ GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs{...} }
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput
+	ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray []GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketInput
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput {
+	return o
+}
+
+// The Object Storage bucket to use.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace to use.
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput() GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput) ToGetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket {
+		return vs[0].([]GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucket)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput)
+}
+
+type GetDatabaseToolsMcpServersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsMcpServersFilterInput is an input type that accepts GetDatabaseToolsMcpServersFilterArgs and GetDatabaseToolsMcpServersFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersFilterInput` via:
+//
+//	GetDatabaseToolsMcpServersFilterArgs{...}
+type GetDatabaseToolsMcpServersFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersFilterOutput() GetDatabaseToolsMcpServersFilterOutput
+	ToGetDatabaseToolsMcpServersFilterOutputWithContext(context.Context) GetDatabaseToolsMcpServersFilterOutput
+}
+
+type GetDatabaseToolsMcpServersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsMcpServersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersFilterArgs) ToGetDatabaseToolsMcpServersFilterOutput() GetDatabaseToolsMcpServersFilterOutput {
+	return i.ToGetDatabaseToolsMcpServersFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersFilterArgs) ToGetDatabaseToolsMcpServersFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersFilterOutput)
+}
+
+// GetDatabaseToolsMcpServersFilterArrayInput is an input type that accepts GetDatabaseToolsMcpServersFilterArray and GetDatabaseToolsMcpServersFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpServersFilterArrayInput` via:
+//
+//	GetDatabaseToolsMcpServersFilterArray{ GetDatabaseToolsMcpServersFilterArgs{...} }
+type GetDatabaseToolsMcpServersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpServersFilterArrayOutput() GetDatabaseToolsMcpServersFilterArrayOutput
+	ToGetDatabaseToolsMcpServersFilterArrayOutputWithContext(context.Context) GetDatabaseToolsMcpServersFilterArrayOutput
+}
+
+type GetDatabaseToolsMcpServersFilterArray []GetDatabaseToolsMcpServersFilterInput
+
+func (GetDatabaseToolsMcpServersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpServersFilterArray) ToGetDatabaseToolsMcpServersFilterArrayOutput() GetDatabaseToolsMcpServersFilterArrayOutput {
+	return i.ToGetDatabaseToolsMcpServersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpServersFilterArray) ToGetDatabaseToolsMcpServersFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpServersFilterArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpServersFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersFilterOutput) ToGetDatabaseToolsMcpServersFilterOutput() GetDatabaseToolsMcpServersFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersFilterOutput) ToGetDatabaseToolsMcpServersFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsMcpServersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsMcpServersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpServersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsMcpServersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpServersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpServersFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpServersFilterArrayOutput) ToGetDatabaseToolsMcpServersFilterArrayOutput() GetDatabaseToolsMcpServersFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersFilterArrayOutput) ToGetDatabaseToolsMcpServersFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpServersFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpServersFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpServersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpServersFilter {
+		return vs[0].([]GetDatabaseToolsMcpServersFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpServersFilterOutput)
+}
+
+type GetDatabaseToolsMcpToolsetLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of the variable
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpToolsetLockInput is an input type that accepts GetDatabaseToolsMcpToolsetLockArgs and GetDatabaseToolsMcpToolsetLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetLockInput` via:
+//
+//	GetDatabaseToolsMcpToolsetLockArgs{...}
+type GetDatabaseToolsMcpToolsetLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetLockOutput() GetDatabaseToolsMcpToolsetLockOutput
+	ToGetDatabaseToolsMcpToolsetLockOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetLockOutput
+}
+
+type GetDatabaseToolsMcpToolsetLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpToolsetLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetLockArgs) ToGetDatabaseToolsMcpToolsetLockOutput() GetDatabaseToolsMcpToolsetLockOutput {
+	return i.ToGetDatabaseToolsMcpToolsetLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetLockArgs) ToGetDatabaseToolsMcpToolsetLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetLockOutput)
+}
+
+// GetDatabaseToolsMcpToolsetLockArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetLockArray and GetDatabaseToolsMcpToolsetLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetLockArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetLockArray{ GetDatabaseToolsMcpToolsetLockArgs{...} }
+type GetDatabaseToolsMcpToolsetLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetLockArrayOutput() GetDatabaseToolsMcpToolsetLockArrayOutput
+	ToGetDatabaseToolsMcpToolsetLockArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetLockArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetLockArray []GetDatabaseToolsMcpToolsetLockInput
+
+func (GetDatabaseToolsMcpToolsetLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetLockArray) ToGetDatabaseToolsMcpToolsetLockArrayOutput() GetDatabaseToolsMcpToolsetLockArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetLockArray) ToGetDatabaseToolsMcpToolsetLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetLockArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetLockOutput) ToGetDatabaseToolsMcpToolsetLockOutput() GetDatabaseToolsMcpToolsetLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetLockOutput) ToGetDatabaseToolsMcpToolsetLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsMcpToolsetLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsMcpToolsetLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpToolsetLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The type of the variable
+func (o GetDatabaseToolsMcpToolsetLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetLockArrayOutput) ToGetDatabaseToolsMcpToolsetLockArrayOutput() GetDatabaseToolsMcpToolsetLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetLockArrayOutput) ToGetDatabaseToolsMcpToolsetLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetLock {
+		return vs[0].([]GetDatabaseToolsMcpToolsetLock)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetLockOutput)
+}
+
+type GetDatabaseToolsMcpToolsetReport struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId string `pulumi:"databaseToolsSqlReportId"`
+}
+
+// GetDatabaseToolsMcpToolsetReportInput is an input type that accepts GetDatabaseToolsMcpToolsetReportArgs and GetDatabaseToolsMcpToolsetReportOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetReportInput` via:
+//
+//	GetDatabaseToolsMcpToolsetReportArgs{...}
+type GetDatabaseToolsMcpToolsetReportInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetReportOutput() GetDatabaseToolsMcpToolsetReportOutput
+	ToGetDatabaseToolsMcpToolsetReportOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetReportOutput
+}
+
+type GetDatabaseToolsMcpToolsetReportArgs struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId pulumi.StringInput `pulumi:"databaseToolsSqlReportId"`
+}
+
+func (GetDatabaseToolsMcpToolsetReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetReportArgs) ToGetDatabaseToolsMcpToolsetReportOutput() GetDatabaseToolsMcpToolsetReportOutput {
+	return i.ToGetDatabaseToolsMcpToolsetReportOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetReportArgs) ToGetDatabaseToolsMcpToolsetReportOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetReportOutput)
+}
+
+// GetDatabaseToolsMcpToolsetReportArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetReportArray and GetDatabaseToolsMcpToolsetReportArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetReportArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetReportArray{ GetDatabaseToolsMcpToolsetReportArgs{...} }
+type GetDatabaseToolsMcpToolsetReportArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetReportArrayOutput() GetDatabaseToolsMcpToolsetReportArrayOutput
+	ToGetDatabaseToolsMcpToolsetReportArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetReportArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetReportArray []GetDatabaseToolsMcpToolsetReportInput
+
+func (GetDatabaseToolsMcpToolsetReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetReportArray) ToGetDatabaseToolsMcpToolsetReportArrayOutput() GetDatabaseToolsMcpToolsetReportArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetReportArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetReportArray) ToGetDatabaseToolsMcpToolsetReportArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetReportArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetReportOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetReportOutput) ToGetDatabaseToolsMcpToolsetReportOutput() GetDatabaseToolsMcpToolsetReportOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetReportOutput) ToGetDatabaseToolsMcpToolsetReportOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetReportOutput {
+	return o
+}
+
+// The roles granted access to this MCP tool
+func (o GetDatabaseToolsMcpToolsetReportOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetReport) []string { return v.AllowedRoles }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+func (o GetDatabaseToolsMcpToolsetReportOutput) DatabaseToolsSqlReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetReport) string { return v.DatabaseToolsSqlReportId }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetReportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetReport)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetReportArrayOutput) ToGetDatabaseToolsMcpToolsetReportArrayOutput() GetDatabaseToolsMcpToolsetReportArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetReportArrayOutput) ToGetDatabaseToolsMcpToolsetReportArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetReportArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetReportArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetReport {
+		return vs[0].([]GetDatabaseToolsMcpToolsetReport)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetReportOutput)
+}
+
+type GetDatabaseToolsMcpToolsetSource struct {
+	// The type of the variable
+	Type string `pulumi:"type"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value string `pulumi:"value"`
+}
+
+// GetDatabaseToolsMcpToolsetSourceInput is an input type that accepts GetDatabaseToolsMcpToolsetSourceArgs and GetDatabaseToolsMcpToolsetSourceOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetSourceInput` via:
+//
+//	GetDatabaseToolsMcpToolsetSourceArgs{...}
+type GetDatabaseToolsMcpToolsetSourceInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetSourceOutput() GetDatabaseToolsMcpToolsetSourceOutput
+	ToGetDatabaseToolsMcpToolsetSourceOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetSourceOutput
+}
+
+type GetDatabaseToolsMcpToolsetSourceArgs struct {
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDatabaseToolsMcpToolsetSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetSourceArgs) ToGetDatabaseToolsMcpToolsetSourceOutput() GetDatabaseToolsMcpToolsetSourceOutput {
+	return i.ToGetDatabaseToolsMcpToolsetSourceOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetSourceArgs) ToGetDatabaseToolsMcpToolsetSourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetSourceOutput)
+}
+
+// GetDatabaseToolsMcpToolsetSourceArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetSourceArray and GetDatabaseToolsMcpToolsetSourceArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetSourceArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetSourceArray{ GetDatabaseToolsMcpToolsetSourceArgs{...} }
+type GetDatabaseToolsMcpToolsetSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetSourceArrayOutput() GetDatabaseToolsMcpToolsetSourceArrayOutput
+	ToGetDatabaseToolsMcpToolsetSourceArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetSourceArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetSourceArray []GetDatabaseToolsMcpToolsetSourceInput
+
+func (GetDatabaseToolsMcpToolsetSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetSourceArray) ToGetDatabaseToolsMcpToolsetSourceArrayOutput() GetDatabaseToolsMcpToolsetSourceArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetSourceArray) ToGetDatabaseToolsMcpToolsetSourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetSourceArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetSourceOutput) ToGetDatabaseToolsMcpToolsetSourceOutput() GetDatabaseToolsMcpToolsetSourceOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetSourceOutput) ToGetDatabaseToolsMcpToolsetSourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetSourceOutput {
+	return o
+}
+
+// The type of the variable
+func (o GetDatabaseToolsMcpToolsetSourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetSource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+func (o GetDatabaseToolsMcpToolsetSourceOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetSource) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetSource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetSourceArrayOutput) ToGetDatabaseToolsMcpToolsetSourceArrayOutput() GetDatabaseToolsMcpToolsetSourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetSourceArrayOutput) ToGetDatabaseToolsMcpToolsetSourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetSourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetSourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetSource {
+		return vs[0].([]GetDatabaseToolsMcpToolsetSource)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetSourceOutput)
+}
+
+type GetDatabaseToolsMcpToolsetTool struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// The display name of the tool
+	DisplayName string `pulumi:"displayName"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// The status of the tool
+	Status string `pulumi:"status"`
+}
+
+// GetDatabaseToolsMcpToolsetToolInput is an input type that accepts GetDatabaseToolsMcpToolsetToolArgs and GetDatabaseToolsMcpToolsetToolOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetToolInput` via:
+//
+//	GetDatabaseToolsMcpToolsetToolArgs{...}
+type GetDatabaseToolsMcpToolsetToolInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetToolOutput() GetDatabaseToolsMcpToolsetToolOutput
+	ToGetDatabaseToolsMcpToolsetToolOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetToolOutput
+}
+
+type GetDatabaseToolsMcpToolsetToolArgs struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// The display name of the tool
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of the tool
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDatabaseToolsMcpToolsetToolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetToolArgs) ToGetDatabaseToolsMcpToolsetToolOutput() GetDatabaseToolsMcpToolsetToolOutput {
+	return i.ToGetDatabaseToolsMcpToolsetToolOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetToolArgs) ToGetDatabaseToolsMcpToolsetToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetToolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetToolOutput)
+}
+
+// GetDatabaseToolsMcpToolsetToolArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetToolArray and GetDatabaseToolsMcpToolsetToolArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetToolArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetToolArray{ GetDatabaseToolsMcpToolsetToolArgs{...} }
+type GetDatabaseToolsMcpToolsetToolArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetToolArrayOutput() GetDatabaseToolsMcpToolsetToolArrayOutput
+	ToGetDatabaseToolsMcpToolsetToolArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetToolArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetToolArray []GetDatabaseToolsMcpToolsetToolInput
+
+func (GetDatabaseToolsMcpToolsetToolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetToolArray) ToGetDatabaseToolsMcpToolsetToolArrayOutput() GetDatabaseToolsMcpToolsetToolArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetToolArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetToolArray) ToGetDatabaseToolsMcpToolsetToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetToolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetToolArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetToolOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetToolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetToolOutput) ToGetDatabaseToolsMcpToolsetToolOutput() GetDatabaseToolsMcpToolsetToolOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetToolOutput) ToGetDatabaseToolsMcpToolsetToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetToolOutput {
+	return o
+}
+
+// The roles granted access to this MCP tool
+func (o GetDatabaseToolsMcpToolsetToolOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetTool) []string { return v.AllowedRoles }).(pulumi.StringArrayOutput)
+}
+
+// The display name of the tool
+func (o GetDatabaseToolsMcpToolsetToolOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetTool) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsMcpToolsetToolOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetTool) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of the tool
+func (o GetDatabaseToolsMcpToolsetToolOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetTool) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetToolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetToolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetToolArrayOutput) ToGetDatabaseToolsMcpToolsetToolArrayOutput() GetDatabaseToolsMcpToolsetToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetToolArrayOutput) ToGetDatabaseToolsMcpToolsetToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetToolArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetToolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetTool {
+		return vs[0].([]GetDatabaseToolsMcpToolsetTool)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetToolOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVariable struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// The type of the variable
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpToolsetVariableInput is an input type that accepts GetDatabaseToolsMcpToolsetVariableArgs and GetDatabaseToolsMcpToolsetVariableOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVariableInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVariableArgs{...}
+type GetDatabaseToolsMcpToolsetVariableInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVariableOutput() GetDatabaseToolsMcpToolsetVariableOutput
+	ToGetDatabaseToolsMcpToolsetVariableOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVariableOutput
+}
+
+type GetDatabaseToolsMcpToolsetVariableArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpToolsetVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVariableArgs) ToGetDatabaseToolsMcpToolsetVariableOutput() GetDatabaseToolsMcpToolsetVariableOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVariableOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVariableArgs) ToGetDatabaseToolsMcpToolsetVariableOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVariableOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVariableArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVariableArray and GetDatabaseToolsMcpToolsetVariableArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVariableArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVariableArray{ GetDatabaseToolsMcpToolsetVariableArgs{...} }
+type GetDatabaseToolsMcpToolsetVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVariableArrayOutput() GetDatabaseToolsMcpToolsetVariableArrayOutput
+	ToGetDatabaseToolsMcpToolsetVariableArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVariableArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVariableArray []GetDatabaseToolsMcpToolsetVariableInput
+
+func (GetDatabaseToolsMcpToolsetVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVariableArray) ToGetDatabaseToolsMcpToolsetVariableArrayOutput() GetDatabaseToolsMcpToolsetVariableArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVariableArray) ToGetDatabaseToolsMcpToolsetVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVariableArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVariableOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVariableOutput) ToGetDatabaseToolsMcpToolsetVariableOutput() GetDatabaseToolsMcpToolsetVariableOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVariableOutput) ToGetDatabaseToolsMcpToolsetVariableOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVariableOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsMcpToolsetVariableOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVariable) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsMcpToolsetVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the variable
+func (o GetDatabaseToolsMcpToolsetVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVariableArrayOutput) ToGetDatabaseToolsMcpToolsetVariableArrayOutput() GetDatabaseToolsMcpToolsetVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVariableArrayOutput) ToGetDatabaseToolsMcpToolsetVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVariableArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVariable {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVariable)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVariableOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection struct {
+	// Array of MCP toolset type version summary items.
+	Items []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs{...}
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs struct {
+	// Array of MCP toolset type version summary items.
+	Items GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray{ GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs{...} }
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionInput
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput {
+	return o
+}
+
+// Array of MCP toolset type version summary items.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput) Items() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection) []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem struct {
+	// The default version for this toolset type.
+	DefaultVersion int `pulumi:"defaultVersion"`
+	// The MCP toolset type.
+	Type string `pulumi:"type"`
+	// The version configurations available for this toolset type.
+	Versions []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion `pulumi:"versions"`
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs{...}
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs struct {
+	// The default version for this toolset type.
+	DefaultVersion pulumi.IntInput `pulumi:"defaultVersion"`
+	// The MCP toolset type.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The version configurations available for this toolset type.
+	Versions GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayInput `pulumi:"versions"`
+}
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray{ GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs{...} }
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemInput
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput {
+	return o
+}
+
+// The default version for this toolset type.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) DefaultVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem) int {
+		return v.DefaultVersion
+	}).(pulumi.IntOutput)
+}
+
+// The MCP toolset type.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The version configurations available for this toolset type.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput) Versions() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem) []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion {
+		return v.Versions
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion struct {
+	// The roles granted access to this tool by default.
+	DefaultAllowedRoles []string `pulumi:"defaultAllowedRoles"`
+	// The roles granted access to this toolset version by default.
+	DefaultReportAllowedRoles []string `pulumi:"defaultReportAllowedRoles"`
+	// The description of the tool.
+	Description string `pulumi:"description"`
+	// Optional feature flags or attributes for this version.
+	Features []string `pulumi:"features"`
+	// The tools available in this version.
+	Tools []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool `pulumi:"tools"`
+	// The version number.
+	Version int `pulumi:"version"`
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs{...}
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs struct {
+	// The roles granted access to this tool by default.
+	DefaultAllowedRoles pulumi.StringArrayInput `pulumi:"defaultAllowedRoles"`
+	// The roles granted access to this toolset version by default.
+	DefaultReportAllowedRoles pulumi.StringArrayInput `pulumi:"defaultReportAllowedRoles"`
+	// The description of the tool.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Optional feature flags or attributes for this version.
+	Features pulumi.StringArrayInput `pulumi:"features"`
+	// The tools available in this version.
+	Tools GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayInput `pulumi:"tools"`
+	// The version number.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray{ GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs{...} }
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionInput
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput {
+	return o
+}
+
+// The roles granted access to this tool by default.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) DefaultAllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) []string {
+		return v.DefaultAllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The roles granted access to this toolset version by default.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) DefaultReportAllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) []string {
+		return v.DefaultReportAllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The description of the tool.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Optional feature flags or attributes for this version.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) []string {
+		return v.Features
+	}).(pulumi.StringArrayOutput)
+}
+
+// The tools available in this version.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) Tools() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool {
+		return v.Tools
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput)
+}
+
+// The version number.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion) int {
+		return v.Version
+	}).(pulumi.IntOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersion)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool struct {
+	// The roles granted access to this tool by default.
+	DefaultAllowedRoles []string `pulumi:"defaultAllowedRoles"`
+	// The default status of the tool in this version.
+	DefaultStatus string `pulumi:"defaultStatus"`
+	// The description of the tool.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The unique name of the tool.
+	Name string `pulumi:"name"`
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs{...}
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs struct {
+	// The roles granted access to this tool by default.
+	DefaultAllowedRoles pulumi.StringArrayInput `pulumi:"defaultAllowedRoles"`
+	// The default status of the tool in this version.
+	DefaultStatus pulumi.StringInput `pulumi:"defaultStatus"`
+	// The description of the tool.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The unique name of the tool.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray and GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray{ GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs{...} }
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput
+	ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray []GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolInput
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput {
+	return o
+}
+
+// The roles granted access to this tool by default.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) DefaultAllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool) []string {
+		return v.DefaultAllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The default status of the tool in this version.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) DefaultStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool) string {
+		return v.DefaultStatus
+	}).(pulumi.StringOutput)
+}
+
+// The description of the tool.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The unique name of the tool.
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput() GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionTool)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsFilter struct {
+	// The unique name of the tool.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsMcpToolsetVersionsFilterInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsFilterArgs and GetDatabaseToolsMcpToolsetVersionsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsFilterInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsFilterArgs{...}
+type GetDatabaseToolsMcpToolsetVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsFilterOutput() GetDatabaseToolsMcpToolsetVersionsFilterOutput
+	ToGetDatabaseToolsMcpToolsetVersionsFilterOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsFilterOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsFilterArgs struct {
+	// The unique name of the tool.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsMcpToolsetVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsFilterArgs) ToGetDatabaseToolsMcpToolsetVersionsFilterOutput() GetDatabaseToolsMcpToolsetVersionsFilterOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsFilterArgs) ToGetDatabaseToolsMcpToolsetVersionsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsFilterOutput)
+}
+
+// GetDatabaseToolsMcpToolsetVersionsFilterArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetVersionsFilterArray and GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetVersionsFilterArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetVersionsFilterArray{ GetDatabaseToolsMcpToolsetVersionsFilterArgs{...} }
+type GetDatabaseToolsMcpToolsetVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutput() GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput
+	ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetVersionsFilterArray []GetDatabaseToolsMcpToolsetVersionsFilterInput
+
+func (GetDatabaseToolsMcpToolsetVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsFilterArray) ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutput() GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetVersionsFilterArray) ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterOutput) ToGetDatabaseToolsMcpToolsetVersionsFilterOutput() GetDatabaseToolsMcpToolsetVersionsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterOutput) ToGetDatabaseToolsMcpToolsetVersionsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsFilterOutput {
+	return o
+}
+
+// The unique name of the tool.
+func (o GetDatabaseToolsMcpToolsetVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetVersionsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutput() GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput) ToGetDatabaseToolsMcpToolsetVersionsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetVersionsFilter {
+		return vs[0].([]GetDatabaseToolsMcpToolsetVersionsFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetVersionsFilterOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection struct {
+	Items []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs struct {
+	Items GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput) Items() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only resources matching the specified `databaseToolsMcpServerId`.
+	DatabaseToolsMcpServerId string `pulumi:"databaseToolsMcpServerId"`
+	// The default execution type for the toolset. The default value is SYNCHRONOUS.
+	DefaultExecutionType string `pulumi:"defaultExecutionType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
+	GenerativeAiSemanticStoreId string `pulumi:"generativeAiSemanticStoreId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP Toolsets.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock `pulumi:"locks"`
+	// List of Database Tools Customizable reporting tools
+	Reports []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport `pulumi:"reports"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Sources []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource `pulumi:"sources"`
+	// A filter to return resources only when their `databaseToolsMcpToolsetLifecycleState` matches the specified `databaseToolsMcpToolsetLifecycleState`.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
+	ToolDescription string `pulumi:"toolDescription"`
+	// Name of the tool returned by the MCP Server
+	ToolName string `pulumi:"toolName"`
+	// List of Database Tools Customizable reporting tools
+	Tools []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool `pulumi:"tools"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+	// The variables to use with the query
+	Variables []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable `pulumi:"variables"`
+	// The MCP toolset version
+	Version int `pulumi:"version"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only resources matching the specified `databaseToolsMcpServerId`.
+	DatabaseToolsMcpServerId pulumi.StringInput `pulumi:"databaseToolsMcpServerId"`
+	// The default execution type for the toolset. The default value is SYNCHRONOUS.
+	DefaultExecutionType pulumi.StringInput `pulumi:"defaultExecutionType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
+	GenerativeAiSemanticStoreId pulumi.StringInput `pulumi:"generativeAiSemanticStoreId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP Toolsets.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayInput `pulumi:"locks"`
+	// List of Database Tools Customizable reporting tools
+	Reports GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayInput `pulumi:"reports"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Sources GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayInput `pulumi:"sources"`
+	// A filter to return resources only when their `databaseToolsMcpToolsetLifecycleState` matches the specified `databaseToolsMcpToolsetLifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
+	ToolDescription pulumi.StringInput `pulumi:"toolDescription"`
+	// Name of the tool returned by the MCP Server
+	ToolName pulumi.StringInput `pulumi:"toolName"`
+	// List of Database Tools Customizable reporting tools
+	Tools GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayInput `pulumi:"tools"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The variables to use with the query
+	Variables GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayInput `pulumi:"variables"`
+	// The MCP toolset version
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput {
+	return o
+}
+
+// The roles granted access to this MCP tool
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []string {
+		return v.AllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources matching the specified `databaseToolsMcpServerId`.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) DatabaseToolsMcpServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.DatabaseToolsMcpServerId
+	}).(pulumi.StringOutput)
+}
+
+// The default execution type for the toolset. The default value is SYNCHRONOUS.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) DefaultExecutionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.DefaultExecutionType
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the variable
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Generative AI Semantic Store.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) GenerativeAiSemanticStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.GenerativeAiSemanticStoreId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools MCP Toolsets.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Locks() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput)
+}
+
+// List of Database Tools Customizable reporting tools
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Reports() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport {
+		return v.Reports
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput)
+}
+
+// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Sources() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource {
+		return v.Sources
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput)
+}
+
+// A filter to return resources only when their `databaseToolsMcpToolsetLifecycleState` matches the specified `databaseToolsMcpToolsetLifecycleState`.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Instructions describing how to use the MCP toolset and its features. This can be used to improve the LLM's understanding of the tool.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) ToolDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string {
+		return v.ToolDescription
+	}).(pulumi.StringOutput)
+}
+
+// Name of the tool returned by the MCP Server
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) ToolName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.ToolName }).(pulumi.StringOutput)
+}
+
+// List of Database Tools Customizable reporting tools
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Tools() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool {
+		return v.Tools
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The variables to use with the query
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Variables() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable {
+		return v.Variables
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput)
+}
+
+// The MCP toolset version
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem) int { return v.Version }).(pulumi.IntOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId string `pulumi:"databaseToolsSqlReportId"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+	DatabaseToolsSqlReportId pulumi.StringInput `pulumi:"databaseToolsSqlReportId"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput {
+	return o
+}
+
+// The roles granted access to this MCP tool
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport) []string {
+		return v.AllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the report OCID of sql report.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput) DatabaseToolsSqlReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport) string {
+		return v.DatabaseToolsSqlReportId
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReport)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource struct {
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value string `pulumi:"value"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs struct {
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput {
+	return o
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The SQL source. Can contain multiple statements with a mix of queries, DML, DCL, DLL and scripts.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSource)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles []string `pulumi:"allowedRoles"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// The status of the tool
+	Status string `pulumi:"status"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs struct {
+	// The roles granted access to this MCP tool
+	AllowedRoles pulumi.StringArrayInput `pulumi:"allowedRoles"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of the tool
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput {
+	return o
+}
+
+// The roles granted access to this MCP tool
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) AllowedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool) []string {
+		return v.AllowedRoles
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of the tool
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemTool)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs{...}
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray and GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray{ GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs{...} }
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput
+	ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray []GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableInput
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput() GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput) ToGetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariable)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsFilter struct {
+	// The name of the variable
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsMcpToolsetsFilterInput is an input type that accepts GetDatabaseToolsMcpToolsetsFilterArgs and GetDatabaseToolsMcpToolsetsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsFilterInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsFilterArgs{...}
+type GetDatabaseToolsMcpToolsetsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsFilterOutput() GetDatabaseToolsMcpToolsetsFilterOutput
+	ToGetDatabaseToolsMcpToolsetsFilterOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsFilterOutput
+}
+
+type GetDatabaseToolsMcpToolsetsFilterArgs struct {
+	// The name of the variable
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsMcpToolsetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsFilterArgs) ToGetDatabaseToolsMcpToolsetsFilterOutput() GetDatabaseToolsMcpToolsetsFilterOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsFilterArgs) ToGetDatabaseToolsMcpToolsetsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsFilterOutput)
+}
+
+// GetDatabaseToolsMcpToolsetsFilterArrayInput is an input type that accepts GetDatabaseToolsMcpToolsetsFilterArray and GetDatabaseToolsMcpToolsetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsMcpToolsetsFilterArrayInput` via:
+//
+//	GetDatabaseToolsMcpToolsetsFilterArray{ GetDatabaseToolsMcpToolsetsFilterArgs{...} }
+type GetDatabaseToolsMcpToolsetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsMcpToolsetsFilterArrayOutput() GetDatabaseToolsMcpToolsetsFilterArrayOutput
+	ToGetDatabaseToolsMcpToolsetsFilterArrayOutputWithContext(context.Context) GetDatabaseToolsMcpToolsetsFilterArrayOutput
+}
+
+type GetDatabaseToolsMcpToolsetsFilterArray []GetDatabaseToolsMcpToolsetsFilterInput
+
+func (GetDatabaseToolsMcpToolsetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsMcpToolsetsFilterArray) ToGetDatabaseToolsMcpToolsetsFilterArrayOutput() GetDatabaseToolsMcpToolsetsFilterArrayOutput {
+	return i.ToGetDatabaseToolsMcpToolsetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsMcpToolsetsFilterArray) ToGetDatabaseToolsMcpToolsetsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsMcpToolsetsFilterArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsMcpToolsetsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterOutput) ToGetDatabaseToolsMcpToolsetsFilterOutput() GetDatabaseToolsMcpToolsetsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterOutput) ToGetDatabaseToolsMcpToolsetsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsFilterOutput {
+	return o
+}
+
+// The name of the variable
+func (o GetDatabaseToolsMcpToolsetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsMcpToolsetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsMcpToolsetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsMcpToolsetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsMcpToolsetsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterArrayOutput) ToGetDatabaseToolsMcpToolsetsFilterArrayOutput() GetDatabaseToolsMcpToolsetsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterArrayOutput) ToGetDatabaseToolsMcpToolsetsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsMcpToolsetsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsMcpToolsetsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsMcpToolsetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsMcpToolsetsFilter {
+		return vs[0].([]GetDatabaseToolsMcpToolsetsFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsMcpToolsetsFilterOutput)
 }
 
 type GetDatabaseToolsPrivateEndpointLock struct {
@@ -7206,6 +14294,1191 @@ func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsPrivateEndpointsFilter {
 		return vs[0].([]GetDatabaseToolsPrivateEndpointsFilter)[vs[1].(int)]
 	}).(GetDatabaseToolsPrivateEndpointsFilterOutput)
+}
+
+type GetDatabaseToolsSqlReportColumn struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// The type of the variable
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportColumnInput is an input type that accepts GetDatabaseToolsSqlReportColumnArgs and GetDatabaseToolsSqlReportColumnOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportColumnInput` via:
+//
+//	GetDatabaseToolsSqlReportColumnArgs{...}
+type GetDatabaseToolsSqlReportColumnInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportColumnOutput() GetDatabaseToolsSqlReportColumnOutput
+	ToGetDatabaseToolsSqlReportColumnOutputWithContext(context.Context) GetDatabaseToolsSqlReportColumnOutput
+}
+
+type GetDatabaseToolsSqlReportColumnArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportColumnArgs) ToGetDatabaseToolsSqlReportColumnOutput() GetDatabaseToolsSqlReportColumnOutput {
+	return i.ToGetDatabaseToolsSqlReportColumnOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportColumnArgs) ToGetDatabaseToolsSqlReportColumnOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportColumnOutput)
+}
+
+// GetDatabaseToolsSqlReportColumnArrayInput is an input type that accepts GetDatabaseToolsSqlReportColumnArray and GetDatabaseToolsSqlReportColumnArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportColumnArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportColumnArray{ GetDatabaseToolsSqlReportColumnArgs{...} }
+type GetDatabaseToolsSqlReportColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportColumnArrayOutput() GetDatabaseToolsSqlReportColumnArrayOutput
+	ToGetDatabaseToolsSqlReportColumnArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportColumnArrayOutput
+}
+
+type GetDatabaseToolsSqlReportColumnArray []GetDatabaseToolsSqlReportColumnInput
+
+func (GetDatabaseToolsSqlReportColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportColumnArray) ToGetDatabaseToolsSqlReportColumnArrayOutput() GetDatabaseToolsSqlReportColumnArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportColumnArray) ToGetDatabaseToolsSqlReportColumnArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportColumnArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportColumnOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportColumnOutput) ToGetDatabaseToolsSqlReportColumnOutput() GetDatabaseToolsSqlReportColumnOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportColumnOutput) ToGetDatabaseToolsSqlReportColumnOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportColumnOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsSqlReportColumnOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportColumn) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsSqlReportColumnOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportColumn) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the variable
+func (o GetDatabaseToolsSqlReportColumnOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportColumn) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportColumn)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportColumnArrayOutput) ToGetDatabaseToolsSqlReportColumnArrayOutput() GetDatabaseToolsSqlReportColumnArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportColumnArrayOutput) ToGetDatabaseToolsSqlReportColumnArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportColumnArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportColumnArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportColumn {
+		return vs[0].([]GetDatabaseToolsSqlReportColumn)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportColumnOutput)
+}
+
+type GetDatabaseToolsSqlReportLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The type of the variable
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportLockInput is an input type that accepts GetDatabaseToolsSqlReportLockArgs and GetDatabaseToolsSqlReportLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportLockInput` via:
+//
+//	GetDatabaseToolsSqlReportLockArgs{...}
+type GetDatabaseToolsSqlReportLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportLockOutput() GetDatabaseToolsSqlReportLockOutput
+	ToGetDatabaseToolsSqlReportLockOutputWithContext(context.Context) GetDatabaseToolsSqlReportLockOutput
+}
+
+type GetDatabaseToolsSqlReportLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportLockArgs) ToGetDatabaseToolsSqlReportLockOutput() GetDatabaseToolsSqlReportLockOutput {
+	return i.ToGetDatabaseToolsSqlReportLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportLockArgs) ToGetDatabaseToolsSqlReportLockOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportLockOutput)
+}
+
+// GetDatabaseToolsSqlReportLockArrayInput is an input type that accepts GetDatabaseToolsSqlReportLockArray and GetDatabaseToolsSqlReportLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportLockArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportLockArray{ GetDatabaseToolsSqlReportLockArgs{...} }
+type GetDatabaseToolsSqlReportLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportLockArrayOutput() GetDatabaseToolsSqlReportLockArrayOutput
+	ToGetDatabaseToolsSqlReportLockArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportLockArrayOutput
+}
+
+type GetDatabaseToolsSqlReportLockArray []GetDatabaseToolsSqlReportLockInput
+
+func (GetDatabaseToolsSqlReportLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportLockArray) ToGetDatabaseToolsSqlReportLockArrayOutput() GetDatabaseToolsSqlReportLockArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportLockArray) ToGetDatabaseToolsSqlReportLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportLockArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportLockOutput) ToGetDatabaseToolsSqlReportLockOutput() GetDatabaseToolsSqlReportLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportLockOutput) ToGetDatabaseToolsSqlReportLockOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsSqlReportLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsSqlReportLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsSqlReportLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The type of the variable
+func (o GetDatabaseToolsSqlReportLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportLockArrayOutput) ToGetDatabaseToolsSqlReportLockArrayOutput() GetDatabaseToolsSqlReportLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportLockArrayOutput) ToGetDatabaseToolsSqlReportLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportLock {
+		return vs[0].([]GetDatabaseToolsSqlReportLock)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportLockOutput)
+}
+
+type GetDatabaseToolsSqlReportVariable struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// The type of the variable
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportVariableInput is an input type that accepts GetDatabaseToolsSqlReportVariableArgs and GetDatabaseToolsSqlReportVariableOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportVariableInput` via:
+//
+//	GetDatabaseToolsSqlReportVariableArgs{...}
+type GetDatabaseToolsSqlReportVariableInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportVariableOutput() GetDatabaseToolsSqlReportVariableOutput
+	ToGetDatabaseToolsSqlReportVariableOutputWithContext(context.Context) GetDatabaseToolsSqlReportVariableOutput
+}
+
+type GetDatabaseToolsSqlReportVariableArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the variable
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportVariableArgs) ToGetDatabaseToolsSqlReportVariableOutput() GetDatabaseToolsSqlReportVariableOutput {
+	return i.ToGetDatabaseToolsSqlReportVariableOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportVariableArgs) ToGetDatabaseToolsSqlReportVariableOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportVariableOutput)
+}
+
+// GetDatabaseToolsSqlReportVariableArrayInput is an input type that accepts GetDatabaseToolsSqlReportVariableArray and GetDatabaseToolsSqlReportVariableArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportVariableArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportVariableArray{ GetDatabaseToolsSqlReportVariableArgs{...} }
+type GetDatabaseToolsSqlReportVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportVariableArrayOutput() GetDatabaseToolsSqlReportVariableArrayOutput
+	ToGetDatabaseToolsSqlReportVariableArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportVariableArrayOutput
+}
+
+type GetDatabaseToolsSqlReportVariableArray []GetDatabaseToolsSqlReportVariableInput
+
+func (GetDatabaseToolsSqlReportVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportVariableArray) ToGetDatabaseToolsSqlReportVariableArrayOutput() GetDatabaseToolsSqlReportVariableArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportVariableArray) ToGetDatabaseToolsSqlReportVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportVariableArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportVariableOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportVariableOutput) ToGetDatabaseToolsSqlReportVariableOutput() GetDatabaseToolsSqlReportVariableOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportVariableOutput) ToGetDatabaseToolsSqlReportVariableOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportVariableOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsSqlReportVariableOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportVariable) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsSqlReportVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the variable
+func (o GetDatabaseToolsSqlReportVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportVariableArrayOutput) ToGetDatabaseToolsSqlReportVariableArrayOutput() GetDatabaseToolsSqlReportVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportVariableArrayOutput) ToGetDatabaseToolsSqlReportVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportVariableArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportVariable {
+		return vs[0].([]GetDatabaseToolsSqlReportVariable)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportVariableOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection struct {
+	Items []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs{...}
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs struct {
+	Items GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput)
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray{ GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs{...} }
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionInput
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput) Items() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection) []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem {
+		return v.Items
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection {
+		return vs[0].([]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollection)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem struct {
+	// Descriptive information on columns referenced in the Database Tools SQL Report source.
+	Columns []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn `pulumi:"columns"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools SQL report.
+	Id string `pulumi:"id"`
+	// Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
+	Instructions string `pulumi:"instructions"`
+	// A message describing the current state in more detail.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock `pulumi:"locks"`
+	// Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
+	Purpose string `pulumi:"purpose"`
+	// SQL query executed to generate the report.
+	Source string `pulumi:"source"`
+	// A filter to return resources only when their `databaseToolsSqlReportLifecycleState` matches the specified `databaseToolsSqlReportLifecycleState`.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+	// Variables referenced in the Database Tools SQL Report source.
+	Variables []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable `pulumi:"variables"`
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs{...}
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs struct {
+	// Descriptive information on columns referenced in the Database Tools SQL Report source.
+	Columns GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayInput `pulumi:"columns"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools SQL report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
+	Instructions pulumi.StringInput `pulumi:"instructions"`
+	// A message describing the current state in more detail.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayInput `pulumi:"locks"`
+	// Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
+	Purpose pulumi.StringInput `pulumi:"purpose"`
+	// SQL query executed to generate the report.
+	Source pulumi.StringInput `pulumi:"source"`
+	// A filter to return resources only when their `databaseToolsSqlReportLifecycleState` matches the specified `databaseToolsSqlReportLifecycleState`.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Variables referenced in the Database Tools SQL Report source.
+	Variables GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayInput `pulumi:"variables"`
+}
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput)
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray{ GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs{...} }
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemInput
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput {
+	return o
+}
+
+// Descriptive information on columns referenced in the Database Tools SQL Report source.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Columns() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn {
+		return v.Columns
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the variable
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire specified display name.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools SQL report.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Instructions on how to use the SQL report. Step-by-step guidance for an AI agent on how to execute or fill in parameters for the report.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Instructions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Instructions }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Locks() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput)
+}
+
+// Purpose of the Database Tools SQL report. Scenario or conditions describing when or why this report should be used. Provides selection criteria to AI agents to improve report selection accuracy.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Purpose() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Purpose }).(pulumi.StringOutput)
+}
+
+// SQL query executed to generate the report.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Source }).(pulumi.StringOutput)
+}
+
+// A filter to return resources only when their `databaseToolsSqlReportLifecycleState` matches the specified `databaseToolsSqlReportLifecycleState`.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools SQL report was updated. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Variables referenced in the Database Tools SQL Report source.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput) Variables() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem) []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable {
+		return v.Variables
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem {
+		return vs[0].([]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs{...}
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput)
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray{ GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs{...} }
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnInput
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn {
+		return vs[0].([]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumn)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs{...}
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray{ GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs{...} }
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockInput
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools SQL report was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable struct {
+	// The description of the variable
+	Description string `pulumi:"description"`
+	// The name of the variable
+	Name string `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs{...}
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs struct {
+	// The description of the variable
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources with one of the specified type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput)
+}
+
+// GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayInput is an input type that accepts GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray and GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray{ GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs{...} }
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput
+	ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray []GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableInput
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput {
+	return o
+}
+
+// The description of the variable
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The name of the variable
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources with one of the specified type values.
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput() GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput) ToGetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable {
+		return vs[0].([]GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariable)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput)
+}
+
+type GetDatabaseToolsSqlReportsFilter struct {
+	// The name of the variable
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseToolsSqlReportsFilterInput is an input type that accepts GetDatabaseToolsSqlReportsFilterArgs and GetDatabaseToolsSqlReportsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsFilterInput` via:
+//
+//	GetDatabaseToolsSqlReportsFilterArgs{...}
+type GetDatabaseToolsSqlReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsFilterOutput() GetDatabaseToolsSqlReportsFilterOutput
+	ToGetDatabaseToolsSqlReportsFilterOutputWithContext(context.Context) GetDatabaseToolsSqlReportsFilterOutput
+}
+
+type GetDatabaseToolsSqlReportsFilterArgs struct {
+	// The name of the variable
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseToolsSqlReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsFilterArgs) ToGetDatabaseToolsSqlReportsFilterOutput() GetDatabaseToolsSqlReportsFilterOutput {
+	return i.ToGetDatabaseToolsSqlReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsFilterArgs) ToGetDatabaseToolsSqlReportsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsFilterOutput)
+}
+
+// GetDatabaseToolsSqlReportsFilterArrayInput is an input type that accepts GetDatabaseToolsSqlReportsFilterArray and GetDatabaseToolsSqlReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsSqlReportsFilterArrayInput` via:
+//
+//	GetDatabaseToolsSqlReportsFilterArray{ GetDatabaseToolsSqlReportsFilterArgs{...} }
+type GetDatabaseToolsSqlReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsSqlReportsFilterArrayOutput() GetDatabaseToolsSqlReportsFilterArrayOutput
+	ToGetDatabaseToolsSqlReportsFilterArrayOutputWithContext(context.Context) GetDatabaseToolsSqlReportsFilterArrayOutput
+}
+
+type GetDatabaseToolsSqlReportsFilterArray []GetDatabaseToolsSqlReportsFilterInput
+
+func (GetDatabaseToolsSqlReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsSqlReportsFilterArray) ToGetDatabaseToolsSqlReportsFilterArrayOutput() GetDatabaseToolsSqlReportsFilterArrayOutput {
+	return i.ToGetDatabaseToolsSqlReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsSqlReportsFilterArray) ToGetDatabaseToolsSqlReportsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsSqlReportsFilterArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsSqlReportsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsFilterOutput) ToGetDatabaseToolsSqlReportsFilterOutput() GetDatabaseToolsSqlReportsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsFilterOutput) ToGetDatabaseToolsSqlReportsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsFilterOutput {
+	return o
+}
+
+// The name of the variable
+func (o GetDatabaseToolsSqlReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsSqlReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseToolsSqlReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsSqlReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseToolsSqlReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsSqlReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsSqlReportsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsSqlReportsFilterArrayOutput) ToGetDatabaseToolsSqlReportsFilterArrayOutput() GetDatabaseToolsSqlReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsFilterArrayOutput) ToGetDatabaseToolsSqlReportsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsSqlReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsSqlReportsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsSqlReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsSqlReportsFilter {
+		return vs[0].([]GetDatabaseToolsSqlReportsFilter)[vs[1].(int)]
+	}).(GetDatabaseToolsSqlReportsFilterOutput)
 }
 
 type GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollection struct {
@@ -11388,14 +19661,46 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionRelatedResourcePtrInput)(nil)).Elem(), DatabaseToolsConnectionRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordPtrInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsDatabaseApiGatewayConfigLockInput)(nil)).Elem(), DatabaseToolsDatabaseApiGatewayConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsDatabaseApiGatewayConfigLockArrayInput)(nil)).Elem(), DatabaseToolsDatabaseApiGatewayConfigLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsIdentityLockInput)(nil)).Elem(), DatabaseToolsIdentityLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsIdentityLockArrayInput)(nil)).Elem(), DatabaseToolsIdentityLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerBuiltInRoleInput)(nil)).Elem(), DatabaseToolsMcpServerBuiltInRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerBuiltInRoleArrayInput)(nil)).Elem(), DatabaseToolsMcpServerBuiltInRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerCustomRoleInput)(nil)).Elem(), DatabaseToolsMcpServerCustomRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerCustomRoleArrayInput)(nil)).Elem(), DatabaseToolsMcpServerCustomRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerEndpointInput)(nil)).Elem(), DatabaseToolsMcpServerEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerEndpointArrayInput)(nil)).Elem(), DatabaseToolsMcpServerEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerLockInput)(nil)).Elem(), DatabaseToolsMcpServerLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerLockArrayInput)(nil)).Elem(), DatabaseToolsMcpServerLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerRelatedResourceInput)(nil)).Elem(), DatabaseToolsMcpServerRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerRelatedResourceArrayInput)(nil)).Elem(), DatabaseToolsMcpServerRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerStorageInput)(nil)).Elem(), DatabaseToolsMcpServerStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerStoragePtrInput)(nil)).Elem(), DatabaseToolsMcpServerStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerStorageBucketInput)(nil)).Elem(), DatabaseToolsMcpServerStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpServerStorageBucketPtrInput)(nil)).Elem(), DatabaseToolsMcpServerStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetLockInput)(nil)).Elem(), DatabaseToolsMcpToolsetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetLockArrayInput)(nil)).Elem(), DatabaseToolsMcpToolsetLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetReportInput)(nil)).Elem(), DatabaseToolsMcpToolsetReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetReportArrayInput)(nil)).Elem(), DatabaseToolsMcpToolsetReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetSourceInput)(nil)).Elem(), DatabaseToolsMcpToolsetSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetSourcePtrInput)(nil)).Elem(), DatabaseToolsMcpToolsetSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetToolInput)(nil)).Elem(), DatabaseToolsMcpToolsetToolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetToolArrayInput)(nil)).Elem(), DatabaseToolsMcpToolsetToolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetVariableInput)(nil)).Elem(), DatabaseToolsMcpToolsetVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsMcpToolsetVariableArrayInput)(nil)).Elem(), DatabaseToolsMcpToolsetVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportColumnInput)(nil)).Elem(), DatabaseToolsSqlReportColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportColumnArrayInput)(nil)).Elem(), DatabaseToolsSqlReportColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportLockInput)(nil)).Elem(), DatabaseToolsSqlReportLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportLockArrayInput)(nil)).Elem(), DatabaseToolsSqlReportLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportVariableInput)(nil)).Elem(), DatabaseToolsSqlReportVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsSqlReportVariableArrayInput)(nil)).Elem(), DatabaseToolsSqlReportVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResourceInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionCredentialRelatedResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuntimeDatabaseToolsConnectionPropertySetIdentityProviderInput)(nil)).Elem(), RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs{})
@@ -11446,6 +19751,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsFilterInput)(nil)).Elem(), GetDatabaseToolsConnectionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigLockInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigLockArrayInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsFilterInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsDatabaseApiGatewayConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs{})
@@ -11462,6 +19777,76 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentitiesFilterArrayInput)(nil)).Elem(), GetDatabaseToolsIdentitiesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentityLockInput)(nil)).Elem(), GetDatabaseToolsIdentityLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsIdentityLockArrayInput)(nil)).Elem(), GetDatabaseToolsIdentityLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerBuiltInRoleInput)(nil)).Elem(), GetDatabaseToolsMcpServerBuiltInRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerBuiltInRoleArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerBuiltInRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerCustomRoleInput)(nil)).Elem(), GetDatabaseToolsMcpServerCustomRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerCustomRoleArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerCustomRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerEndpointInput)(nil)).Elem(), GetDatabaseToolsMcpServerEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerEndpointArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerLockInput)(nil)).Elem(), GetDatabaseToolsMcpServerLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerLockArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerRelatedResourceInput)(nil)).Elem(), GetDatabaseToolsMcpServerRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerRelatedResourceArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerStorageInput)(nil)).Elem(), GetDatabaseToolsMcpServerStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerStorageArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerStorageBucketInput)(nil)).Elem(), GetDatabaseToolsMcpServerStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServerStorageBucketArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServerStorageBucketArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersFilterInput)(nil)).Elem(), GetDatabaseToolsMcpServersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpServersFilterArrayInput)(nil)).Elem(), GetDatabaseToolsMcpServersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetLockInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetLockArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetReportInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetReportArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetSourceInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetSourceArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetToolInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetToolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetToolArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetToolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVariableInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVariableArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsFilterInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetVersionsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsFilterInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsMcpToolsetsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsMcpToolsetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
@@ -11480,6 +19865,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsFilterInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportColumnInput)(nil)).Elem(), GetDatabaseToolsSqlReportColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportColumnArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportLockInput)(nil)).Elem(), GetDatabaseToolsSqlReportLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportLockArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportVariableInput)(nil)).Elem(), GetDatabaseToolsSqlReportVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportVariableArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsFilterInput)(nil)).Elem(), GetDatabaseToolsSqlReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsSqlReportsFilterArrayInput)(nil)).Elem(), GetDatabaseToolsSqlReportsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemInput)(nil)).Elem(), GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemArgs{})
@@ -11562,14 +19965,46 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseToolsConnectionRelatedResourcePtrOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsDatabaseApiGatewayConfigLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsDatabaseApiGatewayConfigLockArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsIdentityLockOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsIdentityLockArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerBuiltInRoleOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerBuiltInRoleArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerCustomRoleOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerCustomRoleArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerEndpointOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerEndpointArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerLockArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerRelatedResourceOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerStorageOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerStoragePtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerStorageBucketOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpServerStorageBucketPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetLockArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetReportOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetReportArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetSourceOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetSourcePtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetToolOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetToolArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetVariableOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsMcpToolsetVariableArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportColumnOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportColumnArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportLockArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportVariableOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsSqlReportVariableArrayOutput{})
 	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionCredentialRelatedResourceOutput{})
 	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionCredentialRelatedResourceArrayOutput{})
 	pulumi.RegisterOutputType(RuntimeDatabaseToolsConnectionPropertySetIdentityProviderOutput{})
@@ -11620,6 +20055,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsDatabaseToolsDatabaseApiGatewayConfigCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsDatabaseApiGatewayConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput{})
@@ -11636,6 +20081,76 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsIdentitiesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsIdentityLockOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsIdentityLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerBuiltInRoleOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerBuiltInRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerCustomRoleOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerCustomRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerEndpointOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerStorageOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServerStorageBucketArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemBuiltInRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemCustomRoleArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemRelatedResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersDatabaseToolsMcpServerCollectionItemStorageBucketArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpServersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetReportOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetReportArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetSourceOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetToolOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetToolArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVariableOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsDatabaseToolsMcpToolsetVersionCollectionItemVersionToolArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemReportArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemToolArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsDatabaseToolsMcpToolsetCollectionItemVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsMcpToolsetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})
@@ -11654,6 +20169,24 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportColumnOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportVariableOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemColumnArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsDatabaseToolsSqlReportCollectionItemVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsSqlReportsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionOutput{})
 	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuntimeDatabaseToolsConnectionCredentialExecuteGranteesCredentialExecuteGranteeCollectionItemOutput{})

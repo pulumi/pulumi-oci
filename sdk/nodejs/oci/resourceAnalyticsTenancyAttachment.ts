@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -62,6 +64,10 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
     }
 
     /**
+     * The overall status of the data population from the tenancy.
+     */
+    declare public /*out*/ readonly dataPopulationStatus: pulumi.Output<string>;
+    /**
      * (Updatable) A description of the tenancy.
      */
     declare public readonly description: pulumi.Output<string>;
@@ -73,6 +79,10 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
      * A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * List of monitored regions with their data population status.
+     */
+    declare public /*out*/ readonly monitoredRegions: pulumi.Output<outputs.oci.ResourceAnalyticsTenancyAttachmentMonitoredRegion[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
      */
@@ -98,6 +108,14 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    declare public /*out*/ readonly timeDataPopulationEnded: pulumi.Output<string>;
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    declare public /*out*/ readonly timeDataPopulationStarted: pulumi.Output<string>;
+    /**
      * The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
@@ -115,14 +133,18 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResourceAnalyticsTenancyAttachmentState | undefined;
+            resourceInputs["dataPopulationStatus"] = state?.dataPopulationStatus;
             resourceInputs["description"] = state?.description;
             resourceInputs["isReportingTenancy"] = state?.isReportingTenancy;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["monitoredRegions"] = state?.monitoredRegions;
             resourceInputs["resourceAnalyticsInstanceId"] = state?.resourceAnalyticsInstanceId;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["tenancyId"] = state?.tenancyId;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDataPopulationEnded"] = state?.timeDataPopulationEnded;
+            resourceInputs["timeDataPopulationStarted"] = state?.timeDataPopulationStarted;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ResourceAnalyticsTenancyAttachmentArgs | undefined;
@@ -135,11 +157,15 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["resourceAnalyticsInstanceId"] = args?.resourceAnalyticsInstanceId;
             resourceInputs["tenancyId"] = args?.tenancyId;
+            resourceInputs["dataPopulationStatus"] = undefined /*out*/;
             resourceInputs["isReportingTenancy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["monitoredRegions"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeDataPopulationEnded"] = undefined /*out*/;
+            resourceInputs["timeDataPopulationStarted"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -152,6 +178,10 @@ export class ResourceAnalyticsTenancyAttachment extends pulumi.CustomResource {
  */
 export interface ResourceAnalyticsTenancyAttachmentState {
     /**
+     * The overall status of the data population from the tenancy.
+     */
+    dataPopulationStatus?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) A description of the tenancy.
      */
     description?: pulumi.Input<string | undefined>;
@@ -163,6 +193,10 @@ export interface ResourceAnalyticsTenancyAttachmentState {
      * A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
+    /**
+     * List of monitored regions with their data population status.
+     */
+    monitoredRegions?: pulumi.Input<pulumi.Input<inputs.oci.ResourceAnalyticsTenancyAttachmentMonitoredRegion>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
      */
@@ -187,6 +221,14 @@ export interface ResourceAnalyticsTenancyAttachmentState {
      * The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    timeDataPopulationEnded?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    timeDataPopulationStarted?: pulumi.Input<string | undefined>;
     /**
      * The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

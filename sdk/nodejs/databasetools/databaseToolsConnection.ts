@@ -14,6 +14,67 @@ import * as utilities from "../utilities";
  *
  * Creates a new Database Tools connection.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsConnection = new oci.databasetools.DatabaseToolsConnection("test_database_tools_connection", {
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsConnectionDisplayName,
+ *     type: databaseToolsConnectionType,
+ *     userName: testUser.name,
+ *     userPassword: {
+ *         secretId: testSecret.id,
+ *         valueType: databaseToolsConnectionUserPasswordValueType,
+ *     },
+ *     advancedProperties: databaseToolsConnectionAdvancedProperties,
+ *     authenticationType: databaseToolsConnectionAuthenticationType,
+ *     connectionString: databaseToolsConnectionConnectionString,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     keyStores: [{
+ *         keyStoreContent: {
+ *             valueType: databaseToolsConnectionKeyStoresKeyStoreContentValueType,
+ *             secretId: testSecret.id,
+ *         },
+ *         keyStorePassword: {
+ *             valueType: databaseToolsConnectionKeyStoresKeyStorePasswordValueType,
+ *             secretId: testSecret.id,
+ *         },
+ *         keyStoreType: databaseToolsConnectionKeyStoresKeyStoreType,
+ *     }],
+ *     locks: [{
+ *         type: databaseToolsConnectionLocksType,
+ *         message: databaseToolsConnectionLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: databaseToolsConnectionLocksTimeCreated,
+ *     }],
+ *     privateEndpointId: testDatabaseToolsPrivateEndpoint.id,
+ *     proxyClient: {
+ *         proxyAuthenticationType: databaseToolsConnectionProxyClientProxyAuthenticationType,
+ *         roles: databaseToolsConnectionProxyClientRoles,
+ *         userName: testUser.name,
+ *         userPassword: {
+ *             secretId: testSecret.id,
+ *             valueType: databaseToolsConnectionProxyClientUserPasswordValueType,
+ *         },
+ *     },
+ *     relatedResource: {
+ *         entityType: databaseToolsConnectionRelatedResourceEntityType,
+ *         identifier: databaseToolsConnectionRelatedResourceIdentifier,
+ *     },
+ *     runtimeIdentity: databaseToolsConnectionRuntimeIdentity,
+ *     runtimeSupport: databaseToolsConnectionRuntimeSupport,
+ *     url: databaseToolsConnectionUrl,
+ * });
+ * ```
+ *
  * ## Import
  *
  * DatabaseToolsConnections can be imported using the `id`, e.g.
@@ -54,6 +115,10 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
     declare public readonly advancedProperties: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     */
+    declare public readonly authenticationType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
@@ -103,7 +168,7 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly runtimeEndpoint: pulumi.Output<string>;
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      */
     declare public readonly runtimeIdentity: pulumi.Output<string>;
     /**
@@ -137,11 +202,11 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The database user name.
      */
-    declare public readonly userName: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The database user password.
      */
-    declare public readonly userPassword: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    declare public readonly userPassword: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword | undefined>;
 
     /**
      * Create a DatabaseToolsConnection resource with the given unique name, arguments, and options.
@@ -157,6 +222,7 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DatabaseToolsConnectionState | undefined;
             resourceInputs["advancedProperties"] = state?.advancedProperties;
+            resourceInputs["authenticationType"] = state?.authenticationType;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["connectionString"] = state?.connectionString;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -190,13 +256,8 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if (args?.userName === undefined && !opts.urn) {
-                throw new Error("Missing required property 'userName'");
-            }
-            if (args?.userPassword === undefined && !opts.urn) {
-                throw new Error("Missing required property 'userPassword'");
-            }
             resourceInputs["advancedProperties"] = args?.advancedProperties;
+            resourceInputs["authenticationType"] = args?.authenticationType;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["connectionString"] = args?.connectionString;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -233,6 +294,10 @@ export interface DatabaseToolsConnectionState {
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
     advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     */
+    authenticationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
@@ -282,7 +347,7 @@ export interface DatabaseToolsConnectionState {
      */
     runtimeEndpoint?: pulumi.Input<string | undefined>;
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      */
     runtimeIdentity?: pulumi.Input<string | undefined>;
     /**
@@ -332,6 +397,10 @@ export interface DatabaseToolsConnectionArgs {
      */
     advancedProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     */
+    authenticationType?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
     compartmentId: pulumi.Input<string>;
@@ -372,7 +441,7 @@ export interface DatabaseToolsConnectionArgs {
      */
     relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource | undefined>;
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      */
     runtimeIdentity?: pulumi.Input<string | undefined>;
     /**
@@ -390,9 +459,9 @@ export interface DatabaseToolsConnectionArgs {
     /**
      * (Updatable) The database user name.
      */
-    userName: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database user password.
      */
-    userPassword: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword | undefined>;
 }

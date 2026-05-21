@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The OCID of the backup to be used as the source for the new DB System.
         /// </summary>
         public readonly string BackupId;
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemSourceChannelResult> Channels;
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -25,6 +26,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         /// </summary>
         public readonly string RecoveryPoint;
+        public readonly string Region;
         /// <summary>
         /// The specific source identifier.
         /// </summary>
@@ -35,17 +37,23 @@ namespace Pulumi.Oci.Mysql.Outputs
         private GetMysqlDbSystemsDbSystemSourceResult(
             string backupId,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemSourceChannelResult> channels,
+
             string dbSystemId,
 
             string recoveryPoint,
+
+            string region,
 
             string sourceType,
 
             string sourceUrl)
         {
             BackupId = backupId;
+            Channels = channels;
             DbSystemId = dbSystemId;
             RecoveryPoint = recoveryPoint;
+            Region = region;
             SourceType = sourceType;
             SourceUrl = sourceUrl;
         }

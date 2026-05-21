@@ -46,14 +46,14 @@ public final class BdsInstanceIdentityConfigurationUpstConfigurationArgs extends
     }
 
     /**
-     * Secret ID for token exchange keytab
+     * (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     @Import(name="secretId")
     private @Nullable Output<String> secretId;
 
     /**
-     * @return Secret ID for token exchange keytab
+     * @return (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     public Optional<Output<String>> secretId() {
@@ -225,7 +225,7 @@ public final class BdsInstanceIdentityConfigurationUpstConfigurationArgs extends
         }
 
         /**
-         * @param secretId Secret ID for token exchange keytab
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class BdsInstanceIdentityConfigurationUpstConfigurationArgs extends
         }
 
         /**
-         * @param secretId Secret ID for token exchange keytab
+         * @param secretId (Updatable) The secretId for the clusterAdminPassword.
          * 
          * @return builder
          * 

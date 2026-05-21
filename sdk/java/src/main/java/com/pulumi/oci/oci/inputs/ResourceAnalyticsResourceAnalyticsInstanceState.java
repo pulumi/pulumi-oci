@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.oci.inputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +63,21 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceState extends com.p
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     * 
+     */
+    @Import(name="computeCount")
+    private @Nullable Output<Integer> computeCount;
+
+    /**
+     * @return The compute amount (CPUs) available to the Autonomous Database.
+     * 
+     */
+    public Optional<Output<Integer>> computeCount() {
+        return Optional.ofNullable(this.computeCount);
     }
 
     /**
@@ -286,6 +302,7 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceState extends com.p
         this.adwAdminPassword = $.adwAdminPassword;
         this.adwId = $.adwId;
         this.compartmentId = $.compartmentId;
+        this.computeCount = $.computeCount;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -381,6 +398,27 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceState extends com.p
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeCount The compute amount (CPUs) available to the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(@Nullable Output<Integer> computeCount) {
+            $.computeCount = computeCount;
+            return this;
+        }
+
+        /**
+         * @param computeCount The compute amount (CPUs) available to the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(Integer computeCount) {
+            return computeCount(Output.of(computeCount));
         }
 
         /**

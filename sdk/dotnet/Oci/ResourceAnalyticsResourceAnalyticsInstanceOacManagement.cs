@@ -9,21 +9,74 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Oci.Oci
 {
+    /// <summary>
+    /// This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// Attaches an OAC instance to a ResourceAnalyticsInstance.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testResourceAnalyticsInstanceOacManagement = new Oci.Oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management", new()
+    ///     {
+    ///         AttachmentType = resourceAnalyticsInstanceOacManagementAttachmentType,
+    ///         ResourceAnalyticsInstanceId = testResourceAnalyticsInstance.Id,
+    ///         EnableOac = enableOac,
+    ///         AttachmentDetails = new Oci.Oci.Inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs
+    ///         {
+    ///             IdcsDomainId = testDomain.Id,
+    ///             CapacityType = resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityType,
+    ///             CapacityValue = resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue,
+    ///             LicenseModel = resourceAnalyticsInstanceOacManagementAttachmentDetailsLicenseModel,
+    ///             NetworkDetails = new Oci.Oci.Inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs
+    ///             {
+    ///                 SubnetId = testSubnet.Id,
+    ///                 NsgIds = resourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsNsgIds,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [OciResourceType("oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement")]
     public partial class ResourceAnalyticsResourceAnalyticsInstanceOacManagement : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        /// </summary>
         [Output("attachmentDetails")]
         public Output<Outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails> AttachmentDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// The type of attachment the OAC instance is using. Example: `MANAGED`
+        /// </summary>
         [Output("attachmentType")]
         public Output<string> AttachmentType { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
+        /// </summary>
         [Output("enableOac")]
         public Output<bool> EnableOac { get; private set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        /// </summary>
         [Output("resourceAnalyticsInstanceId")]
         public Output<string> ResourceAnalyticsInstanceId { get; private set; } = null!;
 
+        /// <summary>
+        /// The current state of the ResourceAnalyticsInstance.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -73,15 +126,27 @@ namespace Pulumi.Oci.Oci
 
     public sealed class ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        /// </summary>
         [Input("attachmentDetails")]
         public Input<Inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs>? AttachmentDetails { get; set; }
 
+        /// <summary>
+        /// The type of attachment the OAC instance is using. Example: `MANAGED`
+        /// </summary>
         [Input("attachmentType")]
         public Input<string>? AttachmentType { get; set; }
 
+        /// <summary>
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
+        /// </summary>
         [Input("enableOac", required: true)]
         public Input<bool> EnableOac { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        /// </summary>
         [Input("resourceAnalyticsInstanceId", required: true)]
         public Input<string> ResourceAnalyticsInstanceId { get; set; } = null!;
 
@@ -93,18 +158,33 @@ namespace Pulumi.Oci.Oci
 
     public sealed class ResourceAnalyticsResourceAnalyticsInstanceOacManagementState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+        /// </summary>
         [Input("attachmentDetails")]
         public Input<Inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsGetArgs>? AttachmentDetails { get; set; }
 
+        /// <summary>
+        /// The type of attachment the OAC instance is using. Example: `MANAGED`
+        /// </summary>
         [Input("attachmentType")]
         public Input<string>? AttachmentType { get; set; }
 
+        /// <summary>
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
+        /// </summary>
         [Input("enableOac")]
         public Input<bool>? EnableOac { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        /// </summary>
         [Input("resourceAnalyticsInstanceId")]
         public Input<string>? ResourceAnalyticsInstanceId { get; set; }
 
+        /// <summary>
+        /// The current state of the ResourceAnalyticsInstance.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 

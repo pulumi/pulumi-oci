@@ -75,6 +75,8 @@ type LookupAutoScalingConfigurationResult struct {
 	Policies []GetAutoScalingConfigurationPolicy `pulumi:"policies"`
 	// Details of an autoscale policy.
 	PolicyDetails []GetAutoScalingConfigurationPolicyDetail `pulumi:"policyDetails"`
+	// The secretId for the clusterAdminPassword.
+	SecretId string `pulumi:"secretId"`
 	// The state of the autoscale configuration.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
@@ -160,6 +162,11 @@ func (o LookupAutoScalingConfigurationResultOutput) PolicyDetails() GetAutoScali
 	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) []GetAutoScalingConfigurationPolicyDetail {
 		return v.PolicyDetails
 	}).(GetAutoScalingConfigurationPolicyDetailArrayOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o LookupAutoScalingConfigurationResultOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // The state of the autoscale configuration.

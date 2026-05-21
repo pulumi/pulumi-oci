@@ -45,6 +45,26 @@ export type BatchBatchTaskProfile = import("./batchBatchTaskProfile").BatchBatch
 export const BatchBatchTaskProfile: typeof import("./batchBatchTaskProfile").BatchBatchTaskProfile = null as any;
 utilities.lazyLoad(exports, ["BatchBatchTaskProfile"], () => require("./batchBatchTaskProfile"));
 
+export { CostadCostAlertSubscriptionArgs, CostadCostAlertSubscriptionState } from "./costadCostAlertSubscription";
+export type CostadCostAlertSubscription = import("./costadCostAlertSubscription").CostadCostAlertSubscription;
+export const CostadCostAlertSubscription: typeof import("./costadCostAlertSubscription").CostadCostAlertSubscription = null as any;
+utilities.lazyLoad(exports, ["CostadCostAlertSubscription"], () => require("./costadCostAlertSubscription"));
+
+export { CostadCostAnomalyEventArgs, CostadCostAnomalyEventState } from "./costadCostAnomalyEvent";
+export type CostadCostAnomalyEvent = import("./costadCostAnomalyEvent").CostadCostAnomalyEvent;
+export const CostadCostAnomalyEvent: typeof import("./costadCostAnomalyEvent").CostadCostAnomalyEvent = null as any;
+utilities.lazyLoad(exports, ["CostadCostAnomalyEvent"], () => require("./costadCostAnomalyEvent"));
+
+export { CostadCostAnomalyMonitorArgs, CostadCostAnomalyMonitorState } from "./costadCostAnomalyMonitor";
+export type CostadCostAnomalyMonitor = import("./costadCostAnomalyMonitor").CostadCostAnomalyMonitor;
+export const CostadCostAnomalyMonitor: typeof import("./costadCostAnomalyMonitor").CostadCostAnomalyMonitor = null as any;
+utilities.lazyLoad(exports, ["CostadCostAnomalyMonitor"], () => require("./costadCostAnomalyMonitor"));
+
+export { CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs, CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState } from "./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement";
+export type CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = import("./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement").CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement;
+export const CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement: typeof import("./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement").CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = null as any;
+utilities.lazyLoad(exports, ["CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"], () => require("./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"));
+
 export { DbmulticloudMultiCloudResourceDiscoveryArgs, DbmulticloudMultiCloudResourceDiscoveryState } from "./dbmulticloudMultiCloudResourceDiscovery";
 export type DbmulticloudMultiCloudResourceDiscovery = import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery;
 export const DbmulticloudMultiCloudResourceDiscovery: typeof import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery = null as any;
@@ -219,6 +239,41 @@ export { GetBatchBatchTaskProfilesArgs, GetBatchBatchTaskProfilesResult, GetBatc
 export const getBatchBatchTaskProfiles: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfiles = null as any;
 export const getBatchBatchTaskProfilesOutput: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfilesOutput = null as any;
 utilities.lazyLoad(exports, ["getBatchBatchTaskProfiles","getBatchBatchTaskProfilesOutput"], () => require("./getBatchBatchTaskProfiles"));
+
+export { GetCostadCostAlertSubscriptionArgs, GetCostadCostAlertSubscriptionResult, GetCostadCostAlertSubscriptionOutputArgs } from "./getCostadCostAlertSubscription";
+export const getCostadCostAlertSubscription: typeof import("./getCostadCostAlertSubscription").getCostadCostAlertSubscription = null as any;
+export const getCostadCostAlertSubscriptionOutput: typeof import("./getCostadCostAlertSubscription").getCostadCostAlertSubscriptionOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAlertSubscription","getCostadCostAlertSubscriptionOutput"], () => require("./getCostadCostAlertSubscription"));
+
+export { GetCostadCostAlertSubscriptionsArgs, GetCostadCostAlertSubscriptionsResult, GetCostadCostAlertSubscriptionsOutputArgs } from "./getCostadCostAlertSubscriptions";
+export const getCostadCostAlertSubscriptions: typeof import("./getCostadCostAlertSubscriptions").getCostadCostAlertSubscriptions = null as any;
+export const getCostadCostAlertSubscriptionsOutput: typeof import("./getCostadCostAlertSubscriptions").getCostadCostAlertSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAlertSubscriptions","getCostadCostAlertSubscriptionsOutput"], () => require("./getCostadCostAlertSubscriptions"));
+
+export { GetCostadCostAnomalyEventArgs, GetCostadCostAnomalyEventResult, GetCostadCostAnomalyEventOutputArgs } from "./getCostadCostAnomalyEvent";
+export const getCostadCostAnomalyEvent: typeof import("./getCostadCostAnomalyEvent").getCostadCostAnomalyEvent = null as any;
+export const getCostadCostAnomalyEventOutput: typeof import("./getCostadCostAnomalyEvent").getCostadCostAnomalyEventOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAnomalyEvent","getCostadCostAnomalyEventOutput"], () => require("./getCostadCostAnomalyEvent"));
+
+export { GetCostadCostAnomalyEventAnalyticsArgs, GetCostadCostAnomalyEventAnalyticsResult, GetCostadCostAnomalyEventAnalyticsOutputArgs } from "./getCostadCostAnomalyEventAnalytics";
+export const getCostadCostAnomalyEventAnalytics: typeof import("./getCostadCostAnomalyEventAnalytics").getCostadCostAnomalyEventAnalytics = null as any;
+export const getCostadCostAnomalyEventAnalyticsOutput: typeof import("./getCostadCostAnomalyEventAnalytics").getCostadCostAnomalyEventAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAnomalyEventAnalytics","getCostadCostAnomalyEventAnalyticsOutput"], () => require("./getCostadCostAnomalyEventAnalytics"));
+
+export { GetCostadCostAnomalyEventsArgs, GetCostadCostAnomalyEventsResult, GetCostadCostAnomalyEventsOutputArgs } from "./getCostadCostAnomalyEvents";
+export const getCostadCostAnomalyEvents: typeof import("./getCostadCostAnomalyEvents").getCostadCostAnomalyEvents = null as any;
+export const getCostadCostAnomalyEventsOutput: typeof import("./getCostadCostAnomalyEvents").getCostadCostAnomalyEventsOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAnomalyEvents","getCostadCostAnomalyEventsOutput"], () => require("./getCostadCostAnomalyEvents"));
+
+export { GetCostadCostAnomalyMonitorArgs, GetCostadCostAnomalyMonitorResult, GetCostadCostAnomalyMonitorOutputArgs } from "./getCostadCostAnomalyMonitor";
+export const getCostadCostAnomalyMonitor: typeof import("./getCostadCostAnomalyMonitor").getCostadCostAnomalyMonitor = null as any;
+export const getCostadCostAnomalyMonitorOutput: typeof import("./getCostadCostAnomalyMonitor").getCostadCostAnomalyMonitorOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAnomalyMonitor","getCostadCostAnomalyMonitorOutput"], () => require("./getCostadCostAnomalyMonitor"));
+
+export { GetCostadCostAnomalyMonitorsArgs, GetCostadCostAnomalyMonitorsResult, GetCostadCostAnomalyMonitorsOutputArgs } from "./getCostadCostAnomalyMonitors";
+export const getCostadCostAnomalyMonitors: typeof import("./getCostadCostAnomalyMonitors").getCostadCostAnomalyMonitors = null as any;
+export const getCostadCostAnomalyMonitorsOutput: typeof import("./getCostadCostAnomalyMonitors").getCostadCostAnomalyMonitorsOutput = null as any;
+utilities.lazyLoad(exports, ["getCostadCostAnomalyMonitors","getCostadCostAnomalyMonitorsOutput"], () => require("./getCostadCostAnomalyMonitors"));
 
 export { GetDbmulticloudMultiCloudResourceDiscoveriesArgs, GetDbmulticloudMultiCloudResourceDiscoveriesResult, GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs } from "./getDbmulticloudMultiCloudResourceDiscoveries";
 export const getDbmulticloudMultiCloudResourceDiscoveries: typeof import("./getDbmulticloudMultiCloudResourceDiscoveries").getDbmulticloudMultiCloudResourceDiscoveries = null as any;
@@ -625,6 +680,11 @@ export const getResourceAnalyticsTenancyAttachments: typeof import("./getResourc
 export const getResourceAnalyticsTenancyAttachmentsOutput: typeof import("./getResourceAnalyticsTenancyAttachments").getResourceAnalyticsTenancyAttachmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceAnalyticsTenancyAttachments","getResourceAnalyticsTenancyAttachmentsOutput"], () => require("./getResourceAnalyticsTenancyAttachments"));
 
+export { GetResourceSearchArgs, GetResourceSearchResult, GetResourceSearchOutputArgs } from "./getResourceSearch";
+export const getResourceSearch: typeof import("./getResourceSearch").getResourceSearch = null as any;
+export const getResourceSearchOutput: typeof import("./getResourceSearch").getResourceSearchOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceSearch","getResourceSearchOutput"], () => require("./getResourceSearch"));
+
 export { GetSelfPartnerSubscriptionsArgs, GetSelfPartnerSubscriptionsResult, GetSelfPartnerSubscriptionsOutputArgs } from "./getSelfPartnerSubscriptions";
 export const getSelfPartnerSubscriptions: typeof import("./getSelfPartnerSubscriptions").getSelfPartnerSubscriptions = null as any;
 export const getSelfPartnerSubscriptionsOutput: typeof import("./getSelfPartnerSubscriptions").getSelfPartnerSubscriptionsOutput = null as any;
@@ -846,6 +906,14 @@ const _module = {
                 return new BatchBatchTaskEnvironment(name, <any>undefined, { urn })
             case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
                 return new BatchBatchTaskProfile(name, <any>undefined, { urn })
+            case "oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription":
+                return new CostadCostAlertSubscription(name, <any>undefined, { urn })
+            case "oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent":
+                return new CostadCostAnomalyEvent(name, <any>undefined, { urn })
+            case "oci:oci/costadCostAnomalyMonitor:CostadCostAnomalyMonitor":
+                return new CostadCostAnomalyMonitor(name, <any>undefined, { urn })
+            case "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement":
+                return new CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
                 return new DbmulticloudMultiCloudResourceDiscovery(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -927,6 +995,10 @@ pulumi.runtime.registerResourceModule("oci", "oci/batchBatchContext", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchJobPool", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskEnvironment", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskProfile", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/costadCostAlertSubscription", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyEvent", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyMonitor", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKey", _module)

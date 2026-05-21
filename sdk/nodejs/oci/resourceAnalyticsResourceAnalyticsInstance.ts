@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     },
  *     compartmentId: compartmentId,
  *     subnetId: testSubnet.id,
+ *     computeCount: Number(resourceAnalyticsInstanceComputeCount),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -90,6 +91,10 @@ export class ResourceAnalyticsResourceAnalyticsInstance extends pulumi.CustomRes
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     */
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -167,6 +172,7 @@ export class ResourceAnalyticsResourceAnalyticsInstance extends pulumi.CustomRes
             resourceInputs["adwAdminPassword"] = state?.adwAdminPassword;
             resourceInputs["adwId"] = state?.adwId;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
@@ -194,6 +200,7 @@ export class ResourceAnalyticsResourceAnalyticsInstance extends pulumi.CustomRes
             }
             resourceInputs["adwAdminPassword"] = args?.adwAdminPassword;
             resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
@@ -231,6 +238,10 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
      */
     compartmentId?: pulumi.Input<string | undefined>;
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     */
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -305,6 +316,10 @@ export interface ResourceAnalyticsResourceAnalyticsInstanceArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     */
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */

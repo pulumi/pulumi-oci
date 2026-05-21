@@ -13,14 +13,45 @@ namespace Pulumi.Oci.Oci.Outputs
     [OutputType]
     public sealed class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails
     {
+        /// <summary>
+        /// The capacity model to use for the Analytics Instance.
+        /// </summary>
+        public readonly string? CapacityType;
+        /// <summary>
+        /// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+        /// </summary>
+        public readonly int? CapacityValue;
+        /// <summary>
+        /// IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+        /// </summary>
         public readonly string? IdcsDomainId;
+        /// <summary>
+        /// The Oracle license model that applies to the OAC instance.
+        /// </summary>
         public readonly string? LicenseModel;
+        /// <summary>
+        /// Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
+        /// </summary>
         public readonly Outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails? NetworkDetails;
+        /// <summary>
+        /// List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         public readonly string? SubnetId;
 
         [OutputConstructor]
         private ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails(
+            string? capacityType,
+
+            int? capacityValue,
+
             string? idcsDomainId,
 
             string? licenseModel,
@@ -31,6 +62,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string? subnetId)
         {
+            CapacityType = capacityType;
+            CapacityValue = capacityValue;
             IdcsDomainId = idcsDomainId;
             LicenseModel = licenseModel;
             NetworkDetails = networkDetails;

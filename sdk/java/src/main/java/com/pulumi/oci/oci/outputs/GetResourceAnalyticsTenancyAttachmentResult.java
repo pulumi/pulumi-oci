@@ -5,13 +5,20 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentMonitoredRegion;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetResourceAnalyticsTenancyAttachmentResult {
+    /**
+     * @return The overall status of the data population from the tenancy.
+     * 
+     */
+    private String dataPopulationStatus;
     /**
      * @return A description of the tenancy.
      * 
@@ -32,6 +39,11 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return List of monitored regions with their data population status.
+     * 
+     */
+    private List<GetResourceAnalyticsTenancyAttachmentMonitoredRegion> monitoredRegions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
      * 
@@ -59,12 +71,29 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
      */
     private String timeCreated;
     /**
+     * @return The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeDataPopulationEnded;
+    /**
+     * @return The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeDataPopulationStarted;
+    /**
      * @return The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
 
     private GetResourceAnalyticsTenancyAttachmentResult() {}
+    /**
+     * @return The overall status of the data population from the tenancy.
+     * 
+     */
+    public String dataPopulationStatus() {
+        return this.dataPopulationStatus;
+    }
     /**
      * @return A description of the tenancy.
      * 
@@ -92,6 +121,13 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return List of monitored regions with their data population status.
+     * 
+     */
+    public List<GetResourceAnalyticsTenancyAttachmentMonitoredRegion> monitoredRegions() {
+        return this.monitoredRegions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
@@ -132,6 +168,20 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
         return this.timeCreated;
     }
     /**
+     * @return The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeDataPopulationEnded() {
+        return this.timeDataPopulationEnded;
+    }
+    /**
+     * @return The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeDataPopulationStarted() {
+        return this.timeDataPopulationStarted;
+    }
+    /**
      * @return The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -148,33 +198,49 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dataPopulationStatus;
         private String description;
         private String id;
         private Boolean isReportingTenancy;
         private String lifecycleDetails;
+        private List<GetResourceAnalyticsTenancyAttachmentMonitoredRegion> monitoredRegions;
         private String resourceAnalyticsInstanceId;
         private String state;
         private Map<String,String> systemTags;
         private String tenancyAttachmentId;
         private String tenancyId;
         private String timeCreated;
+        private String timeDataPopulationEnded;
+        private String timeDataPopulationStarted;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetResourceAnalyticsTenancyAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dataPopulationStatus = defaults.dataPopulationStatus;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.isReportingTenancy = defaults.isReportingTenancy;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.monitoredRegions = defaults.monitoredRegions;
     	      this.resourceAnalyticsInstanceId = defaults.resourceAnalyticsInstanceId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.tenancyAttachmentId = defaults.tenancyAttachmentId;
     	      this.tenancyId = defaults.tenancyId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeDataPopulationEnded = defaults.timeDataPopulationEnded;
+    	      this.timeDataPopulationStarted = defaults.timeDataPopulationStarted;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder dataPopulationStatus(String dataPopulationStatus) {
+            if (dataPopulationStatus == null) {
+              throw new MissingRequiredPropertyException("GetResourceAnalyticsTenancyAttachmentResult", "dataPopulationStatus");
+            }
+            this.dataPopulationStatus = dataPopulationStatus;
+            return this;
+        }
         @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
@@ -206,6 +272,17 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder monitoredRegions(List<GetResourceAnalyticsTenancyAttachmentMonitoredRegion> monitoredRegions) {
+            if (monitoredRegions == null) {
+              throw new MissingRequiredPropertyException("GetResourceAnalyticsTenancyAttachmentResult", "monitoredRegions");
+            }
+            this.monitoredRegions = monitoredRegions;
+            return this;
+        }
+        public Builder monitoredRegions(GetResourceAnalyticsTenancyAttachmentMonitoredRegion... monitoredRegions) {
+            return monitoredRegions(List.of(monitoredRegions));
         }
         @CustomType.Setter
         public Builder resourceAnalyticsInstanceId(String resourceAnalyticsInstanceId) {
@@ -256,6 +333,22 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeDataPopulationEnded(String timeDataPopulationEnded) {
+            if (timeDataPopulationEnded == null) {
+              throw new MissingRequiredPropertyException("GetResourceAnalyticsTenancyAttachmentResult", "timeDataPopulationEnded");
+            }
+            this.timeDataPopulationEnded = timeDataPopulationEnded;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeDataPopulationStarted(String timeDataPopulationStarted) {
+            if (timeDataPopulationStarted == null) {
+              throw new MissingRequiredPropertyException("GetResourceAnalyticsTenancyAttachmentResult", "timeDataPopulationStarted");
+            }
+            this.timeDataPopulationStarted = timeDataPopulationStarted;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             if (timeUpdated == null) {
               throw new MissingRequiredPropertyException("GetResourceAnalyticsTenancyAttachmentResult", "timeUpdated");
@@ -265,16 +358,20 @@ public final class GetResourceAnalyticsTenancyAttachmentResult {
         }
         public GetResourceAnalyticsTenancyAttachmentResult build() {
             final var _resultValue = new GetResourceAnalyticsTenancyAttachmentResult();
+            _resultValue.dataPopulationStatus = dataPopulationStatus;
             _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.isReportingTenancy = isReportingTenancy;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.monitoredRegions = monitoredRegions;
             _resultValue.resourceAnalyticsInstanceId = resourceAnalyticsInstanceId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.tenancyAttachmentId = tenancyAttachmentId;
             _resultValue.tenancyId = tenancyId;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeDataPopulationEnded = timeDataPopulationEnded;
+            _resultValue.timeDataPopulationStarted = timeDataPopulationStarted;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }

@@ -29,7 +29,6 @@ namespace Pulumi.Oci.BigDataService
     /// {
     ///     var testBdsInstance = new Oci.BigDataService.BdsInstance("test_bds_instance", new()
     ///     {
-    ///         ClusterAdminPassword = bdsInstanceClusterAdminPassword,
     ///         ClusterPublicKey = bdsInstanceClusterPublicKey,
     ///         ClusterVersion = bdsInstanceClusterVersion,
     ///         CompartmentId = compartmentId,
@@ -120,9 +119,11 @@ namespace Pulumi.Oci.BigDataService
     ///             OdhVersion = bdsInstanceBdsClusterVersionSummaryOdhVersion,
     ///         },
     ///         BootstrapScriptUrl = bdsInstanceBootstrapScriptUrl,
+    ///         ClusterAdminPassword = bdsInstanceClusterAdminPassword,
     ///         ClusterProfile = bdsInstanceClusterProfile,
     ///         DefinedTags = bdsInstanceDefinedTags,
     ///         FreeformTags = bdsInstanceFreeformTags,
+    ///         IsSecretReused = bdsInstanceIsSecretReused,
     ///         KerberosRealmName = bdsInstanceKerberosRealmName,
     ///         KmsKeyId = bdsInstanceKmsKeyId,
     ///         IgnoreExistingNodesShapes = ignoreExistingNodesShape,
@@ -131,6 +132,7 @@ namespace Pulumi.Oci.BigDataService
     ///             CidrBlock = bdsInstanceNetworkConfigCidrBlock,
     ///             IsNatGatewayRequired = bdsInstanceNetworkConfigIsNatGatewayRequired,
     ///         },
+    ///         SecretId = testSecret.Id,
     ///     });
     /// 
     /// });
@@ -166,7 +168,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableArray<Outputs.BdsInstanceCloudSqlDetail>> CloudSqlDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
@@ -265,6 +267,12 @@ namespace Pulumi.Oci.BigDataService
         public Output<bool?> IsKafkaConfigured { get; private set; } = null!;
 
         /// <summary>
+        /// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        /// </summary>
+        [Output("isSecretReused")]
+        public Output<bool> IsSecretReused { get; private set; } = null!;
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Output("isSecure")]
@@ -330,6 +338,15 @@ namespace Pulumi.Oci.BigDataService
         [Output("removeNode")]
         public Output<string?> RemoveNode { get; private set; } = null!;
 
+        [Output("removeNodes")]
+        public Output<ImmutableArray<string>> RemoveNodes { get; private set; } = null!;
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
+
         [Output("startClusterShapeConfigs")]
         public Output<ImmutableArray<Outputs.BdsInstanceStartClusterShapeConfig>> StartClusterShapeConfigs { get; private set; } = null!;
 
@@ -344,6 +361,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        /// </summary>
+        [Output("timeEarliestCertificateExpiration")]
+        public Output<string> TimeEarliestCertificateExpiration { get; private set; } = null!;
 
         /// <summary>
         /// The time the BDS instance was updated. An RFC3339 formatted datetime string
@@ -434,11 +457,11 @@ namespace Pulumi.Oci.BigDataService
             set => _cloudSqlDetails = value;
         }
 
-        [Input("clusterAdminPassword", required: true)]
+        [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -550,6 +573,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool>? IsKafkaConfigured { get; set; }
 
         /// <summary>
+        /// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        /// </summary>
+        [Input("isSecretReused")]
+        public Input<bool>? IsSecretReused { get; set; }
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure", required: true)]
@@ -596,6 +625,20 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("removeNode")]
         public Input<string>? RemoveNode { get; set; }
+
+        [Input("removeNodes")]
+        private InputList<string>? _removeNodes;
+        public InputList<string> RemoveNodes
+        {
+            get => _removeNodes ?? (_removeNodes = new InputList<string>());
+            set => _removeNodes = value;
+        }
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         [Input("startClusterShapeConfigs")]
         private InputList<Inputs.BdsInstanceStartClusterShapeConfigArgs>? _startClusterShapeConfigs;
@@ -656,7 +699,7 @@ namespace Pulumi.Oci.BigDataService
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
-        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
         /// </summary>
         public Input<string>? ClusterAdminPassword
         {
@@ -786,6 +829,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<bool>? IsKafkaConfigured { get; set; }
 
         /// <summary>
+        /// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+        /// </summary>
+        [Input("isSecretReused")]
+        public Input<bool>? IsSecretReused { get; set; }
+
+        /// <summary>
         /// Boolean flag specifying whether or not the cluster should be setup as secure.
         /// </summary>
         [Input("isSecure")]
@@ -857,6 +906,20 @@ namespace Pulumi.Oci.BigDataService
         [Input("removeNode")]
         public Input<string>? RemoveNode { get; set; }
 
+        [Input("removeNodes")]
+        private InputList<string>? _removeNodes;
+        public InputList<string> RemoveNodes
+        {
+            get => _removeNodes ?? (_removeNodes = new InputList<string>());
+            set => _removeNodes = value;
+        }
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
+
         [Input("startClusterShapeConfigs")]
         private InputList<Inputs.BdsInstanceStartClusterShapeConfigGetArgs>? _startClusterShapeConfigs;
         public InputList<Inputs.BdsInstanceStartClusterShapeConfigGetArgs> StartClusterShapeConfigs
@@ -876,6 +939,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+        /// </summary>
+        [Input("timeEarliestCertificateExpiration")]
+        public Input<string>? TimeEarliestCertificateExpiration { get; set; }
 
         /// <summary>
         /// The time the BDS instance was updated. An RFC3339 formatted datetime string

@@ -23,7 +23,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private List<String> roles;
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     private String userName;
@@ -49,7 +49,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.roles;
     }
     /**
-     * @return The database user name.
+     * @return The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      * 
      */
     public String userName() {

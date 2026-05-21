@@ -48,6 +48,10 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly advancedProperties: {[key: string]: string};
     /**
+     * Specifies the authentication type used to connect to the database.
+     */
+    readonly authenticationType: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
     readonly compartmentId: string;
@@ -101,7 +105,7 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly runtimeEndpoint: string;
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      */
     readonly runtimeIdentity: string;
     /**
@@ -133,7 +137,7 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly url: string;
     /**
-     * The database user name.
+     * The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
      */
     readonly userName: string;
     /**

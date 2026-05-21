@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetResourceAnalyticsTenancyAttachmentResult',
@@ -26,7 +27,10 @@ class GetResourceAnalyticsTenancyAttachmentResult:
     """
     A collection of values returned by getResourceAnalyticsTenancyAttachment.
     """
-    def __init__(__self__, description=None, id=None, is_reporting_tenancy=None, lifecycle_details=None, resource_analytics_instance_id=None, state=None, system_tags=None, tenancy_attachment_id=None, tenancy_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, data_population_status=None, description=None, id=None, is_reporting_tenancy=None, lifecycle_details=None, monitored_regions=None, resource_analytics_instance_id=None, state=None, system_tags=None, tenancy_attachment_id=None, tenancy_id=None, time_created=None, time_data_population_ended=None, time_data_population_started=None, time_updated=None):
+        if data_population_status and not isinstance(data_population_status, str):
+            raise TypeError("Expected argument 'data_population_status' to be a str")
+        pulumi.set(__self__, "data_population_status", data_population_status)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -39,6 +43,9 @@ class GetResourceAnalyticsTenancyAttachmentResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if monitored_regions and not isinstance(monitored_regions, list):
+            raise TypeError("Expected argument 'monitored_regions' to be a list")
+        pulumi.set(__self__, "monitored_regions", monitored_regions)
         if resource_analytics_instance_id and not isinstance(resource_analytics_instance_id, str):
             raise TypeError("Expected argument 'resource_analytics_instance_id' to be a str")
         pulumi.set(__self__, "resource_analytics_instance_id", resource_analytics_instance_id)
@@ -57,9 +64,23 @@ class GetResourceAnalyticsTenancyAttachmentResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_data_population_ended and not isinstance(time_data_population_ended, str):
+            raise TypeError("Expected argument 'time_data_population_ended' to be a str")
+        pulumi.set(__self__, "time_data_population_ended", time_data_population_ended)
+        if time_data_population_started and not isinstance(time_data_population_started, str):
+            raise TypeError("Expected argument 'time_data_population_started' to be a str")
+        pulumi.set(__self__, "time_data_population_started", time_data_population_started)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="dataPopulationStatus")
+    def data_population_status(self) -> _builtins.str:
+        """
+        The overall status of the data population from the tenancy.
+        """
+        return pulumi.get(self, "data_population_status")
 
     @_builtins.property
     @pulumi.getter
@@ -92,6 +113,14 @@ class GetResourceAnalyticsTenancyAttachmentResult:
         A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="monitoredRegions")
+    def monitored_regions(self) -> Sequence['outputs.GetResourceAnalyticsTenancyAttachmentMonitoredRegionResult']:
+        """
+        List of monitored regions with their data population status.
+        """
+        return pulumi.get(self, "monitored_regions")
 
     @_builtins.property
     @pulumi.getter(name="resourceAnalyticsInstanceId")
@@ -139,6 +168,22 @@ class GetResourceAnalyticsTenancyAttachmentResult:
         return pulumi.get(self, "time_created")
 
     @_builtins.property
+    @pulumi.getter(name="timeDataPopulationEnded")
+    def time_data_population_ended(self) -> _builtins.str:
+        """
+        The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDataPopulationStarted")
+    def time_data_population_started(self) -> _builtins.str:
+        """
+        The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_data_population_started")
+
+    @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
@@ -153,16 +198,20 @@ class AwaitableGetResourceAnalyticsTenancyAttachmentResult(GetResourceAnalyticsT
         if False:
             yield self
         return GetResourceAnalyticsTenancyAttachmentResult(
+            data_population_status=self.data_population_status,
             description=self.description,
             id=self.id,
             is_reporting_tenancy=self.is_reporting_tenancy,
             lifecycle_details=self.lifecycle_details,
+            monitored_regions=self.monitored_regions,
             resource_analytics_instance_id=self.resource_analytics_instance_id,
             state=self.state,
             system_tags=self.system_tags,
             tenancy_attachment_id=self.tenancy_attachment_id,
             tenancy_id=self.tenancy_id,
             time_created=self.time_created,
+            time_data_population_ended=self.time_data_population_ended,
+            time_data_population_started=self.time_data_population_started,
             time_updated=self.time_updated)
 
 
@@ -191,16 +240,20 @@ def get_resource_analytics_tenancy_attachment(tenancy_attachment_id: Optional[_b
     __ret__ = pulumi.runtime.invoke('oci:oci/getResourceAnalyticsTenancyAttachment:getResourceAnalyticsTenancyAttachment', __args__, opts=opts, typ=GetResourceAnalyticsTenancyAttachmentResult).value
 
     return AwaitableGetResourceAnalyticsTenancyAttachmentResult(
+        data_population_status=pulumi.get(__ret__, 'data_population_status'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         is_reporting_tenancy=pulumi.get(__ret__, 'is_reporting_tenancy'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        monitored_regions=pulumi.get(__ret__, 'monitored_regions'),
         resource_analytics_instance_id=pulumi.get(__ret__, 'resource_analytics_instance_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         tenancy_attachment_id=pulumi.get(__ret__, 'tenancy_attachment_id'),
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_data_population_ended=pulumi.get(__ret__, 'time_data_population_ended'),
+        time_data_population_started=pulumi.get(__ret__, 'time_data_population_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_resource_analytics_tenancy_attachment_output(tenancy_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAnalyticsTenancyAttachmentResult]:
@@ -226,14 +279,18 @@ def get_resource_analytics_tenancy_attachment_output(tenancy_attachment_id: pulu
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getResourceAnalyticsTenancyAttachment:getResourceAnalyticsTenancyAttachment', __args__, opts=opts, typ=GetResourceAnalyticsTenancyAttachmentResult)
     return __ret__.apply(lambda __response__: GetResourceAnalyticsTenancyAttachmentResult(
+        data_population_status=pulumi.get(__response__, 'data_population_status'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         is_reporting_tenancy=pulumi.get(__response__, 'is_reporting_tenancy'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        monitored_regions=pulumi.get(__response__, 'monitored_regions'),
         resource_analytics_instance_id=pulumi.get(__response__, 'resource_analytics_instance_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         tenancy_attachment_id=pulumi.get(__response__, 'tenancy_attachment_id'),
         tenancy_id=pulumi.get(__response__, 'tenancy_id'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_data_population_ended=pulumi.get(__response__, 'time_data_population_ended'),
+        time_data_population_started=pulumi.get(__response__, 'time_data_population_started'),
         time_updated=pulumi.get(__response__, 'time_updated')))

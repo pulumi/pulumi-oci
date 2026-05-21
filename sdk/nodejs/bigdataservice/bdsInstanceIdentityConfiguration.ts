@@ -22,13 +22,14 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstanceIdentityConfiguration = new oci.bigdataservice.BdsInstanceIdentityConfiguration("test_bds_instance_identity_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: bdsInstanceIdentityConfigurationClusterAdminPassword,
  *     confidentialApplicationId: testApplication.id,
  *     displayName: bdsInstanceIdentityConfigurationDisplayName,
  *     identityDomainId: testDomain.id,
+ *     clusterAdminPassword: bdsInstanceIdentityConfigurationClusterAdminPassword,
  *     iamUserSyncConfigurationDetails: {
  *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired === "true",
  *     },
+ *     secretId: testSecret.id,
  *     upstConfigurationDetails: {
  *         masterEncryptionKeyId: testKey.id,
  *         vaultId: testVault.id,

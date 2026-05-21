@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult
     {
         /// <summary>
+        /// The overall status of the data population from the tenancy.
+        /// </summary>
+        public readonly string DataPopulationStatus;
+        /// <summary>
         /// A description of the tenancy.
         /// </summary>
         public readonly string Description;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// List of monitored regions with their data population status.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionResult> MonitoredRegions;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
         /// </summary>
@@ -50,12 +58,22 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeDataPopulationEnded;
+        /// <summary>
+        /// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeDataPopulationStarted;
+        /// <summary>
         /// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult(
+            string dataPopulationStatus,
+
             string description,
 
             string id,
@@ -63,6 +81,8 @@ namespace Pulumi.Oci.Oci.Outputs
             bool isReportingTenancy,
 
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionResult> monitoredRegions,
 
             string resourceAnalyticsInstanceId,
 
@@ -74,17 +94,25 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string timeCreated,
 
+            string timeDataPopulationEnded,
+
+            string timeDataPopulationStarted,
+
             string timeUpdated)
         {
+            DataPopulationStatus = dataPopulationStatus;
             Description = description;
             Id = id;
             IsReportingTenancy = isReportingTenancy;
             LifecycleDetails = lifecycleDetails;
+            MonitoredRegions = monitoredRegions;
             ResourceAnalyticsInstanceId = resourceAnalyticsInstanceId;
             State = state;
             SystemTags = systemTags;
             TenancyId = tenancyId;
             TimeCreated = timeCreated;
+            TimeDataPopulationEnded = timeDataPopulationEnded;
+            TimeDataPopulationStarted = timeDataPopulationStarted;
             TimeUpdated = timeUpdated;
         }
     }

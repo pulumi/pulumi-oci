@@ -20,27 +20,32 @@ __all__ = ['BdsInstanceReplaceNodeActionArgs', 'BdsInstanceReplaceNodeAction']
 class BdsInstanceReplaceNodeActionArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[_builtins.str],
-                 cluster_admin_password: pulumi.Input[_builtins.str],
-                 node_backup_id: pulumi.Input[_builtins.str],
                  node_host_name: pulumi.Input[_builtins.str],
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceReplaceNodeAction resource.
 
-        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
-        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-        :param pulumi.Input[_builtins.str] shape: Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the Big Data Service cluster.
+        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base64-encoded cluster admin password. Use this or `secret_id`.
+        :param pulumi.Input[_builtins.str] node_backup_id: The OCID of the node backup to use for replacement.
+        :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        :param pulumi.Input[_builtins.str] shape: The shape to use for the replacement node. If not specified, the existing node shape is used.
                
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               **IMPORTANT**
+               This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
-        pulumi.set(__self__, "node_backup_id", node_backup_id)
         pulumi.set(__self__, "node_host_name", node_host_name)
+        if cluster_admin_password is not None:
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        if node_backup_id is not None:
+            pulumi.set(__self__, "node_backup_id", node_backup_id)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
 
@@ -48,7 +53,7 @@ class BdsInstanceReplaceNodeActionArgs:
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the cluster.
+        The OCID of the Big Data Service cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -57,34 +62,10 @@ class BdsInstanceReplaceNodeActionArgs:
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        Base-64 encoded password for the cluster admin user.
-        """
-        return pulumi.get(self, "cluster_admin_password")
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cluster_admin_password", value)
-
-    @_builtins.property
-    @pulumi.getter(name="nodeBackupId")
-    def node_backup_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The id of the nodeBackup to use for replacing the node.
-        """
-        return pulumi.get(self, "node_backup_id")
-
-    @node_backup_id.setter
-    def node_backup_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "node_backup_id", value)
-
-    @_builtins.property
     @pulumi.getter(name="nodeHostName")
     def node_host_name(self) -> pulumi.Input[_builtins.str]:
         """
-        Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        Host name of the node to replace.
         """
         return pulumi.get(self, "node_host_name")
 
@@ -93,14 +74,49 @@ class BdsInstanceReplaceNodeActionArgs:
         pulumi.set(self, "node_host_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Base64-encoded cluster admin password. Use this or `secret_id`.
+        """
+        return pulumi.get(self, "cluster_admin_password")
+
+    @cluster_admin_password.setter
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeBackupId")
+    def node_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the node backup to use for replacement.
+        """
+        return pulumi.get(self, "node_backup_id")
+
+    @node_backup_id.setter
+    def node_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "node_backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        The shape to use for the replacement node. If not specified, the existing node shape is used.
 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        **IMPORTANT**
+        This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         return pulumi.get(self, "shape")
 
@@ -116,19 +132,20 @@ class _BdsInstanceReplaceNodeActionState:
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceReplaceNodeAction resources.
 
-        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
-        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-        :param pulumi.Input[_builtins.str] shape: Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the Big Data Service cluster.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base64-encoded cluster admin password. Use this or `secret_id`.
+        :param pulumi.Input[_builtins.str] node_backup_id: The OCID of the node backup to use for replacement.
+        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace.
+        :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        :param pulumi.Input[_builtins.str] shape: The shape to use for the replacement node. If not specified, the existing node shape is used.
                
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               **IMPORTANT**
+               This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         if bds_instance_id is not None:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -138,6 +155,8 @@ class _BdsInstanceReplaceNodeActionState:
             pulumi.set(__self__, "node_backup_id", node_backup_id)
         if node_host_name is not None:
             pulumi.set(__self__, "node_host_name", node_host_name)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
 
@@ -145,7 +164,7 @@ class _BdsInstanceReplaceNodeActionState:
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the cluster.
+        The OCID of the Big Data Service cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -157,7 +176,7 @@ class _BdsInstanceReplaceNodeActionState:
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Base-64 encoded password for the cluster admin user.
+        Base64-encoded cluster admin password. Use this or `secret_id`.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -169,7 +188,7 @@ class _BdsInstanceReplaceNodeActionState:
     @pulumi.getter(name="nodeBackupId")
     def node_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The id of the nodeBackup to use for replacing the node.
+        The OCID of the node backup to use for replacement.
         """
         return pulumi.get(self, "node_backup_id")
 
@@ -181,7 +200,7 @@ class _BdsInstanceReplaceNodeActionState:
     @pulumi.getter(name="nodeHostName")
     def node_host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        Host name of the node to replace.
         """
         return pulumi.get(self, "node_host_name")
 
@@ -190,14 +209,25 @@ class _BdsInstanceReplaceNodeActionState:
         pulumi.set(self, "node_host_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        The shape to use for the replacement node. If not specified, the existing node shape is used.
 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        **IMPORTANT**
+        This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         return pulumi.get(self, "shape")
 
@@ -216,12 +246,15 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource replaces the node with the given hostname, in Oracle Cloud Infrastructure Big Data Service cluster.
+        Invokes the Big Data Service replace node action for a cluster node.
 
-        Replace the node with the given host name in the cluster.
+        Use this action resource to replace a node identified by `node_host_name`. You can optionally provide a specific node backup to restore from, a target shape for the replacement node, and either `cluster_admin_password` or `secret_id` for authentication.
+
+        When `node_backup_id` is omitted, the service uses the latest available node backup. If no suitable backup is available, or the original node is already in a failed or terminated state, the service attempts to recover from the last saved boot volume state.
 
         ## Example Usage
 
@@ -230,25 +263,25 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_bds_instance_replace_node_action = oci.bigdataservice.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action",
-            bds_instance_id=test_bds_instance["id"],
-            node_host_name=bds_instance_replace_node_action["nodeHostName"],
-            node_backup_id=bds_instance_replace_node_action["nodeBackupId"],
-            cluster_admin_password=test_bds_instance["clusterAdminPassword"],
+            bds_instance_id=bds_instance_id,
+            node_host_name=node_host_name,
+            cluster_admin_password="T3JhY2xlVGVhbVVTQSExMjM=",
+            node_backup_id=node_backup_id,
             shape=shape)
         ```
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
-        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-        :param pulumi.Input[_builtins.str] shape: Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the Big Data Service cluster.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base64-encoded cluster admin password. Use this or `secret_id`.
+        :param pulumi.Input[_builtins.str] node_backup_id: The OCID of the node backup to use for replacement.
+        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace.
+        :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        :param pulumi.Input[_builtins.str] shape: The shape to use for the replacement node. If not specified, the existing node shape is used.
                
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               **IMPORTANT**
+               This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         ...
     @overload
@@ -257,9 +290,11 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
                  args: BdsInstanceReplaceNodeActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource replaces the node with the given hostname, in Oracle Cloud Infrastructure Big Data Service cluster.
+        Invokes the Big Data Service replace node action for a cluster node.
 
-        Replace the node with the given host name in the cluster.
+        Use this action resource to replace a node identified by `node_host_name`. You can optionally provide a specific node backup to restore from, a target shape for the replacement node, and either `cluster_admin_password` or `secret_id` for authentication.
+
+        When `node_backup_id` is omitted, the service uses the latest available node backup. If no suitable backup is available, or the original node is already in a failed or terminated state, the service attempts to recover from the last saved boot volume state.
 
         ## Example Usage
 
@@ -268,10 +303,10 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_bds_instance_replace_node_action = oci.bigdataservice.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action",
-            bds_instance_id=test_bds_instance["id"],
-            node_host_name=bds_instance_replace_node_action["nodeHostName"],
-            node_backup_id=bds_instance_replace_node_action["nodeBackupId"],
-            cluster_admin_password=test_bds_instance["clusterAdminPassword"],
+            bds_instance_id=bds_instance_id,
+            node_host_name=node_host_name,
+            cluster_admin_password="T3JhY2xlVGVhbVVTQSExMjM=",
+            node_backup_id=node_backup_id,
             shape=shape)
         ```
 
@@ -295,6 +330,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
                  cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -308,15 +344,12 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
             if bds_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'bds_instance_id'")
             __props__.__dict__["bds_instance_id"] = bds_instance_id
-            if cluster_admin_password is None and not opts.urn:
-                raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
-            if node_backup_id is None and not opts.urn:
-                raise TypeError("Missing required property 'node_backup_id'")
             __props__.__dict__["node_backup_id"] = node_backup_id
             if node_host_name is None and not opts.urn:
                 raise TypeError("Missing required property 'node_host_name'")
             __props__.__dict__["node_host_name"] = node_host_name
+            __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["shape"] = shape
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clusterAdminPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -334,6 +367,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
             cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
             node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
             node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceReplaceNodeAction':
         """
         Get an existing BdsInstanceReplaceNodeAction resource's state with the given name, id, and optional extra
@@ -342,15 +376,15 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
-        :param pulumi.Input[_builtins.str] node_backup_id: The id of the nodeBackup to use for replacing the node.
-        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
-        :param pulumi.Input[_builtins.str] shape: Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the Big Data Service cluster.
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base64-encoded cluster admin password. Use this or `secret_id`.
+        :param pulumi.Input[_builtins.str] node_backup_id: The OCID of the node backup to use for replacement.
+        :param pulumi.Input[_builtins.str] node_host_name: Host name of the node to replace.
+        :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        :param pulumi.Input[_builtins.str] shape: The shape to use for the replacement node. If not specified, the existing node shape is used.
                
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               **IMPORTANT**
+               This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -360,6 +394,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         __props__.__dict__["cluster_admin_password"] = cluster_admin_password
         __props__.__dict__["node_backup_id"] = node_backup_id
         __props__.__dict__["node_host_name"] = node_host_name
+        __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["shape"] = shape
         return BdsInstanceReplaceNodeAction(resource_name, opts=opts, __props__=__props__)
 
@@ -367,7 +402,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the cluster.
+        The OCID of the Big Data Service cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
@@ -375,15 +410,15 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[_builtins.str]:
         """
-        Base-64 encoded password for the cluster admin user.
+        Base64-encoded cluster admin password. Use this or `secret_id`.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @_builtins.property
     @pulumi.getter(name="nodeBackupId")
-    def node_backup_id(self) -> pulumi.Output[_builtins.str]:
+    def node_backup_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The id of the nodeBackup to use for replacing the node.
+        The OCID of the node backup to use for replacement.
         """
         return pulumi.get(self, "node_backup_id")
 
@@ -391,19 +426,26 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     @pulumi.getter(name="nodeHostName")
     def node_host_name(self) -> pulumi.Output[_builtins.str]:
         """
-        Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
+        Host name of the node to replace.
         """
         return pulumi.get(self, "node_host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the secret that stores the cluster admin password. Use this or `cluster_admin_password`.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
+        The shape to use for the replacement node. If not specified, the existing node shape is used.
 
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        **IMPORTANT**
+        This is an action resource. Any change forces Terraform to create the action resource again and invoke the replace node workflow.
         """
         return pulumi.get(self, "shape")
 

@@ -22,28 +22,33 @@ __all__ = ['BdsInstanceNodeReplaceConfigurationArgs', 'BdsInstanceNodeReplaceCon
 class BdsInstanceNodeReplaceConfigurationArgs:
     def __init__(__self__, *,
                  bds_instance_id: pulumi.Input[_builtins.str],
-                 cluster_admin_password: pulumi.Input[_builtins.str],
                  duration_in_minutes: pulumi.Input[_builtins.int],
                  level_type_details: pulumi.Input['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs'],
                  metric_type: pulumi.Input[_builtins.str],
-                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeReplaceConfiguration resource.
 
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
         :param pulumi.Input['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs'] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
+        :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         pulumi.set(__self__, "level_type_details", level_type_details)
         pulumi.set(__self__, "metric_type", metric_type)
+        if cluster_admin_password is not None:
+            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
@@ -56,18 +61,6 @@ class BdsInstanceNodeReplaceConfigurationArgs:
     @bds_instance_id.setter
     def bds_instance_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "bds_instance_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> pulumi.Input[_builtins.str]:
-        """
-        Base-64 encoded password for the cluster admin user.
-        """
-        return pulumi.get(self, "cluster_admin_password")
-
-    @cluster_admin_password.setter
-    def cluster_admin_password(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="durationInMinutes")
@@ -106,6 +99,18 @@ class BdsInstanceNodeReplaceConfigurationArgs:
         pulumi.set(self, "metric_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Base-64 encoded password for the cluster admin user.
+        """
+        return pulumi.get(self, "cluster_admin_password")
+
+    @cluster_admin_password.setter
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_admin_password", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -117,6 +122,18 @@ class BdsInstanceNodeReplaceConfigurationArgs:
     def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
 
 @pulumi.input_type
 class _BdsInstanceNodeReplaceConfigurationState:
@@ -127,6 +144,7 @@ class _BdsInstanceNodeReplaceConfigurationState:
                  duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  level_type_details: pulumi.Input[Optional['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs']] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
@@ -139,6 +157,7 @@ class _BdsInstanceNodeReplaceConfigurationState:
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
         :param pulumi.Input['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs'] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: The state of the NodeReplaceConfiguration.
         :param pulumi.Input[_builtins.str] time_created: The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
@@ -155,6 +174,8 @@ class _BdsInstanceNodeReplaceConfigurationState:
             pulumi.set(__self__, "level_type_details", level_type_details)
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -235,6 +256,18 @@ class _BdsInstanceNodeReplaceConfigurationState:
         pulumi.set(self, "metric_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -283,6 +316,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -300,7 +334,6 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
 
         test_bds_instance_node_replace_configuration = oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
             duration_in_minutes=int(bds_instance_node_replace_configuration_duration_in_minutes),
             level_type_details={
                 "level_type": bds_instance_node_replace_configuration_level_type_details_level_type,
@@ -308,7 +341,9 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                 "node_type": bds_instance_node_replace_configuration_level_type_details_node_type,
             },
             metric_type=bds_instance_node_replace_configuration_metric_type,
-            display_name=bds_instance_node_replace_configuration_display_name)
+            cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
+            display_name=bds_instance_node_replace_configuration_display_name,
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -328,6 +363,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
         :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         """
         ...
     @overload
@@ -351,7 +387,6 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
 
         test_bds_instance_node_replace_configuration = oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
             duration_in_minutes=int(bds_instance_node_replace_configuration_duration_in_minutes),
             level_type_details={
                 "level_type": bds_instance_node_replace_configuration_level_type_details_level_type,
@@ -359,7 +394,9 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                 "node_type": bds_instance_node_replace_configuration_level_type_details_node_type,
             },
             metric_type=bds_instance_node_replace_configuration_metric_type,
-            display_name=bds_instance_node_replace_configuration_display_name)
+            cluster_admin_password=bds_instance_node_replace_configuration_cluster_admin_password,
+            display_name=bds_instance_node_replace_configuration_display_name,
+            secret_id=test_secret["id"])
         ```
 
         ## Import
@@ -392,6 +429,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
                  duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
                  metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,8 +442,6 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
             if bds_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'bds_instance_id'")
             __props__.__dict__["bds_instance_id"] = bds_instance_id
-            if cluster_admin_password is None and not opts.urn:
-                raise TypeError("Missing required property 'cluster_admin_password'")
             __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
             __props__.__dict__["display_name"] = display_name
             if duration_in_minutes is None and not opts.urn:
@@ -417,6 +453,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
             if metric_type is None and not opts.urn:
                 raise TypeError("Missing required property 'metric_type'")
             __props__.__dict__["metric_type"] = metric_type
+            __props__.__dict__["secret_id"] = secret_id
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -438,6 +475,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
             duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
             level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']]] = None,
             metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceNodeReplaceConfiguration':
@@ -454,6 +492,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] duration_in_minutes: (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
         :param pulumi.Input[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict']] level_type_details: (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
         :param pulumi.Input[_builtins.str] metric_type: (Updatable) Type of compute instance health metric to use for node replacement
+        :param pulumi.Input[_builtins.str] secret_id: The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: The state of the NodeReplaceConfiguration.
         :param pulumi.Input[_builtins.str] time_created: The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
@@ -468,6 +507,7 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         __props__.__dict__["duration_in_minutes"] = duration_in_minutes
         __props__.__dict__["level_type_details"] = level_type_details
         __props__.__dict__["metric_type"] = metric_type
+        __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -520,6 +560,14 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         (Updatable) Type of compute instance health metric to use for node replacement
         """
         return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
 
     @_builtins.property
     @pulumi.getter

@@ -68,13 +68,15 @@ type LookupBdsInstanceNodeReplaceConfigurationResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
 	DurationInMinutes int `pulumi:"durationInMinutes"`
-	// The unique identifier for the NodeReplaceConfiguration.
+	// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 	Id string `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails []GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
 	// Type of compute instance health metric to use for node replacement
 	MetricType                 string `pulumi:"metricType"`
 	NodeReplaceConfigurationId string `pulumi:"nodeReplaceConfigurationId"`
+	// The secretId for the clusterAdminPassword.
+	SecretId string `pulumi:"secretId"`
 	// The state of the NodeReplaceConfiguration.
 	State string `pulumi:"state"`
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -138,7 +140,7 @@ func (o LookupBdsInstanceNodeReplaceConfigurationResultOutput) DurationInMinutes
 	return o.ApplyT(func(v LookupBdsInstanceNodeReplaceConfigurationResult) int { return v.DurationInMinutes }).(pulumi.IntOutput)
 }
 
-// The unique identifier for the NodeReplaceConfiguration.
+// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 func (o LookupBdsInstanceNodeReplaceConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceNodeReplaceConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -157,6 +159,11 @@ func (o LookupBdsInstanceNodeReplaceConfigurationResultOutput) MetricType() pulu
 
 func (o LookupBdsInstanceNodeReplaceConfigurationResultOutput) NodeReplaceConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceNodeReplaceConfigurationResult) string { return v.NodeReplaceConfigurationId }).(pulumi.StringOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o LookupBdsInstanceNodeReplaceConfigurationResultOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBdsInstanceNodeReplaceConfigurationResult) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // The state of the NodeReplaceConfiguration.

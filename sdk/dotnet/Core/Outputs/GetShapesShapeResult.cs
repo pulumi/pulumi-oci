@@ -34,6 +34,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool IsBilledForStoppedInstance;
         /// <summary>
+        /// Whether the shape supports CNIC networking.
+        /// </summary>
+        public readonly bool IsCnic;
+        /// <summary>
         /// Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
         /// </summary>
         public readonly bool IsFlexible;
@@ -146,6 +150,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isBilledForStoppedInstance,
 
+            bool isCnic,
+
             bool isFlexible,
 
             bool isLiveMigrationSupported,
@@ -201,6 +207,7 @@ namespace Pulumi.Oci.Core.Outputs
             GpuDescription = gpuDescription;
             Gpus = gpus;
             IsBilledForStoppedInstance = isBilledForStoppedInstance;
+            IsCnic = isCnic;
             IsFlexible = isFlexible;
             IsLiveMigrationSupported = isLiveMigrationSupported;
             IsSubcore = isSubcore;

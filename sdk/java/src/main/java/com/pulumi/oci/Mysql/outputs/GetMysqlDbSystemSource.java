@@ -5,7 +5,9 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemSourceChannel;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +17,7 @@ public final class GetMysqlDbSystemSource {
      * 
      */
     private String backupId;
+    private List<GetMysqlDbSystemSourceChannel> channels;
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -25,6 +28,7 @@ public final class GetMysqlDbSystemSource {
      * 
      */
     private String recoveryPoint;
+    private String region;
     /**
      * @return The specific source identifier.
      * 
@@ -40,6 +44,9 @@ public final class GetMysqlDbSystemSource {
     public String backupId() {
         return this.backupId;
     }
+    public List<GetMysqlDbSystemSourceChannel> channels() {
+        return this.channels;
+    }
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -53,6 +60,9 @@ public final class GetMysqlDbSystemSource {
      */
     public String recoveryPoint() {
         return this.recoveryPoint;
+    }
+    public String region() {
+        return this.region;
     }
     /**
      * @return The specific source identifier.
@@ -75,16 +85,20 @@ public final class GetMysqlDbSystemSource {
     @CustomType.Builder
     public static final class Builder {
         private String backupId;
+        private List<GetMysqlDbSystemSourceChannel> channels;
         private String dbSystemId;
         private String recoveryPoint;
+        private String region;
         private String sourceType;
         private String sourceUrl;
         public Builder() {}
         public Builder(GetMysqlDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
+    	      this.channels = defaults.channels;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.recoveryPoint = defaults.recoveryPoint;
+    	      this.region = defaults.region;
     	      this.sourceType = defaults.sourceType;
     	      this.sourceUrl = defaults.sourceUrl;
         }
@@ -96,6 +110,17 @@ public final class GetMysqlDbSystemSource {
             }
             this.backupId = backupId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder channels(List<GetMysqlDbSystemSourceChannel> channels) {
+            if (channels == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "channels");
+            }
+            this.channels = channels;
+            return this;
+        }
+        public Builder channels(GetMysqlDbSystemSourceChannel... channels) {
+            return channels(List.of(channels));
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
@@ -111,6 +136,14 @@ public final class GetMysqlDbSystemSource {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "recoveryPoint");
             }
             this.recoveryPoint = recoveryPoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder region(String region) {
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemSource", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
@@ -132,8 +165,10 @@ public final class GetMysqlDbSystemSource {
         public GetMysqlDbSystemSource build() {
             final var _resultValue = new GetMysqlDbSystemSource();
             _resultValue.backupId = backupId;
+            _resultValue.channels = channels;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.recoveryPoint = recoveryPoint;
+            _resultValue.region = region;
             _resultValue.sourceType = sourceType;
             _resultValue.sourceUrl = sourceUrl;
             return _resultValue;

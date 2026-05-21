@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string GpuDescription;
         public readonly int Gpus;
         public readonly bool IsBilledForStoppedInstance;
+        public readonly bool IsCnic;
         public readonly bool IsFlexible;
         public readonly bool IsLiveMigrationSupported;
         public readonly bool IsSubcore;
@@ -55,6 +56,8 @@ namespace Pulumi.Oci.Core.Outputs
             int gpus,
 
             bool isBilledForStoppedInstance,
+
+            bool isCnic,
 
             bool isFlexible,
 
@@ -111,6 +114,7 @@ namespace Pulumi.Oci.Core.Outputs
             GpuDescription = gpuDescription;
             Gpus = gpus;
             IsBilledForStoppedInstance = isBilledForStoppedInstance;
+            IsCnic = isCnic;
             IsFlexible = isFlexible;
             IsLiveMigrationSupported = isLiveMigrationSupported;
             IsSubcore = isSubcore;

@@ -12,23 +12,55 @@ namespace Pulumi.Oci.Oci.Inputs
 
     public sealed class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The capacity model to use for the Analytics Instance.
+        /// </summary>
+        [Input("capacityType")]
+        public Input<string>? CapacityType { get; set; }
+
+        /// <summary>
+        /// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+        /// </summary>
+        [Input("capacityValue")]
+        public Input<int>? CapacityValue { get; set; }
+
+        /// <summary>
+        /// IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+        /// </summary>
         [Input("idcsDomainId")]
         public Input<string>? IdcsDomainId { get; set; }
 
+        /// <summary>
+        /// The Oracle license model that applies to the OAC instance.
+        /// </summary>
         [Input("licenseModel")]
         public Input<string>? LicenseModel { get; set; }
 
+        /// <summary>
+        /// Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
+        /// </summary>
         [Input("networkDetails")]
         public Input<Inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs>? NetworkDetails { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
+        /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 

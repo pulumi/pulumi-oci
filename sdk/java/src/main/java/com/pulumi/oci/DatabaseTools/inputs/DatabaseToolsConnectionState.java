@@ -38,6 +38,21 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    @Import(name="authenticationType")
+    private @Nullable Output<String> authenticationType;
+
+    /**
+     * @return Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    public Optional<Output<String>> authenticationType() {
+        return Optional.ofNullable(this.authenticationType);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
@@ -218,14 +233,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     @Import(name="runtimeIdentity")
     private @Nullable Output<String> runtimeIdentity;
 
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     public Optional<Output<String>> runtimeIdentity() {
@@ -371,6 +386,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
 
     private DatabaseToolsConnectionState(DatabaseToolsConnectionState $) {
         this.advancedProperties = $.advancedProperties;
+        this.authenticationType = $.authenticationType;
         this.compartmentId = $.compartmentId;
         this.connectionString = $.connectionString;
         this.definedTags = $.definedTags;
@@ -432,6 +448,27 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
          */
         public Builder advancedProperties(Map<String,String> advancedProperties) {
             return advancedProperties(Output.of(advancedProperties));
+        }
+
+        /**
+         * @param authenticationType Specifies the authentication type used by the Database Tools service to authenticate with the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationType(@Nullable Output<String> authenticationType) {
+            $.authenticationType = authenticationType;
+            return this;
+        }
+
+        /**
+         * @param authenticationType Specifies the authentication type used by the Database Tools service to authenticate with the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationType(String authenticationType) {
+            return authenticationType(Output.of(authenticationType));
         }
 
         /**
@@ -707,7 +744,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * @param runtimeIdentity Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
          * 
          * @return builder
          * 
@@ -718,7 +755,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * @param runtimeIdentity Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
          * 
          * @return builder
          * 

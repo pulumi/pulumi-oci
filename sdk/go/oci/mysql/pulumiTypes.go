@@ -11368,10 +11368,14 @@ func (o MysqlDbSystemSecureConnectionsPtrOutput) CertificateId() pulumi.StringPt
 type MysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId *string `pulumi:"backupId"`
+	// Properties to setup a replication channel with the source (cloned) DB system.
+	Channel *MysqlDbSystemSourceChannel `pulumi:"channel"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint *string `pulumi:"recoveryPoint"`
+	// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+	Region *string `pulumi:"region"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType string `pulumi:"sourceType"`
 	// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
@@ -11392,10 +11396,14 @@ type MysqlDbSystemSourceInput interface {
 type MysqlDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// Properties to setup a replication channel with the source (cloned) DB system.
+	Channel MysqlDbSystemSourceChannelPtrInput `pulumi:"channel"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint pulumi.StringPtrInput `pulumi:"recoveryPoint"`
+	// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
@@ -11484,6 +11492,11 @@ func (o MysqlDbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
+// Properties to setup a replication channel with the source (cloned) DB system.
+func (o MysqlDbSystemSourceOutput) Channel() MysqlDbSystemSourceChannelPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSource) *MysqlDbSystemSourceChannel { return v.Channel }).(MysqlDbSystemSourceChannelPtrOutput)
+}
+
 // The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 func (o MysqlDbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
@@ -11492,6 +11505,11 @@ func (o MysqlDbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
 // The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 func (o MysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.RecoveryPoint }).(pulumi.StringPtrOutput)
+}
+
+// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+func (o MysqlDbSystemSourceOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
@@ -11538,6 +11556,16 @@ func (o MysqlDbSystemSourcePtrOutput) BackupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties to setup a replication channel with the source (cloned) DB system.
+func (o MysqlDbSystemSourcePtrOutput) Channel() MysqlDbSystemSourceChannelPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSource) *MysqlDbSystemSourceChannel {
+		if v == nil {
+			return nil
+		}
+		return v.Channel
+	}).(MysqlDbSystemSourceChannelPtrOutput)
+}
+
 // The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 func (o MysqlDbSystemSourcePtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
@@ -11558,6 +11586,16 @@ func (o MysqlDbSystemSourcePtrOutput) RecoveryPoint() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+func (o MysqlDbSystemSourcePtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
 // The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 func (o MysqlDbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
@@ -11575,6 +11613,377 @@ func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.SourceUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemSourceChannel struct {
+	// The username for the replication applier of the created MySQL DB System.
+	ApplierUsername *string `pulumi:"applierUsername"`
+	// The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+	SourcePassword *string `pulumi:"sourcePassword"`
+	// The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+	SourceUsername *string `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificate *MysqlDbSystemSourceChannelSslCaCertificate `pulumi:"sslCaCertificate"`
+	// The SSL mode of the Channel.
+	SslMode *string `pulumi:"sslMode"`
+}
+
+// MysqlDbSystemSourceChannelInput is an input type that accepts MysqlDbSystemSourceChannelArgs and MysqlDbSystemSourceChannelOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSourceChannelInput` via:
+//
+//	MysqlDbSystemSourceChannelArgs{...}
+type MysqlDbSystemSourceChannelInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSourceChannelOutput() MysqlDbSystemSourceChannelOutput
+	ToMysqlDbSystemSourceChannelOutputWithContext(context.Context) MysqlDbSystemSourceChannelOutput
+}
+
+type MysqlDbSystemSourceChannelArgs struct {
+	// The username for the replication applier of the created MySQL DB System.
+	ApplierUsername pulumi.StringPtrInput `pulumi:"applierUsername"`
+	// The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+	SourcePassword pulumi.StringPtrInput `pulumi:"sourcePassword"`
+	// The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+	SourceUsername pulumi.StringPtrInput `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificate MysqlDbSystemSourceChannelSslCaCertificatePtrInput `pulumi:"sslCaCertificate"`
+	// The SSL mode of the Channel.
+	SslMode pulumi.StringPtrInput `pulumi:"sslMode"`
+}
+
+func (MysqlDbSystemSourceChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i MysqlDbSystemSourceChannelArgs) ToMysqlDbSystemSourceChannelOutput() MysqlDbSystemSourceChannelOutput {
+	return i.ToMysqlDbSystemSourceChannelOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSourceChannelArgs) ToMysqlDbSystemSourceChannelOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelOutput)
+}
+
+func (i MysqlDbSystemSourceChannelArgs) ToMysqlDbSystemSourceChannelPtrOutput() MysqlDbSystemSourceChannelPtrOutput {
+	return i.ToMysqlDbSystemSourceChannelPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSourceChannelArgs) ToMysqlDbSystemSourceChannelPtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelOutput).ToMysqlDbSystemSourceChannelPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemSourceChannelPtrInput is an input type that accepts MysqlDbSystemSourceChannelArgs, MysqlDbSystemSourceChannelPtr and MysqlDbSystemSourceChannelPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSourceChannelPtrInput` via:
+//
+//	        MysqlDbSystemSourceChannelArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemSourceChannelPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSourceChannelPtrOutput() MysqlDbSystemSourceChannelPtrOutput
+	ToMysqlDbSystemSourceChannelPtrOutputWithContext(context.Context) MysqlDbSystemSourceChannelPtrOutput
+}
+
+type mysqlDbSystemSourceChannelPtrType MysqlDbSystemSourceChannelArgs
+
+func MysqlDbSystemSourceChannelPtr(v *MysqlDbSystemSourceChannelArgs) MysqlDbSystemSourceChannelPtrInput {
+	return (*mysqlDbSystemSourceChannelPtrType)(v)
+}
+
+func (*mysqlDbSystemSourceChannelPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemSourceChannelPtrType) ToMysqlDbSystemSourceChannelPtrOutput() MysqlDbSystemSourceChannelPtrOutput {
+	return i.ToMysqlDbSystemSourceChannelPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemSourceChannelPtrType) ToMysqlDbSystemSourceChannelPtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelPtrOutput)
+}
+
+type MysqlDbSystemSourceChannelOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSourceChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSourceChannelOutput) ToMysqlDbSystemSourceChannelOutput() MysqlDbSystemSourceChannelOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelOutput) ToMysqlDbSystemSourceChannelOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelOutput) ToMysqlDbSystemSourceChannelPtrOutput() MysqlDbSystemSourceChannelPtrOutput {
+	return o.ToMysqlDbSystemSourceChannelPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemSourceChannelOutput) ToMysqlDbSystemSourceChannelPtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemSourceChannel) *MysqlDbSystemSourceChannel {
+		return &v
+	}).(MysqlDbSystemSourceChannelPtrOutput)
+}
+
+// The username for the replication applier of the created MySQL DB System.
+func (o MysqlDbSystemSourceChannelOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannel) *string { return v.ApplierUsername }).(pulumi.StringPtrOutput)
+}
+
+// The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+func (o MysqlDbSystemSourceChannelOutput) SourcePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannel) *string { return v.SourcePassword }).(pulumi.StringPtrOutput)
+}
+
+// The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+func (o MysqlDbSystemSourceChannelOutput) SourceUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannel) *string { return v.SourceUsername }).(pulumi.StringPtrOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o MysqlDbSystemSourceChannelOutput) SslCaCertificate() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannel) *MysqlDbSystemSourceChannelSslCaCertificate {
+		return v.SslCaCertificate
+	}).(MysqlDbSystemSourceChannelSslCaCertificatePtrOutput)
+}
+
+// The SSL mode of the Channel.
+func (o MysqlDbSystemSourceChannelOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannel) *string { return v.SslMode }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemSourceChannelPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSourceChannelPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSourceChannelPtrOutput) ToMysqlDbSystemSourceChannelPtrOutput() MysqlDbSystemSourceChannelPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelPtrOutput) ToMysqlDbSystemSourceChannelPtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelPtrOutput) Elem() MysqlDbSystemSourceChannelOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) MysqlDbSystemSourceChannel {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemSourceChannel
+		return ret
+	}).(MysqlDbSystemSourceChannelOutput)
+}
+
+// The username for the replication applier of the created MySQL DB System.
+func (o MysqlDbSystemSourceChannelPtrOutput) ApplierUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApplierUsername
+	}).(pulumi.StringPtrOutput)
+}
+
+// The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
+func (o MysqlDbSystemSourceChannelPtrOutput) SourcePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourcePassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
+func (o MysqlDbSystemSourceChannelPtrOutput) SourceUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceUsername
+	}).(pulumi.StringPtrOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o MysqlDbSystemSourceChannelPtrOutput) SslCaCertificate() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) *MysqlDbSystemSourceChannelSslCaCertificate {
+		if v == nil {
+			return nil
+		}
+		return v.SslCaCertificate
+	}).(MysqlDbSystemSourceChannelSslCaCertificatePtrOutput)
+}
+
+// The SSL mode of the Channel.
+func (o MysqlDbSystemSourceChannelPtrOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannel) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SslMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemSourceChannelSslCaCertificate struct {
+	// The type of CA certificate.
+	CertificateType string `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents string `pulumi:"contents"`
+}
+
+// MysqlDbSystemSourceChannelSslCaCertificateInput is an input type that accepts MysqlDbSystemSourceChannelSslCaCertificateArgs and MysqlDbSystemSourceChannelSslCaCertificateOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSourceChannelSslCaCertificateInput` via:
+//
+//	MysqlDbSystemSourceChannelSslCaCertificateArgs{...}
+type MysqlDbSystemSourceChannelSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSourceChannelSslCaCertificateOutput() MysqlDbSystemSourceChannelSslCaCertificateOutput
+	ToMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Context) MysqlDbSystemSourceChannelSslCaCertificateOutput
+}
+
+type MysqlDbSystemSourceChannelSslCaCertificateArgs struct {
+	// The type of CA certificate.
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents pulumi.StringInput `pulumi:"contents"`
+}
+
+func (MysqlDbSystemSourceChannelSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i MysqlDbSystemSourceChannelSslCaCertificateArgs) ToMysqlDbSystemSourceChannelSslCaCertificateOutput() MysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return i.ToMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSourceChannelSslCaCertificateArgs) ToMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelSslCaCertificateOutput)
+}
+
+func (i MysqlDbSystemSourceChannelSslCaCertificateArgs) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutput() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return i.ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemSourceChannelSslCaCertificateArgs) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelSslCaCertificateOutput).ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemSourceChannelSslCaCertificatePtrInput is an input type that accepts MysqlDbSystemSourceChannelSslCaCertificateArgs, MysqlDbSystemSourceChannelSslCaCertificatePtr and MysqlDbSystemSourceChannelSslCaCertificatePtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemSourceChannelSslCaCertificatePtrInput` via:
+//
+//	        MysqlDbSystemSourceChannelSslCaCertificateArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemSourceChannelSslCaCertificatePtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutput() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput
+	ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(context.Context) MysqlDbSystemSourceChannelSslCaCertificatePtrOutput
+}
+
+type mysqlDbSystemSourceChannelSslCaCertificatePtrType MysqlDbSystemSourceChannelSslCaCertificateArgs
+
+func MysqlDbSystemSourceChannelSslCaCertificatePtr(v *MysqlDbSystemSourceChannelSslCaCertificateArgs) MysqlDbSystemSourceChannelSslCaCertificatePtrInput {
+	return (*mysqlDbSystemSourceChannelSslCaCertificatePtrType)(v)
+}
+
+func (*mysqlDbSystemSourceChannelSslCaCertificatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemSourceChannelSslCaCertificatePtrType) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutput() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return i.ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemSourceChannelSslCaCertificatePtrType) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceChannelSslCaCertificatePtrOutput)
+}
+
+type MysqlDbSystemSourceChannelSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSourceChannelSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) ToMysqlDbSystemSourceChannelSslCaCertificateOutput() MysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) ToMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutput() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o.ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemSourceChannelSslCaCertificate) *MysqlDbSystemSourceChannelSslCaCertificate {
+		return &v
+	}).(MysqlDbSystemSourceChannelSslCaCertificatePtrOutput)
+}
+
+// The type of CA certificate.
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannelSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o MysqlDbSystemSourceChannelSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemSourceChannelSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemSourceChannelSslCaCertificatePtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutput() MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) ToMysqlDbSystemSourceChannelSslCaCertificatePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourceChannelSslCaCertificatePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) Elem() MysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannelSslCaCertificate) MysqlDbSystemSourceChannelSslCaCertificate {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemSourceChannelSslCaCertificate
+		return ret
+	}).(MysqlDbSystemSourceChannelSslCaCertificateOutput)
+}
+
+// The type of CA certificate.
+func (o MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) CertificateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannelSslCaCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CertificateType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o MysqlDbSystemSourceChannelSslCaCertificatePtrOutput) Contents() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSourceChannelSslCaCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Contents
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -24871,11 +25280,13 @@ func (o GetMysqlDbSystemSecureConnectionArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetMysqlDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId string `pulumi:"backupId"`
+	BackupId string                          `pulumi:"backupId"`
+	Channels []GetMysqlDbSystemSourceChannel `pulumi:"channels"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint string `pulumi:"recoveryPoint"`
+	Region        string `pulumi:"region"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
 	SourceUrl  string `pulumi:"sourceUrl"`
@@ -24894,11 +25305,13 @@ type GetMysqlDbSystemSourceInput interface {
 
 type GetMysqlDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId pulumi.StringInput `pulumi:"backupId"`
+	BackupId pulumi.StringInput                      `pulumi:"backupId"`
+	Channels GetMysqlDbSystemSourceChannelArrayInput `pulumi:"channels"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
+	Region        pulumi.StringInput `pulumi:"region"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
@@ -24960,6 +25373,10 @@ func (o GetMysqlDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
+func (o GetMysqlDbSystemSourceOutput) Channels() GetMysqlDbSystemSourceChannelArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) []GetMysqlDbSystemSourceChannel { return v.Channels }).(GetMysqlDbSystemSourceChannelArrayOutput)
+}
+
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMysqlDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
@@ -24968,6 +25385,10 @@ func (o GetMysqlDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
 // The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 func (o GetMysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemSourceOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.Region }).(pulumi.StringOutput)
 }
 
 // The specific source identifier.
@@ -24997,6 +25418,241 @@ func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSy
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemSource {
 		return vs[0].([]GetMysqlDbSystemSource)[vs[1].(int)]
 	}).(GetMysqlDbSystemSourceOutput)
+}
+
+type GetMysqlDbSystemSourceChannel struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername string `pulumi:"applierUsername"`
+	SourcePassword  string `pulumi:"sourcePassword"`
+	SourceUsername  string `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificates []GetMysqlDbSystemSourceChannelSslCaCertificate `pulumi:"sslCaCertificates"`
+	// The SSL mode of the Channel.
+	SslMode string `pulumi:"sslMode"`
+}
+
+// GetMysqlDbSystemSourceChannelInput is an input type that accepts GetMysqlDbSystemSourceChannelArgs and GetMysqlDbSystemSourceChannelOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSourceChannelInput` via:
+//
+//	GetMysqlDbSystemSourceChannelArgs{...}
+type GetMysqlDbSystemSourceChannelInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSourceChannelOutput() GetMysqlDbSystemSourceChannelOutput
+	ToGetMysqlDbSystemSourceChannelOutputWithContext(context.Context) GetMysqlDbSystemSourceChannelOutput
+}
+
+type GetMysqlDbSystemSourceChannelArgs struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	SourcePassword  pulumi.StringInput `pulumi:"sourcePassword"`
+	SourceUsername  pulumi.StringInput `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificates GetMysqlDbSystemSourceChannelSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
+	// The SSL mode of the Channel.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+}
+
+func (GetMysqlDbSystemSourceChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSourceChannelArgs) ToGetMysqlDbSystemSourceChannelOutput() GetMysqlDbSystemSourceChannelOutput {
+	return i.ToGetMysqlDbSystemSourceChannelOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSourceChannelArgs) ToGetMysqlDbSystemSourceChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceChannelOutput)
+}
+
+// GetMysqlDbSystemSourceChannelArrayInput is an input type that accepts GetMysqlDbSystemSourceChannelArray and GetMysqlDbSystemSourceChannelArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSourceChannelArrayInput` via:
+//
+//	GetMysqlDbSystemSourceChannelArray{ GetMysqlDbSystemSourceChannelArgs{...} }
+type GetMysqlDbSystemSourceChannelArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSourceChannelArrayOutput() GetMysqlDbSystemSourceChannelArrayOutput
+	ToGetMysqlDbSystemSourceChannelArrayOutputWithContext(context.Context) GetMysqlDbSystemSourceChannelArrayOutput
+}
+
+type GetMysqlDbSystemSourceChannelArray []GetMysqlDbSystemSourceChannelInput
+
+func (GetMysqlDbSystemSourceChannelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSourceChannelArray) ToGetMysqlDbSystemSourceChannelArrayOutput() GetMysqlDbSystemSourceChannelArrayOutput {
+	return i.ToGetMysqlDbSystemSourceChannelArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSourceChannelArray) ToGetMysqlDbSystemSourceChannelArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceChannelArrayOutput)
+}
+
+type GetMysqlDbSystemSourceChannelOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSourceChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSourceChannelOutput) ToGetMysqlDbSystemSourceChannelOutput() GetMysqlDbSystemSourceChannelOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelOutput) ToGetMysqlDbSystemSourceChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelOutput {
+	return o
+}
+
+// The username for the replication applier of the target MySQL DB System.
+func (o GetMysqlDbSystemSourceChannelOutput) ApplierUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannel) string { return v.ApplierUsername }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemSourceChannelOutput) SourcePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannel) string { return v.SourcePassword }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemSourceChannelOutput) SourceUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannel) string { return v.SourceUsername }).(pulumi.StringOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o GetMysqlDbSystemSourceChannelOutput) SslCaCertificates() GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannel) []GetMysqlDbSystemSourceChannelSslCaCertificate {
+		return v.SslCaCertificates
+	}).(GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput)
+}
+
+// The SSL mode of the Channel.
+func (o GetMysqlDbSystemSourceChannelOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannel) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemSourceChannelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSourceChannelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSourceChannelArrayOutput) ToGetMysqlDbSystemSourceChannelArrayOutput() GetMysqlDbSystemSourceChannelArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelArrayOutput) ToGetMysqlDbSystemSourceChannelArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemSourceChannelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemSourceChannel {
+		return vs[0].([]GetMysqlDbSystemSourceChannel)[vs[1].(int)]
+	}).(GetMysqlDbSystemSourceChannelOutput)
+}
+
+type GetMysqlDbSystemSourceChannelSslCaCertificate struct {
+	// The type of CA certificate.
+	CertificateType string `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents string `pulumi:"contents"`
+}
+
+// GetMysqlDbSystemSourceChannelSslCaCertificateInput is an input type that accepts GetMysqlDbSystemSourceChannelSslCaCertificateArgs and GetMysqlDbSystemSourceChannelSslCaCertificateOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSourceChannelSslCaCertificateInput` via:
+//
+//	GetMysqlDbSystemSourceChannelSslCaCertificateArgs{...}
+type GetMysqlDbSystemSourceChannelSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemSourceChannelSslCaCertificateOutput
+	ToGetMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateOutput
+}
+
+type GetMysqlDbSystemSourceChannelSslCaCertificateArgs struct {
+	// The type of CA certificate.
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents pulumi.StringInput `pulumi:"contents"`
+}
+
+func (GetMysqlDbSystemSourceChannelSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSourceChannelSslCaCertificateArgs) ToGetMysqlDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return i.ToGetMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSourceChannelSslCaCertificateArgs) ToGetMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceChannelSslCaCertificateOutput)
+}
+
+// GetMysqlDbSystemSourceChannelSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemSourceChannelSslCaCertificateArray and GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemSourceChannelSslCaCertificateArrayInput` via:
+//
+//	GetMysqlDbSystemSourceChannelSslCaCertificateArray{ GetMysqlDbSystemSourceChannelSslCaCertificateArgs{...} }
+type GetMysqlDbSystemSourceChannelSslCaCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput
+	ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput
+}
+
+type GetMysqlDbSystemSourceChannelSslCaCertificateArray []GetMysqlDbSystemSourceChannelSslCaCertificateInput
+
+func (GetMysqlDbSystemSourceChannelSslCaCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemSourceChannelSslCaCertificateArray) ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return i.ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemSourceChannelSslCaCertificateArray) ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput)
+}
+
+type GetMysqlDbSystemSourceChannelSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSourceChannelSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateOutput) ToGetMysqlDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateOutput) ToGetMysqlDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+// The type of CA certificate.
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannelSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSourceChannelSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput) ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput) ToGetMysqlDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemSourceChannelSslCaCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemSourceChannelSslCaCertificate {
+		return vs[0].([]GetMysqlDbSystemSourceChannelSslCaCertificate)[vs[1].(int)]
+	}).(GetMysqlDbSystemSourceChannelSslCaCertificateOutput)
 }
 
 type GetMysqlDbSystemTelemetryConfiguration struct {
@@ -28773,11 +29429,13 @@ func (o GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput) Index(i pulumi.Int
 
 type GetMysqlDbSystemsDbSystemSource struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId string `pulumi:"backupId"`
+	BackupId string                                   `pulumi:"backupId"`
+	Channels []GetMysqlDbSystemsDbSystemSourceChannel `pulumi:"channels"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint string `pulumi:"recoveryPoint"`
+	Region        string `pulumi:"region"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
 	SourceUrl  string `pulumi:"sourceUrl"`
@@ -28796,11 +29454,13 @@ type GetMysqlDbSystemsDbSystemSourceInput interface {
 
 type GetMysqlDbSystemsDbSystemSourceArgs struct {
 	// The OCID of the backup to be used as the source for the new DB System.
-	BackupId pulumi.StringInput `pulumi:"backupId"`
+	BackupId pulumi.StringInput                               `pulumi:"backupId"`
+	Channels GetMysqlDbSystemsDbSystemSourceChannelArrayInput `pulumi:"channels"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
+	Region        pulumi.StringInput `pulumi:"region"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
@@ -28862,6 +29522,10 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
+func (o GetMysqlDbSystemsDbSystemSourceOutput) Channels() GetMysqlDbSystemsDbSystemSourceChannelArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) []GetMysqlDbSystemsDbSystemSourceChannel { return v.Channels }).(GetMysqlDbSystemsDbSystemSourceChannelArrayOutput)
+}
+
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetMysqlDbSystemsDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
@@ -28870,6 +29534,10 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) DbSystemId() pulumi.StringOutput 
 // The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 func (o GetMysqlDbSystemsDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.RecoveryPoint }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.Region }).(pulumi.StringOutput)
 }
 
 // The specific source identifier.
@@ -28899,6 +29567,241 @@ func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemSource {
 		return vs[0].([]GetMysqlDbSystemsDbSystemSource)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemSourceOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannel struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername string `pulumi:"applierUsername"`
+	SourcePassword  string `pulumi:"sourcePassword"`
+	SourceUsername  string `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificates []GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate `pulumi:"sslCaCertificates"`
+	// The SSL mode of the Channel.
+	SslMode string `pulumi:"sslMode"`
+}
+
+// GetMysqlDbSystemsDbSystemSourceChannelInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceChannelArgs and GetMysqlDbSystemsDbSystemSourceChannelOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSourceChannelInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSourceChannelArgs{...}
+type GetMysqlDbSystemsDbSystemSourceChannelInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSourceChannelOutput() GetMysqlDbSystemsDbSystemSourceChannelOutput
+	ToGetMysqlDbSystemsDbSystemSourceChannelOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSourceChannelOutput
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelArgs struct {
+	// The username for the replication applier of the target MySQL DB System.
+	ApplierUsername pulumi.StringInput `pulumi:"applierUsername"`
+	SourcePassword  pulumi.StringInput `pulumi:"sourcePassword"`
+	SourceUsername  pulumi.StringInput `pulumi:"sourceUsername"`
+	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+	SslCaCertificates GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
+	// The SSL mode of the Channel.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+}
+
+func (GetMysqlDbSystemsDbSystemSourceChannelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelArgs) ToGetMysqlDbSystemsDbSystemSourceChannelOutput() GetMysqlDbSystemsDbSystemSourceChannelOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSourceChannelOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelArgs) ToGetMysqlDbSystemsDbSystemSourceChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceChannelOutput)
+}
+
+// GetMysqlDbSystemsDbSystemSourceChannelArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceChannelArray and GetMysqlDbSystemsDbSystemSourceChannelArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSourceChannelArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSourceChannelArray{ GetMysqlDbSystemsDbSystemSourceChannelArgs{...} }
+type GetMysqlDbSystemsDbSystemSourceChannelArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelArrayOutput
+	ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSourceChannelArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelArray []GetMysqlDbSystemsDbSystemSourceChannelInput
+
+func (GetMysqlDbSystemsDbSystemSourceChannelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelArray) ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelArray) ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceChannelArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSourceChannelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) ToGetMysqlDbSystemsDbSystemSourceChannelOutput() GetMysqlDbSystemsDbSystemSourceChannelOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) ToGetMysqlDbSystemsDbSystemSourceChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelOutput {
+	return o
+}
+
+// The username for the replication applier of the target MySQL DB System.
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) ApplierUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannel) string { return v.ApplierUsername }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) SourcePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannel) string { return v.SourcePassword }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) SourceUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannel) string { return v.SourceUsername }).(pulumi.StringOutput)
+}
+
+// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) SslCaCertificates() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannel) []GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate {
+		return v.SslCaCertificates
+	}).(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput)
+}
+
+// The SSL mode of the Channel.
+func (o GetMysqlDbSystemsDbSystemSourceChannelOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannel) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSourceChannelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSourceChannel)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelArrayOutput) ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelArrayOutput) ToGetMysqlDbSystemsDbSystemSourceChannelArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemSourceChannelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemSourceChannel {
+		return vs[0].([]GetMysqlDbSystemsDbSystemSourceChannel)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemSourceChannelOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate struct {
+	// The type of CA certificate.
+	CertificateType string `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents string `pulumi:"contents"`
+}
+
+// GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs and GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs{...}
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput
+	ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs struct {
+	// The type of CA certificate.
+	CertificateType pulumi.StringInput `pulumi:"certificateType"`
+	// The string containing the CA certificate in PEM format.
+	Contents pulumi.StringInput `pulumi:"contents"`
+}
+
+func (GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput)
+}
+
+// GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray and GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray{ GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs{...} }
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput
+	ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray []GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateInput
+
+func (GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput {
+	return o
+}
+
+// The type of CA certificate.
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
+}
+
+// The string containing the CA certificate in PEM format.
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput) Contents() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate) string { return v.Contents }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput() GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput) ToGetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate {
+		return vs[0].([]GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificate)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput)
 }
 
 type GetMysqlDbSystemsDbSystemTelemetryConfiguration struct {
@@ -32433,6 +33336,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceChannelInput)(nil)).Elem(), MysqlDbSystemSourceChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceChannelPtrInput)(nil)).Elem(), MysqlDbSystemSourceChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceChannelSslCaCertificateInput)(nil)).Elem(), MysqlDbSystemSourceChannelSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceChannelSslCaCertificatePtrInput)(nil)).Elem(), MysqlDbSystemSourceChannelSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationPtrInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), MysqlDbSystemTelemetryConfigurationLogArgs{})
@@ -32605,6 +33512,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceChannelInput)(nil)).Elem(), GetMysqlDbSystemSourceChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceChannelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceChannelSslCaCertificateInput)(nil)).Elem(), GetMysqlDbSystemSourceChannelSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSourceChannelSslCaCertificateArrayInput)(nil)).Elem(), GetMysqlDbSystemSourceChannelSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), GetMysqlDbSystemTelemetryConfigurationLogArgs{})
@@ -32661,6 +33572,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceChannelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceChannelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemTelemetryConfigurationLogInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemTelemetryConfigurationLogArgs{})
@@ -32831,6 +33746,10 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSourceChannelOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSourceChannelPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSourceChannelSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemSourceChannelSslCaCertificatePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemTelemetryConfigurationLogOutput{})
@@ -33003,6 +33922,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSourceChannelOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSourceChannelArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSourceChannelSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemSourceChannelSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemTelemetryConfigurationLogOutput{})
@@ -33059,6 +33982,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceChannelOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceChannelArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSourceChannelSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemTelemetryConfigurationLogOutput{})

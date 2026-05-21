@@ -30,8 +30,9 @@ namespace Pulumi.Oci.BigDataService
     ///     var testBdsInstanceResourcePrincipalConfiguration = new Oci.BigDataService.BdsInstanceResourcePrincipalConfiguration("test_bds_instance_resource_principal_configuration", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
     ///         DisplayName = bdsInstanceResourcePrincipalConfigurationDisplayName,
+    ///         ClusterAdminPassword = bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
+    ///         SecretId = testSecret.Id,
     ///         SessionTokenLifeSpanDurationInHours = bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours,
     ///     });
     /// 
@@ -72,6 +73,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("forceRefreshResourcePrincipalTrigger")]
         public Output<int?> ForceRefreshResourcePrincipalTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Output("secretId")]
+        public Output<string> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Life span in hours for the resource principal session token.
@@ -165,7 +172,7 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
-        [Input("clusterAdminPassword", required: true)]
+        [Input("clusterAdminPassword")]
         private Input<string>? _clusterAdminPassword;
 
         /// <summary>
@@ -192,6 +199,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("forceRefreshResourcePrincipalTrigger")]
         public Input<int>? ForceRefreshResourcePrincipalTrigger { get; set; }
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// (Updatable) Life span in hours for the resource principal session token.
@@ -240,6 +253,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Input("forceRefreshResourcePrincipalTrigger")]
         public Input<int>? ForceRefreshResourcePrincipalTrigger { get; set; }
+
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        [Input("secretId")]
+        public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// (Updatable) Life span in hours for the resource principal session token.

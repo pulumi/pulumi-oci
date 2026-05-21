@@ -154,7 +154,7 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The unique identifier for the NodeBackupConfiguration.
+        /// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
         /// </summary>
         public readonly string Id;
         /// <summary>

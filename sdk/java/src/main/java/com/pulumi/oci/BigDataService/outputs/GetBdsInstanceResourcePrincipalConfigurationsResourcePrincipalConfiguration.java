@@ -24,10 +24,15 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
     private String displayName;
     private Integer forceRefreshResourcePrincipalTrigger;
     /**
-     * @return The id of the ResourcePrincipalConfiguration.
+     * @return The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      * 
      */
     private String id;
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    private String secretId;
     /**
      * @return Life span in hours of each resource principal session token.
      * 
@@ -81,11 +86,18 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
         return this.forceRefreshResourcePrincipalTrigger;
     }
     /**
-     * @return The id of the ResourcePrincipalConfiguration.
+     * @return The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public String secretId() {
+        return this.secretId;
     }
     /**
      * @return Life span in hours of each resource principal session token.
@@ -144,6 +156,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
         private String displayName;
         private Integer forceRefreshResourcePrincipalTrigger;
         private String id;
+        private String secretId;
         private Integer sessionTokenLifeSpanDurationInHours;
         private String state;
         private String timeCreated;
@@ -158,6 +171,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
     	      this.displayName = defaults.displayName;
     	      this.forceRefreshResourcePrincipalTrigger = defaults.forceRefreshResourcePrincipalTrigger;
     	      this.id = defaults.id;
+    	      this.secretId = defaults.secretId;
     	      this.sessionTokenLifeSpanDurationInHours = defaults.sessionTokenLifeSpanDurationInHours;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -204,6 +218,14 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
               throw new MissingRequiredPropertyException("GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
@@ -261,6 +283,7 @@ public final class GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipa
             _resultValue.displayName = displayName;
             _resultValue.forceRefreshResourcePrincipalTrigger = forceRefreshResourcePrincipalTrigger;
             _resultValue.id = id;
+            _resultValue.secretId = secretId;
             _resultValue.sessionTokenLifeSpanDurationInHours = sessionTokenLifeSpanDurationInHours;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

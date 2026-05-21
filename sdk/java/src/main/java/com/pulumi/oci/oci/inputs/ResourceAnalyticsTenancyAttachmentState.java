@@ -5,8 +5,10 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.oci.inputs.ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +18,21 @@ import javax.annotation.Nullable;
 public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.resources.ResourceArgs {
 
     public static final ResourceAnalyticsTenancyAttachmentState Empty = new ResourceAnalyticsTenancyAttachmentState();
+
+    /**
+     * The overall status of the data population from the tenancy.
+     * 
+     */
+    @Import(name="dataPopulationStatus")
+    private @Nullable Output<String> dataPopulationStatus;
+
+    /**
+     * @return The overall status of the data population from the tenancy.
+     * 
+     */
+    public Optional<Output<String>> dataPopulationStatus() {
+        return Optional.ofNullable(this.dataPopulationStatus);
+    }
 
     /**
      * (Updatable) A description of the tenancy.
@@ -60,6 +77,21 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * List of monitored regions with their data population status.
+     * 
+     */
+    @Import(name="monitoredRegions")
+    private @Nullable Output<List<ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs>> monitoredRegions;
+
+    /**
+     * @return List of monitored regions with their data population status.
+     * 
+     */
+    public Optional<Output<List<ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs>>> monitoredRegions() {
+        return Optional.ofNullable(this.monitoredRegions);
     }
 
     /**
@@ -144,6 +176,36 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
     }
 
     /**
+     * The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Import(name="timeDataPopulationEnded")
+    private @Nullable Output<String> timeDataPopulationEnded;
+
+    /**
+     * @return The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Optional<Output<String>> timeDataPopulationEnded() {
+        return Optional.ofNullable(this.timeDataPopulationEnded);
+    }
+
+    /**
+     * The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Import(name="timeDataPopulationStarted")
+    private @Nullable Output<String> timeDataPopulationStarted;
+
+    /**
+     * @return The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Optional<Output<String>> timeDataPopulationStarted() {
+        return Optional.ofNullable(this.timeDataPopulationStarted);
+    }
+
+    /**
      * The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -161,14 +223,18 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
     private ResourceAnalyticsTenancyAttachmentState() {}
 
     private ResourceAnalyticsTenancyAttachmentState(ResourceAnalyticsTenancyAttachmentState $) {
+        this.dataPopulationStatus = $.dataPopulationStatus;
         this.description = $.description;
         this.isReportingTenancy = $.isReportingTenancy;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.monitoredRegions = $.monitoredRegions;
         this.resourceAnalyticsInstanceId = $.resourceAnalyticsInstanceId;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.tenancyId = $.tenancyId;
         this.timeCreated = $.timeCreated;
+        this.timeDataPopulationEnded = $.timeDataPopulationEnded;
+        this.timeDataPopulationStarted = $.timeDataPopulationStarted;
         this.timeUpdated = $.timeUpdated;
     }
 
@@ -188,6 +254,27 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
 
         public Builder(ResourceAnalyticsTenancyAttachmentState defaults) {
             $ = new ResourceAnalyticsTenancyAttachmentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dataPopulationStatus The overall status of the data population from the tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataPopulationStatus(@Nullable Output<String> dataPopulationStatus) {
+            $.dataPopulationStatus = dataPopulationStatus;
+            return this;
+        }
+
+        /**
+         * @param dataPopulationStatus The overall status of the data population from the tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataPopulationStatus(String dataPopulationStatus) {
+            return dataPopulationStatus(Output.of(dataPopulationStatus));
         }
 
         /**
@@ -251,6 +338,37 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param monitoredRegions List of monitored regions with their data population status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoredRegions(@Nullable Output<List<ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs>> monitoredRegions) {
+            $.monitoredRegions = monitoredRegions;
+            return this;
+        }
+
+        /**
+         * @param monitoredRegions List of monitored regions with their data population status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoredRegions(List<ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs> monitoredRegions) {
+            return monitoredRegions(Output.of(monitoredRegions));
+        }
+
+        /**
+         * @param monitoredRegions List of monitored regions with their data population status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder monitoredRegions(ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs... monitoredRegions) {
+            return monitoredRegions(List.of(monitoredRegions));
         }
 
         /**
@@ -362,6 +480,48 @@ public final class ResourceAnalyticsTenancyAttachmentState extends com.pulumi.re
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeDataPopulationEnded The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDataPopulationEnded(@Nullable Output<String> timeDataPopulationEnded) {
+            $.timeDataPopulationEnded = timeDataPopulationEnded;
+            return this;
+        }
+
+        /**
+         * @param timeDataPopulationEnded The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDataPopulationEnded(String timeDataPopulationEnded) {
+            return timeDataPopulationEnded(Output.of(timeDataPopulationEnded));
+        }
+
+        /**
+         * @param timeDataPopulationStarted The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDataPopulationStarted(@Nullable Output<String> timeDataPopulationStarted) {
+            $.timeDataPopulationStarted = timeDataPopulationStarted;
+            return this;
+        }
+
+        /**
+         * @param timeDataPopulationStarted The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDataPopulationStarted(String timeDataPopulationStarted) {
+            return timeDataPopulationStarted(Output.of(timeDataPopulationStarted));
         }
 
         /**

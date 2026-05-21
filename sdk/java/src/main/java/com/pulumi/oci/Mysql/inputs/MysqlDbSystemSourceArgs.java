@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceChannelArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,6 +30,21 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> backupId() {
         return Optional.ofNullable(this.backupId);
+    }
+
+    /**
+     * Properties to setup a replication channel with the source (cloned) DB system.
+     * 
+     */
+    @Import(name="channel")
+    private @Nullable Output<MysqlDbSystemSourceChannelArgs> channel;
+
+    /**
+     * @return Properties to setup a replication channel with the source (cloned) DB system.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemSourceChannelArgs>> channel() {
+        return Optional.ofNullable(this.channel);
     }
 
     /**
@@ -59,6 +75,21 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> recoveryPoint() {
         return Optional.ofNullable(this.recoveryPoint);
+    }
+
+    /**
+     * The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    @Import(name="region")
+    private @Nullable Output<String> region;
+
+    /**
+     * @return The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<Output<String>> region() {
+        return Optional.ofNullable(this.region);
     }
 
     /**
@@ -95,8 +126,10 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
 
     private MysqlDbSystemSourceArgs(MysqlDbSystemSourceArgs $) {
         this.backupId = $.backupId;
+        this.channel = $.channel;
         this.dbSystemId = $.dbSystemId;
         this.recoveryPoint = $.recoveryPoint;
+        this.region = $.region;
         this.sourceType = $.sourceType;
         this.sourceUrl = $.sourceUrl;
     }
@@ -141,6 +174,27 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param channel Properties to setup a replication channel with the source (cloned) DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channel(@Nullable Output<MysqlDbSystemSourceChannelArgs> channel) {
+            $.channel = channel;
+            return this;
+        }
+
+        /**
+         * @param channel Properties to setup a replication channel with the source (cloned) DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channel(MysqlDbSystemSourceChannelArgs channel) {
+            return channel(Output.of(channel));
+        }
+
+        /**
          * @param dbSystemId The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
          * 
          * @return builder
@@ -180,6 +234,27 @@ public final class MysqlDbSystemSourceArgs extends com.pulumi.resources.Resource
          */
         public Builder recoveryPoint(String recoveryPoint) {
             return recoveryPoint(Output.of(recoveryPoint));
+        }
+
+        /**
+         * @param region The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder region(@Nullable Output<String> region) {
+            $.region = region;
+            return this;
+        }
+
+        /**
+         * @param region The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder region(String region) {
+            return region(Output.of(region));
         }
 
         /**

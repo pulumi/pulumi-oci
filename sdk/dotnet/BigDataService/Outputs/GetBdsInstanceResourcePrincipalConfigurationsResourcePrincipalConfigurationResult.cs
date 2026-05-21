@@ -24,9 +24,13 @@ namespace Pulumi.Oci.BigDataService.Outputs
         public readonly string DisplayName;
         public readonly int ForceRefreshResourcePrincipalTrigger;
         /// <summary>
-        /// The id of the ResourcePrincipalConfiguration.
+        /// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        public readonly string SecretId;
         /// <summary>
         /// Life span in hours of each resource principal session token.
         /// </summary>
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string id,
 
+            string secretId,
+
             int sessionTokenLifeSpanDurationInHours,
 
             string state,
@@ -81,6 +87,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             DisplayName = displayName;
             ForceRefreshResourcePrincipalTrigger = forceRefreshResourcePrincipalTrigger;
             Id = id;
+            SecretId = secretId;
             SessionTokenLifeSpanDurationInHours = sessionTokenLifeSpanDurationInHours;
             State = state;
             TimeCreated = timeCreated;

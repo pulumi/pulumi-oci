@@ -44,6 +44,11 @@ public final class GetAutoScalingConfigurationResult {
      */
     private List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
     /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    private String secretId;
+    /**
      * @return The state of the autoscale configuration.
      * 
      */
@@ -108,6 +113,13 @@ public final class GetAutoScalingConfigurationResult {
         return this.policyDetails;
     }
     /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public String secretId() {
+        return this.secretId;
+    }
+    /**
      * @return The state of the autoscale configuration.
      * 
      */
@@ -147,6 +159,7 @@ public final class GetAutoScalingConfigurationResult {
         private String nodeType;
         private List<GetAutoScalingConfigurationPolicy> policies;
         private List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
+        private String secretId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -162,6 +175,7 @@ public final class GetAutoScalingConfigurationResult {
     	      this.nodeType = defaults.nodeType;
     	      this.policies = defaults.policies;
     	      this.policyDetails = defaults.policyDetails;
+    	      this.secretId = defaults.secretId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -246,6 +260,14 @@ public final class GetAutoScalingConfigurationResult {
             return policyDetails(List.of(policyDetails));
         }
         @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationResult", "secretId");
+            }
+            this.secretId = secretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAutoScalingConfigurationResult", "state");
@@ -280,6 +302,7 @@ public final class GetAutoScalingConfigurationResult {
             _resultValue.nodeType = nodeType;
             _resultValue.policies = policies;
             _resultValue.policyDetails = policyDetails;
+            _resultValue.secretId = secretId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

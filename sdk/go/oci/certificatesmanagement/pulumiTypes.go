@@ -2532,9 +2532,13 @@ func (o CertificateAuthoritySubjectArrayOutput) Index(i pulumi.IntInput) Certifi
 }
 
 type CertificateCertificateConfig struct {
+	// , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+	CertChainPem *string `pulumi:"certChainPem"`
+	// (Updatable) The leaf certificate (in PEM format).
+	CertificatePem *string `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType *string `pulumi:"certificateProfileType"`
-	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) The certificate signing request (in PEM format).
 	CsrPem *string `pulumi:"csrPem"`
@@ -2542,8 +2546,14 @@ type CertificateCertificateConfig struct {
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm to use to create key pairs.
 	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
+	// (Updatable) The private key (in PEM format). This value is sensitive.
+	PrivateKeyPem *string `pulumi:"privateKeyPem"`
+	// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+	PrivateKeyPemPassphrase *string `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm to use to sign the public key certificate.
 	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
+	// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+	Stage *string `pulumi:"stage"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subject *CertificateCertificateConfigSubject `pulumi:"subject"`
 	// A list of subject alternative names.
@@ -2566,9 +2576,13 @@ type CertificateCertificateConfigInput interface {
 }
 
 type CertificateCertificateConfigArgs struct {
+	// , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+	CertChainPem pulumi.StringPtrInput `pulumi:"certChainPem"`
+	// (Updatable) The leaf certificate (in PEM format).
+	CertificatePem pulumi.StringPtrInput `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringPtrInput `pulumi:"certificateProfileType"`
-	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// (Updatable) The certificate signing request (in PEM format).
 	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
@@ -2576,8 +2590,14 @@ type CertificateCertificateConfigArgs struct {
 	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm to use to create key pairs.
 	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
+	// (Updatable) The private key (in PEM format). This value is sensitive.
+	PrivateKeyPem pulumi.StringPtrInput `pulumi:"privateKeyPem"`
+	// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+	PrivateKeyPemPassphrase pulumi.StringPtrInput `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm to use to sign the public key certificate.
 	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
+	// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+	Stage pulumi.StringPtrInput `pulumi:"stage"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subject CertificateCertificateConfigSubjectPtrInput `pulumi:"subject"`
 	// A list of subject alternative names.
@@ -2665,12 +2685,22 @@ func (o CertificateCertificateConfigOutput) ToCertificateCertificateConfigPtrOut
 	}).(CertificateCertificateConfigPtrOutput)
 }
 
+// , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+func (o CertificateCertificateConfigOutput) CertChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.CertChainPem }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The leaf certificate (in PEM format).
+func (o CertificateCertificateConfigOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.CertificatePem }).(pulumi.StringPtrOutput)
+}
+
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
 func (o CertificateCertificateConfigOutput) CertificateProfileType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.CertificateProfileType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o CertificateCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v CertificateCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -2690,9 +2720,24 @@ func (o CertificateCertificateConfigOutput) KeyAlgorithm() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The private key (in PEM format). This value is sensitive.
+func (o CertificateCertificateConfigOutput) PrivateKeyPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.PrivateKeyPem }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+func (o CertificateCertificateConfigOutput) PrivateKeyPemPassphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.PrivateKeyPemPassphrase }).(pulumi.StringPtrOutput)
+}
+
 // The algorithm to use to sign the public key certificate.
 func (o CertificateCertificateConfigOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+func (o CertificateCertificateConfigOutput) Stage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.Stage }).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -2741,6 +2786,26 @@ func (o CertificateCertificateConfigPtrOutput) Elem() CertificateCertificateConf
 	}).(CertificateCertificateConfigOutput)
 }
 
+// , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+func (o CertificateCertificateConfigPtrOutput) CertChainPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertChainPem
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The leaf certificate (in PEM format).
+func (o CertificateCertificateConfigPtrOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificatePem
+	}).(pulumi.StringPtrOutput)
+}
+
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
 func (o CertificateCertificateConfigPtrOutput) CertificateProfileType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
@@ -2751,7 +2816,7 @@ func (o CertificateCertificateConfigPtrOutput) CertificateProfileType() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o CertificateCertificateConfigPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
 		if v == nil {
@@ -2791,6 +2856,26 @@ func (o CertificateCertificateConfigPtrOutput) KeyAlgorithm() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The private key (in PEM format). This value is sensitive.
+func (o CertificateCertificateConfigPtrOutput) PrivateKeyPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateKeyPem
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+func (o CertificateCertificateConfigPtrOutput) PrivateKeyPemPassphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateKeyPemPassphrase
+	}).(pulumi.StringPtrOutput)
+}
+
 // The algorithm to use to sign the public key certificate.
 func (o CertificateCertificateConfigPtrOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
@@ -2798,6 +2883,16 @@ func (o CertificateCertificateConfigPtrOutput) SignatureAlgorithm() pulumi.Strin
 			return nil
 		}
 		return v.SignatureAlgorithm
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+func (o CertificateCertificateConfigPtrOutput) Stage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Stage
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -10791,17 +10886,22 @@ func (o GetCertificateAuthorityVersionsFilterArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetCertificateCertificateConfig struct {
+	CertChainPem   string `pulumi:"certChainPem"`
+	CertificatePem string `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType string `pulumi:"certificateProfileType"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType string `pulumi:"configType"`
 	CsrPem     string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm            string `pulumi:"keyAlgorithm"`
+	PrivateKeyPem           string `pulumi:"privateKeyPem"`
+	PrivateKeyPemPassphrase string `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	Stage              string `pulumi:"stage"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificateCertificateConfigSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -10824,17 +10924,22 @@ type GetCertificateCertificateConfigInput interface {
 }
 
 type GetCertificateCertificateConfigArgs struct {
+	CertChainPem   pulumi.StringInput `pulumi:"certChainPem"`
+	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	KeyAlgorithm            pulumi.StringInput `pulumi:"keyAlgorithm"`
+	PrivateKeyPem           pulumi.StringInput `pulumi:"privateKeyPem"`
+	PrivateKeyPemPassphrase pulumi.StringInput `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	Stage              pulumi.StringInput `pulumi:"stage"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificateCertificateConfigSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -10896,12 +11001,20 @@ func (o GetCertificateCertificateConfigOutput) ToGetCertificateCertificateConfig
 	return o
 }
 
+func (o GetCertificateCertificateConfigOutput) CertChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CertChainPem }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateCertificateConfigOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CertificatePem }).(pulumi.StringOutput)
+}
+
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
 func (o GetCertificateCertificateConfigOutput) CertificateProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CertificateProfileType }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o GetCertificateCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -10920,9 +11033,21 @@ func (o GetCertificateCertificateConfigOutput) KeyAlgorithm() pulumi.StringOutpu
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
 }
 
+func (o GetCertificateCertificateConfigOutput) PrivateKeyPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.PrivateKeyPem }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateCertificateConfigOutput) PrivateKeyPemPassphrase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.PrivateKeyPemPassphrase }).(pulumi.StringOutput)
+}
+
 // The algorithm used to sign the public key certificate.
 func (o GetCertificateCertificateConfigOutput) SignatureAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateCertificateConfigOutput) Stage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.Stage }).(pulumi.StringOutput)
 }
 
 // A list of subject alternative names.
@@ -13666,8 +13791,9 @@ type GetCertificatesCertificateCollectionItem struct {
 	CertificateRules []GetCertificatesCertificateCollectionItemCertificateRule `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
-	ConfigType string `pulumi:"configType"`
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+	ConfigType           string `pulumi:"configType"`
+	CurrentVersionNumber string `pulumi:"currentVersionNumber"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificatesCertificateCollectionItemCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -13719,8 +13845,9 @@ type GetCertificatesCertificateCollectionItemArgs struct {
 	CertificateRules GetCertificatesCertificateCollectionItemCertificateRuleArrayInput `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+	ConfigType           pulumi.StringInput `pulumi:"configType"`
+	CurrentVersionNumber pulumi.StringInput `pulumi:"currentVersionNumber"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions GetCertificatesCertificateCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -13832,9 +13959,13 @@ func (o GetCertificatesCertificateCollectionItemOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o GetCertificatesCertificateCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesCertificateCollectionItemOutput) CurrentVersionNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.CurrentVersionNumber }).(pulumi.StringOutput)
 }
 
 // The details of the certificate version. This object does not contain the certificate contents.
@@ -13932,17 +14063,22 @@ func (o GetCertificatesCertificateCollectionItemArrayOutput) Index(i pulumi.IntI
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfig struct {
+	CertChainPem   string `pulumi:"certChainPem"`
+	CertificatePem string `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType string `pulumi:"certificateProfileType"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType string `pulumi:"configType"`
 	CsrPem     string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
 	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm            string `pulumi:"keyAlgorithm"`
+	PrivateKeyPem           string `pulumi:"privateKeyPem"`
+	PrivateKeyPemPassphrase string `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	Stage              string `pulumi:"stage"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -13965,17 +14101,22 @@ type GetCertificatesCertificateCollectionItemCertificateConfigInput interface {
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfigArgs struct {
+	CertChainPem   pulumi.StringInput `pulumi:"certChainPem"`
+	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
 	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	KeyAlgorithm            pulumi.StringInput `pulumi:"keyAlgorithm"`
+	PrivateKeyPem           pulumi.StringInput `pulumi:"privateKeyPem"`
+	PrivateKeyPemPassphrase pulumi.StringInput `pulumi:"privateKeyPemPassphrase"`
 	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	Stage              pulumi.StringInput `pulumi:"stage"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -14037,6 +14178,14 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ToGetCe
 	return o
 }
 
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CertChainPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.CertChainPem }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.CertificatePem }).(pulumi.StringOutput)
+}
+
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
 func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CertificateProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string {
@@ -14044,7 +14193,7 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) Certifi
 	}).(pulumi.StringOutput)
 }
 
-// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -14065,9 +14214,23 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) KeyAlgo
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
 }
 
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) PrivateKeyPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.PrivateKeyPem }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) PrivateKeyPemPassphrase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string {
+		return v.PrivateKeyPemPassphrase
+	}).(pulumi.StringOutput)
+}
+
 // The algorithm used to sign the public key certificate.
 func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) SignatureAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+}
+
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) Stage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.Stage }).(pulumi.StringOutput)
 }
 
 // A list of subject alternative names.

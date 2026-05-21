@@ -31,9 +31,10 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         public readonly string ConfigType;
+        public readonly string CurrentVersionNumber;
         /// <summary>
         /// The details of the certificate version. This object does not contain the certificate contents.
         /// </summary>
@@ -105,6 +106,8 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string configType,
 
+            string currentVersionNumber,
+
             ImmutableArray<Outputs.GetCertificatesCertificateCollectionItemCurrentVersionResult> currentVersions,
 
             ImmutableDictionary<string, string> definedTags,
@@ -139,6 +142,7 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
             CertificateRules = certificateRules;
             CompartmentId = compartmentId;
             ConfigType = configType;
+            CurrentVersionNumber = currentVersionNumber;
             CurrentVersions = currentVersions;
             DefinedTags = definedTags;
             Description = description;

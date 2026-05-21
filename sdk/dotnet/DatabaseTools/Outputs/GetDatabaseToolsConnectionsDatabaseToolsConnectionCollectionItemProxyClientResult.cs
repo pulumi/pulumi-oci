@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Roles;
         /// <summary>
-        /// The database user name.
+        /// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
         /// </summary>
         public readonly string UserName;
         /// <summary>

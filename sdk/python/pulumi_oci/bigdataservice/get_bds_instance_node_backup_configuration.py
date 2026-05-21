@@ -93,7 +93,7 @@ class GetBdsInstanceNodeBackupConfigurationResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The unique identifier for the NodeBackupConfiguration.
+        The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
         """
         return pulumi.get(self, "id")
 

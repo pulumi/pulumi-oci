@@ -14,11 +14,19 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
     public sealed class CertificateCertificateConfig
     {
         /// <summary>
+        /// , `CertificatePem`, `PrivateKeyPem`, `PrivateKeyPemPassphrase`, and `Stage` can only be used when `config_type=IMPORTED`.
+        /// </summary>
+        public readonly string? CertChainPem;
+        /// <summary>
+        /// (Updatable) The leaf certificate (in PEM format).
+        /// </summary>
+        public readonly string? CertificatePem;
+        /// <summary>
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
         /// </summary>
         public readonly string? CertificateProfileType;
         /// <summary>
-        /// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
@@ -34,9 +42,21 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// </summary>
         public readonly string? KeyAlgorithm;
         /// <summary>
+        /// (Updatable) The private key (in PEM format). This value is sensitive.
+        /// </summary>
+        public readonly string? PrivateKeyPem;
+        /// <summary>
+        /// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+        /// </summary>
+        public readonly string? PrivateKeyPemPassphrase;
+        /// <summary>
         /// The algorithm to use to sign the public key certificate.
         /// </summary>
         public readonly string? SignatureAlgorithm;
+        /// <summary>
+        /// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+        /// </summary>
+        public readonly string? Stage;
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
@@ -56,6 +76,10 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
         [OutputConstructor]
         private CertificateCertificateConfig(
+            string? certChainPem,
+
+            string? certificatePem,
+
             string? certificateProfileType,
 
             string configType,
@@ -66,7 +90,13 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string? keyAlgorithm,
 
+            string? privateKeyPem,
+
+            string? privateKeyPemPassphrase,
+
             string? signatureAlgorithm,
+
+            string? stage,
 
             Outputs.CertificateCertificateConfigSubject? subject,
 
@@ -76,12 +106,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string? versionName)
         {
+            CertChainPem = certChainPem;
+            CertificatePem = certificatePem;
             CertificateProfileType = certificateProfileType;
             ConfigType = configType;
             CsrPem = csrPem;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;
             KeyAlgorithm = keyAlgorithm;
+            PrivateKeyPem = privateKeyPem;
+            PrivateKeyPemPassphrase = privateKeyPemPassphrase;
             SignatureAlgorithm = signatureAlgorithm;
+            Stage = stage;
             Subject = subject;
             SubjectAlternativeNames = subjectAlternativeNames;
             Validity = validity;

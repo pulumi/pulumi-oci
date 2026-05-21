@@ -35,8 +35,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstanceResourcePrincipalConfiguration(ctx, "test_bds_instance_resource_principal_configuration", &bigdataservice.BdsInstanceResourcePrincipalConfigurationArgs{
 //				BdsInstanceId:                       pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword:                pulumi.Any(bdsInstanceResourcePrincipalConfigurationClusterAdminPassword),
 //				DisplayName:                         pulumi.Any(bdsInstanceResourcePrincipalConfigurationDisplayName),
+//				ClusterAdminPassword:                pulumi.Any(bdsInstanceResourcePrincipalConfigurationClusterAdminPassword),
+//				SecretId:                            pulumi.Any(testSecret.Id),
 //				SessionTokenLifeSpanDurationInHours: pulumi.Any(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours),
 //			})
 //			if err != nil {
@@ -66,6 +67,8 @@ type BdsInstanceResourcePrincipalConfiguration struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
 	ForceRefreshResourcePrincipalTrigger pulumi.IntPtrOutput `pulumi:"forceRefreshResourcePrincipalTrigger"`
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringOutput `pulumi:"secretId"`
 	// (Updatable) Life span in hours for the resource principal session token.
 	SessionTokenLifeSpanDurationInHours pulumi.IntOutput `pulumi:"sessionTokenLifeSpanDurationInHours"`
 	// The state of the ResourcePrincipalConfiguration.
@@ -90,14 +93,11 @@ func NewBdsInstanceResourcePrincipalConfiguration(ctx *pulumi.Context,
 	if args.BdsInstanceId == nil {
 		return nil, errors.New("invalid value for required argument 'BdsInstanceId'")
 	}
-	if args.ClusterAdminPassword == nil {
-		return nil, errors.New("invalid value for required argument 'ClusterAdminPassword'")
-	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
 	if args.ClusterAdminPassword != nil {
-		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"clusterAdminPassword",
@@ -134,6 +134,8 @@ type bdsInstanceResourcePrincipalConfigurationState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
 	ForceRefreshResourcePrincipalTrigger *int `pulumi:"forceRefreshResourcePrincipalTrigger"`
+	// The secretId for the clusterAdminPassword.
+	SecretId *string `pulumi:"secretId"`
 	// (Updatable) Life span in hours for the resource principal session token.
 	SessionTokenLifeSpanDurationInHours *int `pulumi:"sessionTokenLifeSpanDurationInHours"`
 	// The state of the ResourcePrincipalConfiguration.
@@ -157,6 +159,8 @@ type BdsInstanceResourcePrincipalConfigurationState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
 	ForceRefreshResourcePrincipalTrigger pulumi.IntPtrInput
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringPtrInput
 	// (Updatable) Life span in hours for the resource principal session token.
 	SessionTokenLifeSpanDurationInHours pulumi.IntPtrInput
 	// The state of the ResourcePrincipalConfiguration.
@@ -179,11 +183,13 @@ type bdsInstanceResourcePrincipalConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// Base-64 encoded Cluster Admin Password for cluster admin user.
-	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
 	ForceRefreshResourcePrincipalTrigger *int `pulumi:"forceRefreshResourcePrincipalTrigger"`
+	// The secretId for the clusterAdminPassword.
+	SecretId *string `pulumi:"secretId"`
 	// (Updatable) Life span in hours for the resource principal session token.
 	SessionTokenLifeSpanDurationInHours *int `pulumi:"sessionTokenLifeSpanDurationInHours"`
 }
@@ -193,11 +199,13 @@ type BdsInstanceResourcePrincipalConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput
 	// Base-64 encoded Cluster Admin Password for cluster admin user.
-	ClusterAdminPassword pulumi.StringInput
+	ClusterAdminPassword pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
 	ForceRefreshResourcePrincipalTrigger pulumi.IntPtrInput
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringPtrInput
 	// (Updatable) Life span in hours for the resource principal session token.
 	SessionTokenLifeSpanDurationInHours pulumi.IntPtrInput
 }
@@ -309,6 +317,11 @@ func (o BdsInstanceResourcePrincipalConfigurationOutput) ForceRefreshResourcePri
 	return o.ApplyT(func(v *BdsInstanceResourcePrincipalConfiguration) pulumi.IntPtrOutput {
 		return v.ForceRefreshResourcePrincipalTrigger
 	}).(pulumi.IntPtrOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o BdsInstanceResourcePrincipalConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstanceResourcePrincipalConfiguration) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Life span in hours for the resource principal session token.

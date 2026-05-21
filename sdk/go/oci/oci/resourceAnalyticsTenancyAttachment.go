@@ -57,12 +57,16 @@ import (
 type ResourceAnalyticsTenancyAttachment struct {
 	pulumi.CustomResourceState
 
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus pulumi.StringOutput `pulumi:"dataPopulationStatus"`
 	// (Updatable) A description of the tenancy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
 	IsReportingTenancy pulumi.BoolOutput `pulumi:"isReportingTenancy"`
 	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions ResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput `pulumi:"monitoredRegions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 	ResourceAnalyticsInstanceId pulumi.StringOutput `pulumi:"resourceAnalyticsInstanceId"`
 	// The current state of the TenancyAttachment.
@@ -76,6 +80,10 @@ type ResourceAnalyticsTenancyAttachment struct {
 	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded pulumi.StringOutput `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted pulumi.StringOutput `pulumi:"timeDataPopulationStarted"`
 	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
@@ -116,12 +124,16 @@ func GetResourceAnalyticsTenancyAttachment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ResourceAnalyticsTenancyAttachment resources.
 type resourceAnalyticsTenancyAttachmentState struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus *string `pulumi:"dataPopulationStatus"`
 	// (Updatable) A description of the tenancy.
 	Description *string `pulumi:"description"`
 	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
 	IsReportingTenancy *bool `pulumi:"isReportingTenancy"`
 	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions []ResourceAnalyticsTenancyAttachmentMonitoredRegion `pulumi:"monitoredRegions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 	ResourceAnalyticsInstanceId *string `pulumi:"resourceAnalyticsInstanceId"`
 	// The current state of the TenancyAttachment.
@@ -135,17 +147,25 @@ type resourceAnalyticsTenancyAttachmentState struct {
 	TenancyId *string `pulumi:"tenancyId"`
 	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded *string `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted *string `pulumi:"timeDataPopulationStarted"`
 	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type ResourceAnalyticsTenancyAttachmentState struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus pulumi.StringPtrInput
 	// (Updatable) A description of the tenancy.
 	Description pulumi.StringPtrInput
 	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
 	IsReportingTenancy pulumi.BoolPtrInput
 	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// List of monitored regions with their data population status.
+	MonitoredRegions ResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
 	ResourceAnalyticsInstanceId pulumi.StringPtrInput
 	// The current state of the TenancyAttachment.
@@ -159,6 +179,10 @@ type ResourceAnalyticsTenancyAttachmentState struct {
 	TenancyId pulumi.StringPtrInput
 	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded pulumi.StringPtrInput
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted pulumi.StringPtrInput
 	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
 }
@@ -279,6 +303,11 @@ func (o ResourceAnalyticsTenancyAttachmentOutput) ToResourceAnalyticsTenancyAtta
 	return o
 }
 
+// The overall status of the data population from the tenancy.
+func (o ResourceAnalyticsTenancyAttachmentOutput) DataPopulationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.DataPopulationStatus }).(pulumi.StringOutput)
+}
+
 // (Updatable) A description of the tenancy.
 func (o ResourceAnalyticsTenancyAttachmentOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
@@ -292,6 +321,13 @@ func (o ResourceAnalyticsTenancyAttachmentOutput) IsReportingTenancy() pulumi.Bo
 // A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o ResourceAnalyticsTenancyAttachmentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of monitored regions with their data population status.
+func (o ResourceAnalyticsTenancyAttachmentOutput) MonitoredRegions() ResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) ResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+		return v.MonitoredRegions
+	}).(ResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance associated with this TenancyAttachment.
@@ -320,6 +356,16 @@ func (o ResourceAnalyticsTenancyAttachmentOutput) TenancyId() pulumi.StringOutpu
 // The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o ResourceAnalyticsTenancyAttachmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o ResourceAnalyticsTenancyAttachmentOutput) TimeDataPopulationEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.TimeDataPopulationEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o ResourceAnalyticsTenancyAttachmentOutput) TimeDataPopulationStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v *ResourceAnalyticsTenancyAttachment) pulumi.StringOutput { return v.TimeDataPopulationStarted }).(pulumi.StringOutput)
 }
 
 // The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

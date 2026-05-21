@@ -185,9 +185,6 @@ type AutoScalingConfigurationPolicyDetails struct {
 	// (Updatable) Details of a horizontal scaling schedule.
 	ScheduleDetails []AutoScalingConfigurationPolicyDetailsScheduleDetail `pulumi:"scheduleDetails"`
 	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone *string `pulumi:"timezone"`
 	// The type of autoscaling trigger.
 	TriggerType *string `pulumi:"triggerType"`
@@ -220,9 +217,6 @@ type AutoScalingConfigurationPolicyDetailsArgs struct {
 	// (Updatable) Details of a horizontal scaling schedule.
 	ScheduleDetails AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput `pulumi:"scheduleDetails"`
 	// (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
 	// The type of autoscaling trigger.
 	TriggerType pulumi.StringPtrInput `pulumi:"triggerType"`
@@ -351,9 +345,6 @@ func (o AutoScalingConfigurationPolicyDetailsOutput) ScheduleDetails() AutoScali
 }
 
 // (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyDetailsOutput) Timezone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetails) *string { return v.Timezone }).(pulumi.StringPtrOutput)
 }
@@ -458,9 +449,6 @@ func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ScheduleDetails() AutoSc
 }
 
 // (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutoScalingConfigurationPolicyDetailsPtrOutput) Timezone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetails) *string {
 		if v == nil {
@@ -5433,7 +5421,7 @@ type BdsInstanceIdentityConfigurationUpstConfiguration struct {
 	KeytabContent *string `pulumi:"keytabContent"`
 	// Master Encryption key used for encrypting token exchange keytab.
 	MasterEncryptionKeyId *string `pulumi:"masterEncryptionKeyId"`
-	// Secret ID for token exchange keytab
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId *string `pulumi:"secretId"`
 	// Lifecycle state of the UPST config
 	State *string `pulumi:"state"`
@@ -5465,7 +5453,7 @@ type BdsInstanceIdentityConfigurationUpstConfigurationArgs struct {
 	KeytabContent pulumi.StringPtrInput `pulumi:"keytabContent"`
 	// Master Encryption key used for encrypting token exchange keytab.
 	MasterEncryptionKeyId pulumi.StringPtrInput `pulumi:"masterEncryptionKeyId"`
-	// Secret ID for token exchange keytab
+	// (Updatable) The secretId for the clusterAdminPassword.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// Lifecycle state of the UPST config
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -5542,7 +5530,7 @@ func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) MasterEncryptio
 	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.MasterEncryptionKeyId }).(pulumi.StringPtrOutput)
 }
 
-// Secret ID for token exchange keytab
+// (Updatable) The secretId for the clusterAdminPassword.
 func (o BdsInstanceIdentityConfigurationUpstConfigurationOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceIdentityConfigurationUpstConfiguration) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
@@ -6722,7 +6710,7 @@ type BdsInstanceNode struct {
 	Shape *string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint *string `pulumi:"sshFingerprint"`
-	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	State *string `pulumi:"state"`
 	// The OCID of the subnet in which the node will be created.
 	SubnetId *string `pulumi:"subnetId"`
@@ -6780,7 +6768,7 @@ type BdsInstanceNodeArgs struct {
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
-	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet in which the node will be created.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -6931,7 +6919,7 @@ func (o BdsInstanceNodeOutput) SshFingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
 func (o BdsInstanceNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -11563,6 +11551,7 @@ type GetAutoScalingConfigurationsAutoScalingConfiguration struct {
 	NodeType             string                                                             `pulumi:"nodeType"`
 	Policies             []GetAutoScalingConfigurationsAutoScalingConfigurationPolicy       `pulumi:"policies"`
 	PolicyDetails        []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail `pulumi:"policyDetails"`
+	SecretId             string                                                             `pulumi:"secretId"`
 	State                string                                                             `pulumi:"state"`
 	TimeCreated          string                                                             `pulumi:"timeCreated"`
 	TimeUpdated          string                                                             `pulumi:"timeUpdated"`
@@ -11588,6 +11577,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationArgs struct {
 	NodeType             pulumi.StringInput                                                         `pulumi:"nodeType"`
 	Policies             GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput       `pulumi:"policies"`
 	PolicyDetails        GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput `pulumi:"policyDetails"`
+	SecretId             pulumi.StringInput                                                         `pulumi:"secretId"`
 	State                pulumi.StringInput                                                         `pulumi:"state"`
 	TimeCreated          pulumi.StringInput                                                         `pulumi:"timeCreated"`
 	TimeUpdated          pulumi.StringInput                                                         `pulumi:"timeUpdated"`
@@ -11678,6 +11668,10 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) PolicyDetail
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfiguration) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
 		return v.PolicyDetails
 	}).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput)
+}
+
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfiguration) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) State() pulumi.StringOutput {
@@ -14579,6 +14573,371 @@ func (o GetBdsInstanceApiKeysFilterArrayOutput) Index(i pulumi.IntInput) GetBdsI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceApiKeysFilter {
 		return vs[0].([]GetBdsInstanceApiKeysFilter)[vs[1].(int)]
 	}).(GetBdsInstanceApiKeysFilterOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration struct {
+	// The OCID of the cluster.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// The OCID of the certificate authority which is associated with this certificate configuration. The value is Null when this BDS certificate configuration type is SELF_SIGNED.
+	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	CertificateType        string `pulumi:"certificateType"`
+	ClusterAdminPassword   string `pulumi:"clusterAdminPassword"`
+	// The OCID of the compartment of the certificate authority connecting to this certificate configuration.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The ID of the BDS certificate configuration defined under BDS resources, not OCID.
+	Id string `pulumi:"id"`
+	// If this BDS certificate configuration is a default configuration or not. There will be only one Default certificate configuration per BDS cluster.
+	IsDefaultConfiguration  bool   `pulumi:"isDefaultConfiguration"`
+	IsMissingNodesOnly      bool   `pulumi:"isMissingNodesOnly"`
+	IssueCertificateTrigger string `pulumi:"issueCertificateTrigger"`
+	RenewCertificateTrigger string `pulumi:"renewCertificateTrigger"`
+	SecretId                string `pulumi:"secretId"`
+	SetDefaultTrigger       string `pulumi:"setDefaultTrigger"`
+	// The state of the BdsCertificateConfiguration.
+	State string `pulumi:"state"`
+	// The time when the BDS certificate configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last time the BDS certificate configuration was used to generate or renew the certificate(s).
+	TimeLastRefreshedOrGenerated string `pulumi:"timeLastRefreshedOrGenerated"`
+	// The time the BDS certificate configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the BDS certificate configuration, also the type of the BDS certificates which will be generated by the BDS certificate configuration.
+	Type string `pulumi:"type"`
+}
+
+// GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput is an input type that accepts GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs and GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput` via:
+//
+//	GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs{...}
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput
+	ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutputWithContext(context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs struct {
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// The OCID of the certificate authority which is associated with this certificate configuration. The value is Null when this BDS certificate configuration type is SELF_SIGNED.
+	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	CertificateType        pulumi.StringInput `pulumi:"certificateType"`
+	ClusterAdminPassword   pulumi.StringInput `pulumi:"clusterAdminPassword"`
+	// The OCID of the compartment of the certificate authority connecting to this certificate configuration.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The ID of the BDS certificate configuration defined under BDS resources, not OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If this BDS certificate configuration is a default configuration or not. There will be only one Default certificate configuration per BDS cluster.
+	IsDefaultConfiguration  pulumi.BoolInput   `pulumi:"isDefaultConfiguration"`
+	IsMissingNodesOnly      pulumi.BoolInput   `pulumi:"isMissingNodesOnly"`
+	IssueCertificateTrigger pulumi.StringInput `pulumi:"issueCertificateTrigger"`
+	RenewCertificateTrigger pulumi.StringInput `pulumi:"renewCertificateTrigger"`
+	SecretId                pulumi.StringInput `pulumi:"secretId"`
+	SetDefaultTrigger       pulumi.StringInput `pulumi:"setDefaultTrigger"`
+	// The state of the BdsCertificateConfiguration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time when the BDS certificate configuration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last time the BDS certificate configuration was used to generate or renew the certificate(s).
+	TimeLastRefreshedOrGenerated pulumi.StringInput `pulumi:"timeLastRefreshedOrGenerated"`
+	// The time the BDS certificate configuration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The type of the BDS certificate configuration, also the type of the BDS certificates which will be generated by the BDS certificate configuration.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput {
+	return i.ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput)
+}
+
+// GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayInput is an input type that accepts GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray and GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayInput` via:
+//
+//	GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray{ GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs{...} }
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput
+	ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray []GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput
+
+func (GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput {
+	return i.ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.BdsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the certificate authority which is associated with this certificate configuration. The value is Null when this BDS certificate configuration type is SELF_SIGNED.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) CertificateAuthorityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.CertificateAuthorityId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) CertificateType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.CertificateType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) ClusterAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.ClusterAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment of the certificate authority connecting to this certificate configuration.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the BDS certificate configuration defined under BDS resources, not OCID.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If this BDS certificate configuration is a default configuration or not. There will be only one Default certificate configuration per BDS cluster.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) IsDefaultConfiguration() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) bool {
+		return v.IsDefaultConfiguration
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) IsMissingNodesOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) bool {
+		return v.IsMissingNodesOnly
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) IssueCertificateTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.IssueCertificateTrigger
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) RenewCertificateTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.RenewCertificateTrigger
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.SecretId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) SetDefaultTrigger() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.SetDefaultTrigger
+	}).(pulumi.StringOutput)
+}
+
+// The state of the BdsCertificateConfiguration.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time when the BDS certificate configuration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last time the BDS certificate configuration was used to generate or renew the certificate(s).
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) TimeLastRefreshedOrGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.TimeLastRefreshedOrGenerated
+	}).(pulumi.StringOutput)
+}
+
+// The time the BDS certificate configuration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The type of the BDS certificate configuration, also the type of the BDS certificates which will be generated by the BDS certificate configuration.
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput() GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput) ToGetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration {
+		return vs[0].([]GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceBdsCertificateConfigurationsFilterInput is an input type that accepts GetBdsInstanceBdsCertificateConfigurationsFilterArgs and GetBdsInstanceBdsCertificateConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCertificateConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceBdsCertificateConfigurationsFilterArgs{...}
+type GetBdsInstanceBdsCertificateConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCertificateConfigurationsFilterOutput() GetBdsInstanceBdsCertificateConfigurationsFilterOutput
+	ToGetBdsInstanceBdsCertificateConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterOutput
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceBdsCertificateConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsFilterArgs) ToGetBdsInstanceBdsCertificateConfigurationsFilterOutput() GetBdsInstanceBdsCertificateConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceBdsCertificateConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsFilterArgs) ToGetBdsInstanceBdsCertificateConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCertificateConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceBdsCertificateConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceBdsCertificateConfigurationsFilterArray and GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceBdsCertificateConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceBdsCertificateConfigurationsFilterArray{ GetBdsInstanceBdsCertificateConfigurationsFilterArgs{...} }
+type GetBdsInstanceBdsCertificateConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput() GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput
+	ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsFilterArray []GetBdsInstanceBdsCertificateConfigurationsFilterInput
+
+func (GetBdsInstanceBdsCertificateConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCertificateConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsFilterArray) ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput() GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceBdsCertificateConfigurationsFilterArray) ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCertificateConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterOutput) ToGetBdsInstanceBdsCertificateConfigurationsFilterOutput() GetBdsInstanceBdsCertificateConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterOutput) ToGetBdsInstanceBdsCertificateConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceBdsCertificateConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceBdsCertificateConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput) ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput() GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput) ToGetBdsInstanceBdsCertificateConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceBdsCertificateConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceBdsCertificateConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceBdsCertificateConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceBdsCertificateConfigurationsFilterOutput)
 }
 
 type GetBdsInstanceBdsClusterVersionSummary struct {
@@ -19018,7 +19377,7 @@ type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration struct {
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// The unique identifier for the NodeBackupConfiguration.
+	// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 	Id string `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails []GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
@@ -19054,7 +19413,7 @@ type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs struct {
 	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The unique identifier for the NodeBackupConfiguration.
+	// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput `pulumi:"levelTypeDetails"`
@@ -19138,7 +19497,7 @@ func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) Dis
 	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique identifier for the NodeBackupConfiguration.
+// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -19827,12 +20186,14 @@ type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration struct {
 	DisplayName string `pulumi:"displayName"`
 	// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
 	DurationInMinutes int `pulumi:"durationInMinutes"`
-	// The unique identifier for the NodeReplaceConfiguration.
+	// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 	Id string `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails []GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
 	// Type of compute instance health metric to use for node replacement
 	MetricType string `pulumi:"metricType"`
+	// The secretId for the clusterAdminPassword.
+	SecretId string `pulumi:"secretId"`
 	// The state of the NodeReplaceConfiguration.
 	State string `pulumi:"state"`
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -19860,12 +20221,14 @@ type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs struct 
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
 	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
-	// The unique identifier for the NodeReplaceConfiguration.
+	// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput `pulumi:"levelTypeDetails"`
 	// Type of compute instance health metric to use for node replacement
 	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// The state of the NodeReplaceConfiguration.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -19948,7 +20311,7 @@ func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) D
 	}).(pulumi.IntOutput)
 }
 
-// The unique identifier for the NodeReplaceConfiguration.
+// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
 func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -19963,6 +20326,11 @@ func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) L
 // Type of compute instance health metric to use for node replacement
 func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // The state of the NodeReplaceConfiguration.
@@ -20676,8 +21044,10 @@ type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration
 	// A filter to return only resources that match the entire display name given.
 	DisplayName                          string `pulumi:"displayName"`
 	ForceRefreshResourcePrincipalTrigger int    `pulumi:"forceRefreshResourcePrincipalTrigger"`
-	// The id of the ResourcePrincipalConfiguration.
+	// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 	Id string `pulumi:"id"`
+	// The secretId for the clusterAdminPassword.
+	SecretId string `pulumi:"secretId"`
 	// Life span in hours of each resource principal session token.
 	SessionTokenLifeSpanDurationInHours int `pulumi:"sessionTokenLifeSpanDurationInHours"`
 	// The state of the ResourcePrincipalConfiguration.
@@ -20710,8 +21080,10 @@ type GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration
 	// A filter to return only resources that match the entire display name given.
 	DisplayName                          pulumi.StringInput `pulumi:"displayName"`
 	ForceRefreshResourcePrincipalTrigger pulumi.IntInput    `pulumi:"forceRefreshResourcePrincipalTrigger"`
-	// The id of the ResourcePrincipalConfiguration.
+	// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// Life span in hours of each resource principal session token.
 	SessionTokenLifeSpanDurationInHours pulumi.IntInput `pulumi:"sessionTokenLifeSpanDurationInHours"`
 	// The state of the ResourcePrincipalConfiguration.
@@ -20803,10 +21175,17 @@ func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurat
 	}).(pulumi.IntOutput)
 }
 
-// The id of the ResourcePrincipalConfiguration.
+// The id of the ResourcePrincipalConfiguration defined under BDS resources, not OCID.
 func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
 		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceResourcePrincipalConfigurationsResourcePrincipalConfiguration) string {
+		return v.SecretId
 	}).(pulumi.StringOutput)
 }
 
@@ -21951,6 +22330,8 @@ type GetBdsInstancesBdsInstance struct {
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured bool `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused bool `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
 	IsSecure          bool                                        `pulumi:"isSecure"`
 	KafkaBrokerNodes  []GetBdsInstancesBdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNodes"`
@@ -21965,14 +22346,19 @@ type GetBdsInstancesBdsInstance struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot int                                                 `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          string                                              `pulumi:"osPatchVersion"`
-	RemoveNode                              string                                              `pulumi:"removeNode"`
-	StartClusterShapeConfigs                []GetBdsInstancesBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
+	NumberOfNodesRequiringMaintenanceReboot int      `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          string   `pulumi:"osPatchVersion"`
+	RemoveNode                              string   `pulumi:"removeNode"`
+	RemoveNodes                             []string `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 string                                              `pulumi:"secretId"`
+	StartClusterShapeConfigs []GetBdsInstancesBdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration string `pulumi:"timeEarliestCertificateExpiration"`
 	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated string                                 `pulumi:"timeUpdated"`
 	UtilNodes   []GetBdsInstancesBdsInstanceUtilNode   `pulumi:"utilNodes"`
@@ -22028,6 +22414,8 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	IsHighAvailability pulumi.BoolInput `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured pulumi.BoolInput `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused pulumi.BoolInput `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
 	IsSecure          pulumi.BoolInput                                    `pulumi:"isSecure"`
 	KafkaBrokerNodes  GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput `pulumi:"kafkaBrokerNodes"`
@@ -22042,14 +22430,19 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// The number of nodes that form the cluster.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput                                             `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          pulumi.StringInput                                          `pulumi:"osPatchVersion"`
-	RemoveNode                              pulumi.StringInput                                          `pulumi:"removeNode"`
-	StartClusterShapeConfigs                GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput `pulumi:"startClusterShapeConfigs"`
+	NumberOfNodesRequiringMaintenanceReboot pulumi.IntInput         `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          pulumi.StringInput      `pulumi:"osPatchVersion"`
+	RemoveNode                              pulumi.StringInput      `pulumi:"removeNode"`
+	RemoveNodes                             pulumi.StringArrayInput `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 pulumi.StringInput                                          `pulumi:"secretId"`
+	StartClusterShapeConfigs GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayInput `pulumi:"startClusterShapeConfigs"`
 	// The state of the cluster.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration pulumi.StringInput `pulumi:"timeEarliestCertificateExpiration"`
 	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput                             `pulumi:"timeUpdated"`
 	UtilNodes   GetBdsInstancesBdsInstanceUtilNodeArrayInput   `pulumi:"utilNodes"`
@@ -22216,6 +22609,11 @@ func (o GetBdsInstancesBdsInstanceOutput) IsKafkaConfigured() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsKafkaConfigured }).(pulumi.BoolOutput)
 }
 
+// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+func (o GetBdsInstancesBdsInstanceOutput) IsSecretReused() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsSecretReused }).(pulumi.BoolOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be set up as secure.
 func (o GetBdsInstancesBdsInstanceOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsSecure }).(pulumi.BoolOutput)
@@ -22268,6 +22666,15 @@ func (o GetBdsInstancesBdsInstanceOutput) RemoveNode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.RemoveNode }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceOutput) RemoveNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []string { return v.RemoveNodes }).(pulumi.StringArrayOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o GetBdsInstancesBdsInstanceOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
 func (o GetBdsInstancesBdsInstanceOutput) StartClusterShapeConfigs() GetBdsInstancesBdsInstanceStartClusterShapeConfigArrayOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceStartClusterShapeConfig {
 		return v.StartClusterShapeConfigs
@@ -22282,6 +22689,11 @@ func (o GetBdsInstancesBdsInstanceOutput) State() pulumi.StringOutput {
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 func (o GetBdsInstancesBdsInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+func (o GetBdsInstancesBdsInstanceOutput) TimeEarliestCertificateExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.TimeEarliestCertificateExpiration }).(pulumi.StringOutput)
 }
 
 // The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
@@ -25402,6 +25814,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysBdsApiKeyArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysBdsApiKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceApiKeysFilterArrayInput)(nil)).Elem(), GetBdsInstanceApiKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsCertificateConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceBdsCertificateConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummaryInput)(nil)).Elem(), GetBdsInstanceBdsClusterVersionSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceBdsClusterVersionSummaryArrayInput)(nil)).Elem(), GetBdsInstanceBdsClusterVersionSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceCloudSqlDetailInput)(nil)).Elem(), GetBdsInstanceCloudSqlDetailArgs{})
@@ -25760,6 +26176,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysBdsApiKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceApiKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsBdsCertificateConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceBdsCertificateConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceBdsClusterVersionSummaryOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceBdsClusterVersionSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceCloudSqlDetailOutput{})

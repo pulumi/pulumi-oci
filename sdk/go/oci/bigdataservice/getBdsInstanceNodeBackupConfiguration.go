@@ -67,7 +67,7 @@ type LookupBdsInstanceNodeBackupConfigurationResult struct {
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// The unique identifier for the NodeBackupConfiguration.
+	// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 	Id string `pulumi:"id"`
 	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
 	LevelTypeDetails          []GetBdsInstanceNodeBackupConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
@@ -137,7 +137,7 @@ func (o LookupBdsInstanceNodeBackupConfigurationResultOutput) DisplayName() pulu
 	return o.ApplyT(func(v LookupBdsInstanceNodeBackupConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The unique identifier for the NodeBackupConfiguration.
+// The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
 func (o LookupBdsInstanceNodeBackupConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceNodeBackupConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }

@@ -13,13 +13,25 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
     public sealed class CertificateCertificateConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// , `CertificatePem`, `PrivateKeyPem`, `PrivateKeyPemPassphrase`, and `Stage` can only be used when `config_type=IMPORTED`.
+        /// </summary>
+        [Input("certChainPem")]
+        public Input<string>? CertChainPem { get; set; }
+
+        /// <summary>
+        /// (Updatable) The leaf certificate (in PEM format).
+        /// </summary>
+        [Input("certificatePem")]
+        public Input<string>? CertificatePem { get; set; }
+
+        /// <summary>
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
         /// </summary>
         [Input("certificateProfileType")]
         public Input<string>? CertificateProfileType { get; set; }
 
         /// <summary>
-        /// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        /// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         /// </summary>
         [Input("configType", required: true)]
         public Input<string> ConfigType { get; set; } = null!;
@@ -42,11 +54,49 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         [Input("keyAlgorithm")]
         public Input<string>? KeyAlgorithm { get; set; }
 
+        [Input("privateKeyPem")]
+        private Input<string>? _privateKeyPem;
+
+        /// <summary>
+        /// (Updatable) The private key (in PEM format). This value is sensitive.
+        /// </summary>
+        public Input<string>? PrivateKeyPem
+        {
+            get => _privateKeyPem;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKeyPem = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("privateKeyPemPassphrase")]
+        private Input<string>? _privateKeyPemPassphrase;
+
+        /// <summary>
+        /// (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+        /// </summary>
+        public Input<string>? PrivateKeyPemPassphrase
+        {
+            get => _privateKeyPemPassphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKeyPemPassphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The algorithm to use to sign the public key certificate.
         /// </summary>
         [Input("signatureAlgorithm")]
         public Input<string>? SignatureAlgorithm { get; set; }
+
+        /// <summary>
+        /// (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+        /// </summary>
+        [Input("stage")]
+        public Input<string>? Stage { get; set; }
 
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.

@@ -107,7 +107,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable String sshFingerprint;
     /**
-     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     private @Nullable String state;
@@ -255,7 +255,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.sshFingerprint);
     }
     /**
-     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     public Optional<String> state() {

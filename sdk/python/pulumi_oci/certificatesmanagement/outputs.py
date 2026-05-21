@@ -1415,6 +1415,10 @@ class CertificateCertificateConfig(dict):
         suggest = None
         if key == "configType":
             suggest = "config_type"
+        elif key == "certChainPem":
+            suggest = "cert_chain_pem"
+        elif key == "certificatePem":
+            suggest = "certificate_pem"
         elif key == "certificateProfileType":
             suggest = "certificate_profile_type"
         elif key == "csrPem":
@@ -1423,6 +1427,10 @@ class CertificateCertificateConfig(dict):
             suggest = "issuer_certificate_authority_id"
         elif key == "keyAlgorithm":
             suggest = "key_algorithm"
+        elif key == "privateKeyPem":
+            suggest = "private_key_pem"
+        elif key == "privateKeyPemPassphrase":
+            suggest = "private_key_pem_passphrase"
         elif key == "signatureAlgorithm":
             suggest = "signature_algorithm"
         elif key == "subjectAlternativeNames":
@@ -1443,28 +1451,42 @@ class CertificateCertificateConfig(dict):
 
     def __init__(__self__, *,
                  config_type: _builtins.str,
+                 cert_chain_pem: Optional[_builtins.str] = None,
+                 certificate_pem: Optional[_builtins.str] = None,
                  certificate_profile_type: Optional[_builtins.str] = None,
                  csr_pem: Optional[_builtins.str] = None,
                  issuer_certificate_authority_id: Optional[_builtins.str] = None,
                  key_algorithm: Optional[_builtins.str] = None,
+                 private_key_pem: Optional[_builtins.str] = None,
+                 private_key_pem_passphrase: Optional[_builtins.str] = None,
                  signature_algorithm: Optional[_builtins.str] = None,
+                 stage: Optional[_builtins.str] = None,
                  subject: Optional['outputs.CertificateCertificateConfigSubject'] = None,
                  subject_alternative_names: Optional[Sequence['outputs.CertificateCertificateConfigSubjectAlternativeName']] = None,
                  validity: Optional['outputs.CertificateCertificateConfigValidity'] = None,
                  version_name: Optional[_builtins.str] = None):
         """
-        :param _builtins.str config_type: (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param _builtins.str config_type: (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
+        :param _builtins.str cert_chain_pem: , `certificate_pem`, `private_key_pem`, `private_key_pem_passphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+        :param _builtins.str certificate_pem: (Updatable) The leaf certificate (in PEM format).
         :param _builtins.str certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
         :param _builtins.str csr_pem: (Updatable) The certificate signing request (in PEM format).
         :param _builtins.str issuer_certificate_authority_id: The OCID of the private CA.
         :param _builtins.str key_algorithm: The algorithm to use to create key pairs.
+        :param _builtins.str private_key_pem: (Updatable) The private key (in PEM format). This value is sensitive.
+        :param _builtins.str private_key_pem_passphrase: (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
         :param _builtins.str signature_algorithm: The algorithm to use to sign the public key certificate.
+        :param _builtins.str stage: (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
         :param 'CertificateCertificateConfigSubjectArgs' subject: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         :param Sequence['CertificateCertificateConfigSubjectAlternativeNameArgs'] subject_alternative_names: A list of subject alternative names.
         :param 'CertificateCertificateConfigValidityArgs' validity: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param _builtins.str version_name: (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
         """
         pulumi.set(__self__, "config_type", config_type)
+        if cert_chain_pem is not None:
+            pulumi.set(__self__, "cert_chain_pem", cert_chain_pem)
+        if certificate_pem is not None:
+            pulumi.set(__self__, "certificate_pem", certificate_pem)
         if certificate_profile_type is not None:
             pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
         if csr_pem is not None:
@@ -1473,8 +1495,14 @@ class CertificateCertificateConfig(dict):
             pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
         if key_algorithm is not None:
             pulumi.set(__self__, "key_algorithm", key_algorithm)
+        if private_key_pem is not None:
+            pulumi.set(__self__, "private_key_pem", private_key_pem)
+        if private_key_pem_passphrase is not None:
+            pulumi.set(__self__, "private_key_pem_passphrase", private_key_pem_passphrase)
         if signature_algorithm is not None:
             pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        if stage is not None:
+            pulumi.set(__self__, "stage", stage)
         if subject is not None:
             pulumi.set(__self__, "subject", subject)
         if subject_alternative_names is not None:
@@ -1488,9 +1516,25 @@ class CertificateCertificateConfig(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="certChainPem")
+    def cert_chain_pem(self) -> Optional[_builtins.str]:
+        """
+        , `certificate_pem`, `private_key_pem`, `private_key_pem_passphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+        """
+        return pulumi.get(self, "cert_chain_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The leaf certificate (in PEM format).
+        """
+        return pulumi.get(self, "certificate_pem")
 
     @_builtins.property
     @pulumi.getter(name="certificateProfileType")
@@ -1525,12 +1569,36 @@ class CertificateCertificateConfig(dict):
         return pulumi.get(self, "key_algorithm")
 
     @_builtins.property
+    @pulumi.getter(name="privateKeyPem")
+    def private_key_pem(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The private key (in PEM format). This value is sensitive.
+        """
+        return pulumi.get(self, "private_key_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPemPassphrase")
+    def private_key_pem_passphrase(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+        """
+        return pulumi.get(self, "private_key_pem_passphrase")
+
+    @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> Optional[_builtins.str]:
         """
         The algorithm to use to sign the public key certificate.
         """
         return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def stage(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+        """
+        return pulumi.get(self, "stage")
 
     @_builtins.property
     @pulumi.getter
@@ -5310,19 +5378,24 @@ class GetCertificateAuthorityVersionsFilterResult(dict):
 @pulumi.output_type
 class GetCertificateCertificateConfigResult(dict):
     def __init__(__self__, *,
+                 cert_chain_pem: _builtins.str,
+                 certificate_pem: _builtins.str,
                  certificate_profile_type: _builtins.str,
                  config_type: _builtins.str,
                  csr_pem: _builtins.str,
                  issuer_certificate_authority_id: _builtins.str,
                  key_algorithm: _builtins.str,
+                 private_key_pem: _builtins.str,
+                 private_key_pem_passphrase: _builtins.str,
                  signature_algorithm: _builtins.str,
+                 stage: _builtins.str,
                  subject_alternative_names: Sequence['outputs.GetCertificateCertificateConfigSubjectAlternativeNameResult'],
                  subjects: Sequence['outputs.GetCertificateCertificateConfigSubjectResult'],
                  validities: Sequence['outputs.GetCertificateCertificateConfigValidityResult'],
                  version_name: _builtins.str):
         """
         :param _builtins.str certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
-        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         :param _builtins.str issuer_certificate_authority_id: The OCID of the certificate authority (CA) that issued the certificate.
         :param _builtins.str key_algorithm: The algorithm used to create key pairs.
         :param _builtins.str signature_algorithm: The algorithm used to sign the public key certificate.
@@ -5331,16 +5404,31 @@ class GetCertificateCertificateConfigResult(dict):
         :param Sequence['GetCertificateCertificateConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param _builtins.str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         """
+        pulumi.set(__self__, "cert_chain_pem", cert_chain_pem)
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
         pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "csr_pem", csr_pem)
         pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
         pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "private_key_pem", private_key_pem)
+        pulumi.set(__self__, "private_key_pem_passphrase", private_key_pem_passphrase)
         pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "stage", stage)
         pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
         pulumi.set(__self__, "subjects", subjects)
         pulumi.set(__self__, "validities", validities)
         pulumi.set(__self__, "version_name", version_name)
+
+    @_builtins.property
+    @pulumi.getter(name="certChainPem")
+    def cert_chain_pem(self) -> _builtins.str:
+        return pulumi.get(self, "cert_chain_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_pem")
 
     @_builtins.property
     @pulumi.getter(name="certificateProfileType")
@@ -5354,7 +5442,7 @@ class GetCertificateCertificateConfigResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
 
@@ -5380,12 +5468,27 @@ class GetCertificateCertificateConfigResult(dict):
         return pulumi.get(self, "key_algorithm")
 
     @_builtins.property
+    @pulumi.getter(name="privateKeyPem")
+    def private_key_pem(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPemPassphrase")
+    def private_key_pem_passphrase(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_pem_passphrase")
+
+    @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> _builtins.str:
         """
         The algorithm used to sign the public key certificate.
         """
         return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def stage(self) -> _builtins.str:
+        return pulumi.get(self, "stage")
 
     @_builtins.property
     @pulumi.getter(name="subjectAlternativeNames")
@@ -6558,6 +6661,7 @@ class GetCertificatesCertificateCollectionItemResult(dict):
                  certificate_rules: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRuleResult'],
                  compartment_id: _builtins.str,
                  config_type: _builtins.str,
+                 current_version_number: _builtins.str,
                  current_versions: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -6577,7 +6681,7 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         :param Sequence['GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs'] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
         :param Sequence['GetCertificatesCertificateCollectionItemCertificateRuleArgs'] certificate_rules: A list of rules that control how the certificate is used and managed.
         :param _builtins.str compartment_id: A filter that returns only resources that match the given compartment OCID.
-        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         :param Sequence['GetCertificatesCertificateCollectionItemCurrentVersionArgs'] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: A brief description of the certificate. Avoid entering confidential information.
@@ -6599,6 +6703,7 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         pulumi.set(__self__, "certificate_rules", certificate_rules)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "current_version_number", current_version_number)
         pulumi.set(__self__, "current_versions", current_versions)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -6655,9 +6760,14 @@ class GetCertificatesCertificateCollectionItemResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="currentVersionNumber")
+    def current_version_number(self) -> _builtins.str:
+        return pulumi.get(self, "current_version_number")
 
     @_builtins.property
     @pulumi.getter(name="currentVersions")
@@ -6775,19 +6885,24 @@ class GetCertificatesCertificateCollectionItemResult(dict):
 @pulumi.output_type
 class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
     def __init__(__self__, *,
+                 cert_chain_pem: _builtins.str,
+                 certificate_pem: _builtins.str,
                  certificate_profile_type: _builtins.str,
                  config_type: _builtins.str,
                  csr_pem: _builtins.str,
                  issuer_certificate_authority_id: _builtins.str,
                  key_algorithm: _builtins.str,
+                 private_key_pem: _builtins.str,
+                 private_key_pem_passphrase: _builtins.str,
                  signature_algorithm: _builtins.str,
+                 stage: _builtins.str,
                  subject_alternative_names: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult'],
                  subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult'],
                  validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidityResult'],
                  version_name: _builtins.str):
         """
         :param _builtins.str certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
-        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        :param _builtins.str config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         :param _builtins.str issuer_certificate_authority_id: The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
         :param _builtins.str key_algorithm: The algorithm used to create key pairs.
         :param _builtins.str signature_algorithm: The algorithm used to sign the public key certificate.
@@ -6796,16 +6911,31 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
         :param Sequence['GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param _builtins.str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         """
+        pulumi.set(__self__, "cert_chain_pem", cert_chain_pem)
+        pulumi.set(__self__, "certificate_pem", certificate_pem)
         pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "csr_pem", csr_pem)
         pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
         pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "private_key_pem", private_key_pem)
+        pulumi.set(__self__, "private_key_pem_passphrase", private_key_pem_passphrase)
         pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+        pulumi.set(__self__, "stage", stage)
         pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
         pulumi.set(__self__, "subjects", subjects)
         pulumi.set(__self__, "validities", validities)
         pulumi.set(__self__, "version_name", version_name)
+
+    @_builtins.property
+    @pulumi.getter(name="certChainPem")
+    def cert_chain_pem(self) -> _builtins.str:
+        return pulumi.get(self, "cert_chain_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> _builtins.str:
+        return pulumi.get(self, "certificate_pem")
 
     @_builtins.property
     @pulumi.getter(name="certificateProfileType")
@@ -6819,7 +6949,7 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
 
@@ -6845,12 +6975,27 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
         return pulumi.get(self, "key_algorithm")
 
     @_builtins.property
+    @pulumi.getter(name="privateKeyPem")
+    def private_key_pem(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPemPassphrase")
+    def private_key_pem_passphrase(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_pem_passphrase")
+
+    @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
     def signature_algorithm(self) -> _builtins.str:
         """
         The algorithm used to sign the public key certificate.
         """
         return pulumi.get(self, "signature_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def stage(self) -> _builtins.str:
+        return pulumi.get(self, "stage")
 
     @_builtins.property
     @pulumi.getter(name="subjectAlternativeNames")

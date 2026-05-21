@@ -30,14 +30,15 @@ namespace Pulumi.Oci.BigDataService
     ///     var testBdsInstanceIdentityConfiguration = new Oci.BigDataService.BdsInstanceIdentityConfiguration("test_bds_instance_identity_configuration", new()
     ///     {
     ///         BdsInstanceId = testBdsInstance.Id,
-    ///         ClusterAdminPassword = bdsInstanceIdentityConfigurationClusterAdminPassword,
     ///         ConfidentialApplicationId = testApplication.Id,
     ///         DisplayName = bdsInstanceIdentityConfigurationDisplayName,
     ///         IdentityDomainId = testDomain.Id,
+    ///         ClusterAdminPassword = bdsInstanceIdentityConfigurationClusterAdminPassword,
     ///         IamUserSyncConfigurationDetails = new Oci.BigDataService.Inputs.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs
     ///         {
     ///             IsPosixAttributesAdditionRequired = bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired,
     ///         },
+    ///         SecretId = testSecret.Id,
     ///         UpstConfigurationDetails = new Oci.BigDataService.Inputs.BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs
     ///         {
     ///             MasterEncryptionKeyId = testKey.Id,

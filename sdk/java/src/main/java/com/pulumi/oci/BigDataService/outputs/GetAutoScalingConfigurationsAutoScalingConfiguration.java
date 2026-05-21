@@ -22,6 +22,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     private String nodeType;
     private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
     private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
+    private String secretId;
     private String state;
     private String timeCreated;
     private String timeUpdated;
@@ -51,6 +52,9 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails() {
         return this.policyDetails;
     }
+    public String secretId() {
+        return this.secretId;
+    }
     public String state() {
         return this.state;
     }
@@ -78,6 +82,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         private String nodeType;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail> policyDetails;
+        private String secretId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -92,6 +97,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     	      this.nodeType = defaults.nodeType;
     	      this.policies = defaults.policies;
     	      this.policyDetails = defaults.policyDetails;
+    	      this.secretId = defaults.secretId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -168,6 +174,14 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
             return policyDetails(List.of(policyDetails));
         }
         @CustomType.Setter
+        public Builder secretId(String secretId) {
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "secretId");
+            }
+            this.secretId = secretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfiguration", "state");
@@ -201,6 +215,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
             _resultValue.nodeType = nodeType;
             _resultValue.policies = policies;
             _resultValue.policyDetails = policyDetails;
+            _resultValue.secretId = secretId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

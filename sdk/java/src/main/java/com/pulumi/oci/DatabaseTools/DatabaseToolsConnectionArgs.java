@@ -39,6 +39,21 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    @Import(name="authenticationType")
+    private @Nullable Output<String> authenticationType;
+
+    /**
+     * @return Specifies the authentication type used by the Database Tools service to authenticate with the database.
+     * 
+     */
+    public Optional<Output<String>> authenticationType() {
+        return Optional.ofNullable(this.authenticationType);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
@@ -189,14 +204,14 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     @Import(name="runtimeIdentity")
     private @Nullable Output<String> runtimeIdentity;
 
     /**
-     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * @return Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
      * 
      */
     public Optional<Output<String>> runtimeIdentity() {
@@ -252,36 +267,37 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
      * (Updatable) The database user name.
      * 
      */
-    @Import(name="userName", required=true)
-    private Output<String> userName;
+    @Import(name="userName")
+    private @Nullable Output<String> userName;
 
     /**
      * @return (Updatable) The database user name.
      * 
      */
-    public Output<String> userName() {
-        return this.userName;
+    public Optional<Output<String>> userName() {
+        return Optional.ofNullable(this.userName);
     }
 
     /**
      * (Updatable) The database user password.
      * 
      */
-    @Import(name="userPassword", required=true)
-    private Output<DatabaseToolsConnectionUserPasswordArgs> userPassword;
+    @Import(name="userPassword")
+    private @Nullable Output<DatabaseToolsConnectionUserPasswordArgs> userPassword;
 
     /**
      * @return (Updatable) The database user password.
      * 
      */
-    public Output<DatabaseToolsConnectionUserPasswordArgs> userPassword() {
-        return this.userPassword;
+    public Optional<Output<DatabaseToolsConnectionUserPasswordArgs>> userPassword() {
+        return Optional.ofNullable(this.userPassword);
     }
 
     private DatabaseToolsConnectionArgs() {}
 
     private DatabaseToolsConnectionArgs(DatabaseToolsConnectionArgs $) {
         this.advancedProperties = $.advancedProperties;
+        this.authenticationType = $.authenticationType;
         this.compartmentId = $.compartmentId;
         this.connectionString = $.connectionString;
         this.definedTags = $.definedTags;
@@ -337,6 +353,27 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          */
         public Builder advancedProperties(Map<String,String> advancedProperties) {
             return advancedProperties(Output.of(advancedProperties));
+        }
+
+        /**
+         * @param authenticationType Specifies the authentication type used by the Database Tools service to authenticate with the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationType(@Nullable Output<String> authenticationType) {
+            $.authenticationType = authenticationType;
+            return this;
+        }
+
+        /**
+         * @param authenticationType Specifies the authentication type used by the Database Tools service to authenticate with the database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationType(String authenticationType) {
+            return authenticationType(Output.of(authenticationType));
         }
 
         /**
@@ -570,7 +607,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * @param runtimeIdentity Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
          * 
          * @return builder
          * 
@@ -581,7 +618,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * @param runtimeIdentity Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
          * 
          * @return builder
          * 
@@ -659,7 +696,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder userName(Output<String> userName) {
+        public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
             return this;
         }
@@ -680,7 +717,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder userPassword(Output<DatabaseToolsConnectionUserPasswordArgs> userPassword) {
+        public Builder userPassword(@Nullable Output<DatabaseToolsConnectionUserPasswordArgs> userPassword) {
             $.userPassword = userPassword;
             return this;
         }
@@ -704,12 +741,6 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
             }
             if ($.type == null) {
                 throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "type");
-            }
-            if ($.userName == null) {
-                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "userName");
-            }
-            if ($.userPassword == null) {
-                throw new MissingRequiredPropertyException("DatabaseToolsConnectionArgs", "userPassword");
             }
             return $;
         }

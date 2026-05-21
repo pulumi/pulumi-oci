@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? BackupId;
         /// <summary>
+        /// Properties to setup a replication channel with the source (cloned) DB system.
+        /// </summary>
+        public readonly Outputs.MysqlDbSystemSourceChannel? Channel;
+        /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         public readonly string? DbSystemId;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         /// </summary>
         public readonly string? RecoveryPoint;
+        /// <summary>
+        /// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        public readonly string? Region;
         /// <summary>
         /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         /// </summary>
@@ -38,17 +46,23 @@ namespace Pulumi.Oci.Mysql.Outputs
         private MysqlDbSystemSource(
             string? backupId,
 
+            Outputs.MysqlDbSystemSourceChannel? channel,
+
             string? dbSystemId,
 
             string? recoveryPoint,
+
+            string? region,
 
             string sourceType,
 
             string? sourceUrl)
         {
             BackupId = backupId;
+            Channel = channel;
             DbSystemId = dbSystemId;
             RecoveryPoint = recoveryPoint;
+            Region = region;
             SourceType = sourceType;
             SourceUrl = sourceUrl;
         }

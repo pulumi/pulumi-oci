@@ -46,6 +46,11 @@ public final class GetShapesShape {
      */
     private Boolean isBilledForStoppedInstance;
     /**
+     * @return Whether the shape supports CNIC networking.
+     * 
+     */
+    private Boolean isCnic;
+    /**
      * @return Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
      * 
      */
@@ -206,6 +211,13 @@ public final class GetShapesShape {
      */
     public Boolean isBilledForStoppedInstance() {
         return this.isBilledForStoppedInstance;
+    }
+    /**
+     * @return Whether the shape supports CNIC networking.
+     * 
+     */
+    public Boolean isCnic() {
+        return this.isCnic;
     }
     /**
      * @return Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
@@ -397,6 +409,7 @@ public final class GetShapesShape {
         private String gpuDescription;
         private Integer gpus;
         private Boolean isBilledForStoppedInstance;
+        private Boolean isCnic;
         private Boolean isFlexible;
         private Boolean isLiveMigrationSupported;
         private Boolean isSubcore;
@@ -430,6 +443,7 @@ public final class GetShapesShape {
     	      this.gpuDescription = defaults.gpuDescription;
     	      this.gpus = defaults.gpus;
     	      this.isBilledForStoppedInstance = defaults.isBilledForStoppedInstance;
+    	      this.isCnic = defaults.isCnic;
     	      this.isFlexible = defaults.isFlexible;
     	      this.isLiveMigrationSupported = defaults.isLiveMigrationSupported;
     	      this.isSubcore = defaults.isSubcore;
@@ -498,6 +512,14 @@ public final class GetShapesShape {
               throw new MissingRequiredPropertyException("GetShapesShape", "isBilledForStoppedInstance");
             }
             this.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCnic(Boolean isCnic) {
+            if (isCnic == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "isCnic");
+            }
+            this.isCnic = isCnic;
             return this;
         }
         @CustomType.Setter
@@ -734,6 +756,7 @@ public final class GetShapesShape {
             _resultValue.gpuDescription = gpuDescription;
             _resultValue.gpus = gpus;
             _resultValue.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            _resultValue.isCnic = isCnic;
             _resultValue.isFlexible = isFlexible;
             _resultValue.isLiveMigrationSupported = isLiveMigrationSupported;
             _resultValue.isSubcore = isSubcore;

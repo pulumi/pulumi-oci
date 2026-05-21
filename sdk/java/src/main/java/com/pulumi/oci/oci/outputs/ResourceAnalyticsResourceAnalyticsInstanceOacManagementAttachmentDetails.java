@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.oci.outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,25 +14,95 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails {
+    /**
+     * @return The capacity model to use for the Analytics Instance.
+     * 
+     */
+    private @Nullable String capacityType;
+    /**
+     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+     * 
+     */
+    private @Nullable Integer capacityValue;
+    /**
+     * @return IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+     * 
+     */
     private @Nullable String idcsDomainId;
+    /**
+     * @return The Oracle license model that applies to the OAC instance.
+     * 
+     */
     private @Nullable String licenseModel;
+    /**
+     * @return Details required when provisioning OAC on a private network.  Example: `{&#34;subnetId&#34;:&#34;ocid...&#34;, ...}`
+     * 
+     */
     private @Nullable ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails networkDetails;
+    /**
+     * @return List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     private @Nullable List<String> nsgIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     private @Nullable String subnetId;
 
     private ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails() {}
+    /**
+     * @return The capacity model to use for the Analytics Instance.
+     * 
+     */
+    public Optional<String> capacityType() {
+        return Optional.ofNullable(this.capacityType);
+    }
+    /**
+     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics Instance.
+     * 
+     */
+    public Optional<Integer> capacityValue() {
+        return Optional.ofNullable(this.capacityValue);
+    }
+    /**
+     * @return IDCS domain [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying a stripe and service administrator user.
+     * 
+     */
     public Optional<String> idcsDomainId() {
         return Optional.ofNullable(this.idcsDomainId);
     }
+    /**
+     * @return The Oracle license model that applies to the OAC instance.
+     * 
+     */
     public Optional<String> licenseModel() {
         return Optional.ofNullable(this.licenseModel);
     }
+    /**
+     * @return Details required when provisioning OAC on a private network.  Example: `{&#34;subnetId&#34;:&#34;ocid...&#34;, ...}`
+     * 
+     */
     public Optional<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails> networkDetails() {
         return Optional.ofNullable(this.networkDetails);
     }
+    /**
+     * @return List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     public List<String> nsgIds() {
         return this.nsgIds == null ? List.of() : this.nsgIds;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
@@ -45,6 +116,8 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String capacityType;
+        private @Nullable Integer capacityValue;
         private @Nullable String idcsDomainId;
         private @Nullable String licenseModel;
         private @Nullable ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails networkDetails;
@@ -53,6 +126,8 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
         public Builder() {}
         public Builder(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capacityType = defaults.capacityType;
+    	      this.capacityValue = defaults.capacityValue;
     	      this.idcsDomainId = defaults.idcsDomainId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.networkDetails = defaults.networkDetails;
@@ -60,6 +135,18 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder capacityType(@Nullable String capacityType) {
+
+            this.capacityType = capacityType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder capacityValue(@Nullable Integer capacityValue) {
+
+            this.capacityValue = capacityValue;
+            return this;
+        }
         @CustomType.Setter
         public Builder idcsDomainId(@Nullable String idcsDomainId) {
 
@@ -95,6 +182,8 @@ public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttach
         }
         public ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails build() {
             final var _resultValue = new ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails();
+            _resultValue.capacityType = capacityType;
+            _resultValue.capacityValue = capacityValue;
             _resultValue.idcsDomainId = idcsDomainId;
             _resultValue.licenseModel = licenseModel;
             _resultValue.networkDetails = networkDetails;

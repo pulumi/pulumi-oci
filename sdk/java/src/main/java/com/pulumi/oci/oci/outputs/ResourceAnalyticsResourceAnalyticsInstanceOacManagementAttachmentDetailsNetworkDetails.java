@@ -12,13 +12,35 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+    /**
+     * @return List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     private @Nullable List<String> nsgIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     private @Nullable String subnetId;
 
     private ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails() {}
+    /**
+     * @return List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)&#39;s for the private network details.  Example: `[&#34;ocid...&#34;, &#34;ocid...&#34;]`
+     * 
+     */
     public List<String> nsgIds() {
         return this.nsgIds == null ? List.of() : this.nsgIds;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }

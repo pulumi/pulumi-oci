@@ -775,6 +775,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsClusterAdminPasswordResetAction",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsClusterAdminPasswordResetAction:BdsClusterAdminPasswordResetAction": "BdsClusterAdminPasswordResetAction"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstance",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -787,6 +795,14 @@ _utilities.register(
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
    "oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey": "BdsInstanceApiKey"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceBdsCertificateConfiguration",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceBdsCertificateConfiguration:BdsInstanceBdsCertificateConfiguration": "BdsInstanceBdsCertificateConfiguration"
   }
  },
  {
@@ -3919,6 +3935,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseTools/databaseToolsDatabaseApiGatewayConfig",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/databaseToolsDatabaseApiGatewayConfig:DatabaseToolsDatabaseApiGatewayConfig": "DatabaseToolsDatabaseApiGatewayConfig"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseTools/databaseToolsIdentity",
   "fqn": "pulumi_oci.databasetools",
   "classes": {
@@ -3927,10 +3951,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseTools/databaseToolsMcpServer",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/databaseToolsMcpServer:DatabaseToolsMcpServer": "DatabaseToolsMcpServer"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/databaseToolsMcpToolset",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/databaseToolsMcpToolset:DatabaseToolsMcpToolset": "DatabaseToolsMcpToolset"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseTools/databaseToolsPrivateEndpoint",
   "fqn": "pulumi_oci.databasetools",
   "classes": {
    "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint": "DatabaseToolsPrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseTools/databaseToolsSqlReport",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/databaseToolsSqlReport:DatabaseToolsSqlReport": "DatabaseToolsSqlReport"
   }
  },
  {
@@ -7883,6 +7931,38 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile": "BatchBatchTaskProfile"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/costadCostAlertSubscription",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription": "CostadCostAlertSubscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/costadCostAnomalyEvent",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent": "CostadCostAnomalyEvent"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/costadCostAnomalyMonitor",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/costadCostAnomalyMonitor:CostadCostAnomalyMonitor": "CostadCostAnomalyMonitor"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement": "CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"
   }
  },
  {

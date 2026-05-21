@@ -131,6 +131,8 @@ __all__ = [
     'GetBdsClusterVersionsFilterArgsDict',
     'GetBdsInstanceApiKeysFilterArgs',
     'GetBdsInstanceApiKeysFilterArgsDict',
+    'GetBdsInstanceBdsCertificateConfigurationsFilterArgs',
+    'GetBdsInstanceBdsCertificateConfigurationsFilterArgsDict',
     'GetBdsInstanceGetOsPatchFilterArgs',
     'GetBdsInstanceGetOsPatchFilterArgsDict',
     'GetBdsInstanceIdentityConfigurationsFilterArgs',
@@ -236,10 +238,6 @@ class AutoScalingConfigurationPolicyDetailsArgsDict(TypedDict):
     timezone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
-
-    ** IMPORTANT **
-    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
     trigger_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -267,10 +265,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
         :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs'] scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
         :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]] schedule_details: (Updatable) Details of a horizontal scaling schedule.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trigger_type: The type of autoscaling trigger.
         """
         pulumi.set(__self__, "policy_type", policy_type)
@@ -380,10 +374,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "timezone")
 
@@ -2925,7 +2915,7 @@ class BdsInstanceIdentityConfigurationUpstConfigurationArgsDict(TypedDict):
     """
     secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Secret ID for token exchange keytab
+    (Updatable) The secretId for the clusterAdminPassword.
     """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2967,7 +2957,7 @@ class BdsInstanceIdentityConfigurationUpstConfigurationArgs:
         """
         :param pulumi.Input[_builtins.str] keytab_content: The kerberos keytab content used for creating identity propagation trust config, in base64 format
         :param pulumi.Input[_builtins.str] master_encryption_key_id: Master Encryption key used for encrypting token exchange keytab.
-        :param pulumi.Input[_builtins.str] secret_id: Secret ID for token exchange keytab
+        :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the UPST config
         :param pulumi.Input[_builtins.str] time_created: Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_token_exchange_keytab_last_refreshed: Time when the keytab for token exchange principal is last refreshed, shown as an RFC 3339 formatted datetime string.
@@ -3022,7 +3012,7 @@ class BdsInstanceIdentityConfigurationUpstConfigurationArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Secret ID for token exchange keytab
+        (Updatable) The secretId for the clusterAdminPassword.
         """
         return pulumi.get(self, "secret_id")
 
@@ -3619,7 +3609,7 @@ class BdsInstanceNodeArgsDict(TypedDict):
     """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+    (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
     """
     subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3678,7 +3668,7 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[_builtins.str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[_builtins.str] shape: (Updatable) Shape of the node.
         :param pulumi.Input[_builtins.str] ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet in which the node will be created.
         :param pulumi.Input[_builtins.str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
@@ -3948,7 +3938,7 @@ class BdsInstanceNodeArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
@@ -5090,6 +5080,50 @@ class GetBdsInstanceApiKeysFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetBdsInstanceApiKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetBdsInstanceBdsCertificateConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetBdsInstanceBdsCertificateConfigurationsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

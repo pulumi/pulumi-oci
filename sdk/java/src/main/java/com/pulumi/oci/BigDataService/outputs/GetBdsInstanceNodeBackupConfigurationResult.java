@@ -29,7 +29,7 @@ public final class GetBdsInstanceNodeBackupConfigurationResult {
      */
     private String displayName;
     /**
-     * @return The unique identifier for the NodeBackupConfiguration.
+     * @return The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
      * 
      */
     private String id;
@@ -93,7 +93,7 @@ public final class GetBdsInstanceNodeBackupConfigurationResult {
         return this.displayName;
     }
     /**
-     * @return The unique identifier for the NodeBackupConfiguration.
+     * @return The id of the NodeBackupConfiguration defined under BDS resources, not OCID.
      * 
      */
     public String id() {

@@ -48856,6 +48856,7 @@ class GetShapeShapeResult(dict):
                  gpu_description: _builtins.str,
                  gpus: _builtins.int,
                  is_billed_for_stopped_instance: _builtins.bool,
+                 is_cnic: _builtins.bool,
                  is_flexible: _builtins.bool,
                  is_live_migration_supported: _builtins.bool,
                  is_subcore: _builtins.bool,
@@ -48886,6 +48887,7 @@ class GetShapeShapeResult(dict):
         pulumi.set(__self__, "gpu_description", gpu_description)
         pulumi.set(__self__, "gpus", gpus)
         pulumi.set(__self__, "is_billed_for_stopped_instance", is_billed_for_stopped_instance)
+        pulumi.set(__self__, "is_cnic", is_cnic)
         pulumi.set(__self__, "is_flexible", is_flexible)
         pulumi.set(__self__, "is_live_migration_supported", is_live_migration_supported)
         pulumi.set(__self__, "is_subcore", is_subcore)
@@ -48936,6 +48938,11 @@ class GetShapeShapeResult(dict):
     @pulumi.getter(name="isBilledForStoppedInstance")
     def is_billed_for_stopped_instance(self) -> _builtins.bool:
         return pulumi.get(self, "is_billed_for_stopped_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="isCnic")
+    def is_cnic(self) -> _builtins.bool:
+        return pulumi.get(self, "is_cnic")
 
     @_builtins.property
     @pulumi.getter(name="isFlexible")
@@ -49520,6 +49527,7 @@ class GetShapesShapeResult(dict):
                  gpu_description: _builtins.str,
                  gpus: _builtins.int,
                  is_billed_for_stopped_instance: _builtins.bool,
+                 is_cnic: _builtins.bool,
                  is_flexible: _builtins.bool,
                  is_live_migration_supported: _builtins.bool,
                  is_subcore: _builtins.bool,
@@ -49551,6 +49559,7 @@ class GetShapesShapeResult(dict):
         :param _builtins.str gpu_description: A short description of the graphics processing unit (GPU) available for this shape.
         :param _builtins.int gpus: The number of GPUs available for this shape.
         :param _builtins.bool is_billed_for_stopped_instance: Whether billing continues when the instances that use this shape are in the stopped state.
+        :param _builtins.bool is_cnic: Whether the shape supports CNIC networking.
         :param _builtins.bool is_flexible: Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
         :param _builtins.bool is_live_migration_supported: Whether live migration is supported for this shape.
         :param _builtins.bool is_subcore: Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional spikes in usage.
@@ -49582,6 +49591,7 @@ class GetShapesShapeResult(dict):
         pulumi.set(__self__, "gpu_description", gpu_description)
         pulumi.set(__self__, "gpus", gpus)
         pulumi.set(__self__, "is_billed_for_stopped_instance", is_billed_for_stopped_instance)
+        pulumi.set(__self__, "is_cnic", is_cnic)
         pulumi.set(__self__, "is_flexible", is_flexible)
         pulumi.set(__self__, "is_live_migration_supported", is_live_migration_supported)
         pulumi.set(__self__, "is_subcore", is_subcore)
@@ -49647,6 +49657,14 @@ class GetShapesShapeResult(dict):
         Whether billing continues when the instances that use this shape are in the stopped state.
         """
         return pulumi.get(self, "is_billed_for_stopped_instance")
+
+    @_builtins.property
+    @pulumi.getter(name="isCnic")
+    def is_cnic(self) -> _builtins.bool:
+        """
+        Whether the shape supports CNIC networking.
+        """
+        return pulumi.get(self, "is_cnic")
 
     @_builtins.property
     @pulumi.getter(name="isFlexible")

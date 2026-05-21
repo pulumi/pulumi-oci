@@ -112,6 +112,10 @@ export interface GetBdsInstanceResult {
      */
     readonly isKafkaConfigured: boolean;
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     */
+    readonly isSecretReused: boolean;
+    /**
      * Boolean flag specifying whether or not the cluster should be set up as secure.
      */
     readonly isSecure: boolean;
@@ -140,6 +144,11 @@ export interface GetBdsInstanceResult {
     readonly numberOfNodesRequiringMaintenanceReboot: number;
     readonly osPatchVersion: string;
     readonly removeNode: string;
+    readonly removeNodes: string[];
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    readonly secretId: string;
     readonly startClusterShapeConfigs: outputs.BigDataService.GetBdsInstanceStartClusterShapeConfig[];
     /**
      * The state of the cluster.
@@ -149,6 +158,10 @@ export interface GetBdsInstanceResult {
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
     readonly timeCreated: string;
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     */
+    readonly timeEarliestCertificateExpiration: string;
     /**
      * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      */

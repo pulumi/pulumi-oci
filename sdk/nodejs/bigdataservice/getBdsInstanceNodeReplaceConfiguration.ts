@@ -63,7 +63,7 @@ export interface GetBdsInstanceNodeReplaceConfigurationResult {
      */
     readonly durationInMinutes: number;
     /**
-     * The unique identifier for the NodeReplaceConfiguration.
+     * The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
      */
     readonly id: string;
     /**
@@ -75,6 +75,10 @@ export interface GetBdsInstanceNodeReplaceConfigurationResult {
      */
     readonly metricType: string;
     readonly nodeReplaceConfigurationId: string;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    readonly secretId: string;
     /**
      * The state of the NodeReplaceConfiguration.
      */

@@ -12,14 +12,61 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+// Attaches an OAC instance to a ResourceAnalyticsInstance.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/oci"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := oci.NewResourceAnalyticsResourceAnalyticsInstanceOacManagement(ctx, "test_resource_analytics_instance_oac_management", &oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs{
+//				AttachmentType:              pulumi.Any(resourceAnalyticsInstanceOacManagementAttachmentType),
+//				ResourceAnalyticsInstanceId: pulumi.Any(testResourceAnalyticsInstance.Id),
+//				EnableOac:                   pulumi.Any(enableOac),
+//				AttachmentDetails: &oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs{
+//					IdcsDomainId:  pulumi.Any(testDomain.Id),
+//					CapacityType:  pulumi.Any(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityType),
+//					CapacityValue: pulumi.Any(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue),
+//					LicenseModel:  pulumi.Any(resourceAnalyticsInstanceOacManagementAttachmentDetailsLicenseModel),
+//					NetworkDetails: &oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs{
+//						SubnetId: pulumi.Any(testSubnet.Id),
+//						NsgIds:   pulumi.Any(resourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsNsgIds),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ResourceAnalyticsResourceAnalyticsInstanceOacManagement struct {
 	pulumi.CustomResourceState
 
-	AttachmentDetails           ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput `pulumi:"attachmentDetails"`
-	AttachmentType              pulumi.StringOutput                                                            `pulumi:"attachmentType"`
-	EnableOac                   pulumi.BoolOutput                                                              `pulumi:"enableOac"`
-	ResourceAnalyticsInstanceId pulumi.StringOutput                                                            `pulumi:"resourceAnalyticsInstanceId"`
-	State                       pulumi.StringOutput                                                            `pulumi:"state"`
+	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+	AttachmentDetails ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput `pulumi:"attachmentDetails"`
+	// The type of attachment the OAC instance is using. Example: `MANAGED`
+	AttachmentType pulumi.StringOutput `pulumi:"attachmentType"`
+	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	EnableOac pulumi.BoolOutput `pulumi:"enableOac"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId pulumi.StringOutput `pulumi:"resourceAnalyticsInstanceId"`
+	// The current state of the ResourceAnalyticsInstance.
+	State pulumi.StringOutput `pulumi:"state"`
 }
 
 // NewResourceAnalyticsResourceAnalyticsInstanceOacManagement registers a new resource with the given unique name, arguments, and options.
@@ -58,19 +105,29 @@ func GetResourceAnalyticsResourceAnalyticsInstanceOacManagement(ctx *pulumi.Cont
 
 // Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstanceOacManagement resources.
 type resourceAnalyticsResourceAnalyticsInstanceOacManagementState struct {
-	AttachmentDetails           *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails `pulumi:"attachmentDetails"`
-	AttachmentType              *string                                                                   `pulumi:"attachmentType"`
-	EnableOac                   *bool                                                                     `pulumi:"enableOac"`
-	ResourceAnalyticsInstanceId *string                                                                   `pulumi:"resourceAnalyticsInstanceId"`
-	State                       *string                                                                   `pulumi:"state"`
+	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+	AttachmentDetails *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails `pulumi:"attachmentDetails"`
+	// The type of attachment the OAC instance is using. Example: `MANAGED`
+	AttachmentType *string `pulumi:"attachmentType"`
+	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	EnableOac *bool `pulumi:"enableOac"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId *string `pulumi:"resourceAnalyticsInstanceId"`
+	// The current state of the ResourceAnalyticsInstance.
+	State *string `pulumi:"state"`
 }
 
 type ResourceAnalyticsResourceAnalyticsInstanceOacManagementState struct {
-	AttachmentDetails           ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput
-	AttachmentType              pulumi.StringPtrInput
-	EnableOac                   pulumi.BoolPtrInput
+	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+	AttachmentDetails ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput
+	// The type of attachment the OAC instance is using. Example: `MANAGED`
+	AttachmentType pulumi.StringPtrInput
+	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	EnableOac pulumi.BoolPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId pulumi.StringPtrInput
-	State                       pulumi.StringPtrInput
+	// The current state of the ResourceAnalyticsInstance.
+	State pulumi.StringPtrInput
 }
 
 func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementState) ElementType() reflect.Type {
@@ -78,17 +135,25 @@ func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementState) ElementType(
 }
 
 type resourceAnalyticsResourceAnalyticsInstanceOacManagementArgs struct {
-	AttachmentDetails           *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails `pulumi:"attachmentDetails"`
-	AttachmentType              *string                                                                   `pulumi:"attachmentType"`
-	EnableOac                   bool                                                                      `pulumi:"enableOac"`
-	ResourceAnalyticsInstanceId string                                                                    `pulumi:"resourceAnalyticsInstanceId"`
+	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+	AttachmentDetails *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails `pulumi:"attachmentDetails"`
+	// The type of attachment the OAC instance is using. Example: `MANAGED`
+	AttachmentType *string `pulumi:"attachmentType"`
+	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	EnableOac bool `pulumi:"enableOac"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
 }
 
 // The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource.
 type ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs struct {
-	AttachmentDetails           ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput
-	AttachmentType              pulumi.StringPtrInput
-	EnableOac                   pulumi.BoolInput
+	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
+	AttachmentDetails ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsPtrInput
+	// The type of attachment the OAC instance is using. Example: `MANAGED`
+	AttachmentType pulumi.StringPtrInput
+	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+	EnableOac pulumi.BoolInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 	ResourceAnalyticsInstanceId pulumi.StringInput
 }
 
@@ -179,28 +244,33 @@ func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) ToResourc
 	return o
 }
 
+// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) AttachmentDetails() ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput {
 		return v.AttachmentDetails
 	}).(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsOutput)
 }
 
+// The type of attachment the OAC instance is using. Example: `MANAGED`
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) AttachmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) pulumi.StringOutput {
 		return v.AttachmentType
 	}).(pulumi.StringOutput)
 }
 
+// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) EnableOac() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) pulumi.BoolOutput { return v.EnableOac }).(pulumi.BoolOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) pulumi.StringOutput {
 		return v.ResourceAnalyticsInstanceId
 	}).(pulumi.StringOutput)
 }
 
+// The current state of the ResourceAnalyticsInstance.
 func (o ResourceAnalyticsResourceAnalyticsInstanceOacManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResourceAnalyticsResourceAnalyticsInstanceOacManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

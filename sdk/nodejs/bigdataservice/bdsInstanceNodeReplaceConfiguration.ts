@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstanceNodeReplaceConfiguration = new oci.bigdataservice.BdsInstanceNodeReplaceConfiguration("test_bds_instance_node_replace_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
  *     durationInMinutes: Number(bdsInstanceNodeReplaceConfigurationDurationInMinutes),
  *     levelTypeDetails: {
  *         levelType: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType,
@@ -30,7 +29,9 @@ import * as utilities from "../utilities";
  *         nodeType: bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeType,
  *     },
  *     metricType: bdsInstanceNodeReplaceConfigurationMetricType,
+ *     clusterAdminPassword: bdsInstanceNodeReplaceConfigurationClusterAdminPassword,
  *     displayName: bdsInstanceNodeReplaceConfigurationDisplayName,
+ *     secretId: testSecret.id,
  * });
  * ```
  *
@@ -95,6 +96,10 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
      */
     declare public readonly metricType: pulumi.Output<string>;
     /**
+     * The secretId for the clusterAdminPassword.
+     */
+    declare public readonly secretId: pulumi.Output<string>;
+    /**
      * The state of the NodeReplaceConfiguration.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -126,6 +131,7 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
             resourceInputs["durationInMinutes"] = state?.durationInMinutes;
             resourceInputs["levelTypeDetails"] = state?.levelTypeDetails;
             resourceInputs["metricType"] = state?.metricType;
+            resourceInputs["secretId"] = state?.secretId;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
@@ -133,9 +139,6 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
             const args = argsOrState as BdsInstanceNodeReplaceConfigurationArgs | undefined;
             if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
-            }
-            if (args?.clusterAdminPassword === undefined && !opts.urn) {
-                throw new Error("Missing required property 'clusterAdminPassword'");
             }
             if (args?.durationInMinutes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'durationInMinutes'");
@@ -152,6 +155,7 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
             resourceInputs["durationInMinutes"] = args?.durationInMinutes;
             resourceInputs["levelTypeDetails"] = args?.levelTypeDetails;
             resourceInputs["metricType"] = args?.metricType;
+            resourceInputs["secretId"] = args?.secretId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -192,6 +196,10 @@ export interface BdsInstanceNodeReplaceConfigurationState {
      */
     metricType?: pulumi.Input<string | undefined>;
     /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
+    /**
      * The state of the NodeReplaceConfiguration.
      */
     state?: pulumi.Input<string | undefined>;
@@ -216,7 +224,7 @@ export interface BdsInstanceNodeReplaceConfigurationArgs {
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
@@ -233,4 +241,8 @@ export interface BdsInstanceNodeReplaceConfigurationArgs {
      * (Updatable) Type of compute instance health metric to use for node replacement
      */
     metricType: pulumi.Input<string>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
 }

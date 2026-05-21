@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? BackupId { get; set; }
 
         /// <summary>
+        /// Properties to setup a replication channel with the source (cloned) DB system.
+        /// </summary>
+        [Input("channel")]
+        public Input<Inputs.MysqlDbSystemSourceChannelArgs>? Channel { get; set; }
+
+        /// <summary>
         /// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         /// </summary>
         [Input("dbSystemId")]
@@ -29,6 +35,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// </summary>
         [Input("recoveryPoint")]
         public Input<string>? RecoveryPoint { get; set; }
+
+        /// <summary>
+        /// The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        [Input("region")]
+        public Input<string>? Region { get; set; }
 
         /// <summary>
         /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.

@@ -27,7 +27,7 @@ class GetCertificateResult:
     """
     A collection of values returned by getCertificate.
     """
-    def __init__(__self__, certificate_configs=None, certificate_id=None, certificate_profile_type=None, certificate_revocation_list_details=None, certificate_rules=None, compartment_id=None, config_type=None, current_versions=None, defined_tags=None, description=None, freeform_tags=None, id=None, issuer_certificate_authority_id=None, key_algorithm=None, lifecycle_details=None, name=None, signature_algorithm=None, state=None, subjects=None, time_created=None, time_of_deletion=None):
+    def __init__(__self__, certificate_configs=None, certificate_id=None, certificate_profile_type=None, certificate_revocation_list_details=None, certificate_rules=None, compartment_id=None, config_type=None, current_version_number=None, current_versions=None, defined_tags=None, description=None, freeform_tags=None, id=None, issuer_certificate_authority_id=None, key_algorithm=None, lifecycle_details=None, name=None, signature_algorithm=None, state=None, subjects=None, time_created=None, time_of_deletion=None):
         if certificate_configs and not isinstance(certificate_configs, list):
             raise TypeError("Expected argument 'certificate_configs' to be a list")
         pulumi.set(__self__, "certificate_configs", certificate_configs)
@@ -49,6 +49,9 @@ class GetCertificateResult:
         if config_type and not isinstance(config_type, str):
             raise TypeError("Expected argument 'config_type' to be a str")
         pulumi.set(__self__, "config_type", config_type)
+        if current_version_number and not isinstance(current_version_number, str):
+            raise TypeError("Expected argument 'current_version_number' to be a str")
+        pulumi.set(__self__, "current_version_number", current_version_number)
         if current_versions and not isinstance(current_versions, list):
             raise TypeError("Expected argument 'current_versions' to be a list")
         pulumi.set(__self__, "current_versions", current_versions)
@@ -141,9 +144,14 @@ class GetCertificateResult:
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="currentVersionNumber")
+    def current_version_number(self) -> _builtins.str:
+        return pulumi.get(self, "current_version_number")
 
     @_builtins.property
     @pulumi.getter(name="currentVersions")
@@ -271,6 +279,7 @@ class AwaitableGetCertificateResult(GetCertificateResult):
             certificate_rules=self.certificate_rules,
             compartment_id=self.compartment_id,
             config_type=self.config_type,
+            current_version_number=self.current_version_number,
             current_versions=self.current_versions,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -319,6 +328,7 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
         certificate_rules=pulumi.get(__ret__, 'certificate_rules'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         config_type=pulumi.get(__ret__, 'config_type'),
+        current_version_number=pulumi.get(__ret__, 'current_version_number'),
         current_versions=pulumi.get(__ret__, 'current_versions'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -364,6 +374,7 @@ def get_certificate_output(certificate_id: pulumi.Input[Optional[_builtins.str]]
         certificate_rules=pulumi.get(__response__, 'certificate_rules'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         config_type=pulumi.get(__response__, 'config_type'),
+        current_version_number=pulumi.get(__response__, 'current_version_number'),
         current_versions=pulumi.get(__response__, 'current_versions'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),

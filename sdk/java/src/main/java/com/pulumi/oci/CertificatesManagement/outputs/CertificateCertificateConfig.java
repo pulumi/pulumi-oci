@@ -17,12 +17,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CertificateCertificateConfig {
     /**
+     * @return , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+     * 
+     */
+    private @Nullable String certChainPem;
+    /**
+     * @return (Updatable) The leaf certificate (in PEM format).
+     * 
+     */
+    private @Nullable String certificatePem;
+    /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
     private @Nullable String certificateProfileType;
     /**
-     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     private String configType;
@@ -42,10 +52,25 @@ public final class CertificateCertificateConfig {
      */
     private @Nullable String keyAlgorithm;
     /**
+     * @return (Updatable) The private key (in PEM format). This value is sensitive.
+     * 
+     */
+    private @Nullable String privateKeyPem;
+    /**
+     * @return (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+     * 
+     */
+    private @Nullable String privateKeyPemPassphrase;
+    /**
      * @return The algorithm to use to sign the public key certificate.
      * 
      */
     private @Nullable String signatureAlgorithm;
+    /**
+     * @return (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+     * 
+     */
+    private @Nullable String stage;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
@@ -69,6 +94,20 @@ public final class CertificateCertificateConfig {
 
     private CertificateCertificateConfig() {}
     /**
+     * @return , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+     * 
+     */
+    public Optional<String> certChainPem() {
+        return Optional.ofNullable(this.certChainPem);
+    }
+    /**
+     * @return (Updatable) The leaf certificate (in PEM format).
+     * 
+     */
+    public Optional<String> certificatePem() {
+        return Optional.ofNullable(this.certificatePem);
+    }
+    /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
@@ -76,7 +115,7 @@ public final class CertificateCertificateConfig {
         return Optional.ofNullable(this.certificateProfileType);
     }
     /**
-     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public String configType() {
@@ -104,11 +143,32 @@ public final class CertificateCertificateConfig {
         return Optional.ofNullable(this.keyAlgorithm);
     }
     /**
+     * @return (Updatable) The private key (in PEM format). This value is sensitive.
+     * 
+     */
+    public Optional<String> privateKeyPem() {
+        return Optional.ofNullable(this.privateKeyPem);
+    }
+    /**
+     * @return (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+     * 
+     */
+    public Optional<String> privateKeyPemPassphrase() {
+        return Optional.ofNullable(this.privateKeyPemPassphrase);
+    }
+    /**
      * @return The algorithm to use to sign the public key certificate.
      * 
      */
     public Optional<String> signatureAlgorithm() {
         return Optional.ofNullable(this.signatureAlgorithm);
+    }
+    /**
+     * @return (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+     * 
+     */
+    public Optional<String> stage() {
+        return Optional.ofNullable(this.stage);
     }
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -148,12 +208,17 @@ public final class CertificateCertificateConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String certChainPem;
+        private @Nullable String certificatePem;
         private @Nullable String certificateProfileType;
         private String configType;
         private @Nullable String csrPem;
         private @Nullable String issuerCertificateAuthorityId;
         private @Nullable String keyAlgorithm;
+        private @Nullable String privateKeyPem;
+        private @Nullable String privateKeyPemPassphrase;
         private @Nullable String signatureAlgorithm;
+        private @Nullable String stage;
         private @Nullable CertificateCertificateConfigSubject subject;
         private @Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
         private @Nullable CertificateCertificateConfigValidity validity;
@@ -161,18 +226,35 @@ public final class CertificateCertificateConfig {
         public Builder() {}
         public Builder(CertificateCertificateConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.certChainPem = defaults.certChainPem;
+    	      this.certificatePem = defaults.certificatePem;
     	      this.certificateProfileType = defaults.certificateProfileType;
     	      this.configType = defaults.configType;
     	      this.csrPem = defaults.csrPem;
     	      this.issuerCertificateAuthorityId = defaults.issuerCertificateAuthorityId;
     	      this.keyAlgorithm = defaults.keyAlgorithm;
+    	      this.privateKeyPem = defaults.privateKeyPem;
+    	      this.privateKeyPemPassphrase = defaults.privateKeyPemPassphrase;
     	      this.signatureAlgorithm = defaults.signatureAlgorithm;
+    	      this.stage = defaults.stage;
     	      this.subject = defaults.subject;
     	      this.subjectAlternativeNames = defaults.subjectAlternativeNames;
     	      this.validity = defaults.validity;
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
+        public Builder certChainPem(@Nullable String certChainPem) {
+
+            this.certChainPem = certChainPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder certificatePem(@Nullable String certificatePem) {
+
+            this.certificatePem = certificatePem;
+            return this;
+        }
         @CustomType.Setter
         public Builder certificateProfileType(@Nullable String certificateProfileType) {
 
@@ -206,9 +288,27 @@ public final class CertificateCertificateConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder privateKeyPem(@Nullable String privateKeyPem) {
+
+            this.privateKeyPem = privateKeyPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateKeyPemPassphrase(@Nullable String privateKeyPemPassphrase) {
+
+            this.privateKeyPemPassphrase = privateKeyPemPassphrase;
+            return this;
+        }
+        @CustomType.Setter
         public Builder signatureAlgorithm(@Nullable String signatureAlgorithm) {
 
             this.signatureAlgorithm = signatureAlgorithm;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stage(@Nullable String stage) {
+
+            this.stage = stage;
             return this;
         }
         @CustomType.Setter
@@ -240,12 +340,17 @@ public final class CertificateCertificateConfig {
         }
         public CertificateCertificateConfig build() {
             final var _resultValue = new CertificateCertificateConfig();
+            _resultValue.certChainPem = certChainPem;
+            _resultValue.certificatePem = certificatePem;
             _resultValue.certificateProfileType = certificateProfileType;
             _resultValue.configType = configType;
             _resultValue.csrPem = csrPem;
             _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             _resultValue.keyAlgorithm = keyAlgorithm;
+            _resultValue.privateKeyPem = privateKeyPem;
+            _resultValue.privateKeyPemPassphrase = privateKeyPemPassphrase;
             _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.stage = stage;
             _resultValue.subject = subject;
             _resultValue.subjectAlternativeNames = subjectAlternativeNames;
             _resultValue.validity = validity;

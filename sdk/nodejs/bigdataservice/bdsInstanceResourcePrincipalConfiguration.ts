@@ -20,8 +20,9 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstanceResourcePrincipalConfiguration = new oci.bigdataservice.BdsInstanceResourcePrincipalConfiguration("test_bds_instance_resource_principal_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
+ *     clusterAdminPassword: bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
+ *     secretId: testSecret.id,
  *     sessionTokenLifeSpanDurationInHours: Number(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours),
  * });
  * ```
@@ -79,6 +80,10 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
      */
     declare public readonly forceRefreshResourcePrincipalTrigger: pulumi.Output<number | undefined>;
     /**
+     * The secretId for the clusterAdminPassword.
+     */
+    declare public readonly secretId: pulumi.Output<string>;
+    /**
      * (Updatable) Life span in hours for the resource principal session token.
      */
     declare public readonly sessionTokenLifeSpanDurationInHours: pulumi.Output<number>;
@@ -120,6 +125,7 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
             resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["forceRefreshResourcePrincipalTrigger"] = state?.forceRefreshResourcePrincipalTrigger;
+            resourceInputs["secretId"] = state?.secretId;
             resourceInputs["sessionTokenLifeSpanDurationInHours"] = state?.sessionTokenLifeSpanDurationInHours;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -131,9 +137,6 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
             if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if (args?.clusterAdminPassword === undefined && !opts.urn) {
-                throw new Error("Missing required property 'clusterAdminPassword'");
-            }
             if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
@@ -141,6 +144,7 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["forceRefreshResourcePrincipalTrigger"] = args?.forceRefreshResourcePrincipalTrigger;
+            resourceInputs["secretId"] = args?.secretId;
             resourceInputs["sessionTokenLifeSpanDurationInHours"] = args?.sessionTokenLifeSpanDurationInHours;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -175,6 +179,10 @@ export interface BdsInstanceResourcePrincipalConfigurationState {
      * (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
      */
     forceRefreshResourcePrincipalTrigger?: pulumi.Input<number | undefined>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Life span in hours for the resource principal session token.
      */
@@ -212,7 +220,7 @@ export interface BdsInstanceResourcePrincipalConfigurationArgs {
     /**
      * Base-64 encoded Cluster Admin Password for cluster admin user.
      */
-    clusterAdminPassword: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
@@ -221,6 +229,10 @@ export interface BdsInstanceResourcePrincipalConfigurationArgs {
      * (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
      */
     forceRefreshResourcePrincipalTrigger?: pulumi.Input<number | undefined>;
+    /**
+     * The secretId for the clusterAdminPassword.
+     */
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Life span in hours for the resource principal session token.
      */

@@ -60,6 +60,8 @@ type LookupDatabaseToolsConnectionArgs struct {
 type LookupDatabaseToolsConnectionResult struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
+	// Specifies the authentication type used to connect to the database.
+	AuthenticationType string `pulumi:"authenticationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
@@ -87,7 +89,7 @@ type LookupDatabaseToolsConnectionResult struct {
 	RelatedResources []GetDatabaseToolsConnectionRelatedResource `pulumi:"relatedResources"`
 	// Specifies the Database Tools Runtime endpoint.
 	RuntimeEndpoint string `pulumi:"runtimeEndpoint"`
-	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 	RuntimeIdentity string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport string `pulumi:"runtimeSupport"`
@@ -103,7 +105,7 @@ type LookupDatabaseToolsConnectionResult struct {
 	Type string `pulumi:"type"`
 	// The JDBC URL used to connect to the Generic JDBC database system.
 	Url string `pulumi:"url"`
-	// The database user name.
+	// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 	UserName string `pulumi:"userName"`
 	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionUserPassword `pulumi:"userPasswords"`
@@ -146,6 +148,11 @@ func (o LookupDatabaseToolsConnectionResultOutput) ToLookupDatabaseToolsConnecti
 // The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 func (o LookupDatabaseToolsConnectionResultOutput) AdvancedProperties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) map[string]string { return v.AdvancedProperties }).(pulumi.StringMapOutput)
+}
+
+// Specifies the authentication type used to connect to the database.
+func (o LookupDatabaseToolsConnectionResultOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -221,7 +228,7 @@ func (o LookupDatabaseToolsConnectionResultOutput) RuntimeEndpoint() pulumi.Stri
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeEndpoint }).(pulumi.StringOutput)
 }
 
-// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+// Specifies the identity used when accessing Oracle Cloud Infrastructure resources at runtime. AUTHENTICATED_PRINCIPAL to use the caller’s identity (On-Behalf-Of token), or RESOURCE_PRINCIPAL to use the connection’s resource principal (RPST).
 func (o LookupDatabaseToolsConnectionResultOutput) RuntimeIdentity() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeIdentity }).(pulumi.StringOutput)
 }
@@ -261,7 +268,7 @@ func (o LookupDatabaseToolsConnectionResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The database user name.
+// The database user name. When authenticationType is TOKEN, if provided, userName must be in square brackets (for example, [proxyClient]).
 func (o LookupDatabaseToolsConnectionResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.UserName }).(pulumi.StringOutput)
 }

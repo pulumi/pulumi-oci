@@ -27,7 +27,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int DurationInMinutes;
         /// <summary>
-        /// The unique identifier for the NodeReplaceConfiguration.
+        /// The id of the NodeReplaceConfiguration defined under BDS resources, not OCID.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -38,6 +38,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Type of compute instance health metric to use for node replacement
         /// </summary>
         public readonly string MetricType;
+        /// <summary>
+        /// The secretId for the clusterAdminPassword.
+        /// </summary>
+        public readonly string SecretId;
         /// <summary>
         /// The state of the NodeReplaceConfiguration.
         /// </summary>
@@ -67,6 +71,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string metricType,
 
+            string secretId,
+
             string state,
 
             string timeCreated,
@@ -80,6 +86,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             Id = id;
             LevelTypeDetails = levelTypeDetails;
             MetricType = metricType;
+            SecretId = secretId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

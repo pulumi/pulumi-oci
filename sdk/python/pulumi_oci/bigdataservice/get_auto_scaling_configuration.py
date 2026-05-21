@@ -27,7 +27,7 @@ class GetAutoScalingConfigurationResult:
     """
     A collection of values returned by getAutoScalingConfiguration.
     """
-    def __init__(__self__, auto_scaling_configuration_id=None, bds_instance_id=None, cluster_admin_password=None, display_name=None, id=None, is_enabled=None, node_type=None, policies=None, policy_details=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, auto_scaling_configuration_id=None, bds_instance_id=None, cluster_admin_password=None, display_name=None, id=None, is_enabled=None, node_type=None, policies=None, policy_details=None, secret_id=None, state=None, time_created=None, time_updated=None):
         if auto_scaling_configuration_id and not isinstance(auto_scaling_configuration_id, str):
             raise TypeError("Expected argument 'auto_scaling_configuration_id' to be a str")
         pulumi.set(__self__, "auto_scaling_configuration_id", auto_scaling_configuration_id)
@@ -55,6 +55,9 @@ class GetAutoScalingConfigurationResult:
         if policy_details and not isinstance(policy_details, list):
             raise TypeError("Expected argument 'policy_details' to be a list")
         pulumi.set(__self__, "policy_details", policy_details)
+        if secret_id and not isinstance(secret_id, str):
+            raise TypeError("Expected argument 'secret_id' to be a str")
+        pulumi.set(__self__, "secret_id", secret_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -126,6 +129,14 @@ class GetAutoScalingConfigurationResult:
         return pulumi.get(self, "policy_details")
 
     @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The secretId for the clusterAdminPassword.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -165,6 +176,7 @@ class AwaitableGetAutoScalingConfigurationResult(GetAutoScalingConfigurationResu
             node_type=self.node_type,
             policies=self.policies,
             policy_details=self.policy_details,
+            secret_id=self.secret_id,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -208,6 +220,7 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[_buil
         node_type=pulumi.get(__ret__, 'node_type'),
         policies=pulumi.get(__ret__, 'policies'),
         policy_details=pulumi.get(__ret__, 'policy_details'),
+        secret_id=pulumi.get(__ret__, 'secret_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -248,6 +261,7 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: pulumi.
         node_type=pulumi.get(__response__, 'node_type'),
         policies=pulumi.get(__response__, 'policies'),
         policy_details=pulumi.get(__response__, 'policy_details'),
+        secret_id=pulumi.get(__response__, 'secret_id'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

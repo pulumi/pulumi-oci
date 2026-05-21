@@ -69,6 +69,7 @@ import javax.annotation.Nullable;
  *                 .privateKeyPem(certificateCertificateConfigPrivateKeyPem)
  *                 .privateKeyPemPassphrase(certificateCertificateConfigPrivateKeyPemPassphrase)
  *                 .signatureAlgorithm(certificateCertificateConfigSignatureAlgorithm)
+ *                 .stage(certificateCertificateConfigStage)
  *                 .subject(CertificateCertificateConfigSubjectArgs.builder()
  *                     .commonName(certificateCertificateConfigSubjectCommonName)
  *                     .country(certificateCertificateConfigSubjectCountry)
@@ -197,18 +198,32 @@ public class Certificate extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
-     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public Output<String> configType() {
         return this.configType;
+    }
+    /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    @Export(name="currentVersionNumber", refs={String.class}, tree="[0]")
+    private Output<String> currentVersionNumber;
+
+    /**
+     * @return (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     * 
+     */
+    public Output<String> currentVersionNumber() {
+        return this.currentVersionNumber;
     }
     /**
      * The details of the certificate version. This object does not contain the certificate contents.

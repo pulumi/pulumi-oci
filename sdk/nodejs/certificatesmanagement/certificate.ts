@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *         privateKeyPem: certificateCertificateConfigPrivateKeyPem,
  *         privateKeyPemPassphrase: certificateCertificateConfigPrivateKeyPemPassphrase,
  *         signatureAlgorithm: certificateCertificateConfigSignatureAlgorithm,
+ *         stage: certificateCertificateConfigStage,
  *         subject: {
  *             commonName: certificateCertificateConfigSubjectCommonName,
  *             country: certificateCertificateConfigSubjectCountry,
@@ -135,9 +136,13 @@ export class Certificate extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      */
     declare public /*out*/ readonly configType: pulumi.Output<string>;
+    /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     */
+    declare public readonly currentVersionNumber: pulumi.Output<string>;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
@@ -214,6 +219,7 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["certificateRules"] = state?.certificateRules;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["configType"] = state?.configType;
+            resourceInputs["currentVersionNumber"] = state?.currentVersionNumber;
             resourceInputs["currentVersions"] = state?.currentVersions;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
@@ -238,6 +244,7 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["certificateConfig"] = args?.certificateConfig;
             resourceInputs["certificateRules"] = args?.certificateRules;
             resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["currentVersionNumber"] = args?.currentVersionNumber;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["freeformTags"] = args?.freeformTags;
@@ -285,9 +292,13 @@ export interface CertificateState {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      */
     configType?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     */
+    currentVersionNumber?: pulumi.Input<string | undefined>;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
@@ -362,6 +373,10 @@ export interface CertificateArgs {
      * (Updatable) The OCID of the compartment where you want to create the certificate.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+     */
+    currentVersionNumber?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */

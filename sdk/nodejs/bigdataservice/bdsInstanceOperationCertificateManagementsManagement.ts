@@ -21,16 +21,17 @@ import * as utilities from "../utilities";
  *
  * const testBdsInstanceOperationCertificateManagementsManagement = new oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management", {
  *     bdsInstanceId: testBdsInstance.id,
- *     clusterAdminPassword: bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
  *     services: bdsInstanceOperationCertificateManagementsManagementServices,
  *     enableOperationCertificateManagement: enableOperationCertificateManagement === "true",
  *     renewOperationCertificateManagement: renewOperationCertificateManagement === "true",
+ *     clusterAdminPassword: bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
  *     hostCertDetails: [{
  *         certificate: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate,
  *         hostName: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName,
  *         privateKey: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey,
  *     }],
  *     rootCertificate: bdsInstanceOperationCertificateManagementsManagementRootCertificate,
+ *     secretId: testSecret.id,
  *     serverKeyPassword: bdsInstanceOperationCertificateManagementsManagementServerKeyPassword,
  * });
  * ```

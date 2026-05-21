@@ -19,6 +19,10 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeysPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
@@ -63,6 +67,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsClusterVersionsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeyResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceApiKeysResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCertificateConfigurationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceBdsCertificateConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceIdentityConfigurationResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceIdentityConfigurationsResult;
@@ -1243,6 +1249,441 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceApiKeys:getBdsInstanceApiKeys", TypeShape.of(GetBdsInstanceApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs.builder()
+     *             .bdsCertificateConfigurationId(testConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationResult> getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs args) {
+        return getBdsInstanceBdsCertificateConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs.builder()
+     *             .bdsCertificateConfigurationId(testConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCertificateConfigurationResult> getBdsInstanceBdsCertificateConfigurationPlain(GetBdsInstanceBdsCertificateConfigurationPlainArgs args) {
+        return getBdsInstanceBdsCertificateConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs.builder()
+     *             .bdsCertificateConfigurationId(testConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationResult> getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCertificateConfiguration:getBdsInstanceBdsCertificateConfiguration", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs.builder()
+     *             .bdsCertificateConfigurationId(testConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationResult> getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCertificateConfiguration:getBdsInstanceBdsCertificateConfiguration", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Bds Certificate Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the BdsCertificateConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfiguration(GetBdsInstanceBdsCertificateConfigurationArgs.builder()
+     *             .bdsCertificateConfigurationId(testConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCertificateConfigurationResult> getBdsInstanceBdsCertificateConfigurationPlain(GetBdsInstanceBdsCertificateConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceBdsCertificateConfiguration:getBdsInstanceBdsCertificateConfiguration", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Certificate Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCertificateConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationsResult> getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs args) {
+        return getBdsInstanceBdsCertificateConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Certificate Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCertificateConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCertificateConfigurationsResult> getBdsInstanceBdsCertificateConfigurationsPlain(GetBdsInstanceBdsCertificateConfigurationsPlainArgs args) {
+        return getBdsInstanceBdsCertificateConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Certificate Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCertificateConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationsResult> getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCertificateConfigurations:getBdsInstanceBdsCertificateConfigurations", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Certificate Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCertificateConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBdsInstanceBdsCertificateConfigurationsResult> getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceBdsCertificateConfigurations:getBdsInstanceBdsCertificateConfigurations", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Bds Certificate Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceBdsCertificateConfigurationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceBdsCertificateConfigurations = BigDataServiceFunctions.getBdsInstanceBdsCertificateConfigurations(GetBdsInstanceBdsCertificateConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceBdsCertificateConfigurationDisplayName)
+     *             .state(bdsInstanceBdsCertificateConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceBdsCertificateConfigurationsResult> getBdsInstanceBdsCertificateConfigurationsPlain(GetBdsInstanceBdsCertificateConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceBdsCertificateConfigurations:getBdsInstanceBdsCertificateConfigurations", TypeShape.of(GetBdsInstanceBdsCertificateConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.

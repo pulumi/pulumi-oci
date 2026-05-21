@@ -22,7 +22,7 @@ public final class BdsInstanceIdentityConfigurationUpstConfiguration {
      */
     private @Nullable String masterEncryptionKeyId;
     /**
-     * @return Secret ID for token exchange keytab
+     * @return (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     private @Nullable String secretId;
@@ -73,7 +73,7 @@ public final class BdsInstanceIdentityConfigurationUpstConfiguration {
         return Optional.ofNullable(this.masterEncryptionKeyId);
     }
     /**
-     * @return Secret ID for token exchange keytab
+     * @return (Updatable) The secretId for the clusterAdminPassword.
      * 
      */
     public Optional<String> secretId() {

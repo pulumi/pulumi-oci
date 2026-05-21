@@ -36,15 +36,16 @@ import (
 //			_, err := certificatesmanagement.NewCertificate(ctx, "test_certificate", &certificatesmanagement.CertificateArgs{
 //				CertificateConfig: &certificatesmanagement.CertificateCertificateConfigArgs{
 //					ConfigType:                   pulumi.Any(certificateCertificateConfigConfigType),
-//					CertChainPem:                 certificateCertificateConfigCertChainPem,
-//					CertificatePem:               certificateCertificateConfigCertificatePem,
+//					CertChainPem:                 pulumi.Any(certificateCertificateConfigCertChainPem),
+//					CertificatePem:               pulumi.Any(certificateCertificateConfigCertificatePem),
 //					CertificateProfileType:       pulumi.Any(certificateCertificateConfigCertificateProfileType),
 //					CsrPem:                       pulumi.Any(certificateCertificateConfigCsrPem),
 //					IssuerCertificateAuthorityId: pulumi.Any(testCertificateAuthority.Id),
 //					KeyAlgorithm:                 pulumi.Any(certificateCertificateConfigKeyAlgorithm),
-//					PrivateKeyPem:                certificateCertificateConfigPrivateKeyPem,
-//					PrivateKeyPemPassphrase:      certificateCertificateConfigPrivateKeyPemPassphrase,
+//					PrivateKeyPem:                pulumi.Any(certificateCertificateConfigPrivateKeyPem),
+//					PrivateKeyPemPassphrase:      pulumi.Any(certificateCertificateConfigPrivateKeyPemPassphrase),
 //					SignatureAlgorithm:           pulumi.Any(certificateCertificateConfigSignatureAlgorithm),
+//					Stage:                        pulumi.Any(certificateCertificateConfigStage),
 //					Subject: &certificatesmanagement.CertificateCertificateConfigSubjectArgs{
 //						CommonName:                 pulumi.Any(certificateCertificateConfigSubjectCommonName),
 //						Country:                    pulumi.Any(certificateCertificateConfigSubjectCountry),
@@ -122,8 +123,10 @@ type Certificate struct {
 	CertificateRules CertificateCertificateRuleArrayOutput `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
+	// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+	CurrentVersionNumber pulumi.StringOutput `pulumi:"currentVersionNumber"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayOutput `pulumi:"currentVersions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -201,8 +204,10 @@ type certificateState struct {
 	CertificateRules []CertificateCertificateRule `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType *string `pulumi:"configType"`
+	// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+	CurrentVersionNumber *string `pulumi:"currentVersionNumber"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []CertificateCurrentVersion `pulumi:"currentVersions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -245,8 +250,10 @@ type CertificateState struct {
 	CertificateRules CertificateCertificateRuleArrayInput
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringPtrInput
-	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 	ConfigType pulumi.StringPtrInput
+	// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+	CurrentVersionNumber pulumi.StringPtrInput
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -289,6 +296,8 @@ type certificateArgs struct {
 	CertificateRules []CertificateCertificateRule `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+	CurrentVersionNumber *string `pulumi:"currentVersionNumber"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -310,6 +319,8 @@ type CertificateArgs struct {
 	CertificateRules CertificateCertificateRuleArrayInput
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringInput
+	// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+	CurrentVersionNumber pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -437,9 +448,14 @@ func (o CertificateOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
 func (o CertificateOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The target current certificate version number. This update cannot be combined with updates to `certificateConfig`, `description`, `definedTags`, `freeformTags`, or `certificateRules`.
+func (o CertificateOutput) CurrentVersionNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CurrentVersionNumber }).(pulumi.StringOutput)
 }
 
 // The details of the certificate version. This object does not contain the certificate contents.

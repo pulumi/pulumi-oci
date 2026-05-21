@@ -513,13 +513,14 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
 
         test_bds_instance_identity_configuration = oci.bigdataservice.BdsInstanceIdentityConfiguration("test_bds_instance_identity_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             confidential_application_id=test_application["id"],
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
+            cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             iam_user_sync_configuration_details={
                 "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
+            secret_id=test_secret["id"],
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],
                 "vault_id": test_vault["id"],
@@ -575,13 +576,14 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
 
         test_bds_instance_identity_configuration = oci.bigdataservice.BdsInstanceIdentityConfiguration("test_bds_instance_identity_configuration",
             bds_instance_id=test_bds_instance["id"],
-            cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             confidential_application_id=test_application["id"],
             display_name=bds_instance_identity_configuration_display_name,
             identity_domain_id=test_domain["id"],
+            cluster_admin_password=bds_instance_identity_configuration_cluster_admin_password,
             iam_user_sync_configuration_details={
                 "is_posix_attributes_addition_required": bds_instance_identity_configuration_iam_user_sync_configuration_details_is_posix_attributes_addition_required == "true",
             },
+            secret_id=test_secret["id"],
             upst_configuration_details={
                 "master_encryption_key_id": test_key["id"],
                 "vault_id": test_vault["id"],

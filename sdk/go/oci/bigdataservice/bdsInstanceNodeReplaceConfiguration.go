@@ -34,16 +34,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstanceNodeReplaceConfiguration(ctx, "test_bds_instance_node_replace_configuration", &bigdataservice.BdsInstanceNodeReplaceConfigurationArgs{
-//				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
-//				ClusterAdminPassword: pulumi.Any(bdsInstanceNodeReplaceConfigurationClusterAdminPassword),
-//				DurationInMinutes:    pulumi.Any(bdsInstanceNodeReplaceConfigurationDurationInMinutes),
+//				BdsInstanceId:     pulumi.Any(testBdsInstance.Id),
+//				DurationInMinutes: pulumi.Any(bdsInstanceNodeReplaceConfigurationDurationInMinutes),
 //				LevelTypeDetails: &bigdataservice.BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs{
 //					LevelType:    pulumi.Any(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsLevelType),
 //					NodeHostName: pulumi.Any(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeHostName),
 //					NodeType:     pulumi.Any(bdsInstanceNodeReplaceConfigurationLevelTypeDetailsNodeType),
 //				},
-//				MetricType:  pulumi.Any(bdsInstanceNodeReplaceConfigurationMetricType),
-//				DisplayName: pulumi.Any(bdsInstanceNodeReplaceConfigurationDisplayName),
+//				MetricType:           pulumi.Any(bdsInstanceNodeReplaceConfigurationMetricType),
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceNodeReplaceConfigurationClusterAdminPassword),
+//				DisplayName:          pulumi.Any(bdsInstanceNodeReplaceConfigurationDisplayName),
+//				SecretId:             pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -76,6 +77,8 @@ type BdsInstanceNodeReplaceConfiguration struct {
 	LevelTypeDetails BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput `pulumi:"levelTypeDetails"`
 	// (Updatable) Type of compute instance health metric to use for node replacement
 	MetricType pulumi.StringOutput `pulumi:"metricType"`
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringOutput `pulumi:"secretId"`
 	// The state of the NodeReplaceConfiguration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -94,9 +97,6 @@ func NewBdsInstanceNodeReplaceConfiguration(ctx *pulumi.Context,
 	if args.BdsInstanceId == nil {
 		return nil, errors.New("invalid value for required argument 'BdsInstanceId'")
 	}
-	if args.ClusterAdminPassword == nil {
-		return nil, errors.New("invalid value for required argument 'ClusterAdminPassword'")
-	}
 	if args.DurationInMinutes == nil {
 		return nil, errors.New("invalid value for required argument 'DurationInMinutes'")
 	}
@@ -107,7 +107,7 @@ func NewBdsInstanceNodeReplaceConfiguration(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'MetricType'")
 	}
 	if args.ClusterAdminPassword != nil {
-		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"clusterAdminPassword",
@@ -148,6 +148,8 @@ type bdsInstanceNodeReplaceConfigurationState struct {
 	LevelTypeDetails *BdsInstanceNodeReplaceConfigurationLevelTypeDetails `pulumi:"levelTypeDetails"`
 	// (Updatable) Type of compute instance health metric to use for node replacement
 	MetricType *string `pulumi:"metricType"`
+	// The secretId for the clusterAdminPassword.
+	SecretId *string `pulumi:"secretId"`
 	// The state of the NodeReplaceConfiguration.
 	State *string `pulumi:"state"`
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -169,6 +171,8 @@ type BdsInstanceNodeReplaceConfigurationState struct {
 	LevelTypeDetails BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput
 	// (Updatable) Type of compute instance health metric to use for node replacement
 	MetricType pulumi.StringPtrInput
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringPtrInput
 	// The state of the NodeReplaceConfiguration.
 	State pulumi.StringPtrInput
 	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
@@ -185,7 +189,7 @@ type bdsInstanceNodeReplaceConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// Base-64 encoded password for the cluster admin user.
-	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
@@ -194,6 +198,8 @@ type bdsInstanceNodeReplaceConfigurationArgs struct {
 	LevelTypeDetails BdsInstanceNodeReplaceConfigurationLevelTypeDetails `pulumi:"levelTypeDetails"`
 	// (Updatable) Type of compute instance health metric to use for node replacement
 	MetricType string `pulumi:"metricType"`
+	// The secretId for the clusterAdminPassword.
+	SecretId *string `pulumi:"secretId"`
 }
 
 // The set of arguments for constructing a BdsInstanceNodeReplaceConfiguration resource.
@@ -201,7 +207,7 @@ type BdsInstanceNodeReplaceConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringInput
 	// Base-64 encoded password for the cluster admin user.
-	ClusterAdminPassword pulumi.StringInput
+	ClusterAdminPassword pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
@@ -210,6 +216,8 @@ type BdsInstanceNodeReplaceConfigurationArgs struct {
 	LevelTypeDetails BdsInstanceNodeReplaceConfigurationLevelTypeDetailsInput
 	// (Updatable) Type of compute instance health metric to use for node replacement
 	MetricType pulumi.StringInput
+	// The secretId for the clusterAdminPassword.
+	SecretId pulumi.StringPtrInput
 }
 
 func (BdsInstanceNodeReplaceConfigurationArgs) ElementType() reflect.Type {
@@ -329,6 +337,11 @@ func (o BdsInstanceNodeReplaceConfigurationOutput) LevelTypeDetails() BdsInstanc
 // (Updatable) Type of compute instance health metric to use for node replacement
 func (o BdsInstanceNodeReplaceConfigurationOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfiguration) pulumi.StringOutput { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o BdsInstanceNodeReplaceConfigurationOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfiguration) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
 }
 
 // The state of the NodeReplaceConfiguration.

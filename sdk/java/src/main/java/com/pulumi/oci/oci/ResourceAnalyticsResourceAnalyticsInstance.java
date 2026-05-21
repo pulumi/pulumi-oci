@@ -12,6 +12,7 @@ import com.pulumi.oci.oci.ResourceAnalyticsResourceAnalyticsInstanceArgs;
 import com.pulumi.oci.oci.inputs.ResourceAnalyticsResourceAnalyticsInstanceState;
 import com.pulumi.oci.oci.outputs.ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +59,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .compartmentId(compartmentId)
  *             .subnetId(testSubnet.id())
+ *             .computeCount(resourceAnalyticsInstanceComputeCount)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(resourceAnalyticsInstanceDescription)
  *             .displayName(resourceAnalyticsInstanceDisplayName)
@@ -124,6 +126,20 @@ public class ResourceAnalyticsResourceAnalyticsInstance extends com.pulumi.resou
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * The compute amount (CPUs) available to the Autonomous Database.
+     * 
+     */
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> computeCount;
+
+    /**
+     * @return The compute amount (CPUs) available to the Autonomous Database.
+     * 
+     */
+    public Output<Integer> computeCount() {
+        return this.computeCount;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`

@@ -77,7 +77,6 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()
- *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterPublicKey(bdsInstanceClusterPublicKey)
  *             .clusterVersion(bdsInstanceClusterVersion)
  *             .compartmentId(compartmentId)
@@ -155,9 +154,11 @@ import javax.annotation.Nullable;
  *                 .odhVersion(bdsInstanceBdsClusterVersionSummaryOdhVersion)
  *                 .build())
  *             .bootstrapScriptUrl(bdsInstanceBootstrapScriptUrl)
+ *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterProfile(bdsInstanceClusterProfile)
  *             .definedTags(bdsInstanceDefinedTags)
  *             .freeformTags(bdsInstanceFreeformTags)
+ *             .isSecretReused(bdsInstanceIsSecretReused)
  *             .kerberosRealmName(bdsInstanceKerberosRealmName)
  *             .kmsKeyId(bdsInstanceKmsKeyId)
  *             .ignoreExistingNodesShapes(ignoreExistingNodesShape)
@@ -165,6 +166,7 @@ import javax.annotation.Nullable;
  *                 .cidrBlock(bdsInstanceNetworkConfigCidrBlock)
  *                 .isNatGatewayRequired(bdsInstanceNetworkConfigIsNatGatewayRequired)
  *                 .build())
+ *             .secretId(testSecret.id())
  *             .build());
  * 
  *     }
@@ -226,14 +228,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.cloudSqlDetails;
     }
     /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      * 
      */
     @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     * @return (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
      * 
      */
     public Output<String> clusterAdminPassword() {
@@ -454,6 +456,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isKafkaConfigured);
     }
     /**
+     * Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    @Export(name="isSecretReused", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSecretReused;
+
+    /**
+     * @return Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+     * 
+     */
+    public Output<Boolean> isSecretReused() {
+        return this.isSecretReused;
+    }
+    /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
@@ -607,6 +623,26 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> removeNode() {
         return Codegen.optional(this.removeNode);
     }
+    @Export(name="removeNodes", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> removeNodes;
+
+    public Output<Optional<List<String>>> removeNodes() {
+        return Codegen.optional(this.removeNodes);
+    }
+    /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Export(name="secretId", refs={String.class}, tree="[0]")
+    private Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Output<String> secretId() {
+        return this.secretId;
+    }
     @Export(name="startClusterShapeConfigs", refs={List.class,BdsInstanceStartClusterShapeConfig.class}, tree="[0,1]")
     private Output</* @Nullable */ List<BdsInstanceStartClusterShapeConfig>> startClusterShapeConfigs;
 
@@ -640,6 +676,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    @Export(name="timeEarliestCertificateExpiration", refs={String.class}, tree="[0]")
+    private Output<String> timeEarliestCertificateExpiration;
+
+    /**
+     * @return The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+     * 
+     */
+    public Output<String> timeEarliestCertificateExpiration() {
+        return this.timeEarliestCertificateExpiration;
     }
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string

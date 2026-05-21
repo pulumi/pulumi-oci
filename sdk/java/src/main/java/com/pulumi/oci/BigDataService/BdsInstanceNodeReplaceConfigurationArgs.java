@@ -37,15 +37,15 @@ public final class BdsInstanceNodeReplaceConfigurationArgs extends com.pulumi.re
      * Base-64 encoded password for the cluster admin user.
      * 
      */
-    @Import(name="clusterAdminPassword", required=true)
-    private Output<String> clusterAdminPassword;
+    @Import(name="clusterAdminPassword")
+    private @Nullable Output<String> clusterAdminPassword;
 
     /**
      * @return Base-64 encoded password for the cluster admin user.
      * 
      */
-    public Output<String> clusterAdminPassword() {
-        return this.clusterAdminPassword;
+    public Optional<Output<String>> clusterAdminPassword() {
+        return Optional.ofNullable(this.clusterAdminPassword);
     }
 
     /**
@@ -108,6 +108,21 @@ public final class BdsInstanceNodeReplaceConfigurationArgs extends com.pulumi.re
         return this.metricType;
     }
 
+    /**
+     * The secretId for the clusterAdminPassword.
+     * 
+     */
+    @Import(name="secretId")
+    private @Nullable Output<String> secretId;
+
+    /**
+     * @return The secretId for the clusterAdminPassword.
+     * 
+     */
+    public Optional<Output<String>> secretId() {
+        return Optional.ofNullable(this.secretId);
+    }
+
     private BdsInstanceNodeReplaceConfigurationArgs() {}
 
     private BdsInstanceNodeReplaceConfigurationArgs(BdsInstanceNodeReplaceConfigurationArgs $) {
@@ -117,6 +132,7 @@ public final class BdsInstanceNodeReplaceConfigurationArgs extends com.pulumi.re
         this.durationInMinutes = $.durationInMinutes;
         this.levelTypeDetails = $.levelTypeDetails;
         this.metricType = $.metricType;
+        this.secretId = $.secretId;
     }
 
     public static Builder builder() {
@@ -164,7 +180,7 @@ public final class BdsInstanceNodeReplaceConfigurationArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder clusterAdminPassword(Output<String> clusterAdminPassword) {
+        public Builder clusterAdminPassword(@Nullable Output<String> clusterAdminPassword) {
             $.clusterAdminPassword = clusterAdminPassword;
             return this;
         }
@@ -263,12 +279,30 @@ public final class BdsInstanceNodeReplaceConfigurationArgs extends com.pulumi.re
             return metricType(Output.of(metricType));
         }
 
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(@Nullable Output<String> secretId) {
+            $.secretId = secretId;
+            return this;
+        }
+
+        /**
+         * @param secretId The secretId for the clusterAdminPassword.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretId(String secretId) {
+            return secretId(Output.of(secretId));
+        }
+
         public BdsInstanceNodeReplaceConfigurationArgs build() {
             if ($.bdsInstanceId == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceNodeReplaceConfigurationArgs", "bdsInstanceId");
-            }
-            if ($.clusterAdminPassword == null) {
-                throw new MissingRequiredPropertyException("BdsInstanceNodeReplaceConfigurationArgs", "clusterAdminPassword");
             }
             if ($.durationInMinutes == null) {
                 throw new MissingRequiredPropertyException("BdsInstanceNodeReplaceConfigurationArgs", "durationInMinutes");

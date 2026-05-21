@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemSourceChannel;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,6 +19,11 @@ public final class MysqlDbSystemSource {
      */
     private @Nullable String backupId;
     /**
+     * @return Properties to setup a replication channel with the source (cloned) DB system.
+     * 
+     */
+    private @Nullable MysqlDbSystemSourceChannel channel;
+    /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
@@ -27,6 +33,11 @@ public final class MysqlDbSystemSource {
      * 
      */
     private @Nullable String recoveryPoint;
+    /**
+     * @return The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    private @Nullable String region;
     /**
      * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
@@ -47,6 +58,13 @@ public final class MysqlDbSystemSource {
         return Optional.ofNullable(this.backupId);
     }
     /**
+     * @return Properties to setup a replication channel with the source (cloned) DB system.
+     * 
+     */
+    public Optional<MysqlDbSystemSourceChannel> channel() {
+        return Optional.ofNullable(this.channel);
+    }
+    /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
@@ -59,6 +77,13 @@ public final class MysqlDbSystemSource {
      */
     public Optional<String> recoveryPoint() {
         return Optional.ofNullable(this.recoveryPoint);
+    }
+    /**
+     * @return The region identifier of the source region where the DB system exists, only if it is in a different region. If the source DB system is in the same region, then no region must be specified. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
@@ -85,16 +110,20 @@ public final class MysqlDbSystemSource {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupId;
+        private @Nullable MysqlDbSystemSourceChannel channel;
         private @Nullable String dbSystemId;
         private @Nullable String recoveryPoint;
+        private @Nullable String region;
         private String sourceType;
         private @Nullable String sourceUrl;
         public Builder() {}
         public Builder(MysqlDbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
+    	      this.channel = defaults.channel;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.recoveryPoint = defaults.recoveryPoint;
+    	      this.region = defaults.region;
     	      this.sourceType = defaults.sourceType;
     	      this.sourceUrl = defaults.sourceUrl;
         }
@@ -103,6 +132,12 @@ public final class MysqlDbSystemSource {
         public Builder backupId(@Nullable String backupId) {
 
             this.backupId = backupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder channel(@Nullable MysqlDbSystemSourceChannel channel) {
+
+            this.channel = channel;
             return this;
         }
         @CustomType.Setter
@@ -115,6 +150,12 @@ public final class MysqlDbSystemSource {
         public Builder recoveryPoint(@Nullable String recoveryPoint) {
 
             this.recoveryPoint = recoveryPoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder region(@Nullable String region) {
+
+            this.region = region;
             return this;
         }
         @CustomType.Setter
@@ -134,8 +175,10 @@ public final class MysqlDbSystemSource {
         public MysqlDbSystemSource build() {
             final var _resultValue = new MysqlDbSystemSource();
             _resultValue.backupId = backupId;
+            _resultValue.channel = channel;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.recoveryPoint = recoveryPoint;
+            _resultValue.region = region;
             _resultValue.sourceType = sourceType;
             _resultValue.sourceUrl = sourceUrl;
             return _resultValue;

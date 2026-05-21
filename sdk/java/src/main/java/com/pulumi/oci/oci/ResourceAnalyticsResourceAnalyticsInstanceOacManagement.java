@@ -15,35 +15,129 @@ import java.lang.Boolean;
 import java.lang.String;
 import javax.annotation.Nullable;
 
+/**
+ * This resource provides the Resource Analytics Instance Oac Management resource in Oracle Cloud Infrastructure Resource Analytics service.
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * Attaches an OAC instance to a ResourceAnalyticsInstance.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement;
+ * import com.pulumi.oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs;
+ * import com.pulumi.oci.oci.inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs;
+ * import com.pulumi.oci.oci.inputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testResourceAnalyticsInstanceOacManagement = new ResourceAnalyticsResourceAnalyticsInstanceOacManagement("testResourceAnalyticsInstanceOacManagement", ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs.builder()
+ *             .attachmentType(resourceAnalyticsInstanceOacManagementAttachmentType)
+ *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+ *             .enableOac(enableOac)
+ *             .attachmentDetails(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs.builder()
+ *                 .idcsDomainId(testDomain.id())
+ *                 .capacityType(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityType)
+ *                 .capacityValue(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue)
+ *                 .licenseModel(resourceAnalyticsInstanceOacManagementAttachmentDetailsLicenseModel)
+ *                 .networkDetails(ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs.builder()
+ *                     .subnetId(testSubnet.id())
+ *                     .nsgIds(resourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsNsgIds)
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ */
 @ResourceType(type="oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement")
 public class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends com.pulumi.resources.CustomResource {
+    /**
+     * Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+     * 
+     */
     @Export(name="attachmentDetails", refs={ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails.class}, tree="[0]")
     private Output<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails> attachmentDetails;
 
+    /**
+     * @return Additional details needed when attaching the OAC instance.  Example: `{&#34;idcsDomainId&#34;:&#34;ocid...&#34;,&#34;networkDetails&#34;:{...}, ...}`
+     * 
+     */
     public Output<ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails> attachmentDetails() {
         return this.attachmentDetails;
     }
+    /**
+     * The type of attachment the OAC instance is using. Example: `MANAGED`
+     * 
+     */
     @Export(name="attachmentType", refs={String.class}, tree="[0]")
     private Output<String> attachmentType;
 
+    /**
+     * @return The type of attachment the OAC instance is using. Example: `MANAGED`
+     * 
+     */
     public Output<String> attachmentType() {
         return this.attachmentType;
     }
+    /**
+     * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     * 
+     */
     @Export(name="enableOac", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableOac;
 
+    /**
+     * @return (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+     * 
+     */
     public Output<Boolean> enableOac() {
         return this.enableOac;
     }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     * 
+     */
     @Export(name="resourceAnalyticsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> resourceAnalyticsInstanceId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+     * 
+     */
     public Output<String> resourceAnalyticsInstanceId() {
         return this.resourceAnalyticsInstanceId;
     }
+    /**
+     * The current state of the ResourceAnalyticsInstance.
+     * 
+     */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
+    /**
+     * @return The current state of the ResourceAnalyticsInstance.
+     * 
+     */
     public Output<String> state() {
         return this.state;
     }

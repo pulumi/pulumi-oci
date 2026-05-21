@@ -21,6 +21,36 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
     public static final CertificateCertificateConfigArgs Empty = new CertificateCertificateConfigArgs();
 
     /**
+     * , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+     * 
+     */
+    @Import(name="certChainPem")
+    private @Nullable Output<String> certChainPem;
+
+    /**
+     * @return , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+     * 
+     */
+    public Optional<Output<String>> certChainPem() {
+        return Optional.ofNullable(this.certChainPem);
+    }
+
+    /**
+     * (Updatable) The leaf certificate (in PEM format).
+     * 
+     */
+    @Import(name="certificatePem")
+    private @Nullable Output<String> certificatePem;
+
+    /**
+     * @return (Updatable) The leaf certificate (in PEM format).
+     * 
+     */
+    public Optional<Output<String>> certificatePem() {
+        return Optional.ofNullable(this.certificatePem);
+    }
+
+    /**
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
@@ -36,14 +66,14 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     @Import(name="configType", required=true)
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
      * 
      */
     public Output<String> configType() {
@@ -96,6 +126,36 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
     }
 
     /**
+     * (Updatable) The private key (in PEM format). This value is sensitive.
+     * 
+     */
+    @Import(name="privateKeyPem")
+    private @Nullable Output<String> privateKeyPem;
+
+    /**
+     * @return (Updatable) The private key (in PEM format). This value is sensitive.
+     * 
+     */
+    public Optional<Output<String>> privateKeyPem() {
+        return Optional.ofNullable(this.privateKeyPem);
+    }
+
+    /**
+     * (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+     * 
+     */
+    @Import(name="privateKeyPemPassphrase")
+    private @Nullable Output<String> privateKeyPemPassphrase;
+
+    /**
+     * @return (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+     * 
+     */
+    public Optional<Output<String>> privateKeyPemPassphrase() {
+        return Optional.ofNullable(this.privateKeyPemPassphrase);
+    }
+
+    /**
      * The algorithm to use to sign the public key certificate.
      * 
      */
@@ -108,6 +168,21 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
      */
     public Optional<Output<String>> signatureAlgorithm() {
         return Optional.ofNullable(this.signatureAlgorithm);
+    }
+
+    /**
+     * (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+     * 
+     */
+    @Import(name="stage")
+    private @Nullable Output<String> stage;
+
+    /**
+     * @return (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+     * 
+     */
+    public Optional<Output<String>> stage() {
+        return Optional.ofNullable(this.stage);
     }
 
     /**
@@ -173,12 +248,17 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
     private CertificateCertificateConfigArgs() {}
 
     private CertificateCertificateConfigArgs(CertificateCertificateConfigArgs $) {
+        this.certChainPem = $.certChainPem;
+        this.certificatePem = $.certificatePem;
         this.certificateProfileType = $.certificateProfileType;
         this.configType = $.configType;
         this.csrPem = $.csrPem;
         this.issuerCertificateAuthorityId = $.issuerCertificateAuthorityId;
         this.keyAlgorithm = $.keyAlgorithm;
+        this.privateKeyPem = $.privateKeyPem;
+        this.privateKeyPemPassphrase = $.privateKeyPemPassphrase;
         this.signatureAlgorithm = $.signatureAlgorithm;
+        this.stage = $.stage;
         this.subject = $.subject;
         this.subjectAlternativeNames = $.subjectAlternativeNames;
         this.validity = $.validity;
@@ -204,6 +284,48 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
+         * @param certChainPem , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certChainPem(@Nullable Output<String> certChainPem) {
+            $.certChainPem = certChainPem;
+            return this;
+        }
+
+        /**
+         * @param certChainPem , `certificatePem`, `privateKeyPem`, `privateKeyPemPassphrase`, and `stage` can only be used when `config_type=IMPORTED`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certChainPem(String certChainPem) {
+            return certChainPem(Output.of(certChainPem));
+        }
+
+        /**
+         * @param certificatePem (Updatable) The leaf certificate (in PEM format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificatePem(@Nullable Output<String> certificatePem) {
+            $.certificatePem = certificatePem;
+            return this;
+        }
+
+        /**
+         * @param certificatePem (Updatable) The leaf certificate (in PEM format).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificatePem(String certificatePem) {
+            return certificatePem(Output.of(certificatePem));
+        }
+
+        /**
          * @param certificateProfileType The name of the profile used to create the certificate, which depends on the type of certificate you need.
          * 
          * @return builder
@@ -225,7 +347,7 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
          * 
          * @return builder
          * 
@@ -236,7 +358,7 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
+         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA, ISSUED_BY_INTERNAL_CA, or IMPORTED.
          * 
          * @return builder
          * 
@@ -309,6 +431,48 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
+         * @param privateKeyPem (Updatable) The private key (in PEM format). This value is sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPem(@Nullable Output<String> privateKeyPem) {
+            $.privateKeyPem = privateKeyPem;
+            return this;
+        }
+
+        /**
+         * @param privateKeyPem (Updatable) The private key (in PEM format). This value is sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPem(String privateKeyPem) {
+            return privateKeyPem(Output.of(privateKeyPem));
+        }
+
+        /**
+         * @param privateKeyPemPassphrase (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPemPassphrase(@Nullable Output<String> privateKeyPemPassphrase) {
+            $.privateKeyPemPassphrase = privateKeyPemPassphrase;
+            return this;
+        }
+
+        /**
+         * @param privateKeyPemPassphrase (Updatable) The passphrase for the encrypted private key in PEM format. This value is sensitive.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
+            return privateKeyPemPassphrase(Output.of(privateKeyPemPassphrase));
+        }
+
+        /**
          * @param signatureAlgorithm The algorithm to use to sign the public key certificate.
          * 
          * @return builder
@@ -327,6 +491,27 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
          */
         public Builder signatureAlgorithm(String signatureAlgorithm) {
             return signatureAlgorithm(Output.of(signatureAlgorithm));
+        }
+
+        /**
+         * @param stage (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stage(@Nullable Output<String> stage) {
+            $.stage = stage;
+            return this;
+        }
+
+        /**
+         * @param stage (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stage(String stage) {
+            return stage(Output.of(stage));
         }
 
         /**

@@ -34,13 +34,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := bigdataservice.NewBdsInstance(ctx, "test_bds_instance", &bigdataservice.BdsInstanceArgs{
-//				ClusterAdminPassword: pulumi.Any(bdsInstanceClusterAdminPassword),
-//				ClusterPublicKey:     pulumi.Any(bdsInstanceClusterPublicKey),
-//				ClusterVersion:       pulumi.Any(bdsInstanceClusterVersion),
-//				CompartmentId:        pulumi.Any(compartmentId),
-//				DisplayName:          pulumi.Any(bdsInstanceDisplayName),
-//				IsHighAvailability:   pulumi.Any(bdsInstanceIsHighAvailability),
-//				IsSecure:             pulumi.Any(bdsInstanceIsSecure),
+//				ClusterPublicKey:   pulumi.Any(bdsInstanceClusterPublicKey),
+//				ClusterVersion:     pulumi.Any(bdsInstanceClusterVersion),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DisplayName:        pulumi.Any(bdsInstanceDisplayName),
+//				IsHighAvailability: pulumi.Any(bdsInstanceIsHighAvailability),
+//				IsSecure:           pulumi.Any(bdsInstanceIsSecure),
 //				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
 //					Shape:                pulumi.Any(bdsInstanceNodesShape),
 //					SubnetId:             pulumi.Any(testSubnet.Id),
@@ -112,9 +111,11 @@ import (
 //					OdhVersion: pulumi.Any(bdsInstanceBdsClusterVersionSummaryOdhVersion),
 //				},
 //				BootstrapScriptUrl:        pulumi.Any(bdsInstanceBootstrapScriptUrl),
+//				ClusterAdminPassword:      pulumi.Any(bdsInstanceClusterAdminPassword),
 //				ClusterProfile:            pulumi.Any(bdsInstanceClusterProfile),
 //				DefinedTags:               pulumi.Any(bdsInstanceDefinedTags),
 //				FreeformTags:              pulumi.Any(bdsInstanceFreeformTags),
+//				IsSecretReused:            pulumi.Any(bdsInstanceIsSecretReused),
 //				KerberosRealmName:         pulumi.Any(bdsInstanceKerberosRealmName),
 //				KmsKeyId:                  pulumi.Any(bdsInstanceKmsKeyId),
 //				IgnoreExistingNodesShapes: pulumi.Any(ignoreExistingNodesShape),
@@ -122,6 +123,7 @@ import (
 //					CidrBlock:            pulumi.Any(bdsInstanceNetworkConfigCidrBlock),
 //					IsNatGatewayRequired: pulumi.Any(bdsInstanceNetworkConfigIsNatGatewayRequired),
 //				},
+//				SecretId: pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -148,7 +150,7 @@ type BdsInstance struct {
 	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayOutput `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayOutput `pulumi:"clusterDetails"`
@@ -181,6 +183,8 @@ type BdsInstance struct {
 	IsHighAvailability pulumi.BoolOutput `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured pulumi.BoolPtrOutput `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused pulumi.BoolOutput `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolOutput `pulumi:"isSecure"`
 	// The kafka broker node in the BDS instance
@@ -202,12 +206,17 @@ type BdsInstance struct {
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrOutput `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
-	RemoveNode               pulumi.StringPtrOutput                        `pulumi:"removeNode"`
+	RemoveNode  pulumi.StringPtrOutput   `pulumi:"removeNode"`
+	RemoveNodes pulumi.StringArrayOutput `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 pulumi.StringOutput                           `pulumi:"secretId"`
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayOutput `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration pulumi.StringOutput `pulumi:"timeEarliestCertificateExpiration"`
 	// The time the BDS instance was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The utility node in the BDS instance
@@ -222,9 +231,6 @@ func NewBdsInstance(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.ClusterAdminPassword == nil {
-		return nil, errors.New("invalid value for required argument 'ClusterAdminPassword'")
-	}
 	if args.ClusterPublicKey == nil {
 		return nil, errors.New("invalid value for required argument 'ClusterPublicKey'")
 	}
@@ -253,7 +259,7 @@ func NewBdsInstance(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'WorkerNode'")
 	}
 	if args.ClusterAdminPassword != nil {
-		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"clusterAdminPassword",
@@ -288,7 +294,7 @@ type bdsInstanceState struct {
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails []BdsInstanceClusterDetail `pulumi:"clusterDetails"`
@@ -321,6 +327,8 @@ type bdsInstanceState struct {
 	IsHighAvailability *bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured *bool `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused *bool `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure *bool `pulumi:"isSecure"`
 	// The kafka broker node in the BDS instance
@@ -342,12 +350,17 @@ type bdsInstanceState struct {
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
-	RemoveNode               *string                              `pulumi:"removeNode"`
+	RemoveNode  *string  `pulumi:"removeNode"`
+	RemoveNodes []string `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 *string                              `pulumi:"secretId"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration *string `pulumi:"timeEarliestCertificateExpiration"`
 	// The time the BDS instance was updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The utility node in the BDS instance
@@ -362,7 +375,7 @@ type BdsInstanceState struct {
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 	ClusterAdminPassword pulumi.StringPtrInput
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayInput
@@ -395,6 +408,8 @@ type BdsInstanceState struct {
 	IsHighAvailability pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured pulumi.BoolPtrInput
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolPtrInput
 	// The kafka broker node in the BDS instance
@@ -416,12 +431,17 @@ type BdsInstanceState struct {
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
-	RemoveNode               pulumi.StringPtrInput
+	RemoveNode  pulumi.StringPtrInput
+	RemoveNodes pulumi.StringArrayInput
+	// The secretId for the clusterAdminPassword.
+	SecretId                 pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
+	// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+	TimeEarliestCertificateExpiration pulumi.StringPtrInput
 	// The time the BDS instance was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
 	// The utility node in the BDS instance
@@ -440,8 +460,8 @@ type bdsInstanceArgs struct {
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// Profile of the Big Data Service cluster.
 	ClusterProfile *string `pulumi:"clusterProfile"`
 	// The SSH public key used to authenticate the cluster connection.
@@ -469,6 +489,8 @@ type bdsInstanceArgs struct {
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured *bool `pulumi:"isKafkaConfigured"`
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused *bool `pulumi:"isSecretReused"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure bool `pulumi:"isSecure"`
 	// The kafka broker node in the BDS instance
@@ -484,7 +506,10 @@ type bdsInstanceArgs struct {
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion *string `pulumi:"osPatchVersion"`
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
-	RemoveNode               *string                              `pulumi:"removeNode"`
+	RemoveNode  *string  `pulumi:"removeNode"`
+	RemoveNodes []string `pulumi:"removeNodes"`
+	// The secretId for the clusterAdminPassword.
+	SecretId                 *string                              `pulumi:"secretId"`
 	StartClusterShapeConfigs []BdsInstanceStartClusterShapeConfig `pulumi:"startClusterShapeConfigs"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
@@ -501,8 +526,8 @@ type BdsInstanceArgs struct {
 	BootstrapScriptUrl pulumi.StringPtrInput
 	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-	ClusterAdminPassword pulumi.StringInput
+	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
+	ClusterAdminPassword pulumi.StringPtrInput
 	// Profile of the Big Data Service cluster.
 	ClusterProfile pulumi.StringPtrInput
 	// The SSH public key used to authenticate the cluster connection.
@@ -530,6 +555,8 @@ type BdsInstanceArgs struct {
 	IsHighAvailability pulumi.BoolInput
 	// Boolean flag specifying whether or not Kafka should be configured.
 	IsKafkaConfigured pulumi.BoolPtrInput
+	// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+	IsSecretReused pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
 	IsSecure pulumi.BoolInput
 	// The kafka broker node in the BDS instance
@@ -545,7 +572,10 @@ type BdsInstanceArgs struct {
 	// (Updatable) The version of the patch to be upated.
 	OsPatchVersion pulumi.StringPtrInput
 	// (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
-	RemoveNode               pulumi.StringPtrInput
+	RemoveNode  pulumi.StringPtrInput
+	RemoveNodes pulumi.StringArrayInput
+	// The secretId for the clusterAdminPassword.
+	SecretId                 pulumi.StringPtrInput
 	StartClusterShapeConfigs BdsInstanceStartClusterShapeConfigArrayInput
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
@@ -656,7 +686,7 @@ func (o BdsInstanceOutput) CloudSqlDetails() BdsInstanceCloudSqlDetailArrayOutpu
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceCloudSqlDetailArrayOutput { return v.CloudSqlDetails }).(BdsInstanceCloudSqlDetailArrayOutput)
 }
 
-// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user. Not required if the secretId is specified.
 func (o BdsInstanceOutput) ClusterAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.ClusterAdminPassword }).(pulumi.StringOutput)
 }
@@ -743,6 +773,11 @@ func (o BdsInstanceOutput) IsKafkaConfigured() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsKafkaConfigured }).(pulumi.BoolPtrOutput)
 }
 
+// Boolean flag specifying whether or not to persist the provided secret OCID and reuse it for future operations.
+func (o BdsInstanceOutput) IsSecretReused() pulumi.BoolOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsSecretReused }).(pulumi.BoolOutput)
+}
+
 // Boolean flag specifying whether or not the cluster should be setup as secure.
 func (o BdsInstanceOutput) IsSecure() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsSecure }).(pulumi.BoolOutput)
@@ -798,6 +833,15 @@ func (o BdsInstanceOutput) RemoveNode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringPtrOutput { return v.RemoveNode }).(pulumi.StringPtrOutput)
 }
 
+func (o BdsInstanceOutput) RemoveNodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringArrayOutput { return v.RemoveNodes }).(pulumi.StringArrayOutput)
+}
+
+// The secretId for the clusterAdminPassword.
+func (o BdsInstanceOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
+}
+
 func (o BdsInstanceOutput) StartClusterShapeConfigs() BdsInstanceStartClusterShapeConfigArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceStartClusterShapeConfigArrayOutput { return v.StartClusterShapeConfigs }).(BdsInstanceStartClusterShapeConfigArrayOutput)
 }
@@ -810,6 +854,11 @@ func (o BdsInstanceOutput) State() pulumi.StringOutput {
 // The time the BDS instance was created. An RFC3339 formatted datetime string
 func (o BdsInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The earliest time of certificate expiration date across the certificates of all current nodes under this cluster.
+func (o BdsInstanceOutput) TimeEarliestCertificateExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.TimeEarliestCertificateExpiration }).(pulumi.StringOutput)
 }
 
 // The time the BDS instance was updated. An RFC3339 formatted datetime string

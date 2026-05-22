@@ -459,7 +459,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) Interval in seconds which query is run periodically.
     """
-    logging_query_details: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]]
+    logging_query_details: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgsDict']]]
     """
     (Updatable) Details for a logging query for a data source.
     """
@@ -475,7 +475,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) The continuous query expression that is run periodically.
     """
-    query_start_time: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]]
+    query_start_time: NotRequired[pulumi.Input[Optional['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgsDict']]]
     """
     (Updatable) DEPRECATED - Start policy for continuous query
     """
@@ -483,7 +483,7 @@ class CloudGuardDataSourceDataSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) List of logging query regions
     """
-    scheduled_query_scope_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs']]]]]
+    scheduled_query_scope_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgsDict']]]]]
     """
     (Updatable) Target information in which scheduled query will be run
     """
@@ -1050,7 +1050,7 @@ class DetectorRecipeDetectorRuleArgsDict(TypedDict):
     """
     (Updatable) Detector recipe rule ID
     """
-    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]]]
+    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgsDict']]]]]
     """
     List of responder rules that can be used to remediate this detector rule
     """
@@ -1074,7 +1074,7 @@ class DetectorRecipeDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]]
     """
     Data source entities mapping for the detector rule
     """
@@ -1098,7 +1098,7 @@ class DetectorRecipeDetectorRuleArgsDict(TypedDict):
     """
     Resource type of the configuration to which the rule is applied
     """
-    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgsDict']]]]]
     """
     Detector rule type
     """
@@ -1508,7 +1508,7 @@ class DetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
     """
     (Updatable) The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]]
     """
     (Updatable) List of detector rule configurations
     """
@@ -1520,7 +1520,7 @@ class DetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
     """
     (Updatable) Description for the detector rule
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict']]]]]
     """
     (Updatable) Data source entities mapping for a detector rule
     """
@@ -1711,11 +1711,11 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
     """
     (Updatable) Configuration name
     """
-    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]]
     """
     (Updatable) Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]]
     """
     (Updatable) Map of possible values for configuration
     """
@@ -1731,7 +1731,7 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
     """
     (Updatable) Configuration value
     """
-    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]]
     """
     (Updatable) List of configuration values
     """
@@ -2244,7 +2244,7 @@ class DetectorRecipeDetectorRuleRuleTypeArgs:
 
 
 class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
-    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]]]
+    candidate_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict']]]]]
     """
     List of responder rules that can be used to remediate this detector rule
     """
@@ -2258,7 +2258,7 @@ class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]]
     """
     Detailed information for a detector.
     """
@@ -2276,7 +2276,7 @@ class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]]
     """
     Data source entities mapping for the detector rule
     """
@@ -2300,7 +2300,7 @@ class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
     """
     Resource type of the configuration to which the rule is applied
     """
-    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]]
     """
     Detector rule type
     """
@@ -2704,7 +2704,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]]
     """
     List of detector rule configurations
     """
@@ -2718,7 +2718,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict']]]]]
     """
     Data source entities mapping for the detector rule
     """
@@ -2915,11 +2915,11 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
 
 
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]]
     """
     Map of possible values for configuration
     """
@@ -2943,7 +2943,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
     """
     Detector rule type value
     """
-    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]]
     """
     List of configuration values
     """
@@ -3480,7 +3480,7 @@ class ResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgs']]]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]]
     """
     Detailed information for a responder rule
     """
@@ -3735,7 +3735,7 @@ class ResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict):
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]]
     """
     List of responder rule configurations
     """
@@ -4156,7 +4156,7 @@ class ResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]]
     """
     List of responder rule configurations
     """
@@ -4317,7 +4317,7 @@ class TargetTargetDetailArgsDict(TypedDict):
     """
     Type of resource that target support (COMPARTMENT/FACLOUD)
     """
-    target_security_zone_recipes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]]]]
+    target_security_zone_recipes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgsDict']]]]]
     """
     The list of security zone recipes to associate with this compartment
     """
@@ -4703,7 +4703,7 @@ class TargetTargetDetectorRecipeArgsDict(TypedDict):
     """
     Recipe type ( STANDARD, ENTERPRISE )
     """
-    detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgs']]]]]
+    detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleArgsDict']]]]]
     """
     (Updatable) List of overrides to be applied to detector rules associated with the target
     """
@@ -4713,7 +4713,7 @@ class TargetTargetDetectorRecipeArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    effective_detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgs']]]]]
+    effective_detector_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict']]]]]
     """
     List of currently enabled detector rules for the detector type for recipe after applying defaults
     """
@@ -4989,7 +4989,7 @@ class TargetTargetDetectorRecipeDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict']]]]]
     """
     Data source entities mapping for a detector rule
     """
@@ -5013,7 +5013,7 @@ class TargetTargetDetectorRecipeDetectorRuleArgsDict(TypedDict):
     """
     The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
     """
-    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict']]]]]
     """
     Rule category type
     """
@@ -5320,11 +5320,11 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsArgsDict(TypedDict):
-    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs']]]]]
+    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict']]]]]
     """
     (Updatable) Condition group corresponding to each compartment
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict']]]]]
     """
     List of responder rule configurations
     """
@@ -5496,11 +5496,11 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
 
 
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]]
     """
     Map of possible values for configuration
     """
@@ -5524,7 +5524,7 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDi
     """
     Configuration value
     """
-    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict']]]]]
     """
     List of configuration values
     """
@@ -5986,7 +5986,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict']]]]]
     """
     Detailed information for a responder rule
     """
@@ -6004,7 +6004,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]]
+    entities_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict']]]]]
     """
     Data source entities mapping for a detector rule
     """
@@ -6028,7 +6028,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
     """
     The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
     """
-    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]]
+    rule_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]]
     """
     Rule category type
     """
@@ -6337,11 +6337,11 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgsDict(TypedDict):
-    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs']]]]]
+    condition_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict']]]]]
     """
     Condition group corresponding to each compartment
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict']]]]]
     """
     List of responder rule configurations
     """
@@ -6515,11 +6515,11 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
 
 
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
-    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]]
+    additional_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]]
     """
     Map of additional property values for configuration
     """
-    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]]
+    allowed_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]]
     """
     Map of possible values for configuration
     """
@@ -6543,7 +6543,7 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict
     """
     Configuration value
     """
-    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]]
     """
     List of configuration values
     """
@@ -7015,7 +7015,7 @@ class TargetTargetResponderRecipeArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    effective_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgs']]]]]
+    effective_responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleArgsDict']]]]]
     """
     List of currently enabled responder rules for the responder type for recipe after applying defaults
     """
@@ -7027,7 +7027,7 @@ class TargetTargetResponderRecipeArgsDict(TypedDict):
     """
     Owner of target responder recipe
     """
-    responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgs']]]]]
+    responder_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleArgsDict']]]]]
     """
     (Updatable) List of overrides to be applied to responder rules associated with the target
     """
@@ -7225,7 +7225,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleArgsDict(TypedDict):
 
     Avoid entering confidential information.
     """
-    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs']]]]]
+    details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict']]]]]
     """
     Detailed information for a responder rule
     """
@@ -7480,7 +7480,7 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgsDict(TypedDict)
     """
     The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgsDict']]]]]
     """
     List of responder rule configurations
     """
@@ -7909,7 +7909,7 @@ class TargetTargetResponderRecipeResponderRuleDetailsArgsDict(TypedDict):
     """
     (Updatable) The base condition resource.
     """
-    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs']]]]]
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgsDict']]]]]
     """
     (Updatable) List of responder rule configurations
     """

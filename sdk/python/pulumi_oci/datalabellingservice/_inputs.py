@@ -44,7 +44,7 @@ class DatasetDatasetFormatDetailsArgsDict(TypedDict):
     """
     The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
     """
-    text_file_type_metadata: NotRequired[pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']]]
+    text_file_type_metadata: NotRequired[pulumi.Input[Optional['DatasetDatasetFormatDetailsTextFileTypeMetadataArgsDict']]]
     """
     Metadata for files with text content.
     """

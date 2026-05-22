@@ -220,7 +220,7 @@ class BackendSetHealthCheckerArgsDict(TypedDict):
     """
     (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
     """
-    dns: NotRequired[pulumi.Input[Optional['BackendSetHealthCheckerDnsArgs']]]
+    dns: NotRequired[pulumi.Input[Optional['BackendSetHealthCheckerDnsArgsDict']]]
     """
     (Updatable) DNS healthcheck configurations.
     """
@@ -564,7 +564,7 @@ class NetworkLoadBalancerIpAddressArgsDict(TypedDict):
     """
     Whether the IP address is public or private.
     """
-    reserved_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgs']]]]]
+    reserved_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgsDict']]]]]
     """
     An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
     """
@@ -895,7 +895,7 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict(TypedDict):
     """
     (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
     """
-    dns: NotRequired[pulumi.Input[Optional['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs']]]
+    dns: NotRequired[pulumi.Input[Optional['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgsDict']]]
     """
     (Updatable) DNS healthcheck configurations.
     """

@@ -52,7 +52,7 @@ __all__ = [
 ]
 
 class ProfileLevelsConfigurationArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgsDict']]]]]
     """
     (Updatable) The array of configuration levels.
     """
@@ -345,7 +345,7 @@ class RecommendationResourceCountArgs:
 
 
 class RecommendationSupportedLevelArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgsDict']]]]]
     """
     The list of supported levels.
     """

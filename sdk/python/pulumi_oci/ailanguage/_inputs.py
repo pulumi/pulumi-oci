@@ -478,7 +478,7 @@ class JobOutputLocationArgs:
 
 
 class ModelEvaluationResultArgsDict(TypedDict):
-    class_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]]
+    class_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgsDict']]]]]
     """
     List of text classification metrics
     """
@@ -486,7 +486,7 @@ class ModelEvaluationResultArgsDict(TypedDict):
     """
     class level confusion matrix
     """
-    entity_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]]
+    entity_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgsDict']]]]]
     """
     List of entity metrics
     """
@@ -494,7 +494,7 @@ class ModelEvaluationResultArgsDict(TypedDict):
     """
     labels
     """
-    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]]
+    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgsDict']]]]]
     """
     Model level named entity recognition metrics
     """
@@ -1018,7 +1018,7 @@ class ModelModelDetailsArgsDict(TypedDict):
     """
     Model type
     """
-    classification_mode: NotRequired[pulumi.Input[Optional['ModelModelDetailsClassificationModeArgs']]]
+    classification_mode: NotRequired[pulumi.Input[Optional['ModelModelDetailsClassificationModeArgsDict']]]
     """
     possible text classification modes
     """
@@ -1158,7 +1158,7 @@ class ModelTestStrategyArgsDict(TypedDict):
     """
     Possible data set type
     """
-    validation_dataset: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgs']]]
+    validation_dataset: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgsDict']]]
     """
     Possible data set type
     """
@@ -1225,7 +1225,7 @@ class ModelTestStrategyTestingDatasetArgsDict(TypedDict):
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgs']]]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgsDict']]]
     """
     Possible object storage location types
     """
@@ -1378,7 +1378,7 @@ class ModelTestStrategyValidationDatasetArgsDict(TypedDict):
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgs']]]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgsDict']]]
     """
     Possible object storage location types
     """
@@ -1531,7 +1531,7 @@ class ModelTrainingDatasetArgsDict(TypedDict):
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgs']]]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgsDict']]]
     """
     Possible object storage location types
     """

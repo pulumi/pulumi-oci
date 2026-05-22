@@ -840,7 +840,7 @@ class VaultExternalKeyManagerMetadataSummaryArgsDict(TypedDict):
     """
     URL of the vault on external key manager.
     """
-    oauth_metadata_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]]
+    oauth_metadata_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgsDict']]]]]
     """
     Summary about authorization to be returned to the customer as a response.
     """

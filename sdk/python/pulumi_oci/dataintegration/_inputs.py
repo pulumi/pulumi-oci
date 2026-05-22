@@ -461,11 +461,11 @@ class WorkspaceApplicationMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -855,7 +855,7 @@ class WorkspaceApplicationMetadataAggregatorArgs:
 
 
 class WorkspaceApplicationMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -1135,11 +1135,11 @@ class WorkspaceApplicationPatchMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -1529,7 +1529,7 @@ class WorkspaceApplicationPatchMetadataAggregatorArgs:
 
 
 class WorkspaceApplicationPatchMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -2196,7 +2196,7 @@ class WorkspaceApplicationScheduleFrequencyDetailsArgsDict(TypedDict):
     """
     (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
     """
-    time: NotRequired[pulumi.Input[Optional['WorkspaceApplicationScheduleFrequencyDetailsTimeArgs']]]
+    time: NotRequired[pulumi.Input[Optional['WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict']]]
     """
     (Updatable) A model to hold time in hour:minute:second format.
     """
@@ -2413,11 +2413,11 @@ class WorkspaceApplicationScheduleMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -2807,7 +2807,7 @@ class WorkspaceApplicationScheduleMetadataAggregatorArgs:
 
 
 class WorkspaceApplicationScheduleMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -3188,7 +3188,7 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgsDict(TypedDict):
     """
     (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
     """
-    parent_reves: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs']]]]]
+    parent_reves: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict']]]]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -3414,11 +3414,11 @@ class WorkspaceApplicationTaskScheduleMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -3808,7 +3808,7 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
 
 
 class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -4048,7 +4048,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgsDict(TypedDict):
     """
     (Updatable) Detailed description for the object.
     """
-    frequency_details: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs']]]
+    frequency_details: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict']]]
     """
     (Updatable) The model that holds the frequency details.
     """
@@ -4064,7 +4064,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgsDict(TypedDict):
     """
     (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
     """
-    metadata: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs']]]
+    metadata: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict']]]
     """
     (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
     """
@@ -4088,7 +4088,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgsDict(TypedDict):
     """
     (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -4337,7 +4337,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict(TypedD
     """
     (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
     """
-    time: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs']]]
+    time: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict']]]
     """
     (Updatable) A model to hold time in hour:minute:second format.
     """
@@ -4550,7 +4550,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs:
 
 
 class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict(TypedDict):
-    aggregator: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs']]]
+    aggregator: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict']]]
     """
     (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
     """
@@ -4558,7 +4558,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict(TypedDict):
     """
     (Updatable) The owning object key for this object.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs']]]
+    count_statistics: NotRequired[pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict']]]
     """
     (Updatable) A count statistics.
     """
@@ -5247,11 +5247,11 @@ class WorkspaceFolderMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -5641,7 +5641,7 @@ class WorkspaceFolderMetadataAggregatorArgs:
 
 
 class WorkspaceFolderMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -6158,11 +6158,11 @@ class WorkspaceProjectMetadataArgsDict(TypedDict):
     """
     The owning object key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -6552,7 +6552,7 @@ class WorkspaceProjectMetadataAggregatorArgs:
 
 
 class WorkspaceProjectMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -6800,7 +6800,7 @@ class WorkspaceTaskAuthConfigArgsDict(TypedDict):
     """
     (Updatable) The model version of an object.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskAuthConfigParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskAuthConfigParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -6946,7 +6946,7 @@ class WorkspaceTaskAuthConfigParentRefArgs:
 
 
 class WorkspaceTaskCancelRestCallConfigArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -7055,11 +7055,11 @@ class WorkspaceTaskCancelRestCallConfigArgs:
 
 
 class WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -7104,8 +7104,8 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesArgs:
 
 
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs']]]
-    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs']]]
+    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]]
+    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -7141,7 +7141,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]]
     """
     The root object reference value.
     """
@@ -7186,7 +7186,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 
 
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]]
     """
     Configuration values can be string, objects, or parameters.
     """
@@ -7255,7 +7255,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 
 
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]]
     """
     The configuration parameter values.
     """
@@ -7284,7 +7284,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 
 
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs']]]
+    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -7411,7 +7411,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs:
 
 
 class WorkspaceTaskConfigProviderDelegateArgsDict(TypedDict):
-    bindings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingArgs']]]]]
+    bindings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingArgsDict']]]]]
     """
     bindings
     """
@@ -7444,7 +7444,7 @@ class WorkspaceTaskConfigProviderDelegateBindingArgsDict(TypedDict):
     """
     (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
     """
-    parameter_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs']]]
+    parameter_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskConfigProviderDelegateBindingArgs:
@@ -7482,7 +7482,7 @@ class WorkspaceTaskConfigProviderDelegateBindingArgs:
 
 
 class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict(TypedDict):
-    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs']]]
+    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict']]]
     """
     The root object value, used in custom parameters.
     """
@@ -7620,7 +7620,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
 
 
 class WorkspaceTaskExecuteRestCallConfigArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -7729,11 +7729,11 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
 
 
 class WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -7778,8 +7778,8 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesArgs:
 
 
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs']]]
-    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs']]]
+    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]]
+    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -7815,7 +7815,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]]
     """
     The root object reference value.
     """
@@ -7860,7 +7860,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
 
 
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]]
     """
     Configuration values can be string, objects, or parameters.
     """
@@ -7929,7 +7929,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
 
 
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]]
     """
     The configuration parameter values.
     """
@@ -7958,7 +7958,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
 
 
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs']]]
+    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -8089,7 +8089,7 @@ class WorkspaceTaskInputPortArgsDict(TypedDict):
     """
     (Updatable) The type of the types object.
     """
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -8117,7 +8117,7 @@ class WorkspaceTaskInputPortArgsDict(TypedDict):
     """
     (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -8293,11 +8293,11 @@ class WorkspaceTaskInputPortArgs:
 
 
 class WorkspaceTaskInputPortConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskInputPortConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -8573,11 +8573,11 @@ class WorkspaceTaskMetadataArgsDict(TypedDict):
     """
     The owning object's key for this object.
     """
-    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgs']]]]]
+    aggregators: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgsDict']]]]]
     """
     A summary type containing information about the object's aggregator including its type, key, name and description.
     """
-    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgs']]]]]
+    count_statistics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgsDict']]]]]
     """
     A count statistics.
     """
@@ -8967,7 +8967,7 @@ class WorkspaceTaskMetadataAggregatorArgs:
 
 
 class WorkspaceTaskMetadataCountStatisticArgsDict(TypedDict):
-    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs']]]]]
+    object_type_count_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict']]]]]
     """
     The array of statistics.
     """
@@ -9045,11 +9045,11 @@ class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
 
 
 class WorkspaceTaskOpConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -9094,7 +9094,7 @@ class WorkspaceTaskOpConfigValuesArgs:
 
 
 class WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict(TypedDict):
-    config_param_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs']]]
+    config_param_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict']]]
     key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
@@ -9148,11 +9148,11 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict(Typed
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]]
     """
     The root object reference value.
     """
-    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']]]
+    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]]
     """
     The root object value, used in custom parameters.
     """
@@ -9516,7 +9516,7 @@ class WorkspaceTaskOutputPortArgsDict(TypedDict):
     """
     (Updatable) The type of the types object.
     """
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -9544,7 +9544,7 @@ class WorkspaceTaskOutputPortArgsDict(TypedDict):
     """
     (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -9720,11 +9720,11 @@ class WorkspaceTaskOutputPortArgs:
 
 
 class WorkspaceTaskOutputPortConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskOutputPortConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -10000,7 +10000,7 @@ class WorkspaceTaskParameterArgsDict(TypedDict):
     """
     (Updatable) The type of the types object.
     """
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -10040,7 +10040,7 @@ class WorkspaceTaskParameterArgsDict(TypedDict):
     """
     (Updatable) The output aggregation type.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -10324,11 +10324,11 @@ class WorkspaceTaskParameterArgs:
 
 
 class WorkspaceTaskParameterConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -10373,7 +10373,7 @@ class WorkspaceTaskParameterConfigValuesArgs:
 
 
 class WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict(TypedDict):
-    config_param_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs']]]
+    config_param_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict']]]
     key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
@@ -10427,11 +10427,11 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDic
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]]
     """
     The root object reference value.
     """
-    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']]]
+    root_object_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]]
     """
     The root object value, used in custom parameters.
     """
@@ -10889,7 +10889,7 @@ class WorkspaceTaskParentRefArgs:
 
 
 class WorkspaceTaskPollRestCallConfigArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -10998,11 +10998,11 @@ class WorkspaceTaskPollRestCallConfigArgs:
 
 
 class WorkspaceTaskPollRestCallConfigConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -11047,13 +11047,13 @@ class WorkspaceTaskPollRestCallConfigConfigValuesArgs:
 
 
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-    poll_condition: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgs']]]
-    poll_interval: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgs']]]
-    poll_interval_unit: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgs']]]
-    poll_max_duration: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgs']]]
-    poll_max_duration_unit: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgs']]]
-    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs']]]
-    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs']]]
+    poll_condition: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict']]]
+    poll_interval: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict']]]
+    poll_interval_unit: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict']]]
+    poll_max_duration: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict']]]
+    poll_max_duration_unit: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict']]]
+    request_payload: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]]
+    request_url: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -11149,7 +11149,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionA
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict']]]
     """
     The root object reference value.
     """
@@ -11403,7 +11403,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     """
     Reference to the parameter by its key.
     """
-    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]]
+    ref_value: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]]
     """
     The root object reference value.
     """
@@ -11448,7 +11448,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
 
 
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]]
     """
     Configuration values can be string, objects, or parameters.
     """
@@ -11537,7 +11537,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
 
 
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]]
     """
     The configuration parameter values.
     """
@@ -11566,7 +11566,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
 
 
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs']]]
+    data_param: NotRequired[pulumi.Input[Optional['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -11801,7 +11801,7 @@ class WorkspaceTaskRegistryMetadataArgs:
 
 
 class WorkspaceTaskTypedExpressionArgsDict(TypedDict):
-    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesArgs']]]
+    config_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesArgsDict']]]
     """
     (Updatable) Configuration values can be string, objects, or parameters.
     """
@@ -11833,7 +11833,7 @@ class WorkspaceTaskTypedExpressionArgsDict(TypedDict):
     """
     (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -12010,11 +12010,11 @@ class WorkspaceTaskTypedExpressionArgs:
 
 
 class WorkspaceTaskTypedExpressionConfigValuesArgsDict(TypedDict):
-    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs']]]
+    config_param_values: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict']]]
     """
     (Updatable) The configuration parameter values.
     """
-    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesParentRefArgs']]]
+    parent_ref: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict']]]
     """
     (Updatable) A reference to the object's parent.
     """
@@ -12059,8 +12059,8 @@ class WorkspaceTaskTypedExpressionConfigValuesArgs:
 
 
 class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict(TypedDict):
-    length: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs']]]
-    scale: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs']]]
+    length: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict']]]
+    scale: NotRequired[pulumi.Input[Optional['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict']]]
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs:

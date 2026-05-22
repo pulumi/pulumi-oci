@@ -367,7 +367,7 @@ class OccCapacityRequestDetailArgsDict(TypedDict):
     """
     The actual handed over quantity of resources at the time of request resolution.
     """
-    associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs']]]]]
+    associated_occ_handover_resource_block_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgsDict']]]]]
     """
     A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
     """

@@ -44,11 +44,11 @@ __all__ = [
 ]
 
 class BlockchainPlatformComponentDetailArgsDict(TypedDict):
-    osns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]]
+    osns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgsDict']]]]]
     """
     List of OSNs
     """
-    peers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]]
+    peers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgsDict']]]]]
     """
     List of Peers
     """
@@ -97,7 +97,7 @@ class BlockchainPlatformComponentDetailOsnArgsDict(TypedDict):
     """
     Availability Domain of peer
     """
-    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]]
+    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict']]]]]
     """
     OCPU allocation parameter
     """
@@ -223,7 +223,7 @@ class BlockchainPlatformComponentDetailPeerArgsDict(TypedDict):
     """
     Host name of VM
     """
-    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]]
+    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict']]]]]
     """
     OCPU allocation parameter
     """

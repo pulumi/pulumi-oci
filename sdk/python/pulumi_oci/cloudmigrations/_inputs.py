@@ -202,11 +202,11 @@ class MigrationMigrationConfigArgs:
 
 
 class MigrationPlanMigrationPlanStatArgsDict(TypedDict):
-    cost_to_migrates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgs']]]]]
+    cost_to_migrates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCostToMigrateArgsDict']]]]]
     """
     Summary of costs to migrate.
     """
-    current_monthly_costs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs']]]]]
+    current_monthly_costs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatCurrentMonthlyCostArgsDict']]]]]
     """
     Current monthly compute and storage costs.
     """
@@ -214,7 +214,7 @@ class MigrationPlanMigrationPlanStatArgsDict(TypedDict):
     """
     The time when the migration plan was updated. An RFC3339 formatted datetime string.
     """
-    total_estimated_costs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs']]]]]
+    total_estimated_costs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict']]]]]
     """
     Cost estimation description
     """
@@ -489,7 +489,7 @@ class MigrationPlanMigrationPlanStatCurrentMonthlyCostArgs:
 
 
 class MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict(TypedDict):
-    computes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs']]]]]
+    computes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgsDict']]]]]
     """
     Cost estimation for compute
     """
@@ -497,11 +497,11 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostArgsDict(TypedDict):
     """
     Currency code in the ISO format.
     """
-    os_images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs']]]]]
+    os_images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgsDict']]]]]
     """
     Cost estimation for the OS image.
     """
-    storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs']]]]]
+    storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict']]]]]
     """
     Cost estimation for storage
     """
@@ -924,7 +924,7 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgsDict(TypedDict)
     """
     Gigabyte storage capacity per month by subscription
     """
-    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs']]]]]
+    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgsDict']]]]]
     """
     Volume estimation
     """
@@ -1530,7 +1530,7 @@ class TargetAssetCompatibilityMessageArgs:
 
 
 class TargetAssetEstimatedCostArgsDict(TypedDict):
-    computes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostComputeArgs']]]]]
+    computes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostComputeArgsDict']]]]]
     """
     Cost estimation for compute
     """
@@ -1538,11 +1538,11 @@ class TargetAssetEstimatedCostArgsDict(TypedDict):
     """
     Currency code in the ISO format.
     """
-    os_images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostOsImageArgs']]]]]
+    os_images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostOsImageArgsDict']]]]]
     """
     Cost estimation for the OS image.
     """
-    storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageArgs']]]]]
+    storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageArgsDict']]]]]
     """
     Cost estimation for storage
     """
@@ -1965,7 +1965,7 @@ class TargetAssetEstimatedCostStorageArgsDict(TypedDict):
     """
     Gigabyte storage capacity per month by subscription
     """
-    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgs']]]]]
+    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgsDict']]]]]
     """
     Volume estimation
     """
@@ -2163,7 +2163,7 @@ class TargetAssetMigrationAssetArgsDict(TypedDict):
     """
     Replication compartment identifier
     """
-    replication_location_detail: NotRequired[pulumi.Input[Optional['TargetAssetMigrationAssetReplicationLocationDetailArgs']]]
+    replication_location_detail: NotRequired[pulumi.Input[Optional['TargetAssetMigrationAssetReplicationLocationDetailArgsDict']]]
     """
     Replication location detail where the snapshots reside
     """
@@ -2633,7 +2633,7 @@ class TargetAssetMigrationAssetReplicationLocationDetailArgs:
 
 
 class TargetAssetRecommendedSpecArgsDict(TypedDict):
-    agent_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigArgs']]]]]
+    agent_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigArgsDict']]]]]
     """
     Configuration options for the Oracle Cloud Agent software running on the instance.
     """
@@ -2649,7 +2649,7 @@ class TargetAssetRecommendedSpecArgsDict(TypedDict):
     """
     The OCID of the compartment.
     """
-    create_vnic_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecCreateVnicDetailArgs']]]]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecCreateVnicDetailArgsDict']]]]]
     """
     Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
     """
@@ -2677,7 +2677,7 @@ class TargetAssetRecommendedSpecArgsDict(TypedDict):
     """
     Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
     """
-    instance_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecInstanceOptionArgs']]]]]
+    instance_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecInstanceOptionArgsDict']]]]]
     """
     Optional mutable instance options
     """
@@ -2689,7 +2689,7 @@ class TargetAssetRecommendedSpecArgsDict(TypedDict):
     """
     Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
     """
-    preemptible_instance_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs']]]]]
+    preemptible_instance_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict']]]]]
     """
     Configuration options for preemptible instances.
     """
@@ -2697,11 +2697,11 @@ class TargetAssetRecommendedSpecArgsDict(TypedDict):
     """
     The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
     """
-    shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecShapeConfigArgs']]]]]
+    shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecShapeConfigArgsDict']]]]]
     """
     The shape configuration requested for the instance.
     """
-    source_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgs']]]]]
+    source_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgsDict']]]]]
     """
     (Updatable)
     """
@@ -3014,7 +3014,7 @@ class TargetAssetRecommendedSpecAgentConfigArgsDict(TypedDict):
     """
     Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgsDict']]]]]
     """
     The configuration of plugins associated with this instance.
     """
@@ -3398,7 +3398,7 @@ class TargetAssetRecommendedSpecInstanceOptionArgs:
 
 
 class TargetAssetRecommendedSpecPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs']]]]]
+    preemption_actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]]]]
     """
     The action to run when the preemptible instance is interrupted for eviction.
     """
@@ -3674,7 +3674,7 @@ class TargetAssetRecommendedSpecSourceDetailArgs:
 
 
 class TargetAssetTestSpecArgsDict(TypedDict):
-    agent_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigArgs']]]]]
+    agent_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigArgsDict']]]]]
     """
     Configuration options for the Oracle Cloud Agent software running on the instance.
     """
@@ -3690,7 +3690,7 @@ class TargetAssetTestSpecArgsDict(TypedDict):
     """
     The OCID of the compartment.
     """
-    create_vnic_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecCreateVnicDetailArgs']]]]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecCreateVnicDetailArgsDict']]]]]
     """
     Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
     """
@@ -3718,7 +3718,7 @@ class TargetAssetTestSpecArgsDict(TypedDict):
     """
     Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
     """
-    instance_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecInstanceOptionArgs']]]]]
+    instance_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecInstanceOptionArgsDict']]]]]
     """
     Optional mutable instance options
     """
@@ -3730,7 +3730,7 @@ class TargetAssetTestSpecArgsDict(TypedDict):
     """
     Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
     """
-    preemptible_instance_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigArgs']]]]]
+    preemptible_instance_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigArgsDict']]]]]
     """
     Configuration options for preemptible instances.
     """
@@ -3738,11 +3738,11 @@ class TargetAssetTestSpecArgsDict(TypedDict):
     """
     The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
     """
-    shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecShapeConfigArgs']]]]]
+    shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecShapeConfigArgsDict']]]]]
     """
     The shape configuration requested for the instance.
     """
-    source_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgs']]]]]
+    source_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgsDict']]]]]
     """
     (Updatable)
     """
@@ -4055,7 +4055,7 @@ class TargetAssetTestSpecAgentConfigArgsDict(TypedDict):
     """
     Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigPluginsConfigArgsDict']]]]]
     """
     The configuration of plugins associated with this instance.
     """
@@ -4439,7 +4439,7 @@ class TargetAssetTestSpecInstanceOptionArgs:
 
 
 class TargetAssetTestSpecPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs']]]]]
+    preemption_actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]]]]
     """
     The action to run when the preemptible instance is interrupted for eviction.
     """
@@ -4715,7 +4715,7 @@ class TargetAssetTestSpecSourceDetailArgs:
 
 
 class TargetAssetUserSpecArgsDict(TypedDict):
-    agent_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecAgentConfigArgs']]]
+    agent_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecAgentConfigArgsDict']]]
     """
     (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
     """
@@ -4731,7 +4731,7 @@ class TargetAssetUserSpecArgsDict(TypedDict):
     """
     (Updatable) The OCID of the compartment.
     """
-    create_vnic_details: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecCreateVnicDetailsArgs']]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecCreateVnicDetailsArgsDict']]]
     """
     (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
     """
@@ -4765,7 +4765,7 @@ class TargetAssetUserSpecArgsDict(TypedDict):
     """
     (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
     """
-    instance_options: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecInstanceOptionsArgs']]]
+    instance_options: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecInstanceOptionsArgsDict']]]
     """
     (Updatable) Optional mutable instance options
     """
@@ -4789,7 +4789,7 @@ class TargetAssetUserSpecArgsDict(TypedDict):
     """
     (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
     """
-    preemptible_instance_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecPreemptibleInstanceConfigArgs']]]
+    preemptible_instance_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecPreemptibleInstanceConfigArgsDict']]]
     """
     (Updatable) Configuration options for preemptible instances.
     """
@@ -4799,7 +4799,7 @@ class TargetAssetUserSpecArgsDict(TypedDict):
 
     You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
     """
-    shape_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecShapeConfigArgsDict']]]
     """
     (Updatable) The shape configuration requested for the instance.
 
@@ -4807,7 +4807,7 @@ class TargetAssetUserSpecArgsDict(TypedDict):
 
     Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
     """
-    source_details: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecSourceDetailsArgs']]]
+    source_details: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecSourceDetailsArgsDict']]]
     """
     (Updatable)
     """
@@ -5182,7 +5182,7 @@ class TargetAssetUserSpecAgentConfigArgsDict(TypedDict):
     * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
     * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetUserSpecAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetAssetUserSpecAgentConfigPluginsConfigArgsDict']]]]]
     """
     (Updatable) The configuration of plugins associated with this instance.
     """
@@ -5696,7 +5696,7 @@ class TargetAssetUserSpecInstanceOptionsArgs:
 
 
 class TargetAssetUserSpecPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_action: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs']]]
+    preemption_action: NotRequired[pulumi.Input[Optional['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgsDict']]]
     """
     (Updatable) The action to run when the preemptible instance is interrupted for eviction.
     """

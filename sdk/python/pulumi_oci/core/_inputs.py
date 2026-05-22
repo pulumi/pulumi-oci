@@ -1041,7 +1041,7 @@ class CaptureFilterFlowLogCaptureFilterRuleArgsDict(TypedDict):
     """
     (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
     """
-    icmp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -1073,11 +1073,11 @@ class CaptureFilterFlowLogCaptureFilterRuleArgsDict(TypedDict):
     """
     (Updatable) Traffic from this CIDR will be captured in the flow log.
     """
-    tcp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
     """
-    udp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs']]]
+    udp_options: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
     """
@@ -1322,11 +1322,11 @@ class CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs:
 
 
 class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgsDict']]]
     """
     (Updatable)
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -1465,11 +1465,11 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
 
 
 class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgsDict']]]
     """
     (Updatable)
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -1616,7 +1616,7 @@ class CaptureFilterVtapCaptureFilterRuleArgsDict(TypedDict):
     """
     (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
     """
-    icmp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -1639,11 +1639,11 @@ class CaptureFilterVtapCaptureFilterRuleArgsDict(TypedDict):
     """
     (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
     """
-    tcp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
     """
-    udp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs']]]
+    udp_options: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
     """
@@ -1845,11 +1845,11 @@ class CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs:
 
 
 class CaptureFilterVtapCaptureFilterRuleTcpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgsDict']]]
     """
     (Updatable)
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -1988,11 +1988,11 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs:
 
 
 class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgsDict']]]
     """
     (Updatable)
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -2225,11 +2225,11 @@ class ClusterNetworkInstancePoolArgsDict(TypedDict):
     """
     instance_display_name_formatter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     instance_hostname_formatter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    load_balancers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]]]
+    load_balancers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgsDict']]]]]
     """
     The load balancers attached to the instance pool.
     """
-    placement_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]]]
+    placement_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgsDict']]]]]
     """
     The placement configurations for the instance pool.
     """
@@ -2629,11 +2629,11 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
     """
-    primary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]]]
+    primary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgsDict']]]]]
     """
     Details about the IPv6 primary subnet.
     """
-    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]]]
+    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgsDict']]]]]
     """
     The set of secondary VNIC data for instances in the pool.
     """
@@ -2742,7 +2742,7 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
 
 
 class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgsDict(TypedDict):
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -2844,7 +2844,7 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgsDic
     """
     (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -2967,11 +2967,11 @@ class ClusterNetworkPlacementConfigurationArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
     """
-    primary_vnic_subnets: NotRequired[pulumi.Input[Optional['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs']]]
+    primary_vnic_subnets: NotRequired[pulumi.Input[Optional['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgsDict']]]
     """
     Details about the IPv6 primary subnet.
     """
-    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs']]]]]
+    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgsDict']]]]]
     """
     The set of secondary VNIC data for instances in the pool.
     """
@@ -3063,7 +3063,7 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgsDict(TypedDict):
     """
     The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -3168,7 +3168,7 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgsDict(TypedDict)
     """
     The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -3303,7 +3303,7 @@ class ComputeCapacityReportShapeAvailabilityArgsDict(TypedDict):
 
     If you do not specify a fault domain, the capacity report includes information about all fault domains.
     """
-    instance_shape_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs']]]
+    instance_shape_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgsDict']]]
     """
     The shape configuration for a shape in a capacity report.
     """
@@ -3523,7 +3523,7 @@ class ComputeCapacityReservationInstanceReservationConfigArgsDict(TypedDict):
     """
     (Updatable) The total number of instances that can be launched from the capacity configuration.
     """
-    cluster_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs']]]
+    cluster_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgsDict']]]
     """
     (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
 
@@ -3541,7 +3541,7 @@ class ComputeCapacityReservationInstanceReservationConfigArgsDict(TypedDict):
 
     Example: `FAULT-DOMAIN-1`
     """
-    instance_shape_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs']]]
+    instance_shape_config: NotRequired[pulumi.Input[Optional['ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgsDict']]]
     """
     (Updatable) The shape configuration requested when launching instances in a compute capacity reservation.
 
@@ -3985,7 +3985,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferencesArgs:
 
 
 class ComputeHostConfigurationDataArgsDict(TypedDict):
-    check_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgs']]]]]
+    check_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgsDict']]]]]
     """
     Compute Host Group Configuration Details Check
     """
@@ -4295,7 +4295,7 @@ class CrossConnectGroupMacsecPropertiesArgsDict(TypedDict):
     """
     (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
     """
-    primary_key: NotRequired[pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']]]
+    primary_key: NotRequired[pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesPrimaryKeyArgsDict']]]
     """
     (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
     """
@@ -4490,7 +4490,7 @@ class CrossConnectMacsecPropertiesArgsDict(TypedDict):
     """
     (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
     """
-    primary_key: NotRequired[pulumi.Input[Optional['CrossConnectMacsecPropertiesPrimaryKeyArgs']]]
+    primary_key: NotRequired[pulumi.Input[Optional['CrossConnectMacsecPropertiesPrimaryKeyArgsDict']]]
     """
     (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
     """
@@ -4992,10 +4992,10 @@ class DefaultSecurityListEgressSecurityRuleArgsDict(TypedDict):
     protocol: pulumi.Input[_builtins.str]
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     destination_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    icmp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleIcmpOptionsArgsDict']]]
     stateless: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
-    tcp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleTcpOptionsArgs']]]
-    udp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleUdpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleTcpOptionsArgsDict']]]
+    udp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleUdpOptionsArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListEgressSecurityRuleArgs:
@@ -5131,7 +5131,7 @@ class DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs:
 class DefaultSecurityListEgressSecurityRuleTcpOptionsArgsDict(TypedDict):
     max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListEgressSecurityRuleTcpOptionsArgs:
@@ -5208,7 +5208,7 @@ class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs:
 class DefaultSecurityListEgressSecurityRuleUdpOptionsArgsDict(TypedDict):
     max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListEgressSecurityRuleUdpOptionsArgs:
@@ -5286,11 +5286,11 @@ class DefaultSecurityListIngressSecurityRuleArgsDict(TypedDict):
     protocol: pulumi.Input[_builtins.str]
     source: pulumi.Input[_builtins.str]
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    icmp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleIcmpOptionsArgsDict']]]
     source_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     stateless: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
-    tcp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleTcpOptionsArgs']]]
-    udp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleUdpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleTcpOptionsArgsDict']]]
+    udp_options: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleUdpOptionsArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListIngressSecurityRuleArgs:
@@ -5426,7 +5426,7 @@ class DefaultSecurityListIngressSecurityRuleIcmpOptionsArgs:
 class DefaultSecurityListIngressSecurityRuleTcpOptionsArgsDict(TypedDict):
     max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListIngressSecurityRuleTcpOptionsArgs:
@@ -5503,7 +5503,7 @@ class DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs:
 class DefaultSecurityListIngressSecurityRuleUdpOptionsArgsDict(TypedDict):
     max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['DefaultSecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class DefaultSecurityListIngressSecurityRuleUdpOptionsArgs:
@@ -6579,7 +6579,7 @@ class InstanceAgentConfigArgsDict(TypedDict):
     * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
     * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceAgentConfigPluginsConfigArgsDict']]]]]
     """
     (Updatable) The configuration of plugins associated with this instance.
     """
@@ -6796,20 +6796,20 @@ class InstanceConfigurationInstanceDetailsArgsDict(TypedDict):
     """
     The type of instance details. Supported instanceType is compute
     """
-    block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgs']]]]]
+    block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeArgsDict']]]]]
     """
     Block volume parameters.
     """
-    launch_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsArgs']]]
+    launch_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict']]]
     """
     Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
     See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
     """
-    options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgs']]]]]
+    options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionArgsDict']]]]]
     """
     Multiple Compute Instance Configuration instance details.
     """
-    secondary_vnics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgs']]]]]
+    secondary_vnics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicArgsDict']]]]]
     """
     Secondary VNIC parameters.
     """
@@ -6903,11 +6903,11 @@ class InstanceConfigurationInstanceDetailsArgs:
 
 
 class InstanceConfigurationInstanceDetailsBlockVolumeArgsDict(TypedDict):
-    attach_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs']]]
+    attach_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgsDict']]]
     """
     Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
     """
-    create_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs']]]
+    create_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict']]]
     """
     Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
     """
@@ -7120,7 +7120,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs:
 
 
 class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict(TypedDict):
-    autotune_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs']]]]]
+    autotune_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgsDict']]]]]
     """
     The list of autotune policies enabled for this volume.
     """
@@ -7132,7 +7132,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict(Typed
     """
     If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
     """
-    block_volume_replicas: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]]
+    block_volume_replicas: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgsDict']]]
     """
     The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
     """
@@ -7168,7 +7168,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgsDict(Typed
     """
     The size of the volume in GBs.
     """
-    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs']]]
+    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgsDict']]]
     vpus_per_gb: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -7572,11 +7572,11 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsA
 
 
 class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
-    agent_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs']]]
+    agent_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgsDict']]]
     """
     Configuration options for the Oracle Cloud Agent software running on the instance.
     """
-    availability_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs']]]
+    availability_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgsDict']]]
     """
     Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
     """
@@ -7600,7 +7600,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
     """
-    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs']]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgsDict']]]
     """
     Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
     """
@@ -7640,7 +7640,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
     """
     Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     """
-    instance_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs']]]
+    instance_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgsDict']]]
     """
     Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
     """
@@ -7674,11 +7674,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
     * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
     * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
     """
-    launch_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']]]
+    launch_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgsDict']]]
     """
     Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
     """
-    licensing_configs: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs']]]
+    licensing_configs: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict']]]
     """
     List of licensing configurations associated with target launch values.
     """
@@ -7710,11 +7710,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
 
     The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
     """
-    placement_constraint_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs']]]
+    placement_constraint_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgsDict']]]
     """
     The details for providing placement constraints.
     """
-    platform_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs']]]
+    platform_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgsDict']]]
     """
     (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
 
@@ -7722,7 +7722,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
 
     Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
     """
-    preemptible_instance_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs']]]
+    preemptible_instance_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgsDict']]]
     """
     Configuration options for preemptible instances.
     """
@@ -7742,7 +7742,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
 
     You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
     """
-    shape_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgsDict']]]
     """
     The shape configuration requested for the instance.
 
@@ -7750,7 +7750,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgsDict(TypedDict):
 
     Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
     """
-    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs']]]
+    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgsDict']]]
 
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
@@ -8374,7 +8374,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgsDict(Typed
     """
     Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgsDict']]]]]
     """
     The configuration of plugins associated with this instance.
     """
@@ -8587,7 +8587,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgsDict
     """
     The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -9501,7 +9501,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
 
 
 class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_action: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]]
+    preemption_action: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgsDict']]]
     """
     The action to run when the preemptible instance is interrupted for eviction.
     """
@@ -9744,7 +9744,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgsDict(Typ
     """
     The OCID of the image used to boot the instance.
     """
-    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]]
+    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgsDict']]]
     """
     These are the criteria for selecting an image. This is required if imageId is not specified.
     """
@@ -9965,17 +9965,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
 
 
 class InstanceConfigurationInstanceDetailsOptionArgsDict(TypedDict):
-    block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs']]]]]
+    block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgsDict']]]]]
     """
     Block volume parameters.
     """
-    launch_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs']]]
+    launch_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict']]]
     """
     Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 
     See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
     """
-    secondary_vnics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs']]]]]
+    secondary_vnics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgsDict']]]]]
     """
     Secondary VNIC parameters.
     """
@@ -10040,11 +10040,11 @@ class InstanceConfigurationInstanceDetailsOptionArgs:
 
 
 class InstanceConfigurationInstanceDetailsOptionBlockVolumeArgsDict(TypedDict):
-    attach_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs']]]
+    attach_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgsDict']]]
     """
     Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
     """
-    create_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs']]]
+    create_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict']]]
     """
     Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
     """
@@ -10257,7 +10257,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs:
 
 
 class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict(TypedDict):
-    autotune_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs']]]]]
+    autotune_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgsDict']]]]]
     """
     The list of autotune policies enabled for this volume.
     """
@@ -10269,7 +10269,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict
     """
     If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
     """
-    block_volume_replicas: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs']]]
+    block_volume_replicas: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgsDict']]]
     """
     The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
     """
@@ -10305,7 +10305,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgsDict
     """
     The size of the volume in GBs.
     """
-    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs']]]
+    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgsDict']]]
     vpus_per_gb: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -10709,11 +10709,11 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDe
 
 
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict):
-    agent_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs']]]
+    agent_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgsDict']]]
     """
     Configuration options for the Oracle Cloud Agent software running on the instance.
     """
-    availability_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs']]]
+    availability_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgsDict']]]
     """
     Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
     """
@@ -10737,7 +10737,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict)
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
     """
-    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgsDict']]]
     """
     Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
     """
@@ -10765,7 +10765,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict)
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     """
-    instance_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']]]
+    instance_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgsDict']]]
     """
     Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
     """
@@ -10789,11 +10789,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict)
     * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
     * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
     """
-    launch_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']]]
+    launch_options: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgsDict']]]
     """
     Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
     """
-    licensing_configs: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs']]]
+    licensing_configs: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict']]]
     """
     List of licensing configurations associated with target launch values.
     """
@@ -10801,15 +10801,15 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict)
     """
     Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
     """
-    placement_constraint_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs']]]
+    placement_constraint_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgsDict']]]
     """
     The details for providing placement constraints.
     """
-    platform_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']]]
+    platform_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgsDict']]]
     """
     The platform configuration requested for the instance.
     """
-    preemptible_instance_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']]]
+    preemptible_instance_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgsDict']]]
     """
     Configuration options for preemptible instances.
     """
@@ -10827,11 +10827,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgsDict(TypedDict)
     """
     The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgsDict']]]
     """
     The shape configuration requested for the instance.
     """
-    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs']]]
+    source_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgsDict']]]
 
 @pulumi.input_type
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
@@ -11355,7 +11355,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgsDict
     * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
     * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
     """
-    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs']]]]]
+    plugins_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgsDict']]]]]
     """
     The configuration of plugins associated with this instance.
     """
@@ -11598,7 +11598,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     """
     The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -12480,7 +12480,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
 
 
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgsDict(TypedDict):
-    preemption_action: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs']]]
+    preemption_action: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgsDict']]]
     """
     The action to run when the preemptible instance is interrupted for eviction.
     """
@@ -12706,7 +12706,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgsDi
     """
     The OCID of the image used to boot the instance.
     """
-    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs']]]
+    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgsDict']]]
     """
     These are the criteria for selecting an image. This is required if imageId is not specified.
     """
@@ -12923,7 +12923,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
 
 
 class InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgsDict(TypedDict):
-    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs']]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgsDict']]]
     """
     Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
     """
@@ -13020,7 +13020,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     """
     The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -13370,7 +13370,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
 
 
 class InstanceConfigurationInstanceDetailsSecondaryVnicArgsDict(TypedDict):
-    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs']]]
+    create_vnic_details: NotRequired[pulumi.Input[Optional['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgsDict']]]
     """
     Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
     """
@@ -13467,7 +13467,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgsDict
     """
     The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -13862,7 +13862,7 @@ class InstanceCreateVnicDetailsArgsDict(TypedDict):
 
     If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
     """
@@ -14558,7 +14558,7 @@ class InstanceLaunchVolumeAttachmentArgsDict(TypedDict):
     """
     Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
     """
-    launch_create_volume_details: NotRequired[pulumi.Input[Optional['InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs']]]
+    launch_create_volume_details: NotRequired[pulumi.Input[Optional['InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgsDict']]]
     """
     Define a volume that will be created and attached or attached to an instance on creation.
     """
@@ -15426,7 +15426,7 @@ class InstancePoolLifecycleManagementArgs:
 
 
 class InstancePoolLifecycleManagementLifecycleActionsArgsDict(TypedDict):
-    pre_termination: NotRequired[pulumi.Input[Optional['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgs']]]
+    pre_termination: NotRequired[pulumi.Input[Optional['InstancePoolLifecycleManagementLifecycleActionsPreTerminationArgsDict']]]
     """
     (Updatable) The data for pre-termination action for an instance pool
     """
@@ -15751,11 +15751,11 @@ class InstancePoolPlacementConfigurationArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
     """
-    primary_vnic_subnets: NotRequired[pulumi.Input[Optional['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']]]
+    primary_vnic_subnets: NotRequired[pulumi.Input[Optional['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgsDict']]]
     """
     (Updatable) Details about the IPv6 primary subnet.
     """
-    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]]]
+    secondary_vnic_subnets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgsDict']]]]]
     """
     (Updatable) The set of secondary VNIC data for instances in the pool.
     """
@@ -15887,7 +15887,7 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgsDict(TypedDict):
     """
     (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -15988,7 +15988,7 @@ class InstancePoolPlacementConfigurationSecondaryVnicSubnetArgsDict(TypedDict):
     """
     (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
     """
@@ -16491,7 +16491,7 @@ class InstanceSourceDetailsArgsDict(TypedDict):
 
     Allowed values:
     """
-    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs']]]
+    instance_source_image_filter_details: NotRequired[pulumi.Input[Optional['InstanceSourceDetailsInstanceSourceImageFilterDetailsArgsDict']]]
     """
     These are the criteria for selecting an image. This is required if imageId is not specified.
     """
@@ -17717,8 +17717,8 @@ class NetworkSecurityGroupSecurityRuleIcmpOptionsArgs:
 
 
 class NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs']]]
-    source_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgsDict']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class NetworkSecurityGroupSecurityRuleTcpOptionsArgs:
@@ -17844,8 +17844,8 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs:
 
 
 class NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict(TypedDict):
-    destination_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs']]]
-    source_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs']]]
+    destination_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgsDict']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgsDict']]]
 
 @pulumi.input_type
 class NetworkSecurityGroupSecurityRuleUdpOptionsArgs:
@@ -18163,7 +18163,7 @@ class SecurityListEgressSecurityRuleArgsDict(TypedDict):
     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
     """
-    icmp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleIcmpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -18175,11 +18175,11 @@ class SecurityListEgressSecurityRuleArgsDict(TypedDict):
     """
     (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
     """
-    tcp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleTcpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleTcpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
     """
-    udp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleUdpOptionsArgs']]]
+    udp_options: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleUdpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
     """
@@ -18398,7 +18398,7 @@ class SecurityListEgressSecurityRuleTcpOptionsArgsDict(TypedDict):
     """
     The minimum port number. Must not be greater than the maximum port number.
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -18514,7 +18514,7 @@ class SecurityListEgressSecurityRuleUdpOptionsArgsDict(TypedDict):
     """
     The minimum port number. Must not be greater than the maximum port number.
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -18638,7 +18638,7 @@ class SecurityListIngressSecurityRuleArgsDict(TypedDict):
     """
     (Updatable) An optional description of your choice for the rule.
     """
-    icmp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleIcmpOptionsArgs']]]
+    icmp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleIcmpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -18656,11 +18656,11 @@ class SecurityListIngressSecurityRuleArgsDict(TypedDict):
     """
     (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
     """
-    tcp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleTcpOptionsArgs']]]
+    tcp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleTcpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
     """
-    udp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleUdpOptionsArgs']]]
+    udp_options: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleUdpOptionsArgsDict']]]
     """
     (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
     """
@@ -18875,7 +18875,7 @@ class SecurityListIngressSecurityRuleTcpOptionsArgsDict(TypedDict):
     """
     The minimum port number. Must not be greater than the maximum port number.
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -18991,7 +18991,7 @@ class SecurityListIngressSecurityRuleUdpOptionsArgsDict(TypedDict):
     """
     The minimum port number. Must not be greater than the maximum port number.
     """
-    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs']]]
+    source_port_range: NotRequired[pulumi.Input[Optional['SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgsDict']]]
     """
     (Updatable)
     """
@@ -19583,7 +19583,7 @@ class VnicAttachmentCreateVnicDetailsArgsDict(TypedDict):
 
     If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address within that range to use.
     """

@@ -88,7 +88,7 @@ class CustomTableSavedCustomTableArgsDict(TypedDict):
     """
     (Updatable) The compartment depth level.
     """
-    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]]]]
+    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgsDict']]]]]
     """
     (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
     """
@@ -439,7 +439,7 @@ class QueryQueryDefinitionReportQueryArgsDict(TypedDict):
     """
     (Updatable) The filter object for query usage.
     """
-    forecast: NotRequired[pulumi.Input[Optional['QueryQueryDefinitionReportQueryForecastArgs']]]
+    forecast: NotRequired[pulumi.Input[Optional['QueryQueryDefinitionReportQueryForecastArgsDict']]]
     """
     (Updatable) Forecast configuration of usage/cost.
     """
@@ -447,7 +447,7 @@ class QueryQueryDefinitionReportQueryArgsDict(TypedDict):
     """
     (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
     """
-    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]]]]
+    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgsDict']]]]]
     """
     (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
     """
@@ -838,7 +838,7 @@ class ScheduleQueryPropertiesArgsDict(TypedDict):
     """
     Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
     """
-    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]]]
+    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgsDict']]]]]
     """
     GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
     """
@@ -1349,7 +1349,7 @@ class UsageCarbonEmissionItemArgsDict(TypedDict):
     """
     The subscription ID.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionItemTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionItemTagArgsDict']]]]]
     """
     For grouping, a tag definition. For filtering, a definition and key.
     """
@@ -1941,7 +1941,7 @@ class UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgsDict(TypedDict):
     """
     (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
     """
-    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs']]]]]
+    group_by_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgsDict']]]]]
     """
     (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
     """
@@ -2459,7 +2459,7 @@ class UsageItemArgsDict(TypedDict):
     """
     The subscription ID.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageItemTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsageItemTagArgsDict']]]]]
     """
     For grouping, a tag definition. For filtering, a definition and key.
     """

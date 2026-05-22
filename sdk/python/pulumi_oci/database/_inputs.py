@@ -700,7 +700,7 @@ __all__ = [
 ]
 
 class AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict(TypedDict):
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -1784,7 +1784,7 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -1804,7 +1804,7 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -2067,7 +2067,7 @@ class AutonomousContainerDatabaseAddStandbyMaintenanceWindowMonthArgs:
 
 
 class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -2533,7 +2533,7 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
 
 
 class AutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-    backup_destination_details: NotRequired[pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs']]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict']]]
     """
     (Updatable) Backup destination details.
     """
@@ -3217,7 +3217,7 @@ class AutonomousContainerDatabaseDataguardArgs:
 
 
 class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -4004,7 +4004,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -4024,7 +4024,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -4262,7 +4262,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -4282,7 +4282,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -4578,7 +4578,7 @@ class AutonomousContainerDatabaseMaintenanceWindowMonthArgs:
 
 
 class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict(TypedDict):
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -5266,7 +5266,7 @@ class AutonomousDatabaseBackupConfigArgs:
 
 
 class AutonomousDatabaseBackupSourceDatabaseDetailArgsDict(TypedDict):
-    autonomous_container_database_customer_contacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs']]]]]
+    autonomous_container_database_customer_contacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict']]]]]
     """
     Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
     """
@@ -5282,7 +5282,7 @@ class AutonomousDatabaseBackupSourceDatabaseDetailArgsDict(TypedDict):
     """
     Autonomous Container Database name.
     """
-    autonomous_database_customer_contacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs']]]]]
+    autonomous_database_customer_contacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict']]]]]
     """
     Customer Contacts for the Autonomous Database.
     """
@@ -5525,7 +5525,7 @@ class AutonomousDatabaseConnectionStringArgsDict(TypedDict):
     """
     The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
     """
-    profiles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]]]
+    profiles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgsDict']]]]]
     """
     A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
     """
@@ -6498,7 +6498,7 @@ class AutonomousDatabaseEncryptionKeyArgs:
 
 
 class AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict(TypedDict):
-    encryption_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]]]
+    encryption_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict']]]]]
     """
     (Updatable) Details of the Autonomous AI Database encryption key.
     """
@@ -7765,7 +7765,7 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
 
 
 class AutonomousDatabaseScheduledOperationArgsDict(TypedDict):
-    day_of_week: NotRequired[pulumi.Input[Optional['AutonomousDatabaseScheduledOperationDayOfWeekArgs']]]
+    day_of_week: NotRequired[pulumi.Input[Optional['AutonomousDatabaseScheduledOperationDayOfWeekArgsDict']]]
     """
     (Updatable) Day of the week.
     """
@@ -8321,7 +8321,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -8342,7 +8342,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -8575,7 +8575,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict(TypedDict)
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -8596,7 +8596,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict(TypedDict)
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -8888,7 +8888,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
 
 class AutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
     custom_action_timeout_in_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -8903,7 +8903,7 @@ class AutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -9127,7 +9127,7 @@ class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
 
 class AutonomousVmClusterMaintenanceWindowDetailArgsDict(TypedDict):
     custom_action_timeout_in_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -9142,7 +9142,7 @@ class AutonomousVmClusterMaintenanceWindowDetailArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -9720,7 +9720,7 @@ class CloudAutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -9741,7 +9741,7 @@ class CloudAutonomousVmClusterMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -9981,7 +9981,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -10002,7 +10002,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -10605,7 +10605,7 @@ class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -10625,7 +10625,7 @@ class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgs
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -11099,7 +11099,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -11120,7 +11120,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -11382,11 +11382,11 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
 
 
 class CloudVmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
-    apply_update_time_preference: NotRequired[pulumi.Input[Optional['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]]
+    apply_update_time_preference: NotRequired[pulumi.Input[Optional['CloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]]
     """
     (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
     """
-    freeze_period: NotRequired[pulumi.Input[Optional['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]]
+    freeze_period: NotRequired[pulumi.Input[Optional['CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]]
     """
     (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
     """
@@ -11687,7 +11687,7 @@ class CloudVmClusterFileSystemConfigurationDetailArgs:
 
 
 class CloudVmClusterIormConfigCacheArgsDict(TypedDict):
-    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgs']]]]]
+    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgsDict']]]]]
     """
     An array of IORM settings for all the database in the Exadata DB system.
     """
@@ -12119,7 +12119,7 @@ class DatabaseConnectionStringArgs:
 
 
 class DatabaseDataGuardGroupArgsDict(TypedDict):
-    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]]]]
+    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgsDict']]]]]
     """
     List of Data Guard members, representing each database that is part of Data Guard.
     """
@@ -12518,7 +12518,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
     """
     The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
     """
-    db_backup_config: NotRequired[pulumi.Input[Optional['DatabaseDatabaseDbBackupConfigArgs']]]
+    db_backup_config: NotRequired[pulumi.Input[Optional['DatabaseDatabaseDbBackupConfigArgsDict']]]
     """
     (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
     """
@@ -12540,7 +12540,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     """
-    encryption_key_location_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseEncryptionKeyLocationDetailsArgs']]]
+    encryption_key_location_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict']]]
     """
     Types of providers supported for managing database encryption keys
     """
@@ -12564,7 +12564,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
     """
     The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
     """
-    patch_options: NotRequired[pulumi.Input[Optional['DatabaseDatabasePatchOptionsArgs']]]
+    patch_options: NotRequired[pulumi.Input[Optional['DatabaseDatabasePatchOptionsArgsDict']]]
     """
     (Updatable) Options for DB Home and Database patching
     """
@@ -12588,7 +12588,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
     """
-    source_encryption_key_location_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs']]]
+    source_encryption_key_location_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict']]]
     """
     Types of providers supported for managing database encryption keys
     """
@@ -12596,7 +12596,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
     """
     The TDE wallet password of the source database specified by 'sourceDatabaseId'.
     """
-    storage_size_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseStorageSizeDetailsArgs']]]
+    storage_size_details: NotRequired[pulumi.Input[Optional['DatabaseDatabaseStorageSizeDetailsArgsDict']]]
     """
     The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
     """
@@ -13187,7 +13187,7 @@ class DatabaseDatabaseDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -13872,7 +13872,7 @@ class DatabaseDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -14285,7 +14285,7 @@ class DatabaseSnapshotStandbyConnectionStringArgs:
 
 
 class DatabaseSnapshotStandbyDataGuardGroupArgsDict(TypedDict):
-    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgs']]]]]
+    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict']]]]]
     """
     List of Data Guard members, representing each database that is part of Data Guard.
     """
@@ -14601,7 +14601,7 @@ class DatabaseSnapshotStandbyDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -15017,7 +15017,7 @@ class DatabaseUpgradeConnectionStringArgs:
 
 
 class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
-    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]]]]
+    members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgsDict']]]]]
     """
     List of Data Guard members, representing each database that is part of Data Guard.
     """
@@ -15517,7 +15517,7 @@ class DatabaseUpgradeDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -15893,7 +15893,7 @@ class DbHomeDatabaseArgsDict(TypedDict):
 
     AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbHomeDatabaseConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbHomeDatabaseConnectionStringArgsDict']]]]]
     database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -15902,7 +15902,7 @@ class DbHomeDatabaseArgsDict(TypedDict):
     """
     The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
     """
-    db_backup_config: NotRequired[pulumi.Input[Optional['DbHomeDatabaseDbBackupConfigArgs']]]
+    db_backup_config: NotRequired[pulumi.Input[Optional['DbHomeDatabaseDbBackupConfigArgsDict']]]
     """
     (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
     """
@@ -15921,7 +15921,7 @@ class DbHomeDatabaseArgsDict(TypedDict):
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     """
-    encryption_key_location_details: NotRequired[pulumi.Input[Optional['DbHomeDatabaseEncryptionKeyLocationDetailsArgs']]]
+    encryption_key_location_details: NotRequired[pulumi.Input[Optional['DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict']]]
     """
     Types of providers supported for managing database encryption keys
     """
@@ -15973,7 +15973,7 @@ class DbHomeDatabaseArgsDict(TypedDict):
     """
     The current state of the Database Home.
     """
-    storage_size_details: NotRequired[pulumi.Input[Optional['DbHomeDatabaseStorageSizeDetailsArgs']]]
+    storage_size_details: NotRequired[pulumi.Input[Optional['DbHomeDatabaseStorageSizeDetailsArgsDict']]]
     """
     The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
     """
@@ -16579,7 +16579,7 @@ class DbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     Backup destination details.
     """
@@ -17081,7 +17081,7 @@ class DbNodeSnapshotManagementSnapshotArgsDict(TypedDict):
     """
     Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
     """
-    mount_points: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotMountPointArgs']]]]]
+    mount_points: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotMountPointArgsDict']]]]]
     """
     Details of the mount points
     """
@@ -17105,7 +17105,7 @@ class DbNodeSnapshotManagementSnapshotArgsDict(TypedDict):
     """
     The date and time that the Exadata Database Node Snapshot was created.
     """
-    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotVolumeArgs']]]]]
+    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbNodeSnapshotManagementSnapshotVolumeArgsDict']]]]]
     """
     Details of the volumes
     """
@@ -17895,7 +17895,7 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
 
     AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgsDict']]]]]
     database_defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -17912,7 +17912,7 @@ class DbSystemDbHomeDatabaseArgsDict(TypedDict):
     """
     The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
     """
-    db_backup_config: NotRequired[pulumi.Input[Optional['DbSystemDbHomeDatabaseDbBackupConfigArgs']]]
+    db_backup_config: NotRequired[pulumi.Input[Optional['DbSystemDbHomeDatabaseDbBackupConfigArgsDict']]]
     """
     (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
     """
@@ -18630,7 +18630,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgsDict(TypedDict):
     """
     This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
     """
-    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]]]
+    backup_destination_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]]
     """
     (Updatable) Backup destination details.
     """
@@ -18970,7 +18970,7 @@ class DbSystemDbSystemOptionsArgs:
 
 
 class DbSystemIormConfigCacheArgsDict(TypedDict):
-    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgs']]]]]
+    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgsDict']]]]]
     """
     An array of IORM settings for all the database in the Exadata DB system.
     """
@@ -19145,7 +19145,7 @@ class DbSystemMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -19165,7 +19165,7 @@ class DbSystemMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -19403,7 +19403,7 @@ class DbSystemMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -19423,7 +19423,7 @@ class DbSystemMaintenanceWindowDetailsArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -19750,7 +19750,7 @@ class DbSystemsUpgradeDbSystemOptionArgs:
 
 
 class DbSystemsUpgradeIormConfigCacheArgsDict(TypedDict):
-    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgs']]]]]
+    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgsDict']]]]]
     """
     An array of IORM settings for all the database in the Exadata DB system.
     """
@@ -19908,7 +19908,7 @@ class DbSystemsUpgradeIormConfigCacheDbPlanArgs:
 
 
 class DbSystemsUpgradeMaintenanceWindowArgsDict(TypedDict):
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -19921,7 +19921,7 @@ class DbSystemsUpgradeMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -20211,7 +20211,7 @@ class ExadataInfrastructureComputeMaintenanceWindowArgsDict(TypedDict):
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -20232,7 +20232,7 @@ class ExadataInfrastructureComputeMaintenanceWindowArgsDict(TypedDict):
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -20766,7 +20766,7 @@ class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(
     """
     Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     Days during the week when maintenance should be performed.
     """
@@ -20786,7 +20786,7 @@ class ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowArgsDict(
     """
     Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgsDict']]]]]
     """
     Months during the year when maintenance should be performed.
     """
@@ -21406,7 +21406,7 @@ class ExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
     """
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgsDict']]]]]
     """
     (Updatable) Days during the week when maintenance should be performed.
     """
@@ -21427,7 +21427,7 @@ class ExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     """
     (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
     """
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgsDict']]]]]
     """
     (Updatable) Months during the year when maintenance should be performed.
     """
@@ -21828,10 +21828,10 @@ class ExadataInfrastructureStorageContactArgs:
 
 class ExadataInfrastructureStorageMaintenanceWindowArgsDict(TypedDict):
     preference: pulumi.Input[_builtins.str]
-    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs']]]]]
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgsDict']]]]]
     hours_of_days: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
     lead_time_in_weeks: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgs']]]]]
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgsDict']]]]]
     weeks_of_months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
 
 @pulumi.input_type
@@ -22085,7 +22085,7 @@ class ExadbVmClusterDataCollectionOptionsArgs:
 
 
 class ExadbVmClusterIormConfigCacheArgsDict(TypedDict):
-    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgs']]]]]
+    db_plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgsDict']]]]]
     """
     An array of IORM settings for all the database in the Exadata DB system.
     """
@@ -23924,7 +23924,7 @@ class PluggableDatabasePdbCreationTypeDetailsArgsDict(TypedDict):
     """
     True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
     """
-    refreshable_clone_details: NotRequired[pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']]]
+    refreshable_clone_details: NotRequired[pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgsDict']]]
     """
     Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -24845,11 +24845,11 @@ class SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs:
 
 
 class VmClusterAddVirtualNetworkCloudAutomationUpdateDetailArgsDict(TypedDict):
-    apply_update_time_preferences: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]]
+    apply_update_time_preferences: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]]
     """
     Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
     """
-    freeze_periods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgs']]]]]
+    freeze_periods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterAddVirtualNetworkCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]]
     """
     Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
     """
@@ -25178,11 +25178,11 @@ class VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs:
 
 
 class VmClusterCloudAutomationUpdateDetailsArgsDict(TypedDict):
-    apply_update_time_preference: NotRequired[pulumi.Input[Optional['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgs']]]
+    apply_update_time_preference: NotRequired[pulumi.Input[Optional['VmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceArgsDict']]]
     """
     (Updatable) Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
     """
-    freeze_period: NotRequired[pulumi.Input[Optional['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs']]]
+    freeze_period: NotRequired[pulumi.Input[Optional['VmClusterCloudAutomationUpdateDetailsFreezePeriodArgsDict']]]
     """
     (Updatable) Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
     """
@@ -25942,11 +25942,11 @@ class VmClusterNetworkVmNetworkNodeArgs:
 
 
 class VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict(TypedDict):
-    apply_update_time_preferences: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs']]]]]
+    apply_update_time_preferences: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgsDict']]]]]
     """
     Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
     """
-    freeze_periods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgs']]]]]
+    freeze_periods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailFreezePeriodArgsDict']]]]]
     """
     Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
     """

@@ -370,7 +370,7 @@ class JobJobConfigurationDetailsArgsDict(TypedDict):
     """
     A time bound for the execution of the job. Timer starts when the job becomes active.
     """
-    startup_probe_details: NotRequired[pulumi.Input[Optional['JobJobConfigurationDetailsStartupProbeDetailsArgs']]]
+    startup_probe_details: NotRequired[pulumi.Input[Optional['JobJobConfigurationDetailsStartupProbeDetailsArgsDict']]]
     """
     The probe indicates whether the application within the job run has started.
     """
@@ -704,7 +704,7 @@ class JobJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The size of the block storage volume to attach to the instance running the job
     """
-    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]]
+    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
     """
@@ -966,11 +966,11 @@ class JobJobNodeConfigurationDetailsArgsDict(TypedDict):
     """
     The node type used for job run.
     """
-    job_network_configuration: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs']]]
+    job_network_configuration: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNetworkConfigurationArgsDict']]]
     """
     The job network configuration details
     """
-    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs']]]]]
+    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]]
     """
     List of JobNodeGroupConfigurationDetails
     """
@@ -1122,15 +1122,15 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgsDict
     """
     node group name.
     """
-    job_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs']]]
+    job_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]]
     """
     The job configuration details
     """
-    job_environment_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs']]]
+    job_environment_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]]
     """
     Environment configuration to capture job runtime dependencies.
     """
-    job_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs']]]
+    job_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]]
     """
     The job infrastructure configuration details (shape, block storage, etc.)
     """
@@ -1262,7 +1262,7 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfi
     """
     A time bound for the execution of the job. Timer starts when the job becomes active.
     """
-    startup_probe_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs']]]
+    startup_probe_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]]
     """
     The probe indicates whether the application within the job run has started.
     """
@@ -1596,7 +1596,7 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     """
     The size of the block storage volume to attach to the instance running the job
     """
-    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]]
+    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
     """
@@ -1948,7 +1948,7 @@ class JobRunJobConfigurationOverrideDetailsArgsDict(TypedDict):
     """
     A time bound for the execution of the job. Timer starts when the job becomes active.
     """
-    startup_probe_details: NotRequired[pulumi.Input[Optional['JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs']]]
+    startup_probe_details: NotRequired[pulumi.Input[Optional['JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgsDict']]]
     """
     The probe indicates whether the application within the job run has started.
     """
@@ -2282,7 +2282,7 @@ class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
     """
     The infrastructure type used for job run.
     """
-    job_shape_config_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]]]
+    job_shape_config_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict']]]]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
     """
@@ -2460,7 +2460,7 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
     """
     The size of the block storage volume to attach to the instance running the job
     """
-    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs']]]
+    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
     """
@@ -2702,11 +2702,11 @@ class JobRunJobNodeConfigurationOverrideDetailsArgsDict(TypedDict):
     """
     The node type used for job run.
     """
-    job_network_configuration: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs']]]
+    job_network_configuration: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgsDict']]]
     """
     The job network configuration details
     """
-    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs']]]]]
+    job_node_group_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgsDict']]]]]
     """
     List of JobNodeGroupConfigurationDetails
     """
@@ -2858,15 +2858,15 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     """
     node group name.
     """
-    job_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs']]]
+    job_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgsDict']]]
     """
     The job configuration details
     """
-    job_environment_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs']]]
+    job_environment_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgsDict']]]
     """
     Environment configuration to capture job runtime dependencies.
     """
-    job_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs']]]
+    job_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict']]]
     """
     The job infrastructure configuration details (shape, block storage, etc.)
     """
@@ -2998,7 +2998,7 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     """
     A time bound for the execution of the job. Timer starts when the job becomes active.
     """
-    startup_probe_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs']]]
+    startup_probe_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgsDict']]]
     """
     The probe indicates whether the application within the job run has started.
     """
@@ -3332,7 +3332,7 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     """
     The size of the block storage volume to attach to the instance running the job
     """
-    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]]
+    job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
     """
@@ -4118,15 +4118,15 @@ class MlApplicationImplementationConfigurationSchemaArgs:
 
 
 class MlApplicationImplementationLoggingArgsDict(TypedDict):
-    aggregated_instance_view_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgs']]]
+    aggregated_instance_view_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingAggregatedInstanceViewLogArgsDict']]]
     """
     (Updatable) Log configuration details for particular areas of ML Application Implementation.
     """
-    implementation_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingImplementationLogArgs']]]
+    implementation_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingImplementationLogArgsDict']]]
     """
     (Updatable) Log configuration details for particular areas of ML Application Implementation.
     """
-    trigger_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingTriggerLogArgs']]]
+    trigger_log: NotRequired[pulumi.Input[Optional['MlApplicationImplementationLoggingTriggerLogArgsDict']]]
     """
     (Updatable) Log configuration details for particular areas of ML Application Implementation.
     """
@@ -4394,7 +4394,7 @@ class MlApplicationImplementationLoggingTriggerLogArgs:
 
 
 class MlApplicationImplementationMlApplicationPackageArgumentArgsDict(TypedDict):
-    arguments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgs']]]]]
+    arguments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgumentArgsDict']]]]]
     """
     Array of the ML Application package arguments
     """
@@ -4664,7 +4664,7 @@ class MlApplicationInstancePredictionEndpointDetailArgsDict(TypedDict):
     """
     Base URI of prediction router.
     """
-    prediction_uris: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgs']]]]]
+    prediction_uris: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationInstancePredictionEndpointDetailPredictionUriArgsDict']]]]]
     """
     Array of all prediction URIs per use-case.
     """
@@ -5230,11 +5230,11 @@ class ModelDefinedMetadataListArgs:
 
 
 class ModelDeploymentCategoryLogDetailsArgsDict(TypedDict):
-    access: NotRequired[pulumi.Input[Optional['ModelDeploymentCategoryLogDetailsAccessArgs']]]
+    access: NotRequired[pulumi.Input[Optional['ModelDeploymentCategoryLogDetailsAccessArgsDict']]]
     """
     (Updatable) The log details.
     """
-    predict: NotRequired[pulumi.Input[Optional['ModelDeploymentCategoryLogDetailsPredictArgs']]]
+    predict: NotRequired[pulumi.Input[Optional['ModelDeploymentCategoryLogDetailsPredictArgsDict']]]
     """
     (Updatable) The log details.
     """
@@ -5377,19 +5377,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The type of the model deployment.
     """
-    environment_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']]]
+    environment_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict']]]
     """
     (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
     """
-    infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs']]]
+    infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict']]]
     """
     The infrastructure configuration details.
     """
-    model_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs']]]
+    model_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict']]]
     """
     (Updatable) The model configuration details.
     """
-    model_group_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs']]]
+    model_group_configuration_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgsDict']]]
     """
     (Updatable) The model group configuration details.
     """
@@ -5705,7 +5705,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     """
     The maximum network bandwidth for the model deployment.
     """
-    scaling_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs']]]
+    scaling_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict']]]
     """
     The scaling policy to apply to each model of the deployment.
     """
@@ -5800,7 +5800,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     """
     The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
     """
-    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]]
+    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]]
     """
     Details for the model-deployment instance shape configuration.
     """
@@ -5977,7 +5977,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     """
     The type of scaling policy.
     """
-    auto_scaling_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]]]]
+    auto_scaling_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]]
     """
     The list of autoscaling policy details.
     """
@@ -6493,7 +6493,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     """
     (Updatable) The minimum network bandwidth for the model deployment.
     """
-    instance_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs']]]
+    instance_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgsDict']]]
     """
     (Updatable) The model deployment instance configuration.
     """
@@ -6505,7 +6505,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     """
     (Updatable) The OCID of the model you want to deploy.
     """
-    scaling_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs']]]
+    scaling_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgsDict']]]
     """
     (Updatable) The scaling policy to apply to each model of the deployment.
     """
@@ -6602,7 +6602,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     """
     (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
     """
-    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]]
+    model_deployment_instance_shape_config_details: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the model-deployment instance shape configuration.
     """
@@ -6780,7 +6780,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     """
     (Updatable) The type of scaling policy.
     """
-    auto_scaling_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]]]]
+    auto_scaling_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]]
     """
     (Updatable) The list of autoscaling policy details.
     """
@@ -7462,7 +7462,7 @@ class ModelDeploymentModelDeploymentSystemDataArgs:
 
 
 class ModelGroupMemberModelEntriesArgsDict(TypedDict):
-    member_model_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupMemberModelEntriesMemberModelDetailArgs']]]]]
+    member_model_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupMemberModelEntriesMemberModelDetailArgsDict']]]]]
     """
     Each List item contains inference key and model ocid.
     """
@@ -7548,11 +7548,11 @@ class ModelGroupModelGroupCloneSourceDetailsArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history.
     """
-    modify_model_group_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgs']]]
+    modify_model_group_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict']]]
     """
     Overwrites the properties of the source modelGroup.
     """
-    patch_model_group_member_model_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgs']]]
+    patch_model_group_member_model_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict']]]
     """
     Specifies the list of new models to be added and list of models from source model group to be removed for cloning.
     """
@@ -7643,7 +7643,7 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgsDict(Type
     """
     Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    model_group_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgs']]]
+    model_group_details: NotRequired[pulumi.Input[Optional['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgsDict']]]
     """
     The model group details.
     """
@@ -7784,7 +7784,7 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDet
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
     """
-    custom_metadata_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgs']]]]]
+    custom_metadata_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgsDict']]]]]
     """
     An array of custom metadata details for the model group.
     """
@@ -7933,7 +7933,7 @@ class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDet
 
 
 class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgsDict']]]]]
     """
     Array of patch instructions.
     """
@@ -8065,7 +8065,7 @@ class ModelGroupModelGroupDetailsArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
     """
-    custom_metadata_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupDetailsCustomMetadataListArgs']]]]]
+    custom_metadata_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelGroupModelGroupDetailsCustomMetadataListArgsDict']]]]]
     """
     An array of custom metadata details for the model group.
     """
@@ -8419,7 +8419,7 @@ class NotebookSessionNotebookSessionConfigDetailsArgsDict(TypedDict):
     """
     A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
     """
-    notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']]]
+    notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgsDict']]]
     """
     Details for the notebook session shape configuration.
     """
@@ -8600,7 +8600,7 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
     """
-    notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']]]
+    notebook_session_shape_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the notebook session shape configuration.
     """
@@ -8768,7 +8768,7 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict(TypedDict):
     """
     (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
     """
-    notebook_session_git_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']]]
+    notebook_session_git_config_details: NotRequired[pulumi.Input[Optional['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict']]]
     """
     (Updatable) Git configuration Details.
     """
@@ -8813,7 +8813,7 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
 
 
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgsDict(TypedDict):
-    notebook_session_git_repo_config_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]]]
+    notebook_session_git_repo_config_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgsDict']]]]]
     """
     (Updatable) A collection of Git repository configurations.
     """
@@ -9137,7 +9137,7 @@ class PipelineInfrastructureConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
     """
-    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs']]]
+    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -9619,7 +9619,7 @@ class PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
     """
     The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
     """
-    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs']]]
+    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgsDict']]]
     """
     Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -9969,19 +9969,19 @@ class PipelineRunStepOverrideDetailArgsDict(TypedDict):
     """
     The name of the step.
     """
-    step_container_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs']]]
+    step_container_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]]
     """
     Container Details for a step in pipeline.
     """
-    step_dataflow_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs']]]
+    step_dataflow_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict']]]
     """
     The configuration details of a Dataflow step.
     """
-    step_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs']]]
+    step_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDict']]]
     """
     The infrastructure configuration details of a pipeline or a step.
     """
-    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs']]]]]
+    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgsDict']]]]]
     """
     The storage mount details to mount to the instance running the pipeline step.
     """
@@ -10292,7 +10292,7 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict(Type
     """
     The VM shape for the driver.
     """
-    driver_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]]
+    driver_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]]
     """
     Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -10300,7 +10300,7 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgsDict(Type
     """
     The VM shape for the executors.
     """
-    executor_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]]
+    executor_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]]
     """
     Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -10643,7 +10643,7 @@ class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgsDic
     """
     The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
     """
-    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs']]]
+    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]]
     """
     Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -11490,23 +11490,23 @@ class PipelineStepDetailArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
     """
-    step_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepConfigurationDetailsArgs']]]
+    step_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepConfigurationDetailsArgsDict']]]
     """
     (Updatable) The configuration details of a step.
     """
-    step_container_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepContainerConfigurationDetailsArgs']]]
+    step_container_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepContainerConfigurationDetailsArgsDict']]]
     """
     Container Details for a step in pipeline.
     """
-    step_dataflow_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsArgs']]]
+    step_dataflow_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsArgsDict']]]
     """
     (Updatable) The configuration details of a Dataflow step.
     """
-    step_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']]]
+    step_infrastructure_configuration_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict']]]
     """
     (Updatable) The infrastructure configuration details of a pipeline or a step.
     """
-    step_parameters: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepParametersArgs']]]
+    step_parameters: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepParametersArgsDict']]]
     """
     (Updatable) Pipeline step parameter details
     """
@@ -11514,7 +11514,7 @@ class PipelineStepDetailArgsDict(TypedDict):
     """
     (Updatable) Name used when creating the steprun.
     """
-    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgs']]]]]
+    step_storage_mount_configuration_details_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PipelineStepDetailStepStorageMountConfigurationDetailsListArgsDict']]]]]
     """
     (Updatable) The storage mount details to mount to the instance running the pipeline step.
     """
@@ -11953,7 +11953,7 @@ class PipelineStepDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The VM shape for the driver.
     """
-    driver_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs']]]
+    driver_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -11961,7 +11961,7 @@ class PipelineStepDetailStepDataflowConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The VM shape for the executors.
     """
-    executor_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs']]]
+    executor_shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -12304,7 +12304,7 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgsDict(TypedDict
     """
     (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
     """
-    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs']]]
+    shape_config_details: NotRequired[pulumi.Input[Optional['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
@@ -13018,11 +13018,11 @@ class ScheduleActionActionDetailsArgsDict(TypedDict):
     """
     (Updatable) The type of http action to trigger.
     """
-    create_job_run_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsArgs']]]
+    create_job_run_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsArgsDict']]]
     """
     (Updatable) Parameters needed to create a new job run.
     """
-    create_pipeline_run_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsArgs']]]
+    create_pipeline_run_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict']]]
     """
     (Updatable) The information about new PipelineRun.
     """
@@ -13030,7 +13030,7 @@ class ScheduleActionActionDetailsArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.
     """
-    trigger_ml_application_instance_view_flow_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgs']]]
+    trigger_ml_application_instance_view_flow_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict']]]
     """
     (Updatable) Payload for trigger request endpoint
     """
@@ -13138,11 +13138,11 @@ class ScheduleActionActionDetailsCreateJobRunDetailsArgsDict(TypedDict):
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    job_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgs']]]
+    job_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobConfigurationOverrideDetailsArgsDict']]]
     """
     (Updatable) The job configuration details
     """
-    job_environment_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgs']]]
+    job_environment_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobEnvironmentConfigurationOverrideDetailsArgsDict']]]
     """
     (Updatable) Environment configuration to capture job runtime dependencies.
     """
@@ -13150,7 +13150,7 @@ class ScheduleActionActionDetailsCreateJobRunDetailsArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
     """
-    job_log_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgs']]]
+    job_log_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsArgsDict']]]
     """
     (Updatable) Logging configuration for resource.
     """
@@ -13619,7 +13619,7 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
     """
-    configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgs']]]
+    configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsConfigurationOverrideDetailsArgsDict']]]
     """
     (Updatable) The configuration details of a pipeline.
     """
@@ -13635,7 +13635,7 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    log_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgs']]]
+    log_configuration_override_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsArgsDict']]]
     """
     (Updatable) The pipeline log configuration details.
     """
@@ -13647,7 +13647,7 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
     """
-    step_override_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgs']]]]]
+    step_override_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict']]]]]
     """
     (Updatable) Array of step override details. Only Step Configuration is allowed to be overridden.
     """
@@ -14001,11 +14001,11 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrid
 
 
 class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailArgsDict(TypedDict):
-    step_configuration_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgs']]]
+    step_configuration_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepConfigurationDetailsArgsDict']]]
     """
     (Updatable) The configuration details of a step.
     """
-    step_container_configuration_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgs']]]
+    step_container_configuration_details: NotRequired[pulumi.Input[Optional['ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepContainerConfigurationDetailsArgsDict']]]
     """
     (Updatable) Container Details for a step in pipeline.
     """
@@ -14266,7 +14266,7 @@ class ScheduleActionActionDetailsCreatePipelineRunDetailsStepOverrideDetailStepC
 
 
 class ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsArgsDict(TypedDict):
-    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgs']]]]]
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleActionActionDetailsTriggerMlApplicationInstanceViewFlowDetailsParameterArgsDict']]]]]
     """
     (Updatable) Parameters provided for given trigger invocation (they must match predefined schema)
     """

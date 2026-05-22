@@ -589,11 +589,11 @@ class DeploymentSpecificationArgsDict(TypedDict):
     """
     (Updatable) A list of routes that this API exposes.
     """
-    logging_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesArgs']]]
+    logging_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesArgsDict']]]
     """
     (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
     """
-    request_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesArgs']]]
+    request_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesArgsDict']]]
     """
     (Updatable) Global behavior applied to all requests received by the API.
     """
@@ -653,11 +653,11 @@ class DeploymentSpecificationArgs:
 
 
 class DeploymentSpecificationLoggingPoliciesArgsDict(TypedDict):
-    access_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesAccessLogArgs']]]
+    access_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesAccessLogArgsDict']]]
     """
     (Updatable) Configures the logging policies for the access logs of an API Deployment.
     """
-    execution_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesExecutionLogArgs']]]
+    execution_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationLoggingPoliciesExecutionLogArgsDict']]]
     """
     (Updatable) Configures the logging policies for the execution logs of an API Deployment.
     """
@@ -804,27 +804,27 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
 
 
 class DeploymentSpecificationRequestPoliciesArgsDict(TypedDict):
-    authentication: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationArgs']]]
+    authentication: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationArgsDict']]]
     """
     (Updatable) Information on how to authenticate incoming requests.
     """
-    cors: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesCorsArgs']]]
+    cors: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesCorsArgsDict']]]
     """
     (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
     """
-    dynamic_authentication: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs']]]
+    dynamic_authentication: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgsDict']]]
     """
     (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
     """
-    mutual_tls: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesMutualTlsArgs']]]
+    mutual_tls: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesMutualTlsArgsDict']]]
     """
     (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
     """
-    rate_limiting: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesRateLimitingArgs']]]
+    rate_limiting: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesRateLimitingArgsDict']]]
     """
     (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
     """
-    usage_plans: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesUsagePlansArgs']]]
+    usage_plans: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesUsagePlansArgsDict']]]
     """
     (Updatable) Usage plan policies for this deployment
     """
@@ -965,7 +965,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgsDict(TypedDict):
     """
     (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
     """
-    public_keys: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs']]]
+    public_keys: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict']]]
     """
     (Updatable) A set of Public Keys that will be used to verify the JWT signature.
     """
@@ -981,15 +981,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgsDict(TypedDict):
     """
     (Updatable) The name of the query parameter containing the authentication token.
     """
-    validation_failure_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs']]]
+    validation_failure_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgsDict']]]
     """
     (Updatable) Policy for defining behaviour on validation failure.
     """
-    validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs']]]
+    validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDict']]]
     """
     (Updatable) Authentication Policies for the Token Authentication types.
     """
-    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]]]]
+    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgsDict']]]]]
     """
     (Updatable) A list of claims which should be validated to consider the token valid.
     """
@@ -1249,7 +1249,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgsDict(Typ
     """
     (Updatable) Defines whether or not to uphold SSL verification.
     """
-    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgsDict']]]]]
     """
     (Updatable) The set of static public keys.
     """
@@ -1541,7 +1541,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     """
     (Updatable) Type of the Validation failure Policy.
     """
-    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs']]]
+    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgsDict']]]
     """
     (Updatable) Client App Credential details.
     """
@@ -1561,7 +1561,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     """
     (Updatable) HTTP response code, can include context variables.
     """
-    response_header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs']]]
+    response_header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict']]]
     """
     (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
     """
@@ -1577,7 +1577,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     """
     (Updatable) List of scopes.
     """
-    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs']]]
+    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgsDict']]]
     """
     (Updatable) Auth endpoint details.
     """
@@ -1913,15 +1913,15 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 
 
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
-    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']]]
+    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]]
     """
     (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
     """
-    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']]]
+    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]]
     """
     (Updatable) Rename HTTP headers as they pass through the gateway.
     """
-    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']]]
+    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]]
     """
     (Updatable) Set HTTP headers as they pass through the gateway.
     """
@@ -1982,7 +1982,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 
 
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -2060,7 +2060,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 
 
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -2138,7 +2138,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 
 
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -2288,11 +2288,11 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDi
     """
     (Updatable) Type of the token validation policy.
     """
-    additional_validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs']]]
+    additional_validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgsDict']]]
     """
     (Updatable) Additional JWT validation checks.
     """
-    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs']]]
+    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgsDict']]]
     """
     (Updatable) Client App Credential details.
     """
@@ -2300,7 +2300,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDi
     """
     (Updatable) Defines whether or not to uphold SSL verification.
     """
-    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs']]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgsDict']]]]]
     """
     (Updatable) The set of static public keys.
     """
@@ -2308,7 +2308,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgsDi
     """
     (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
     """
-    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs']]]
+    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgsDict']]]
     """
     (Updatable) Auth endpoint details.
     """
@@ -2460,7 +2460,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     """
     (Updatable) A list of parties that could have issued the token.
     """
-    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]]]
+    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]]
     """
     (Updatable) A list of claims which should be validated to consider the token valid.
     """
@@ -3237,7 +3237,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
     """
-    public_keys: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs']]]
+    public_keys: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgsDict']]]
     """
     (Updatable) A set of Public Keys that will be used to verify the JWT signature.
     """
@@ -3253,15 +3253,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) The name of the query parameter containing the authentication token.
     """
-    validation_failure_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs']]]
+    validation_failure_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgsDict']]]
     """
     (Updatable) Policy for defining behaviour on validation failure.
     """
-    validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs']]]
+    validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgsDict']]]
     """
     (Updatable) Authentication Policies for the Token Authentication types.
     """
-    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]]]]
+    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgsDict']]]]]
     """
     (Updatable) A list of claims which should be validated to consider the token valid.
     """
@@ -3521,7 +3521,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) Defines whether or not to uphold SSL verification.
     """
-    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgsDict']]]]]
     """
     (Updatable) The set of static public keys.
     """
@@ -3813,7 +3813,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) Type of the Validation failure Policy.
     """
-    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs']]]
+    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgsDict']]]
     """
     (Updatable) Client App Credential details.
     """
@@ -3833,7 +3833,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) HTTP response code, can include context variables.
     """
-    response_header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs']]]
+    response_header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict']]]
     """
     (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
     """
@@ -3849,7 +3849,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) List of scopes.
     """
-    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs']]]
+    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgsDict']]]
     """
     (Updatable) Auth endpoint details.
     """
@@ -4185,15 +4185,15 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
 
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgsDict(TypedDict):
-    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']]]
+    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict']]]
     """
     (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
     """
-    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']]]
+    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict']]]
     """
     (Updatable) Rename HTTP headers as they pass through the gateway.
     """
-    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']]]
+    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict']]]
     """
     (Updatable) Set HTTP headers as they pass through the gateway.
     """
@@ -4254,7 +4254,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
 
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -4332,7 +4332,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
 
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -4410,7 +4410,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
 
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgsDict']]]]]
     """
     (Updatable) The list of headers.
     """
@@ -4560,11 +4560,11 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) Type of the token validation policy.
     """
-    additional_validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs']]]
+    additional_validation_policy: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgsDict']]]
     """
     (Updatable) Additional JWT validation checks.
     """
-    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs']]]
+    client_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgsDict']]]
     """
     (Updatable) Client App Credential details.
     """
@@ -4572,7 +4572,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) Defines whether or not to uphold SSL verification.
     """
-    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs']]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgsDict']]]]]
     """
     (Updatable) The set of static public keys.
     """
@@ -4580,7 +4580,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
     """
-    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs']]]
+    source_uri_details: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgsDict']]]
     """
     (Updatable) Auth endpoint details.
     """
@@ -4732,7 +4732,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) A list of parties that could have issued the token.
     """
-    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]]]
+    verify_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgsDict']]]]]
     """
     (Updatable) A list of claims which should be validated to consider the token valid.
     """
@@ -5554,7 +5554,7 @@ class DeploymentSpecificationRouteArgsDict(TypedDict):
     """
     (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
     """
-    logging_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesArgs']]]
+    logging_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesArgsDict']]]
     """
     (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
     """
@@ -5562,11 +5562,11 @@ class DeploymentSpecificationRouteArgsDict(TypedDict):
     """
     (Updatable) A list of allowed methods on this route.
     """
-    request_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesArgs']]]
+    request_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesArgsDict']]]
     """
     (Updatable) Behavior applied to any requests received by the API on this route.
     """
-    response_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesArgs']]]
+    response_policies: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesArgsDict']]]
     """
     (Updatable) Behavior applied to any responses sent by the API for requests on this route.
     """
@@ -5693,7 +5693,7 @@ class DeploymentSpecificationRouteBackendArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
     """
-    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgs']]]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgsDict']]]]]
     """
     (Updatable) The headers of the stock response from the mock backend.
     """
@@ -5709,11 +5709,11 @@ class DeploymentSpecificationRouteBackendArgsDict(TypedDict):
     """
     (Updatable) Defines a timeout for reading a response from the proxied server.
     """
-    routing_backends: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgs']]]]]
+    routing_backends: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgsDict']]]]]
     """
     (Updatable) List of backends to chose from for Dynamic Routing.
     """
-    selection_source: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendSelectionSourceArgs']]]
+    selection_source: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendSelectionSourceArgsDict']]]
     """
     (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
     """
@@ -6010,11 +6010,11 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
 
 
 class DeploymentSpecificationRouteBackendRoutingBackendArgsDict(TypedDict):
-    backend: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendRoutingBackendBackendArgs']]]
+    backend: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict']]]
     """
     (Updatable) The backend to forward requests to.
     """
-    key: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendRoutingBackendKeyArgs']]]
+    key: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteBackendRoutingBackendKeyArgsDict']]]
     """
     (Updatable) Information around the values for selector of an authentication/ routing branch.
     """
@@ -6075,7 +6075,7 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict(TypedDict
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
     """
-    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict']]]]]
     """
     The List of Headers
     """
@@ -6470,11 +6470,11 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
 
 
 class DeploymentSpecificationRouteLoggingPoliciesArgsDict(TypedDict):
-    access_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs']]]
+    access_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgsDict']]]
     """
     (Updatable) Configures the logging policies for the access logs of an API Deployment.
     """
-    execution_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs']]]
+    execution_log: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgsDict']]]
     """
     (Updatable) Configures the logging policies for the execution logs of an API Deployment.
     """
@@ -6621,35 +6621,35 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
 
 
 class DeploymentSpecificationRouteRequestPoliciesArgsDict(TypedDict):
-    authorization: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs']]]
+    authorization: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgsDict']]]
     """
     (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
     """
-    body_validation: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs']]]
+    body_validation: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict']]]
     """
     (Updatable) Validate the payload body of the incoming API requests on a specific route.
     """
-    cors: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesCorsArgs']]]
+    cors: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesCorsArgsDict']]]
     """
     (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
     """
-    header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs']]]
+    header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict']]]
     """
     (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
     """
-    header_validations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs']]]
+    header_validations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict']]]
     """
     (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
     """
-    query_parameter_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs']]]
+    query_parameter_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict']]]
     """
     (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
     """
-    query_parameter_validations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs']]]
+    query_parameter_validations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict']]]
     """
     (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
     """
-    response_cache_lookup: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs']]]
+    response_cache_lookup: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgsDict']]]
     """
     (Updatable) Base policy for Response Cache lookup.
     """
@@ -6839,7 +6839,7 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
 
 
 class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgsDict(TypedDict):
-    contents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]]]]
+    contents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgsDict']]]]]
     """
     (Updatable) The content of the request body.
     """
@@ -7119,15 +7119,15 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
 
 
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgsDict(TypedDict):
-    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs']]]
+    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgsDict']]]
     """
     (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
     """
-    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs']]]
+    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgsDict']]]
     """
     (Updatable) Rename HTTP headers as they pass through the gateway.
     """
-    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs']]]
+    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgsDict']]]
     """
     (Updatable) Set HTTP headers as they pass through the gateway.
     """
@@ -7433,7 +7433,7 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
 
 
 class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict(TypedDict):
-    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict']]]]]
     """
     (Updatable) The List of Headers
     """
@@ -7548,15 +7548,15 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
 
 
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgsDict(TypedDict):
-    filter_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs']]]
+    filter_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgsDict']]]
     """
     (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
     """
-    rename_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs']]]
+    rename_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgsDict']]]
     """
     (Updatable) Rename parameters on the query string as they pass through the gateway.
     """
-    set_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs']]]
+    set_query_parameters: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgsDict']]]
     """
     (Updatable) Set parameters on the query string as they pass through the gateway.
     """
@@ -7862,7 +7862,7 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
 
 
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict(TypedDict):
-    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]]]
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict']]]]]
     """
     (Updatable) The List of Query Parameters
     """
@@ -8077,11 +8077,11 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
 
 
 class DeploymentSpecificationRouteResponsePoliciesArgsDict(TypedDict):
-    header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs']]]
+    header_transformations: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict']]]
     """
     (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
     """
-    response_cache_store: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs']]]
+    response_cache_store: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict']]]
     """
     (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
     """
@@ -8126,15 +8126,15 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
 
 
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgsDict(TypedDict):
-    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs']]]
+    filter_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgsDict']]]
     """
     (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
     """
-    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs']]]
+    rename_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgsDict']]]
     """
     (Updatable) Rename HTTP headers as they pass through the gateway.
     """
-    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs']]]
+    set_headers: NotRequired[pulumi.Input[Optional['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgsDict']]]
     """
     (Updatable) Set HTTP headers as they pass through the gateway.
     """
@@ -8794,7 +8794,7 @@ class GatewayResponseCacheDetailsArgsDict(TypedDict):
     """
     (Updatable) Defines the timeout for transmitting data to the Response Cache.
     """
-    servers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgs']]]]]
+    servers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgsDict']]]]]
     """
     (Updatable) The set of cache store members to connect to. At present only a single server is supported.
     """
@@ -9142,15 +9142,15 @@ class UsagePlanEntitlementArgsDict(TypedDict):
     """
     (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
     """
-    quota: NotRequired[pulumi.Input[Optional['UsagePlanEntitlementQuotaArgs']]]
+    quota: NotRequired[pulumi.Input[Optional['UsagePlanEntitlementQuotaArgsDict']]]
     """
     (Updatable) Quota policy for a usage plan.
     """
-    rate_limit: NotRequired[pulumi.Input[Optional['UsagePlanEntitlementRateLimitArgs']]]
+    rate_limit: NotRequired[pulumi.Input[Optional['UsagePlanEntitlementRateLimitArgsDict']]]
     """
     (Updatable) Rate-limiting policy for a usage plan.
     """
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgsDict']]]]]
     """
     (Updatable) A collection of targeted deployments that the entitlement will be applied to.
     """

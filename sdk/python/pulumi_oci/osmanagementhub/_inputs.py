@@ -361,7 +361,7 @@ class DynamicSetMatchingRuleArgsDict(TypedDict):
     """
     (Updatable) The list of managed instance statuses.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DynamicSetMatchingRuleTagArgsDict']]]]]
     """
     (Updatable) The list of the managed instance tags.
     """
@@ -864,7 +864,7 @@ class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs:
 
 
 class EventDataArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataAdditionalDetailArgsDict']]]]]
     """
     Provides additional information for the work request associated with an event.
     """
@@ -872,7 +872,7 @@ class EventDataArgsDict(TypedDict):
     """
     The actions used to attempt fixing the error.
     """
-    contents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataContentArgs']]]]]
+    contents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataContentArgsDict']]]]]
     """
     Provides information collected for the exploit attempt event.
     """
@@ -1201,7 +1201,7 @@ class EventDataAdditionalDetailArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
     """
-    vmcores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgs']]]]]
+    vmcores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgsDict']]]]]
     """
     Kernel event vmcore details
     """
@@ -1739,7 +1739,7 @@ class LifecycleEnvironmentStageArgsDict(TypedDict):
     """
     The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
     """
-    managed_instance_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]]]]
+    managed_instance_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgsDict']]]]]
     """
     The list of managed instances associated with the lifecycle stage.
     """
@@ -1747,7 +1747,7 @@ class LifecycleEnvironmentStageArgsDict(TypedDict):
     """
     The operating system of the managed instances in the lifecycle environment.
     """
-    software_source_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]]]]
+    software_source_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgsDict']]]]]
     """
     Provides identifying information for the specified software source.
     """
@@ -2224,7 +2224,7 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDi
     """
     The list of managed instance OCIDs to be attached/detached.
     """
-    work_request_details: NotRequired[pulumi.Input[Optional['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]]
+    work_request_details: NotRequired[pulumi.Input[Optional['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]]
     """
     Provides the name and description of the job.
     """
@@ -2333,7 +2333,7 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDi
     """
     The list of managed instance OCIDs to be attached/detached.
     """
-    work_request_details: NotRequired[pulumi.Input[Optional['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]]
+    work_request_details: NotRequired[pulumi.Input[Optional['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgsDict']]]
     """
     Provides the name and description of the job.
     """
@@ -5537,11 +5537,11 @@ class ScheduledJobOperationArgsDict(TypedDict):
     """
     (Updatable) The type of operation this scheduled job performs.
     """
-    install_snap_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationInstallSnapDetailsArgs']]]
+    install_snap_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationInstallSnapDetailsArgsDict']]]
     """
     (Updatable) Provides the information used to install a snap.
     """
-    manage_module_streams_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationManageModuleStreamsDetailsArgs']]]
+    manage_module_streams_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationManageModuleStreamsDetailsArgsDict']]]
     """
     (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
     """
@@ -5553,7 +5553,7 @@ class ScheduledJobOperationArgsDict(TypedDict):
     """
     (Updatable) The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the  timeout, the service marks the reboot job as failed.
     """
-    remove_snap_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationRemoveSnapDetailsArgs']]]
+    remove_snap_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationRemoveSnapDetailsArgsDict']]]
     """
     (Updatable) Provides the information used to remove a snap.
     """
@@ -5561,11 +5561,11 @@ class ScheduledJobOperationArgsDict(TypedDict):
     """
     (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
     """
-    switch_module_streams_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']]]
+    switch_module_streams_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationSwitchModuleStreamsDetailsArgsDict']]]
     """
     (Updatable) Provides the information used to update a module stream.
     """
-    switch_snap_channel_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationSwitchSnapChannelDetailsArgs']]]
+    switch_snap_channel_details: NotRequired[pulumi.Input[Optional['ScheduledJobOperationSwitchSnapChannelDetailsArgsDict']]]
     """
     (Updatable) Provides the information used to switch a snap channel.
     """
@@ -5849,19 +5849,19 @@ class ScheduledJobOperationInstallSnapDetailsArgs:
 
 
 class ScheduledJobOperationManageModuleStreamsDetailsArgsDict(TypedDict):
-    disables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgs']]]]]
+    disables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgsDict']]]]]
     """
     (Updatable) The set of module streams to disable.
     """
-    enables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgs']]]]]
+    enables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgsDict']]]]]
     """
     (Updatable) The set of module streams to enable.
     """
-    installs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgs']]]]]
+    installs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgsDict']]]]]
     """
     (Updatable) The set of module stream profiles to install.
     """
-    removes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs']]]]]
+    removes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgsDict']]]]]
     """
     (Updatable) The set of module stream profiles to remove.
     """
@@ -6487,15 +6487,15 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
 
 
 class SoftwareSourceCustomSoftwareSourceFilterArgsDict(TypedDict):
-    module_stream_profile_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs']]]]]
+    module_stream_profile_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgsDict']]]]]
     """
     (Updatable) The list of module stream/profile filters.
     """
-    package_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs']]]]]
+    package_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgsDict']]]]]
     """
     (Updatable) The list of package filters.
     """
-    package_group_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs']]]]]
+    package_group_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgsDict']]]]]
     """
     (Updatable) The list of group filters.
     """

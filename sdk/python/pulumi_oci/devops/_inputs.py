@@ -481,7 +481,7 @@ class BuildPipelineStageBuildRunnerShapeConfigArgs:
 
 
 class BuildPipelineStageBuildSourceCollectionArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildPipelineStageBuildSourceCollectionItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildPipelineStageBuildSourceCollectionItemArgsDict']]]]]
     """
     (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
     """
@@ -638,7 +638,7 @@ class BuildPipelineStageBuildSourceCollectionItemArgs:
 
 
 class BuildPipelineStageDeliverArtifactCollectionArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionItemArgsDict']]]]]
     """
     (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
     """
@@ -842,19 +842,19 @@ class BuildPipelineStageWaitCriteriaArgs:
 
 
 class BuildRunBuildOutputArgsDict(TypedDict):
-    artifact_override_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterArgs']]]]]
+    artifact_override_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterArgsDict']]]]]
     """
     Specifies the list of artifact override arguments at the time of deployment.
     """
-    delivered_artifacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactArgs']]]]]
+    delivered_artifacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactArgsDict']]]]]
     """
     Specifies the list of artifacts delivered through the Deliver Artifacts stage.
     """
-    exported_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgs']]]]]
+    exported_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableArgsDict']]]]]
     """
     Specifies list of exported variables.
     """
-    vulnerability_audit_summary_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs']]]]]
+    vulnerability_audit_summary_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict']]]]]
     """
     List of vulnerability audit summary.
     """
@@ -931,7 +931,7 @@ class BuildRunBuildOutputArgs:
 
 
 class BuildRunBuildOutputArtifactOverrideParameterArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArtifactOverrideParameterItemArgsDict']]]]]
     """
     List of exported variables.
     """
@@ -1029,7 +1029,7 @@ class BuildRunBuildOutputArtifactOverrideParameterItemArgs:
 
 
 class BuildRunBuildOutputDeliveredArtifactArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputDeliveredArtifactItemArgsDict']]]]]
     """
     List of exported variables.
     """
@@ -1247,7 +1247,7 @@ class BuildRunBuildOutputDeliveredArtifactItemArgs:
 
 
 class BuildRunBuildOutputExportedVariableArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputExportedVariableItemArgsDict']]]]]
     """
     List of exported variables.
     """
@@ -1325,7 +1325,7 @@ class BuildRunBuildOutputExportedVariableItemArgs:
 
 
 class BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgsDict']]]]]
     """
     List of exported variables.
     """
@@ -1579,7 +1579,7 @@ class BuildRunBuildRunSourceArgsDict(TypedDict):
     """
     The trigger that invoked the build run.
     """
-    trigger_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoArgs']]]]]
+    trigger_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoArgsDict']]]]]
     """
     Trigger details that need to be used for the BuildRun
     """
@@ -1656,7 +1656,7 @@ class BuildRunBuildRunSourceArgs:
 
 
 class BuildRunBuildRunSourceTriggerInfoArgsDict(TypedDict):
-    actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionArgs']]]]]
+    actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionArgsDict']]]]]
     """
     The list of actions that are to be performed for this Trigger
     """
@@ -1709,7 +1709,7 @@ class BuildRunBuildRunSourceTriggerInfoActionArgsDict(TypedDict):
     """
     The OCID of the build pipeline.
     """
-    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterArgs']]]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict']]]]]
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
@@ -1771,11 +1771,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgsDict(TypedDict):
     """
     The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
     """
-    excludes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs']]]]]
+    excludes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict']]]]]
     """
     Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
     """
-    includes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs']]]]]
+    includes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict']]]]]
     """
     Attributes to filter GitLab self-hosted server events.
     """
@@ -1856,7 +1856,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterArgs:
 
 
 class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgsDict(TypedDict):
-    file_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs']]]]]
+    file_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgsDict']]]]]
     """
     Attributes to support include/exclude files for triggering build runs.
     """
@@ -1918,7 +1918,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgsDict(TypedDict):
     """
     The target branch for pull requests; not applicable for push requests.
     """
-    file_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs']]]]]
+    file_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgsDict']]]]]
     """
     Attributes to support include/exclude files for triggering build runs.
     """
@@ -2238,7 +2238,7 @@ class DeployArtifactDeployArtifactSourceArgsDict(TypedDict):
     """
     (Updatable) Specifies types of artifact sources.
     """
-    helm_verification_key_source: NotRequired[pulumi.Input[Optional['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs']]]
+    helm_verification_key_source: NotRequired[pulumi.Input[Optional['DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgsDict']]]
     """
     (Updatable) The source of the verification material.
     """
@@ -2510,7 +2510,7 @@ class DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs:
 
 
 class DeployEnvironmentComputeInstanceGroupSelectorsArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsItemArgsDict']]]]]
     """
     (Updatable) A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
     """
@@ -2694,7 +2694,7 @@ class DeployEnvironmentNetworkChannelArgs:
 
 
 class DeployPipelineDeployPipelineArtifactArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemArgsDict']]]]]
     """
     List of parameters defined for a deployment pipeline.
     """
@@ -2727,7 +2727,7 @@ class DeployPipelineDeployPipelineArtifactItemArgsDict(TypedDict):
     """
     The OCID of an artifact
     """
-    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs']]]]]
+    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict']]]]]
     """
     List of stages.
     """
@@ -2792,7 +2792,7 @@ class DeployPipelineDeployPipelineArtifactItemArgs:
 
 
 class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgsDict']]]]]
     """
     List of parameters defined for a deployment pipeline.
     """
@@ -2870,7 +2870,7 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs:
 
 
 class DeployPipelineDeployPipelineEnvironmentArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemArgsDict']]]]]
     """
     List of parameters defined for a deployment pipeline.
     """
@@ -2903,7 +2903,7 @@ class DeployPipelineDeployPipelineEnvironmentItemArgsDict(TypedDict):
     """
     The OCID of an Environment
     """
-    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs']]]]]
+    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict']]]]]
     """
     List of stages.
     """
@@ -2968,7 +2968,7 @@ class DeployPipelineDeployPipelineEnvironmentItemArgs:
 
 
 class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict']]]]]
     """
     List of parameters defined for a deployment pipeline.
     """
@@ -4078,7 +4078,7 @@ class DeployStageRolloutPolicyArgs:
 
 
 class DeployStageSetStringArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployStageSetStringItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployStageSetStringItemArgsDict']]]]]
     """
     (Updatable) List of parameters defined to set helm value.
     """
@@ -4156,7 +4156,7 @@ class DeployStageSetStringItemArgs:
 
 
 class DeployStageSetValuesArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployStageSetValuesItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployStageSetValuesItemArgsDict']]]]]
     """
     (Updatable) List of parameters defined to set helm value.
     """
@@ -4382,7 +4382,7 @@ class DeployStageWaitCriteriaArgs:
 
 
 class DeploymentDeployArtifactOverrideArgumentsArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsItemArgsDict']]]]]
     """
     List of artifact override arguments at the time of deployment.
     """
@@ -4480,7 +4480,7 @@ class DeploymentDeployArtifactOverrideArgumentsItemArgs:
 
 
 class DeploymentDeployPipelineArtifactArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemArgsDict']]]]]
     """
     A list of stage predecessors for a stage.
     """
@@ -4513,7 +4513,7 @@ class DeploymentDeployPipelineArtifactItemArgsDict(TypedDict):
     """
     The OCID of an artifact
     """
-    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs']]]]]
+    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict']]]]]
     """
     List of stages.
     """
@@ -4578,7 +4578,7 @@ class DeploymentDeployPipelineArtifactItemArgs:
 
 
 class DeploymentDeployPipelineArtifactItemDeployPipelineStageArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgsDict']]]]]
     """
     A list of stage predecessors for a stage.
     """
@@ -4656,7 +4656,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs:
 
 
 class DeploymentDeployPipelineEnvironmentArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemArgsDict']]]]]
     """
     A list of stage predecessors for a stage.
     """
@@ -4689,7 +4689,7 @@ class DeploymentDeployPipelineEnvironmentItemArgsDict(TypedDict):
     """
     The OCID of an Environment
     """
-    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs']]]]]
+    deploy_pipeline_stages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict']]]]]
     """
     List of stages.
     """
@@ -4754,7 +4754,7 @@ class DeploymentDeployPipelineEnvironmentItemArgs:
 
 
 class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgsDict']]]]]
     """
     A list of stage predecessors for a stage.
     """
@@ -4832,7 +4832,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs:
 
 
 class DeploymentDeployStageOverrideArgumentsArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployStageOverrideArgumentsItemArgsDict']]]]]
     """
     List of stage override arguments at the time of deployment.
     """
@@ -4930,7 +4930,7 @@ class DeploymentDeployStageOverrideArgumentsItemArgs:
 
 
 class DeploymentDeploymentArgumentsArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeploymentArgumentsItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeploymentArgumentsItemArgsDict']]]]]
     """
     List of arguments provided at the time of deployment.
     """
@@ -5160,7 +5160,7 @@ class ProjectRepositorySettingApprovalRulesItemArgsDict(TypedDict):
     """
     (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
     """
-    reviewers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgs']]]]]
+    reviewers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProjectRepositorySettingApprovalRulesItemReviewerArgsDict']]]]]
     """
     (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
     """
@@ -5378,7 +5378,7 @@ class RepositoryMirrorRepositoryConfigArgsDict(TypedDict):
     """
     (Updatable) URL of external repository you want to mirror.
     """
-    trigger_schedule: NotRequired[pulumi.Input[Optional['RepositoryMirrorRepositoryConfigTriggerScheduleArgs']]]
+    trigger_schedule: NotRequired[pulumi.Input[Optional['RepositoryMirrorRepositoryConfigTriggerScheduleArgsDict']]]
     """
     (Updatable) Specifies a trigger schedule. Timing information for when to initiate automated syncs.
     """
@@ -5527,7 +5527,7 @@ class RepositorySettingApprovalRulesItemArgsDict(TypedDict):
     """
     (Updatable) Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
     """
-    reviewers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgs']]]]]
+    reviewers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RepositorySettingApprovalRulesItemReviewerArgsDict']]]]]
     """
     (Updatable) List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
     """
@@ -5773,7 +5773,7 @@ class TriggerActionArgsDict(TypedDict):
     """
     (Updatable) The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
     """
-    filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterArgs']]]
+    filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterArgsDict']]]
 
 @pulumi.input_type
 class TriggerActionArgs:
@@ -5837,11 +5837,11 @@ class TriggerActionFilterArgsDict(TypedDict):
     """
     The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
     """
-    exclude: NotRequired[pulumi.Input[Optional['TriggerActionFilterExcludeArgs']]]
+    exclude: NotRequired[pulumi.Input[Optional['TriggerActionFilterExcludeArgsDict']]]
     """
     Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
     """
-    include: NotRequired[pulumi.Input[Optional['TriggerActionFilterIncludeArgs']]]
+    include: NotRequired[pulumi.Input[Optional['TriggerActionFilterIncludeArgsDict']]]
     """
     Attributes to filter GitLab self-hosted server events.
     """
@@ -5925,7 +5925,7 @@ class TriggerActionFilterArgs:
 
 
 class TriggerActionFilterExcludeArgsDict(TypedDict):
-    file_filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterExcludeFileFilterArgs']]]
+    file_filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterExcludeFileFilterArgsDict']]]
     """
     Attributes to support include/exclude files for triggering build runs.
     """
@@ -5987,7 +5987,7 @@ class TriggerActionFilterIncludeArgsDict(TypedDict):
     """
     The target branch for pull requests; not applicable for push requests.
     """
-    file_filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterIncludeFileFilterArgs']]]
+    file_filter: NotRequired[pulumi.Input[Optional['TriggerActionFilterIncludeFileFilterArgsDict']]]
     """
     Attributes to support include/exclude files for triggering build runs.
     """

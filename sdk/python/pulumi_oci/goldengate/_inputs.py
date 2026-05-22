@@ -1530,7 +1530,7 @@ class DeploymentOggDataArgsDict(TypedDict):
     """
     (Updatable) The type of credential store for OGG.
     """
-    group_to_roles_mapping: NotRequired[pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']]]
+    group_to_roles_mapping: NotRequired[pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgsDict']]]
     """
     (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
     """

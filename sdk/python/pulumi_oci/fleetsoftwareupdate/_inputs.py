@@ -119,7 +119,7 @@ class FsuCollectionComponentArgsDict(TypedDict):
     """
     Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
     """
-    fleet_discovery: NotRequired[pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgs']]]
+    fleet_discovery: NotRequired[pulumi.Input[Optional['FsuCollectionComponentFleetDiscoveryArgsDict']]]
     """
     Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
     """
@@ -182,7 +182,7 @@ class FsuCollectionComponentFleetDiscoveryArgsDict(TypedDict):
     """
     Supported fleet discovery strategies.
     """
-    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgs']]]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterArgsDict']]]]]
     """
     Filters to perform the target discovery.
     """
@@ -310,7 +310,7 @@ class FsuCollectionComponentFleetDiscoveryFilterArgsDict(TypedDict):
     """
     Type of join for each element in this filter.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionComponentFleetDiscoveryFilterTagArgsDict']]]]]
     """
     [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
@@ -527,7 +527,7 @@ class FsuCollectionFleetDiscoveryArgsDict(TypedDict):
     """
     Supported fleet discovery strategies.
     """
-    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgs']]]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterArgsDict']]]]]
     """
     Filters to perform the target discovery.
     """
@@ -659,7 +659,7 @@ class FsuCollectionFleetDiscoveryFilterArgsDict(TypedDict):
     """
     Type of join for each element in this filter.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCollectionFleetDiscoveryFilterTagArgsDict']]]]]
     """
     [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
     """
@@ -1057,7 +1057,7 @@ class FsuCycleGoalVersionDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of goal version specified
     """
-    components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgs']]]]]
+    components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FsuCycleGoalVersionDetailsComponentArgsDict']]]]]
     """
     (Updatable) Details of goal versions for components in an Exadata software stack.
     """

@@ -194,7 +194,7 @@ class ChannelSourceArgsDict(TypedDict):
     """
     (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
     """
-    anonymous_transactions_handling: NotRequired[pulumi.Input[Optional['ChannelSourceAnonymousTransactionsHandlingArgs']]]
+    anonymous_transactions_handling: NotRequired[pulumi.Input[Optional['ChannelSourceAnonymousTransactionsHandlingArgsDict']]]
     """
     (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
     """
@@ -202,7 +202,7 @@ class ChannelSourceArgsDict(TypedDict):
     """
     (Updatable) The port the source MySQL instance listens on.
     """
-    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['ChannelSourceSslCaCertificateArgs']]]
+    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['ChannelSourceSslCaCertificateArgsDict']]]
     """
     (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
     """
@@ -497,7 +497,7 @@ class ChannelTargetArgsDict(TypedDict):
     """
     (Updatable) Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
     """
-    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ChannelTargetFilterArgs']]]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ChannelTargetFilterArgsDict']]]]]
     """
     (Updatable) Replication filter rules to be applied at the DB System Channel target.
     """
@@ -795,7 +795,7 @@ class MysqlBackupBackupValidationDetailArgsDict(TypedDict):
     """
     The estimated restore duration of the backup.
     """
-    prepared_backup_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs']]]]]
+    prepared_backup_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgsDict']]]]]
     """
     Prepared backup details.
     """
@@ -969,7 +969,7 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     The Availability Domain where the primary DB System should be located.
     """
-    backup_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyArgs']]]]]
+    backup_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyArgsDict']]]]]
     """
     The Backup policy for the DB System.
     """
@@ -989,11 +989,11 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
     """
-    data_storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]]]
+    data_storages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgsDict']]]]]
     """
     Data Storage information.
     """
-    database_consoles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs']]]]]
+    database_consoles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgsDict']]]]]
     """
     Database console configuration details.
     """
@@ -1005,7 +1005,7 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
     """
-    deletion_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]]]
+    deletion_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict']]]]]
     """
     The Deletion policy for the DB System.
     """
@@ -1017,11 +1017,11 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     (Updatable) A user-supplied display name for the backup.
     """
-    encrypt_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgs']]]]]
+    encrypt_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgsDict']]]]]
     """
     Encrypt data details.
     """
-    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgs']]]]]
+    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgsDict']]]]]
     """
     The network endpoints available for this DB System.
     """
@@ -1049,7 +1049,7 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     Specifies if the DB System is highly available.
     """
-    maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgs']]]]]
+    maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceArgsDict']]]]]
     """
     The Maintenance Policy for the DB System or Read Replica that this model is included in.
     """
@@ -1069,7 +1069,7 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
     """
-    read_endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotReadEndpointArgs']]]]]
+    read_endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotReadEndpointArgsDict']]]]]
     """
     The read endpoint of a DB System.
     """
@@ -1077,11 +1077,11 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
     """
-    rests: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgs']]]]]
+    rests: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotRestArgsDict']]]]]
     """
     REST configuration details.
     """
-    secure_connections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]]]
+    secure_connections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgsDict']]]]]
     """
     Secure connection configuration details.
     """
@@ -1097,7 +1097,7 @@ class MysqlBackupDbSystemSnapshotArgsDict(TypedDict):
     """
     The OCID of the subnet the DB System is associated with.
     """
-    telemetry_configuration: NotRequired[pulumi.Input[Optional['MysqlBackupDbSystemSnapshotTelemetryConfigurationArgs']]]
+    telemetry_configuration: NotRequired[pulumi.Input[Optional['MysqlBackupDbSystemSnapshotTelemetryConfigurationArgsDict']]]
     """
     Telemetry configuration details of a DB System or a read replica.
     """
@@ -1670,7 +1670,7 @@ class MysqlBackupDbSystemSnapshotArgs:
 
 
 class MysqlBackupDbSystemSnapshotBackupPolicyArgsDict(TypedDict):
-    copy_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]]]]
+    copy_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgsDict']]]]]
     """
     List of policies of a DB system to schedule cross-region DB system backup copy.
     """
@@ -1686,7 +1686,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgsDict(TypedDict):
     """
     Specifies if the DB System read endpoint is enabled or not.
     """
-    pitr_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]]]
+    pitr_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict']]]]]
     """
     The PITR policy for the DB System.
     """
@@ -2382,7 +2382,7 @@ class MysqlBackupDbSystemSnapshotEndpointArgs:
 
 
 class MysqlBackupDbSystemSnapshotMaintenanceArgsDict(TypedDict):
-    maintenance_disabled_windows: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgs']]]]]
+    maintenance_disabled_windows: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArgsDict']]]]]
     """
     Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
     """
@@ -2836,7 +2836,7 @@ class MysqlBackupDbSystemSnapshotSummaryArgs:
 
 
 class MysqlBackupDbSystemSnapshotTelemetryConfigurationArgsDict(TypedDict):
-    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgs']]]]]
+    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotTelemetryConfigurationLogArgsDict']]]]]
     """
     Telemetry configuration details for logging.
     """
@@ -6158,7 +6158,7 @@ class MysqlConfigurationVariablesArgs:
 
 
 class MysqlDbSystemBackupPolicyArgsDict(TypedDict):
-    copy_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]]]]
+    copy_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgsDict']]]]]
     """
     (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
 
@@ -6186,7 +6186,7 @@ class MysqlDbSystemBackupPolicyArgsDict(TypedDict):
     """
     (Updatable) Specifies if automatic backups are enabled.
     """
-    pitr_policy: NotRequired[pulumi.Input[Optional['MysqlDbSystemBackupPolicyPitrPolicyArgs']]]
+    pitr_policy: NotRequired[pulumi.Input[Optional['MysqlDbSystemBackupPolicyPitrPolicyArgsDict']]]
     """
     (Updatable) The PITR policy for the DB System.
     """
@@ -6480,7 +6480,7 @@ class MysqlDbSystemChannelArgsDict(TypedDict):
     """
     Additional information about the current lifecycleState.
     """
-    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]]]]
+    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgsDict']]]]]
     """
     Parameters detailing how to provision the initial data of the system.
     """
@@ -6492,7 +6492,7 @@ class MysqlDbSystemChannelArgsDict(TypedDict):
     """
     Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelTargetArgsDict']]]]]
     """
     Details about the Channel target.
     """
@@ -6721,7 +6721,7 @@ class MysqlDbSystemChannelArgs:
 
 
 class MysqlDbSystemChannelSourceArgsDict(TypedDict):
-    anonymous_transactions_handlings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs']]]]]
+    anonymous_transactions_handlings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgsDict']]]]]
     """
     Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
     """
@@ -6737,7 +6737,7 @@ class MysqlDbSystemChannelSourceArgsDict(TypedDict):
     """
     The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
     """
-    ssl_ca_certificates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgs']]]]]
+    ssl_ca_certificates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelSourceSslCaCertificateArgsDict']]]]]
     """
     The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
     """
@@ -7024,7 +7024,7 @@ class MysqlDbSystemChannelTargetArgsDict(TypedDict):
     """
     Specifies the amount of time, in seconds, that the channel waits before  applying a transaction received from the source.
     """
-    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgs']]]]]
+    filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemChannelTargetFilterArgsDict']]]]]
     """
     Replication filter rules to be applied at the DB System Channel target.
     """
@@ -7926,7 +7926,7 @@ class MysqlDbSystemMaintenanceArgsDict(TypedDict):
 
     If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
     """
-    maintenance_disabled_windows: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs']]]]]
+    maintenance_disabled_windows: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgsDict']]]]]
     """
     (Updatable) Time window during which downtime-inducing maintenance shall not be performed. Downtime-free maintenance may be performed to apply required security patches. At most one configured window is supported.
     """
@@ -8393,7 +8393,7 @@ class MysqlDbSystemSourceArgsDict(TypedDict):
     """
     The OCID of the backup to be used as the source for the new DB System.
     """
-    channel: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelArgs']]]
+    channel: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelArgsDict']]]
     """
     Properties to setup a replication channel with the source (cloned) DB system.
     """
@@ -8545,7 +8545,7 @@ class MysqlDbSystemSourceChannelArgsDict(TypedDict):
     """
     The name of the replication user on the source DB system. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/en/change-replication-source-to.html)
     """
-    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgs']]]
+    ssl_ca_certificate: NotRequired[pulumi.Input[Optional['MysqlDbSystemSourceChannelSslCaCertificateArgsDict']]]
     """
     The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
     """
@@ -8689,7 +8689,7 @@ class MysqlDbSystemSourceChannelSslCaCertificateArgs:
 
 
 class MysqlDbSystemTelemetryConfigurationArgsDict(TypedDict):
-    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemTelemetryConfigurationLogArgs']]]]]
+    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemTelemetryConfigurationLogArgsDict']]]]]
     """
     (Updatable) Telemetry configuration details for logging.
     """
@@ -8900,7 +8900,7 @@ class ReplicaReplicaOverridesArgsDict(TypedDict):
     """
     (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
     """
-    telemetry_configuration: NotRequired[pulumi.Input[Optional['ReplicaReplicaOverridesTelemetryConfigurationArgs']]]
+    telemetry_configuration: NotRequired[pulumi.Input[Optional['ReplicaReplicaOverridesTelemetryConfigurationArgsDict']]]
     """
     (Updatable) Telemetry configuration details of a DB System or a read replica.
     """
@@ -9009,7 +9009,7 @@ class ReplicaReplicaOverridesArgs:
 
 
 class ReplicaReplicaOverridesTelemetryConfigurationArgsDict(TypedDict):
-    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaReplicaOverridesTelemetryConfigurationLogArgs']]]]]
+    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaReplicaOverridesTelemetryConfigurationLogArgsDict']]]]]
     """
     (Updatable) Telemetry configuration details for logging.
     """
@@ -9200,7 +9200,7 @@ class ReplicaSecureConnectionArgs:
 
 
 class ReplicaTelemetryConfigurationArgsDict(TypedDict):
-    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaTelemetryConfigurationLogArgs']]]]]
+    logs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaTelemetryConfigurationLogArgsDict']]]]]
     """
     Telemetry configuration details for logging.
     """
@@ -9233,7 +9233,7 @@ class ReplicaTelemetryConfigurationLogArgsDict(TypedDict):
     """
     Type of destination where MySQL telemetry is exposed to.
     """
-    destination_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaTelemetryConfigurationLogDestinationConfigurationArgs']]]]]
+    destination_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ReplicaTelemetryConfigurationLogDestinationConfigurationArgsDict']]]]]
     """
     List of configuration variables for a given destination type.
     """

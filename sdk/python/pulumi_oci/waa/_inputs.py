@@ -87,7 +87,7 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
 
 
 class AppAccelerationPolicyResponseCompressionPolicyArgsDict(TypedDict):
-    gzip_compression: NotRequired[pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs']]]
+    gzip_compression: NotRequired[pulumi.Input[Optional['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict']]]
     """
     (Updatable) An object that specifies the gzip compression policy.
     """

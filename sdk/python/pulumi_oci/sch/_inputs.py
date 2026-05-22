@@ -58,15 +58,15 @@ class ConnectorSourceArgsDict(TypedDict):
     """
     (Updatable) The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.  For example, for `QueueSource`, the map lists the OCID of the selected queue. To find the parameters for a connector plugin, get the plugin using [GetConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin) and review its schema value.
     """
-    cursor: NotRequired[pulumi.Input[Optional['ConnectorSourceCursorArgs']]]
+    cursor: NotRequired[pulumi.Input[Optional['ConnectorSourceCursorArgsDict']]]
     """
     (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
     """
-    log_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourceLogSourceArgs']]]]]
+    log_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourceLogSourceArgsDict']]]]]
     """
     (Updatable) The logs for this Logging source.
     """
-    monitoring_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgs']]]]]
+    monitoring_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourceMonitoringSourceArgsDict']]]]]
     """
     (Updatable) One or more compartment-specific lists of metric namespaces to retrieve data from.
     """
@@ -74,7 +74,7 @@ class ConnectorSourceArgsDict(TypedDict):
     """
     (Updatable) The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service. To find names of connector plugins, list the plugin using [ListConnectorPlugin](https://docs.cloud.oracle.com/iaas/api/#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins).
     """
-    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgs']]]]]
+    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorSourcePrivateEndpointMetadataArgsDict']]]]]
     """
     The private endpoint metadata for the connector's source or target.
     """
@@ -320,7 +320,7 @@ class ConnectorSourceMonitoringSourceArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
     """
-    namespace_details: NotRequired[pulumi.Input[Optional['ConnectorSourceMonitoringSourceNamespaceDetailsArgs']]]
+    namespace_details: NotRequired[pulumi.Input[Optional['ConnectorSourceMonitoringSourceNamespaceDetailsArgsDict']]]
     """
     (Updatable) Discriminator for namespaces in the compartment-specific list.
     """
@@ -568,7 +568,7 @@ class ConnectorTargetArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
     """
-    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTargetDimensionArgs']]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTargetDimensionArgsDict']]]]]
     """
     (Updatable) List of dimension names and values.
     """
@@ -604,7 +604,7 @@ class ConnectorTargetArgsDict(TypedDict):
     """
     (Updatable) The prefix of the objects. Avoid entering confidential information.
     """
-    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgs']]]]]
+    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTargetPrivateEndpointMetadataArgsDict']]]]]
     """
     The private endpoint metadata for the connector's source or target.
     """
@@ -944,7 +944,7 @@ class ConnectorTargetArgs:
 
 
 class ConnectorTargetDimensionArgsDict(TypedDict):
-    dimension_value: NotRequired[pulumi.Input[Optional['ConnectorTargetDimensionDimensionValueArgs']]]
+    dimension_value: NotRequired[pulumi.Input[Optional['ConnectorTargetDimensionDimensionValueArgsDict']]]
     """
     (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
     """
@@ -1130,7 +1130,7 @@ class ConnectorTaskArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
     """
-    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgs']]]]]
+    private_endpoint_metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConnectorTaskPrivateEndpointMetadataArgsDict']]]]]
     """
     The private endpoint metadata for the connector's source or target.
     """

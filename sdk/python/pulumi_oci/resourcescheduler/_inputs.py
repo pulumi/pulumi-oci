@@ -37,7 +37,7 @@ class ScheduleResourceArgsDict(TypedDict):
     (Updatable) This is additional information that helps to identity the resource for the schedule.
     { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
     """
-    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgs']]]]]
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceParameterArgsDict']]]]]
     """
     (Updatable) This is the user input parameters to use when acting on the resource.
 
@@ -117,7 +117,7 @@ class ScheduleResourceFilterArgsDict(TypedDict):
     """
     This sets whether to include child compartments.
     """
-    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgs']]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]]
     """
     (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
     * When `attribute="DEFINED_TAGS"`:

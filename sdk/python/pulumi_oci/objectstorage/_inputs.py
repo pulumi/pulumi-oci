@@ -48,7 +48,7 @@ class BucketRetentionRuleArgsDict(TypedDict):
     """
     A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
     """
-    duration: NotRequired[pulumi.Input[Optional['BucketRetentionRuleDurationArgs']]]
+    duration: NotRequired[pulumi.Input[Optional['BucketRetentionRuleDurationArgsDict']]]
     """
     (Updatable)
     """
@@ -243,7 +243,7 @@ class ObjectLifecyclePolicyRuleArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    object_name_filter: NotRequired[pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]]
+    object_name_filter: NotRequired[pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgsDict']]]
     """
     (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
     """

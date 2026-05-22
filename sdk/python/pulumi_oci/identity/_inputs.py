@@ -10308,7 +10308,7 @@ class DomainsAppTrustPolicyArgs:
 
 
 class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Defined Tags
 
@@ -10323,7 +10323,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(Typed
     * multiValued: true
     * returned: default
     """
-    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Freeform Tags
 
@@ -10748,7 +10748,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArg
 
 
 class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgsDict(TypedDict):
-    domain_app: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs']]]
+    domain_app: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgsDict']]]
     """
     (Updatable) Description:
 
@@ -11053,7 +11053,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsD
     * type: integer
     * uniqueness: none
     """
-    allow_authz_policy: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs']]]
+    allow_authz_policy: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgsDict']]]
     """
     (Updatable) Allow Authz Policy.
 
@@ -11067,7 +11067,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsD
     * returned: default
     * type: complex
     """
-    app_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs']]]]]
+    app_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgsDict']]]]]
     """
     (Updatable) A list of AppResources of this App.
 
@@ -11100,7 +11100,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgsD
     * type: integer
     * uniqueness: none
     """
-    deny_authz_policy: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs']]]
+    deny_authz_policy: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgsDict']]]
     """
     (Updatable) Deny Authz Policy.
 
@@ -11714,7 +11714,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgsDic
     * type: string
     * uniqueness: none
     """
-    form_fill_url_matches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs']]]]]
+    form_fill_url_matches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgsDict']]]]]
     """
     (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
 
@@ -12278,7 +12278,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAp
     * type: string
     * uniqueness: none
     """
-    form_fill_url_matches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs']]]]]
+    form_fill_url_matches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgsDict']]]]]
     """
     (Updatable) A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
 
@@ -13172,7 +13172,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: boolean
     * uniqueness: none
     """
-    bundle_configuration_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs']]]]]
+    bundle_configuration_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgsDict']]]]]
     """
     (Updatable) ConnectorBundle configuration properties
 
@@ -13186,7 +13186,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: complex
     * uniqueness: none
     """
-    bundle_pool_configuration: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs']]]
+    bundle_pool_configuration: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgsDict']]]
     """
     (Updatable) Configurable options maintaining a pool of ICF connector instances. Values for sub attributes can be set only if the ConnectorBundle referenced in the App has connectorPoolingSupported set to true
 
@@ -13229,7 +13229,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: boolean
     * uniqueness: none
     """
-    connector_bundles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs']]]]]
+    connector_bundles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgsDict']]]]]
     """
     (Updatable) ConnectorBundle
 
@@ -13288,7 +13288,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: boolean
     * uniqueness: none
     """
-    flat_file_bundle_configuration_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs']]]]]
+    flat_file_bundle_configuration_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgsDict']]]]]
     """
     (Updatable) Flat file connector bundle configuration properties
 
@@ -13302,7 +13302,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: complex
     * uniqueness: none
     """
-    flat_file_connector_bundle: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs']]]
+    flat_file_connector_bundle: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgsDict']]]
     """
     (Updatable) Flat file connector bundle to sync from a flat file.
 
@@ -13315,7 +13315,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: complex
     * uniqueness: none
     """
-    identity_bridges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs']]]]]
+    identity_bridges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgsDict']]]]]
     """
     (Updatable) IdentityBridges associated with this App
 
@@ -13440,7 +13440,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: boolean
     * uniqueness: none
     """
-    object_classes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs']]]]]
+    object_classes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgsDict']]]]]
     """
     (Updatable) Object classes
 
@@ -13470,7 +13470,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgsDict
     * type: dateTime
     * uniqueness: none
     """
-    three_legged_oauth_credential: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs']]]
+    three_legged_oauth_credential: NotRequired[pulumi.Input[Optional['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgsDict']]]
     """
     (Updatable) The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
 
@@ -17197,7 +17197,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgsDict(
     * returned: default
     * type: string
     """
-    group_membership_to_returns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs']]]]]
+    group_membership_to_returns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgsDict']]]]]
     """
     (Updatable) In a successful authentication response, Oracle Identity Cloud Service will pass user's group information restricted to groups persisted in this attribute, in the specified RADIUS attribute.
 
@@ -18181,7 +18181,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     * type: string
     * uniqueness: none
     """
-    group_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs']]]]]
+    group_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgsDict']]]]]
     """
     (Updatable) Each value of this attribute describes an attribute of Group that will be sent in a Security Assertion Markup Language (SAML) assertion.
 
@@ -18372,7 +18372,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     * type: string
     * uniqueness: none This property specifies which user attribute is used as the NameID value in the SAML assertion. This attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema.
     """
-    outbound_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgs']]]]]
+    outbound_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeArgsDict']]]]]
     """
     (Updatable) Use to construct the outgoing SAML attributes
 
@@ -18490,7 +18490,7 @@ class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAp
     * type: string
     * uniqueness: none
     """
-    user_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs']]]]]
+    user_assertion_attributes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgsDict']]]]]
     """
     (Updatable) Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
 
@@ -29187,7 +29187,7 @@ class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextens
 
 
 class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgsDict(TypedDict):
-    duo_security_settings: NotRequired[pulumi.Input[Optional['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs']]]
+    duo_security_settings: NotRequired[pulumi.Input[Optional['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgsDict']]]
     """
     (Updatable) Settings related to Duo Security
 
@@ -38049,7 +38049,7 @@ class DomainsDynamicResourceGroupTagArgs:
 
 
 class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Defined Tags
 
@@ -38064,7 +38064,7 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
     * multiValued: true
     * returned: default
     """
-    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Freeform Tags
 
@@ -41470,7 +41470,7 @@ class DomainsGroupTagArgs:
 
 
 class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Defined Tags
 
@@ -41485,7 +41485,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(Typ
     * multiValued: true
     * returned: default
     """
-    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Freeform Tags
 
@@ -41926,7 +41926,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgsDict(T
     * type: string
     * uniqueness: none
     """
-    domain_level_schema_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgs']]]]]
+    domain_level_schema_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameArgsDict']]]]]
     """
     (Updatable) DBCS Domain-level schema-names. Each value is specific to a DB Domain.
 
@@ -41957,7 +41957,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgsDict(T
     * type: string
     * uniqueness: none
     """
-    instance_level_schema_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgs']]]]]
+    instance_level_schema_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameArgsDict']]]]]
     """
     (Updatable) DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
 
@@ -42496,7 +42496,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs:
 
 
 class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict(TypedDict):
-    app_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgs']]]]]
+    app_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleArgsDict']]]]]
     """
     (Updatable) A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 
@@ -42542,7 +42542,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict(
     * type: string
     * uniqueness: none
     """
-    grants: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgs']]]]]
+    grants: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantArgsDict']]]]]
     """
     (Updatable) Grants assigned to group
 
@@ -42555,7 +42555,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict(
     * type: complex
     * uniqueness: none
     """
-    owners: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs']]]]]
+    owners: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgsDict']]]]]
     """
     (Updatable) Group owners
 
@@ -42570,7 +42570,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict(
     * type: complex
     * uniqueness: none
     """
-    password_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgs']]]]]
+    password_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyArgsDict']]]]]
     """
     (Updatable) Password Policy associated with this Group.
 
@@ -42587,7 +42587,7 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict(
     * type: complex
     * uniqueness: none
     """
-    synced_from_apps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgs']]]]]
+    synced_from_apps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppArgsDict']]]]]
     """
     (Updatable) The entity that created this Group.
 
@@ -49480,7 +49480,7 @@ class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialId
     * type: string
     * uniqueness: none
     """
-    jit_prov_assigned_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs']]]]]
+    jit_prov_assigned_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgsDict']]]]]
     """
     (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
 
@@ -87525,7 +87525,7 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict(Typed
     * type: string
     * uniqueness: none
     """
-    manager: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs']]]
+    manager: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgsDict']]]
     """
     (Updatable) The User's manager. A complex type that optionally allows Service Providers to represent organizational hierarchy by referencing the 'id' attribute of another User.
 
@@ -87964,7 +87964,7 @@ class DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs:
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs']]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Defined Tags
 
@@ -87979,7 +87979,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict(Type
     * multiValued: true
     * returned: default
     """
-    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs']]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgsDict']]]]]
     """
     (Updatable) Oracle Cloud Infrastructure Freeform Tags
 
@@ -88419,7 +88419,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict
     * type: string
     * uniqueness: none
     """
-    risk_scores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs']]]]]
+    risk_scores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgsDict']]]]]
     """
     (Updatable) The risk score pertaining to the user.
 
@@ -89561,7 +89561,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgsDict(T
     * type: boolean
     * uniqueness: none
     """
-    password_verifiers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs']]]]]
+    password_verifiers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgsDict']]]]]
     """
     (Updatable) Password Verifiers for DB User.
 
@@ -89908,7 +89908,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVe
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict(TypedDict):
-    realm_users: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs']]]]]
+    realm_users: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgsDict']]]]]
     """
     (Updatable) A list of kerberos realm users for an Oracle Identity Cloud Service User
 
@@ -90166,7 +90166,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserReal
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict(TypedDict):
-    bypass_codes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs']]]]]
+    bypass_codes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgsDict']]]]]
     """
     (Updatable) A list of bypass codes that belongs to the user.
 
@@ -90181,7 +90181,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict(Type
     * type: complex
     * uniqueness: none
     """
-    devices: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs']]]]]
+    devices: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgsDict']]]]]
     """
     (Updatable) A list of devices enrolled by the user.
 
@@ -90293,7 +90293,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict(Type
     * type: string
     * uniqueness: none
     """
-    preferred_device: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs']]]
+    preferred_device: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgsDict']]]
     """
     (Updatable) The user's preferred device.
 
@@ -90325,7 +90325,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict(Type
     * type: string
     * uniqueness: none
     """
-    trusted_user_agents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs']]]]]
+    trusted_user_agents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgsDict']]]]]
     """
     (Updatable) A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
 
@@ -91733,7 +91733,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAg
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgsDict(TypedDict):
-    applicable_password_policy: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs']]]
+    applicable_password_policy: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgsDict']]]
     """
     (Updatable) Applicable Password Policy
 
@@ -92365,7 +92365,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApp
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict(TypedDict):
-    factor_identifier: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs']]]
+    factor_identifier: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgsDict']]]
     """
     (Updatable) Factor Identifier ID
 
@@ -92959,7 +92959,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs:
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict(TypedDict):
-    sec_questions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs']]]]]
+    sec_questions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgsDict']]]]]
     """
     (Updatable) The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
 
@@ -93644,7 +93644,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs:
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict(TypedDict):
-    social_accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs']]]]]
+    social_accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgsDict']]]]]
     """
     (Updatable) Description:
 
@@ -93828,7 +93828,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSoc
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict(TypedDict):
-    terms_of_use_consents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs']]]]]
+    terms_of_use_consents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgsDict']]]]]
     """
     (Updatable) Description:
 
@@ -93974,7 +93974,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsO
 
 
 class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgsDict(TypedDict):
-    api_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs']]]]]
+    api_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgsDict']]]]]
     """
     (Updatable) A list of API keys corresponding to user.
 
@@ -93990,7 +93990,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     * type: complex
     * uniqueness: none
     """
-    auth_tokens: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs']]]]]
+    auth_tokens: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgsDict']]]]]
     """
     (Updatable) A list of Auth tokens corresponding to user.
 
@@ -94006,7 +94006,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     * type: complex
     * uniqueness: none
     """
-    customer_secret_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs']]]]]
+    customer_secret_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgsDict']]]]]
     """
     (Updatable) A list of customer secret keys corresponding to user.
 
@@ -94022,7 +94022,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     * type: complex
     * uniqueness: none
     """
-    db_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs']]]]]
+    db_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgsDict']]]]]
     """
     (Updatable) A list of database credentials corresponding to user.
 
@@ -94038,7 +94038,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     * type: complex
     * uniqueness: none
     """
-    o_auth2client_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs']]]]]
+    o_auth2client_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgsDict']]]]]
     """
     (Updatable) A list of OAuth2 client credentials corresponding to a user.
 
@@ -94054,7 +94054,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserA
     * type: complex
     * uniqueness: none
     """
-    smtp_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs']]]]]
+    smtp_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgsDict']]]]]
     """
     (Updatable) A list of SMTP credentials corresponding to user.
 
@@ -95449,7 +95449,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDic
     * type: dateTime
     * uniqueness: none
     """
-    locked: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs']]]
+    locked: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgsDict']]]
     """
     (Updatable) A complex attribute that indicates an account is locked (blocking any new sessions).
 
@@ -95543,7 +95543,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDic
     * type: integer
     * uniqueness: none
     """
-    recovery_locked: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs']]]
+    recovery_locked: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgsDict']]]
     """
     (Updatable) A complex attribute that indicates a password recovery is locked (blocking any new sessions).
 
@@ -96280,7 +96280,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: boolean
     * uniqueness: none
     """
-    accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs']]]]]
+    accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgsDict']]]]]
     """
     (Updatable) Accounts assigned to this User. Each value of this attribute refers to an app-specific identity that is owned by this User. Therefore, this attribute is a convenience that allows one to see on each User the Apps to which that User has access.
 
@@ -96294,7 +96294,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: complex
     * uniqueness: none
     """
-    app_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs']]]]]
+    app_roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgsDict']]]]]
     """
     (Updatable) A list of all AppRoles to which this User belongs directly, indirectly or implicitly. The User could belong directly because the User is a member of the AppRole, could belong indirectly because the User is a member of a Group that is a member of the AppRole, or could belong implicitly because the AppRole is public.
 
@@ -96307,7 +96307,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: complex
     * uniqueness: none
     """
-    applicable_authentication_target_apps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs']]]]]
+    applicable_authentication_target_apps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgsDict']]]]]
     """
     (Updatable) The app against which the user will authenticate. The value is not persisted but rather calculated. If the user's delegatedAuthenticationTargetApp is set, that value is returned. Otherwise, the app returned by evaluating the user's applicable Delegated Authentication Policy is returned.
 
@@ -96354,7 +96354,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: string
     * uniqueness: none
     """
-    delegated_authentication_target_app: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs']]]
+    delegated_authentication_target_app: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgsDict']]]
     """
     (Updatable) If set, indicates the user's preferred authentication target app. If not set and the user's \\"syncedFromApp\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
 
@@ -96384,7 +96384,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: boolean
     * uniqueness: none
     """
-    grants: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs']]]]]
+    grants: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgsDict']]]]]
     """
     (Updatable) Grants to this User. Each value of this attribute refers to a Grant to this User of some App (and optionally of some entitlement). Therefore, this attribute is a convenience that allows one to see on each User all of the Grants to that User.
 
@@ -96412,7 +96412,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: dateTime
     * uniqueness: none
     """
-    idcs_app_roles_limited_to_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs']]]]]
+    idcs_app_roles_limited_to_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgsDict']]]]]
     """
     (Updatable) Description:
 
@@ -96570,7 +96570,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: string
     * uniqueness: none
     """
-    support_accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs']]]]]
+    support_accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgsDict']]]]]
     """
     (Updatable) A list of Support Accounts corresponding to user.
 
@@ -96586,7 +96586,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: complex
     * uniqueness: none
     """
-    synced_from_app: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs']]]
+    synced_from_app: NotRequired[pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgsDict']]]
     """
     (Updatable) Managed App or an Identity Source from where the user is synced. If enabled, this Managed App or Identity Source can be used for performing delegated authentication.
 
@@ -96632,7 +96632,7 @@ class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict(Typ
     * type: string
     * uniqueness: none
     """
-    user_tokens: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs']]]]]
+    user_tokens: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgsDict']]]]]
     """
     (Updatable) User token returned if userFlowControlledByExternalClient is true
 

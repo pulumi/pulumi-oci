@@ -86,7 +86,7 @@ class CertificateAuthorityCertificateAuthorityConfigArgsDict(TypedDict):
     """
     (Updatable) The origin of the CA.
     """
-    action_details: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs']]]
+    action_details: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgsDict']]]
     certificate_pem: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
@@ -99,11 +99,11 @@ class CertificateAuthorityCertificateAuthorityConfigArgsDict(TypedDict):
     """
     The algorithm used to sign public key certificates that the CA issues.
     """
-    subject: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']]]
+    subject: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict']]]
     """
     The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
     """
-    validity: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigValidityArgs']]]
+    validity: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityConfigValidityArgsDict']]]
     """
     (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
     """
@@ -693,7 +693,7 @@ class CertificateAuthorityCertificateAuthorityRuleArgsDict(TypedDict):
     """
     (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
     """
-    name_constraint: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs']]]
+    name_constraint: NotRequired[pulumi.Input[Optional['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict']]]
     """
     A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
     """
@@ -789,11 +789,11 @@ class CertificateAuthorityCertificateAuthorityRuleArgs:
 
 
 class CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict(TypedDict):
-    excluded_subtrees: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs']]]]]
+    excluded_subtrees: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgsDict']]]]]
     """
     A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
     """
-    permitted_subtrees: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs']]]]]
+    permitted_subtrees: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgsDict']]]]]
     """
     A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
     """
@@ -1059,7 +1059,7 @@ class CertificateAuthorityCurrentVersionArgsDict(TypedDict):
     """
     The version number of the issuing CA.
     """
-    revocation_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionRevocationStatusArgs']]]]]
+    revocation_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionRevocationStatusArgsDict']]]]]
     """
     The current revocation status of the entity.
     """
@@ -1079,7 +1079,7 @@ class CertificateAuthorityCurrentVersionArgsDict(TypedDict):
     """
     An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
     """
-    validities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionValidityArgs']]]]]
+    validities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionValidityArgsDict']]]]]
     """
     An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
     """
@@ -1751,15 +1751,15 @@ class CertificateCertificateConfigArgsDict(TypedDict):
     """
     (Updatable) The rotation stage used for imported certificate version updates. Supported values are `CURRENT` and `PENDING`. Defaults to `CURRENT` when omitted.
     """
-    subject: NotRequired[pulumi.Input[Optional['CertificateCertificateConfigSubjectArgs']]]
+    subject: NotRequired[pulumi.Input[Optional['CertificateCertificateConfigSubjectArgsDict']]]
     """
     The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
     """
-    subject_alternative_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateConfigSubjectAlternativeNameArgs']]]]]
+    subject_alternative_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateConfigSubjectAlternativeNameArgsDict']]]]]
     """
     A list of subject alternative names.
     """
-    validity: NotRequired[pulumi.Input[Optional['CertificateCertificateConfigValidityArgs']]]
+    validity: NotRequired[pulumi.Input[Optional['CertificateCertificateConfigValidityArgsDict']]]
     """
     (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
     """
@@ -2462,7 +2462,7 @@ class CertificateCertificateRevocationListDetailArgsDict(TypedDict):
     """
     Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
     """
-    object_storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailObjectStorageConfigArgs']]]]]
+    object_storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailObjectStorageConfigArgsDict']]]]]
     """
     The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
     """
@@ -2650,7 +2650,7 @@ class CertificateCurrentVersionArgsDict(TypedDict):
     """
     The version number of the issuing certificate authority (CA).
     """
-    revocation_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionRevocationStatusArgs']]]]]
+    revocation_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionRevocationStatusArgsDict']]]]]
     """
     The current revocation status of the entity.
     """
@@ -2662,7 +2662,7 @@ class CertificateCurrentVersionArgsDict(TypedDict):
     """
     A list of rotation states for this certificate version.
     """
-    subject_alternative_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionSubjectAlternativeNameArgs']]]]]
+    subject_alternative_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionSubjectAlternativeNameArgsDict']]]]]
     """
     A list of subject alternative names.
     """
@@ -2674,7 +2674,7 @@ class CertificateCurrentVersionArgsDict(TypedDict):
     """
     An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
     """
-    validities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionValidityArgs']]]]]
+    validities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CertificateCurrentVersionValidityArgsDict']]]]]
     """
     An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
     """

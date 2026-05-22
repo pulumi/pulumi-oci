@@ -1080,11 +1080,11 @@ class VulnerabilityAuditVulnerabilityArgsDict(TypedDict):
     """
     Indicates if the vulnerability was ignored according to the audit configuration.
     """
-    matching_vulnerable_artifact_version_ranges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgs']]]]]
+    matching_vulnerable_artifact_version_ranges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VulnerabilityAuditVulnerabilityMatchingVulnerableArtifactVersionRangeArgsDict']]]]]
     """
     List of artifact version ranges affected by a particular vulnerability.
     """
-    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VulnerabilityAuditVulnerabilityMetricArgs']]]]]
+    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VulnerabilityAuditVulnerabilityMetricArgsDict']]]]]
     """
     List of reported metrics by the source.
     """

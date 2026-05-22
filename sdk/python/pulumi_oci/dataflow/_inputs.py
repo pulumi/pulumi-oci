@@ -468,7 +468,7 @@ class PoolConfigurationArgsDict(TypedDict):
     """
     (Updatable) The compute shape of the resources you would like to provision.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['PoolConfigurationShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['PoolConfigurationShapeConfigArgsDict']]]
     """
     (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
     """
@@ -598,7 +598,7 @@ class PoolPoolMetricArgsDict(TypedDict):
     """
     The number of runs that are currently running that are using this pool.
     """
-    actively_used_node_counts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]]
+    actively_used_node_counts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgsDict']]]]]
     """
     A count of the nodes that are currently being used for each shape in this pool.
     """
@@ -890,7 +890,7 @@ class PrivateEndpointScanDetailArgs:
 
 
 class RunStatementOutputArgsDict(TypedDict):
-    datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]]
+    datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputDataArgsDict']]]]]
     """
     An object representing execution output of a statement.
     """
@@ -1150,7 +1150,7 @@ class SqlEndpointNetworkConfigurationArgsDict(TypedDict):
     """
     The type of network configuration.
     """
-    access_control_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]]
+    access_control_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgsDict']]]]]
     """
     A list of SecureAccessControlRule's to which access is limited to
     """

@@ -48,11 +48,11 @@ __all__ = [
 ]
 
 class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
-    start_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgs']]]
+    start_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']]]
     """
     (Updatable) Provides the schedule information for a desktop.
     """
-    stop_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgs']]]
+    stop_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']]]
     """
     (Updatable) Provides the schedule information for a desktop.
     """
@@ -575,11 +575,11 @@ class DesktopPoolPrivateAccessDetailsArgs:
 
 
 class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
-    disconnect: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']]]
+    disconnect: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]]
     """
     (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
     """
-    inactivity: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']]]
+    inactivity: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]]
     """
     (Updatable) Action and grace period for inactivity
     """

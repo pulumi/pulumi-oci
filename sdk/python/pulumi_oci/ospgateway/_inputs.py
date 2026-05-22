@@ -1118,7 +1118,7 @@ class SubscriptionBillingAddressArgs:
 
 
 class SubscriptionPaymentGatewayArgsDict(TypedDict):
-    merchant_defined_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]]
+    merchant_defined_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]]]]
     """
     Merchant details.
     """
@@ -1437,7 +1437,7 @@ class SubscriptionSubscriptionArgsDict(TypedDict):
     """
     (Updatable) Bill to customer Account id.
     """
-    billing_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]]]
+    billing_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgsDict']]]]]
     """
     (Updatable) Address details model.
     """
@@ -1469,11 +1469,11 @@ class SubscriptionSubscriptionArgsDict(TypedDict):
     """
     (Updatable) GSI organization external identifier.
     """
-    payment_gateway: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgs']]]
+    payment_gateway: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayArgsDict']]]
     """
     (Updatable) Payment gateway details.
     """
-    payment_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]]]
+    payment_options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgsDict']]]]]
     """
     (Updatable) Payment option list of a subscription.
     """
@@ -1489,7 +1489,7 @@ class SubscriptionSubscriptionArgsDict(TypedDict):
     """
     (Updatable) Ship to customer account site address id.
     """
-    tax_info: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgs']]]
+    tax_info: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionTaxInfoArgsDict']]]
     """
     (Updatable) Tax details.
     """
@@ -2402,7 +2402,7 @@ class SubscriptionSubscriptionBillingAddressArgs:
 
 
 class SubscriptionSubscriptionPaymentGatewayArgsDict(TypedDict):
-    merchant_defined_data: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']]]
+    merchant_defined_data: NotRequired[pulumi.Input[Optional['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgsDict']]]
     """
     (Updatable) Merchant details.
     """

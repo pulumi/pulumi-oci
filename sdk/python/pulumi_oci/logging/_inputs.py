@@ -281,19 +281,19 @@ class UnifiedAgentConfigurationServiceConfigurationArgsDict(TypedDict):
     """
     (Updatable) Type of Unified Agent service configuration.
     """
-    application_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]]
+    application_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict']]]]]
     """
     (Updatable) Unified Agent monitoring application configuration details.
     """
-    destination: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]]
+    destination: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict']]]
     """
     (Updatable) Logging destination object.
     """
-    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]]
+    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgsDict']]]]]
     """
     (Updatable) Logging source object.
     """
-    unified_agent_configuration_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]]
+    unified_agent_configuration_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict']]]]]
     """
     (Updatable) Logging filter object.
     """
@@ -393,15 +393,15 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsD
     """
     (Updatable) Type of source of metrics
     """
-    source: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]
+    source: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]]
     """
     (Updatable) Kubernetes source object.
     """
-    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]]
+    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]]]]
     """
     (Updatable) Tail log source objects.
     """
-    unified_agent_configuration_filter: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]]
+    unified_agent_configuration_filter: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict']]]
     """
     (Updatable) Kubernetes filter object
     """
@@ -541,7 +541,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDesti
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict(TypedDict):
-    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]]
+    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict']]]
     """
     (Updatable) Advanced options for logging configuration
     """
@@ -549,7 +549,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     """
     (Updatable) Unique name for the source.
     """
-    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict']]]
     """
     (Updatable) Source parser object.
     """
@@ -751,7 +751,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
@@ -763,11 +763,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict']]]
     """
     (Updatable) record section of openmetrics parser.
     """
@@ -1705,7 +1705,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict(TypedDict
     """
     (Updatable) The OCID of the resource.
     """
-    operational_metrics_configuration: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]]
+    operational_metrics_configuration: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict']]]
     """
     (Updatable) Unified monitoring agent operational metrics configuration object.
     """
@@ -1943,7 +1943,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
     """
     (Updatable) Unified schema logging source type.
     """
-    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]]
+    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict']]]
     """
     (Updatable) Advanced options for logging configuration
     """
@@ -1959,7 +1959,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
     """
     (Updatable) Unique name for the source.
     """
-    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict']]]
     """
     (Updatable) Source parser object.
     """
@@ -2188,7 +2188,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDic
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
@@ -2200,11 +2200,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDic
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict']]]
     """
     (Updatable) record section of openmetrics parser.
     """
@@ -3057,7 +3057,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Unique name for the filter.
     """
-    allow_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]]
+    allow_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict']]]]]
     """
     (Updatable) A list of filtering rules to include logs
     """
@@ -3065,11 +3065,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Type of the custom filter
     """
-    custom_sections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]]
+    custom_sections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict']]]]]
     """
     (Updatable) List of custom sections in custom filter
     """
-    deny_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]]
+    deny_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict']]]]]
     """
     (Updatable) A list of filtering rules to reject logs
     """
@@ -3109,11 +3109,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Parameters of the custom filter
     """
-    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict']]]
     """
     (Updatable) Source parser object.
     """
-    record_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]]
+    record_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict']]]]]
     """
     (Updatable) Add new key-value pairs in logs
     """
@@ -3747,7 +3747,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
@@ -3759,11 +3759,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict']]]
     """
     (Updatable) record section of openmetrics parser.
     """

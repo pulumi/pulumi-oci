@@ -66,7 +66,7 @@ class ManagementAgentDataSourceListArgsDict(TypedDict):
     """
     Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
     """
-    metric_dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]]
+    metric_dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgsDict']]]]]
     """
     The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
     """

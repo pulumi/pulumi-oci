@@ -85,7 +85,7 @@ class AppFirewallPolicyActionArgsDict(TypedDict):
     * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
     * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
     """
-    body: NotRequired[pulumi.Input[Optional['AppFirewallPolicyActionBodyArgs']]]
+    body: NotRequired[pulumi.Input[Optional['AppFirewallPolicyActionBodyArgsDict']]]
     """
     (Updatable) Type of returned HTTP response body.
     """
@@ -109,7 +109,7 @@ class AppFirewallPolicyActionArgsDict(TypedDict):
 
     Example: `200`
     """
-    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgs']]]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyActionHeaderArgsDict']]]]]
     """
     (Updatable) Adds headers defined in this array for HTTP response.
 
@@ -384,7 +384,7 @@ class AppFirewallPolicyRequestAccessControlArgsDict(TypedDict):
     * **ALLOW** continues execution of other modules and their rules.
     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
     """
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestAccessControlRuleArgsDict']]]]]
     """
     (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
     """
@@ -558,7 +558,7 @@ class AppFirewallPolicyRequestProtectionArgsDict(TypedDict):
 
     For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
     """
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleArgsDict']]]]]
     """
     (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
     """
@@ -666,7 +666,7 @@ class AppFirewallPolicyRequestProtectionRuleArgsDict(TypedDict):
     """
     (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
     """
-    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs']]]
+    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgsDict']]]
     """
     (Updatable) Settings for protection capabilities
     """
@@ -821,11 +821,11 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgsDict(TypedDi
     """
     (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
     """
-    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]]
+    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]]
     """
     (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
     """
-    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs']]]
+    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgsDict']]]
     """
     (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
     """
@@ -1157,7 +1157,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs:
 
 
 class AppFirewallPolicyRequestRateLimitingArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyRequestRateLimitingRuleArgsDict']]]]]
     """
     (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
     """
@@ -1381,7 +1381,7 @@ class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs:
 
 
 class AppFirewallPolicyResponseAccessControlArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseAccessControlRuleArgsDict']]]]]
     """
     (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
     """
@@ -1519,7 +1519,7 @@ class AppFirewallPolicyResponseAccessControlRuleArgs:
 
 
 class AppFirewallPolicyResponseProtectionArgsDict(TypedDict):
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleArgsDict']]]]]
     """
     (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
     """
@@ -1577,7 +1577,7 @@ class AppFirewallPolicyResponseProtectionRuleArgsDict(TypedDict):
     """
     (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
     """
-    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs']]]
+    protection_capability_settings: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgsDict']]]
     """
     (Updatable) Settings for protection capabilities
     """
@@ -1732,11 +1732,11 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgsDict(TypedD
     """
     (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
     """
-    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs']]]]]
+    collaborative_weights: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgsDict']]]]]
     """
     (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
     """
-    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs']]]
+    exclusions: NotRequired[pulumi.Input[Optional['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgsDict']]]
     """
     (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
     """

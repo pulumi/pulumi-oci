@@ -658,7 +658,7 @@ class PolicyOriginArgsDict(TypedDict):
     """
     (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
     """
-    custom_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]]
+    custom_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgsDict']]]]]
     """
     (Updatable) A list of HTTP headers to forward to your origin.
     """
@@ -896,7 +896,7 @@ class PolicyPolicyConfigArgsDict(TypedDict):
     * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
     * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
     """
-    health_checks: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgs']]]
+    health_checks: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigHealthChecksArgsDict']]]
     """
     (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
     """
@@ -928,7 +928,7 @@ class PolicyPolicyConfigArgsDict(TypedDict):
     """
     (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
     """
-    load_balancing_method: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgs']]]
+    load_balancing_method: NotRequired[pulumi.Input[Optional['PolicyPolicyConfigLoadBalancingMethodArgsDict']]]
     """
     (Updatable) An object that represents a load balancing method and its properties.
     """
@@ -1559,35 +1559,35 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
 
 
 class PolicyWafConfigArgsDict(TypedDict):
-    access_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]]
+    access_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgsDict']]]]]
     """
     (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
     """
-    address_rate_limiting: NotRequired[pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgs']]]
+    address_rate_limiting: NotRequired[pulumi.Input[Optional['PolicyWafConfigAddressRateLimitingArgsDict']]]
     """
     (Updatable) The settings used to limit the number of requests from an IP address.
     """
-    caching_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]]
+    caching_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgsDict']]]]]
     """
     (Updatable) A list of caching rules applied to the web application.
     """
-    captchas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]]
+    captchas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgsDict']]]]]
     """
     (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
     """
-    custom_protection_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]]
+    custom_protection_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgsDict']]]]]
     """
     (Updatable) A list of the custom protection rule OCIDs and their actions.
     """
-    device_fingerprint_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgs']]]
+    device_fingerprint_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeArgsDict']]]
     """
     (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
     """
-    human_interaction_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgs']]]
+    human_interaction_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeArgsDict']]]
     """
     (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
     """
-    js_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeArgs']]]
+    js_challenge: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeArgsDict']]]
     """
     (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
     """
@@ -1599,11 +1599,11 @@ class PolicyWafConfigArgsDict(TypedDict):
     """
     (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
     """
-    protection_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgs']]]
+    protection_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigProtectionSettingsArgsDict']]]
     """
     (Updatable) The settings applied to protection rules.
     """
-    whitelists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]]
+    whitelists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgsDict']]]]]
     """
     (Updatable) A list of IP addresses that bypass the Web Application Firewall.
     """
@@ -1882,7 +1882,7 @@ class PolicyWafConfigAccessRuleArgsDict(TypedDict):
     """
     (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
     """
-    response_header_manipulations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]]
+    response_header_manipulations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgsDict']]]]]
     """
     (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
     """
@@ -2838,7 +2838,7 @@ class PolicyWafConfigCustomProtectionRuleArgsDict(TypedDict):
     """
     (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
     """
-    exclusions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]]
+    exclusions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgsDict']]]]]
     """
     (Updatable)
     """
@@ -2964,7 +2964,7 @@ class PolicyWafConfigDeviceFingerprintChallengeArgsDict(TypedDict):
     """
     (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
     """
-    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgsDict']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
@@ -3321,7 +3321,7 @@ class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
     """
     (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
     """
-    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgsDict']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
@@ -3345,7 +3345,7 @@ class PolicyWafConfigHumanInteractionChallengeArgsDict(TypedDict):
     """
     (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
     """
-    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]]
+    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgsDict']]]
     """
     (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
     """
@@ -3769,11 +3769,11 @@ class PolicyWafConfigJsChallengeArgsDict(TypedDict):
     """
     (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
     """
-    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgs']]]
+    challenge_settings: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeChallengeSettingsArgsDict']]]
     """
     (Updatable) The challenge settings if `action` is set to `BLOCK`.
     """
-    criterias: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]]
+    criterias: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgsDict']]]]]
     """
     (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
     """
@@ -3785,7 +3785,7 @@ class PolicyWafConfigJsChallengeArgsDict(TypedDict):
     """
     (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
     """
-    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]]
+    set_http_header: NotRequired[pulumi.Input[Optional['PolicyWafConfigJsChallengeSetHttpHeaderArgsDict']]]
     """
     (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
     """

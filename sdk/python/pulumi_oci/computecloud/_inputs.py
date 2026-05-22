@@ -151,15 +151,15 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict(Type
     """
     The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
     """
-    infrastructure_routing_dynamics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs']]]]]
+    infrastructure_routing_dynamics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict']]]]]
     """
     Dynamic routing information for the Compute Cloud@Customer infrastructure.
     """
-    infrastructure_routing_statics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs']]]]]
+    infrastructure_routing_statics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict']]]]]
     """
     Static routing information for a rack.
     """
-    management_nodes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs']]]]]
+    management_nodes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict']]]]]
     """
     Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
     """
@@ -464,7 +464,7 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
     """
     The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
     """
-    peer_informations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs']]]]]
+    peer_informations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict']]]]]
     """
     The list of peer devices in the dynamic routing configuration.
     """

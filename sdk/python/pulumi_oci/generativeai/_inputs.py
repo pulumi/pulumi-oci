@@ -205,15 +205,15 @@ class AgentAgentEndpointContentModerationConfigArgs:
 
 
 class AgentAgentEndpointGuardrailConfigArgsDict(TypedDict):
-    content_moderation_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgs']]]
+    content_moderation_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict']]]
     """
     (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
     """
-    personally_identifiable_information_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs']]]
+    personally_identifiable_information_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict']]]
     """
     (Updatable) The configuration details for Personally Identifiable Information.
     """
-    prompt_injection_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs']]]
+    prompt_injection_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict']]]
     """
     (Updatable) The configuration details for Prompt Injection.
     """
@@ -567,11 +567,11 @@ class AgentAgentEndpointProvisionedCapacityConfigArgsDict(TypedDict):
     """
     (Updatable) An OCID that uniquely identifies an Provisioned Capacity.
     """
-    platform_runtime_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs']]]
+    platform_runtime_config: NotRequired[pulumi.Input[Optional['AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgsDict']]]
     """
     (Updatable) Configuration for agent platform component.
     """
-    tool_runtime_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs']]]]]
+    tool_runtime_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgsDict']]]]]
     """
     (Updatable) RAG and SQL will be tools.
     """
@@ -757,7 +757,7 @@ class AgentAgentEndpointSessionConfigArgs:
 
 
 class AgentAgentLlmConfigArgsDict(TypedDict):
-    routing_llm_customization: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgs']]]
+    routing_llm_customization: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationArgsDict']]]
     """
     (Updatable) Configuration to customize LLM.
     """
@@ -814,7 +814,7 @@ class AgentAgentLlmConfigRoutingLlmCustomizationArgsDict(TypedDict):
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgs']]]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentAgentLlmConfigRoutingLlmCustomizationLlmSelectionArgsDict']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -1183,19 +1183,19 @@ class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
     """
-    database_connection: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs']]]
+    database_connection: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict']]]
     """
     (Updatable) The connection type for Databases.
     """
-    database_functions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs']]]]]
+    database_functions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict']]]]]
     """
     (Updatable) Array of Database functions to be used.
     """
-    indexes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]]]]
+    indexes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgsDict']]]]]
     """
     (Updatable) Index configuration for open search.
     """
-    secret_detail: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgs']]]
+    secret_detail: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigSecretDetailArgsDict']]]
     """
     (Updatable) The details of configured security configuration on OpenSearch.
     """
@@ -1415,7 +1415,7 @@ class AgentKnowledgeBaseIndexConfigIndexArgsDict(TypedDict):
     """
     (Updatable) The index name in opensearch.
     """
-    schema: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgs']]]
+    schema: NotRequired[pulumi.Input[Optional['AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict']]]
     """
     (Updatable) The index schema details.
     """
@@ -1720,15 +1720,15 @@ class AgentToolToolConfigArgsDict(TypedDict):
     """
     (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
     """
-    api_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgs']]]
+    api_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigApiSchemaArgsDict']]]
     """
     (Updatable) The input location definition for Api schema.
     """
-    database_connection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgs']]]
+    database_connection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseConnectionArgsDict']]]
     """
     (Updatable) The connection type for Databases.
     """
-    database_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgs']]]
+    database_schema: NotRequired[pulumi.Input[Optional['AgentToolToolConfigDatabaseSchemaArgsDict']]]
     """
     (Updatable) The input location definition.
     """
@@ -1736,27 +1736,27 @@ class AgentToolToolConfigArgsDict(TypedDict):
     """
     (Updatable) Dialect to be used for SQL generation.
     """
-    embedding_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgs']]]
+    embedding_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationArgsDict']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    function: NotRequired[pulumi.Input[Optional['AgentToolToolConfigFunctionArgs']]]
+    function: NotRequired[pulumi.Input[Optional['AgentToolToolConfigFunctionArgsDict']]]
     """
     (Updatable) Details of Function for Function calling tool.
     """
-    generation_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgs']]]
+    generation_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationArgsDict']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    http_endpoint_auth_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgs']]]
+    http_endpoint_auth_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigArgsDict']]]
     """
     (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
     """
-    icl_examples: NotRequired[pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgs']]]
+    icl_examples: NotRequired[pulumi.Input[Optional['AgentToolToolConfigIclExamplesArgsDict']]]
     """
     (Updatable) The input location definition.
     """
-    knowledge_base_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgs']]]]]
+    knowledge_base_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgsDict']]]]]
     """
     (Updatable) The KnowledgeBase configurations that this RAG Tool uses
     """
@@ -1764,11 +1764,11 @@ class AgentToolToolConfigArgsDict(TypedDict):
     """
     (Updatable) Size of the model.
     """
-    reasoning_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgs']]]
+    reasoning_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationArgsDict']]]
     """
     (Updatable) Configuration to customize LLM.
     """
-    reranking_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgs']]]
+    reranking_llm_customization: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationArgsDict']]]
     """
     (Updatable) Configuration to customize LLM.
     """
@@ -1788,7 +1788,7 @@ class AgentToolToolConfigArgsDict(TypedDict):
     """
     (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
     """
-    table_and_column_description: NotRequired[pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgs']]]
+    table_and_column_description: NotRequired[pulumi.Input[Optional['AgentToolToolConfigTableAndColumnDescriptionArgsDict']]]
     """
     (Updatable) The input location definition.
     """
@@ -2420,7 +2420,7 @@ class AgentToolToolConfigEmbeddingLlmCustomizationArgsDict(TypedDict):
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgs']]]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigEmbeddingLlmCustomizationLlmSelectionArgsDict']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -2626,7 +2626,7 @@ class AgentToolToolConfigGenerationLlmCustomizationArgsDict(TypedDict):
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs']]]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgsDict']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -2755,7 +2755,7 @@ class AgentToolToolConfigGenerationLlmCustomizationLlmSelectionArgs:
 
 
 class AgentToolToolConfigHttpEndpointAuthConfigArgsDict(TypedDict):
-    http_endpoint_auth_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs']]]]]
+    http_endpoint_auth_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict']]]]]
     """
     (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
     """
@@ -2788,7 +2788,7 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict(Ty
     """
     (Updatable) Specifies the level from which credentials should be resolved.
     """
-    http_endpoint_auth_scope_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs']]]
+    http_endpoint_auth_scope_config: NotRequired[pulumi.Input[Optional['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict']]]
     """
     (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
     """
@@ -3132,7 +3132,7 @@ class AgentToolToolConfigReasoningLlmCustomizationArgsDict(TypedDict):
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgs']]]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigReasoningLlmCustomizationLlmSelectionArgsDict']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -3269,7 +3269,7 @@ class AgentToolToolConfigRerankingLlmCustomizationArgsDict(TypedDict):
     """
     (Updatable) Hyper parameters for LLM configuration. Accepts Key-value pairs to configure various hyper parameters.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
     """
-    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgs']]]
+    llm_selection: NotRequired[pulumi.Input[Optional['AgentToolToolConfigRerankingLlmCustomizationLlmSelectionArgsDict']]]
     """
     (Updatable) LLM selection configuration - either DEFAULT or CUSTOM.
     """
@@ -3848,7 +3848,7 @@ class ModelFineTuneDetailsArgsDict(TypedDict):
 
     Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
     """
-    training_config: NotRequired[pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']]]
+    training_config: NotRequired[pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgsDict']]]
     """
     The fine-tuning method and hyperparameters used for fine-tuning a custom model.
     """

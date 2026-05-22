@@ -1443,7 +1443,7 @@ class LoadBalancerIpAddressDetailArgsDict(TypedDict):
     """
     Whether the IP address is public or private.
     """
-    reserved_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgs']]]]]
+    reserved_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerIpAddressDetailReservedIpArgsDict']]]]]
 
 @pulumi.input_type
 class LoadBalancerIpAddressDetailArgs:
@@ -1928,7 +1928,7 @@ class RuleSetItemArgsDict(TypedDict):
     """
     (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
     """
-    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgs']]]]]
+    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemConditionArgsDict']]]]]
     """
     (Updatable)
     """
@@ -1950,7 +1950,7 @@ class RuleSetItemArgsDict(TypedDict):
     """
     (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
     """
-    ip_max_connections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgs']]]]]
+    ip_max_connections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleSetItemIpMaxConnectionArgsDict']]]]]
     """
     (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
     """
@@ -1962,7 +1962,7 @@ class RuleSetItemArgsDict(TypedDict):
 
     Example: `example_prefix_value`
     """
-    redirect_uri: NotRequired[pulumi.Input[Optional['RuleSetItemRedirectUriArgs']]]
+    redirect_uri: NotRequired[pulumi.Input[Optional['RuleSetItemRedirectUriArgsDict']]]
     """
     (Updatable) An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 

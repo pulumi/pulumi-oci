@@ -403,7 +403,7 @@ class StreamJobFeatureArgsDict(TypedDict):
     """
     (Updatable) Whether or not return face landmarks.
     """
-    tracking_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgs']]]]]
+    tracking_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['StreamJobFeatureTrackingTypeArgsDict']]]]]
     """
     (Updatable) List of details of what to track.
     """

@@ -575,7 +575,7 @@ class FilesystemSnapshotPolicyScheduleArgsDict(TypedDict):
     """
     (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
     """
-    lock_duration_details: NotRequired[pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgs']]]
+    lock_duration_details: NotRequired[pulumi.Input[Optional['FilesystemSnapshotPolicyScheduleLockDurationDetailsArgsDict']]]
     """
     (Updatable) Details for setting a retention date or legal hold.
     """

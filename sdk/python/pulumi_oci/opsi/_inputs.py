@@ -285,7 +285,7 @@ class DatabaseInsightConnectionDetailsArgsDict(TypedDict):
     """
     Name of the listener host that will be used to create the connect string to the database.
     """
-    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgsDict']]]]]
     """
     List of hosts and port for private endpoint accessed database resource.
     """
@@ -664,11 +664,11 @@ class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
     """
-    member_autonomous_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]]
+    member_autonomous_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict']]]]]
     """
     The autonomous databases that belong to the Autonomous VM Cluster
     """
-    member_database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]]
+    member_database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict']]]]]
     """
     The databases that belong to the VM Cluster
     """
@@ -809,15 +809,15 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDic
     """
     (Updatable) Compartment Identifier of database
     """
-    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]]
+    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict']]]
     """
     User credential details to connect to the database.
     """
-    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]]
+    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict']]]
     """
     Connection details to connect to the database. HostName, protocol, and port should be specified.
     """
-    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]]
+    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict']]]
     """
     User credential details to connect to the database.
     """
@@ -1483,15 +1483,15 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict)
     """
     (Updatable) Compartment Identifier of database
     """
-    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]]
+    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict']]]
     """
     User credential details to connect to the database.
     """
-    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]]
+    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict']]]
     """
     Connection details to connect to the database. HostName, protocol, and port should be specified.
     """
-    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]]
+    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict']]]
     """
     User credential details to connect to the database.
     """
@@ -1940,7 +1940,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
     """
     Name of the listener host that will be used to create the connect string to the database.
     """
-    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict']]]]]
     """
     List of hosts and port for private endpoint accessed database resource.
     """
@@ -2423,7 +2423,7 @@ class OpsiConfigurationConfigItemArgsDict(TypedDict):
     """
     Value of configuration item.
     """
-    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]]
+    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgsDict']]]]]
     """
     Configuration item metadata.
     """
@@ -2555,11 +2555,11 @@ class OpsiConfigurationConfigItemMetadataArgsDict(TypedDict):
     """
     (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
     """
-    unit_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]]
+    unit_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgsDict']]]]]
     """
     Unit details of configuration item.
     """
-    value_input_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]]
+    value_input_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict']]]]]
     """
     Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
     """

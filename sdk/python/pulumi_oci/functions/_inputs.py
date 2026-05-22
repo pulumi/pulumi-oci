@@ -66,7 +66,7 @@ class ApplicationImagePolicyConfigArgsDict(TypedDict):
     """
     (Updatable) Define if image signature verification policy is enabled for the application.
     """
-    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]]
+    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgsDict']]]]]
     """
     (Updatable) A list of KMS key details.
     """

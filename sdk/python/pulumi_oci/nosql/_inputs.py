@@ -354,11 +354,11 @@ class TableReplicaArgs:
 
 
 class TableSchemaArgsDict(TypedDict):
-    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgs']]]]]
+    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaColumnArgsDict']]]]]
     """
     The columns of a table.
     """
-    identities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]]]
+    identities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaIdentityArgsDict']]]]]
     """
     The identity properties of a table, if any.
     """

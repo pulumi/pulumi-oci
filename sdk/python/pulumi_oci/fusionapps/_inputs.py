@@ -486,7 +486,7 @@ class FusionEnvironmentMaintenancePolicyArgsDict(TypedDict):
     """
     (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
     """
-    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]]]
+    quarterly_upgrade_begin_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgsDict']]]]]
     """
     Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
     """

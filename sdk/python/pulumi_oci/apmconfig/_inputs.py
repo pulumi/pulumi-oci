@@ -36,7 +36,7 @@ __all__ = [
 ]
 
 class ConfigConfigArgsDict(TypedDict):
-    config_maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]]
+    config_maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigConfigMapArgsDict']]]]]
     """
     (Updatable) Map of an agent configuration file.
     """
@@ -361,7 +361,7 @@ class ConfigMetricArgs:
 
 
 class ConfigOverridesArgsDict(TypedDict):
-    override_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]]
+    override_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigOverridesOverrideListArgsDict']]]]]
     """
     (Updatable)
     """

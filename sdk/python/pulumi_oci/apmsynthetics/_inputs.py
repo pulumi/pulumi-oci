@@ -141,7 +141,7 @@ class ConfigAvailabilityConfigurationArgs:
 
 
 class ConfigConfigurationArgsDict(TypedDict):
-    client_certificate_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsArgs']]]
+    client_certificate_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsArgsDict']]]
     """
     (Updatable) Details for client certificate.
     """
@@ -153,7 +153,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Database connection string.
     """
-    database_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseAuthenticationDetailsArgs']]]
+    database_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseAuthenticationDetailsArgsDict']]]
     """
     (Updatable) Details for basic authentication.
     """
@@ -169,11 +169,11 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Database type.
     """
-    database_wallet_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseWalletDetailsArgs']]]
+    database_wallet_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseWalletDetailsArgsDict']]]
     """
     (Updatable) Details for database wallet.
     """
-    dns_configuration: NotRequired[pulumi.Input[Optional['ConfigConfigurationDnsConfigurationArgs']]]
+    dns_configuration: NotRequired[pulumi.Input[Optional['ConfigConfigurationDnsConfigurationArgsDict']]]
     """
     (Updatable) Information about the DNS settings.
     """
@@ -181,7 +181,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
     """
-    ftp_basic_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationFtpBasicAuthenticationDetailsArgs']]]
+    ftp_basic_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict']]]
     """
     (Updatable) Details for basic authentication.
     """
@@ -221,7 +221,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Name of the server that will be used to perform DNS lookup.
     """
-    network_configuration: NotRequired[pulumi.Input[Optional['ConfigConfigurationNetworkConfigurationArgs']]]
+    network_configuration: NotRequired[pulumi.Input[Optional['ConfigConfigurationNetworkConfigurationArgsDict']]]
     """
     (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
     """
@@ -237,7 +237,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) DNS record type.
     """
-    req_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationReqAuthenticationDetailsArgs']]]
+    req_authentication_details: NotRequired[pulumi.Input[Optional['ConfigConfigurationReqAuthenticationDetailsArgsDict']]]
     """
     (Updatable) Details for request HTTP authentication.
     """
@@ -245,7 +245,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Request HTTP authentication scheme.
     """
-    request_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgs']]]]]
+    request_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgsDict']]]]]
     """
     (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
     """
@@ -257,7 +257,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Request post body content.
     """
-    request_query_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]]]]
+    request_query_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgsDict']]]]]
     """
     (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
     """
@@ -273,7 +273,7 @@ class ConfigConfigurationArgsDict(TypedDict):
     """
     (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
     """
-    verify_texts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]]]
+    verify_texts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgsDict']]]]]
     """
     (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
     """
@@ -830,11 +830,11 @@ class ConfigConfigurationArgs:
 
 
 class ConfigConfigurationClientCertificateDetailsArgsDict(TypedDict):
-    client_certificate: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']]]
+    client_certificate: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict']]]
     """
     (Updatable) Client certificate in PEM format.
     """
-    private_key: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']]]
+    private_key: NotRequired[pulumi.Input[Optional['ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict']]]
     """
     (Updatable) The private key associated with the client certificate in PEM format.
     """
@@ -977,7 +977,7 @@ class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
 
 
 class ConfigConfigurationDatabaseAuthenticationDetailsArgsDict(TypedDict):
-    password: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs']]]
+    password: NotRequired[pulumi.Input[Optional['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict']]]
     """
     (Updatable) Password.
     """
@@ -1193,7 +1193,7 @@ class ConfigConfigurationDnsConfigurationArgs:
 
 
 class ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict(TypedDict):
-    password: NotRequired[pulumi.Input[Optional['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs']]]
+    password: NotRequired[pulumi.Input[Optional['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict']]]
     """
     (Updatable) Password.
     """
@@ -1420,7 +1420,7 @@ class ConfigConfigurationNetworkConfigurationArgs:
 
 
 class ConfigConfigurationReqAuthenticationDetailsArgsDict(TypedDict):
-    auth_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs']]]]]
+    auth_headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict']]]]]
     """
     (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
     """
@@ -1830,7 +1830,7 @@ class ConfigScriptParameterArgsDict(TypedDict):
     """
     Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
     """
-    monitor_script_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgs']]]]]
+    monitor_script_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgsDict']]]]]
     """
     Details of the script parameter that can be used to overwrite the parameter present in the script.
     """
@@ -2463,7 +2463,7 @@ class OnPremiseVantagePointWorkersSummaryArgsDict(TypedDict):
     """
     Number of available workers in a specific On-premise vantage point.
     """
-    available_capabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs']]]]]
+    available_capabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict']]]]]
     """
     List of available capabilities in a specific On-premise vantage point.
     """
@@ -2746,7 +2746,7 @@ class ScriptParameterArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    script_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterScriptParameterArgs']]]]]
+    script_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScriptParameterScriptParameterArgsDict']]]]]
     """
     Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
     """

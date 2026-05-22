@@ -334,7 +334,7 @@ class AssetAttachedEbsVolumesCostArgs:
 
 
 class AssetAwsEbsArgsDict(TypedDict):
-    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]]
+    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgsDict']]]]]
     """
     (Updatable) Information about the volume attachments.
     """
@@ -362,7 +362,7 @@ class AssetAwsEbsArgsDict(TypedDict):
     """
     (Updatable) The volume state.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgsDict']]]]]
     """
     (Updatable) Any tags assigned to the volume.
     """
@@ -793,11 +793,11 @@ class AssetAwsEc2ArgsDict(TypedDict):
     """
     (Updatable) The monitoring for the instance.
     """
-    network_interfaces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]]
+    network_interfaces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgsDict']]]]]
     """
     (Updatable) The network interfaces for the instance.
     """
-    placement: NotRequired[pulumi.Input[Optional['AssetAwsEc2PlacementArgs']]]
+    placement: NotRequired[pulumi.Input[Optional['AssetAwsEc2PlacementArgsDict']]]
     """
     (Updatable) Describes the placement of an instance.
     """
@@ -817,7 +817,7 @@ class AssetAwsEc2ArgsDict(TypedDict):
     """
     (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
     """
-    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]]
+    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgsDict']]]]]
     """
     (Updatable) The security groups for the instance.
     """
@@ -825,7 +825,7 @@ class AssetAwsEc2ArgsDict(TypedDict):
     """
     (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
     """
-    state: NotRequired[pulumi.Input[Optional['AssetAwsEc2StateArgs']]]
+    state: NotRequired[pulumi.Input[Optional['AssetAwsEc2StateArgsDict']]]
     """
     (Updatable) Describes the current state of an instance.
     """
@@ -833,7 +833,7 @@ class AssetAwsEc2ArgsDict(TypedDict):
     """
     (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
     """
-    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgsDict']]]]]
     """
     (Updatable) Any tags assigned to the instance.
     """
@@ -1390,11 +1390,11 @@ class AssetAwsEc2Args:
 
 
 class AssetAwsEc2NetworkInterfaceArgsDict(TypedDict):
-    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgs']]]
+    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgsDict']]]
     """
     (Updatable) Describes association information for an Elastic IP address (IPv4).
     """
-    attachment: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgs']]]
+    attachment: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgsDict']]]
     """
     (Updatable) Describes a network interface attachment.
     """
@@ -1434,11 +1434,11 @@ class AssetAwsEc2NetworkInterfaceArgsDict(TypedDict):
     """
     (Updatable) The ID of the AWS account that created the network interface.
     """
-    private_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]]
+    private_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict']]]]]
     """
     (Updatable) The private IPv4 addresses associated with the network interface.
     """
-    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]]
+    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict']]]]]
     """
     (Updatable) The security groups.
     """
@@ -1937,7 +1937,7 @@ class AssetAwsEc2NetworkInterfaceAttachmentArgs:
 
 
 class AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict(TypedDict):
-    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]]
+    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict']]]
     """
     (Updatable) Describes association information for an Elastic IP address (IPv4).
     """
@@ -2565,7 +2565,7 @@ class AssetComputeArgsDict(TypedDict):
     """
     (Updatable) Information about the asset.
     """
-    disks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]]
+    disks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgsDict']]]]]
     """
     (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
     """
@@ -2581,7 +2581,7 @@ class AssetComputeArgsDict(TypedDict):
     """
     (Updatable) Information about firmware type for this virtual machine.
     """
-    gpu_devices: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]]
+    gpu_devices: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgsDict']]]]]
     """
     (Updatable) List of GPU devices attached to a virtual machine.
     """
@@ -2617,7 +2617,7 @@ class AssetComputeArgsDict(TypedDict):
     """
     (Updatable) Memory size in MBs.
     """
-    nics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgs']]]]]
+    nics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgsDict']]]]]
     """
     (Updatable) List of network ethernet cards attached to a virtual machine.
     """
@@ -2625,11 +2625,11 @@ class AssetComputeArgsDict(TypedDict):
     """
     (Updatable) Number of network ethernet cards.
     """
-    nvdimm_controller: NotRequired[pulumi.Input[Optional['AssetComputeNvdimmControllerArgs']]]
+    nvdimm_controller: NotRequired[pulumi.Input[Optional['AssetComputeNvdimmControllerArgsDict']]]
     """
     (Updatable) The asset's NVDIMM configuration.
     """
-    nvdimms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]]
+    nvdimms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgsDict']]]]]
     """
     (Updatable) The properties of the NVDIMMs attached to a virtual machine.
     """
@@ -2653,7 +2653,7 @@ class AssetComputeArgsDict(TypedDict):
     """
     (Updatable) Primary IP address of the compute instance.
     """
-    scsi_controller: NotRequired[pulumi.Input[Optional['AssetComputeScsiControllerArgs']]]
+    scsi_controller: NotRequired[pulumi.Input[Optional['AssetComputeScsiControllerArgsDict']]]
     """
     (Updatable) The assets SCSI controller.
     """
@@ -3972,7 +3972,7 @@ class AssetVmwareVmArgsDict(TypedDict):
     """
     (Updatable) Customer fields.
     """
-    customer_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]]
+    customer_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgsDict']]]]]
     """
     (Updatable) Customer defined tags.
     """

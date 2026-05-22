@@ -459,7 +459,7 @@ class IntegrationInstanceCustomEndpointArgs:
 
 
 class IntegrationInstanceDisasterRecoveryDetailArgsDict(TypedDict):
-    cross_region_integration_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgs']]]]]
+    cross_region_integration_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailCrossRegionIntegrationInstanceDetailArgsDict']]]]]
     """
     Details of integration instance created in cross region for disaster recovery.
     """
@@ -734,11 +734,11 @@ class IntegrationInstanceNetworkEndpointDetailsArgsDict(TypedDict):
     """
     Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
     """
-    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]]]
+    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict']]]]]
     """
     Virtual Cloud Networks allowed to access this network endpoint.
     """
-    design_time: NotRequired[pulumi.Input[Optional['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs']]]
+    design_time: NotRequired[pulumi.Input[Optional['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict']]]
     """
     A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
     """
@@ -746,7 +746,7 @@ class IntegrationInstanceNetworkEndpointDetailsArgsDict(TypedDict):
     """
     The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
     """
-    runtime: NotRequired[pulumi.Input[Optional['IntegrationInstanceNetworkEndpointDetailsRuntimeArgs']]]
+    runtime: NotRequired[pulumi.Input[Optional['IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict']]]
     """
     A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
     """
@@ -906,7 +906,7 @@ class IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict(TypedDict):
     """
     Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
     """
-    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs']]]]]
+    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgsDict']]]]]
     """
     Virtual Cloud Networks allowed to access this network endpoint.
     """
@@ -1003,7 +1003,7 @@ class IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict(TypedDict):
     """
     Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
     """
-    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs']]]]]
+    allowlisted_http_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgsDict']]]]]
     """
     Virtual Cloud Networks allowed to access this network endpoint.
     """

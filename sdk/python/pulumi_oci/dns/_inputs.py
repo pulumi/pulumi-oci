@@ -86,8 +86,8 @@ __all__ = [
 ]
 
 class ActionCreateZoneFromZoneFileDnssecConfigArgsDict(TypedDict):
-    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs']]]]]
-    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs']]]]]
+    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict']]]]]
+    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict']]]]]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileDnssecConfigArgs:
@@ -120,7 +120,7 @@ class ActionCreateZoneFromZoneFileDnssecConfigArgs:
 
 class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
     algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    ds_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs']]]]]
+    ds_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]]
     key_tag: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     length_in_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -1437,11 +1437,11 @@ class SteeringPolicyRuleArgsDict(TypedDict):
     * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
     * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
     """
-    cases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgs']]]]]
+    cases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgsDict']]]]]
     """
     An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
     """
-    default_answer_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]]]]
+    default_answer_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgsDict']]]]]
     """
     Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
     """
@@ -1551,7 +1551,7 @@ class SteeringPolicyRuleArgs:
 
 
 class SteeringPolicyRuleCaseArgsDict(TypedDict):
-    answer_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]]]]
+    answer_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgsDict']]]]]
     """
     An array of `SteeringPolicyPriorityAnswerData` objects.
     """
@@ -1758,11 +1758,11 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
 
 
 class ZoneDnssecConfigArgsDict(TypedDict):
-    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionArgs']]]]]
+    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionArgsDict']]]]]
     """
     A read-only array of key signing key (KSK) versions.
     """
-    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigZskDnssecKeyVersionArgs']]]]]
+    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigZskDnssecKeyVersionArgsDict']]]]]
     """
     A read-only array of zone signing key (ZSK) versions.
     """
@@ -1811,7 +1811,7 @@ class ZoneDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
     """
     The signing algorithm used for the key.
     """
-    ds_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs']]]]]
+    ds_datas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]]
     """
     An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
     """

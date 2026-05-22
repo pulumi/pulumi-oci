@@ -215,23 +215,23 @@ class AutoScalingConfigurationPolicyDetailsArgsDict(TypedDict):
     """
     The type of autoscaling action to take.
     """
-    scale_down_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs']]]
+    scale_down_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict']]]
     """
     (Updatable) Configration for a metric based vertical scale-down policy.
     """
-    scale_in_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigArgs']]]
+    scale_in_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict']]]
     """
     (Updatable) Configration for a metric based horizontal scale-in policy.
     """
-    scale_out_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs']]]
+    scale_out_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict']]]
     """
     (Updatable) Configration for a metric based horizontal scale-out policy.
     """
-    scale_up_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs']]]
+    scale_up_config: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict']]]
     """
     (Updatable) Configration for a metric based vertical scale-up policy.
     """
-    schedule_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]]]]
+    schedule_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict']]]]]
     """
     (Updatable) Details of a horizontal scaling schedule.
     """
@@ -399,7 +399,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgsDict(TypedDict):
     """
     (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
     """
-    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs']]]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict']]]
     """
     (Updatable) Metric and threshold details for triggering an autoscale action.
     """
@@ -508,7 +508,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgsDict(TypedDi
     """
     (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
     """
-    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs']]]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgsDict']]]
     """
     (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
     """
@@ -622,7 +622,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
 
 
 class AutoScalingConfigurationPolicyDetailsScaleInConfigArgsDict(TypedDict):
-    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs']]]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict']]]
     """
     (Updatable) Metric and threshold details for triggering an autoscale action.
     """
@@ -695,7 +695,7 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgsDict(TypedDict
     """
     (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
     """
-    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs']]]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgsDict']]]
     """
     (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
     """
@@ -813,7 +813,7 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgsDict(TypedDict):
     """
     (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
     """
-    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs']]]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict']]]
     """
     (Updatable) Metric and threshold details for triggering an autoscale action.
     """
@@ -882,7 +882,7 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgsDict(TypedDic
     """
     (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
     """
-    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs']]]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgsDict']]]
     """
     (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
     """
@@ -1008,7 +1008,7 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgsDict(TypedDict):
     """
     (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
     """
-    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs']]]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict']]]
     """
     (Updatable) Metric and threshold details for triggering an autoscale action.
     """
@@ -1109,7 +1109,7 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgsDict(TypedDict
     """
     (Updatable) Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
     """
-    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs']]]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgsDict']]]
     """
     (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
     """
@@ -1227,11 +1227,11 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgsDict(TypedDict):
     """
     (Updatable) The type of schedule.
     """
-    time_and_horizontal_scaling_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]]]]
+    time_and_horizontal_scaling_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgsDict']]]]]
     """
     (Updatable) Time of day and horizontal scaling configuration.
     """
-    time_and_vertical_scaling_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]]]
+    time_and_vertical_scaling_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgsDict']]]]]
     """
     (Updatable) Time of day and vertical scaling configuration
     """
@@ -1594,11 +1594,11 @@ class BdsCapacityReportShapeAvailabilityArgsDict(TypedDict):
     """
     The shape that you want to request a capacity report for.
     """
-    domain_level_capacity_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgs']]]]]
+    domain_level_capacity_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict']]]]]
     """
     Information about the capacity in each domain.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsCapacityReportShapeAvailabilityShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsCapacityReportShapeAvailabilityShapeConfigArgsDict']]]
     """
     The shape configuration requested for the node.
     """
@@ -1662,7 +1662,7 @@ class BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportArgsDict(TypedD
     """
     The availability domain for the capacity report.
     """
-    capacity_availabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgs']]]]]
+    capacity_availabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsCapacityReportShapeAvailabilityDomainLevelCapacityReportCapacityAvailabilityArgsDict']]]]]
     """
     Information about the available capacity for a shape.
     """
@@ -1941,7 +1941,7 @@ class BdsInstanceCloudSqlDetailArgsDict(TypedDict):
     """
     Boolean flag specifying whether or not are Kerberos principals mapped to database users.
     """
-    kerberos_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]]]]
+    kerberos_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgsDict']]]]]
     """
     Details about Kerberos principals
     """
@@ -2467,7 +2467,7 @@ class BdsInstanceComputeOnlyWorkerNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgsDict']]]
 
 @pulumi.input_type
 class BdsInstanceComputeOnlyWorkerNodeArgs:
@@ -2635,7 +2635,7 @@ class BdsInstanceEdgeNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceEdgeNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceEdgeNodeShapeConfigArgsDict']]]
 
 @pulumi.input_type
 class BdsInstanceEdgeNodeArgs:
@@ -3156,7 +3156,7 @@ class BdsInstanceKafkaBrokerNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceKafkaBrokerNodeShapeConfigArgsDict']]]
     """
     The shape configuration requested for the node.
     """
@@ -3327,7 +3327,7 @@ class BdsInstanceMasterNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceMasterNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceMasterNodeShapeConfigArgsDict']]]
     """
     The shape configuration requested for the node.
     """
@@ -3535,7 +3535,7 @@ class BdsInstanceNetworkConfigArgs:
 
 
 class BdsInstanceNodeArgsDict(TypedDict):
-    attached_block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgs']]]]]
+    attached_block_volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgsDict']]]]]
     """
     The list of block volumes attached to a given node.
     """
@@ -4574,7 +4574,7 @@ class BdsInstancePatchActionPatchingConfigArgs:
 
 
 class BdsInstanceStartClusterShapeConfigArgsDict(TypedDict):
-    node_type_shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgs']]]]]
+    node_type_shape_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceStartClusterShapeConfigNodeTypeShapeConfigArgsDict']]]]]
 
 @pulumi.input_type
 class BdsInstanceStartClusterShapeConfigArgs:
@@ -4659,7 +4659,7 @@ class BdsInstanceUtilNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceUtilNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceUtilNodeShapeConfigArgsDict']]]
     """
     The shape configuration requested for the node.
     """
@@ -4834,7 +4834,7 @@ class BdsInstanceWorkerNodeArgsDict(TypedDict):
     """
     The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
     """
-    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceWorkerNodeShapeConfigArgs']]]
+    shape_config: NotRequired[pulumi.Input[Optional['BdsInstanceWorkerNodeShapeConfigArgsDict']]]
 
 @pulumi.input_type
 class BdsInstanceWorkerNodeArgs:

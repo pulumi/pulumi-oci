@@ -467,7 +467,7 @@ class ClusterImagePolicyConfigArgsDict(TypedDict):
     """
     (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
     """
-    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]]
+    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgsDict']]]]]
     """
     (Updatable) A list of KMS key details.
     """
@@ -750,11 +750,11 @@ class ClusterMetadataArgs:
 
 
 class ClusterOptionsArgsDict(TypedDict):
-    add_ons: NotRequired[pulumi.Input[Optional['ClusterOptionsAddOnsArgs']]]
+    add_ons: NotRequired[pulumi.Input[Optional['ClusterOptionsAddOnsArgsDict']]]
     """
     Configurable cluster add-ons
     """
-    admission_controller_options: NotRequired[pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgs']]]
+    admission_controller_options: NotRequired[pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgsDict']]]
     """
     (Updatable) Configurable cluster admission controllers
     """
@@ -762,23 +762,23 @@ class ClusterOptionsArgsDict(TypedDict):
     """
     IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
     """
-    kubernetes_network_config: NotRequired[pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgs']]]
+    kubernetes_network_config: NotRequired[pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgsDict']]]
     """
     Network configuration for Kubernetes.
     """
-    open_id_connect_discovery: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgs']]]
+    open_id_connect_discovery: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgsDict']]]
     """
     (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
     """
-    open_id_connect_token_authentication_config: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]]
+    open_id_connect_token_authentication_config: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict']]]
     """
     (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
     """
-    persistent_volume_config: NotRequired[pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgs']]]
+    persistent_volume_config: NotRequired[pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgsDict']]]
     """
     (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
     """
-    service_lb_config: NotRequired[pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgs']]]
+    service_lb_config: NotRequired[pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgsDict']]]
     """
     (Updatable) Configuration to be applied to load balancers created by Kubernetes services
     """
@@ -1123,7 +1123,7 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict(TypedDict):
     """
     (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
     """
-    required_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]]
+    required_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict']]]]]
     """
     (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
     """
@@ -1546,7 +1546,7 @@ class ContainerInstanceContainerArgsDict(TypedDict):
     """
     Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
     """
-    health_checks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]]
+    health_checks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgsDict']]]]]
     """
     list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
     """
@@ -1560,11 +1560,11 @@ class ContainerInstanceContainerArgsDict(TypedDict):
     """
     A message that describes the current state of the container in more detail. Can be used to provide actionable information.
     """
-    resource_config: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgs']]]
+    resource_config: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgsDict']]]
     """
     The size and amount of resources available to the container.
     """
-    security_context: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgs']]]
+    security_context: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgsDict']]]
     """
     Security context for container.
     """
@@ -1589,7 +1589,7 @@ class ContainerInstanceContainerArgsDict(TypedDict):
     """
     The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
     """
-    volume_mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]]
+    volume_mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgsDict']]]]]
     """
     List of the volume mounts.
     """
@@ -2037,7 +2037,7 @@ class ContainerInstanceContainerHealthCheckArgsDict(TypedDict):
     """
     Number of consecutive failures at which we consider the check failed.
     """
-    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgsDict']]]]]
     """
     Container health check HTTP headers.
     """
@@ -2401,7 +2401,7 @@ class ContainerInstanceContainerResourceConfigArgs:
 
 
 class ContainerInstanceContainerSecurityContextArgsDict(TypedDict):
-    capabilities: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]]
+    capabilities: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgsDict']]]
     """
     Linux Container capabilities to configure capabilities of container.
     """
@@ -3170,7 +3170,7 @@ class ContainerInstanceVolumeArgsDict(TypedDict):
     """
     The volume type of the empty directory, can be either File Storage or Memory.
     """
-    configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]]
+    configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgsDict']]]]]
     """
     Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
     """
@@ -3371,7 +3371,7 @@ class NodePoolNodeArgsDict(TypedDict):
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    errors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]]
+    errors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgsDict']]]]]
     """
     An error that may be associated with the node.
     """
@@ -3678,7 +3678,7 @@ class NodePoolNodeConfigDetailsArgsDict(TypedDict):
     """
     (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
     """
-    node_pool_pod_network_option_details: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]]
+    node_pool_pod_network_option_details: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict']]]
     """
     (Updatable) The CNI related configuration of pods in the node pool.
     """
@@ -3929,7 +3929,7 @@ class NodePoolNodeConfigDetailsPlacementConfigArgsDict(TypedDict):
     """
     (Updatable) A list of fault domains in which to place nodes.
     """
-    preemptible_node_config: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]]
+    preemptible_node_config: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict']]]
     """
     (Updatable) Configuration options for preemptible nodes.
     """
@@ -4608,7 +4608,7 @@ class NodePoolSecondaryVnicCreateVnicDetailsArgsDict(TypedDict):
     """
     (Updatable) The number of ip addresses to attach to secondary vnic
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]]
     """
     (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
     """

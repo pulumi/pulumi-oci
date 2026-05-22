@@ -30,15 +30,15 @@ __all__ = [
 ]
 
 class ScheduledQueryScheduledQueryProcessingConfigurationArgsDict(TypedDict):
-    custom_metric: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs']]]
+    custom_metric: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgsDict']]]
     """
     (Updatable) Definition of the Custom Metric.
     """
-    object_storage: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs']]]
+    object_storage: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgsDict']]]
     """
     (Updatable) Definition of the object storage.
     """
-    streaming: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs']]]
+    streaming: NotRequired[pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgsDict']]]
     """
     (Updatable) Definition of the Stream.
     """

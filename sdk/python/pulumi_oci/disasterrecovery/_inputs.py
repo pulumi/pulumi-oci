@@ -354,7 +354,7 @@ class DrPlanExecutionGroupExecutionArgsDict(TypedDict):
     """
     Additional details on the step execution status.  Example: `This step failed to complete due to a timeout`
     """
-    step_executions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgs']]]]]
+    step_executions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgsDict']]]]]
     """
     A list of step executions in the group.
     """
@@ -535,7 +535,7 @@ class DrPlanExecutionGroupExecutionStepExecutionArgsDict(TypedDict):
     """
     The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
     """
-    log_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs']]]]]
+    log_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict']]]]]
     """
     The details of an object storage log location for a DR protection group.
     """
@@ -890,19 +890,19 @@ class DrPlanExecutionLogLocationArgs:
 
 
 class DrPlanExecutionStepStatusCountArgsDict(TypedDict):
-    failed_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgs']]]]]
+    failed_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgsDict']]]]]
     """
     A summary of steps that failed during a DR plan execution, including failed and timed out steps.
     """
-    remaining_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgs']]]]]
+    remaining_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgsDict']]]]]
     """
     A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
     """
-    skipped_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgs']]]]]
+    skipped_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgsDict']]]]]
     """
     A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
     """
-    successful_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgs']]]]]
+    successful_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgsDict']]]]]
     """
     A summary of steps that completed successfully during a DR plan execution.
     """
@@ -910,7 +910,7 @@ class DrPlanExecutionStepStatusCountArgsDict(TypedDict):
     """
     The total number of steps in a DR plan execution.
     """
-    warning_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgs']]]]]
+    warning_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgsDict']]]]]
     """
     A summary of steps that encountered warnings during a DR plan execution.
     """
@@ -1400,7 +1400,7 @@ class DrPlanPlanGroupArgsDict(TypedDict):
     """
     The DR plan step refresh status.  Example: `STEP_ADDED`
     """
-    steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]]]
+    steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepArgsDict']]]]]
     """
     The list of steps in the group.
     """
@@ -1553,7 +1553,7 @@ class DrPlanPlanGroupStepArgsDict(TypedDict):
     """
     The display name of the DR Plan step type.  Example: `Database Switchover`
     """
-    user_defined_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]]]
+    user_defined_steps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgsDict']]]]]
     """
     The details for a user-defined step in a DR plan.
     """
@@ -1750,7 +1750,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
     """
     The region in which the function is deployed.  Example: `us-ashburn-1`
     """
-    object_storage_script_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]]]]
+    object_storage_script_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgsDict']]]]]
     """
     The details of an object storage script location for a user-defined step in a DR plan.
     """
@@ -2147,23 +2147,23 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types. See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
     """
-    backend_set_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]]]
+    backend_set_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgsDict']]]]]
     """
     (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
     """
-    backup_config: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBackupConfigArgs']]]
+    backup_config: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBackupConfigArgsDict']]]
     """
     (Updatable) Create backup configuration properties for an OKE member.
     """
-    backup_location: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBackupLocationArgs']]]
+    backup_location: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBackupLocationArgsDict']]]
     """
     (Updatable) The details for creating the backup location of an OKE Cluster.
     """
-    block_volume_attach_and_mount_operations: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs']]]
+    block_volume_attach_and_mount_operations: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict']]]
     """
     (Updatable) The details for creating the operations performed on a block volume.
     """
-    block_volume_operations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]]]
+    block_volume_operations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgsDict']]]]]
     """
     (Updatable) Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. A list of operations performed on block volumes used by the compute instance.
     """
@@ -2171,7 +2171,7 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
     """
-    common_destination_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberCommonDestinationKeyArgs']]]
+    common_destination_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberCommonDestinationKeyArgsDict']]]
     """
     (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
     """
@@ -2179,11 +2179,11 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
     """
-    db_system_admin_user_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDbSystemAdminUserDetailsArgs']]]
+    db_system_admin_user_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDbSystemAdminUserDetailsArgsDict']]]
     """
     (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
     """
-    db_system_replication_user_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs']]]
+    db_system_replication_user_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict']]]
     """
     (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
     """
@@ -2207,7 +2207,7 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
     """
-    destination_encryption_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDestinationEncryptionKeyArgs']]]
+    destination_encryption_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDestinationEncryptionKeyArgsDict']]]
     """
     (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
     """
@@ -2223,11 +2223,11 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
     """
-    export_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]]]
+    export_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgsDict']]]]]
     """
     (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
     """
-    file_system_operations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]]]
+    file_system_operations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgsDict']]]]]
     """
     (Updatable) A list of operations performed on file systems used by the compute instance.
     """
@@ -2255,11 +2255,11 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The OCID of the compute instance member that is designated as a jump host. This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.  Example: `ocid1.instance.oc1..uniqueID`
     """
-    load_balancer_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgs']]]]]
+    load_balancer_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberLoadBalancerMappingArgsDict']]]]]
     """
     (Updatable) The list of source-to-destination load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
     """
-    managed_node_pool_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgs']]]]]
+    managed_node_pool_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberManagedNodePoolConfigArgsDict']]]]]
     """
     (Updatable) The list of managed node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
     """
@@ -2267,7 +2267,7 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
     """
-    network_load_balancer_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]]]]
+    network_load_balancer_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict']]]]]
     """
     (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
     """
@@ -2283,11 +2283,11 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
     """
-    resource_modifier_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]]]]
+    resource_modifier_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgsDict']]]]]
     """
     (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
     """
-    source_volume_to_destination_encryption_key_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs']]]]]
+    source_volume_to_destination_encryption_key_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict']]]]]
     """
     (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 
@@ -2295,19 +2295,19 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
 
     An entry for each volume in volume group should be added in this list. The encryption key will not be updated  for the volumes that are part of volume group but missing in this list.
     """
-    vault_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]]]]
+    vault_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgsDict']]]]]
     """
     (Updatable) The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
     """
-    virtual_node_pool_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]]]]
+    virtual_node_pool_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgsDict']]]]]
     """
     (Updatable) The list of virtual node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
     """
-    vnic_mapping: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]]]
+    vnic_mapping: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]]
     """
     (Updatable) A list of compute instance VNIC mappings.
     """
-    vnic_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]]]
+    vnic_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgsDict']]]]]
     """
     (Updatable) A list of compute instance VNIC mappings.
     """
@@ -3323,11 +3323,11 @@ class DrProtectionGroupMemberBackupLocationArgs:
 
 
 class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgsDict(TypedDict):
-    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs']]]]]
+    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgsDict']]]]]
     """
     (Updatable) A list of details of attach or detach operations performed on block volumes.
     """
-    mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs']]]]]
+    mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgsDict']]]]]
     """
     (Updatable) A list of details of mount operations performed on block volumes.
     """
@@ -3450,7 +3450,7 @@ class DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs:
 
 
 class DrProtectionGroupMemberBlockVolumeOperationArgsDict(TypedDict):
-    attachment_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs']]]
+    attachment_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgsDict']]]
     """
     (Updatable) Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails' definition instead of this. The details for creating a block volume attachment.
     """
@@ -3458,7 +3458,7 @@ class DrProtectionGroupMemberBlockVolumeOperationArgsDict(TypedDict):
     """
     (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
     """
-    mount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']]]
+    mount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgsDict']]]
     """
     (Updatable) The details for creating a mount for a file system on a block volume.
     """
@@ -3826,7 +3826,7 @@ class DrProtectionGroupMemberFileSystemOperationArgsDict(TypedDict):
     """
     (Updatable) The export path of the file system.  Example: `/fs-export-path`
     """
-    mount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs']]]
+    mount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberFileSystemOperationMountDetailsArgsDict']]]
     """
     (Updatable) The details for creating a file system mount.
     """
@@ -3838,7 +3838,7 @@ class DrProtectionGroupMemberFileSystemOperationArgsDict(TypedDict):
     """
     (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
     """
-    unmount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs']]]
+    unmount_details: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgsDict']]]
     """
     (Updatable) The details for creating a file system unmount.
     """
@@ -4205,7 +4205,7 @@ class DrProtectionGroupMemberResourceModifierMappingArgs:
 
 
 class DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict(TypedDict):
-    destination_encryption_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs']]]
+    destination_encryption_key: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgsDict']]]
     """
     (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
     """

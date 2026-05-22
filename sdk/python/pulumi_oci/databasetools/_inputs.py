@@ -120,11 +120,11 @@ __all__ = [
 ]
 
 class DatabaseToolsConnectionKeyStoreArgsDict(TypedDict):
-    key_store_content: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]]
+    key_store_content: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict']]]
     """
     (Updatable) The key store content.
     """
-    key_store_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]]
+    key_store_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict']]]
     """
     (Updatable) The key store password.
     """
@@ -385,7 +385,7 @@ class DatabaseToolsConnectionProxyClientArgsDict(TypedDict):
     """
     (Updatable) The user name.
     """
-    user_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgs']]]
+    user_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgsDict']]]
     """
     (Updatable) The database user password.
     """
@@ -1090,7 +1090,7 @@ class DatabaseToolsMcpServerStorageArgsDict(TypedDict):
     """
     (Updatable) The type of storage used for asynchronous tool calls.
     """
-    bucket: NotRequired[pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgs']]]
+    bucket: NotRequired[pulumi.Input[Optional['DatabaseToolsMcpServerStorageBucketArgsDict']]]
     """
     (Updatable) A Cloud Storage bucket for an MCP Server.
     """
@@ -1615,7 +1615,7 @@ class DatabaseToolsPrivateEndpointLockArgs:
 
 
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict(TypedDict):
-    reverse_connections_source_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]]
+    reverse_connections_source_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict']]]]]
     """
     A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
     """
@@ -2055,11 +2055,11 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDic
     """
     (Updatable) The type of the certificate.
     """
-    certificate_private_key: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgs']]]
+    certificate_private_key: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePrivateKeyArgsDict']]]
     """
     (Updatable) Describes a certificate private key file to be used with SSL
     """
-    certificate_public: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgs']]]
+    certificate_public: NotRequired[pulumi.Input[Optional['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleCertificatePublicArgsDict']]]
     """
     (Updatable) Describes a certificate file to be used with SSL. Ignored if the httpsPort is 0.
     """

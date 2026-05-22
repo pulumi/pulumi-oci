@@ -193,7 +193,7 @@ class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict(TypedDict):
     """
     (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
     """
-    summarized_events_log: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs']]]
+    summarized_events_log: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict']]]
     """
     (Updatable) Summarized events log for advanced feature.
     """
@@ -347,7 +347,7 @@ class FleetAdvancedFeatureConfigurationLcmArgsDict(TypedDict):
     """
     (Updatable) Lifecycle management flag to store enabled or disabled status.
     """
-    post_installation_actions: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs']]]
+    post_installation_actions: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict']]]
     """
     (Updatable) List of available post actions you can execute after the successful Java installation.
     """
@@ -405,11 +405,11 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict(TypedD
     """
     (Updatable) Sets the logging level in logging.properties file.
     """
-    minimum_key_size_settings: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs']]]
+    minimum_key_size_settings: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict']]]
     """
     (Updatable) test
     """
-    proxies: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs']]]
+    proxies: NotRequired[pulumi.Input[Optional['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict']]]
     """
     (Updatable) List of proxy properties to be configured in net.properties file.
     """
@@ -527,21 +527,21 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
 
 
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict(TypedDict):
-    certpaths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs']]]]]
+    certpaths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict']]]]]
     """
     (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
     * Changing minimum key length for RSA signed jars
     * Changing minimum key length for EC
     * Changing minimum key length for DSA
     """
-    jars: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs']]]]]
+    jars: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict']]]]]
     """
     (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
     * Changing minimum key length for RSA signed jars
     * Changing minimum key length for EC
     * Changing minimum key length for DSA
     """
-    tls: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs']]]]]
+    tls: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict']]]]]
     """
     (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
     * Changing minimum key length for Diffie-Hellman
@@ -1594,39 +1594,39 @@ class TaskScheduleTaskDetailsArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    add_installation_site_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs']]]
+    add_installation_site_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict']]]
     """
     (Updatable) The list of Java installation sites to add.
     """
-    crypto_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsCryptoTaskRequestArgs']]]
+    crypto_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsCryptoTaskRequestArgsDict']]]
     """
     (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
     """
-    deployed_application_migration_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs']]]
+    deployed_application_migration_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict']]]
     """
     (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
     """
-    java_migration_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs']]]
+    java_migration_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict']]]
     """
     (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
     """
-    jfr_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsJfrTaskRequestArgs']]]
+    jfr_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsJfrTaskRequestArgsDict']]]
     """
     (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
     """
-    performance_tuning_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs']]]
+    performance_tuning_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict']]]
     """
     (Updatable) Details of the request to start a JFR performance tuning analysis.
     """
-    remove_installation_site_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs']]]
+    remove_installation_site_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict']]]
     """
     (Updatable) The list of Java installation sites to remove.
     """
-    scan_java_server_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs']]]
+    scan_java_server_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict']]]
     """
     (Updatable) The list of managed instances to scan.
     """
-    scan_library_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsScanLibraryTaskRequestArgs']]]
+    scan_library_task_request: NotRequired[pulumi.Input[Optional['TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict']]]
     """
     (Updatable) The list of managed instances to scan.
     """
@@ -1806,7 +1806,7 @@ class TaskScheduleTaskDetailsArgs:
 
 
 class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict(TypedDict):
-    installation_sites: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs']]]]]
+    installation_sites: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict']]]]]
     """
     (Updatable) The list of installation sites to add.
     """
@@ -1988,7 +1988,7 @@ class TaskScheduleTaskDetailsCryptoTaskRequestArgsDict(TypedDict):
     """
     (Updatable) Duration of the JFR recording in minutes.
     """
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict']]]]]
     """
     (Updatable) The attachment targets to start JFR.
     """
@@ -2162,7 +2162,7 @@ class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs:
 
 
 class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict(TypedDict):
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict']]]]]
     """
     (Updatable) An array of migration analyses requests.
     """
@@ -2320,7 +2320,7 @@ class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs:
 
 
 class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict(TypedDict):
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict']]]]]
     """
     (Updatable) An array of migration analysis requests.
     """
@@ -2498,7 +2498,7 @@ class TaskScheduleTaskDetailsJfrTaskRequestArgsDict(TypedDict):
     """
     (Updatable) The maximum size limit for the JFR file collected.
     """
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict']]]]]
     """
     (Updatable) The attachment targets to start JFR.
     """
@@ -2740,7 +2740,7 @@ class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict(TypedDict):
     """
     (Updatable) Duration of the JFR recording in minutes.
     """
-    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs']]]]]
+    targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict']]]]]
     """
     (Updatable) The attachment targets to start JFR.
     """
@@ -2914,7 +2914,7 @@ class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs:
 
 
 class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict(TypedDict):
-    installation_sites: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs']]]]]
+    installation_sites: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict']]]]]
     """
     (Updatable) The list of installation sites to remove.
     """

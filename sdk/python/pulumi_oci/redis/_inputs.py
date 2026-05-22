@@ -356,7 +356,7 @@ class RedisClusterImportFromObjectStorageDetailsObjectArgs:
 
 
 class RedisClusterNodeCollectionArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterNodeCollectionItemArgsDict']]]]]
     """
     Collection of node objects.
     """

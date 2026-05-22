@@ -89,7 +89,7 @@ class AutoScalingConfigurationPolicyArgsDict(TypedDict):
     """
     The type of autoscaling policy.
     """
-    capacity: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgs']]]
+    capacity: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgsDict']]]
     """
     The capacity requirements of the autoscaling policy.
     """
@@ -97,7 +97,7 @@ class AutoScalingConfigurationPolicyArgsDict(TypedDict):
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    execution_schedule: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgs']]]
+    execution_schedule: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgsDict']]]
     """
     An execution schedule for an autoscaling policy.
     """
@@ -109,11 +109,11 @@ class AutoScalingConfigurationPolicyArgsDict(TypedDict):
     """
     Whether the autoscaling policy is enabled.
     """
-    resource_action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgs']]]
+    resource_action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgsDict']]]
     """
     An action to run on a resource, such as stopping or starting an instance pool.
     """
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]]
     time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -487,7 +487,7 @@ class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgs']]]
+    action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgsDict']]]
     """
     The action to take when autoscaling is triggered.
     """
@@ -495,7 +495,7 @@ class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
     """
     ID of the condition that is assigned after creation.
     """
-    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgs']]]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgsDict']]]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleArgs:
@@ -652,7 +652,7 @@ class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
     """
     The resource group for the query.
     """
-    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:

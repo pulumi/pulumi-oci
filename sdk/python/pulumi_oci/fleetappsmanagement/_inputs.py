@@ -1061,7 +1061,7 @@ class FleetCredentialEntitySpecificsArgsDict(TypedDict):
     """
     (Updatable) Target name for which the credential is provided.
     """
-    variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialEntitySpecificsVariableArgs']]]]]
+    variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialEntitySpecificsVariableArgsDict']]]]]
     """
     (Updatable) List of fleet credential variables.
     """
@@ -1531,7 +1531,7 @@ class FleetNotificationPreferenceArgsDict(TypedDict):
     """
     (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
     """
-    preferences: NotRequired[pulumi.Input[Optional['FleetNotificationPreferencePreferencesArgs']]]
+    preferences: NotRequired[pulumi.Input[Optional['FleetNotificationPreferencePreferencesArgsDict']]]
     """
     (Updatable) Preferences to send notifications on the fleet activities.
     """
@@ -1634,7 +1634,7 @@ class FleetNotificationPreferencePreferencesArgsDict(TypedDict):
     """
     (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
     """
-    upcoming_schedule: NotRequired[pulumi.Input[Optional['FleetNotificationPreferencePreferencesUpcomingScheduleArgs']]]
+    upcoming_schedule: NotRequired[pulumi.Input[Optional['FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict']]]
     """
     (Updatable) Enables notification on upcoming schedule.
     """
@@ -2097,7 +2097,7 @@ class FleetResourceSelectionArgsDict(TypedDict):
     """
     (Updatable) Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
     """
-    rule_selection_criteria: NotRequired[pulumi.Input[Optional['FleetResourceSelectionRuleSelectionCriteriaArgs']]]
+    rule_selection_criteria: NotRequired[pulumi.Input[Optional['FleetResourceSelectionRuleSelectionCriteriaArgsDict']]]
     """
     (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
     """
@@ -2145,7 +2145,7 @@ class FleetResourceSelectionRuleSelectionCriteriaArgsDict(TypedDict):
     """
     (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
     """
-    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleArgs']]]]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict']]]]]
     """
     (Updatable) Rules.
     """
@@ -2202,7 +2202,7 @@ class FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict(TypedDict):
     """
     (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
     """
-    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs']]]]]
+    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict']]]]]
     """
     (Updatable) Rule Conditions
     """
@@ -2504,11 +2504,11 @@ class PatchArtifactDetailsArgsDict(TypedDict):
     """
     (Updatable) Artifact category details.
     """
-    artifact: NotRequired[pulumi.Input[Optional['PatchArtifactDetailsArtifactArgs']]]
+    artifact: NotRequired[pulumi.Input[Optional['PatchArtifactDetailsArtifactArgsDict']]]
     """
     (Updatable) Patch artifact metadata Details which is common for all platforms.
     """
-    artifacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PatchArtifactDetailsArtifactArgs']]]]]
+    artifacts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PatchArtifactDetailsArtifactArgsDict']]]]]
     """
     (Updatable) Artifacts.
     """
@@ -2572,7 +2572,7 @@ class PatchArtifactDetailsArtifactArgsDict(TypedDict):
     """
     (Updatable) System architecture.
     """
-    content: NotRequired[pulumi.Input[Optional['PatchArtifactDetailsArtifactContentArgs']]]
+    content: NotRequired[pulumi.Input[Optional['PatchArtifactDetailsArtifactContentArgsDict']]]
     """
     (Updatable) Content Source details.
     """
@@ -2848,7 +2848,7 @@ class PlatformConfigurationConfigCategoryDetailsArgsDict(TypedDict):
     """
     (Updatable) Category of configuration
     """
-    compatible_products: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs']]]]]
+    compatible_products: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict']]]]]
     """
     (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
     """
@@ -2856,7 +2856,7 @@ class PlatformConfigurationConfigCategoryDetailsArgsDict(TypedDict):
     """
     (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
     """
-    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgs']]]]]
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgsDict']]]]]
     """
     (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
     """
@@ -2880,15 +2880,15 @@ class PlatformConfigurationConfigCategoryDetailsArgsDict(TypedDict):
     """
     (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
     """
-    patch_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs']]]]]
+    patch_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict']]]]]
     """
     (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
     """
-    products: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgs']]]]]
+    products: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgsDict']]]]]
     """
     (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
     """
-    sub_category_details: NotRequired[pulumi.Input[Optional['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs']]]
+    sub_category_details: NotRequired[pulumi.Input[Optional['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict']]]
     """
     (Updatable) ProductStack Config Category Details.
     """
@@ -3316,11 +3316,11 @@ class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict(Typed
     """
     (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
     """
-    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgs']]]]]
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict']]]]]
     """
     (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
     """
-    patch_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgs']]]]]
+    patch_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict']]]]]
     """
     (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
     """
@@ -3518,7 +3518,7 @@ class ProvisionDeployedResourceArgsDict(TypedDict):
     """
     The mode of the resource. Example: "managed"
     """
-    resource_instance_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgs']]]]]
+    resource_instance_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgsDict']]]]]
     """
     Collection of InstanceSummary
     """
@@ -3817,7 +3817,7 @@ class RunbookRunbookVersionArgsDict(TypedDict):
     """
     Is this version the latest?
     """
-    rollback_workflow_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionRollbackWorkflowDetailsArgs']]]
+    rollback_workflow_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionRollbackWorkflowDetailsArgsDict']]]
     """
     Rollback Workflow details.
     """
@@ -4117,7 +4117,7 @@ class RunbookRunbookVersionGroupArgsDict(TypedDict):
     """
     The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
     """
-    properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesArgs']]]
+    properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesArgsDict']]]
     """
     The properties of the component.
     """
@@ -4180,11 +4180,11 @@ class RunbookRunbookVersionGroupPropertiesArgsDict(TypedDict):
     """
     The action to be taken in case of a failure.
     """
-    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgs']]]
+    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]]
     """
     Preferences to send notifications on the task activities.
     """
-    pause_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesPauseDetailsArgs']]]
+    pause_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict']]]
     """
     Pause Details
     """
@@ -4192,7 +4192,7 @@ class RunbookRunbookVersionGroupPropertiesArgsDict(TypedDict):
     """
     Build control flow conditions that determine the relevance of the task execution.
     """
-    run_on: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesRunOnArgs']]]
+    run_on: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesRunOnArgsDict']]]
     """
     The runon conditions
     """
@@ -4413,7 +4413,7 @@ class RunbookRunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
     """
     OCID of the self hosted instance.
     """
-    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs']]]]]
+    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]]
     """
     Previous Task Instance Details
     """
@@ -4489,7 +4489,7 @@ class RunbookRunbookVersionGroupPropertiesRunOnArgs:
 
 
 class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs']]]
+    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]]
     """
     The details of the output variable that will be used for mapping.
     """
@@ -4816,11 +4816,11 @@ class RunbookRunbookVersionTaskArgsDict(TypedDict):
     """
     The details of the task.
     """
-    output_variable_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingArgs']]]]]
+    output_variable_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingArgsDict']]]]]
     """
     Mapping output variables of previous tasks to the input variables of the current task.
     """
-    step_properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesArgs']]]
+    step_properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesArgsDict']]]
     """
     The properties of the component.
     """
@@ -4993,11 +4993,11 @@ class RunbookRunbookVersionTaskStepPropertiesArgsDict(TypedDict):
     """
     The action to be taken in case of a failure.
     """
-    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgs']]]
+    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]]
     """
     Preferences to send notifications on the task activities.
     """
-    pause_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgs']]]
+    pause_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]]
     """
     Pause Details
     """
@@ -5005,7 +5005,7 @@ class RunbookRunbookVersionTaskStepPropertiesArgsDict(TypedDict):
     """
     Build control flow conditions that determine the relevance of the task execution.
     """
-    run_on: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesRunOnArgs']]]
+    run_on: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict']]]
     """
     The runon conditions
     """
@@ -5226,7 +5226,7 @@ class RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
     """
     OCID of the self hosted instance.
     """
-    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs']]]]]
+    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]]
     """
     Previous Task Instance Details
     """
@@ -5302,7 +5302,7 @@ class RunbookRunbookVersionTaskStepPropertiesRunOnArgs:
 
 
 class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs']]]
+    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]]
     """
     The details of the output variable that will be used for mapping.
     """
@@ -5428,7 +5428,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
     """
     The description of the task.
     """
-    execution_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs']]]
+    execution_details: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]]
     """
     Execution details.
     """
@@ -5456,7 +5456,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
     """
     The platform of the runbook.
     """
-    properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgs']]]
+    properties: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]]
     """
     The properties of the task.
     """
@@ -5664,11 +5664,11 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDi
     """
     Catalog Id having config file.
     """
-    content: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs']]]
+    content: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]]
     """
     Content Source details.
     """
-    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs']]]]]
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]]
     """
     Credentials required for executing the task.
     """
@@ -5696,7 +5696,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDi
     """
     OCID of the compartment to which the resource belongs to.
     """
-    variables: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs']]]
+    variables: NotRequired[pulumi.Input[Optional['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]]
     """
     The variable of the task. At least one of the dynamicArguments or output needs to be provided.
     """
@@ -6093,7 +6093,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
 
 
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs']]]]]
+    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]]
     """
     The input variables for the task.
     """
@@ -6453,7 +6453,7 @@ class RunbookVersionGroupArgsDict(TypedDict):
     Executes tasks across resources in a rolling order.
     >>>>>>> theirs
     """
-    properties: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesArgs']]]
+    properties: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesArgsDict']]]
     """
     (Updatable) The properties of the component.
     """
@@ -6522,11 +6522,11 @@ class RunbookVersionGroupPropertiesArgsDict(TypedDict):
     """
     (Updatable) The action to be taken in case of a failure.
     """
-    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesNotificationPreferencesArgs']]]
+    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]]
     """
     (Updatable) Preferences to send notifications on the task activities.
     """
-    pause_details: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesPauseDetailsArgs']]]
+    pause_details: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesPauseDetailsArgsDict']]]
     """
     (Updatable) Pause Details
     """
@@ -6535,7 +6535,7 @@ class RunbookVersionGroupPropertiesArgsDict(TypedDict):
     (Updatable) Build control flow conditions that determine the relevance of the
     task execution.
     """
-    run_on: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesRunOnArgs']]]
+    run_on: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesRunOnArgsDict']]]
     """
     (Updatable) The runon conditions
     """
@@ -6762,7 +6762,7 @@ class RunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
     """
     (Updatable) OCID of the self hosted instance.
     """
-    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs']]]]]
+    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]]
     """
     (Updatable) Previous Task
     Instance Details
@@ -6843,7 +6843,7 @@ class RunbookVersionGroupPropertiesRunOnArgs:
 
 
 class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs']]]
+    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]]
     """
     (Updatable) The details of
     the output variable that will be used for mapping.
@@ -7182,11 +7182,11 @@ class RunbookVersionTaskArgsDict(TypedDict):
     """
     (Updatable) The details of the task.
     """
-    output_variable_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskOutputVariableMappingArgs']]]]]
+    output_variable_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskOutputVariableMappingArgsDict']]]]]
     """
     (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
     """
-    step_properties: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesArgs']]]
+    step_properties: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesArgsDict']]]
     """
     (Updatable) The properties of the component.
     """
@@ -7359,11 +7359,11 @@ class RunbookVersionTaskStepPropertiesArgsDict(TypedDict):
     """
     (Updatable) The action to be taken in case of a failure.
     """
-    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesNotificationPreferencesArgs']]]
+    notification_preferences: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]]
     """
     (Updatable) Preferences to send notifications on the task activities.
     """
-    pause_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesPauseDetailsArgs']]]
+    pause_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]]
     """
     (Updatable) Pause Details
     """
@@ -7371,7 +7371,7 @@ class RunbookVersionTaskStepPropertiesArgsDict(TypedDict):
     """
     (Updatable) Build control flow conditions that determine the relevance of the task execution.
     """
-    run_on: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesRunOnArgs']]]
+    run_on: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesRunOnArgsDict']]]
     """
     (Updatable) The runon conditions
     """
@@ -7592,7 +7592,7 @@ class RunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
     """
     (Updatable) OCID of the self hosted instance.
     """
-    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs']]]]]
+    previous_task_instance_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]]
     """
     (Updatable) Previous Task Instance Details
     """
@@ -7668,7 +7668,7 @@ class RunbookVersionTaskStepPropertiesRunOnArgs:
 
 
 class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs']]]
+    output_variable_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]]
     """
     (Updatable) The details of the output variable that will be used for mapping.
     """
@@ -7794,7 +7794,7 @@ class RunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
     """
     (Updatable) The description of the task.
     """
-    execution_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs']]]
+    execution_details: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]]
     """
     (Updatable) Execution details.
     """
@@ -7822,7 +7822,7 @@ class RunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
     """
     (Updatable) The platform of the runbook.
     """
-    properties: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsPropertiesArgs']]]
+    properties: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]]
     """
     (Updatable) The properties of the task.
     """
@@ -8030,11 +8030,11 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
     """
     (Updatable) Catalog Id having config file.
     """
-    content: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs']]]
+    content: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]]
     """
     (Updatable) Content Source details.
     """
-    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs']]]]]
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]]
     """
     (Updatable) Credentials required for executing the task.
     """
@@ -8062,7 +8062,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
     """
     (Updatable) OCID of the compartment to which the resource belongs to.
     """
-    variables: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs']]]
+    variables: NotRequired[pulumi.Input[Optional['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]]
     """
     (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
     """
@@ -8459,7 +8459,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
 
 
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs']]]]]
+    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]]
     """
     (Updatable) The input variables for the task.
     """
@@ -8759,7 +8759,7 @@ class SchedulerDefinitionRunBookArgsDict(TypedDict):
     """
     (Updatable) The runbook version name
     """
-    input_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgs']]]]]
+    input_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgsDict']]]]]
     """
     (Updatable) Input Parameters for the Task
     """
@@ -8822,7 +8822,7 @@ class SchedulerDefinitionRunBookInputParameterArgsDict(TypedDict):
     """
     (Updatable) stepName for which the input parameters are provided
     """
-    arguments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentArgs']]]]]
+    arguments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentArgsDict']]]]]
     """
     (Updatable) Arguments for the Task
     """
@@ -8874,7 +8874,7 @@ class SchedulerDefinitionRunBookInputParameterArgumentArgsDict(TypedDict):
     """
     (Updatable) Name of the input variable
     """
-    content: NotRequired[pulumi.Input[Optional['SchedulerDefinitionRunBookInputParameterArgumentContentArgs']]]
+    content: NotRequired[pulumi.Input[Optional['SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict']]]
     """
     (Updatable) Content Source details.
     """
@@ -9204,7 +9204,7 @@ class TaskRecordDetailsArgsDict(TypedDict):
     """
     (Updatable) The platform of the runbook.
     """
-    properties: NotRequired[pulumi.Input[Optional['TaskRecordDetailsPropertiesArgs']]]
+    properties: NotRequired[pulumi.Input[Optional['TaskRecordDetailsPropertiesArgsDict']]]
     """
     (Updatable) The properties of the task.
     """
@@ -9359,11 +9359,11 @@ class TaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
     """
     (Updatable) Catalog Id having config file.
     """
-    content: NotRequired[pulumi.Input[Optional['TaskRecordDetailsExecutionDetailsContentArgs']]]
+    content: NotRequired[pulumi.Input[Optional['TaskRecordDetailsExecutionDetailsContentArgsDict']]]
     """
     (Updatable) Content Source details.
     """
-    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsCredentialArgs']]]]]
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]]
     """
     (Updatable) Credentials required for executing the task.
     """
@@ -9391,7 +9391,7 @@ class TaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
     """
     (Updatable) OCID of the compartment to which the resource belongs to.
     """
-    variables: NotRequired[pulumi.Input[Optional['TaskRecordDetailsExecutionDetailsVariablesArgs']]]
+    variables: NotRequired[pulumi.Input[Optional['TaskRecordDetailsExecutionDetailsVariablesArgsDict']]]
     """
     (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
     """
@@ -9788,7 +9788,7 @@ class TaskRecordDetailsExecutionDetailsCredentialArgs:
 
 
 class TaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesInputVariableArgs']]]]]
+    input_variables: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]]
     """
     (Updatable) The input variables for the task.
     """

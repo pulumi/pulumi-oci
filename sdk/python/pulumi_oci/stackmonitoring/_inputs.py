@@ -355,7 +355,7 @@ class DiscoveryJobDiscoveryDetailsArgsDict(TypedDict):
     """
     Resource Type.
     """
-    credentials: NotRequired[pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsCredentialsArgs']]]
+    credentials: NotRequired[pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsCredentialsArgsDict']]]
     """
     List of DiscoveryJob Credential Details.
     """
@@ -363,7 +363,7 @@ class DiscoveryJobDiscoveryDetailsArgsDict(TypedDict):
     """
     License edition of the monitored resource.
     """
-    tags: NotRequired[pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsTagsArgs']]]
+    tags: NotRequired[pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsTagsArgsDict']]]
     """
     Property Details
     """
@@ -1142,7 +1142,7 @@ class MetricExtensionQueryPropertiesArgsDict(TypedDict):
     """
     (Updatable) Semi-colon separated list of key properties from Managed Bean ObjectName to be used as key metrics
     """
-    in_param_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgs']]]]]
+    in_param_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionQueryPropertiesInParamDetailArgsDict']]]]]
     """
     (Updatable) List of values and position of PL/SQL procedure IN parameters
     """
@@ -1158,7 +1158,7 @@ class MetricExtensionQueryPropertiesArgsDict(TypedDict):
     """
     (Updatable) JMX Managed Bean Query or Metric Service Table name
     """
-    out_param_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesOutParamDetailsArgs']]]
+    out_param_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesOutParamDetailsArgsDict']]]
     """
     (Updatable) Position and SQL Type of PL/SQL OUT parameter
     """
@@ -1170,11 +1170,11 @@ class MetricExtensionQueryPropertiesArgsDict(TypedDict):
     """
     (Updatable) Type of content response given by the http(s) URL
     """
-    script_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesScriptDetailsArgs']]]
+    script_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesScriptDetailsArgsDict']]]
     """
     (Updatable) Script details applicable to any OS Command/HTTP based Metric Extension which needs to run a script to collect data. For removing it during OS Command based Metric Extension update, set its "content" property to an empty string. In that case, "name" property value is ignored.
     """
-    sql_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesSqlDetailsArgs']]]
+    sql_details: NotRequired[pulumi.Input[Optional['MetricExtensionQueryPropertiesSqlDetailsArgsDict']]]
     """
     (Updatable) Details of Sql content which needs to execute to collect Metric Extension data
     """
@@ -1846,7 +1846,7 @@ class MonitoredResourceAdditionalCredentialArgsDict(TypedDict):
     """
     (Updatable) The name of the credential, within the context of the source.
     """
-    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]]]]
+    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgsDict']]]]]
     """
     (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
     """
@@ -2185,7 +2185,7 @@ class MonitoredResourceCredentialsArgsDict(TypedDict):
     """
     (Updatable) The name of the credential, within the context of the source.
     """
-    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]]]]
+    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgsDict']]]]]
     """
     (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
     """
@@ -2612,7 +2612,7 @@ class MonitoredResourceTaskTaskDetailsArgsDict(TypedDict):
     """
     Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
     """
-    receiver_properties: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs']]]
+    receiver_properties: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsReceiverPropertiesArgsDict']]]
     """
     Properties for agent receiver.
     """
@@ -2636,7 +2636,7 @@ class MonitoredResourceTaskTaskDetailsArgsDict(TypedDict):
     """
     The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
     """
-    resource_types_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgs']]]]]
+    resource_types_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict']]]]]
     """
     A collection of resource type configuration details. User can provide  availability proxy metrics list for resource types along with the  telegraf/collectd handler configuration for the resource types.
     """
@@ -3029,11 +3029,11 @@ class MonitoredResourceTaskTaskDetailsReceiverPropertiesArgs:
 
 
 class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationArgsDict(TypedDict):
-    availability_metrics_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgs']]]
+    availability_metrics_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetricsConfigArgsDict']]]
     """
     Availability metrics details.
     """
-    handler_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgs']]]
+    handler_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict']]]
     """
     Specific resource mapping configurations for Agent Extension Handlers.
     """
@@ -3147,7 +3147,7 @@ class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationAvailabilityMetr
 
 
 class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArgsDict(TypedDict):
-    collectd_resource_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgs']]]
+    collectd_resource_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigCollectdResourceNameConfigArgsDict']]]
     """
     Resource name generation overriding configurations for collectd resource types.
     """
@@ -3155,15 +3155,15 @@ class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArg
     """
     List of collector/plugin names.
     """
-    handler_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgs']]]]]
+    handler_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigHandlerPropertyArgsDict']]]]]
     """
     List of handler configuration properties
     """
-    metric_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgs']]]]]
+    metric_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricMappingArgsDict']]]]]
     """
     List of AgentExtensionHandlerMetricMappingDetails.
     """
-    metric_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgs']]]
+    metric_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigMetricNameConfigArgsDict']]]
     """
     Metric name generation overriding configurations.
     """
@@ -3171,7 +3171,7 @@ class MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigArg
     """
     Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
     """
-    telegraf_resource_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgs']]]
+    telegraf_resource_name_config: NotRequired[pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsResourceTypesConfigurationHandlerConfigTelegrafResourceNameConfigArgsDict']]]
     """
     Resource name generation overriding configurations for telegraf resource types.
     """
@@ -3690,7 +3690,7 @@ class MonitoredResourceTypeAvailabilityMetricsConfigArgs:
 
 
 class MonitoredResourceTypeHandlerConfigArgsDict(TypedDict):
-    collectd_resource_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgs']]]]]
+    collectd_resource_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigCollectdResourceNameConfigArgsDict']]]]]
     """
     Resource name generation overriding configurations for collectd resource types.
     """
@@ -3698,15 +3698,15 @@ class MonitoredResourceTypeHandlerConfigArgsDict(TypedDict):
     """
     List of collector/plugin names.
     """
-    handler_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgs']]]]]
+    handler_properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigHandlerPropertyArgsDict']]]]]
     """
     List of handler configuration properties
     """
-    metric_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgs']]]]]
+    metric_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricMappingArgsDict']]]]]
     """
     List of AgentExtensionHandlerMetricMappingDetails.
     """
-    metric_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgs']]]]]
+    metric_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigMetricNameConfigArgsDict']]]]]
     """
     Metric name generation overriding configurations.
     """
@@ -3714,7 +3714,7 @@ class MonitoredResourceTypeHandlerConfigArgsDict(TypedDict):
     """
     Metric upload interval in seconds. Any metric sent by telegraf/collectd before the  configured interval expires will be dropped.
     """
-    telegraf_resource_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgs']]]]]
+    telegraf_resource_name_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeHandlerConfigTelegrafResourceNameConfigArgsDict']]]]]
     """
     Resource name generation overriding configurations for telegraf resource types.
     """
@@ -4197,7 +4197,7 @@ class MonitoredResourceTypeMetadataArgsDict(TypedDict):
     """
     (Updatable) List of required properties for resource type.
     """
-    unique_property_sets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]]]
+    unique_property_sets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgsDict']]]]]
     """
     (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
     """
@@ -4834,7 +4834,7 @@ class MonitoredResourcesSearchAssociationItemArgsDict(TypedDict):
     """
     Association type filter to search associated resources.
     """
-    destination_resource_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs']]]]]
+    destination_resource_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgsDict']]]]]
     """
     Association Resource Details.
     """
@@ -4842,7 +4842,7 @@ class MonitoredResourcesSearchAssociationItemArgsDict(TypedDict):
     """
     Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
-    source_resource_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs']]]]]
+    source_resource_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemSourceResourceDetailArgsDict']]]]]
     """
     Association Resource Details.
     """
@@ -5137,7 +5137,7 @@ class MonitoredResourcesSearchItemArgsDict(TypedDict):
     """
     A filter to return resources that match exact resource name.
     """
-    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]]]]
+    properties: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgsDict']]]]]
     """
     List of monitored resource properties.
     """

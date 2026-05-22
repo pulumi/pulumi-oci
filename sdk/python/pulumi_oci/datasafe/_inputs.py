@@ -400,7 +400,7 @@ class AuditPolicyAuditConditionArgsDict(TypedDict):
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgs']]]]]
+    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyAuditConditionEnableConditionArgsDict']]]]]
     """
     Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
     """
@@ -807,7 +807,7 @@ class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
     """
     Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
     """
-    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]]
+    enable_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgsDict']]]]]
     """
     Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
     """
@@ -4470,7 +4470,7 @@ class SecurityAssessmentCheckArgsDict(TypedDict):
     """
     Provides a recommended approach to take to remediate the check reported.
     """
-    references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]]
+    references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgsDict']]]]]
     """
     Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
     """
@@ -4917,31 +4917,31 @@ class SecurityAssessmentFindingReferenceArgs:
 
 
 class SecurityAssessmentStatisticArgsDict(TypedDict):
-    advisories: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgs']]]]]
+    advisories: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticAdvisoryArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    deferreds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgs']]]]]
+    deferreds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticDeferredArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    evaluates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgs']]]]]
+    evaluates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticEvaluateArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    high_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgs']]]]]
+    high_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticHighRiskArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    low_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgs']]]]]
+    low_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticLowRiskArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    medium_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgs']]]]]
+    medium_risks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticMediumRiskArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
-    passes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgs']]]]]
+    passes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentStatisticPassArgsDict']]]]]
     """
     Statistics showing the number of findings with a particular risk level for each category.
     """
@@ -7207,7 +7207,7 @@ class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
     """
     (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
     """
-    exclude: NotRequired[pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]]
+    exclude: NotRequired[pulumi.Input[Optional['TargetDatabaseGroupMatchingCriteriaExcludeArgsDict']]]
     """
     (Updatable) Criteria to exclude certain target databases from the target database group.
     """
@@ -7279,7 +7279,7 @@ class TargetDatabaseGroupMatchingCriteriaExcludeArgs:
 
 
 class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
-    compartments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]]
+    compartments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict']]]]]
     """
     (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
     """
@@ -7428,7 +7428,7 @@ class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
 
 
 class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
-    database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs']]]]]
+    database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDatabaseDetailArgsDict']]]]]
     """
     (Updatable) Details of the database for the registration in Data Safe.
     """
@@ -7468,7 +7468,7 @@ class TargetDatabasePeerTargetDatabaseArgsDict(TypedDict):
     """
     The date and time the database was registered in Data Safe and created as a target database in Data Safe.
     """
-    tls_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgs']]]]]
+    tls_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]]]]
     """
     (Updatable) The details required to establish a TLS enabled connection.
     """
@@ -8089,7 +8089,7 @@ class TargetDatabasePeerTargetDatabaseDetailArgsDict(TypedDict):
     """
     The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
     """
-    tls_config: NotRequired[pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs']]]
+    tls_config: NotRequired[pulumi.Input[Optional['TargetDatabasePeerTargetDatabaseDetailTlsConfigArgsDict']]]
     """
     The details required to establish a TLS enabled connection.
     """

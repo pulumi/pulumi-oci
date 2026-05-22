@@ -618,7 +618,7 @@ class ClusterVsphereUpgradeObjectArgs:
 
 
 class DatastoreBlockVolumeDetailArgsDict(TypedDict):
-    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]]
+    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgsDict']]]]]
     """
     List of BlockVolumeAttachment objects containing information about attachment details
     """
@@ -1254,7 +1254,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
     """
-    cluster_byol_allocation_details: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgs']]]
+    cluster_byol_allocation_details: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationClusterByolAllocationDetailsArgsDict']]]
     """
     The BYOL allocations used for VMware Cluster provisioning.
     """
@@ -1262,7 +1262,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
     """
     A list of datastore clusters.
     """
-    datastores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]]
+    datastores: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict']]]]]
     """
     A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
     """
@@ -1296,7 +1296,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgsDict(TypedDict):
     """
     Indicates whether shielded instance is enabled for this Cluster.
     """
-    network_configuration: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs']]]
+    network_configuration: NotRequired[pulumi.Input[Optional['SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgsDict']]]
     """
     The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
     """

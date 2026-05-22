@@ -96,7 +96,7 @@ __all__ = [
 ]
 
 class LogAnalyticsEntityMetadataArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityMetadataItemArgsDict']]]]]
     """
     (Updatable) An array of entity metadata details.
     """
@@ -555,7 +555,7 @@ class NamespaceAssociationAssociationPropertyArgsDict(TypedDict):
     """
     The name of the association property.
     """
-    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgs']]]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyPatternArgsDict']]]]]
     """
     A list of pattern level overrides for this property.
     """
@@ -820,7 +820,7 @@ class NamespaceIngestTimeRuleConditionsArgsDict(TypedDict):
     """
     (Updatable) Discriminator.
     """
-    additional_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]]
+    additional_conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgsDict']]]]]
     """
     (Updatable) Optional additional condition(s) to be evaluated.
     """
@@ -1403,7 +1403,7 @@ class NamespaceScheduledTaskActionArgsDict(TypedDict):
     """
     the type of the log data to be purged
     """
-    metric_extraction: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgs']]]
+    metric_extraction: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionMetricExtractionArgsDict']]]
     """
     Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
     """
@@ -1423,7 +1423,7 @@ class NamespaceScheduledTaskActionArgsDict(TypedDict):
     """
     The ManagementSavedSearch id [OCID] utilized in the action.  Should not be provided when a template ID is present.
     """
-    template_details: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgs']]]
+    template_details: NotRequired[pulumi.Input[Optional['NamespaceScheduledTaskActionTemplateDetailsArgsDict']]]
     """
     details for scheduled task using template
     """
@@ -1583,7 +1583,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgsDict(TypedDict):
     """
     (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
     """
-    metric_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgs']]]]]
+    metric_collections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict']]]]]
     """
     Details for the metrics to be collected.
     """
@@ -1688,7 +1688,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
 
 
 class NamespaceScheduledTaskActionMetricExtractionMetricCollectionArgsDict(TypedDict):
-    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgs']]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionMetricExtractionMetricCollectionDimensionArgsDict']]]]]
     """
     Selected dimension fields for the metric collection.
     """
@@ -1830,7 +1830,7 @@ class NamespaceScheduledTaskActionTemplateDetailsArgsDict(TypedDict):
     """
     The template Id of a particular template.  Should not be provided when a saved search ID is present.
     """
-    template_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgs']]]]]
+    template_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceScheduledTaskActionTemplateDetailsTemplateParamArgsDict']]]]]
     """
     To store macro params.
     """

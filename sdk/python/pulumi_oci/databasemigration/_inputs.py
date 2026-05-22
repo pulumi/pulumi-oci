@@ -624,7 +624,7 @@ class JobAdvisorReportCheckItemArgsDict(TypedDict):
     """
     Fixing the issue.
     """
-    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]]
+    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgsDict']]]]]
     """
     Array of the column of the objects table.
     """
@@ -656,7 +656,7 @@ class JobAdvisorReportCheckItemArgsDict(TypedDict):
     """
     Pre-Migration сheck id.
     """
-    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]]
+    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgsDict']]]]]
     """
     Metadata of object.
     """
@@ -1402,7 +1402,7 @@ class JobProgressArgsDict(TypedDict):
     """
     Current status of the job.
     """
-    phases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]]
+    phases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgsDict']]]]]
     """
     List of phase status for the job.
     """
@@ -1475,7 +1475,7 @@ class JobProgressPhaseArgsDict(TypedDict):
     """
     Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
     """
-    extracts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]]
+    extracts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgsDict']]]]]
     """
     Summary of phase status results.
     """
@@ -1495,7 +1495,7 @@ class JobProgressPhaseArgsDict(TypedDict):
     """
     The text describing the root cause of the reported issue
     """
-    log_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]]
+    log_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgsDict']]]]]
     """
     Details to access log file in the specified Object Storage bucket, if any.
     """
@@ -2029,7 +2029,7 @@ class MigrationDataTransferMediumDetailsArgsDict(TypedDict):
     """
     (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
     """
-    object_storage_bucket: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]]
+    object_storage_bucket: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict']]]
     """
     (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
     """
@@ -2045,11 +2045,11 @@ class MigrationDataTransferMediumDetailsArgsDict(TypedDict):
     """
     (Updatable) OCID of the shared storage mount target
     """
-    source: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgs']]]
+    source: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgsDict']]]
     """
     (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
     """
-    target: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgs']]]
+    target: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgsDict']]]
     """
     (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
     """
@@ -2502,15 +2502,15 @@ class MigrationGgsDetailsArgsDict(TypedDict):
     """
     (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
     """
-    extract: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsExtractArgs']]]
+    extract: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsExtractArgsDict']]]
     """
     (Updatable) Parameters for GoldenGate Extract processes.
     """
-    ggs_deployments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]]
+    ggs_deployments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgsDict']]]]]
     """
     Details about Oracle GoldenGate GGS Deployment.
     """
-    replicat: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsReplicatArgs']]]
+    replicat: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsReplicatArgsDict']]]
     """
     (Updatable) Parameters for GoldenGate Replicat processes.
     """
@@ -2738,11 +2738,11 @@ class MigrationHubDetailsArgsDict(TypedDict):
     """
     (Updatable) The OCID of the resource being referenced.
     """
-    extract: NotRequired[pulumi.Input[Optional['MigrationHubDetailsExtractArgs']]]
+    extract: NotRequired[pulumi.Input[Optional['MigrationHubDetailsExtractArgsDict']]]
     """
     (Updatable) Parameters for GoldenGate Extract processes.
     """
-    replicat: NotRequired[pulumi.Input[Optional['MigrationHubDetailsReplicatArgs']]]
+    replicat: NotRequired[pulumi.Input[Optional['MigrationHubDetailsReplicatArgsDict']]]
     """
     (Updatable) Parameters for GoldenGate Replicat processes.
     """
@@ -3120,11 +3120,11 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
     """
-    data_pump_parameters: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']]]
+    data_pump_parameters: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgsDict']]]
     """
     (Updatable) Optional parameters for Data Pump Export and Import.
     """
-    export_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]]
+    export_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgsDict']]]
     """
     (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
     """
@@ -3132,7 +3132,7 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
     """
-    import_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]]
+    import_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgsDict']]]
     """
     (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
     """
@@ -3148,7 +3148,7 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
     """
-    metadata_remaps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]]
+    metadata_remaps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgsDict']]]]]
     """
     (Updatable) Defines remapping to be applied to objects as they are processed.
     """
@@ -3156,7 +3156,7 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) Primary key compatibility option
     """
-    tablespace_details: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']]]
+    tablespace_details: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgsDict']]]
     """
     (Updatable) Migration tablespace settings.
     """

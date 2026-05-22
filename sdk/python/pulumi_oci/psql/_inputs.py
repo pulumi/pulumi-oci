@@ -269,7 +269,7 @@ class BackupSourceBackupDetailsArgs:
 
 
 class ConfigurationConfigurationDetailArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgsDict']]]]]
     """
     List of ConfigParms object.
     """
@@ -915,7 +915,7 @@ class DbSystemInstancesDetailArgs:
 
 
 class DbSystemManagementPolicyArgsDict(TypedDict):
-    backup_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']]]
+    backup_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgsDict']]]
     """
     (Updatable) PostgreSQL database system backup policy.
     """
@@ -974,7 +974,7 @@ class DbSystemManagementPolicyBackupPolicyArgsDict(TypedDict):
     """
     (Updatable) Hour of the day when the backup starts.
     """
-    copy_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]]
+    copy_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict']]]
     """
     (Updatable) Backup copy details
     """

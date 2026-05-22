@@ -426,11 +426,11 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArg
     """
     The name of the Database Management feature.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
+    database_connection_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]]
     """
     The connection details required to connect to the database.
     """
@@ -591,11 +591,11 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
+    connection_credentials: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
+    connection_string: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]]
     """
     The details of the Oracle Database connection string.
     """
@@ -1287,11 +1287,11 @@ class CloudDbSystemConnectorConnectionInfoArgsDict(TypedDict):
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
@@ -1661,11 +1661,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]]
+    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]]
     """
     The list of asm instances for the cloud Asm.
     """
-    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]]
+    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]]
     """
     The list of associated components.
     """
@@ -1677,7 +1677,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The unique identifier of the Oracle cluster.
     """
-    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]]
+    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]]
     """
     The list of cluster instances for the cloud cluster.
     """
@@ -1697,7 +1697,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The component type.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
@@ -1721,7 +1721,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Oracle Database ID.
     """
-    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]]
+    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]]
     """
     The list of database instances.
     """
@@ -1757,7 +1757,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]]
+    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]]
     """
     The list of protocol addresses the listener is configured to listen on.
     """
@@ -1817,7 +1817,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The total memory in gigabytes (GB) on the DB node.
     """
-    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]]
+    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]]
     """
     The list of network address configurations of the cloud cluster.
     """
@@ -1837,7 +1837,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Oracle home location of the DB instance.
     """
-    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]]
+    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]]
     """
     The list of Pluggable Databases.
     """
@@ -1845,7 +1845,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
     """
-    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]]
+    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]]
     """
     The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
     """
@@ -1861,7 +1861,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The version of Oracle Clusterware running in the cluster.
     """
-    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]]
+    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]]
     """
     The list of Virtual IP (VIP) configurations of the cloud cluster.
     """
@@ -2852,7 +2852,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict
     """
     The unique identifier of the Oracle cluster.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
@@ -2981,7 +2981,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
@@ -3126,11 +3126,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
@@ -3457,7 +3457,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
@@ -3602,11 +3602,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(T
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
@@ -4216,7 +4216,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDi
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
@@ -4309,7 +4309,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDic
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
@@ -4454,11 +4454,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
@@ -4943,7 +4943,7 @@ class CloudDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    value: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgs']]]
+    value: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgsDict']]]
     """
     (Updatable) 
 
@@ -5018,7 +5018,7 @@ class CloudDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
     """
-    connector: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]]
+    connector: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]]
     """
     The connector details used to connect to the cloud DB system component.
     """
@@ -5115,7 +5115,7 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
     """
-    connection_info: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]]
+    connection_info: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]]
     """
     The connection details required to connect to a cloud DB system component.
     """
@@ -5194,11 +5194,11 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(T
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]]
+    connection_credentials: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]]
+    connection_string: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]]
     """
     The Oracle Database connection string.
     """
@@ -7417,11 +7417,11 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
+    database_connection_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]]
     """
     The connection details required to connect to the database.
     """
@@ -7638,11 +7638,11 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
 
 
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
+    connection_credentials: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
+    connection_string: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]]
     """
     The details of the Oracle Database connection string.
     """
@@ -8334,15 +8334,15 @@ class ExternalDbSystemConnectorConnectionInfoArgsDict(TypedDict):
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -8837,8 +8837,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]]
-    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]]
+    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]]
+    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]]
     """
     The list of associated components.
     """
@@ -8850,7 +8850,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The unique identifier of the Oracle cluster.
     """
-    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]]
+    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]]
     compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
@@ -8867,7 +8867,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The component type.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
@@ -8891,7 +8891,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Oracle Database ID.
     """
-    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]]
+    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]]
     """
     The list of database instances.
     """
@@ -8923,7 +8923,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]]
+    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]]
     """
     The list of protocol addresses the listener is configured to listen on.
     """
@@ -8983,7 +8983,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The total memory in gigabytes (GB) on the DB node.
     """
-    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]]
+    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]]
     """
     The list of network address configurations of the external cluster.
     """
@@ -9003,7 +9003,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The Oracle home location of the DB instance.
     """
-    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]]
+    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]]
     """
     The list of Pluggable Databases.
     """
@@ -9011,7 +9011,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
     """
-    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]]
+    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]]
     """
     The list of Single Client Access Name (SCAN) configurations of the external cluster.
     """
@@ -9027,7 +9027,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     The version of Oracle Clusterware running in the cluster.
     """
-    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]]
+    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]]
     """
     The list of Virtual IP (VIP) configurations of the external cluster.
     """
@@ -9994,7 +9994,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedD
     """
     The unique identifier of the Oracle cluster.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
@@ -10123,7 +10123,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDi
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
@@ -10268,15 +10268,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -10748,7 +10748,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
@@ -10893,15 +10893,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDic
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -11656,7 +11656,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(Type
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
     """
-    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
@@ -11749,7 +11749,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
@@ -11894,15 +11894,15 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -12532,7 +12532,7 @@ class ExternalDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    value: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgs']]]
+    value: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgsDict']]]
     """
     (Updatable) 
 
@@ -12607,7 +12607,7 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
     """
-    connector: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]]
+    connector: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]]
     """
     The connector details used to connect to the external DB system component.
     """
@@ -12704,7 +12704,7 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
     """
-    connection_info: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]]
+    connection_info: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]]
     """
     The connection details required to connect to an external DB system component.
     """
@@ -12783,11 +12783,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDic
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]]
+    connection_credentials: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]]
+    connection_string: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]]
     """
     The Oracle Database connection string.
     """
@@ -15067,7 +15067,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
@@ -15276,7 +15276,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
@@ -15481,7 +15481,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
     """
     The name of the Database Management feature.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
@@ -15626,11 +15626,11 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
 
 
 class ManagedDatabaseDbmgmtFeatureConfigArgsDict(TypedDict):
-    connector_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]]
+    connector_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict']]]]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]]
+    database_connection_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict']]]]]
     """
     The connection details required to connect to the database.
     """
@@ -15833,11 +15833,11 @@ class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
 
 
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict']]]]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict']]]]]
     """
     The details of the Oracle Database connection string.
     """
@@ -17046,11 +17046,11 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsD
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
+    connector_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
+    database_connection_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]]
     """
     The connection details required to connect to the database.
     """
@@ -17267,11 +17267,11 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
+    connection_credentials: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
+    connection_string: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]]
     """
     The details of the Oracle Database connection string.
     """

@@ -136,11 +136,11 @@ class FileStorageLustreFileSystemMaintenanceWindowArgs:
 
 
 class FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict(TypedDict):
-    active_or_next_planned_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgs']]]]]
+    active_or_next_planned_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataActiveOrNextPlannedMaintenanceArgsDict']]]]]
     """
     A generic object to show date and time in the below specified format
     """
-    finished_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgs']]]]]
+    finished_maintenances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FileStorageLustreFileSystemMaintenanceWindowMetadataFinishedMaintenanceArgsDict']]]]]
     """
     A generic object to show date and time in the below specified format
     """

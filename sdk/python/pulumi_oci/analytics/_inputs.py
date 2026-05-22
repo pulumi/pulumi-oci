@@ -101,7 +101,7 @@ class AnalyticsInstanceNetworkEndpointDetailsArgsDict(TypedDict):
     """
     Oracle Cloud Services that are allowed to access this Analytics instance.
     """
-    whitelisted_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]]]
+    whitelisted_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict']]]]]
     """
     Virtual Cloud Networks allowed to access this network endpoint.
     """

@@ -199,11 +199,11 @@ class ModelLockArgs:
 
 
 class ModelMetricArgsDict(TypedDict):
-    dataset_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]]
+    dataset_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgsDict']]]]]
     """
     Summary of count of samples used during model training.
     """
-    label_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]]
+    label_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgsDict']]]]]
     """
     List of metrics entries per label.
     """
@@ -211,7 +211,7 @@ class ModelMetricArgsDict(TypedDict):
     """
     The type of the Document model.
     """
-    overall_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]]
+    overall_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgsDict']]]]]
     """
     Overall Metrics report for Document Classification Model.
     """
@@ -357,7 +357,7 @@ class ModelMetricDatasetSummaryArgs:
 
 
 class ModelMetricLabelMetricsReportArgsDict(TypedDict):
-    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]]
+    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgsDict']]]]]
     """
     List of document classification confidence report.
     """
@@ -555,7 +555,7 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgs:
 
 
 class ModelMetricOverallMetricsReportArgsDict(TypedDict):
-    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]]
+    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgsDict']]]]]
     """
     List of document classification confidence report.
     """
@@ -1147,7 +1147,7 @@ class ProcessorJobInputLocationArgsDict(TypedDict):
     """
     Raw document data with Base64 encoding.
     """
-    object_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]]
+    object_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgsDict']]]]]
     """
     The list of ObjectLocations.
     """
@@ -1414,7 +1414,7 @@ class ProcessorJobProcessorConfigArgsDict(TypedDict):
     """
     Unique identifier custom model OCID that should be used for inference.
     """
-    normalization_fields: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]]
+    normalization_fields: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgsDict']]]]]
     """
     A string-to-object map where the key is the normalization field and the object contains information about the field.
     """
@@ -1691,7 +1691,7 @@ class ProcessorJobProcessorConfigFeatureArgs:
 
 
 class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
-    maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]]
+    maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgsDict']]]]]
     """
     A wrapped map.
     """

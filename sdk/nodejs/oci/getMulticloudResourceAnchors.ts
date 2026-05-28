@@ -9,7 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of ResourceAnchors.
+ * Lists resource anchors in the specified Multicloud subscription.
+ * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+ * For more information, see
+ * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
  *
  * ## Example Usage
  *
@@ -53,7 +56,7 @@ export function getMulticloudResourceAnchors(args?: GetMulticloudResourceAnchors
  */
 export interface GetMulticloudResourceAnchorsArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      */
     compartmentId?: string;
     /**
@@ -62,11 +65,11 @@ export interface GetMulticloudResourceAnchorsArgs {
     displayName?: string;
     filters?: inputs.oci.GetMulticloudResourceAnchorsFilter[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     id?: string;
     /**
-     * Check the sub-compartments of a given compartmentId
+     * Check the sub-compartments of a given `compartmentId`.
      */
     isCompartmentIdInSubtree?: boolean;
     /**
@@ -79,7 +82,7 @@ export interface GetMulticloudResourceAnchorsArgs {
      */
     linkedCompartmentId?: string;
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      */
     shouldFetchCompartmentName?: boolean;
     /**
@@ -87,7 +90,7 @@ export interface GetMulticloudResourceAnchorsArgs {
      */
     subscriptionId?: string;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     subscriptionServiceName?: string;
 }
@@ -133,7 +136,10 @@ export interface GetMulticloudResourceAnchorsResult {
 /**
  * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of ResourceAnchors.
+ * Lists resource anchors in the specified Multicloud subscription.
+ * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+ * For more information, see
+ * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
  *
  * ## Example Usage
  *
@@ -177,7 +183,7 @@ export function getMulticloudResourceAnchorsOutput(args?: GetMulticloudResourceA
  */
 export interface GetMulticloudResourceAnchorsOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
@@ -186,11 +192,11 @@ export interface GetMulticloudResourceAnchorsOutputArgs {
     displayName?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudResourceAnchorsFilterArgs>[] | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     id?: pulumi.Input<string | undefined>;
     /**
-     * Check the sub-compartments of a given compartmentId
+     * Check the sub-compartments of a given `compartmentId`.
      */
     isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
@@ -203,7 +209,7 @@ export interface GetMulticloudResourceAnchorsOutputArgs {
      */
     linkedCompartmentId?: pulumi.Input<string | undefined>;
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      */
     shouldFetchCompartmentName?: pulumi.Input<boolean | undefined>;
     /**
@@ -211,7 +217,7 @@ export interface GetMulticloudResourceAnchorsOutputArgs {
      */
     subscriptionId?: pulumi.Input<string | undefined>;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     subscriptionServiceName?: pulumi.Input<string | undefined>;
 }

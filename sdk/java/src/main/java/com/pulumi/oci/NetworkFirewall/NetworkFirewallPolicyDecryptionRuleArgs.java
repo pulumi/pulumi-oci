@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRulePositionArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -149,6 +150,21 @@ public final class NetworkFirewallPolicyDecryptionRuleArgs extends com.pulumi.re
         return Optional.ofNullable(this.secret);
     }
 
+    /**
+     * (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    @Import(name="secrets")
+    private @Nullable Output<List<String>> secrets;
+
+    /**
+     * @return (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    public Optional<Output<List<String>>> secrets() {
+        return Optional.ofNullable(this.secrets);
+    }
+
     private NetworkFirewallPolicyDecryptionRuleArgs() {}
 
     private NetworkFirewallPolicyDecryptionRuleArgs(NetworkFirewallPolicyDecryptionRuleArgs $) {
@@ -161,6 +177,7 @@ public final class NetworkFirewallPolicyDecryptionRuleArgs extends com.pulumi.re
         this.position = $.position;
         this.priorityOrder = $.priorityOrder;
         this.secret = $.secret;
+        this.secrets = $.secrets;
     }
 
     public static Builder builder() {
@@ -360,6 +377,37 @@ public final class NetworkFirewallPolicyDecryptionRuleArgs extends com.pulumi.re
          */
         public Builder secret(String secret) {
             return secret(Output.of(secret));
+        }
+
+        /**
+         * @param secrets (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secrets(@Nullable Output<List<String>> secrets) {
+            $.secrets = secrets;
+            return this;
+        }
+
+        /**
+         * @param secrets (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secrets(List<String> secrets) {
+            return secrets(Output.of(secrets));
+        }
+
+        /**
+         * @param secrets (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secrets(String... secrets) {
+            return secrets(List.of(secrets));
         }
 
         public NetworkFirewallPolicyDecryptionRuleArgs build() {

@@ -592,6 +592,7 @@ class Cluster(pulumi.CustomResource):
             endpoint_config={
                 "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled == "true",
                 "nsg_ids": cluster_endpoint_config_nsg_ids,
+                "security_attributes": cluster_endpoint_config_security_attributes,
                 "subnet_id": test_subnet["id"],
             },
             freeform_tags={
@@ -720,6 +721,7 @@ class Cluster(pulumi.CustomResource):
             endpoint_config={
                 "is_public_ip_enabled": cluster_endpoint_config_is_public_ip_enabled == "true",
                 "nsg_ids": cluster_endpoint_config_nsg_ids,
+                "security_attributes": cluster_endpoint_config_security_attributes,
                 "subnet_id": test_subnet["id"],
             },
             freeform_tags={

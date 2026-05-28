@@ -102,6 +102,21 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Import(name="remainingLocalVolumeInGbsGreaterThanOrEqualTo")
+    private @Nullable Double remainingLocalVolumeInGbsGreaterThanOrEqualTo;
+
+    /**
+     * @return The remaining local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Double> remainingLocalVolumeInGbsGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.remainingLocalVolumeInGbsGreaterThanOrEqualTo);
+    }
+
+    /**
      * The remaining memory of the dedicated VM host, in GBs.
      * 
      */
@@ -155,6 +170,7 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
         this.filters = $.filters;
         this.instanceShapeName = $.instanceShapeName;
         this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
+        this.remainingLocalVolumeInGbsGreaterThanOrEqualTo = $.remainingLocalVolumeInGbsGreaterThanOrEqualTo;
         this.remainingMemoryInGbsGreaterThanOrEqualTo = $.remainingMemoryInGbsGreaterThanOrEqualTo;
         this.remainingOcpusGreaterThanOrEqualTo = $.remainingOcpusGreaterThanOrEqualTo;
         this.state = $.state;
@@ -239,6 +255,17 @@ public final class GetDedicatedVmHostsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
             $.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            return this;
+        }
+
+        /**
+         * @param remainingLocalVolumeInGbsGreaterThanOrEqualTo The remaining local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLocalVolumeInGbsGreaterThanOrEqualTo(@Nullable Double remainingLocalVolumeInGbsGreaterThanOrEqualTo) {
+            $.remainingLocalVolumeInGbsGreaterThanOrEqualTo = remainingLocalVolumeInGbsGreaterThanOrEqualTo;
             return this;
         }
 

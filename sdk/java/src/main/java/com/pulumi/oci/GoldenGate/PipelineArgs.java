@@ -10,6 +10,8 @@ import com.pulumi.oci.GoldenGate.inputs.PipelineLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineProcessOptionsArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineSourceConnectionDetailsArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineTargetConnectionDetailsArgs;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +37,21 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+     * 
+     */
+    @Import(name="cpuCoreCount")
+    private @Nullable Output<Integer> cpuCoreCount;
+
+    /**
+     * @return (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+     * 
+     */
+    public Optional<Output<Integer>> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
 
     /**
@@ -95,6 +112,21 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * 
+     */
+    @Import(name="isAutoScalingEnabled")
+    private @Nullable Output<Boolean> isAutoScalingEnabled;
+
+    /**
+     * @return (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoScalingEnabled() {
+        return Optional.ofNullable(this.isAutoScalingEnabled);
     }
 
     /**
@@ -206,10 +238,12 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
 
     private PipelineArgs(PipelineArgs $) {
         this.compartmentId = $.compartmentId;
+        this.cpuCoreCount = $.cpuCoreCount;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.licenseModel = $.licenseModel;
         this.locks = $.locks;
         this.processOptions = $.processOptions;
@@ -256,6 +290,27 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param cpuCoreCount (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCount(@Nullable Output<Integer> cpuCoreCount) {
+            $.cpuCoreCount = cpuCoreCount;
+            return this;
+        }
+
+        /**
+         * @param cpuCoreCount (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            return cpuCoreCount(Output.of(cpuCoreCount));
         }
 
         /**
@@ -340,6 +395,27 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isAutoScalingEnabled (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoScalingEnabled(@Nullable Output<Boolean> isAutoScalingEnabled) {
+            $.isAutoScalingEnabled = isAutoScalingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoScalingEnabled (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            return isAutoScalingEnabled(Output.of(isAutoScalingEnabled));
         }
 
         /**

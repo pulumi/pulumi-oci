@@ -111,6 +111,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly displayName: string;
     /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     */
+    readonly distributionAlgorithm: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     readonly exadataInfrastructureId: string;
@@ -210,6 +214,10 @@ export interface GetAutonomousVmClusterResult {
      * The SCAN Listener TLS port number. Default value is 2484.
      */
     readonly scanListenerPortTls: number;
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     */
+    readonly sgaPercentage: number;
     /**
      * The current state of the Autonomous VM cluster.
      */

@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     endpointConfig: {
  *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled === "true",
  *         nsgIds: clusterEndpointConfigNsgIds,
+ *         securityAttributes: clusterEndpointConfigSecurityAttributes,
  *         subnetId: testSubnet.id,
  *     },
  *     freeformTags: {

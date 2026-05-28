@@ -129,14 +129,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Import(name="clusterTimeZone")
     private @Nullable Output<String> clusterTimeZone;
 
     /**
-     * @return The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * @return (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     public Optional<Output<String>> clusterTimeZone() {
@@ -324,6 +324,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    @Import(name="distributionAlgorithm")
+    private @Nullable Output<String> distributionAlgorithm;
+
+    /**
+     * @return (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public Optional<Output<String>> distributionAlgorithm() {
+        return Optional.ofNullable(this.distributionAlgorithm);
+    }
+
+    /**
      * The domain name for the cloud Autonomous VM cluster.
      * 
      */
@@ -384,14 +399,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
     @Import(name="isMtlsEnabledVmCluster")
     private @Nullable Output<Boolean> isMtlsEnabledVmCluster;
 
     /**
-     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * @return (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
     public Optional<Output<Boolean>> isMtlsEnabledVmCluster() {
@@ -765,14 +780,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The SCAN Listener Non TLS port. Default is 1521.
+     * (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
     @Import(name="scanListenerPortNonTls")
     private @Nullable Output<Integer> scanListenerPortNonTls;
 
     /**
-     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * @return (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
     public Optional<Output<Integer>> scanListenerPortNonTls() {
@@ -780,14 +795,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The SCAN Listener TLS port. Default is 2484.
+     * (Updatable) The SCAN Listener TLS port. Default is 2484.
      * 
      */
     @Import(name="scanListenerPortTls")
     private @Nullable Output<Integer> scanListenerPortTls;
 
     /**
-     * @return The SCAN Listener TLS port. Default is 2484.
+     * @return (Updatable) The SCAN Listener TLS port. Default is 2484.
      * 
      */
     public Optional<Output<Integer>> scanListenerPortTls() {
@@ -807,6 +822,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<Map<String,String>>> securityAttributes() {
         return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    @Import(name="sgaPercentage")
+    private @Nullable Output<Double> sgaPercentage;
+
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Optional<Output<Double>> sgaPercentage() {
+        return Optional.ofNullable(this.sgaPercentage);
     }
 
     /**
@@ -1048,6 +1078,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.distributionAlgorithm = $.distributionAlgorithm;
         this.domain = $.domain;
         this.exadataStorageInTbsLowestScaledValue = $.exadataStorageInTbsLowestScaledValue;
         this.freeformTags = $.freeformTags;
@@ -1080,6 +1111,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
         this.securityAttributes = $.securityAttributes;
+        this.sgaPercentage = $.sgaPercentage;
         this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -1262,7 +1294,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param clusterTimeZone The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * @param clusterTimeZone (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
          * @return builder
          * 
@@ -1273,7 +1305,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param clusterTimeZone The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * @param clusterTimeZone (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
          * @return builder
          * 
@@ -1545,6 +1577,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param distributionAlgorithm (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAlgorithm(@Nullable Output<String> distributionAlgorithm) {
+            $.distributionAlgorithm = distributionAlgorithm;
+            return this;
+        }
+
+        /**
+         * @param distributionAlgorithm (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAlgorithm(String distributionAlgorithm) {
+            return distributionAlgorithm(Output.of(distributionAlgorithm));
+        }
+
+        /**
          * @param domain The domain name for the cloud Autonomous VM cluster.
          * 
          * @return builder
@@ -1629,7 +1682,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isMtlsEnabledVmCluster Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         * @param isMtlsEnabledVmCluster (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
          * 
          * @return builder
          * 
@@ -1640,7 +1693,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isMtlsEnabledVmCluster Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+         * @param isMtlsEnabledVmCluster (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
          * 
          * @return builder
          * 
@@ -2191,7 +2244,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
+         * @param scanListenerPortNonTls (Updatable) The SCAN Listener Non TLS port. Default is 1521.
          * 
          * @return builder
          * 
@@ -2202,7 +2255,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
+         * @param scanListenerPortNonTls (Updatable) The SCAN Listener Non TLS port. Default is 1521.
          * 
          * @return builder
          * 
@@ -2212,7 +2265,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param scanListenerPortTls The SCAN Listener TLS port. Default is 2484.
+         * @param scanListenerPortTls (Updatable) The SCAN Listener TLS port. Default is 2484.
          * 
          * @return builder
          * 
@@ -2223,7 +2276,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param scanListenerPortTls The SCAN Listener TLS port. Default is 2484.
+         * @param scanListenerPortTls (Updatable) The SCAN Listener TLS port. Default is 2484.
          * 
          * @return builder
          * 
@@ -2251,6 +2304,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             return securityAttributes(Output.of(securityAttributes));
+        }
+
+        /**
+         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sgaPercentage(@Nullable Output<Double> sgaPercentage) {
+            $.sgaPercentage = sgaPercentage;
+            return this;
+        }
+
+        /**
+         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sgaPercentage(Double sgaPercentage) {
+            return sgaPercentage(Output.of(sgaPercentage));
         }
 
         /**

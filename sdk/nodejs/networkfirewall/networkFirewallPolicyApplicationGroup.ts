@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkFirewallPolicyApplicationGroup = new oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group", {
- *     apps: networkFirewallPolicyApplicationGroupApps,
  *     name: networkFirewallPolicyApplicationGroupName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     apps: networkFirewallPolicyApplicationGroupApps,
  *     description: networkFirewallPolicyApplicationGroupDescription,
  * });
  * ```

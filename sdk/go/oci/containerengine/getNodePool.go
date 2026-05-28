@@ -106,6 +106,8 @@ type LookupNodePoolResult struct {
 	NodeSources []GetNodePoolNodeSource `pulumi:"nodeSources"`
 	// The nodes in the node pool.
 	Nodes []GetNodePoolNode `pulumi:"nodes"`
+	// Details for node's primary VNIC
+	PrimaryVnics []GetNodePoolPrimaryVnic `pulumi:"primaryVnics"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
 	// A list of secondary vnics to attach to nodes
@@ -266,6 +268,11 @@ func (o LookupNodePoolResultOutput) NodeSources() GetNodePoolNodeSourceArrayOutp
 // The nodes in the node pool.
 func (o LookupNodePoolResultOutput) Nodes() GetNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolNode { return v.Nodes }).(GetNodePoolNodeArrayOutput)
+}
+
+// Details for node's primary VNIC
+func (o LookupNodePoolResultOutput) PrimaryVnics() GetNodePoolPrimaryVnicArrayOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) []GetNodePoolPrimaryVnic { return v.PrimaryVnics }).(GetNodePoolPrimaryVnicArrayOutput)
 }
 
 // The number of nodes in each subnet.

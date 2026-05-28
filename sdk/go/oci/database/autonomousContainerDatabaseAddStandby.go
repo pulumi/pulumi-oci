@@ -215,7 +215,7 @@ type AutonomousContainerDatabaseAddStandby struct {
 	VaultId pulumi.StringOutput `pulumi:"vaultId"`
 	// The next maintenance version preference.
 	VersionPreference pulumi.StringOutput `pulumi:"versionPreference"`
-	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 	VmFailoverReservation pulumi.IntOutput `pulumi:"vmFailoverReservation"`
 }
 
@@ -385,7 +385,7 @@ type autonomousContainerDatabaseAddStandbyState struct {
 	VaultId *string `pulumi:"vaultId"`
 	// The next maintenance version preference.
 	VersionPreference *string `pulumi:"versionPreference"`
-	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 	VmFailoverReservation *int `pulumi:"vmFailoverReservation"`
 }
 
@@ -523,7 +523,7 @@ type AutonomousContainerDatabaseAddStandbyState struct {
 	VaultId pulumi.StringPtrInput
 	// The next maintenance version preference.
 	VersionPreference pulumi.StringPtrInput
-	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 	VmFailoverReservation pulumi.IntPtrInput
 }
 
@@ -1039,7 +1039,7 @@ func (o AutonomousContainerDatabaseAddStandbyOutput) VersionPreference() pulumi.
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.StringOutput { return v.VersionPreference }).(pulumi.StringOutput)
 }
 
-// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 func (o AutonomousContainerDatabaseAddStandbyOutput) VmFailoverReservation() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.IntOutput { return v.VmFailoverReservation }).(pulumi.IntOutput)
 }

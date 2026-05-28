@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? SecurityAttributes;
+        /// <summary>
         /// The OCID of the regional subnet in which to place the Cluster endpoint.
         /// </summary>
         public readonly string SubnetId;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            ImmutableDictionary<string, string>? securityAttributes,
+
             string subnetId)
         {
             IsPublicIpEnabled = isPublicIpEnabled;
             NsgIds = nsgIds;
+            SecurityAttributes = securityAttributes;
             SubnetId = subnetId;
         }
     }

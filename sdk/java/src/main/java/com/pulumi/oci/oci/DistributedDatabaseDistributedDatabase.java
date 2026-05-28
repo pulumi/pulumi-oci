@@ -447,6 +447,12 @@ public class DistributedDatabaseDistributedDatabase extends com.pulumi.resources
     public Output<Optional<Integer>> downloadGsmCertificateSigningRequestTrigger() {
         return Codegen.optional(this.downloadGsmCertificateSigningRequestTrigger);
     }
+    @Export(name="effectiveReplicationUnit", refs={Integer.class}, tree="[0]")
+    private Output<Integer> effectiveReplicationUnit;
+
+    public Output<Integer> effectiveReplicationUnit() {
+        return this.effectiveReplicationUnit;
+    }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -682,14 +688,14 @@ public class DistributedDatabaseDistributedDatabase extends com.pulumi.resources
      * 
      */
     @Export(name="patchOperations", refs={List.class,DistributedDatabaseDistributedDatabasePatchOperation.class}, tree="[0,1]")
-    private Output</* @Nullable */ List<DistributedDatabaseDistributedDatabasePatchOperation>> patchOperations;
+    private Output<List<DistributedDatabaseDistributedDatabasePatchOperation>> patchOperations;
 
     /**
      * @return (Updatable)
      * 
      */
-    public Output<Optional<List<DistributedDatabaseDistributedDatabasePatchOperation>>> patchOperations() {
-        return Codegen.optional(this.patchOperations);
+    public Output<List<DistributedDatabaseDistributedDatabasePatchOperation>> patchOperations() {
+        return this.patchOperations;
     }
     /**
      * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.

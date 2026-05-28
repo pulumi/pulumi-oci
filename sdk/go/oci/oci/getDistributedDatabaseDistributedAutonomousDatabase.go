@@ -66,6 +66,7 @@ type LookupDistributedDatabaseDistributedAutonomousDatabaseResult struct {
 	DistributedAutonomousDatabaseId             string `pulumi:"distributedAutonomousDatabaseId"`
 	DownloadGsmCertificateSigningRequestTrigger int    `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
 	DownloadedGsmCsrPem                         string `pulumi:"downloadedGsmCsrPem"`
+	EffectiveReplicationUnit                    int    `pulumi:"effectiveReplicationUnit"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags                                          map[string]string `pulumi:"freeformTags"`
 	GenerateGsmCertificateSigningRequestTrigger           int               `pulumi:"generateGsmCertificateSigningRequestTrigger"`
@@ -277,6 +278,12 @@ func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) Down
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) string {
 		return v.DownloadedGsmCsrPem
 	}).(pulumi.StringOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedAutonomousDatabaseResultOutput) EffectiveReplicationUnit() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedAutonomousDatabaseResult) int {
+		return v.EffectiveReplicationUnit
+	}).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

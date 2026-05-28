@@ -6,13 +6,31 @@ package com.pulumi.oci.ClusterPlacementGroups.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ClusterPlacementGroups.inputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterPlacementGroupCapabilitiesItemArgs Empty = new ClusterPlacementGroupCapabilitiesItemArgs();
+
+    /**
+     * Additional details describing the selected capability.
+     * 
+     */
+    @Import(name="additionalDetails")
+    private @Nullable Output<ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs> additionalDetails;
+
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    public Optional<Output<ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs>> additionalDetails() {
+        return Optional.ofNullable(this.additionalDetails);
+    }
 
     /**
      * The type of resource.
@@ -47,6 +65,7 @@ public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.
     private ClusterPlacementGroupCapabilitiesItemArgs() {}
 
     private ClusterPlacementGroupCapabilitiesItemArgs(ClusterPlacementGroupCapabilitiesItemArgs $) {
+        this.additionalDetails = $.additionalDetails;
         this.name = $.name;
         this.service = $.service;
     }
@@ -67,6 +86,27 @@ public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.
 
         public Builder(ClusterPlacementGroupCapabilitiesItemArgs defaults) {
             $ = new ClusterPlacementGroupCapabilitiesItemArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalDetails Additional details describing the selected capability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalDetails(@Nullable Output<ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs> additionalDetails) {
+            $.additionalDetails = additionalDetails;
+            return this;
+        }
+
+        /**
+         * @param additionalDetails Additional details describing the selected capability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalDetails(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs additionalDetails) {
+            return additionalDetails(Output.of(additionalDetails));
         }
 
         /**

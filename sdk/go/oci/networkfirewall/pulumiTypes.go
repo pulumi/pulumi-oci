@@ -494,11 +494,11 @@ func (o NetworkFirewallPolicyDecryptionRulePositionPtrOutput) BeforeRule() pulum
 }
 
 type NetworkFirewallPolicyNatRuleCondition struct {
-	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service *string `pulumi:"service"`
-	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+	// (Updatable) An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -514,11 +514,11 @@ type NetworkFirewallPolicyNatRuleConditionInput interface {
 }
 
 type NetworkFirewallPolicyNatRuleConditionArgs struct {
-	// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+	// (Updatable) An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service pulumi.StringPtrInput `pulumi:"service"`
-	// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+	// (Updatable) An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -599,7 +599,7 @@ func (o NetworkFirewallPolicyNatRuleConditionOutput) ToNetworkFirewallPolicyNatR
 	}).(NetworkFirewallPolicyNatRuleConditionPtrOutput)
 }
 
-// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+// (Updatable) An array of address list names to be evaluated against the traffic destination address.
 func (o NetworkFirewallPolicyNatRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
@@ -609,7 +609,7 @@ func (o NetworkFirewallPolicyNatRuleConditionOutput) Service() pulumi.StringPtrO
 	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) *string { return v.Service }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+// (Updatable) An array of address list names to be evaluated against the traffic source address.
 func (o NetworkFirewallPolicyNatRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyNatRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
 }
@@ -638,7 +638,7 @@ func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) Elem() NetworkFirewallPo
 	}).(NetworkFirewallPolicyNatRuleConditionOutput)
 }
 
-// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+// (Updatable) An array of address list names to be evaluated against the traffic destination address.
 func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) []string {
 		if v == nil {
@@ -658,7 +658,7 @@ func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) Service() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+// (Updatable) An array of address list names to be evaluated against the traffic source address.
 func (o NetworkFirewallPolicyNatRuleConditionPtrOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyNatRuleCondition) []string {
 		if v == nil {
@@ -3884,9 +3884,9 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesFilterArrayOutput) Index(i pul
 }
 
 type GetNetworkFirewallPolicyDecryptionRuleCondition struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -3902,9 +3902,9 @@ type GetNetworkFirewallPolicyDecryptionRuleConditionInput interface {
 }
 
 type GetNetworkFirewallPolicyDecryptionRuleConditionArgs struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -3959,12 +3959,12 @@ func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) ToGetNetworkFirew
 	return o
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
 }
@@ -4213,6 +4213,8 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem 
 	PriorityOrder *string                                                                            `pulumi:"priorityOrder"`
 	// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret *string `pulumi:"secret"`
+	// An array of mapped secrets.
+	Secrets []string `pulumi:"secrets"`
 }
 
 // GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemArgs and GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemOutput values.
@@ -4248,6 +4250,8 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemA
 	PriorityOrder pulumi.StringPtrInput                                                                   `pulumi:"priorityOrder"`
 	// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret pulumi.StringPtrInput `pulumi:"secret"`
+	// An array of mapped secrets.
+	Secrets pulumi.StringArrayInput `pulumi:"secrets"`
 }
 
 func (GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -4372,6 +4376,13 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 	}).(pulumi.StringPtrOutput)
 }
 
+// An array of mapped secrets.
+func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemOutput) Secrets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem) []string {
+		return v.Secrets
+	}).(pulumi.StringArrayOutput)
+}
+
 type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
@@ -4393,9 +4404,9 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 }
 
 type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -4411,9 +4422,9 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemC
 }
 
 type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionArgs struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -4443,14 +4454,14 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 	return o
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition) []string {
 		return v.DestinationAddresses
 	}).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition) []string {
 		return v.SourceAddresses
@@ -4904,11 +4915,11 @@ func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemAr
 }
 
 type GetNetworkFirewallPolicyNatRuleCondition struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service string `pulumi:"service"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -4924,11 +4935,11 @@ type GetNetworkFirewallPolicyNatRuleConditionInput interface {
 }
 
 type GetNetworkFirewallPolicyNatRuleConditionArgs struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service pulumi.StringInput `pulumi:"service"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -4983,7 +4994,7 @@ func (o GetNetworkFirewallPolicyNatRuleConditionOutput) ToGetNetworkFirewallPoli
 	return o
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicyNatRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
@@ -4993,7 +5004,7 @@ func (o GetNetworkFirewallPolicyNatRuleConditionOutput) Service() pulumi.StringO
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicyNatRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
 }
@@ -5509,11 +5520,11 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemArrayOutput) Index(
 }
 
 type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service *string `pulumi:"service"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 }
 
@@ -5529,11 +5540,11 @@ type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionInput interfa
 }
 
 type GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionArgs struct {
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
 	Service pulumi.StringPtrInput `pulumi:"service"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 }
 
@@ -5563,7 +5574,7 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) To
 	return o
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) []string {
 		return v.DestinationAddresses
@@ -5575,7 +5586,7 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) Se
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) *string { return v.Service }).(pulumi.StringPtrOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemCondition) []string {
 		return v.SourceAddresses
@@ -5646,11 +5657,11 @@ func (o GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemPositionOutput) Bef
 type GetNetworkFirewallPolicySecurityRuleCondition struct {
 	// An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Applications []string `pulumi:"applications"`
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Services []string `pulumi:"services"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 	// An array of URL pattern list names to be evaluated against the HTTP(S) request target.
 	Urls []string `pulumi:"urls"`
@@ -5670,11 +5681,11 @@ type GetNetworkFirewallPolicySecurityRuleConditionInput interface {
 type GetNetworkFirewallPolicySecurityRuleConditionArgs struct {
 	// An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Applications pulumi.StringArrayInput `pulumi:"applications"`
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Services pulumi.StringArrayInput `pulumi:"services"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 	// An array of URL pattern list names to be evaluated against the HTTP(S) request target.
 	Urls pulumi.StringArrayInput `pulumi:"urls"`
@@ -5736,7 +5747,7 @@ func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) Applications() pulu
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRuleCondition) []string { return v.Applications }).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRuleCondition) []string { return v.DestinationAddresses }).(pulumi.StringArrayOutput)
 }
@@ -5746,7 +5757,7 @@ func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) Services() pulumi.S
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRuleCondition) []string { return v.Services }).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRuleCondition) []string { return v.SourceAddresses }).(pulumi.StringArrayOutput)
 }
@@ -6288,11 +6299,11 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemAr
 type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition struct {
 	// An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Applications []string `pulumi:"applications"`
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses []string `pulumi:"destinationAddresses"`
 	// An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Services []string `pulumi:"services"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses []string `pulumi:"sourceAddresses"`
 	// An array of URL pattern list names to be evaluated against the HTTP(S) request target.
 	Urls []string `pulumi:"urls"`
@@ -6312,11 +6323,11 @@ type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondi
 type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionArgs struct {
 	// An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Applications pulumi.StringArrayInput `pulumi:"applications"`
-	// An array of IP address list names to be evaluated against the traffic destination address.
+	// An array of address list names to be evaluated against the traffic destination address.
 	DestinationAddresses pulumi.StringArrayInput `pulumi:"destinationAddresses"`
 	// An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
 	Services pulumi.StringArrayInput `pulumi:"services"`
-	// An array of IP address list names to be evaluated against the traffic source address.
+	// An array of address list names to be evaluated against the traffic source address.
 	SourceAddresses pulumi.StringArrayInput `pulumi:"sourceAddresses"`
 	// An array of URL pattern list names to be evaluated against the HTTP(S) request target.
 	Urls pulumi.StringArrayInput `pulumi:"urls"`
@@ -6355,7 +6366,7 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCo
 	}).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic destination address.
+// An array of address list names to be evaluated against the traffic destination address.
 func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionOutput) DestinationAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition) []string {
 		return v.DestinationAddresses
@@ -6369,7 +6380,7 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCo
 	}).(pulumi.StringArrayOutput)
 }
 
-// An array of IP address list names to be evaluated against the traffic source address.
+// An array of address list names to be evaluated against the traffic source address.
 func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemConditionOutput) SourceAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition) []string {
 		return v.SourceAddresses
@@ -9118,6 +9129,8 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape string `pulumi:"shape"`
 	// A filter to return only resources with a lifecycleState matching the given value.
@@ -9168,6 +9181,8 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemArgs struct {
 	NetworkFirewallPolicyId pulumi.StringInput `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only resources with a lifecycleState matching the given value.
@@ -9293,6 +9308,13 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NetworkFirewallP
 // An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // The shape of a firewall to determine the bandwidth that the firewall allows.

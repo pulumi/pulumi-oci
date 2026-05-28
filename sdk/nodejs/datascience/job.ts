@@ -58,9 +58,21 @@ import * as utilities from "../utilities";
  *     jobInfrastructureConfigurationDetails: {
  *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
  *         blockStorageSizeInGbs: Number(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+ *         computeTargetId: testComputeTarget.id,
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *         },
+ *         resourceConfiguration: {
+ *             resourceLimitConfiguration: {
+ *                 memoryInGbs: jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+ *                 ocpus: jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+ *             },
+ *             resourceRequestConfiguration: {
+ *                 gpus: Number(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+ *                 memoryInGbs: jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+ *                 ocpus: jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+ *             },
  *         },
  *         shapeName: testShape.name,
  *         subnetId: testSubnet.id,
@@ -103,9 +115,21 @@ import * as utilities from "../utilities";
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
  *                 blockStorageSizeInGbs: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+ *                 computeTargetId: testComputeTarget.id,
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *                 },
+ *                 resourceConfiguration: {
+ *                     resourceLimitConfiguration: {
+ *                         memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+ *                         ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+ *                     },
+ *                     resourceRequestConfiguration: {
+ *                         gpus: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+ *                         memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+ *                         ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+ *                     },
  *                 },
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,

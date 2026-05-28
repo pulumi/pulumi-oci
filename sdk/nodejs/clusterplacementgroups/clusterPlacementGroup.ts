@@ -30,6 +30,13 @@ import * as utilities from "../utilities";
  *         items: [{
  *             name: clusterPlacementGroupCapabilitiesItemsName,
  *             service: clusterPlacementGroupCapabilitiesItemsService,
+ *             additionalDetails: {
+ *                 serviceType: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsServiceType,
+ *                 clusterPlacementGroupCount: Number(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsClusterPlacementGroupCount),
+ *                 memoryInGbs: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsMemoryInGbs,
+ *                 nvmes: Number(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsNvmes),
+ *                 ocpus: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsOcpus,
+ *             },
  *         }],
  *     },
  *     definedTags: {

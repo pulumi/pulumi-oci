@@ -5,19 +5,26 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     /**
+     * @return An Azure/GCP/AWS cidrBlocks
+     * 
+     */
+    private List<Object> cidrBlocks;
+    /**
      * @return The CPG ID in which Network Anchor will be created.
      * 
      */
     private String clusterPlacementGroupId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     private String compartmentId;
@@ -109,6 +116,13 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
 
     private GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem() {}
     /**
+     * @return An Azure/GCP/AWS cidrBlocks
+     * 
+     */
+    public List<Object> cidrBlocks() {
+        return this.cidrBlocks;
+    }
+    /**
      * @return The CPG ID in which Network Anchor will be created.
      * 
      */
@@ -116,7 +130,7 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         return this.clusterPlacementGroupId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public String compartmentId() {
@@ -251,6 +265,7 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<Object> cidrBlocks;
         private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,String> cspAdditionalProperties;
@@ -273,6 +288,7 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         public Builder() {}
         public Builder(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cidrBlocks = defaults.cidrBlocks;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cspAdditionalProperties = defaults.cspAdditionalProperties;
@@ -294,6 +310,17 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     	      this.vcnName = defaults.vcnName;
         }
 
+        @CustomType.Setter
+        public Builder cidrBlocks(List<Object> cidrBlocks) {
+            if (cidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "cidrBlocks");
+            }
+            this.cidrBlocks = cidrBlocks;
+            return this;
+        }
+        public Builder cidrBlocks(Object... cidrBlocks) {
+            return cidrBlocks(List.of(cidrBlocks));
+        }
         @CustomType.Setter
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             if (clusterPlacementGroupId == null) {
@@ -448,6 +475,7 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         }
         public GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem build() {
             final var _resultValue = new GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem();
+            _resultValue.cidrBlocks = cidrBlocks;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cspAdditionalProperties = cspAdditionalProperties;

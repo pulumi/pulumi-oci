@@ -47,6 +47,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs;
@@ -98,9 +101,21 @@ import javax.annotation.Nullable;
  *             .jobInfrastructureConfigurationDetails(JobJobInfrastructureConfigurationDetailsArgs.builder()
  *                 .jobInfrastructureType(jobJobInfrastructureConfigurationDetailsJobInfrastructureType)
  *                 .blockStorageSizeInGbs(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                 .computeTargetId(testComputeTarget.id())
  *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
  *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .resourceConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
+ *                     .resourceLimitConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
+ *                         .memoryInGbs(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
+ *                         .ocpus(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus)
+ *                         .build())
+ *                     .resourceRequestConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs.builder()
+ *                         .gpus(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus)
+ *                         .memoryInGbs(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs)
+ *                         .ocpus(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus)
+ *                         .build())
  *                     .build())
  *                 .shapeName(testShape.name())
  *                 .subnetId(testSubnet.id())
@@ -143,9 +158,21 @@ import javax.annotation.Nullable;
  *                     .jobInfrastructureConfigurationDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs.builder()
  *                         .jobInfrastructureType(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType)
  *                         .blockStorageSizeInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                         .computeTargetId(testComputeTarget.id())
  *                         .jobShapeConfigDetails(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
  *                             .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                             .ocpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                             .build())
+ *                         .resourceConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
+ *                             .resourceLimitConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
+ *                                 .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
+ *                                 .ocpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus)
+ *                                 .build())
+ *                             .resourceRequestConfiguration(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs.builder()
+ *                                 .gpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus)
+ *                                 .memoryInGbs(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs)
+ *                                 .ocpus(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus)
+ *                                 .build())
  *                             .build())
  *                         .shapeName(testShape.name())
  *                         .subnetId(testSubnet.id())

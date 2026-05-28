@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
         /// </summary>
         public readonly string ClusterPlacementGroupId;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// The Cloud Service Provider region.
+        /// The cloud service provider region.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult> ExternalLocations;
         /// <summary>

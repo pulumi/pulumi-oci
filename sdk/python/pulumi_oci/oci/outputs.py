@@ -510,6 +510,14 @@ __all__ = [
     'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult',
     'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult',
     'GetMulticloudExternalLocationsMetadataFilterResult',
+    'GetMulticloudMulticloudalertsFilterResult',
+    'GetMulticloudMulticloudalertsMulticloudAlertCollectionResult',
+    'GetMulticloudMulticloudalertsMulticloudAlertCollectionItemResult',
+    'GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertResult',
+    'GetMulticloudMulticloudpoliciesFilterResult',
+    'GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionResult',
+    'GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemResult',
+    'GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyResult',
     'GetMulticloudMulticloudsubscriptionsFilterResult',
     'GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionResult',
     'GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemResult',
@@ -23962,6 +23970,7 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousD
                  display_name: _builtins.str,
                  download_gsm_certificate_signing_request_trigger: _builtins.int,
                  downloaded_gsm_csr_pem: _builtins.str,
+                 effective_replication_unit: _builtins.int,
                  freeform_tags: Mapping[str, _builtins.str],
                  generate_gsm_certificate_signing_request_trigger: _builtins.int,
                  generate_gsm_certificate_signing_request_trigger_ca_bundle_id: _builtins.str,
@@ -24058,6 +24067,7 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousD
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "download_gsm_certificate_signing_request_trigger", download_gsm_certificate_signing_request_trigger)
         pulumi.set(__self__, "downloaded_gsm_csr_pem", downloaded_gsm_csr_pem)
+        pulumi.set(__self__, "effective_replication_unit", effective_replication_unit)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "generate_gsm_certificate_signing_request_trigger", generate_gsm_certificate_signing_request_trigger)
         pulumi.set(__self__, "generate_gsm_certificate_signing_request_trigger_ca_bundle_id", generate_gsm_certificate_signing_request_trigger_ca_bundle_id)
@@ -24226,6 +24236,11 @@ class GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousD
     @pulumi.getter(name="downloadedGsmCsrPem")
     def downloaded_gsm_csr_pem(self) -> _builtins.str:
         return pulumi.get(self, "downloaded_gsm_csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> _builtins.int:
+        return pulumi.get(self, "effective_replication_unit")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -28447,6 +28462,7 @@ class GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionIte
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  download_gsm_certificate_signing_request_trigger: _builtins.int,
+                 effective_replication_unit: _builtins.int,
                  freeform_tags: Mapping[str, _builtins.str],
                  generate_gsm_certificate_signing_request_trigger: _builtins.int,
                  generate_wallet_downloaded_wallet_content_length: _builtins.int,
@@ -28538,6 +28554,7 @@ class GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionIte
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "download_gsm_certificate_signing_request_trigger", download_gsm_certificate_signing_request_trigger)
+        pulumi.set(__self__, "effective_replication_unit", effective_replication_unit)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "generate_gsm_certificate_signing_request_trigger", generate_gsm_certificate_signing_request_trigger)
         pulumi.set(__self__, "generate_wallet_downloaded_wallet_content_length", generate_wallet_downloaded_wallet_content_length)
@@ -28678,6 +28695,11 @@ class GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionIte
     @_utilities.deprecated("""This trigger/action API is deprecated.""")
     def download_gsm_certificate_signing_request_trigger(self) -> _builtins.int:
         return pulumi.get(self, "download_gsm_certificate_signing_request_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> _builtins.int:
+        return pulumi.get(self, "effective_replication_unit")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -34639,10 +34661,10 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
                  partner_cloud_name: _builtins.str,
                  system_tags: Mapping[str, _builtins.str]):
         """
-        :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
         :param _builtins.str cpg_id: Cluster Placement Group OCID (deprecated representation)
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs'] external_locations: The Cloud Service Provider region.
+        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs'] external_locations: The cloud service provider region.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str oci_logical_ad: Oracle Cloud Infrastructure logical ad name
         :param _builtins.str oci_physical_ad: Oracle Cloud Infrastructure physical ad name
@@ -34669,7 +34691,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -34693,7 +34715,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
     @pulumi.getter(name="externalLocations")
     def external_locations(self) -> Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult']:
         """
-        The Cloud Service Provider region.
+        The cloud service provider region.
         """
         return pulumi.get(self, "external_locations")
 
@@ -34914,6 +34936,636 @@ class GetMulticloudExternalLocationsMetadataFilterResult(dict):
 
 
 @pulumi.output_type
+class GetMulticloudMulticloudalertsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudalertsMulticloudAlertCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudMulticloudalertsMulticloudAlertCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs'] items: List of MulticloudAlertSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudMulticloudalertsMulticloudAlertCollectionItemResult']:
+        """
+        List of MulticloudAlertSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudalertsMulticloudAlertCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_state: _builtins.str,
+                 multicloud_alerts: Sequence['outputs.GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertResult'],
+                 multicloudalert_count: _builtins.int,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_state: The current state of the Multicloud Network Alert.
+        :param Sequence['GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs'] multicloud_alerts: List of Multicloud Alerts.
+        :param _builtins.int multicloudalert_count: Total number of alerts
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "multicloud_alerts", multicloud_alerts)
+        pulumi.set(__self__, "multicloudalert_count", multicloudalert_count)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the Multicloud Network Alert.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="multicloudAlerts")
+    def multicloud_alerts(self) -> Sequence['outputs.GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertResult']:
+        """
+        List of Multicloud Alerts.
+        """
+        return pulumi.get(self, "multicloud_alerts")
+
+    @_builtins.property
+    @pulumi.getter(name="multicloudalertCount")
+    def multicloudalert_count(self) -> _builtins.int:
+        """
+        Total number of alerts
+        """
+        return pulumi.get(self, "multicloudalert_count")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertResult(dict):
+    def __init__(__self__, *,
+                 additional_parameters: Mapping[str, _builtins.str],
+                 alert_id: _builtins.str,
+                 alert_status: _builtins.str,
+                 alert_type: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 function_type: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 resource_id: _builtins.str,
+                 resource_type: _builtins.str,
+                 severity: _builtins.str,
+                 source: _builtins.str,
+                 source_region: _builtins.str,
+                 subscription_id: _builtins.str,
+                 subscription_type: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] additional_parameters: Alert-specific contextual parameters.
+        :param _builtins.str alert_id: External or human-friendly alert identifier.
+        :param _builtins.str alert_status: Filter alerts by alert status. User interaction: ACKNOWLEDGED, UNACKNOWLEDGED System lifecycle: RESOLVED
+        :param _builtins.str alert_type: Filter alerts by alert type (e.g. IAM_POLICY_GAP).
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Description of the alert and its purpose.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str function_type: Internal service or function type generating the alert (e.g. ORP, ODBG_NETWORK, BILLING, OBSERVABILITY).
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the multicloud alert.
+        :param _builtins.str lifecycle_state: The current state of the Multicloud Network Alert.
+        :param _builtins.str resource_id: Filter alerts associated with a specific resource OCID.
+        :param _builtins.str resource_type: Filter alerts by resource type (e.g. ADBD, VMCluster).
+        :param _builtins.str severity: Filter alerts by severity.
+        :param _builtins.str source: Source subsystem that generated the alert. (Azure Tag Validation)
+        :param _builtins.str source_region: Oracle Cloud Infrastructure region where the alert originated (e.g. us-phoenix-1)
+        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        :param _builtins.str subscription_type: Oracle Cloud Infrastructure Subscription Type.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Timestamp when the alert was created.
+        :param _builtins.str time_updated: Timestamp when the alert was last updated.
+        """
+        pulumi.set(__self__, "additional_parameters", additional_parameters)
+        pulumi.set(__self__, "alert_id", alert_id)
+        pulumi.set(__self__, "alert_status", alert_status)
+        pulumi.set(__self__, "alert_type", alert_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "function_type", function_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "severity", severity)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "source_region", source_region)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "subscription_type", subscription_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalParameters")
+    def additional_parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        Alert-specific contextual parameters.
+        """
+        return pulumi.get(self, "additional_parameters")
+
+    @_builtins.property
+    @pulumi.getter(name="alertId")
+    def alert_id(self) -> _builtins.str:
+        """
+        External or human-friendly alert identifier.
+        """
+        return pulumi.get(self, "alert_id")
+
+    @_builtins.property
+    @pulumi.getter(name="alertStatus")
+    def alert_status(self) -> _builtins.str:
+        """
+        Filter alerts by alert status. User interaction: ACKNOWLEDGED, UNACKNOWLEDGED System lifecycle: RESOLVED
+        """
+        return pulumi.get(self, "alert_status")
+
+    @_builtins.property
+    @pulumi.getter(name="alertType")
+    def alert_type(self) -> _builtins.str:
+        """
+        Filter alerts by alert type (e.g. IAM_POLICY_GAP).
+        """
+        return pulumi.get(self, "alert_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the alert and its purpose.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="functionType")
+    def function_type(self) -> _builtins.str:
+        """
+        Internal service or function type generating the alert (e.g. ORP, ODBG_NETWORK, BILLING, OBSERVABILITY).
+        """
+        return pulumi.get(self, "function_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the multicloud alert.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the Multicloud Network Alert.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        Filter alerts associated with a specific resource OCID.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Filter alerts by resource type (e.g. ADBD, VMCluster).
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def severity(self) -> _builtins.str:
+        """
+        Filter alerts by severity.
+        """
+        return pulumi.get(self, "severity")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        Source subsystem that generated the alert. (Azure Tag Validation)
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure region where the alert originated (e.g. us-phoenix-1)
+        """
+        return pulumi.get(self, "source_region")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionType")
+    def subscription_type(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Subscription Type.
+        """
+        return pulumi.get(self, "subscription_type")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Timestamp when the alert was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Timestamp when the alert was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudpoliciesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the missing policy.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the missing policy.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 items: Sequence['outputs.GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemResult']):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs'] items: List of MulticloudPolicySummary.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemResult']:
+        """
+        List of MulticloudPolicySummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 groups: Sequence[_builtins.str],
+                 lifecycle_state: _builtins.str,
+                 policies: Sequence['outputs.GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyResult'],
+                 subscription_id: _builtins.str,
+                 subscription_type: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence[_builtins.str] groups: groups required for the particular subscriptionType IAM policy statements required.
+        :param _builtins.str lifecycle_state: The current state of the Multicloud Network Alert.
+        :param Sequence['GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs'] policies: Missing policy definitions.
+        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        :param _builtins.str subscription_type: Oracle Cloud Infrastructure Subscription Type.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "groups", groups)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "policies", policies)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "subscription_type", subscription_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def groups(self) -> Sequence[_builtins.str]:
+        """
+        groups required for the particular subscriptionType IAM policy statements required.
+        """
+        return pulumi.get(self, "groups")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the Multicloud Network Alert.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def policies(self) -> Sequence['outputs.GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyResult']:
+        """
+        Missing policy definitions.
+        """
+        return pulumi.get(self, "policies")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionType")
+    def subscription_type(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Subscription Type.
+        """
+        return pulumi.get(self, "subscription_type")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 compartment_name: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_state: _builtins.str,
+                 name: _builtins.str,
+                 statements: Sequence[_builtins.str],
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str compartment_name: Description of the compartment e.g. Base Compartment, Root Compartment
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Description of the policy purpose.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_state: The current state of the Multicloud Network Alert.
+        :param _builtins.str name: Name of the missing policy.
+        :param Sequence[_builtins.str] statements: IAM policy statements required.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_name", compartment_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "statements", statements)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> _builtins.str:
+        """
+        Description of the compartment e.g. Base Compartment, Root Compartment
+        """
+        return pulumi.get(self, "compartment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the policy purpose.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the Multicloud Network Alert.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the missing policy.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def statements(self) -> Sequence[_builtins.str]:
+        """
+        IAM policy statements required.
+        """
+        return pulumi.get(self, "statements")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
 class GetMulticloudMulticloudsubscriptionsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -34968,6 +35620,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
                  freeform_tags: Mapping[str, _builtins.str],
                  lifecycle_state: _builtins.str,
                  partner_cloud_account_identifier: _builtins.str,
+                 partner_cloud_tenant_identifier: _builtins.str,
                  payment_plan: _builtins.str,
                  service_name: _builtins.str,
                  subscription_id: _builtins.str,
@@ -34978,20 +35631,21 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
                  time_updated: _builtins.str):
         """
         :param _builtins.str active_commitment: Total value for the subscription.
-        :param _builtins.str classic_subscription_id: Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
-        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param _builtins.str classic_subscription_id: Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
+        :param Mapping[str, _builtins.str] csp_additional_properties: Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str lifecycle_state: The current state of the subscription.
         :param _builtins.str partner_cloud_account_identifier: The partner cloud account ID.
+        :param _builtins.str partner_cloud_tenant_identifier: The partner cloud tenant ID.
         :param _builtins.str payment_plan: Payment plan for the subscription.
-        :param _builtins.str service_name: The serviceName that externalLocation map object belongs to.
-        :param _builtins.str subscription_id: URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        :param _builtins.str service_name: The cloud service provider.
+        :param _builtins.str subscription_id: URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param _builtins.str time_end_date: The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param _builtins.str time_linked_date: The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param _builtins.str time_updated: The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_created: The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_end_date: The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_linked_date: The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_updated: The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         pulumi.set(__self__, "active_commitment", active_commitment)
         pulumi.set(__self__, "classic_subscription_id", classic_subscription_id)
@@ -35000,6 +35654,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "lifecycle_state", lifecycle_state)
         pulumi.set(__self__, "partner_cloud_account_identifier", partner_cloud_account_identifier)
+        pulumi.set(__self__, "partner_cloud_tenant_identifier", partner_cloud_tenant_identifier)
         pulumi.set(__self__, "payment_plan", payment_plan)
         pulumi.set(__self__, "service_name", service_name)
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -35021,7 +35676,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="classicSubscriptionId")
     def classic_subscription_id(self) -> _builtins.str:
         """
-        Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+        Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
         """
         return pulumi.get(self, "classic_subscription_id")
 
@@ -35029,7 +35684,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="cspAdditionalProperties")
     def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
         """
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
         """
         return pulumi.get(self, "csp_additional_properties")
 
@@ -35066,6 +35721,14 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
         return pulumi.get(self, "partner_cloud_account_identifier")
 
     @_builtins.property
+    @pulumi.getter(name="partnerCloudTenantIdentifier")
+    def partner_cloud_tenant_identifier(self) -> _builtins.str:
+        """
+        The partner cloud tenant ID.
+        """
+        return pulumi.get(self, "partner_cloud_tenant_identifier")
+
+    @_builtins.property
     @pulumi.getter(name="paymentPlan")
     def payment_plan(self) -> _builtins.str:
         """
@@ -35077,7 +35740,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="serviceName")
     def service_name(self) -> _builtins.str:
         """
-        The serviceName that externalLocation map object belongs to.
+        The cloud service provider.
         """
         return pulumi.get(self, "service_name")
 
@@ -35085,7 +35748,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> _builtins.str:
         """
-        URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
         """
         return pulumi.get(self, "subscription_id")
 
@@ -35101,7 +35764,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -35109,7 +35772,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="timeEndDate")
     def time_end_date(self) -> _builtins.str:
         """
-        The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_end_date")
 
@@ -35117,7 +35780,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="timeLinkedDate")
     def time_linked_date(self) -> _builtins.str:
         """
-        The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_linked_date")
 
@@ -35125,7 +35788,7 @@ class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemRe
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -35428,6 +36091,7 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionResult(dict):
 @pulumi.output_type
 class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
     def __init__(__self__, *,
+                 cidr_blocks: Sequence[Any],
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
                  csp_additional_properties: Mapping[str, _builtins.str],
@@ -35448,8 +36112,9 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
                  vcn_id: _builtins.str,
                  vcn_name: _builtins.str):
         """
+        :param Sequence[Any] cidr_blocks: An Azure/GCP/AWS cidrBlocks
         :param _builtins.str cluster_placement_group_id: The CPG ID in which Network Anchor will be created.
-        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
         :param _builtins.str csp_network_anchor_id: Network Anchor Id in the Cloud Service Provider.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -35468,6 +36133,7 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
         :param _builtins.str vcn_id: Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
         :param _builtins.str vcn_name: Name of the VCN associated to the Network Anchor.
         """
+        pulumi.set(__self__, "cidr_blocks", cidr_blocks)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
@@ -35489,6 +36155,14 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
         pulumi.set(__self__, "vcn_name", vcn_name)
 
     @_builtins.property
+    @pulumi.getter(name="cidrBlocks")
+    def cidr_blocks(self) -> Sequence[Any]:
+        """
+        An Azure/GCP/AWS cidrBlocks
+        """
+        return pulumi.get(self, "cidr_blocks")
+
+    @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> _builtins.str:
         """
@@ -35500,7 +36174,7 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -35789,6 +36463,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
                  lifecycle_state: _builtins.str,
                  network_anchor_id: _builtins.str,
                  network_anchor_name: _builtins.str,
+                 resource_additional_properties: Mapping[str, _builtins.str],
                  resource_display_name: _builtins.str,
                  resource_id: _builtins.str,
                  resource_type: _builtins.str,
@@ -35799,22 +36474,23 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
                  vcn_name: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param _builtins.str compartment_name: Compartment name associated the resource.
-        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
-        :param _builtins.str csp_resource_id: Resource Id that comes from the Multi Cloud Control Plane
+        :param _builtins.str compartment_name: Name of the compartment associated with the resource.
+        :param Mapping[str, _builtins.str] csp_additional_properties: Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+        :param _builtins.str csp_resource_id: The resource Id that comes from the Multicloud control plane.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str lifecycle_state: The current state of the multicloud resource.
-        :param _builtins.str network_anchor_id: OCID of the Network Anchor
-        :param _builtins.str network_anchor_name: Name of the network anchor associated to the resource.
-        :param _builtins.str resource_display_name: Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        :param _builtins.str lifecycle_state: The current state of the Multicloud resource.
+        :param _builtins.str network_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
+        :param _builtins.str network_anchor_name: Name of the network anchor associated with the resource.
+        :param Mapping[str, _builtins.str] resource_additional_properties: Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+        :param _builtins.str resource_display_name: Endpoint used to retrieve the resource's display name and lifecycle state.
         :param _builtins.str resource_id: The Id of the multicloud resource.
-        :param _builtins.str resource_type: What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        :param _builtins.str resource_type: Filter alerts by resource type (e.g. ADBD, VMCluster).
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str time_updated: The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param _builtins.str vcn_id: Id of the Virtual Cloud Network associated to the resource.
-        :param _builtins.str vcn_name: Resource Anchor name.
+        :param _builtins.str vcn_id: Id of the virtual cloud network (VCN) associated with the resource.
+        :param _builtins.str vcn_name: Name of the virtual cloud network (VCN) associated with the resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compartment_name", compartment_name)
@@ -35825,6 +36501,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
         pulumi.set(__self__, "lifecycle_state", lifecycle_state)
         pulumi.set(__self__, "network_anchor_id", network_anchor_id)
         pulumi.set(__self__, "network_anchor_name", network_anchor_name)
+        pulumi.set(__self__, "resource_additional_properties", resource_additional_properties)
         pulumi.set(__self__, "resource_display_name", resource_display_name)
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "resource_type", resource_type)
@@ -35846,7 +36523,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="compartmentName")
     def compartment_name(self) -> _builtins.str:
         """
-        Compartment name associated the resource.
+        Name of the compartment associated with the resource.
         """
         return pulumi.get(self, "compartment_name")
 
@@ -35854,7 +36531,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="cspAdditionalProperties")
     def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
         """
-        CSP Specific Additional Properties, AzureSubnetId for Azure
+        Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
         """
         return pulumi.get(self, "csp_additional_properties")
 
@@ -35862,7 +36539,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="cspResourceId")
     def csp_resource_id(self) -> _builtins.str:
         """
-        Resource Id that comes from the Multi Cloud Control Plane
+        The resource Id that comes from the Multicloud control plane.
         """
         return pulumi.get(self, "csp_resource_id")
 
@@ -35886,7 +36563,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> _builtins.str:
         """
-        The current state of the multicloud resource.
+        The current state of the Multicloud resource.
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -35894,7 +36571,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="networkAnchorId")
     def network_anchor_id(self) -> _builtins.str:
         """
-        OCID of the Network Anchor
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
         """
         return pulumi.get(self, "network_anchor_id")
 
@@ -35902,15 +36579,23 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="networkAnchorName")
     def network_anchor_name(self) -> _builtins.str:
         """
-        Name of the network anchor associated to the resource.
+        Name of the network anchor associated with the resource.
         """
         return pulumi.get(self, "network_anchor_name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAdditionalProperties")
+    def resource_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+        """
+        return pulumi.get(self, "resource_additional_properties")
 
     @_builtins.property
     @pulumi.getter(name="resourceDisplayName")
     def resource_display_name(self) -> _builtins.str:
         """
-        Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        Endpoint used to retrieve the resource's display name and lifecycle state.
         """
         return pulumi.get(self, "resource_display_name")
 
@@ -35926,7 +36611,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        Filter alerts by resource type (e.g. ADBD, VMCluster).
         """
         return pulumi.get(self, "resource_type")
 
@@ -35958,7 +36643,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> _builtins.str:
         """
-        Id of the Virtual Cloud Network associated to the resource.
+        Id of the virtual cloud network (VCN) associated with the resource.
         """
         return pulumi.get(self, "vcn_id")
 
@@ -35966,7 +36651,7 @@ class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResul
     @pulumi.getter(name="vcnName")
     def vcn_name(self) -> _builtins.str:
         """
-        Resource Anchor name.
+        Name of the virtual cloud network (VCN) associated with the resource.
         """
         return pulumi.get(self, "vcn_name")
 
@@ -36161,12 +36846,13 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
                  linked_compartment_id: _builtins.str,
                  linked_compartment_name: _builtins.str,
                  partner_cloud_account_identifier: _builtins.str,
+                 resource_anchor_uri: _builtins.str,
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         :param _builtins.str compartment_name: The name assigned to the compartment during creation.
         :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
         :param _builtins.str csp_resource_anchor_id: CSP resource anchor ID.
@@ -36174,7 +36860,7 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         :param _builtins.str lifecycle_details: A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
         :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
@@ -36199,6 +36885,7 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
         pulumi.set(__self__, "linked_compartment_id", linked_compartment_id)
         pulumi.set(__self__, "linked_compartment_name", linked_compartment_name)
         pulumi.set(__self__, "partner_cloud_account_identifier", partner_cloud_account_identifier)
+        pulumi.set(__self__, "resource_anchor_uri", resource_anchor_uri)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -36208,7 +36895,7 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -36272,7 +36959,7 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         """
         return pulumi.get(self, "id")
 
@@ -36315,6 +37002,11 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
         Partner Cloud Account Identifier of the Cloud Service Provider.
         """
         return pulumi.get(self, "partner_cloud_account_identifier")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnchorUri")
+    def resource_anchor_uri(self) -> _builtins.str:
+        return pulumi.get(self, "resource_anchor_uri")
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")

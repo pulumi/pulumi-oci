@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.MaintenanceRunArgs;
 import com.pulumi.oci.Database.inputs.MaintenanceRunState;
 import com.pulumi.oci.Database.outputs.MaintenanceRunEstimatedPatchingTime;
+import com.pulumi.oci.Database.outputs.MaintenanceRunWindowTypeDescription;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -420,6 +421,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.peerMaintenanceRunIds;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    @Export(name="referenceResourceIdForImageUpdates", refs={String.class}, tree="[0]")
+    private Output<String> referenceResourceIdForImageUpdates;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    public Output<String> referenceResourceIdForImageUpdates() {
+        return this.referenceResourceIdForImageUpdates;
+    }
+    /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -564,6 +579,20 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> totalTimeTakenInMins() {
         return this.totalTimeTakenInMins;
+    }
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    @Export(name="windowTypeDescriptions", refs={List.class,MaintenanceRunWindowTypeDescription.class}, tree="[0,1]")
+    private Output<List<MaintenanceRunWindowTypeDescription>> windowTypeDescriptions;
+
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    public Output<List<MaintenanceRunWindowTypeDescription>> windowTypeDescriptions() {
+        return this.windowTypeDescriptions;
     }
 
     /**

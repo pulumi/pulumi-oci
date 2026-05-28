@@ -48,6 +48,12 @@ namespace Pulumi.Oci.DataScience.Inputs
             set => _rules = value;
         }
 
+        [Input("scaleInPolicy")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyGetArgs>? ScaleInPolicy { get; set; }
+
+        [Input("scaleOutPolicy")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyGetArgs>? ScaleOutPolicy { get; set; }
+
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyGetArgs()
         {
         }

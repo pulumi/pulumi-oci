@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of Multicloud subscriptions.
+ * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+ * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
  *
  * ## Example Usage
  *
@@ -69,7 +70,8 @@ export interface GetMulticloudMulticloudsubscriptionsResult {
 /**
  * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of Multicloud subscriptions.
+ * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+ * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
  *
  * ## Example Usage
  *

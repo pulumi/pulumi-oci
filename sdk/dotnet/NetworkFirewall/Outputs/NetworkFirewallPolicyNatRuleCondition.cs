@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     public sealed class NetworkFirewallPolicyNatRuleCondition
     {
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic destination address.
         /// </summary>
         public readonly ImmutableArray<string> DestinationAddresses;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly string? Service;
         /// <summary>
-        /// (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        /// (Updatable) An array of address list names to be evaluated against the traffic source address.
         /// </summary>
         public readonly ImmutableArray<string> SourceAddresses;
 

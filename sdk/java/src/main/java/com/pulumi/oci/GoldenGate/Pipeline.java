@@ -73,9 +73,11 @@ import javax.annotation.Nullable;
  *             .targetConnectionDetails(PipelineTargetConnectionDetailsArgs.builder()
  *                 .connectionId(testConnection.id())
  *                 .build())
+ *             .cpuCoreCount(pipelineCpuCoreCount)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(pipelineDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isAutoScalingEnabled(pipelineIsAutoScalingEnabled)
  *             .locks(PipelineLockArgs.builder()
  *                 .type(pipelineLocksType)
  *                 .message(pipelineLocksMessage)
@@ -86,6 +88,12 @@ import javax.annotation.Nullable;
  *                 .initialDataLoad(PipelineProcessOptionsInitialDataLoadArgs.builder()
  *                     .isInitialLoad(pipelineProcessOptionsInitialDataLoadIsInitialLoad)
  *                     .actionOnExistingTable(pipelineProcessOptionsInitialDataLoadActionOnExistingTable)
+ *                     .adbWalletPath(pipelineProcessOptionsInitialDataLoadAdbWalletPath)
+ *                     .bucket(pipelineProcessOptionsInitialDataLoadBucket)
+ *                     .initialLoadType(pipelineProcessOptionsInitialDataLoadInitialLoadType)
+ *                     .namespace(pipelineProcessOptionsInitialDataLoadNamespace)
+ *                     .sourceWalletPath(pipelineProcessOptionsInitialDataLoadSourceWalletPath)
+ *                     .targetWalletPath(pipelineProcessOptionsInitialDataLoadTargetWalletPath)
  *                     .build())
  *                 .replicateSchemaChange(PipelineProcessOptionsReplicateSchemaChangeArgs.builder()
  *                     .canReplicateSchemaChange(pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange)
@@ -129,14 +137,14 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The Minimum number of OCPUs to be made available for this Deployment.
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
-     * @return The Minimum number of OCPUs to be made available for this Deployment.
+     * @return (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
     public Output<Integer> cpuCoreCount() {
@@ -213,14 +221,14 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
         return this.ingressIps;
     }
     /**
-     * Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
     @Export(name="isAutoScalingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingEnabled;
 
     /**
-     * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * @return (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
     public Output<Boolean> isAutoScalingEnabled() {

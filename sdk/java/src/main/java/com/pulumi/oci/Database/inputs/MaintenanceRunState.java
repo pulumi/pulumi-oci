@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.MaintenanceRunEstimatedPatchingTimeArgs;
+import com.pulumi.oci.Database.inputs.MaintenanceRunWindowTypeDescriptionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -385,6 +386,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    @Import(name="referenceResourceIdForImageUpdates")
+    private @Nullable Output<String> referenceResourceIdForImageUpdates;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    public Optional<Output<String>> referenceResourceIdForImageUpdates() {
+        return Optional.ofNullable(this.referenceResourceIdForImageUpdates);
+    }
+
+    /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -540,6 +556,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.totalTimeTakenInMins);
     }
 
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    @Import(name="windowTypeDescriptions")
+    private @Nullable Output<List<MaintenanceRunWindowTypeDescriptionArgs>> windowTypeDescriptions;
+
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    public Optional<Output<List<MaintenanceRunWindowTypeDescriptionArgs>>> windowTypeDescriptions() {
+        return Optional.ofNullable(this.windowTypeDescriptions);
+    }
+
     private MaintenanceRunState() {}
 
     private MaintenanceRunState(MaintenanceRunState $) {
@@ -567,6 +598,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.patchingStatus = $.patchingStatus;
         this.peerMaintenanceRunId = $.peerMaintenanceRunId;
         this.peerMaintenanceRunIds = $.peerMaintenanceRunIds;
+        this.referenceResourceIdForImageUpdates = $.referenceResourceIdForImageUpdates;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.targetDbServerVersion = $.targetDbServerVersion;
@@ -577,6 +609,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.timeScheduled = $.timeScheduled;
         this.timeStarted = $.timeStarted;
         this.totalTimeTakenInMins = $.totalTimeTakenInMins;
+        this.windowTypeDescriptions = $.windowTypeDescriptions;
     }
 
     public static Builder builder() {
@@ -1126,6 +1159,27 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param referenceResourceIdForImageUpdates The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder referenceResourceIdForImageUpdates(@Nullable Output<String> referenceResourceIdForImageUpdates) {
+            $.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
+            return this;
+        }
+
+        /**
+         * @param referenceResourceIdForImageUpdates The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder referenceResourceIdForImageUpdates(String referenceResourceIdForImageUpdates) {
+            return referenceResourceIdForImageUpdates(Output.of(referenceResourceIdForImageUpdates));
+        }
+
+        /**
          * @param state The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          * 
          * @return builder
@@ -1339,6 +1393,37 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
             return totalTimeTakenInMins(Output.of(totalTimeTakenInMins));
+        }
+
+        /**
+         * @param windowTypeDescriptions A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowTypeDescriptions(@Nullable Output<List<MaintenanceRunWindowTypeDescriptionArgs>> windowTypeDescriptions) {
+            $.windowTypeDescriptions = windowTypeDescriptions;
+            return this;
+        }
+
+        /**
+         * @param windowTypeDescriptions A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowTypeDescriptions(List<MaintenanceRunWindowTypeDescriptionArgs> windowTypeDescriptions) {
+            return windowTypeDescriptions(Output.of(windowTypeDescriptions));
+        }
+
+        /**
+         * @param windowTypeDescriptions A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder windowTypeDescriptions(MaintenanceRunWindowTypeDescriptionArgs... windowTypeDescriptions) {
+            return windowTypeDescriptions(List.of(windowTypeDescriptions));
         }
 
         public MaintenanceRunState build() {

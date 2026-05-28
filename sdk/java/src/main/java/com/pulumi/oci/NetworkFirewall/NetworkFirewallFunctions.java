@@ -9,6 +9,8 @@ import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesPlainArgs;
@@ -64,6 +66,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsArg
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListsPlainArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
 import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsPlainArgs;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallHealthStatusResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPoliciesResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListResult;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyAddressListsResult;
@@ -305,6 +308,216 @@ public final class NetworkFirewallFunctions {
      */
     public static CompletableFuture<GetNetworkFirewallResult> getNetworkFirewallPlain(GetNetworkFirewallPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", TypeShape.of(GetNetworkFirewallResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Overall health status of Network Firewall
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
+     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetNetworkFirewallHealthStatusResult> getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs args) {
+        return getNetworkFirewallHealthStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Overall health status of Network Firewall
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
+     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallHealthStatusResult> getNetworkFirewallHealthStatusPlain(GetNetworkFirewallHealthStatusPlainArgs args) {
+        return getNetworkFirewallHealthStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Overall health status of Network Firewall
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
+     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetNetworkFirewallHealthStatusResult> getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallHealthStatus:getNetworkFirewallHealthStatus", TypeShape.of(GetNetworkFirewallHealthStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Overall health status of Network Firewall
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
+     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetNetworkFirewallHealthStatusResult> getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallHealthStatus:getNetworkFirewallHealthStatus", TypeShape.of(GetNetworkFirewallHealthStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
+     * 
+     * Get Overall health status of Network Firewall
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallHealthStatusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallHealthStatus = NetworkFirewallFunctions.getNetworkFirewallHealthStatus(GetNetworkFirewallHealthStatusArgs.builder()
+     *             .networkFirewallId(testNetworkFirewall.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetNetworkFirewallHealthStatusResult> getNetworkFirewallHealthStatusPlain(GetNetworkFirewallHealthStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallHealthStatus:getNetworkFirewallHealthStatus", TypeShape.of(GetNetworkFirewallHealthStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.

@@ -18,12 +18,12 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
      */
     private @Nullable String cpuBaseline;
     /**
-     * @return The total amount of memory available to the job run instance, in gigabytes.
+     * @return The memory in Gbs required to be allocated to run the workload.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return The total number of OCPUs available to the job run instance.
+     * @return The ocpus required to be allocated to run the workload.
      * 
      */
     private @Nullable Double ocpus;
@@ -37,14 +37,14 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         return Optional.ofNullable(this.cpuBaseline);
     }
     /**
-     * @return The total amount of memory available to the job run instance, in gigabytes.
+     * @return The memory in Gbs required to be allocated to run the workload.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return The total number of OCPUs available to the job run instance.
+     * @return The ocpus required to be allocated to run the workload.
      * 
      */
     public Optional<Double> ocpus() {

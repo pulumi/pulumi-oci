@@ -59,23 +59,23 @@ func GetMulticloudExternalLocationsMetadata(ctx *pulumi.Context, args *GetMultic
 
 // A collection of arguments for invoking getMulticloudExternalLocationsMetadata.
 type GetMulticloudExternalLocationsMetadataArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The resource type query (i.e. dbsystem, instance etc.)
+	// The resource type query (for example, dbsystem or instance).
 	EntityType *string `pulumi:"entityType"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation *string                                        `pulumi:"externalLocation"`
 	Filters          []GetMulticloudExternalLocationsMetadataFilter `pulumi:"filters"`
 	Limit            *int                                           `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
 	LinkedCompartmentId *string `pulumi:"linkedCompartmentId"`
-	// Oracle Cloud Infrastructure Logical AD to filter the response.
+	// Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
 	LogicalZone *string `pulumi:"logicalZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
 	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
 }
 
@@ -110,23 +110,23 @@ func GetMulticloudExternalLocationsMetadataOutput(ctx *pulumi.Context, args GetM
 
 // A collection of arguments for invoking getMulticloudExternalLocationsMetadata.
 type GetMulticloudExternalLocationsMetadataOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
 	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// The resource type query (i.e. dbsystem, instance etc.)
+	// The resource type query (for example, dbsystem or instance).
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation pulumi.StringPtrInput                                  `pulumi:"externalLocation"`
 	Filters          GetMulticloudExternalLocationsMetadataFilterArrayInput `pulumi:"filters"`
 	Limit            pulumi.IntPtrInput                                     `pulumi:"limit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
 	LinkedCompartmentId pulumi.StringPtrInput `pulumi:"linkedCompartmentId"`
-	// Oracle Cloud Infrastructure Logical AD to filter the response.
+	// Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
 	LogicalZone pulumi.StringPtrInput `pulumi:"logicalZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
 	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
 }
 

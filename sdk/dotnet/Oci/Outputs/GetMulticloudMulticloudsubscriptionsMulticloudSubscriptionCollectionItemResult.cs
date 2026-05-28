@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string ActiveCommitment;
         /// <summary>
-        /// Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+        /// Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
         /// </summary>
         public readonly string ClassicSubscriptionId;
         /// <summary>
-        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
         /// </summary>
         public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
         /// <summary>
@@ -42,15 +42,19 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string PartnerCloudAccountIdentifier;
         /// <summary>
+        /// The partner cloud tenant ID.
+        /// </summary>
+        public readonly string PartnerCloudTenantIdentifier;
+        /// <summary>
         /// Payment plan for the subscription.
         /// </summary>
         public readonly string PaymentPlan;
         /// <summary>
-        /// The serviceName that externalLocation map object belongs to.
+        /// The cloud service provider.
         /// </summary>
         public readonly string ServiceName;
         /// <summary>
-        /// URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        /// URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
         /// </summary>
         public readonly string SubscriptionId;
         /// <summary>
@@ -58,19 +62,19 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeEndDate;
         /// <summary>
-        /// The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeLinkedDate;
         /// <summary>
-        /// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -89,6 +93,8 @@ namespace Pulumi.Oci.Oci.Outputs
             string lifecycleState,
 
             string partnerCloudAccountIdentifier,
+
+            string partnerCloudTenantIdentifier,
 
             string paymentPlan,
 
@@ -113,6 +119,7 @@ namespace Pulumi.Oci.Oci.Outputs
             FreeformTags = freeformTags;
             LifecycleState = lifecycleState;
             PartnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            PartnerCloudTenantIdentifier = partnerCloudTenantIdentifier;
             PaymentPlan = paymentPlan;
             ServiceName = serviceName;
             SubscriptionId = subscriptionId;

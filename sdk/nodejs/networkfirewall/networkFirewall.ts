@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *         mustEnablePrivateNat: networkFirewallNatConfigurationMustEnablePrivateNat === "true",
  *     },
  *     networkSecurityGroupIds: networkFirewallNetworkSecurityGroupIds,
+ *     securityAttributes: networkFirewallSecurityAttributes,
  *     shape: networkFirewallShape,
  * });
  * ```
@@ -123,6 +124,10 @@ export class NetworkFirewall extends pulumi.CustomResource {
      */
     declare public readonly networkSecurityGroupIds: pulumi.Output<string[]>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
      */
     declare public readonly shape: pulumi.Output<string>;
@@ -175,6 +180,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["natConfiguration"] = state?.natConfiguration;
             resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
             resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
@@ -202,6 +208,7 @@ export class NetworkFirewall extends pulumi.CustomResource {
             resourceInputs["natConfiguration"] = args?.natConfiguration;
             resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -263,6 +270,10 @@ export interface NetworkFirewallState {
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
      */
@@ -337,6 +348,10 @@ export interface NetworkFirewallArgs {
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
     networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
      */

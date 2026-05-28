@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime;
+import com.pulumi.oci.Database.outputs.GetMaintenanceRunsMaintenanceRunWindowTypeDescription;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -137,6 +138,11 @@ public final class GetMaintenanceRunsMaintenanceRun {
      */
     private List<String> peerMaintenanceRunIds;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    private String referenceResourceIdForImageUpdates;
+    /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -186,6 +192,11 @@ public final class GetMaintenanceRunsMaintenanceRun {
      * 
      */
     private Integer totalTimeTakenInMins;
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    private List<GetMaintenanceRunsMaintenanceRunWindowTypeDescription> windowTypeDescriptions;
 
     private GetMaintenanceRunsMaintenanceRun() {}
     /**
@@ -360,6 +371,13 @@ public final class GetMaintenanceRunsMaintenanceRun {
         return this.peerMaintenanceRunIds;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    public String referenceResourceIdForImageUpdates() {
+        return this.referenceResourceIdForImageUpdates;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -429,6 +447,13 @@ public final class GetMaintenanceRunsMaintenanceRun {
     public Integer totalTimeTakenInMins() {
         return this.totalTimeTakenInMins;
     }
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    public List<GetMaintenanceRunsMaintenanceRunWindowTypeDescription> windowTypeDescriptions() {
+        return this.windowTypeDescriptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -464,6 +489,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
         private String patchingStatus;
         private String peerMaintenanceRunId;
         private List<String> peerMaintenanceRunIds;
+        private String referenceResourceIdForImageUpdates;
         private String state;
         private Map<String,String> systemTags;
         private String targetDbServerVersion;
@@ -474,6 +500,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
         private String timeScheduled;
         private String timeStarted;
         private Integer totalTimeTakenInMins;
+        private List<GetMaintenanceRunsMaintenanceRunWindowTypeDescription> windowTypeDescriptions;
         public Builder() {}
         public Builder(GetMaintenanceRunsMaintenanceRun defaults) {
     	      Objects.requireNonNull(defaults);
@@ -502,6 +529,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
     	      this.patchingStatus = defaults.patchingStatus;
     	      this.peerMaintenanceRunId = defaults.peerMaintenanceRunId;
     	      this.peerMaintenanceRunIds = defaults.peerMaintenanceRunIds;
+    	      this.referenceResourceIdForImageUpdates = defaults.referenceResourceIdForImageUpdates;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetDbServerVersion = defaults.targetDbServerVersion;
@@ -512,6 +540,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
     	      this.timeScheduled = defaults.timeScheduled;
     	      this.timeStarted = defaults.timeStarted;
     	      this.totalTimeTakenInMins = defaults.totalTimeTakenInMins;
+    	      this.windowTypeDescriptions = defaults.windowTypeDescriptions;
         }
 
         @CustomType.Setter
@@ -721,6 +750,14 @@ public final class GetMaintenanceRunsMaintenanceRun {
             return peerMaintenanceRunIds(List.of(peerMaintenanceRunIds));
         }
         @CustomType.Setter
+        public Builder referenceResourceIdForImageUpdates(String referenceResourceIdForImageUpdates) {
+            if (referenceResourceIdForImageUpdates == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "referenceResourceIdForImageUpdates");
+            }
+            this.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "state");
@@ -800,6 +837,17 @@ public final class GetMaintenanceRunsMaintenanceRun {
             this.totalTimeTakenInMins = totalTimeTakenInMins;
             return this;
         }
+        @CustomType.Setter
+        public Builder windowTypeDescriptions(List<GetMaintenanceRunsMaintenanceRunWindowTypeDescription> windowTypeDescriptions) {
+            if (windowTypeDescriptions == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunsMaintenanceRun", "windowTypeDescriptions");
+            }
+            this.windowTypeDescriptions = windowTypeDescriptions;
+            return this;
+        }
+        public Builder windowTypeDescriptions(GetMaintenanceRunsMaintenanceRunWindowTypeDescription... windowTypeDescriptions) {
+            return windowTypeDescriptions(List.of(windowTypeDescriptions));
+        }
         public GetMaintenanceRunsMaintenanceRun build() {
             final var _resultValue = new GetMaintenanceRunsMaintenanceRun();
             _resultValue.compartmentId = compartmentId;
@@ -827,6 +875,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
             _resultValue.patchingStatus = patchingStatus;
             _resultValue.peerMaintenanceRunId = peerMaintenanceRunId;
             _resultValue.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            _resultValue.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetDbServerVersion = targetDbServerVersion;
@@ -837,6 +886,7 @@ public final class GetMaintenanceRunsMaintenanceRun {
             _resultValue.timeScheduled = timeScheduled;
             _resultValue.timeStarted = timeStarted;
             _resultValue.totalTimeTakenInMins = totalTimeTakenInMins;
+            _resultValue.windowTypeDescriptions = windowTypeDescriptions;
             return _resultValue;
         }
     }

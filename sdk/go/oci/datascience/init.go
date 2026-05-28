@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DataScience/computeTarget:ComputeTarget":
+		r = &ComputeTarget{}
 	case "oci:DataScience/job:Job":
 		r = &Job{}
 	case "oci:DataScience/jobRun:JobRun":
@@ -78,6 +80,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/computeTarget",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/job",

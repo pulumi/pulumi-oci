@@ -83,6 +83,8 @@ type LookupNetworkFirewallResult struct {
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape string `pulumi:"shape"`
 	// The current state of the Network Firewall.
@@ -193,6 +195,11 @@ func (o LookupNetworkFirewallResultOutput) NetworkFirewallPolicyId() pulumi.Stri
 // An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 func (o LookupNetworkFirewallResultOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallResult) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+func (o LookupNetworkFirewallResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of a firewall to determine the bandwidth that the firewall allows.

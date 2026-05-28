@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -22,6 +23,11 @@ public final class GetClusterEndpointConfig {
      * 
      */
     private List<String> nsgIds;
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+     * 
+     */
+    private Map<String,String> securityAttributes;
     /**
      * @return The OCID of the regional subnet in which to place the Cluster endpoint.
      * 
@@ -44,6 +50,13 @@ public final class GetClusterEndpointConfig {
         return this.nsgIds;
     }
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The OCID of the regional subnet in which to place the Cluster endpoint.
      * 
      */
@@ -62,12 +75,14 @@ public final class GetClusterEndpointConfig {
     public static final class Builder {
         private Boolean isPublicIpEnabled;
         private List<String> nsgIds;
+        private Map<String,String> securityAttributes;
         private String subnetId;
         public Builder() {}
         public Builder(GetClusterEndpointConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPublicIpEnabled = defaults.isPublicIpEnabled;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.subnetId = defaults.subnetId;
         }
 
@@ -91,6 +106,14 @@ public final class GetClusterEndpointConfig {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetClusterEndpointConfig", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetClusterEndpointConfig", "subnetId");
@@ -102,6 +125,7 @@ public final class GetClusterEndpointConfig {
             final var _resultValue = new GetClusterEndpointConfig();
             _resultValue.isPublicIpEnabled = isPublicIpEnabled;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.subnetId = subnetId;
             return _resultValue;
         }

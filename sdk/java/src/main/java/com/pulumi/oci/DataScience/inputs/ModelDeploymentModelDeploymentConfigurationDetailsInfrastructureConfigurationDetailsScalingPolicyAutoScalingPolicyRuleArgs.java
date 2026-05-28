@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs;
 import java.lang.String;
@@ -48,34 +49,41 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         return Optional.ofNullable(this.metricType);
     }
 
-    /**
-     * The scaling configuration for the predefined metric expression rule.
-     * 
-     */
-    @Import(name="scaleInConfiguration", required=true)
-    private Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs> scaleInConfiguration;
+    @Import(name="scaleConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs> scaleConfiguration;
 
-    /**
-     * @return The scaling configuration for the predefined metric expression rule.
-     * 
-     */
-    public Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs> scaleInConfiguration() {
-        return this.scaleInConfiguration;
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs>> scaleConfiguration() {
+        return Optional.ofNullable(this.scaleConfiguration);
     }
 
     /**
      * The scaling configuration for the predefined metric expression rule.
      * 
      */
-    @Import(name="scaleOutConfiguration", required=true)
-    private Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs> scaleOutConfiguration;
+    @Import(name="scaleInConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs> scaleInConfiguration;
 
     /**
      * @return The scaling configuration for the predefined metric expression rule.
      * 
      */
-    public Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs> scaleOutConfiguration() {
-        return this.scaleOutConfiguration;
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs>> scaleInConfiguration() {
+        return Optional.ofNullable(this.scaleInConfiguration);
+    }
+
+    /**
+     * The scaling configuration for the predefined metric expression rule.
+     * 
+     */
+    @Import(name="scaleOutConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs> scaleOutConfiguration;
+
+    /**
+     * @return The scaling configuration for the predefined metric expression rule.
+     * 
+     */
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs>> scaleOutConfiguration() {
+        return Optional.ofNullable(this.scaleOutConfiguration);
     }
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs() {}
@@ -83,6 +91,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs $) {
         this.metricExpressionRuleType = $.metricExpressionRuleType;
         this.metricType = $.metricType;
+        this.scaleConfiguration = $.scaleConfiguration;
         this.scaleInConfiguration = $.scaleInConfiguration;
         this.scaleOutConfiguration = $.scaleOutConfiguration;
     }
@@ -147,13 +156,22 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return metricType(Output.of(metricType));
         }
 
+        public Builder scaleConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs> scaleConfiguration) {
+            $.scaleConfiguration = scaleConfiguration;
+            return this;
+        }
+
+        public Builder scaleConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs scaleConfiguration) {
+            return scaleConfiguration(Output.of(scaleConfiguration));
+        }
+
         /**
          * @param scaleInConfiguration The scaling configuration for the predefined metric expression rule.
          * 
          * @return builder
          * 
          */
-        public Builder scaleInConfiguration(Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs> scaleInConfiguration) {
+        public Builder scaleInConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs> scaleInConfiguration) {
             $.scaleInConfiguration = scaleInConfiguration;
             return this;
         }
@@ -174,7 +192,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
          * @return builder
          * 
          */
-        public Builder scaleOutConfiguration(Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs> scaleOutConfiguration) {
+        public Builder scaleOutConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs> scaleOutConfiguration) {
             $.scaleOutConfiguration = scaleOutConfiguration;
             return this;
         }
@@ -192,12 +210,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs build() {
             if ($.metricExpressionRuleType == null) {
                 throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs", "metricExpressionRuleType");
-            }
-            if ($.scaleInConfiguration == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs", "scaleInConfiguration");
-            }
-            if ($.scaleOutConfiguration == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs", "scaleOutConfiguration");
             }
             return $;
         }

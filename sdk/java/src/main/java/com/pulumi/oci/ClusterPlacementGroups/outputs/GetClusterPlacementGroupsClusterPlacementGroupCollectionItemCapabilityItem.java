@@ -5,11 +5,18 @@ package com.pulumi.oci.ClusterPlacementGroups.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ClusterPlacementGroups.outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem {
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    private List<GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail> additionalDetails;
     /**
      * @return A filter to return only the resources that match the entire display name specified.
      * 
@@ -22,6 +29,13 @@ public final class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemC
     private String service;
 
     private GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem() {}
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    public List<GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail> additionalDetails() {
+        return this.additionalDetails;
+    }
     /**
      * @return A filter to return only the resources that match the entire display name specified.
      * 
@@ -46,15 +60,28 @@ public final class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemC
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail> additionalDetails;
         private String name;
         private String service;
         public Builder() {}
         public Builder(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalDetails = defaults.additionalDetails;
     	      this.name = defaults.name;
     	      this.service = defaults.service;
         }
 
+        @CustomType.Setter
+        public Builder additionalDetails(List<GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail> additionalDetails) {
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
+            return this;
+        }
+        public Builder additionalDetails(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail... additionalDetails) {
+            return additionalDetails(List.of(additionalDetails));
+        }
         @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
@@ -73,6 +100,7 @@ public final class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemC
         }
         public GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem build() {
             final var _resultValue = new GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem();
+            _resultValue.additionalDetails = additionalDetails;
             _resultValue.name = name;
             _resultValue.service = service;
             return _resultValue;

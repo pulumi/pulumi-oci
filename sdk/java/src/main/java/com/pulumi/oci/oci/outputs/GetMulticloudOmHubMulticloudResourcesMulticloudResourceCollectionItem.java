@@ -17,17 +17,17 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
      */
     private String compartmentId;
     /**
-     * @return Compartment name associated the resource.
+     * @return Name of the compartment associated with the resource.
      * 
      */
     private String compartmentName;
     /**
-     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * @return Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
      * 
      */
     private Map<String,String> cspAdditionalProperties;
     /**
-     * @return Resource Id that comes from the Multi Cloud Control Plane
+     * @return The resource Id that comes from the Multicloud control plane.
      * 
      */
     private String cspResourceId;
@@ -42,22 +42,27 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The current state of the multicloud resource.
+     * @return The current state of the Multicloud resource.
      * 
      */
     private String lifecycleState;
     /**
-     * @return OCID of the Network Anchor
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
      * 
      */
     private String networkAnchorId;
     /**
-     * @return Name of the network anchor associated to the resource.
+     * @return Name of the network anchor associated with the resource.
      * 
      */
     private String networkAnchorName;
     /**
-     * @return Endpoint used to retrieve displayName and lifeCycleState of the resource.
+     * @return Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+     * 
+     */
+    private Map<String,String> resourceAdditionalProperties;
+    /**
+     * @return Endpoint used to retrieve the resource&#39;s display name and lifecycle state.
      * 
      */
     private String resourceDisplayName;
@@ -67,7 +72,7 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
      */
     private String resourceId;
     /**
-     * @return What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+     * @return Filter alerts by resource type (e.g. ADBD, VMCluster).
      * 
      */
     private String resourceType;
@@ -87,12 +92,12 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
      */
     private String timeUpdated;
     /**
-     * @return Id of the Virtual Cloud Network associated to the resource.
+     * @return Id of the virtual cloud network (VCN) associated with the resource.
      * 
      */
     private String vcnId;
     /**
-     * @return Resource Anchor name.
+     * @return Name of the virtual cloud network (VCN) associated with the resource.
      * 
      */
     private String vcnName;
@@ -106,21 +111,21 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
         return this.compartmentId;
     }
     /**
-     * @return Compartment name associated the resource.
+     * @return Name of the compartment associated with the resource.
      * 
      */
     public String compartmentName() {
         return this.compartmentName;
     }
     /**
-     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * @return Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
      * 
      */
     public Map<String,String> cspAdditionalProperties() {
         return this.cspAdditionalProperties;
     }
     /**
-     * @return Resource Id that comes from the Multi Cloud Control Plane
+     * @return The resource Id that comes from the Multicloud control plane.
      * 
      */
     public String cspResourceId() {
@@ -141,28 +146,35 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
         return this.freeformTags;
     }
     /**
-     * @return The current state of the multicloud resource.
+     * @return The current state of the Multicloud resource.
      * 
      */
     public String lifecycleState() {
         return this.lifecycleState;
     }
     /**
-     * @return OCID of the Network Anchor
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
      * 
      */
     public String networkAnchorId() {
         return this.networkAnchorId;
     }
     /**
-     * @return Name of the network anchor associated to the resource.
+     * @return Name of the network anchor associated with the resource.
      * 
      */
     public String networkAnchorName() {
         return this.networkAnchorName;
     }
     /**
-     * @return Endpoint used to retrieve displayName and lifeCycleState of the resource.
+     * @return Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+     * 
+     */
+    public Map<String,String> resourceAdditionalProperties() {
+        return this.resourceAdditionalProperties;
+    }
+    /**
+     * @return Endpoint used to retrieve the resource&#39;s display name and lifecycle state.
      * 
      */
     public String resourceDisplayName() {
@@ -176,7 +188,7 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
         return this.resourceId;
     }
     /**
-     * @return What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+     * @return Filter alerts by resource type (e.g. ADBD, VMCluster).
      * 
      */
     public String resourceType() {
@@ -204,14 +216,14 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
         return this.timeUpdated;
     }
     /**
-     * @return Id of the Virtual Cloud Network associated to the resource.
+     * @return Id of the virtual cloud network (VCN) associated with the resource.
      * 
      */
     public String vcnId() {
         return this.vcnId;
     }
     /**
-     * @return Resource Anchor name.
+     * @return Name of the virtual cloud network (VCN) associated with the resource.
      * 
      */
     public String vcnName() {
@@ -236,6 +248,7 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
         private String lifecycleState;
         private String networkAnchorId;
         private String networkAnchorName;
+        private Map<String,String> resourceAdditionalProperties;
         private String resourceDisplayName;
         private String resourceId;
         private String resourceType;
@@ -256,6 +269,7 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
     	      this.lifecycleState = defaults.lifecycleState;
     	      this.networkAnchorId = defaults.networkAnchorId;
     	      this.networkAnchorName = defaults.networkAnchorName;
+    	      this.resourceAdditionalProperties = defaults.resourceAdditionalProperties;
     	      this.resourceDisplayName = defaults.resourceDisplayName;
     	      this.resourceId = defaults.resourceId;
     	      this.resourceType = defaults.resourceType;
@@ -339,6 +353,14 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
             return this;
         }
         @CustomType.Setter
+        public Builder resourceAdditionalProperties(Map<String,String> resourceAdditionalProperties) {
+            if (resourceAdditionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem", "resourceAdditionalProperties");
+            }
+            this.resourceAdditionalProperties = resourceAdditionalProperties;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceDisplayName(String resourceDisplayName) {
             if (resourceDisplayName == null) {
               throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem", "resourceDisplayName");
@@ -413,6 +435,7 @@ public final class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollec
             _resultValue.lifecycleState = lifecycleState;
             _resultValue.networkAnchorId = networkAnchorId;
             _resultValue.networkAnchorName = networkAnchorName;
+            _resultValue.resourceAdditionalProperties = resourceAdditionalProperties;
             _resultValue.resourceDisplayName = resourceDisplayName;
             _resultValue.resourceId = resourceId;
             _resultValue.resourceType = resourceType;

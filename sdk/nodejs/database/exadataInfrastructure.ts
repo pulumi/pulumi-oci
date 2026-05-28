@@ -51,6 +51,9 @@ import * as utilities from "../utilities";
  *     },
  *     isCpsOfflineReportEnabled: exadataInfrastructureIsCpsOfflineReportEnabled === "true",
  *     isMultiRackDeployment: exadataInfrastructureIsMultiRackDeployment === "true",
+ *     maintenanceVersionPreferences: {
+ *         referenceResourceIdForImageUpdates: exadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates,
+ *     },
  *     maintenanceWindow: {
  *         customActionTimeoutInMins: Number(exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
@@ -251,6 +254,11 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly maintenanceSloStatus: pulumi.Output<string>;
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    declare public readonly maintenanceVersionPreferences: pulumi.Output<outputs.Database.ExadataInfrastructureMaintenanceVersionPreferences>;
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     declare public readonly maintenanceWindow: pulumi.Output<outputs.Database.ExadataInfrastructureMaintenanceWindow>;
@@ -378,6 +386,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["maintenanceSloStatus"] = state?.maintenanceSloStatus;
+            resourceInputs["maintenanceVersionPreferences"] = state?.maintenanceVersionPreferences;
             resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
             resourceInputs["maxCpuCount"] = state?.maxCpuCount;
             resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
@@ -455,6 +464,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["infiniBandNetworkCidr"] = args?.infiniBandNetworkCidr;
             resourceInputs["isCpsOfflineReportEnabled"] = args?.isCpsOfflineReportEnabled;
             resourceInputs["isMultiRackDeployment"] = args?.isMultiRackDeployment;
+            resourceInputs["maintenanceVersionPreferences"] = args?.maintenanceVersionPreferences;
             resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
             resourceInputs["multiRackConfigurationFile"] = args?.multiRackConfigurationFile;
             resourceInputs["netmask"] = args?.netmask;
@@ -637,6 +647,11 @@ export interface ExadataInfrastructureState {
      */
     maintenanceSloStatus?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    maintenanceVersionPreferences?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceVersionPreferences | undefined>;
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow | undefined>;
@@ -798,6 +813,11 @@ export interface ExadataInfrastructureArgs {
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      */
     isMultiRackDeployment?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    maintenanceVersionPreferences?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceVersionPreferences | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */

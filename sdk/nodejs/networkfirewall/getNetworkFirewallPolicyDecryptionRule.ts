@@ -76,6 +76,10 @@ export interface GetNetworkFirewallPolicyDecryptionRuleResult {
      * The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
     readonly secret: string;
+    /**
+     * An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     */
+    readonly secrets: string[];
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.

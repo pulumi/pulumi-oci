@@ -32,6 +32,51 @@ public final class PipelineProcessOptionsInitialDataLoadArgs extends com.pulumi.
     }
 
     /**
+     * (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+     * 
+     */
+    @Import(name="adbWalletPath")
+    private @Nullable Output<String> adbWalletPath;
+
+    /**
+     * @return (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+     * 
+     */
+    public Optional<Output<String>> adbWalletPath() {
+        return Optional.ofNullable(this.adbWalletPath);
+    }
+
+    /**
+     * (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    @Import(name="bucket")
+    private @Nullable Output<String> bucket;
+
+    /**
+     * @return (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    public Optional<Output<String>> bucket() {
+        return Optional.ofNullable(this.bucket);
+    }
+
+    /**
+     * (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+     * 
+     */
+    @Import(name="initialLoadType")
+    private @Nullable Output<String> initialLoadType;
+
+    /**
+     * @return (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+     * 
+     */
+    public Optional<Output<String>> initialLoadType() {
+        return Optional.ofNullable(this.initialLoadType);
+    }
+
+    /**
      * (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
      * 
      */
@@ -46,11 +91,62 @@ public final class PipelineProcessOptionsInitialDataLoadArgs extends com.pulumi.
         return this.isInitialLoad;
     }
 
+    /**
+     * (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    @Import(name="namespace")
+    private @Nullable Output<String> namespace;
+
+    /**
+     * @return (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    public Optional<Output<String>> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+
+    /**
+     * (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+     * 
+     */
+    @Import(name="sourceWalletPath")
+    private @Nullable Output<String> sourceWalletPath;
+
+    /**
+     * @return (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+     * 
+     */
+    public Optional<Output<String>> sourceWalletPath() {
+        return Optional.ofNullable(this.sourceWalletPath);
+    }
+
+    /**
+     * (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+     * 
+     */
+    @Import(name="targetWalletPath")
+    private @Nullable Output<String> targetWalletPath;
+
+    /**
+     * @return (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+     * 
+     */
+    public Optional<Output<String>> targetWalletPath() {
+        return Optional.ofNullable(this.targetWalletPath);
+    }
+
     private PipelineProcessOptionsInitialDataLoadArgs() {}
 
     private PipelineProcessOptionsInitialDataLoadArgs(PipelineProcessOptionsInitialDataLoadArgs $) {
         this.actionOnExistingTable = $.actionOnExistingTable;
+        this.adbWalletPath = $.adbWalletPath;
+        this.bucket = $.bucket;
+        this.initialLoadType = $.initialLoadType;
         this.isInitialLoad = $.isInitialLoad;
+        this.namespace = $.namespace;
+        this.sourceWalletPath = $.sourceWalletPath;
+        this.targetWalletPath = $.targetWalletPath;
     }
 
     public static Builder builder() {
@@ -93,6 +189,69 @@ public final class PipelineProcessOptionsInitialDataLoadArgs extends com.pulumi.
         }
 
         /**
+         * @param adbWalletPath (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder adbWalletPath(@Nullable Output<String> adbWalletPath) {
+            $.adbWalletPath = adbWalletPath;
+            return this;
+        }
+
+        /**
+         * @param adbWalletPath (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder adbWalletPath(String adbWalletPath) {
+            return adbWalletPath(Output.of(adbWalletPath));
+        }
+
+        /**
+         * @param bucket (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucket(@Nullable Output<String> bucket) {
+            $.bucket = bucket;
+            return this;
+        }
+
+        /**
+         * @param bucket (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bucket(String bucket) {
+            return bucket(Output.of(bucket));
+        }
+
+        /**
+         * @param initialLoadType (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialLoadType(@Nullable Output<String> initialLoadType) {
+            $.initialLoadType = initialLoadType;
+            return this;
+        }
+
+        /**
+         * @param initialLoadType (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialLoadType(String initialLoadType) {
+            return initialLoadType(Output.of(initialLoadType));
+        }
+
+        /**
          * @param isInitialLoad (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
          * 
          * @return builder
@@ -111,6 +270,69 @@ public final class PipelineProcessOptionsInitialDataLoadArgs extends com.pulumi.
          */
         public Builder isInitialLoad(String isInitialLoad) {
             return isInitialLoad(Output.of(isInitialLoad));
+        }
+
+        /**
+         * @param namespace (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(@Nullable Output<String> namespace) {
+            $.namespace = namespace;
+            return this;
+        }
+
+        /**
+         * @param namespace (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(String namespace) {
+            return namespace(Output.of(namespace));
+        }
+
+        /**
+         * @param sourceWalletPath (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceWalletPath(@Nullable Output<String> sourceWalletPath) {
+            $.sourceWalletPath = sourceWalletPath;
+            return this;
+        }
+
+        /**
+         * @param sourceWalletPath (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceWalletPath(String sourceWalletPath) {
+            return sourceWalletPath(Output.of(sourceWalletPath));
+        }
+
+        /**
+         * @param targetWalletPath (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetWalletPath(@Nullable Output<String> targetWalletPath) {
+            $.targetWalletPath = targetWalletPath;
+            return this;
+        }
+
+        /**
+         * @param targetWalletPath (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetWalletPath(String targetWalletPath) {
+            return targetWalletPath(Output.of(targetWalletPath));
         }
 
         public PipelineProcessOptionsInitialDataLoadArgs build() {

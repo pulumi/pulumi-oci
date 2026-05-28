@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -34,6 +35,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         return Optional.ofNullable(this.bandwidthMbps);
     }
 
+    @Import(name="computeTargetId")
+    private @Nullable Output<String> computeTargetId;
+
+    public Optional<Output<String>> computeTargetId() {
+        return Optional.ofNullable(this.computeTargetId);
+    }
+
     /**
      * The type of the model deployment infrastructure.
      * 
@@ -53,15 +61,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * The model deployment instance configuration.
      * 
      */
-    @Import(name="instanceConfiguration", required=true)
-    private Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration;
+    @Import(name="instanceConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration;
 
     /**
      * @return The model deployment instance configuration.
      * 
      */
-    public Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration() {
-        return this.instanceConfiguration;
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs>> instanceConfiguration() {
+        return Optional.ofNullable(this.instanceConfiguration);
     }
 
     /**
@@ -77,6 +85,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      */
     public Optional<Output<Integer>> maximumBandwidthMbps() {
         return Optional.ofNullable(this.maximumBandwidthMbps);
+    }
+
+    @Import(name="modelDeploymentResourceConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs> modelDeploymentResourceConfiguration;
+
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>> modelDeploymentResourceConfiguration() {
+        return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
     }
 
     /**
@@ -98,9 +113,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs $) {
         this.bandwidthMbps = $.bandwidthMbps;
+        this.computeTargetId = $.computeTargetId;
         this.infrastructureType = $.infrastructureType;
         this.instanceConfiguration = $.instanceConfiguration;
         this.maximumBandwidthMbps = $.maximumBandwidthMbps;
+        this.modelDeploymentResourceConfiguration = $.modelDeploymentResourceConfiguration;
         this.scalingPolicy = $.scalingPolicy;
     }
 
@@ -143,6 +160,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return bandwidthMbps(Output.of(bandwidthMbps));
         }
 
+        public Builder computeTargetId(@Nullable Output<String> computeTargetId) {
+            $.computeTargetId = computeTargetId;
+            return this;
+        }
+
+        public Builder computeTargetId(String computeTargetId) {
+            return computeTargetId(Output.of(computeTargetId));
+        }
+
         /**
          * @param infrastructureType The type of the model deployment infrastructure.
          * 
@@ -170,7 +196,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
          * @return builder
          * 
          */
-        public Builder instanceConfiguration(Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration) {
+        public Builder instanceConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration) {
             $.instanceConfiguration = instanceConfiguration;
             return this;
         }
@@ -206,6 +232,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return maximumBandwidthMbps(Output.of(maximumBandwidthMbps));
         }
 
+        public Builder modelDeploymentResourceConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs> modelDeploymentResourceConfiguration) {
+            $.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
+            return this;
+        }
+
+        public Builder modelDeploymentResourceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs modelDeploymentResourceConfiguration) {
+            return modelDeploymentResourceConfiguration(Output.of(modelDeploymentResourceConfiguration));
+        }
+
         /**
          * @param scalingPolicy The scaling policy to apply to each model of the deployment.
          * 
@@ -230,9 +265,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs build() {
             if ($.infrastructureType == null) {
                 throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs", "infrastructureType");
-            }
-            if ($.instanceConfiguration == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs", "instanceConfiguration");
             }
             return $;
         }

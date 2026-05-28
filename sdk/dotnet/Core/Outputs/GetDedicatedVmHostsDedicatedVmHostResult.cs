@@ -17,6 +17,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
+        /// <summary>
+        /// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult> CapacityBins;
         /// <summary>
         /// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
@@ -63,6 +66,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult> PlacementConstraintDetails;
         /// <summary>
+        /// The current available local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        public readonly double RemainingLocalVolumeInGbs;
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         public readonly double RemainingMemoryInGbs;
@@ -78,6 +85,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The current total local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        public readonly double TotalLocalVolumeInGbs;
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.
         /// </summary>
@@ -115,6 +126,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult> placementConstraintDetails,
 
+            double remainingLocalVolumeInGbs,
+
             double remainingMemoryInGbs,
 
             double remainingOcpus,
@@ -122,6 +135,8 @@ namespace Pulumi.Oci.Core.Outputs
             string state,
 
             string timeCreated,
+
+            double totalLocalVolumeInGbs,
 
             double totalMemoryInGbs,
 
@@ -140,10 +155,12 @@ namespace Pulumi.Oci.Core.Outputs
             Id = id;
             IsMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             PlacementConstraintDetails = placementConstraintDetails;
+            RemainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             RemainingMemoryInGbs = remainingMemoryInGbs;
             RemainingOcpus = remainingOcpus;
             State = state;
             TimeCreated = timeCreated;
+            TotalLocalVolumeInGbs = totalLocalVolumeInGbs;
             TotalMemoryInGbs = totalMemoryInGbs;
             TotalOcpus = totalOcpus;
         }

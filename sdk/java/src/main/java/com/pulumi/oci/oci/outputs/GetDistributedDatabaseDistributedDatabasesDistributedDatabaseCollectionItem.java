@@ -83,6 +83,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
      */
     @Deprecated /* This trigger/action API is deprecated. */
     private Integer downloadGsmCertificateSigningRequestTrigger;
+    private Integer effectiveReplicationUnit;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -327,6 +328,9 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
     @Deprecated /* This trigger/action API is deprecated. */
     public Integer downloadGsmCertificateSigningRequestTrigger() {
         return this.downloadGsmCertificateSigningRequestTrigger;
+    }
+    public Integer effectiveReplicationUnit() {
+        return this.effectiveReplicationUnit;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -585,6 +589,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
         private Map<String,String> definedTags;
         private String displayName;
         private Integer downloadGsmCertificateSigningRequestTrigger;
+        private Integer effectiveReplicationUnit;
         private Map<String,String> freeformTags;
         private Integer generateGsmCertificateSigningRequestTrigger;
         private Integer generateWalletDownloadedWalletContentLength;
@@ -641,6 +646,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.downloadGsmCertificateSigningRequestTrigger = defaults.downloadGsmCertificateSigningRequestTrigger;
+    	      this.effectiveReplicationUnit = defaults.effectiveReplicationUnit;
     	      this.freeformTags = defaults.freeformTags;
     	      this.generateGsmCertificateSigningRequestTrigger = defaults.generateGsmCertificateSigningRequestTrigger;
     	      this.generateWalletDownloadedWalletContentLength = defaults.generateWalletDownloadedWalletContentLength;
@@ -801,6 +807,14 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "downloadGsmCertificateSigningRequestTrigger");
             }
             this.downloadGsmCertificateSigningRequestTrigger = downloadGsmCertificateSigningRequestTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder effectiveReplicationUnit(Integer effectiveReplicationUnit) {
+            if (effectiveReplicationUnit == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedDatabasesDistributedDatabaseCollectionItem", "effectiveReplicationUnit");
+            }
+            this.effectiveReplicationUnit = effectiveReplicationUnit;
             return this;
         }
         @CustomType.Setter
@@ -1152,6 +1166,7 @@ public final class GetDistributedDatabaseDistributedDatabasesDistributedDatabase
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.downloadGsmCertificateSigningRequestTrigger = downloadGsmCertificateSigningRequestTrigger;
+            _resultValue.effectiveReplicationUnit = effectiveReplicationUnit;
             _resultValue.freeformTags = freeformTags;
             _resultValue.generateGsmCertificateSigningRequestTrigger = generateGsmCertificateSigningRequestTrigger;
             _resultValue.generateWalletDownloadedWalletContentLength = generateWalletDownloadedWalletContentLength;

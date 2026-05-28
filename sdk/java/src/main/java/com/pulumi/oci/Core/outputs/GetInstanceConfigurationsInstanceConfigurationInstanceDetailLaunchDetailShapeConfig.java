@@ -18,6 +18,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private String baselineOcpuUtilization;
     /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    private Integer localVolumeSizeInGbs;
+    /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
@@ -50,6 +55,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     public String baselineOcpuUtilization() {
         return this.baselineOcpuUtilization;
+    }
+    /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    public Integer localVolumeSizeInGbs() {
+        return this.localVolumeSizeInGbs;
     }
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
@@ -97,6 +109,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     @CustomType.Builder
     public static final class Builder {
         private String baselineOcpuUtilization;
+        private Integer localVolumeSizeInGbs;
         private Double memoryInGbs;
         private Integer nvmes;
         private Double ocpus;
@@ -106,6 +119,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
+    	      this.localVolumeSizeInGbs = defaults.localVolumeSizeInGbs;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
@@ -119,6 +133,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig", "baselineOcpuUtilization");
             }
             this.baselineOcpuUtilization = baselineOcpuUtilization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localVolumeSizeInGbs(Integer localVolumeSizeInGbs) {
+            if (localVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig", "localVolumeSizeInGbs");
+            }
+            this.localVolumeSizeInGbs = localVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -164,6 +186,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig build() {
             final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig();
             _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.localVolumeSizeInGbs = localVolumeSizeInGbs;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;

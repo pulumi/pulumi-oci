@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        /// </summary>
+        [Input("computeTargetId")]
+        public Input<string>? ComputeTargetId { get; set; }
+
+        /// <summary>
         /// The infrastructure type used for job run.
         /// </summary>
         [Input("jobInfrastructureType")]
@@ -34,6 +40,18 @@ namespace Pulumi.Oci.DataScience.Inputs
         {
             get => _jobShapeConfigDetails ?? (_jobShapeConfigDetails = new InputList<Inputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs>());
             set => _jobShapeConfigDetails = value;
+        }
+
+        [Input("resourceConfigurations")]
+        private InputList<Inputs.JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs>? _resourceConfigurations;
+
+        /// <summary>
+        /// Details for the compute target job resource configuration.
+        /// </summary>
+        public InputList<Inputs.JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs> ResourceConfigurations
+        {
+            get => _resourceConfigurations ?? (_resourceConfigurations = new InputList<Inputs.JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs>());
+            set => _resourceConfigurations = value;
         }
 
         /// <summary>

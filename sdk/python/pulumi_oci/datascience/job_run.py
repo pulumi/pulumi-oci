@@ -695,9 +695,21 @@ class JobRun(pulumi.CustomResource):
             job_infrastructure_configuration_override_details={
                 "job_infrastructure_type": job_run_job_infrastructure_configuration_override_details_job_infrastructure_type,
                 "block_storage_size_in_gbs": int(job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs),
+                "compute_target_id": test_compute_target["id"],
                 "job_shape_config_details": {
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
+                },
+                "resource_configuration": {
+                    "resource_limit_configuration": {
+                        "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
+                        "ocpus": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_ocpus,
+                    },
+                    "resource_request_configuration": {
+                        "gpus": int(job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_gpus),
+                        "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_memory_in_gbs,
+                        "ocpus": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_ocpus,
+                    },
                 },
                 "shape_name": test_shape["name"],
                 "subnet_id": test_subnet["id"],
@@ -740,9 +752,21 @@ class JobRun(pulumi.CustomResource):
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
                         "block_storage_size_in_gbs": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
+                        "compute_target_id": test_compute_target["id"],
                         "job_shape_config_details": {
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                        },
+                        "resource_configuration": {
+                            "resource_limit_configuration": {
+                                "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
+                                "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_ocpus,
+                            },
+                            "resource_request_configuration": {
+                                "gpus": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_gpus),
+                                "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_memory_in_gbs,
+                                "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_ocpus,
+                            },
                         },
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],
@@ -851,9 +875,21 @@ class JobRun(pulumi.CustomResource):
             job_infrastructure_configuration_override_details={
                 "job_infrastructure_type": job_run_job_infrastructure_configuration_override_details_job_infrastructure_type,
                 "block_storage_size_in_gbs": int(job_run_job_infrastructure_configuration_override_details_block_storage_size_in_gbs),
+                "compute_target_id": test_compute_target["id"],
                 "job_shape_config_details": {
                     "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_run_job_infrastructure_configuration_override_details_job_shape_config_details_ocpus,
+                },
+                "resource_configuration": {
+                    "resource_limit_configuration": {
+                        "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
+                        "ocpus": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_limit_configuration_ocpus,
+                    },
+                    "resource_request_configuration": {
+                        "gpus": int(job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_gpus),
+                        "memory_in_gbs": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_memory_in_gbs,
+                        "ocpus": job_run_job_infrastructure_configuration_override_details_resource_configuration_resource_request_configuration_ocpus,
+                    },
                 },
                 "shape_name": test_shape["name"],
                 "subnet_id": test_subnet["id"],
@@ -896,9 +932,21 @@ class JobRun(pulumi.CustomResource):
                     "job_infrastructure_configuration_details": {
                         "job_infrastructure_type": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
                         "block_storage_size_in_gbs": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs),
+                        "compute_target_id": test_compute_target["id"],
                         "job_shape_config_details": {
                             "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                             "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                        },
+                        "resource_configuration": {
+                            "resource_limit_configuration": {
+                                "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_memory_in_gbs,
+                                "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_limit_configuration_ocpus,
+                            },
+                            "resource_request_configuration": {
+                                "gpus": int(job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_gpus),
+                                "memory_in_gbs": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_memory_in_gbs,
+                                "ocpus": job_run_job_node_configuration_override_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_resource_configuration_resource_request_configuration_ocpus,
+                            },
                         },
                         "shape_name": test_shape["name"],
                         "subnet_id": test_subnet["id"],

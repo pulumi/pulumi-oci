@@ -204,7 +204,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	VaultId string `pulumi:"vaultId"`
 	// The next maintenance version preference.
 	VersionPreference string `pulumi:"versionPreference"`
-	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+	// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 	VmFailoverReservation int `pulumi:"vmFailoverReservation"`
 }
 
@@ -661,7 +661,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) VersionPreference() pulum
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VersionPreference }).(pulumi.StringOutput)
 }
 
-// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 func (o LookupAutonomousContainerDatabaseResultOutput) VmFailoverReservation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.VmFailoverReservation }).(pulumi.IntOutput)
 }

@@ -67,6 +67,7 @@ import javax.annotation.Nullable;
  *             .dbServers(cloudAutonomousVmClusterDbServers)
  *             .definedTags(cloudAutonomousVmClusterDefinedTags)
  *             .description(cloudAutonomousVmClusterDescription)
+ *             .distributionAlgorithm(cloudAutonomousVmClusterDistributionAlgorithm)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isMtlsEnabledVmCluster(cloudAutonomousVmClusterIsMtlsEnabledVmCluster)
  *             .licenseModel(cloudAutonomousVmClusterLicenseModel)
@@ -93,6 +94,7 @@ import javax.annotation.Nullable;
  *             .scanListenerPortNonTls(cloudAutonomousVmClusterScanListenerPortNonTls)
  *             .scanListenerPortTls(cloudAutonomousVmClusterScanListenerPortTls)
  *             .securityAttributes(cloudAutonomousVmClusterSecurityAttributes)
+ *             .sgaPercentage(cloudAutonomousVmClusterSgaPercentage)
  *             .subscriptionId(testSubscription.id())
  *             .totalContainerDatabases(cloudAutonomousVmClusterTotalContainerDatabases)
  *             .build());
@@ -212,14 +214,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.cloudExadataInfrastructureId;
     }
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Export(name="clusterTimeZone", refs={String.class}, tree="[0]")
     private Output<String> clusterTimeZone;
 
     /**
-     * @return The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * @return (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     public Output<String> clusterTimeZone() {
@@ -394,6 +396,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.displayName;
     }
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    @Export(name="distributionAlgorithm", refs={String.class}, tree="[0]")
+    private Output<String> distributionAlgorithm;
+
+    /**
+     * @return (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public Output<String> distributionAlgorithm() {
+        return this.distributionAlgorithm;
+    }
+    /**
      * The domain name for the cloud Autonomous VM cluster.
      * 
      */
@@ -450,14 +466,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.hostname;
     }
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
     @Export(name="isMtlsEnabledVmCluster", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMtlsEnabledVmCluster;
 
     /**
-     * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * @return (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
     public Output<Boolean> isMtlsEnabledVmCluster() {
@@ -806,28 +822,28 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.reservedCpus;
     }
     /**
-     * The SCAN Listener Non TLS port. Default is 1521.
+     * (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
     @Export(name="scanListenerPortNonTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortNonTls;
 
     /**
-     * @return The SCAN Listener Non TLS port. Default is 1521.
+     * @return (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
     public Output<Integer> scanListenerPortNonTls() {
         return this.scanListenerPortNonTls;
     }
     /**
-     * The SCAN Listener TLS port. Default is 2484.
+     * (Updatable) The SCAN Listener TLS port. Default is 2484.
      * 
      */
     @Export(name="scanListenerPortTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortTls;
 
     /**
-     * @return The SCAN Listener TLS port. Default is 2484.
+     * @return (Updatable) The SCAN Listener TLS port. Default is 2484.
      * 
      */
     public Output<Integer> scanListenerPortTls() {
@@ -846,6 +862,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Map<String,String>> securityAttributes() {
         return this.securityAttributes;
+    }
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    @Export(name="sgaPercentage", refs={Double.class}, tree="[0]")
+    private Output<Double> sgaPercentage;
+
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Output<Double> sgaPercentage() {
+        return this.sgaPercentage;
     }
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.

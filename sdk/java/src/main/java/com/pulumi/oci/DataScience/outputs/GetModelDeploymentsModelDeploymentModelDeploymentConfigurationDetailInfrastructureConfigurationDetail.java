@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy;
 import java.lang.Integer;
 import java.lang.String;
@@ -19,6 +20,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * 
      */
     private Integer bandwidthMbps;
+    private String computeTargetId;
     /**
      * @return The type of the model deployment infrastructure.
      * 
@@ -34,6 +36,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * 
      */
     private Integer maximumBandwidthMbps;
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
@@ -47,6 +50,9 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     public Integer bandwidthMbps() {
         return this.bandwidthMbps;
+    }
+    public String computeTargetId() {
+        return this.computeTargetId;
     }
     /**
      * @return The type of the model deployment infrastructure.
@@ -69,6 +75,9 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public Integer maximumBandwidthMbps() {
         return this.maximumBandwidthMbps;
     }
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations() {
+        return this.modelDeploymentResourceConfigurations;
+    }
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
@@ -87,17 +96,21 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     @CustomType.Builder
     public static final class Builder {
         private Integer bandwidthMbps;
+        private String computeTargetId;
         private String infrastructureType;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration> instanceConfigurations;
         private Integer maximumBandwidthMbps;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy> scalingPolicies;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthMbps = defaults.bandwidthMbps;
+    	      this.computeTargetId = defaults.computeTargetId;
     	      this.infrastructureType = defaults.infrastructureType;
     	      this.instanceConfigurations = defaults.instanceConfigurations;
     	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
+    	      this.modelDeploymentResourceConfigurations = defaults.modelDeploymentResourceConfigurations;
     	      this.scalingPolicies = defaults.scalingPolicies;
         }
 
@@ -107,6 +120,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "bandwidthMbps");
             }
             this.bandwidthMbps = bandwidthMbps;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeTargetId(String computeTargetId) {
+            if (computeTargetId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "computeTargetId");
+            }
+            this.computeTargetId = computeTargetId;
             return this;
         }
         @CustomType.Setter
@@ -137,6 +158,17 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return this;
         }
         @CustomType.Setter
+        public Builder modelDeploymentResourceConfigurations(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration> modelDeploymentResourceConfigurations) {
+            if (modelDeploymentResourceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "modelDeploymentResourceConfigurations");
+            }
+            this.modelDeploymentResourceConfigurations = modelDeploymentResourceConfigurations;
+            return this;
+        }
+        public Builder modelDeploymentResourceConfigurations(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfiguration... modelDeploymentResourceConfigurations) {
+            return modelDeploymentResourceConfigurations(List.of(modelDeploymentResourceConfigurations));
+        }
+        @CustomType.Setter
         public Builder scalingPolicies(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicy> scalingPolicies) {
             if (scalingPolicies == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail", "scalingPolicies");
@@ -150,9 +182,11 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail();
             _resultValue.bandwidthMbps = bandwidthMbps;
+            _resultValue.computeTargetId = computeTargetId;
             _resultValue.infrastructureType = infrastructureType;
             _resultValue.instanceConfigurations = instanceConfigurations;
             _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
+            _resultValue.modelDeploymentResourceConfigurations = modelDeploymentResourceConfigurations;
             _resultValue.scalingPolicies = scalingPolicies;
             return _resultValue;
         }

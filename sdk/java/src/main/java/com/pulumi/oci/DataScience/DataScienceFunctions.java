@@ -8,6 +8,12 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+import com.pulumi.oci.DataScience.inputs.GetComputeTargetsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
 import com.pulumi.oci.DataScience.inputs.GetContainersPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
@@ -98,6 +104,9 @@ import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
 import com.pulumi.oci.DataScience.inputs.GetSchedulePlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
 import com.pulumi.oci.DataScience.inputs.GetSchedulesPlainArgs;
+import com.pulumi.oci.DataScience.outputs.GetComputeTargetResult;
+import com.pulumi.oci.DataScience.outputs.GetComputeTargetShapesResult;
+import com.pulumi.oci.DataScience.outputs.GetComputeTargetsResult;
 import com.pulumi.oci.DataScience.outputs.GetContainersResult;
 import com.pulumi.oci.DataScience.outputs.GetFastLaunchJobConfigsResult;
 import com.pulumi.oci.DataScience.outputs.GetJobResult;
@@ -147,6 +156,651 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DataScienceFunctions {
+    /**
+     * This data source provides details about a specific Compute Target resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetResult> getComputeTarget(GetComputeTargetArgs args) {
+        return getComputeTarget(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Target resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetResult> getComputeTargetPlain(GetComputeTargetPlainArgs args) {
+        return getComputeTargetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Target resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetResult> getComputeTarget(GetComputeTargetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTarget:getComputeTarget", TypeShape.of(GetComputeTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Target resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetResult> getComputeTarget(GetComputeTargetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTarget:getComputeTarget", TypeShape.of(GetComputeTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Target resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the compute target for the specified `computeTargetId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTarget = DataScienceFunctions.getComputeTarget(GetComputeTargetArgs.builder()
+     *             .computeTargetId(testComputeTargetOciDatascienceComputeTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetResult> getComputeTargetPlain(GetComputeTargetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getComputeTarget:getComputeTarget", TypeShape.of(GetComputeTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid compute target shapes.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargetShapes = DataScienceFunctions.getComputeTargetShapes(GetComputeTargetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetShapesResult> getComputeTargetShapes(GetComputeTargetShapesArgs args) {
+        return getComputeTargetShapes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid compute target shapes.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargetShapes = DataScienceFunctions.getComputeTargetShapes(GetComputeTargetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetShapesResult> getComputeTargetShapesPlain(GetComputeTargetShapesPlainArgs args) {
+        return getComputeTargetShapesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid compute target shapes.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargetShapes = DataScienceFunctions.getComputeTargetShapes(GetComputeTargetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetShapesResult> getComputeTargetShapes(GetComputeTargetShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTargetShapes:getComputeTargetShapes", TypeShape.of(GetComputeTargetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid compute target shapes.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargetShapes = DataScienceFunctions.getComputeTargetShapes(GetComputeTargetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetShapesResult> getComputeTargetShapes(GetComputeTargetShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTargetShapes:getComputeTargetShapes", TypeShape.of(GetComputeTargetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Target Shapes in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the valid compute target shapes.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetShapesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargetShapes = DataScienceFunctions.getComputeTargetShapes(GetComputeTargetShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetShapesResult> getComputeTargetShapesPlain(GetComputeTargetShapesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getComputeTargetShapes:getComputeTargetShapes", TypeShape.of(GetComputeTargetShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargets = DataScienceFunctions.getComputeTargets(GetComputeTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeTargetDisplayName)
+     *             .id(computeTargetId)
+     *             .state(computeTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetsResult> getComputeTargets(GetComputeTargetsArgs args) {
+        return getComputeTargets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargets = DataScienceFunctions.getComputeTargets(GetComputeTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeTargetDisplayName)
+     *             .id(computeTargetId)
+     *             .state(computeTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetsResult> getComputeTargetsPlain(GetComputeTargetsPlainArgs args) {
+        return getComputeTargetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargets = DataScienceFunctions.getComputeTargets(GetComputeTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeTargetDisplayName)
+     *             .id(computeTargetId)
+     *             .state(computeTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetsResult> getComputeTargets(GetComputeTargetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTargets:getComputeTargets", TypeShape.of(GetComputeTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargets = DataScienceFunctions.getComputeTargets(GetComputeTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeTargetDisplayName)
+     *             .id(computeTargetId)
+     *             .state(computeTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetComputeTargetsResult> getComputeTargets(GetComputeTargetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getComputeTargets:getComputeTargets", TypeShape.of(GetComputeTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetComputeTargetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeTargets = DataScienceFunctions.getComputeTargets(GetComputeTargetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeTargetDisplayName)
+     *             .id(computeTargetId)
+     *             .state(computeTargetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetComputeTargetsResult> getComputeTargetsPlain(GetComputeTargetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getComputeTargets:getComputeTargets", TypeShape.of(GetComputeTargetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Containers in Oracle Cloud Infrastructure Data Science service.
      * 
@@ -4226,6 +4880,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args) {
         return getModelDeployment(args, InvokeOptions.Empty);
@@ -4267,6 +4966,51 @@ public final class DataScienceFunctions {
      * }
      * }
      * </pre>
+     * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args) {
@@ -4310,6 +5054,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelDeployment:getModelDeployment", TypeShape.of(GetModelDeploymentResult.class), args, Utilities.withVersion(options));
@@ -4352,6 +5141,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelDeployment:getModelDeployment", TypeShape.of(GetModelDeploymentResult.class), args, Utilities.withVersion(options));
@@ -4393,6 +5227,51 @@ public final class DataScienceFunctions {
      * }
      * }
      * </pre>
+     * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args, InvokeOptions options) {
@@ -4886,6 +5765,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Use `THRESHOLD` for `TARGET_PREDEFINED_EXPRESSION` and `QUERY` for `TARGET_CUSTOM_EXPRESSION`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args) {
         return getModelDeployments(args, InvokeOptions.Empty);
@@ -4932,6 +5856,51 @@ public final class DataScienceFunctions {
      * }
      * }
      * </pre>
+     * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Use `THRESHOLD` for `TARGET_PREDEFINED_EXPRESSION` and `QUERY` for `TARGET_CUSTOM_EXPRESSION`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args) {
@@ -4980,6 +5949,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Use `THRESHOLD` for `TARGET_PREDEFINED_EXPRESSION` and `QUERY` for `TARGET_CUSTOM_EXPRESSION`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelDeployments:getModelDeployments", TypeShape.of(GetModelDeploymentsResult.class), args, Utilities.withVersion(options));
@@ -5027,6 +6041,51 @@ public final class DataScienceFunctions {
      * }
      * </pre>
      * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Use `THRESHOLD` for `TARGET_PREDEFINED_EXPRESSION` and `QUERY` for `TARGET_CUSTOM_EXPRESSION`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataScience/getModelDeployments:getModelDeployments", TypeShape.of(GetModelDeploymentsResult.class), args, Utilities.withVersion(options));
@@ -5073,6 +6132,51 @@ public final class DataScienceFunctions {
      * }
      * }
      * </pre>
+     * 
+     * ## SINGLE_MODEL_FLEX Returned Contract
+     * 
+     * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+     * 
+     * * `modelDeploymentConfigurationDetails`
+     *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+     *   * * `modelConfigurationDetails` - The single model configuration details.
+     *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+     *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+     *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+     *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+     *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+     *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+     *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+     *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+     *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+     *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+     *               * * `memoryInGbs` - Burstable limit for memory.
+     *               * * `ocpus` - Burstable limit for cpu.
+     *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+     *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+     *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+     *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+     *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+     *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+     *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+     *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+     *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+     *               * * `rules` - The list of autoscaling policy rules.
+     *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+     *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+     *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+     *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Use `THRESHOLD` for `TARGET_PREDEFINED_EXPRESSION` and `QUERY` for `TARGET_CUSTOM_EXPRESSION`.
+     *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+     *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+     *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+     *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+     *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+     *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+     *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+     *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args, InvokeOptions options) {

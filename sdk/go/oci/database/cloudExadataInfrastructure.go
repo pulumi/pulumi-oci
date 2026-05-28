@@ -50,6 +50,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				MaintenanceVersionPreferences: &database.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs{
+//					ReferenceResourceIdForImageUpdates: pulumi.Any(cloudExadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates),
+//				},
 //				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
 //					CustomActionTimeoutInMins: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
 //					DaysOfWeeks: database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
@@ -137,6 +140,10 @@ type CloudExadataInfrastructure struct {
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	//
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences CloudExadataInfrastructureMaintenanceVersionPreferencesOutput `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
 	// The total number of CPU cores available.
@@ -264,6 +271,10 @@ type cloudExadataInfrastructureState struct {
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	//
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences *CloudExadataInfrastructureMaintenanceVersionPreferences `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *CloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// The total number of CPU cores available.
@@ -350,6 +361,10 @@ type CloudExadataInfrastructureState struct {
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	//
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences CloudExadataInfrastructureMaintenanceVersionPreferencesPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowPtrInput
 	// The total number of CPU cores available.
@@ -414,6 +429,10 @@ type cloudExadataInfrastructureArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	//
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences *CloudExadataInfrastructureMaintenanceVersionPreferences `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *CloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// The shape of the cloud Exadata infrastructure resource.
@@ -449,6 +468,10 @@ type CloudExadataInfrastructureArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	//
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences CloudExadataInfrastructureMaintenanceVersionPreferencesPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowPtrInput
 	// The shape of the cloud Exadata infrastructure resource.
@@ -665,6 +688,15 @@ func (o CloudExadataInfrastructureOutput) LastMaintenanceRunId() pulumi.StringOu
 // Additional information about the current lifecycle state.
 func (o CloudExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) The preferences for target versions of future maintenance runs.
+//
+// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+func (o CloudExadataInfrastructureOutput) MaintenanceVersionPreferences() CloudExadataInfrastructureMaintenanceVersionPreferencesOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) CloudExadataInfrastructureMaintenanceVersionPreferencesOutput {
+		return v.MaintenanceVersionPreferences
+	}).(CloudExadataInfrastructureMaintenanceVersionPreferencesOutput)
 }
 
 // (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

@@ -10,6 +10,11 @@ export const getNetworkFirewall: typeof import("./getNetworkFirewall").getNetwor
 export const getNetworkFirewallOutput: typeof import("./getNetworkFirewall").getNetworkFirewallOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkFirewall","getNetworkFirewallOutput"], () => require("./getNetworkFirewall"));
 
+export { GetNetworkFirewallHealthStatusArgs, GetNetworkFirewallHealthStatusResult, GetNetworkFirewallHealthStatusOutputArgs } from "./getNetworkFirewallHealthStatus";
+export const getNetworkFirewallHealthStatus: typeof import("./getNetworkFirewallHealthStatus").getNetworkFirewallHealthStatus = null as any;
+export const getNetworkFirewallHealthStatusOutput: typeof import("./getNetworkFirewallHealthStatus").getNetworkFirewallHealthStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkFirewallHealthStatus","getNetworkFirewallHealthStatusOutput"], () => require("./getNetworkFirewallHealthStatus"));
+
 export { GetNetworkFirewallPoliciesArgs, GetNetworkFirewallPoliciesResult, GetNetworkFirewallPoliciesOutputArgs } from "./getNetworkFirewallPolicies";
 export const getNetworkFirewallPolicies: typeof import("./getNetworkFirewallPolicies").getNetworkFirewallPolicies = null as any;
 export const getNetworkFirewallPoliciesOutput: typeof import("./getNetworkFirewallPolicies").getNetworkFirewallPoliciesOutput = null as any;

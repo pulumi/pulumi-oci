@@ -20,14 +20,14 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
     public static final GetMulticloudResourceAnchorsArgs Empty = new GetMulticloudResourceAnchorsArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -57,14 +57,14 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     public Optional<Output<String>> id() {
@@ -72,14 +72,14 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
     }
 
     /**
-     * Check the sub-compartments of a given compartmentId
+     * Check the sub-compartments of a given `compartmentId`.
      * 
      */
     @Import(name="isCompartmentIdInSubtree")
     private @Nullable Output<Boolean> isCompartmentIdInSubtree;
 
     /**
-     * @return Check the sub-compartments of a given compartmentId
+     * @return Check the sub-compartments of a given `compartmentId`.
      * 
      */
     public Optional<Output<Boolean>> isCompartmentIdInSubtree() {
@@ -124,14 +124,14 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
     }
 
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      * 
      */
     @Import(name="shouldFetchCompartmentName")
     private @Nullable Output<Boolean> shouldFetchCompartmentName;
 
     /**
-     * @return Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * @return Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      * 
      */
     public Optional<Output<Boolean>> shouldFetchCompartmentName() {
@@ -154,14 +154,14 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      * 
      */
     @Import(name="subscriptionServiceName")
     private @Nullable Output<String> subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
      * 
      */
     public Optional<Output<String>> subscriptionServiceName() {
@@ -203,7 +203,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isCompartmentIdInSubtree Check the sub-compartments of a given compartmentId
+         * @param isCompartmentIdInSubtree Check the sub-compartments of a given `compartmentId`.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isCompartmentIdInSubtree Check the sub-compartments of a given compartmentId
+         * @param isCompartmentIdInSubtree Check the sub-compartments of a given `compartmentId`.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class GetMulticloudResourceAnchorsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 

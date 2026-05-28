@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Database
         public Output<string> DbName { get; private set; } = null!;
 
         /// <summary>
-        /// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        /// (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         /// </summary>
         [Output("dbSplitThreshold")]
         public Output<int> DbSplitThreshold { get; private set; } = null!;
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+        /// (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
         /// </summary>
         [Output("distributionAffinity")]
         public Output<string> DistributionAffinity { get; private set; } = null!;
@@ -436,7 +436,7 @@ namespace Pulumi.Oci.Database
         public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         /// </summary>
         [Output("netServicesArchitecture")]
         public Output<string> NetServicesArchitecture { get; private set; } = null!;
@@ -635,7 +635,7 @@ namespace Pulumi.Oci.Database
         public Output<string> VersionPreference { get; private set; } = null!;
 
         /// <summary>
-        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        /// (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         /// </summary>
         [Output("vmFailoverReservation")]
         public Output<int> VmFailoverReservation { get; private set; } = null!;
@@ -747,7 +747,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        /// (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         /// </summary>
         [Input("dbSplitThreshold")]
         public Input<int>? DbSplitThreshold { get; set; }
@@ -783,7 +783,7 @@ namespace Pulumi.Oci.Database
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+        /// (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
         /// </summary>
         [Input("distributionAffinity")]
         public Input<string>? DistributionAffinity { get; set; }
@@ -852,7 +852,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
 
         /// <summary>
-        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         /// </summary>
         [Input("netServicesArchitecture")]
         public Input<string>? NetServicesArchitecture { get; set; }
@@ -967,7 +967,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? VersionPreference { get; set; }
 
         /// <summary>
-        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        /// (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         /// </summary>
         [Input("vmFailoverReservation")]
         public Input<int>? VmFailoverReservation { get; set; }
@@ -1107,7 +1107,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        /// (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         /// </summary>
         [Input("dbSplitThreshold")]
         public Input<int>? DbSplitThreshold { get; set; }
@@ -1143,7 +1143,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+        /// (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
         /// </summary>
         [Input("distributionAffinity")]
         public Input<string>? DistributionAffinity { get; set; }
@@ -1314,7 +1314,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? MemoryPerOracleComputeUnitInGbs { get; set; }
 
         /// <summary>
-        /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        /// (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         /// </summary>
         [Input("netServicesArchitecture")]
         public Input<string>? NetServicesArchitecture { get; set; }
@@ -1531,7 +1531,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? VersionPreference { get; set; }
 
         /// <summary>
-        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        /// (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         /// </summary>
         [Input("vmFailoverReservation")]
         public Input<int>? VmFailoverReservation { get; set; }

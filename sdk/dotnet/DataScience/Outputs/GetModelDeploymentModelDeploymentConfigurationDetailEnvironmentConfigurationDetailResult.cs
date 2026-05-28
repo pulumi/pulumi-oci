@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Cmds;
         /// <summary>
+        /// List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailCustomHttpEndpointResult> CustomHttpEndpoints;
+        /// <summary>
         /// Service injected Environment variables set for the web server container and can not be set or modified by user.
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefaultEnvironmentVariables;
@@ -50,6 +54,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string ImageSignatureId;
         /// <summary>
+        /// The chosen specification from predefined set of endpoints a user can access.  For example, if the value is 'openai', the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+        /// </summary>
+        public readonly string PredictApiSpecification;
+        /// <summary>
         /// The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         /// </summary>
         public readonly int ServerPort;
@@ -57,6 +65,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(
             ImmutableArray<string> cmds,
+
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailCustomHttpEndpointResult> customHttpEndpoints,
 
             ImmutableDictionary<string, string> defaultEnvironmentVariables,
 
@@ -74,9 +84,12 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string imageSignatureId,
 
+            string predictApiSpecification,
+
             int serverPort)
         {
             Cmds = cmds;
+            CustomHttpEndpoints = customHttpEndpoints;
             DefaultEnvironmentVariables = defaultEnvironmentVariables;
             Entrypoints = entrypoints;
             EnvironmentConfigurationType = environmentConfigurationType;
@@ -85,6 +98,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             Image = image;
             ImageDigest = imageDigest;
             ImageSignatureId = imageSignatureId;
+            PredictApiSpecification = predictApiSpecification;
             ServerPort = serverPort;
         }
     }

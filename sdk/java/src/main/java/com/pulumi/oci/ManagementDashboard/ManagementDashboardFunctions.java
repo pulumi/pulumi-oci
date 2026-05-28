@@ -10,7 +10,13 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.ManagementDashboard.inputs.GetManagementDashboardsExportArgs;
 import com.pulumi.oci.ManagementDashboard.inputs.GetManagementDashboardsExportPlainArgs;
+import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchPlainArgs;
+import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesPlainArgs;
 import com.pulumi.oci.ManagementDashboard.outputs.GetManagementDashboardsExportResult;
+import com.pulumi.oci.ManagementDashboard.outputs.GetManagementSavedSearchResult;
+import com.pulumi.oci.ManagementDashboard.outputs.GetManagementSavedSearchesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -234,5 +240,430 @@ public final class ManagementDashboardFunctions {
      */
     public static CompletableFuture<GetManagementDashboardsExportResult> getManagementDashboardsExportPlain(GetManagementDashboardsExportPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", TypeShape.of(GetManagementDashboardsExportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Saved Search resource in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets a saved search by ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchResult> getManagementSavedSearch(GetManagementSavedSearchArgs args) {
+        return getManagementSavedSearch(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Saved Search resource in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets a saved search by ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagementSavedSearchResult> getManagementSavedSearchPlain(GetManagementSavedSearchPlainArgs args) {
+        return getManagementSavedSearchPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Saved Search resource in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets a saved search by ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchResult> getManagementSavedSearch(GetManagementSavedSearchArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementDashboard/getManagementSavedSearch:getManagementSavedSearch", TypeShape.of(GetManagementSavedSearchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Saved Search resource in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets a saved search by ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchResult> getManagementSavedSearch(GetManagementSavedSearchArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementDashboard/getManagementSavedSearch:getManagementSavedSearch", TypeShape.of(GetManagementSavedSearchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Saved Search resource in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets a saved search by ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearch = ManagementDashboardFunctions.getManagementSavedSearch(GetManagementSavedSearchArgs.builder()
+     *             .managementSavedSearchId(testManagementSavedSearchOciManagementDashboardManagementSavedSearch.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagementSavedSearchResult> getManagementSavedSearchPlain(GetManagementSavedSearchPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementDashboard/getManagementSavedSearch:getManagementSavedSearch", TypeShape.of(GetManagementSavedSearchResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearches = ManagementDashboardFunctions.getManagementSavedSearches(GetManagementSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementSavedSearchDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchesResult> getManagementSavedSearches(GetManagementSavedSearchesArgs args) {
+        return getManagementSavedSearches(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearches = ManagementDashboardFunctions.getManagementSavedSearches(GetManagementSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementSavedSearchDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagementSavedSearchesResult> getManagementSavedSearchesPlain(GetManagementSavedSearchesPlainArgs args) {
+        return getManagementSavedSearchesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearches = ManagementDashboardFunctions.getManagementSavedSearches(GetManagementSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementSavedSearchDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchesResult> getManagementSavedSearches(GetManagementSavedSearchesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementDashboard/getManagementSavedSearches:getManagementSavedSearches", TypeShape.of(GetManagementSavedSearchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearches = ManagementDashboardFunctions.getManagementSavedSearches(GetManagementSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementSavedSearchDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagementSavedSearchesResult> getManagementSavedSearches(GetManagementSavedSearchesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementDashboard/getManagementSavedSearches:getManagementSavedSearches", TypeShape.of(GetManagementSavedSearchesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Management Saved Searches in Oracle Cloud Infrastructure Management Dashboard service.
+     * 
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementDashboard.ManagementDashboardFunctions;
+     * import com.pulumi.oci.ManagementDashboard.inputs.GetManagementSavedSearchesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementSavedSearches = ManagementDashboardFunctions.getManagementSavedSearches(GetManagementSavedSearchesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementSavedSearchDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagementSavedSearchesResult> getManagementSavedSearchesPlain(GetManagementSavedSearchesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementDashboard/getManagementSavedSearches:getManagementSavedSearches", TypeShape.of(GetManagementSavedSearchesResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelinePipelineDiagnosticData {
     /**
-     * @return Name of the bucket where the object is to be uploaded in the object storage
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     private @Nullable String bucket;
@@ -22,7 +22,7 @@ public final class PipelinePipelineDiagnosticData {
      */
     private @Nullable String diagnosticState;
     /**
-     * @return Name of namespace that serves as a container for all of your buckets
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     private @Nullable String namespace;
@@ -39,7 +39,7 @@ public final class PipelinePipelineDiagnosticData {
 
     private PipelinePipelineDiagnosticData() {}
     /**
-     * @return Name of the bucket where the object is to be uploaded in the object storage
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public Optional<String> bucket() {
@@ -53,7 +53,7 @@ public final class PipelinePipelineDiagnosticData {
         return Optional.ofNullable(this.diagnosticState);
     }
     /**
-     * @return Name of namespace that serves as a container for all of your buckets
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public Optional<String> namespace() {

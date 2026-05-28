@@ -509,15 +509,15 @@ public final class DistributedDatabaseDistributedDatabaseArgs extends com.pulumi
      * Collection of shards for the Globally distributed database.
      * 
      */
-    @Import(name="shardDetails", required=true)
-    private Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>> shardDetails;
+    @Import(name="shardDetails")
+    private @Nullable Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>> shardDetails;
 
     /**
      * @return Collection of shards for the Globally distributed database.
      * 
      */
-    public Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>> shardDetails() {
-        return this.shardDetails;
+    public Optional<Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>>> shardDetails() {
+        return Optional.ofNullable(this.shardDetails);
     }
 
     /**
@@ -1394,7 +1394,7 @@ public final class DistributedDatabaseDistributedDatabaseArgs extends com.pulumi
          * @return builder
          * 
          */
-        public Builder shardDetails(Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>> shardDetails) {
+        public Builder shardDetails(@Nullable Output<List<DistributedDatabaseDistributedDatabaseShardDetailArgs>> shardDetails) {
             $.shardDetails = shardDetails;
             return this;
         }
@@ -1604,9 +1604,6 @@ public final class DistributedDatabaseDistributedDatabaseArgs extends com.pulumi
             }
             if ($.privateEndpointIds == null) {
                 throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseArgs", "privateEndpointIds");
-            }
-            if ($.shardDetails == null) {
-                throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseArgs", "shardDetails");
             }
             if ($.shardingMethod == null) {
                 throw new MissingRequiredPropertyException("DistributedDatabaseDistributedDatabaseArgs", "shardingMethod");

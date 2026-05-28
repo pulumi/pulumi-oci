@@ -35,12 +35,6 @@ namespace Pulumi.Oci.DataScience
     ///         AuthConfiguration = new Oci.DataScience.Inputs.MlApplicationInstanceAuthConfigurationArgs
     ///         {
     ///             Type = mlApplicationInstanceAuthConfigurationType,
-    ///             AccessToken = mlApplicationInstanceAuthConfigurationAccessToken,
-    ///             ApplicationName = testApplication.Name,
-    ///             Audience = mlApplicationInstanceAuthConfigurationAudience,
-    ///             DomainId = testDomain.Id,
-    ///             RoleName = mlApplicationInstanceAuthConfigurationRoleName,
-    ///             Scope = mlApplicationInstanceAuthConfigurationScope,
     ///         },
     ///         Configurations = new[]
     ///         {

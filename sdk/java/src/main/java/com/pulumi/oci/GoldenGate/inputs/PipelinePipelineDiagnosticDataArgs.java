@@ -16,14 +16,14 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
     public static final PipelinePipelineDiagnosticDataArgs Empty = new PipelinePipelineDiagnosticDataArgs();
 
     /**
-     * Name of the bucket where the object is to be uploaded in the object storage
+     * Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return Name of the bucket where the object is to be uploaded in the object storage
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -46,14 +46,14 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
     }
 
     /**
-     * Name of namespace that serves as a container for all of your buckets
+     * Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return Name of namespace that serves as a container for all of your buckets
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -119,7 +119,7 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param bucket Name of the bucket where the object is to be uploaded in the object storage
+         * @param bucket Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param bucket Name of the bucket where the object is to be uploaded in the object storage
+         * @param bucket Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace Name of namespace that serves as a container for all of your buckets
+         * @param namespace Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class PipelinePipelineDiagnosticDataArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace Name of namespace that serves as a container for all of your buckets
+         * @param namespace Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
          * 
          * @return builder
          * 

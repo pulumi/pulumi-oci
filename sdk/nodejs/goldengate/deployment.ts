@@ -107,6 +107,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     */
+    declare public readonly disasterRecoveryStatus: pulumi.Output<string>;
+    /**
      * (Updatable) An object's Display Name.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -316,6 +320,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deploymentType"] = state?.deploymentType;
             resourceInputs["deploymentUrl"] = state?.deploymentUrl;
             resourceInputs["description"] = state?.description;
+            resourceInputs["disasterRecoveryStatus"] = state?.disasterRecoveryStatus;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["environmentType"] = state?.environmentType;
             resourceInputs["faultDomain"] = state?.faultDomain;
@@ -379,6 +384,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["deploymentBackupId"] = args?.deploymentBackupId;
             resourceInputs["deploymentType"] = args?.deploymentType;
             resourceInputs["description"] = args?.description;
+            resourceInputs["disasterRecoveryStatus"] = args?.disasterRecoveryStatus;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["environmentType"] = args?.environmentType;
             resourceInputs["faultDomain"] = args?.faultDomain;
@@ -491,6 +497,10 @@ export interface DeploymentState {
      * (Updatable) Metadata about this specific object.
      */
     description?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     */
+    disasterRecoveryStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
@@ -719,6 +729,10 @@ export interface DeploymentArgs {
      * (Updatable) Metadata about this specific object.
      */
     description?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     */
+    disasterRecoveryStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */

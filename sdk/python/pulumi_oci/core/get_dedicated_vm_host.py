@@ -27,7 +27,7 @@ class GetDedicatedVmHostResult:
     """
     A collection of values returned by getDedicatedVmHost.
     """
-    def __init__(__self__, availability_domain=None, capacity_bins=None, capacity_config=None, compartment_id=None, compute_bare_metal_host_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, is_memory_encryption_enabled=None, placement_constraint_details=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_memory_in_gbs=None, total_ocpus=None):
+    def __init__(__self__, availability_domain=None, capacity_bins=None, capacity_config=None, compartment_id=None, compute_bare_metal_host_id=None, dedicated_vm_host_id=None, dedicated_vm_host_shape=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, is_memory_encryption_enabled=None, placement_constraint_details=None, remaining_local_volume_in_gbs=None, remaining_memory_in_gbs=None, remaining_ocpus=None, state=None, time_created=None, total_local_volume_in_gbs=None, total_memory_in_gbs=None, total_ocpus=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -70,6 +70,9 @@ class GetDedicatedVmHostResult:
         if placement_constraint_details and not isinstance(placement_constraint_details, list):
             raise TypeError("Expected argument 'placement_constraint_details' to be a list")
         pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
+        if remaining_local_volume_in_gbs and not isinstance(remaining_local_volume_in_gbs, float):
+            raise TypeError("Expected argument 'remaining_local_volume_in_gbs' to be a float")
+        pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         if remaining_memory_in_gbs and not isinstance(remaining_memory_in_gbs, float):
             raise TypeError("Expected argument 'remaining_memory_in_gbs' to be a float")
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
@@ -82,6 +85,9 @@ class GetDedicatedVmHostResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if total_local_volume_in_gbs and not isinstance(total_local_volume_in_gbs, float):
+            raise TypeError("Expected argument 'total_local_volume_in_gbs' to be a float")
+        pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         if total_memory_in_gbs and not isinstance(total_memory_in_gbs, float):
             raise TypeError("Expected argument 'total_memory_in_gbs' to be a float")
         pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
@@ -100,6 +106,9 @@ class GetDedicatedVmHostResult:
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostCapacityBinResult']:
+        """
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property
@@ -196,6 +205,14 @@ class GetDedicatedVmHostResult:
         return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> _builtins.float:
         """
@@ -226,6 +243,14 @@ class GetDedicatedVmHostResult:
         The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -264,10 +289,12 @@ class AwaitableGetDedicatedVmHostResult(GetDedicatedVmHostResult):
             id=self.id,
             is_memory_encryption_enabled=self.is_memory_encryption_enabled,
             placement_constraint_details=self.placement_constraint_details,
+            remaining_local_volume_in_gbs=self.remaining_local_volume_in_gbs,
             remaining_memory_in_gbs=self.remaining_memory_in_gbs,
             remaining_ocpus=self.remaining_ocpus,
             state=self.state,
             time_created=self.time_created,
+            total_local_volume_in_gbs=self.total_local_volume_in_gbs,
             total_memory_in_gbs=self.total_memory_in_gbs,
             total_ocpus=self.total_ocpus)
 
@@ -311,10 +338,12 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_memory_encryption_enabled=pulumi.get(__ret__, 'is_memory_encryption_enabled'),
         placement_constraint_details=pulumi.get(__ret__, 'placement_constraint_details'),
+        remaining_local_volume_in_gbs=pulumi.get(__ret__, 'remaining_local_volume_in_gbs'),
         remaining_memory_in_gbs=pulumi.get(__ret__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__ret__, 'remaining_ocpus'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        total_local_volume_in_gbs=pulumi.get(__ret__, 'total_local_volume_in_gbs'),
         total_memory_in_gbs=pulumi.get(__ret__, 'total_memory_in_gbs'),
         total_ocpus=pulumi.get(__ret__, 'total_ocpus'))
 def get_dedicated_vm_host_output(dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -355,9 +384,11 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: pulumi.Input[Optional[_bu
         id=pulumi.get(__response__, 'id'),
         is_memory_encryption_enabled=pulumi.get(__response__, 'is_memory_encryption_enabled'),
         placement_constraint_details=pulumi.get(__response__, 'placement_constraint_details'),
+        remaining_local_volume_in_gbs=pulumi.get(__response__, 'remaining_local_volume_in_gbs'),
         remaining_memory_in_gbs=pulumi.get(__response__, 'remaining_memory_in_gbs'),
         remaining_ocpus=pulumi.get(__response__, 'remaining_ocpus'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
+        total_local_volume_in_gbs=pulumi.get(__response__, 'total_local_volume_in_gbs'),
         total_memory_in_gbs=pulumi.get(__response__, 'total_memory_in_gbs'),
         total_ocpus=pulumi.get(__response__, 'total_ocpus')))

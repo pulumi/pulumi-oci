@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     private String category;
@@ -52,6 +52,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     private List<String> supportedCapabilities;
     /**
+     * @return The list of Oracle license models supported by the deployment type.
+     * 
+     */
+    private List<String> supportedLicenseTypes;
+    /**
      * @return The URL to the webpage listing the supported technologies.
      * 
      */
@@ -64,7 +69,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
 
     private GetDeploymentTypesDeploymentTypeCollectionItem() {}
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     public String category() {
@@ -120,6 +125,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         return this.supportedCapabilities;
     }
     /**
+     * @return The list of Oracle license models supported by the deployment type.
+     * 
+     */
+    public List<String> supportedLicenseTypes() {
+        return this.supportedLicenseTypes;
+    }
+    /**
      * @return The URL to the webpage listing the supported technologies.
      * 
      */
@@ -151,6 +163,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         private String oggVersion;
         private List<String> sourceTechnologies;
         private List<String> supportedCapabilities;
+        private List<String> supportedLicenseTypes;
         private String supportedTechnologiesUrl;
         private List<String> targetTechnologies;
         public Builder() {}
@@ -164,6 +177,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     	      this.oggVersion = defaults.oggVersion;
     	      this.sourceTechnologies = defaults.sourceTechnologies;
     	      this.supportedCapabilities = defaults.supportedCapabilities;
+    	      this.supportedLicenseTypes = defaults.supportedLicenseTypes;
     	      this.supportedTechnologiesUrl = defaults.supportedTechnologiesUrl;
     	      this.targetTechnologies = defaults.targetTechnologies;
         }
@@ -242,6 +256,17 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return supportedCapabilities(List.of(supportedCapabilities));
         }
         @CustomType.Setter
+        public Builder supportedLicenseTypes(List<String> supportedLicenseTypes) {
+            if (supportedLicenseTypes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedLicenseTypes");
+            }
+            this.supportedLicenseTypes = supportedLicenseTypes;
+            return this;
+        }
+        public Builder supportedLicenseTypes(String... supportedLicenseTypes) {
+            return supportedLicenseTypes(List.of(supportedLicenseTypes));
+        }
+        @CustomType.Setter
         public Builder supportedTechnologiesUrl(String supportedTechnologiesUrl) {
             if (supportedTechnologiesUrl == null) {
               throw new MissingRequiredPropertyException("GetDeploymentTypesDeploymentTypeCollectionItem", "supportedTechnologiesUrl");
@@ -270,6 +295,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             _resultValue.oggVersion = oggVersion;
             _resultValue.sourceTechnologies = sourceTechnologies;
             _resultValue.supportedCapabilities = supportedCapabilities;
+            _resultValue.supportedLicenseTypes = supportedLicenseTypes;
             _resultValue.supportedTechnologiesUrl = supportedTechnologiesUrl;
             _resultValue.targetTechnologies = targetTechnologies;
             return _resultValue;

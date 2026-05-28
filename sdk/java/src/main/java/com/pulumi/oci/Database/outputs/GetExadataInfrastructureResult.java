@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureExascaleConfig;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceVersionPreference;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureNetworkBondingModeDetail;
 import java.lang.Boolean;
@@ -188,6 +189,11 @@ public final class GetExadataInfrastructureResult {
      * 
      */
     private String maintenanceSloStatus;
+    /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    private List<GetExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
@@ -531,6 +537,13 @@ public final class GetExadataInfrastructureResult {
         return this.maintenanceSloStatus;
     }
     /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    public List<GetExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences() {
+        return this.maintenanceVersionPreferences;
+    }
+    /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -716,6 +729,7 @@ public final class GetExadataInfrastructureResult {
         private Boolean isSchedulingPolicyAssociated;
         private String lifecycleDetails;
         private String maintenanceSloStatus;
+        private List<GetExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
         private List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows;
         private Integer maxCpuCount;
         private Double maxDataStorageInTbs;
@@ -775,6 +789,7 @@ public final class GetExadataInfrastructureResult {
     	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSloStatus = defaults.maintenanceSloStatus;
+    	      this.maintenanceVersionPreferences = defaults.maintenanceVersionPreferences;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.maxCpuCount = defaults.maxCpuCount;
     	      this.maxDataStorageInTbs = defaults.maxDataStorageInTbs;
@@ -1098,6 +1113,17 @@ public final class GetExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceVersionPreferences(List<GetExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences) {
+            if (maintenanceVersionPreferences == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "maintenanceVersionPreferences");
+            }
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            return this;
+        }
+        public Builder maintenanceVersionPreferences(GetExadataInfrastructureMaintenanceVersionPreference... maintenanceVersionPreferences) {
+            return maintenanceVersionPreferences(List.of(maintenanceVersionPreferences));
+        }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
             if (maintenanceWindows == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "maintenanceWindows");
@@ -1304,6 +1330,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceSloStatus = maintenanceSloStatus;
+            _resultValue.maintenanceVersionPreferences = maintenanceVersionPreferences;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.maxCpuCount = maxCpuCount;
             _resultValue.maxDataStorageInTbs = maxDataStorageInTbs;

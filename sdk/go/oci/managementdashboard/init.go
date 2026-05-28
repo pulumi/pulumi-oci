@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport":
 		r = &ManagementDashboardsImport{}
+	case "oci:ManagementDashboard/managementSavedSearch:ManagementSavedSearch":
+		r = &ManagementSavedSearch{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ManagementDashboard/managementDashboardsImport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ManagementDashboard/managementSavedSearch",
 		&module{version},
 	)
 }

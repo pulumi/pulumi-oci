@@ -75,6 +75,11 @@ public final class GetNetworkFirewallResult {
      */
     private List<String> networkSecurityGroupIds;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape of a firewall to determine the bandwidth that the firewall allows.
      * 
      */
@@ -194,6 +199,13 @@ public final class GetNetworkFirewallResult {
         return this.networkSecurityGroupIds;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of a firewall to determine the bandwidth that the firewall allows.
      * 
      */
@@ -258,6 +270,7 @@ public final class GetNetworkFirewallResult {
         private String networkFirewallId;
         private String networkFirewallPolicyId;
         private List<String> networkSecurityGroupIds;
+        private Map<String,String> securityAttributes;
         private String shape;
         private String state;
         private String subnetId;
@@ -280,6 +293,7 @@ public final class GetNetworkFirewallResult {
     	      this.networkFirewallId = defaults.networkFirewallId;
     	      this.networkFirewallPolicyId = defaults.networkFirewallPolicyId;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -399,6 +413,14 @@ public final class GetNetworkFirewallResult {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetNetworkFirewallResult", "shape");
@@ -461,6 +483,7 @@ public final class GetNetworkFirewallResult {
             _resultValue.networkFirewallId = networkFirewallId;
             _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

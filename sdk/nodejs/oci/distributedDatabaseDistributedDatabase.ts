@@ -288,6 +288,7 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
      * @deprecated This trigger/action API is deprecated.
      */
     declare public readonly downloadGsmCertificateSigningRequestTrigger: pulumi.Output<number | undefined>;
+    declare public /*out*/ readonly effectiveReplicationUnit: pulumi.Output<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -354,7 +355,7 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
     /**
      * (Updatable)
      */
-    declare public readonly patchOperations: pulumi.Output<outputs.oci.DistributedDatabaseDistributedDatabasePatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.oci.DistributedDatabaseDistributedDatabasePatchOperation[]>;
     /**
      * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
@@ -458,6 +459,7 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = state?.downloadGsmCertificateSigningRequestTrigger;
+            resourceInputs["effectiveReplicationUnit"] = state?.effectiveReplicationUnit;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["generateGsmCertificateSigningRequestTrigger"] = state?.generateGsmCertificateSigningRequestTrigger;
             resourceInputs["generateWalletDownloadedWalletContentLength"] = state?.generateWalletDownloadedWalletContentLength;
@@ -534,9 +536,6 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
             if (args?.privateEndpointIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateEndpointIds'");
             }
-            if (args?.shardDetails === undefined && !opts.urn) {
-                throw new Error("Missing required property 'shardDetails'");
-            }
             if (args?.shardingMethod === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shardingMethod'");
             }
@@ -581,6 +580,7 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
             resourceInputs["validateNetworkDetails"] = args?.validateNetworkDetails;
             resourceInputs["validateNetworkTrigger"] = args?.validateNetworkTrigger;
             resourceInputs["connectionStrings"] = undefined /*out*/;
+            resourceInputs["effectiveReplicationUnit"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletContentLength"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletEtag"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletLastModified"] = undefined /*out*/;
@@ -659,6 +659,7 @@ export interface DistributedDatabaseDistributedDatabaseState {
      * @deprecated This trigger/action API is deprecated.
      */
     downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    effectiveReplicationUnit?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -936,7 +937,7 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * Collection of shards for the Globally distributed database.
      */
-    shardDetails: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetail>[]>;
+    shardDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetail>[] | undefined>;
     /**
      * Sharding Methods for the Globally distributed database.
      */

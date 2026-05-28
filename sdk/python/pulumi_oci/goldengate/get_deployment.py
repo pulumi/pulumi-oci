@@ -27,7 +27,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, cluster_placement_group_id=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, security_attributes=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, cluster_placement_group_id=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, disaster_recovery_status=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, security_attributes=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -73,6 +73,9 @@ class GetDeploymentResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if disaster_recovery_status and not isinstance(disaster_recovery_status, str):
+            raise TypeError("Expected argument 'disaster_recovery_status' to be a str")
+        pulumi.set(__self__, "disaster_recovery_status", disaster_recovery_status)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -231,7 +234,7 @@ class GetDeploymentResult:
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         """
         return pulumi.get(self, "category")
 
@@ -319,6 +322,14 @@ class GetDeploymentResult:
         Metadata about this specific object.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="disasterRecoveryStatus")
+    def disaster_recovery_status(self) -> _builtins.str:
+        """
+        Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        """
+        return pulumi.get(self, "disaster_recovery_status")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -684,6 +695,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             deployment_type=self.deployment_type,
             deployment_url=self.deployment_url,
             description=self.description,
+            disaster_recovery_status=self.disaster_recovery_status,
             display_name=self.display_name,
             environment_type=self.environment_type,
             fault_domain=self.fault_domain,
@@ -769,6 +781,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         deployment_type=pulumi.get(__ret__, 'deployment_type'),
         deployment_url=pulumi.get(__ret__, 'deployment_url'),
         description=pulumi.get(__ret__, 'description'),
+        disaster_recovery_status=pulumi.get(__ret__, 'disaster_recovery_status'),
         display_name=pulumi.get(__ret__, 'display_name'),
         environment_type=pulumi.get(__ret__, 'environment_type'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
@@ -851,6 +864,7 @@ def get_deployment_output(deployment_id: pulumi.Input[Optional[_builtins.str]] =
         deployment_type=pulumi.get(__response__, 'deployment_type'),
         deployment_url=pulumi.get(__response__, 'deployment_url'),
         description=pulumi.get(__response__, 'description'),
+        disaster_recovery_status=pulumi.get(__response__, 'disaster_recovery_status'),
         display_name=pulumi.get(__response__, 'display_name'),
         environment_type=pulumi.get(__response__, 'environment_type'),
         fault_domain=pulumi.get(__response__, 'fault_domain'),

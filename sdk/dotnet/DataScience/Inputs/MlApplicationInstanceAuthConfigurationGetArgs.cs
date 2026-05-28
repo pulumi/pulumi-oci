@@ -13,18 +13,6 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class MlApplicationInstanceAuthConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the IDCS application
-        /// </summary>
-        [Input("applicationName")]
-        public Input<string>? ApplicationName { get; set; }
-
-        /// <summary>
-        /// Identity Domain OCID
-        /// </summary>
-        [Input("domainId")]
-        public Input<string>? DomainId { get; set; }
-
-        /// <summary>
         /// Type of AuthN/Z
         /// </summary>
         [Input("type", required: true)]

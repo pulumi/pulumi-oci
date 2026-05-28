@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The minimum network bandwidth for the model deployment.
         /// </summary>
         public readonly int BandwidthMbps;
+        public readonly string ComputeTargetId;
         /// <summary>
         /// The type of the model deployment infrastructure.
         /// </summary>
@@ -29,6 +30,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The maximum network bandwidth for the model deployment.
         /// </summary>
         public readonly int MaximumBandwidthMbps;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult> ModelDeploymentResourceConfigurations;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -38,18 +40,24 @@ namespace Pulumi.Oci.DataScience.Outputs
         private GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult(
             int bandwidthMbps,
 
+            string computeTargetId,
+
             string infrastructureType,
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult> instanceConfigurations,
 
             int maximumBandwidthMbps,
 
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailModelDeploymentResourceConfigurationResult> modelDeploymentResourceConfigurations,
+
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult> scalingPolicies)
         {
             BandwidthMbps = bandwidthMbps;
+            ComputeTargetId = computeTargetId;
             InfrastructureType = infrastructureType;
             InstanceConfigurations = instanceConfigurations;
             MaximumBandwidthMbps = maximumBandwidthMbps;
+            ModelDeploymentResourceConfigurations = modelDeploymentResourceConfigurations;
             ScalingPolicies = scalingPolicies;
         }
     }

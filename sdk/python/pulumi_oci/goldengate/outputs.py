@@ -72,6 +72,7 @@ __all__ = [
     'GetDeploymentCertificatesCertificateCollectionItemResult',
     'GetDeploymentCertificatesFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
+    'GetDeploymentDisasterRecoveryPrecheckReportCheckResult',
     'GetDeploymentEnvironmentsDeploymentEnvironmentCollectionResult',
     'GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult',
     'GetDeploymentEnvironmentsFilterResult',
@@ -1270,18 +1271,20 @@ class DeploymentOggData(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "deploymentName":
-            suggest = "deployment_name"
-        elif key == "adminPassword":
+        if key == "adminPassword":
             suggest = "admin_password"
         elif key == "adminUsername":
             suggest = "admin_username"
         elif key == "credentialStore":
             suggest = "credential_store"
+        elif key == "deploymentName":
+            suggest = "deployment_name"
         elif key == "groupToRolesMapping":
             suggest = "group_to_roles_mapping"
         elif key == "identityDomainId":
             suggest = "identity_domain_id"
+        elif key == "keySecretId":
+            suggest = "key_secret_id"
         elif key == "oggVersion":
             suggest = "ogg_version"
         elif key == "passwordSecretId":
@@ -1299,29 +1302,30 @@ class DeploymentOggData(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 deployment_name: _builtins.str,
                  admin_password: Optional[_builtins.str] = None,
                  admin_username: Optional[_builtins.str] = None,
                  certificate: Optional[_builtins.str] = None,
                  credential_store: Optional[_builtins.str] = None,
+                 deployment_name: Optional[_builtins.str] = None,
                  group_to_roles_mapping: Optional['outputs.DeploymentOggDataGroupToRolesMapping'] = None,
                  identity_domain_id: Optional[_builtins.str] = None,
                  key: Optional[_builtins.str] = None,
+                 key_secret_id: Optional[_builtins.str] = None,
                  ogg_version: Optional[_builtins.str] = None,
                  password_secret_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param _builtins.str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param _builtins.str admin_username: (Updatable) The GoldenGate deployment console username.
         :param _builtins.str certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param _builtins.str credential_store: (Updatable) The type of credential store for OGG.
+        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
         :param 'DeploymentOggDataGroupToRolesMappingArgs' group_to_roles_mapping: (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param _builtins.str key: (Updatable) The base64 encoded content of the PEM file containing the private key.
+        :param _builtins.str key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
         :param _builtins.str ogg_version: Version of OGG
         :param _builtins.str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
         if admin_username is not None:
@@ -1330,24 +1334,20 @@ class DeploymentOggData(dict):
             pulumi.set(__self__, "certificate", certificate)
         if credential_store is not None:
             pulumi.set(__self__, "credential_store", credential_store)
+        if deployment_name is not None:
+            pulumi.set(__self__, "deployment_name", deployment_name)
         if group_to_roles_mapping is not None:
             pulumi.set(__self__, "group_to_roles_mapping", group_to_roles_mapping)
         if identity_domain_id is not None:
             pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if key_secret_id is not None:
+            pulumi.set(__self__, "key_secret_id", key_secret_id)
         if ogg_version is not None:
             pulumi.set(__self__, "ogg_version", ogg_version)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
-
-    @_builtins.property
-    @pulumi.getter(name="deploymentName")
-    def deployment_name(self) -> _builtins.str:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
-        return pulumi.get(self, "deployment_name")
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -1383,6 +1383,14 @@ class DeploymentOggData(dict):
         return pulumi.get(self, "credential_store")
 
     @_builtins.property
+    @pulumi.getter(name="deploymentName")
+    def deployment_name(self) -> Optional[_builtins.str]:
+        """
+        The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+        """
+        return pulumi.get(self, "deployment_name")
+
+    @_builtins.property
     @pulumi.getter(name="groupToRolesMapping")
     def group_to_roles_mapping(self) -> Optional['outputs.DeploymentOggDataGroupToRolesMapping']:
         """
@@ -1405,6 +1413,14 @@ class DeploymentOggData(dict):
         (Updatable) The base64 encoded content of the PEM file containing the private key.
         """
         return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keySecretId")
+    def key_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        """
+        return pulumi.get(self, "key_secret_id")
 
     @_builtins.property
     @pulumi.getter(name="oggVersion")
@@ -1747,9 +1763,9 @@ class PipelinePipelineDiagnosticData(dict):
                  object: Optional[_builtins.str] = None,
                  time_last_collected: Optional[_builtins.str] = None):
         """
-        :param _builtins.str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param _builtins.str bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str diagnostic_state: The state of the pipeline diagnostics collection.
-        :param _builtins.str namespace: Name of namespace that serves as a container for all of your buckets
+        :param _builtins.str namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str object: Name of the diagnostic collected and uploaded to object storage
         :param _builtins.str time_last_collected: The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
@@ -1768,7 +1784,7 @@ class PipelinePipelineDiagnosticData(dict):
     @pulumi.getter
     def bucket(self) -> Optional[_builtins.str]:
         """
-        Name of the bucket where the object is to be uploaded in the object storage
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "bucket")
 
@@ -1784,7 +1800,7 @@ class PipelinePipelineDiagnosticData(dict):
     @pulumi.getter
     def namespace(self) -> Optional[_builtins.str]:
         """
-        Name of namespace that serves as a container for all of your buckets
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "namespace")
 
@@ -1889,6 +1905,14 @@ class PipelineProcessOptionsInitialDataLoad(dict):
             suggest = "is_initial_load"
         elif key == "actionOnExistingTable":
             suggest = "action_on_existing_table"
+        elif key == "adbWalletPath":
+            suggest = "adb_wallet_path"
+        elif key == "initialLoadType":
+            suggest = "initial_load_type"
+        elif key == "sourceWalletPath":
+            suggest = "source_wallet_path"
+        elif key == "targetWalletPath":
+            suggest = "target_wallet_path"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PipelineProcessOptionsInitialDataLoad. Access the value via the '{suggest}' property getter instead.")
@@ -1903,14 +1927,38 @@ class PipelineProcessOptionsInitialDataLoad(dict):
 
     def __init__(__self__, *,
                  is_initial_load: _builtins.str,
-                 action_on_existing_table: Optional[_builtins.str] = None):
+                 action_on_existing_table: Optional[_builtins.str] = None,
+                 adb_wallet_path: Optional[_builtins.str] = None,
+                 bucket: Optional[_builtins.str] = None,
+                 initial_load_type: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 source_wallet_path: Optional[_builtins.str] = None,
+                 target_wallet_path: Optional[_builtins.str] = None):
         """
         :param _builtins.str is_initial_load: (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
         :param _builtins.str action_on_existing_table: (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param _builtins.str adb_wallet_path: (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        :param _builtins.str bucket: (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str initial_load_type: (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+        :param _builtins.str namespace: (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str source_wallet_path: (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        :param _builtins.str target_wallet_path: (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
         """
         pulumi.set(__self__, "is_initial_load", is_initial_load)
         if action_on_existing_table is not None:
             pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        if adb_wallet_path is not None:
+            pulumi.set(__self__, "adb_wallet_path", adb_wallet_path)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if initial_load_type is not None:
+            pulumi.set(__self__, "initial_load_type", initial_load_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if source_wallet_path is not None:
+            pulumi.set(__self__, "source_wallet_path", source_wallet_path)
+        if target_wallet_path is not None:
+            pulumi.set(__self__, "target_wallet_path", target_wallet_path)
 
     @_builtins.property
     @pulumi.getter(name="isInitialLoad")
@@ -1927,6 +1975,54 @@ class PipelineProcessOptionsInitialDataLoad(dict):
         (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
         """
         return pulumi.get(self, "action_on_existing_table")
+
+    @_builtins.property
+    @pulumi.getter(name="adbWalletPath")
+    def adb_wallet_path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        """
+        return pulumi.get(self, "adb_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="initialLoadType")
+    def initial_load_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+        """
+        return pulumi.get(self, "initial_load_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceWalletPath")
+    def source_wallet_path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        """
+        return pulumi.get(self, "source_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter(name="targetWalletPath")
+    def target_wallet_path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+        """
+        return pulumi.get(self, "target_wallet_path")
 
 
 @pulumi.output_type
@@ -5576,6 +5672,101 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentDisasterRecoveryPrecheckReportCheckResult(dict):
+    def __init__(__self__, *,
+                 code: _builtins.str,
+                 corrective_action: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 key: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 related_resource_type: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str code: The code returned when GoldenGate reports an error while running a step during pipeline initialization. https://docs.oracle.com/en/middleware/goldengate/core/23/error-messages/ogg-00001-ogg-40000.html#GUID-97FF7AA7-7A5C-4AA7-B29F-3CC8D26761F2
+        :param _builtins.str corrective_action: The corrective action for non-passing checks. Null for passed checks.
+        :param _builtins.str description: Metadata about this specific object.
+        :param _builtins.str display_name: An object's Display Name.
+        :param _builtins.str key: UUID to uniquely identify the each check result.
+        :param _builtins.str related_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the corresponding check.
+        :param _builtins.str related_resource_type: Type of resource related to corresponding check.
+        :param _builtins.str status: Status of the DR precheck result.
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "corrective_action", corrective_action)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "related_resource_type", related_resource_type)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> _builtins.str:
+        """
+        The code returned when GoldenGate reports an error while running a step during pipeline initialization. https://docs.oracle.com/en/middleware/goldengate/core/23/error-messages/ogg-00001-ogg-40000.html#GUID-97FF7AA7-7A5C-4AA7-B29F-3CC8D26761F2
+        """
+        return pulumi.get(self, "code")
+
+    @_builtins.property
+    @pulumi.getter(name="correctiveAction")
+    def corrective_action(self) -> _builtins.str:
+        """
+        The corrective action for non-passing checks. Null for passed checks.
+        """
+        return pulumi.get(self, "corrective_action")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Metadata about this specific object.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        An object's Display Name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        UUID to uniquely identify the each check result.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the corresponding check.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceType")
+    def related_resource_type(self) -> _builtins.str:
+        """
+        Type of resource related to corresponding check.
+        """
+        return pulumi.get(self, "related_resource_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the DR precheck result.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
 class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult']):
@@ -5607,7 +5798,7 @@ class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult(dict):
                  network_bandwidth_per_ocpu_in_gbps: _builtins.int,
                  storage_usage_limit_per_ocpu_in_gbs: _builtins.int):
         """
-        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         :param _builtins.int default_cpu_core_count: The default CPU core count.
         :param _builtins.str display_name: An object's Display Name.
         :param _builtins.str environment_type: Specifies whether the deployment is used in a production or development/testing environment.
@@ -5633,7 +5824,7 @@ class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemResult(dict):
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         """
         return pulumi.get(self, "category")
 
@@ -5908,6 +6099,7 @@ class GetDeploymentOggDataResult(dict):
                  group_to_roles_mappings: Sequence['outputs.GetDeploymentOggDataGroupToRolesMappingResult'],
                  identity_domain_id: _builtins.str,
                  key: _builtins.str,
+                 key_secret_id: _builtins.str,
                  ogg_version: _builtins.str,
                  password_secret_id: _builtins.str):
         """
@@ -5917,6 +6109,7 @@ class GetDeploymentOggDataResult(dict):
         :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param Sequence['GetDeploymentOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        :param _builtins.str key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
         :param _builtins.str ogg_version: Version of OGG
         :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
@@ -5928,6 +6121,7 @@ class GetDeploymentOggDataResult(dict):
         pulumi.set(__self__, "group_to_roles_mappings", group_to_roles_mappings)
         pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_secret_id", key_secret_id)
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "password_secret_id", password_secret_id)
 
@@ -5989,6 +6183,14 @@ class GetDeploymentOggDataResult(dict):
     @pulumi.getter
     def key(self) -> _builtins.str:
         return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keySecretId")
+    def key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        """
+        return pulumi.get(self, "key_secret_id")
 
     @_builtins.property
     @pulumi.getter(name="oggVersion")
@@ -6086,10 +6288,12 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
                  fault_domain: _builtins.str,
                  peer_role: _builtins.str,
                  peer_type: _builtins.str,
+                 precheck_status: _builtins.str,
                  region: _builtins.str,
                  state: _builtins.str,
                  subscription_id: _builtins.str,
                  time_created: _builtins.str,
+                 time_last_precheck_performed: _builtins.str,
                  time_last_synced: _builtins.str,
                  time_role_changed: _builtins.str,
                  time_updated: _builtins.str):
@@ -6101,10 +6305,12 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         :param _builtins.str fault_domain: The fault domain of a placement.
         :param _builtins.str peer_role: The type of the deployment role.
         :param _builtins.str peer_type: The type of the deployment peer.
+        :param _builtins.str precheck_status: Status of the DR precheck result.
         :param _builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param _builtins.str state: A filter to return only the deployment peers having the 'lifecycleState' given.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param _builtins.str time_last_precheck_performed: The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
         :param _builtins.str time_last_synced: The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -6116,10 +6322,12 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         pulumi.set(__self__, "fault_domain", fault_domain)
         pulumi.set(__self__, "peer_role", peer_role)
         pulumi.set(__self__, "peer_type", peer_type)
+        pulumi.set(__self__, "precheck_status", precheck_status)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_precheck_performed", time_last_precheck_performed)
         pulumi.set(__self__, "time_last_synced", time_last_synced)
         pulumi.set(__self__, "time_role_changed", time_role_changed)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -6181,6 +6389,14 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         return pulumi.get(self, "peer_type")
 
     @_builtins.property
+    @pulumi.getter(name="precheckStatus")
+    def precheck_status(self) -> _builtins.str:
+        """
+        Status of the DR precheck result.
+        """
+        return pulumi.get(self, "precheck_status")
+
+    @_builtins.property
     @pulumi.getter
     def region(self) -> _builtins.str:
         """
@@ -6211,6 +6427,14 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastPrecheckPerformed")
+    def time_last_precheck_performed(self) -> _builtins.str:
+        """
+        The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_precheck_performed")
 
     @_builtins.property
     @pulumi.getter(name="timeLastSynced")
@@ -6395,10 +6619,11 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
                  ogg_version: _builtins.str,
                  source_technologies: Sequence[_builtins.str],
                  supported_capabilities: Sequence[_builtins.str],
+                 supported_license_types: Sequence[_builtins.str],
                  supported_technologies_url: _builtins.str,
                  target_technologies: Sequence[_builtins.str]):
         """
-        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         :param Sequence[_builtins.str] connection_types: An array of connectionTypes.
         :param _builtins.str default_username: The default admin username used by deployment.
         :param _builtins.str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
@@ -6406,6 +6631,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         :param _builtins.str ogg_version: Allows to query by a specific GoldenGate version.
         :param Sequence[_builtins.str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[_builtins.str] supported_capabilities: Specifies supported capabilities or features by a deployment type .
+        :param Sequence[_builtins.str] supported_license_types: The list of Oracle license models supported by the deployment type.
         :param _builtins.str supported_technologies_url: The URL to the webpage listing the supported technologies.
         :param Sequence[_builtins.str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
@@ -6417,6 +6643,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "source_technologies", source_technologies)
         pulumi.set(__self__, "supported_capabilities", supported_capabilities)
+        pulumi.set(__self__, "supported_license_types", supported_license_types)
         pulumi.set(__self__, "supported_technologies_url", supported_technologies_url)
         pulumi.set(__self__, "target_technologies", target_technologies)
 
@@ -6424,7 +6651,7 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         """
         return pulumi.get(self, "category")
 
@@ -6483,6 +6710,14 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         Specifies supported capabilities or features by a deployment type .
         """
         return pulumi.get(self, "supported_capabilities")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedLicenseTypes")
+    def supported_license_types(self) -> Sequence[_builtins.str]:
+        """
+        The list of Oracle license models supported by the deployment type.
+        """
+        return pulumi.get(self, "supported_license_types")
 
     @_builtins.property
     @pulumi.getter(name="supportedTechnologiesUrl")
@@ -7044,6 +7279,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  deployment_type: _builtins.str,
                  deployment_url: _builtins.str,
                  description: _builtins.str,
+                 disaster_recovery_status: _builtins.str,
                  display_name: _builtins.str,
                  environment_type: _builtins.str,
                  fault_domain: _builtins.str,
@@ -7091,7 +7327,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str availability_domain: The availability domain of a placement.
         :param Sequence['GetDeploymentsDeploymentCollectionItemBackupScheduleArgs'] backup_schedules: Defines the schedule of the deployment backup.
         :param _builtins.int byol_cpu_core_count_limit: The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
-        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param _builtins.str category: The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         :param _builtins.str cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param _builtins.int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
@@ -7102,6 +7338,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str deployment_type: A filter that returns only the resources matching the specified 'deploymentType'.
         :param _builtins.str deployment_url: The URL of a resource.
         :param _builtins.str description: Metadata about this specific object.
+        :param _builtins.str disaster_recovery_status: Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param _builtins.str environment_type: Specifies whether the deployment is used in a production or development/testing environment.
         :param _builtins.str fault_domain: The fault domain of a placement.
@@ -7159,6 +7396,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "deployment_url", deployment_url)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "disaster_recovery_status", disaster_recovery_status)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "environment_type", environment_type)
         pulumi.set(__self__, "fault_domain", fault_domain)
@@ -7231,7 +7469,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter
     def category(self) -> _builtins.str:
         """
-        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
         """
         return pulumi.get(self, "category")
 
@@ -7314,6 +7552,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Metadata about this specific object.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="disasterRecoveryStatus")
+    def disaster_recovery_status(self) -> _builtins.str:
+        """
+        Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        """
+        return pulumi.get(self, "disaster_recovery_status")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -7975,6 +8221,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
                  group_to_roles_mappings: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingResult'],
                  identity_domain_id: _builtins.str,
                  key: _builtins.str,
+                 key_secret_id: _builtins.str,
                  ogg_version: _builtins.str,
                  password_secret_id: _builtins.str):
         """
@@ -7984,6 +8231,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+        :param _builtins.str key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
         :param _builtins.str ogg_version: Version of OGG
         :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
@@ -7995,6 +8243,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         pulumi.set(__self__, "group_to_roles_mappings", group_to_roles_mappings)
         pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_secret_id", key_secret_id)
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "password_secret_id", password_secret_id)
 
@@ -8056,6 +8305,14 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
     @pulumi.getter
     def key(self) -> _builtins.str:
         return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="keySecretId")
+    def key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        """
+        return pulumi.get(self, "key_secret_id")
 
     @_builtins.property
     @pulumi.getter(name="oggVersion")
@@ -8424,9 +8681,9 @@ class GetPipelinePipelineDiagnosticDataResult(dict):
                  object: _builtins.str,
                  time_last_collected: _builtins.str):
         """
-        :param _builtins.str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param _builtins.str bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str diagnostic_state: The state of the pipeline diagnostics collection.
-        :param _builtins.str namespace: Name of namespace that serves as a container for all of your buckets
+        :param _builtins.str namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str object: Name of the diagnostic collected and uploaded to object storage
         :param _builtins.str time_last_collected: The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
@@ -8440,7 +8697,7 @@ class GetPipelinePipelineDiagnosticDataResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        Name of the bucket where the object is to be uploaded in the object storage
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "bucket")
 
@@ -8456,7 +8713,7 @@ class GetPipelinePipelineDiagnosticDataResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        Name of namespace that serves as a container for all of your buckets
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "namespace")
 
@@ -8532,13 +8789,31 @@ class GetPipelineProcessOptionResult(dict):
 class GetPipelineProcessOptionInitialDataLoadResult(dict):
     def __init__(__self__, *,
                  action_on_existing_table: _builtins.str,
-                 is_initial_load: _builtins.str):
+                 adb_wallet_path: _builtins.str,
+                 bucket: _builtins.str,
+                 initial_load_type: _builtins.str,
+                 is_initial_load: _builtins.str,
+                 namespace: _builtins.str,
+                 source_wallet_path: _builtins.str,
+                 target_wallet_path: _builtins.str):
         """
         :param _builtins.str action_on_existing_table: Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param _builtins.str adb_wallet_path: Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        :param _builtins.str bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str initial_load_type: Type of Initial load, which can be objectStorage or dbLink.
         :param _builtins.str is_initial_load: If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        :param _builtins.str namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str source_wallet_path: Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        :param _builtins.str target_wallet_path: Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
         """
         pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        pulumi.set(__self__, "adb_wallet_path", adb_wallet_path)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "initial_load_type", initial_load_type)
         pulumi.set(__self__, "is_initial_load", is_initial_load)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "source_wallet_path", source_wallet_path)
+        pulumi.set(__self__, "target_wallet_path", target_wallet_path)
 
     @_builtins.property
     @pulumi.getter(name="actionOnExistingTable")
@@ -8549,12 +8824,60 @@ class GetPipelineProcessOptionInitialDataLoadResult(dict):
         return pulumi.get(self, "action_on_existing_table")
 
     @_builtins.property
+    @pulumi.getter(name="adbWalletPath")
+    def adb_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        """
+        return pulumi.get(self, "adb_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="initialLoadType")
+    def initial_load_type(self) -> _builtins.str:
+        """
+        Type of Initial load, which can be objectStorage or dbLink.
+        """
+        return pulumi.get(self, "initial_load_type")
+
+    @_builtins.property
     @pulumi.getter(name="isInitialLoad")
     def is_initial_load(self) -> _builtins.str:
         """
         If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
         """
         return pulumi.get(self, "is_initial_load")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceWalletPath")
+    def source_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        """
+        return pulumi.get(self, "source_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter(name="targetWalletPath")
+    def target_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+        """
+        return pulumi.get(self, "target_wallet_path")
 
 
 @pulumi.output_type
@@ -9355,9 +9678,9 @@ class GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult(dict):
                  object: _builtins.str,
                  time_last_collected: _builtins.str):
         """
-        :param _builtins.str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param _builtins.str bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str diagnostic_state: The state of the pipeline diagnostics collection.
-        :param _builtins.str namespace: Name of namespace that serves as a container for all of your buckets
+        :param _builtins.str namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param _builtins.str object: Name of the diagnostic collected and uploaded to object storage
         :param _builtins.str time_last_collected: The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
@@ -9371,7 +9694,7 @@ class GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        Name of the bucket where the object is to be uploaded in the object storage
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "bucket")
 
@@ -9387,7 +9710,7 @@ class GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult(dict):
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
-        Name of namespace that serves as a container for all of your buckets
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "namespace")
 
@@ -9463,13 +9786,31 @@ class GetPipelinesPipelineCollectionItemProcessOptionResult(dict):
 class GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult(dict):
     def __init__(__self__, *,
                  action_on_existing_table: _builtins.str,
-                 is_initial_load: _builtins.str):
+                 adb_wallet_path: _builtins.str,
+                 bucket: _builtins.str,
+                 initial_load_type: _builtins.str,
+                 is_initial_load: _builtins.str,
+                 namespace: _builtins.str,
+                 source_wallet_path: _builtins.str,
+                 target_wallet_path: _builtins.str):
         """
         :param _builtins.str action_on_existing_table: Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param _builtins.str adb_wallet_path: Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        :param _builtins.str bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str initial_load_type: Type of Initial load, which can be objectStorage or dbLink.
         :param _builtins.str is_initial_load: If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+        :param _builtins.str namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param _builtins.str source_wallet_path: Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        :param _builtins.str target_wallet_path: Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
         """
         pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        pulumi.set(__self__, "adb_wallet_path", adb_wallet_path)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "initial_load_type", initial_load_type)
         pulumi.set(__self__, "is_initial_load", is_initial_load)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "source_wallet_path", source_wallet_path)
+        pulumi.set(__self__, "target_wallet_path", target_wallet_path)
 
     @_builtins.property
     @pulumi.getter(name="actionOnExistingTable")
@@ -9480,12 +9821,60 @@ class GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadResult(dict)
         return pulumi.get(self, "action_on_existing_table")
 
     @_builtins.property
+    @pulumi.getter(name="adbWalletPath")
+    def adb_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        """
+        return pulumi.get(self, "adb_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="initialLoadType")
+    def initial_load_type(self) -> _builtins.str:
+        """
+        Type of Initial load, which can be objectStorage or dbLink.
+        """
+        return pulumi.get(self, "initial_load_type")
+
+    @_builtins.property
     @pulumi.getter(name="isInitialLoad")
     def is_initial_load(self) -> _builtins.str:
         """
         If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
         """
         return pulumi.get(self, "is_initial_load")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceWalletPath")
+    def source_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        """
+        return pulumi.get(self, "source_wallet_path")
+
+    @_builtins.property
+    @pulumi.getter(name="targetWalletPath")
+    def target_wallet_path(self) -> _builtins.str:
+        """
+        Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+        """
+        return pulumi.get(self, "target_wallet_path")
 
 
 @pulumi.output_type

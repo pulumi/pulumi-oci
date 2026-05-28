@@ -90,6 +90,11 @@ export const getDeploymentCertificates: typeof import("./getDeploymentCertificat
 export const getDeploymentCertificatesOutput: typeof import("./getDeploymentCertificates").getDeploymentCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getDeploymentCertificates","getDeploymentCertificatesOutput"], () => require("./getDeploymentCertificates"));
 
+export { GetDeploymentDisasterRecoveryPrecheckReportArgs, GetDeploymentDisasterRecoveryPrecheckReportResult, GetDeploymentDisasterRecoveryPrecheckReportOutputArgs } from "./getDeploymentDisasterRecoveryPrecheckReport";
+export const getDeploymentDisasterRecoveryPrecheckReport: typeof import("./getDeploymentDisasterRecoveryPrecheckReport").getDeploymentDisasterRecoveryPrecheckReport = null as any;
+export const getDeploymentDisasterRecoveryPrecheckReportOutput: typeof import("./getDeploymentDisasterRecoveryPrecheckReport").getDeploymentDisasterRecoveryPrecheckReportOutput = null as any;
+utilities.lazyLoad(exports, ["getDeploymentDisasterRecoveryPrecheckReport","getDeploymentDisasterRecoveryPrecheckReportOutput"], () => require("./getDeploymentDisasterRecoveryPrecheckReport"));
+
 export { GetDeploymentEnvironmentsArgs, GetDeploymentEnvironmentsResult, GetDeploymentEnvironmentsOutputArgs } from "./getDeploymentEnvironments";
 export const getDeploymentEnvironments: typeof import("./getDeploymentEnvironments").getDeploymentEnvironments = null as any;
 export const getDeploymentEnvironmentsOutput: typeof import("./getDeploymentEnvironments").getDeploymentEnvironmentsOutput = null as any;

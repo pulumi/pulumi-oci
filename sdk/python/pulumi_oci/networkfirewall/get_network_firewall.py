@@ -27,7 +27,7 @@ class GetNetworkFirewallResult:
     """
     A collection of values returned by getNetworkFirewall.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, nat_configurations=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, shape=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ipv4address=None, ipv6address=None, lifecycle_details=None, nat_configurations=None, network_firewall_id=None, network_firewall_policy_id=None, network_security_group_ids=None, security_attributes=None, shape=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -67,6 +67,9 @@ class GetNetworkFirewallResult:
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -188,6 +191,14 @@ class GetNetworkFirewallResult:
         return pulumi.get(self, "network_security_group_ids")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
@@ -255,6 +266,7 @@ class AwaitableGetNetworkFirewallResult(GetNetworkFirewallResult):
             network_firewall_id=self.network_firewall_id,
             network_firewall_policy_id=self.network_firewall_policy_id,
             network_security_group_ids=self.network_security_group_ids,
+            security_attributes=self.security_attributes,
             shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -301,6 +313,7 @@ def get_network_firewall(network_firewall_id: Optional[_builtins.str] = None,
         network_firewall_id=pulumi.get(__ret__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -344,6 +357,7 @@ def get_network_firewall_output(network_firewall_id: pulumi.Input[Optional[_buil
         network_firewall_id=pulumi.get(__response__, 'network_firewall_id'),
         network_firewall_policy_id=pulumi.get(__response__, 'network_firewall_policy_id'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

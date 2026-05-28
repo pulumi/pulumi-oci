@@ -17,14 +17,14 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
     public static final NetworkFirewallPolicyNatRuleConditionArgs Empty = new NetworkFirewallPolicyNatRuleConditionArgs();
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     @Import(name="destinationAddresses")
     private @Nullable Output<List<String>> destinationAddresses;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     public Optional<Output<List<String>>> destinationAddresses() {
@@ -47,14 +47,14 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
     @Import(name="sourceAddresses")
     private @Nullable Output<List<String>> sourceAddresses;
 
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
     public Optional<Output<List<String>>> sourceAddresses() {
@@ -88,7 +88,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param destinationAddresses (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param destinationAddresses (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param destinationAddresses (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+         * @param destinationAddresses (Updatable) An array of address list names to be evaluated against the traffic destination address.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param sourceAddresses (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param sourceAddresses (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class NetworkFirewallPolicyNatRuleConditionArgs extends com.pulumi.
         }
 
         /**
-         * @param sourceAddresses (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+         * @param sourceAddresses (Updatable) An array of address list names to be evaluated against the traffic source address.
          * 
          * @return builder
          * 

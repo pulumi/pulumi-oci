@@ -202,6 +202,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> PeerMaintenanceRunIds { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        /// </summary>
+        [Output("referenceResourceIdForImageUpdates")]
+        public Output<string> ReferenceResourceIdForImageUpdates { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Output("state")]
@@ -264,6 +270,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("totalTimeTakenInMins")]
         public Output<int> TotalTimeTakenInMins { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        /// </summary>
+        [Output("windowTypeDescriptions")]
+        public Output<ImmutableArray<Outputs.MaintenanceRunWindowTypeDescription>> WindowTypeDescriptions { get; private set; } = null!;
 
 
         /// <summary>
@@ -526,6 +538,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        /// </summary>
+        [Input("referenceResourceIdForImageUpdates")]
+        public Input<string>? ReferenceResourceIdForImageUpdates { get; set; }
+
+        /// <summary>
         /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Input("state")]
@@ -594,6 +612,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalTimeTakenInMins")]
         public Input<int>? TotalTimeTakenInMins { get; set; }
+
+        [Input("windowTypeDescriptions")]
+        private InputList<Inputs.MaintenanceRunWindowTypeDescriptionGetArgs>? _windowTypeDescriptions;
+
+        /// <summary>
+        /// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        /// </summary>
+        public InputList<Inputs.MaintenanceRunWindowTypeDescriptionGetArgs> WindowTypeDescriptions
+        {
+            get => _windowTypeDescriptions ?? (_windowTypeDescriptions = new InputList<Inputs.MaintenanceRunWindowTypeDescriptionGetArgs>());
+            set => _windowTypeDescriptions = value;
+        }
 
         public MaintenanceRunState()
         {

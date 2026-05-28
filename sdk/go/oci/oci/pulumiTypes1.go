@@ -13,6 +13,1230 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// groups required for the particular subscriptionType IAM policy statements required.
+	Groups []string `pulumi:"groups"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// Missing policy definitions.
+	Policies []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy `pulumi:"policies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType string `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs{...}
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// groups required for the particular subscriptionType IAM policy statements required.
+	Groups pulumi.StringArrayInput `pulumi:"groups"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// Missing policy definitions.
+	Policies GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayInput `pulumi:"policies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput)
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray{ GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs{...} }
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// groups required for the particular subscriptionType IAM policy statements required.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) Groups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) []string { return v.Groups }).(pulumi.StringArrayOutput)
+}
+
+// The current state of the Multicloud Network Alert.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// Missing policy definitions.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) Policies() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy {
+		return v.Policies
+	}).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Subscription Type.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) string {
+		return v.SubscriptionType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem {
+		return vs[0].([]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Description of the compartment e.g. Base Compartment, Root Compartment
+	CompartmentName string `pulumi:"compartmentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the policy purpose.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// Name of the missing policy.
+	Name string `pulumi:"name"`
+	// IAM policy statements required.
+	Statements []string `pulumi:"statements"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs{...}
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Description of the compartment e.g. Base Compartment, Root Compartment
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the policy purpose.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// Name of the missing policy.
+	Name pulumi.StringInput `pulumi:"name"`
+	// IAM policy statements required.
+	Statements pulumi.StringArrayInput `pulumi:"statements"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput)
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray{ GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs{...} }
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Description of the compartment e.g. Base Compartment, Root Compartment
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) string {
+		return v.CompartmentName
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the policy purpose.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the Multicloud Network Alert.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// Name of the missing policy.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// IAM policy statements required.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) Statements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) []string {
+		return v.Statements
+	}).(pulumi.StringArrayOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy {
+		return vs[0].([]GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicy)[vs[1].(int)]
+	}).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudMulticloudsubscriptionsFilterInput is an input type that accepts GetMulticloudMulticloudsubscriptionsFilterArgs and GetMulticloudMulticloudsubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsFilterInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsFilterArgs{...}
+type GetMulticloudMulticloudsubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput
+	ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArgs) ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArgs) ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsFilterOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsFilterArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsFilterArray and GetMulticloudMulticloudsubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsFilterArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsFilterArray{ GetMulticloudMulticloudsubscriptionsFilterArgs{...} }
+type GetMulticloudMulticloudsubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArray []GetMulticloudMulticloudsubscriptionsFilterInput
+
+func (GetMulticloudMulticloudsubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArray) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArray) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsFilterArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsFilter {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsFilter)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsFilterOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection struct {
+	// List of MulticloudSubscriptionSummary.
+	Items []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{...}
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs struct {
+	// List of MulticloudSubscriptionSummary.
+	Items GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray{ GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{...} }
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return o
+}
+
+// List of MulticloudSubscriptionSummary.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) Items() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection) []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem {
+		return v.Items
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem struct {
+	// Total value for the subscription.
+	ActiveCommitment string `pulumi:"activeCommitment"`
+	// Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
+	ClassicSubscriptionId string `pulumi:"classicSubscriptionId"`
+	// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the subscription.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The partner cloud account ID.
+	PartnerCloudAccountIdentifier string `pulumi:"partnerCloudAccountIdentifier"`
+	// The partner cloud tenant ID.
+	PartnerCloudTenantIdentifier string `pulumi:"partnerCloudTenantIdentifier"`
+	// Payment plan for the subscription.
+	PaymentPlan string `pulumi:"paymentPlan"`
+	// The cloud service provider.
+	ServiceName string `pulumi:"serviceName"`
+	// URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEndDate string `pulumi:"timeEndDate"`
+	// The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLinkedDate string `pulumi:"timeLinkedDate"`
+	// The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{...}
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs struct {
+	// Total value for the subscription.
+	ActiveCommitment pulumi.StringInput `pulumi:"activeCommitment"`
+	// Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
+	ClassicSubscriptionId pulumi.StringInput `pulumi:"classicSubscriptionId"`
+	// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the subscription.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The partner cloud account ID.
+	PartnerCloudAccountIdentifier pulumi.StringInput `pulumi:"partnerCloudAccountIdentifier"`
+	// The partner cloud tenant ID.
+	PartnerCloudTenantIdentifier pulumi.StringInput `pulumi:"partnerCloudTenantIdentifier"`
+	// Payment plan for the subscription.
+	PaymentPlan pulumi.StringInput `pulumi:"paymentPlan"`
+	// The cloud service provider.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEndDate pulumi.StringInput `pulumi:"timeEndDate"`
+	// The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLinkedDate pulumi.StringInput `pulumi:"timeLinkedDate"`
+	// The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray{ GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{...} }
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return o
+}
+
+// Total value for the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ActiveCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ActiveCommitment
+	}).(pulumi.StringOutput)
+}
+
+// Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ClassicSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ClassicSubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// The partner cloud account ID.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) PartnerCloudAccountIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.PartnerCloudAccountIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// The partner cloud tenant ID.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) PartnerCloudTenantIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.PartnerCloudTenantIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// Payment plan for the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) PaymentPlan() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.PaymentPlan
+	}).(pulumi.StringOutput)
+}
+
+// The cloud service provider.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeEndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeEndDate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeLinkedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeLinkedDate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs []interface{} `pulumi:"dnsForwardingConfigs"`
+	// CSP network anchor Uri
+	NetworkAnchorUri string `pulumi:"networkAnchorUri"`
+	// CSP oracle database network anchor unique ID/name
+	OdbNetworkId string `pulumi:"odbNetworkId"`
+	// Azure/GCP/AWS region
+	Region string `pulumi:"region"`
+}
+
+// GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput is an input type that accepts GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs and GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput` via:
+//
+//	GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{...}
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs pulumi.ArrayInput `pulumi:"dnsForwardingConfigs"`
+	// CSP network anchor Uri
+	NetworkAnchorUri pulumi.StringInput `pulumi:"networkAnchorUri"`
+	// CSP oracle database network anchor unique ID/name
+	OdbNetworkId pulumi.StringInput `pulumi:"odbNetworkId"`
+	// Azure/GCP/AWS region
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return i.ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+// GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray and GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray{ GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{...} }
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput
+	ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray []GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return o
+}
+
+// An Azure/GCP/AWS cidrBlocks
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) CidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// DNS domain ip mapping forwarding configuration
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) DnsForwardingConfigs() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) []interface{} {
+		return v.DnsForwardingConfigs
+	}).(pulumi.ArrayOutput)
+}
+
+// CSP network anchor Uri
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) NetworkAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.NetworkAnchorUri }).(pulumi.StringOutput)
+}
+
+// CSP oracle database network anchor unique ID/name
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) OdbNetworkId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.OdbNetworkId }).(pulumi.StringOutput)
+}
+
+// Azure/GCP/AWS region
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput() GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
+		return vs[0].([]GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItem struct {
+	// Oracle Cloud Infrastructure network anchor related meta data items
+	Dns []GetMulticloudNetworkAnchorOciMetadataItemDn `pulumi:"dns"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs []interface{} `pulumi:"dnsForwardingConfigs"`
+	// The DNS Listener Forwarding Address.
+	DnsForwardingEndpointIpAddress string `pulumi:"dnsForwardingEndpointIpAddress"`
+	// The DNS Listener Endpoint Address.
+	DnsListeningEndpointIpAddress string `pulumi:"dnsListeningEndpointIpAddress"`
+	// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+	NetworkAnchorConnectionStatus string `pulumi:"networkAnchorConnectionStatus"`
+	// Network subnets
+	Subnets []GetMulticloudNetworkAnchorOciMetadataItemSubnet `pulumi:"subnets"`
+	// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+	Vcns []GetMulticloudNetworkAnchorOciMetadataItemVcn `pulumi:"vcns"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemArgs and GetMulticloudNetworkAnchorOciMetadataItemOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArgs struct {
+	// Oracle Cloud Infrastructure network anchor related meta data items
+	Dns GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput `pulumi:"dns"`
+	// DNS domain ip mapping forwarding configuration
+	DnsForwardingConfigs pulumi.ArrayInput `pulumi:"dnsForwardingConfigs"`
+	// The DNS Listener Forwarding Address.
+	DnsForwardingEndpointIpAddress pulumi.StringInput `pulumi:"dnsForwardingEndpointIpAddress"`
+	// The DNS Listener Endpoint Address.
+	DnsListeningEndpointIpAddress pulumi.StringInput `pulumi:"dnsListeningEndpointIpAddress"`
+	// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+	NetworkAnchorConnectionStatus pulumi.StringInput `pulumi:"networkAnchorConnectionStatus"`
+	// Network subnets
+	Subnets GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput `pulumi:"subnets"`
+	// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+	Vcns GetMulticloudNetworkAnchorOciMetadataItemVcnArrayInput `pulumi:"vcns"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArgs) ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArgs) ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemArray and GetMulticloudNetworkAnchorOciMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemArray{ GetMulticloudNetworkAnchorOciMetadataItemArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArray []GetMulticloudNetworkAnchorOciMetadataItemInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArray) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemArray) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) ToGetMulticloudNetworkAnchorOciMetadataItemOutput() GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) ToGetMulticloudNetworkAnchorOciMetadataItemOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return o
+}
+
+// Oracle Cloud Infrastructure network anchor related meta data items
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Dns() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemDn {
+		return v.Dns
+	}).(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput)
+}
+
+// DNS domain ip mapping forwarding configuration
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsForwardingConfigs() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []interface{} { return v.DnsForwardingConfigs }).(pulumi.ArrayOutput)
+}
+
+// The DNS Listener Forwarding Address.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsForwardingEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.DnsForwardingEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The DNS Listener Endpoint Address.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) DnsListeningEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.DnsListeningEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) NetworkAnchorConnectionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) string { return v.NetworkAnchorConnectionStatus }).(pulumi.StringOutput)
+}
+
+// Network subnets
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Subnets() GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemSubnet {
+		return v.Subnets
+	}).(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput)
+}
+
+// Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+func (o GetMulticloudNetworkAnchorOciMetadataItemOutput) Vcns() GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItem) []GetMulticloudNetworkAnchorOciMetadataItemVcn {
+		return v.Vcns
+	}).(GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItem)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItem {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItem)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDn struct {
+	// Full custom domain name. If this field is passed dnsLabel will be ignored
+	CustomDomainName string `pulumi:"customDomainName"`
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemDnInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemDnArgs and GetMulticloudNetworkAnchorOciMetadataItemDnOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemDnInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemDnArgs{...}
+type GetMulticloudNetworkAnchorOciMetadataItemDnInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArgs struct {
+	// Full custom domain name. If this field is passed dnsLabel will be ignored
+	CustomDomainName pulumi.StringInput `pulumi:"customDomainName"`
+}
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArgs) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemDnOutput)
+}
+
+// GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemDnArray and GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput` via:
+//
+//	GetMulticloudNetworkAnchorOciMetadataItemDnArray{ GetMulticloudNetworkAnchorOciMetadataItemDnArgs{...} }
+type GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput
+	ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArray []GetMulticloudNetworkAnchorOciMetadataItemDnInput
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArray) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return i.ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudNetworkAnchorOciMetadataItemDnArray) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutput() GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return o
+}
+
+// Full custom domain name. If this field is passed dnsLabel will be ignored
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnOutput) CustomDomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemDn) string { return v.CustomDomainName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudNetworkAnchorOciMetadataItemDn)(nil)).Elem()
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput() GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) ToGetMulticloudNetworkAnchorOciMetadataItemDnArrayOutputWithContext(ctx context.Context) GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput {
+	return o
+}
+
+func (o GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput) Index(i pulumi.IntInput) GetMulticloudNetworkAnchorOciMetadataItemDnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudNetworkAnchorOciMetadataItemDn {
+		return vs[0].([]GetMulticloudNetworkAnchorOciMetadataItemDn)[vs[1].(int)]
+	}).(GetMulticloudNetworkAnchorOciMetadataItemDnOutput)
+}
+
 type GetMulticloudNetworkAnchorOciMetadataItemSubnet struct {
 	// Subnet label. CSP can set this property
 	Label string `pulumi:"label"`
@@ -361,9 +1585,11 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) Index(i p
 }
 
 type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks []interface{} `pulumi:"cidrBlocks"`
 	// The CPG ID in which Network Anchor will be created.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId string `pulumi:"compartmentId"`
 	// CSP Specific Additional Properties, AzureSubnetId for Azure
 	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
@@ -413,9 +1639,11 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput interface {
 }
 
 type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
+	// An Azure/GCP/AWS cidrBlocks
+	CidrBlocks pulumi.ArrayInput `pulumi:"cidrBlocks"`
 	// The CPG ID in which Network Anchor will be created.
 	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// CSP Specific Additional Properties, AzureSubnetId for Azure
 	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
@@ -504,6 +1732,11 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ToGetMulti
 	return o
 }
 
+// An Azure/GCP/AWS cidrBlocks
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CidrBlocks() pulumi.ArrayOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) []interface{} { return v.CidrBlocks }).(pulumi.ArrayOutput)
+}
+
 // The CPG ID in which Network Anchor will be created.
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
@@ -511,7 +1744,7 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ClusterPla
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1090,27 +2323,29 @@ func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOu
 type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Compartment name associated the resource.
+	// Name of the compartment associated with the resource.
 	CompartmentName string `pulumi:"compartmentName"`
-	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
-	// Resource Id that comes from the Multi Cloud Control Plane
+	// The resource Id that comes from the Multicloud control plane.
 	CspResourceId string `pulumi:"cspResourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The current state of the multicloud resource.
+	// The current state of the Multicloud resource.
 	LifecycleState string `pulumi:"lifecycleState"`
-	// OCID of the Network Anchor
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
 	NetworkAnchorId string `pulumi:"networkAnchorId"`
-	// Name of the network anchor associated to the resource.
+	// Name of the network anchor associated with the resource.
 	NetworkAnchorName string `pulumi:"networkAnchorName"`
-	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	// Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+	ResourceAdditionalProperties map[string]string `pulumi:"resourceAdditionalProperties"`
+	// Endpoint used to retrieve the resource's display name and lifecycle state.
 	ResourceDisplayName string `pulumi:"resourceDisplayName"`
 	// The Id of the multicloud resource.
 	ResourceId string `pulumi:"resourceId"`
-	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
 	ResourceType string `pulumi:"resourceType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -1118,9 +2353,9 @@ type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem struc
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Id of the Virtual Cloud Network associated to the resource.
+	// Id of the virtual cloud network (VCN) associated with the resource.
 	VcnId string `pulumi:"vcnId"`
-	// Resource Anchor name.
+	// Name of the virtual cloud network (VCN) associated with the resource.
 	VcnName string `pulumi:"vcnName"`
 }
 
@@ -1138,27 +2373,29 @@ type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput 
 type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Compartment name associated the resource.
+	// Name of the compartment associated with the resource.
 	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
-	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
-	// Resource Id that comes from the Multi Cloud Control Plane
+	// The resource Id that comes from the Multicloud control plane.
 	CspResourceId pulumi.StringInput `pulumi:"cspResourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The current state of the multicloud resource.
+	// The current state of the Multicloud resource.
 	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
-	// OCID of the Network Anchor
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
 	NetworkAnchorId pulumi.StringInput `pulumi:"networkAnchorId"`
-	// Name of the network anchor associated to the resource.
+	// Name of the network anchor associated with the resource.
 	NetworkAnchorName pulumi.StringInput `pulumi:"networkAnchorName"`
-	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	// Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+	ResourceAdditionalProperties pulumi.StringMapInput `pulumi:"resourceAdditionalProperties"`
+	// Endpoint used to retrieve the resource's display name and lifecycle state.
 	ResourceDisplayName pulumi.StringInput `pulumi:"resourceDisplayName"`
 	// The Id of the multicloud resource.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
@@ -1166,9 +2403,9 @@ type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs s
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Id of the Virtual Cloud Network associated to the resource.
+	// Id of the virtual cloud network (VCN) associated with the resource.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
-	// Resource Anchor name.
+	// Name of the virtual cloud network (VCN) associated with the resource.
 	VcnName pulumi.StringInput `pulumi:"vcnName"`
 }
 
@@ -1230,21 +2467,21 @@ func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
-// Compartment name associated the resource.
+// Name of the compartment associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CompartmentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.CompartmentName
 	}).(pulumi.StringOutput)
 }
 
-// CSP Specific Additional Properties, AzureSubnetId for Azure
+// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
 		return v.CspAdditionalProperties
 	}).(pulumi.StringMapOutput)
 }
 
-// Resource Id that comes from the Multi Cloud Control Plane
+// The resource Id that comes from the Multicloud control plane.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.CspResourceId
@@ -1265,28 +2502,35 @@ func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOut
 	}).(pulumi.StringMapOutput)
 }
 
-// The current state of the multicloud resource.
+// The current state of the Multicloud resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.LifecycleState
 	}).(pulumi.StringOutput)
 }
 
-// OCID of the Network Anchor
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.NetworkAnchorId
 	}).(pulumi.StringOutput)
 }
 
-// Name of the network anchor associated to the resource.
+// Name of the network anchor associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.NetworkAnchorName
 	}).(pulumi.StringOutput)
 }
 
-// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+// Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.ResourceAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Endpoint used to retrieve the resource's display name and lifecycle state.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.ResourceDisplayName
@@ -1300,7 +2544,7 @@ func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
-// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+// Filter alerts by resource type (e.g. ADBD, VMCluster).
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
 		return v.ResourceType
@@ -1328,12 +2572,12 @@ func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOut
 	}).(pulumi.StringOutput)
 }
 
-// Id of the Virtual Cloud Network associated to the resource.
+// Id of the virtual cloud network (VCN) associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
 }
 
-// Resource Anchor name.
+// Name of the virtual cloud network (VCN) associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnName }).(pulumi.StringOutput)
 }
@@ -1759,7 +3003,7 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) Index(i
 }
 
 type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name assigned to the compartment during creation.
 	CompartmentName string `pulumi:"compartmentName"`
@@ -1775,7 +3019,7 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	Id string `pulumi:"id"`
 	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -1787,6 +3031,7 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
 	LinkedCompartmentName string `pulumi:"linkedCompartmentName"`
 	// Partner Cloud Account Identifier of the Cloud Service Provider.
 	PartnerCloudAccountIdentifier string `pulumi:"partnerCloudAccountIdentifier"`
+	ResourceAnchorUri             string `pulumi:"resourceAnchorUri"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1809,7 +3054,7 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput interface {
 }
 
 type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name assigned to the compartment during creation.
 	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
@@ -1825,7 +3070,7 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
@@ -1837,6 +3082,7 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
 	LinkedCompartmentName pulumi.StringInput `pulumi:"linkedCompartmentName"`
 	// Partner Cloud Account Identifier of the Cloud Service Provider.
 	PartnerCloudAccountIdentifier pulumi.StringInput `pulumi:"partnerCloudAccountIdentifier"`
+	ResourceAnchorUri             pulumi.StringInput `pulumi:"resourceAnchorUri"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1898,7 +3144,7 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMul
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
 func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -1946,7 +3192,7 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) Freeform
 	}).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1978,6 +3224,10 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) PartnerC
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
 		return v.PartnerCloudAccountIdentifier
 	}).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ResourceAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.ResourceAnchorUri }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
@@ -13573,6 +14823,22 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilterInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilterArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDnInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemDnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemDnArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemDnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemSubnetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemVcnInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemVcnArgs{})
@@ -13779,6 +15045,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemDnOutput{})
+	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemDnArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemSubnetArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemVcnOutput{})

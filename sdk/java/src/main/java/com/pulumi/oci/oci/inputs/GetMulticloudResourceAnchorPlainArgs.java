@@ -17,14 +17,14 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
     public static final GetMulticloudResourceAnchorPlainArgs Empty = new GetMulticloudResourceAnchorPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     @Import(name="resourceAnchorId", required=true)
     private String resourceAnchorId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     public String resourceAnchorId() {
@@ -32,14 +32,14 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      * 
      */
     @Import(name="shouldFetchCompartmentName")
     private @Nullable Boolean shouldFetchCompartmentName;
 
     /**
-     * @return Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * @return Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      * 
      */
     public Optional<Boolean> shouldFetchCompartmentName() {
@@ -62,14 +62,14 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private String subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
      * 
      */
     public String subscriptionServiceName() {
@@ -104,7 +104,7 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 

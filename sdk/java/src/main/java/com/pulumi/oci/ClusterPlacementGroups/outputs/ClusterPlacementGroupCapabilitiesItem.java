@@ -5,11 +5,19 @@ package com.pulumi.oci.ClusterPlacementGroups.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ClusterPlacementGroups.outputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetails;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class ClusterPlacementGroupCapabilitiesItem {
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    private @Nullable ClusterPlacementGroupCapabilitiesItemAdditionalDetails additionalDetails;
     /**
      * @return The type of resource.
      * 
@@ -22,6 +30,13 @@ public final class ClusterPlacementGroupCapabilitiesItem {
     private String service;
 
     private ClusterPlacementGroupCapabilitiesItem() {}
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    public Optional<ClusterPlacementGroupCapabilitiesItemAdditionalDetails> additionalDetails() {
+        return Optional.ofNullable(this.additionalDetails);
+    }
     /**
      * @return The type of resource.
      * 
@@ -46,15 +61,23 @@ public final class ClusterPlacementGroupCapabilitiesItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ClusterPlacementGroupCapabilitiesItemAdditionalDetails additionalDetails;
         private String name;
         private String service;
         public Builder() {}
         public Builder(ClusterPlacementGroupCapabilitiesItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalDetails = defaults.additionalDetails;
     	      this.name = defaults.name;
     	      this.service = defaults.service;
         }
 
+        @CustomType.Setter
+        public Builder additionalDetails(@Nullable ClusterPlacementGroupCapabilitiesItemAdditionalDetails additionalDetails) {
+
+            this.additionalDetails = additionalDetails;
+            return this;
+        }
         @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
@@ -73,6 +96,7 @@ public final class ClusterPlacementGroupCapabilitiesItem {
         }
         public ClusterPlacementGroupCapabilitiesItem build() {
             final var _resultValue = new ClusterPlacementGroupCapabilitiesItem();
+            _resultValue.additionalDetails = additionalDetails;
             _resultValue.name = name;
             _resultValue.service = service;
             return _resultValue;

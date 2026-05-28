@@ -27,7 +27,7 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
     """
     A collection of values returned by getNetworkFirewallPolicyDecryptionRule.
     """
-    def __init__(__self__, action=None, conditions=None, decryption_profile=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, secret=None):
+    def __init__(__self__, action=None, conditions=None, decryption_profile=None, description=None, id=None, name=None, network_firewall_policy_id=None, parent_resource_id=None, positions=None, priority_order=None, secret=None, secrets=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -61,6 +61,9 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
         if secret and not isinstance(secret, str):
             raise TypeError("Expected argument 'secret' to be a str")
         pulumi.set(__self__, "secret", secret)
+        if secrets and not isinstance(secrets, list):
+            raise TypeError("Expected argument 'secrets' to be a list")
+        pulumi.set(__self__, "secrets", secrets)
 
     @_builtins.property
     @pulumi.getter
@@ -143,6 +146,14 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
         """
         return pulumi.get(self, "secret")
 
+    @_builtins.property
+    @pulumi.getter
+    def secrets(self) -> Sequence[_builtins.str]:
+        """
+        An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+        """
+        return pulumi.get(self, "secrets")
+
 
 class AwaitableGetNetworkFirewallPolicyDecryptionRuleResult(GetNetworkFirewallPolicyDecryptionRuleResult):
     # pylint: disable=using-constant-test
@@ -160,7 +171,8 @@ class AwaitableGetNetworkFirewallPolicyDecryptionRuleResult(GetNetworkFirewallPo
             parent_resource_id=self.parent_resource_id,
             positions=self.positions,
             priority_order=self.priority_order,
-            secret=self.secret)
+            secret=self.secret,
+            secrets=self.secrets)
 
 
 def get_network_firewall_policy_decryption_rule(name: Optional[_builtins.str] = None,
@@ -194,7 +206,8 @@ def get_network_firewall_policy_decryption_rule(name: Optional[_builtins.str] = 
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         positions=pulumi.get(__ret__, 'positions'),
         priority_order=pulumi.get(__ret__, 'priority_order'),
-        secret=pulumi.get(__ret__, 'secret'))
+        secret=pulumi.get(__ret__, 'secret'),
+        secrets=pulumi.get(__ret__, 'secrets'))
 def get_network_firewall_policy_decryption_rule_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                                        network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRuleResult]:
@@ -225,4 +238,5 @@ def get_network_firewall_policy_decryption_rule_output(name: pulumi.Input[Option
         parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
         positions=pulumi.get(__response__, 'positions'),
         priority_order=pulumi.get(__response__, 'priority_order'),
-        secret=pulumi.get(__response__, 'secret')))
+        secret=pulumi.get(__response__, 'secret'),
+        secrets=pulumi.get(__response__, 'secrets')))

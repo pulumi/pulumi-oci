@@ -19,14 +19,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     public static final GetMulticloudExternalLocationsMetadataPlainArgs Empty = new GetMulticloudExternalLocationsMetadataPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     @Import(name="clusterPlacementGroupId")
     private @Nullable String clusterPlacementGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     public Optional<String> clusterPlacementGroupId() {
@@ -34,14 +34,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public Optional<String> compartmentId() {
@@ -49,14 +49,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     }
 
     /**
-     * The resource type query (i.e. dbsystem, instance etc.)
+     * The resource type query (for example, dbsystem or instance).
      * 
      */
     @Import(name="entityType")
     private @Nullable String entityType;
 
     /**
-     * @return The resource type query (i.e. dbsystem, instance etc.)
+     * @return The resource type query (for example, dbsystem or instance).
      * 
      */
     public Optional<String> entityType() {
@@ -64,14 +64,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     }
 
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      * 
      */
     @Import(name="externalLocation")
     private @Nullable String externalLocation;
 
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     public Optional<String> externalLocation() {
@@ -108,14 +108,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     }
 
     /**
-     * Oracle Cloud Infrastructure Logical AD to filter the response.
+     * Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
      * 
      */
     @Import(name="logicalZone")
     private @Nullable String logicalZone;
 
     /**
-     * @return Oracle Cloud Infrastructure Logical AD to filter the response.
+     * @return Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
      * 
      */
     public Optional<String> logicalZone() {
@@ -138,14 +138,14 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private String subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
      * 
      */
     public String subscriptionServiceName() {
@@ -186,7 +186,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param entityType The resource type query (i.e. dbsystem, instance etc.)
+         * @param entityType The resource type query (for example, dbsystem or instance).
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param logicalZone Oracle Cloud Infrastructure Logical AD to filter the response.
+         * @param logicalZone Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class GetMulticloudExternalLocationsMetadataPlainArgs extends com.p
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 

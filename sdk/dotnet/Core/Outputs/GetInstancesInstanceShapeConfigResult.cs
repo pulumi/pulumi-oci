@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly double LocalDisksTotalSizeInGbs;
         /// <summary>
+        /// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+        /// </summary>
+        public readonly int LocalVolumeSizeInGbs;
+        /// <summary>
         /// The maximum number of VNIC attachments for the instance.
         /// </summary>
         public readonly int MaxVnicAttachments;
@@ -81,6 +85,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             double localDisksTotalSizeInGbs,
 
+            int localVolumeSizeInGbs,
+
             int maxVnicAttachments,
 
             double memoryInGbs,
@@ -103,6 +109,7 @@ namespace Pulumi.Oci.Core.Outputs
             LocalDiskDescription = localDiskDescription;
             LocalDisks = localDisks;
             LocalDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            LocalVolumeSizeInGbs = localVolumeSizeInGbs;
             MaxVnicAttachments = maxVnicAttachments;
             MemoryInGbs = memoryInGbs;
             NetworkingBandwidthInGbps = networkingBandwidthInGbps;

@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 //
-// Gets information about a ResourceAnchor.
+// Gets details for the specified resource anchor. The subscription OCID and service name are required.
+// For more information, see
+// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
 //
 // ## Example Usage
 //
@@ -55,13 +57,13 @@ func GetMulticloudResourceAnchor(ctx *pulumi.Context, args *GetMulticloudResourc
 
 // A collection of arguments for invoking getMulticloudResourceAnchor.
 type GetMulticloudResourceAnchorArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	ResourceAnchorId string `pulumi:"resourceAnchorId"`
-	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	// Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
 	ShouldFetchCompartmentName *bool `pulumi:"shouldFetchCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
 	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
 }
 
@@ -79,11 +81,11 @@ type GetMulticloudResourceAnchorResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	Id string `pulumi:"id"`
-	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	// A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The current state of the ResourceAnchor.
+	// The current state of the resource anchor.
 	LifecycleState string `pulumi:"lifecycleState"`
 	// Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
 	LinkedCompartmentId string `pulumi:"linkedCompartmentId"`
@@ -103,9 +105,9 @@ type GetMulticloudResourceAnchorResult struct {
 	SubscriptionType string `pulumi:"subscriptionType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -120,13 +122,13 @@ func GetMulticloudResourceAnchorOutput(ctx *pulumi.Context, args GetMulticloudRe
 
 // A collection of arguments for invoking getMulticloudResourceAnchor.
 type GetMulticloudResourceAnchorOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	ResourceAnchorId pulumi.StringInput `pulumi:"resourceAnchorId"`
-	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	// Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
 	ShouldFetchCompartmentName pulumi.BoolPtrInput `pulumi:"shouldFetchCompartmentName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
 	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
 }
 
@@ -181,17 +183,17 @@ func (o GetMulticloudResourceAnchorResultOutput) FreeformTags() pulumi.StringMap
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 func (o GetMulticloudResourceAnchorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+// A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o GetMulticloudResourceAnchorResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the ResourceAnchor.
+// The current state of the resource anchor.
 func (o GetMulticloudResourceAnchorResultOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.LifecycleState }).(pulumi.StringOutput)
 }
@@ -247,12 +249,12 @@ func (o GetMulticloudResourceAnchorResultOutput) SystemTags() pulumi.StringMapOu
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetMulticloudResourceAnchorResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetMulticloudResourceAnchorResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

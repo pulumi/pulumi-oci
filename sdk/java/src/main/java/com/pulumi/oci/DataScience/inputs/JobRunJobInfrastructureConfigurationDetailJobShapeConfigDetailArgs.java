@@ -32,14 +32,14 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
     }
 
     /**
-     * The total amount of memory available to the job run instance, in gigabytes.
+     * The memory in Gbs required to be allocated to run the workload.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return The total amount of memory available to the job run instance, in gigabytes.
+     * @return The memory in Gbs required to be allocated to run the workload.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -47,14 +47,14 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
     }
 
     /**
-     * The total number of OCPUs available to the job run instance.
+     * The ocpus required to be allocated to run the workload.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return The total number of OCPUs available to the job run instance.
+     * @return The ocpus required to be allocated to run the workload.
      * 
      */
     public Optional<Output<Double>> ocpus() {
@@ -109,7 +109,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the job run instance, in gigabytes.
+         * @param memoryInGbs The memory in Gbs required to be allocated to run the workload.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the job run instance, in gigabytes.
+         * @param memoryInGbs The memory in Gbs required to be allocated to run the workload.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param ocpus The total number of OCPUs available to the job run instance.
+         * @param ocpus The ocpus required to be allocated to run the workload.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param ocpus The total number of OCPUs available to the job run instance.
+         * @param ocpus The ocpus required to be allocated to run the workload.
          * 
          * @return builder
          * 

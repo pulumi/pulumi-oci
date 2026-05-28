@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration;
 import java.lang.String;
@@ -24,16 +25,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * 
      */
     private @Nullable String metricType;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration scaleConfiguration;
     /**
      * @return The scaling configuration for the predefined metric expression rule.
      * 
      */
-    private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration;
     /**
      * @return The scaling configuration for the predefined metric expression rule.
      * 
      */
-    private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule() {}
     /**
@@ -50,19 +52,22 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public Optional<String> metricType() {
         return Optional.ofNullable(this.metricType);
     }
-    /**
-     * @return The scaling configuration for the predefined metric expression rule.
-     * 
-     */
-    public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration() {
-        return this.scaleInConfiguration;
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration> scaleConfiguration() {
+        return Optional.ofNullable(this.scaleConfiguration);
     }
     /**
      * @return The scaling configuration for the predefined metric expression rule.
      * 
      */
-    public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration() {
-        return this.scaleOutConfiguration;
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration> scaleInConfiguration() {
+        return Optional.ofNullable(this.scaleInConfiguration);
+    }
+    /**
+     * @return The scaling configuration for the predefined metric expression rule.
+     * 
+     */
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration> scaleOutConfiguration() {
+        return Optional.ofNullable(this.scaleOutConfiguration);
     }
 
     public static Builder builder() {
@@ -76,13 +81,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public static final class Builder {
         private String metricExpressionRuleType;
         private @Nullable String metricType;
-        private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration;
-        private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration scaleConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metricExpressionRuleType = defaults.metricExpressionRuleType;
     	      this.metricType = defaults.metricType;
+    	      this.scaleConfiguration = defaults.scaleConfiguration;
     	      this.scaleInConfiguration = defaults.scaleInConfiguration;
     	      this.scaleOutConfiguration = defaults.scaleOutConfiguration;
         }
@@ -102,18 +109,20 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return this;
         }
         @CustomType.Setter
-        public Builder scaleInConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration) {
-            if (scaleInConfiguration == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule", "scaleInConfiguration");
-            }
+        public Builder scaleConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration scaleConfiguration) {
+
+            this.scaleConfiguration = scaleConfiguration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scaleInConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration) {
+
             this.scaleInConfiguration = scaleInConfiguration;
             return this;
         }
         @CustomType.Setter
-        public Builder scaleOutConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration) {
-            if (scaleOutConfiguration == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule", "scaleOutConfiguration");
-            }
+        public Builder scaleOutConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration) {
+
             this.scaleOutConfiguration = scaleOutConfiguration;
             return this;
         }
@@ -121,6 +130,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule();
             _resultValue.metricExpressionRuleType = metricExpressionRuleType;
             _resultValue.metricType = metricType;
+            _resultValue.scaleConfiguration = scaleConfiguration;
             _resultValue.scaleInConfiguration = scaleInConfiguration;
             _resultValue.scaleOutConfiguration = scaleOutConfiguration;
             return _resultValue;

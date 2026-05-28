@@ -70,10 +70,25 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             JobInfrastructureType = jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
     ///             BlockStorageSizeInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+    ///             ComputeTargetId = testComputeTarget.Id,
     ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs
     ///             {
     ///                 MemoryInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
+    ///             },
+    ///             ResourceConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs
+    ///             {
+    ///                 ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs
+    ///                 {
+    ///                     MemoryInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+    ///                     Ocpus = jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+    ///                 },
+    ///                 ResourceRequestConfiguration = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs
+    ///                 {
+    ///                     Gpus = jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationGpus,
+    ///                     MemoryInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+    ///                     Ocpus = jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+    ///                 },
     ///             },
     ///             ShapeName = testShape.Name,
     ///             SubnetId = testSubnet.Id,
@@ -126,10 +141,25 @@ namespace Pulumi.Oci.DataScience
     ///                     {
     ///                         JobInfrastructureType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
     ///                         BlockStorageSizeInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///                         ComputeTargetId = testComputeTarget.Id,
     ///                         JobShapeConfigDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///                         {
     ///                             MemoryInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                             Ocpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///                         },
+    ///                         ResourceConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs
+    ///                         {
+    ///                             ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
+    ///                             {
+    ///                                 MemoryInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+    ///                                 Ocpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+    ///                             },
+    ///                             ResourceRequestConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs
+    ///                             {
+    ///                                 Gpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus,
+    ///                                 MemoryInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+    ///                                 Ocpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+    ///                             },
     ///                         },
     ///                         ShapeName = testShape.Name,
     ///                         SubnetId = testSubnet.Id,

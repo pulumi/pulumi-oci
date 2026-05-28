@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
     public sealed class GetClusterPlacementGroupCapabilityItemResult
     {
         /// <summary>
+        /// Additional details describing the selected capability.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterPlacementGroupCapabilityItemAdditionalDetailResult> AdditionalDetails;
+        /// <summary>
         /// The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
         /// </summary>
         public readonly string Name;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
 
         [OutputConstructor]
         private GetClusterPlacementGroupCapabilityItemResult(
+            ImmutableArray<Outputs.GetClusterPlacementGroupCapabilityItemAdditionalDetailResult> additionalDetails,
+
             string name,
 
             string service)
         {
+            AdditionalDetails = additionalDetails;
             Name = name;
             Service = service;
         }

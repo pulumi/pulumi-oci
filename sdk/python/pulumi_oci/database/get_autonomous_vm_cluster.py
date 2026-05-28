@@ -27,7 +27,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, distribution_algorithm=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, sga_percentage=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -85,6 +85,9 @@ class GetAutonomousVmClusterResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if distribution_algorithm and not isinstance(distribution_algorithm, str):
+            raise TypeError("Expected argument 'distribution_algorithm' to be a str")
+        pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
@@ -163,6 +166,9 @@ class GetAutonomousVmClusterResult:
         if scan_listener_port_tls and not isinstance(scan_listener_port_tls, int):
             raise TypeError("Expected argument 'scan_listener_port_tls' to be a int")
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        if sga_percentage and not isinstance(sga_percentage, float):
+            raise TypeError("Expected argument 'sga_percentage' to be a float")
+        pulumi.set(__self__, "sga_percentage", sga_percentage)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -333,6 +339,14 @@ class GetAutonomousVmClusterResult:
         The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> _builtins.str:
+        """
+        The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -539,6 +553,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "scan_listener_port_tls")
 
     @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> _builtins.float:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -633,6 +655,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             db_servers=self.db_servers,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            distribution_algorithm=self.distribution_algorithm,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
             exadata_storage_in_tbs_lowest_scaled_value=self.exadata_storage_in_tbs_lowest_scaled_value,
             freeform_tags=self.freeform_tags,
@@ -659,6 +682,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             reserved_cpus=self.reserved_cpus,
             scan_listener_port_non_tls=self.scan_listener_port_non_tls,
             scan_listener_port_tls=self.scan_listener_port_tls,
+            sga_percentage=self.sga_percentage,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -714,6 +738,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
         db_servers=pulumi.get(__ret__, 'db_servers'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_algorithm=pulumi.get(__ret__, 'distribution_algorithm'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
         exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__ret__, 'exadata_storage_in_tbs_lowest_scaled_value'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -740,6 +765,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         scan_listener_port_non_tls=pulumi.get(__ret__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__ret__, 'scan_listener_port_tls'),
+        sga_percentage=pulumi.get(__ret__, 'sga_percentage'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -792,6 +818,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: pulumi.Input[Opti
         db_servers=pulumi.get(__response__, 'db_servers'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        distribution_algorithm=pulumi.get(__response__, 'distribution_algorithm'),
         exadata_infrastructure_id=pulumi.get(__response__, 'exadata_infrastructure_id'),
         exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__response__, 'exadata_storage_in_tbs_lowest_scaled_value'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
@@ -818,6 +845,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: pulumi.Input[Opti
         reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
         scan_listener_port_non_tls=pulumi.get(__response__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__response__, 'scan_listener_port_tls'),
+        sga_percentage=pulumi.get(__response__, 'sga_percentage'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

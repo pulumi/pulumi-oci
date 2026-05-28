@@ -14,28 +14,13 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetMlApplicationInstanceAuthConfigurationResult
     {
         /// <summary>
-        /// Name of the IDCS application
-        /// </summary>
-        public readonly string ApplicationName;
-        /// <summary>
-        /// Identity Domain OCID
-        /// </summary>
-        public readonly string DomainId;
-        /// <summary>
         /// Type of AuthN/Z
         /// </summary>
         public readonly string Type;
 
         [OutputConstructor]
-        private GetMlApplicationInstanceAuthConfigurationResult(
-            string applicationName,
-
-            string domainId,
-
-            string type)
+        private GetMlApplicationInstanceAuthConfigurationResult(string type)
         {
-            ApplicationName = applicationName;
-            DomainId = domainId;
             Type = type;
         }
     }

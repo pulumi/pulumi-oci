@@ -269,6 +269,7 @@ type DistributedDatabaseDistributedDatabase struct {
 	//
 	// Deprecated: This trigger/action API is deprecated.
 	DownloadGsmCertificateSigningRequestTrigger pulumi.IntPtrOutput `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
+	EffectiveReplicationUnit                    pulumi.IntOutput    `pulumi:"effectiveReplicationUnit"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
@@ -391,9 +392,6 @@ func NewDistributedDatabaseDistributedDatabase(ctx *pulumi.Context,
 	if args.PrivateEndpointIds == nil {
 		return nil, errors.New("invalid value for required argument 'PrivateEndpointIds'")
 	}
-	if args.ShardDetails == nil {
-		return nil, errors.New("invalid value for required argument 'ShardDetails'")
-	}
 	if args.ShardingMethod == nil {
 		return nil, errors.New("invalid value for required argument 'ShardingMethod'")
 	}
@@ -457,6 +455,7 @@ type distributedDatabaseDistributedDatabaseState struct {
 	//
 	// Deprecated: This trigger/action API is deprecated.
 	DownloadGsmCertificateSigningRequestTrigger *int `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
+	EffectiveReplicationUnit                    *int `pulumi:"effectiveReplicationUnit"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
@@ -566,6 +565,7 @@ type DistributedDatabaseDistributedDatabaseState struct {
 	//
 	// Deprecated: This trigger/action API is deprecated.
 	DownloadGsmCertificateSigningRequestTrigger pulumi.IntPtrInput
+	EffectiveReplicationUnit                    pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
@@ -996,6 +996,10 @@ func (o DistributedDatabaseDistributedDatabaseOutput) DownloadGsmCertificateSign
 	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntPtrOutput {
 		return v.DownloadGsmCertificateSigningRequestTrigger
 	}).(pulumi.IntPtrOutput)
+}
+
+func (o DistributedDatabaseDistributedDatabaseOutput) EffectiveReplicationUnit() pulumi.IntOutput {
+	return o.ApplyT(func(v *DistributedDatabaseDistributedDatabase) pulumi.IntOutput { return v.EffectiveReplicationUnit }).(pulumi.IntOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

@@ -506,6 +506,13 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                 "items": [{
                     "name": cluster_placement_group_capabilities_items_name,
                     "service": cluster_placement_group_capabilities_items_service,
+                    "additional_details": {
+                        "service_type": cluster_placement_group_capabilities_items_additional_details_service_type,
+                        "cluster_placement_group_count": int(cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count),
+                        "memory_in_gbs": cluster_placement_group_capabilities_items_additional_details_memory_in_gbs,
+                        "nvmes": int(cluster_placement_group_capabilities_items_additional_details_nvmes),
+                        "ocpus": cluster_placement_group_capabilities_items_additional_details_ocpus,
+                    },
                 }],
             },
             defined_tags={
@@ -578,6 +585,13 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                 "items": [{
                     "name": cluster_placement_group_capabilities_items_name,
                     "service": cluster_placement_group_capabilities_items_service,
+                    "additional_details": {
+                        "service_type": cluster_placement_group_capabilities_items_additional_details_service_type,
+                        "cluster_placement_group_count": int(cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count),
+                        "memory_in_gbs": cluster_placement_group_capabilities_items_additional_details_memory_in_gbs,
+                        "nvmes": int(cluster_placement_group_capabilities_items_additional_details_nvmes),
+                        "ocpus": cluster_placement_group_capabilities_items_additional_details_ocpus,
+                    },
                 }],
             },
             defined_tags={

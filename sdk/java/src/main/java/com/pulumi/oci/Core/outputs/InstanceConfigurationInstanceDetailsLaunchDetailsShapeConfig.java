@@ -24,6 +24,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      */
     private @Nullable String baselineOcpuUtilization;
     /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    private @Nullable Integer localVolumeSizeInGbs;
+    /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
@@ -61,6 +66,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      */
     public Optional<String> baselineOcpuUtilization() {
         return Optional.ofNullable(this.baselineOcpuUtilization);
+    }
+    /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    public Optional<Integer> localVolumeSizeInGbs() {
+        return Optional.ofNullable(this.localVolumeSizeInGbs);
     }
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
@@ -108,6 +120,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String baselineOcpuUtilization;
+        private @Nullable Integer localVolumeSizeInGbs;
         private @Nullable Double memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
@@ -117,6 +130,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
+    	      this.localVolumeSizeInGbs = defaults.localVolumeSizeInGbs;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
@@ -128,6 +142,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
 
             this.baselineOcpuUtilization = baselineOcpuUtilization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localVolumeSizeInGbs(@Nullable Integer localVolumeSizeInGbs) {
+
+            this.localVolumeSizeInGbs = localVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -163,6 +183,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig build() {
             final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig();
             _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.localVolumeSizeInGbs = localVolumeSizeInGbs;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;

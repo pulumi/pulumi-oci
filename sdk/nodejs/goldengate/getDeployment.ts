@@ -56,7 +56,7 @@ export interface GetDeploymentResult {
      */
     readonly byolCpuCoreCountLimit: number;
     /**
-     * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
      */
     readonly category: string;
     /**
@@ -100,6 +100,10 @@ export interface GetDeploymentResult {
      * Metadata about this specific object.
      */
     readonly description: string;
+    /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     */
+    readonly disasterRecoveryStatus: string;
     /**
      * An object's Display Name.
      */

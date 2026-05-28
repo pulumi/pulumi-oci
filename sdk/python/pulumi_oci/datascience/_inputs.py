@@ -15,6 +15,24 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ComputeTargetComputeConfigurationDetailsArgs',
+    'ComputeTargetComputeConfigurationDetailsArgsDict',
+    'ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs',
+    'ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgsDict',
+    'ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs',
+    'ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgsDict',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyArgs',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyArgsDict',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs',
+    'ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict',
+    'ComputeTargetComputeTargetSystemDataArgs',
+    'ComputeTargetComputeTargetSystemDataArgsDict',
     'JobJobConfigurationDetailsArgs',
     'JobJobConfigurationDetailsArgsDict',
     'JobJobConfigurationDetailsStartupProbeDetailsArgs',
@@ -25,6 +43,12 @@ __all__ = [
     'JobJobInfrastructureConfigurationDetailsArgsDict',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs',
+    'JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict',
     'JobJobLogConfigurationDetailsArgs',
     'JobJobLogConfigurationDetailsArgsDict',
     'JobJobNodeConfigurationDetailsArgs',
@@ -43,6 +67,12 @@ __all__ = [
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs',
     'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict',
     'JobJobStorageMountConfigurationDetailsListArgs',
     'JobJobStorageMountConfigurationDetailsListArgsDict',
     'JobRunJobConfigurationOverrideDetailsArgs',
@@ -55,10 +85,22 @@ __all__ = [
     'JobRunJobInfrastructureConfigurationDetailArgsDict',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgsDict',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgsDict',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgsDict',
     'JobRunJobInfrastructureConfigurationOverrideDetailsArgs',
     'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict',
     'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs',
     'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgsDict',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgsDict',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgsDict',
     'JobRunJobLogConfigurationOverrideDetailsArgs',
     'JobRunJobLogConfigurationOverrideDetailsArgsDict',
     'JobRunJobNodeConfigurationOverrideDetailsArgs',
@@ -77,6 +119,12 @@ __all__ = [
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgsDict',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs',
     'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict',
     'JobRunJobStorageMountConfigurationDetailsListArgs',
     'JobRunJobStorageMountConfigurationDetailsListArgsDict',
     'JobRunLogDetailArgs',
@@ -125,22 +173,36 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgsDict',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgs',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs',
@@ -303,6 +365,10 @@ __all__ = [
     'ScheduleLogDetailsArgsDict',
     'ScheduleTriggerArgs',
     'ScheduleTriggerArgsDict',
+    'GetComputeTargetShapesFilterArgs',
+    'GetComputeTargetShapesFilterArgsDict',
+    'GetComputeTargetsFilterArgs',
+    'GetComputeTargetsFilterArgsDict',
     'GetContainersFilterArgs',
     'GetContainersFilterArgsDict',
     'GetFastLaunchJobConfigsFilterArgs',
@@ -352,6 +418,755 @@ __all__ = [
     'GetSchedulesFilterArgs',
     'GetSchedulesFilterArgsDict',
 ]
+
+class ComputeTargetComputeConfigurationDetailsArgsDict(TypedDict):
+    compute_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of compute.
+    """
+    instance_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgsDict']
+    """
+    (Updatable) The compute target instance configuration details for managed compute cluster type compute target.
+    """
+    scaling_policy: NotRequired[pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsScalingPolicyArgsDict']]]
+    """
+    (Updatable) The scaling policy to apply to managed compute cluster type compute target.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 compute_type: pulumi.Input[_builtins.str],
+                 instance_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs'],
+                 scaling_policy: pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsScalingPolicyArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] compute_type: (Updatable) The type of compute.
+        :param pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs'] instance_configuration: (Updatable) The compute target instance configuration details for managed compute cluster type compute target.
+        :param pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyArgs'] scaling_policy: (Updatable) The scaling policy to apply to managed compute cluster type compute target.
+        """
+        pulumi.set(__self__, "compute_type", compute_type)
+        pulumi.set(__self__, "instance_configuration", instance_configuration)
+        if scaling_policy is not None:
+            pulumi.set(__self__, "scaling_policy", scaling_policy)
+
+    @_builtins.property
+    @pulumi.getter(name="computeType")
+    def compute_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of compute.
+        """
+        return pulumi.get(self, "compute_type")
+
+    @compute_type.setter
+    def compute_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compute_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfiguration")
+    def instance_configuration(self) -> pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs']:
+        """
+        (Updatable) The compute target instance configuration details for managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "instance_configuration")
+
+    @instance_configuration.setter
+    def instance_configuration(self, value: pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs']):
+        pulumi.set(self, "instance_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scalingPolicy")
+    def scaling_policy(self) -> pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsScalingPolicyArgs']]:
+        """
+        (Updatable) The scaling policy to apply to managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "scaling_policy")
+
+    @scaling_policy.setter
+    def scaling_policy(self, value: pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsScalingPolicyArgs']]):
+        pulumi.set(self, "scaling_policy", value)
+
+
+class ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgsDict(TypedDict):
+    instance_shape: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
+    """
+    boot_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The size of the boot volume to attach to the instance.
+    """
+    instance_shape_details: NotRequired[pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgsDict']]]
+    """
+    (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsInstanceConfigurationArgs:
+    def __init__(__self__, *,
+                 instance_shape: pulumi.Input[_builtins.str],
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_shape_details: pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] instance_shape: (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
+        :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size of the boot volume to attach to the instance.
+        :param pulumi.Input['ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs'] instance_shape_details: (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+        """
+        pulumi.set(__self__, "instance_shape", instance_shape)
+        if boot_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        if instance_shape_details is not None:
+            pulumi.set(__self__, "instance_shape_details", instance_shape_details)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceShape")
+    def instance_shape(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The shape used to launch the instances in compute target. Supported shapes can be retrieved using compute target shapes api.
+        """
+        return pulumi.get(self, "instance_shape")
+
+    @instance_shape.setter
+    def instance_shape(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "instance_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bootVolumeSizeInGbs")
+    def boot_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The size of the boot volume to attach to the instance.
+        """
+        return pulumi.get(self, "boot_volume_size_in_gbs")
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "boot_volume_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceShapeDetails")
+    def instance_shape_details(self) -> pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs']]:
+        """
+        (Updatable) Instance shape configuration for managed compute cluster type compute target. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "instance_shape_details")
+
+    @instance_shape_details.setter
+    def instance_shape_details(self, value: pulumi.Input[Optional['ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs']]):
+        pulumi.set(self, "instance_shape_details", value)
+
+
+class ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The total amount of memory allocated to the instance, in gigabytes.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The total number of OCPUs allocated to the instance.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsInstanceConfigurationInstanceShapeDetailsArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The total amount of memory allocated to the instance, in gigabytes.
+        :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs allocated to the instance.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The total amount of memory allocated to the instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The total number of OCPUs allocated to the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class ComputeTargetComputeConfigurationDetailsScalingPolicyArgsDict(TypedDict):
+    policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of scaling policy.
+    """
+    auto_scaling_policies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict']]]]]
+    """
+    (Updatable) The list of autoscaling policy details.
+    """
+    cool_down_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the managed compute cluster type compute target  becomes ACTIVE after the scaling operation.
+    """
+    instance_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The number of instances for the managed compute cluster type compute target.
+    """
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) Whether the autoscaling policy is enabled.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsScalingPolicyArgs:
+    def __init__(__self__, *,
+                 policy_type: pulumi.Input[_builtins.str],
+                 auto_scaling_policies: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]]] = None,
+                 cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] policy_type: (Updatable) The type of scaling policy.
+        :param pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]] auto_scaling_policies: (Updatable) The list of autoscaling policy details.
+        :param pulumi.Input[_builtins.int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the managed compute cluster type compute target  becomes ACTIVE after the scaling operation.
+        :param pulumi.Input[_builtins.int] instance_count: (Updatable) The number of instances for the managed compute cluster type compute target.
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscaling policy is enabled.
+        """
+        pulumi.set(__self__, "policy_type", policy_type)
+        if auto_scaling_policies is not None:
+            pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if instance_count is not None:
+            pulumi.set(__self__, "instance_count", instance_count)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of scaling policy.
+        """
+        return pulumi.get(self, "policy_type")
+
+    @policy_type.setter
+    def policy_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "policy_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]]]:
+        """
+        (Updatable) The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @auto_scaling_policies.setter
+    def auto_scaling_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]]]):
+        pulumi.set(self, "auto_scaling_policies", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the managed compute cluster type compute target  becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @cool_down_in_seconds.setter
+    def cool_down_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cool_down_in_seconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCount")
+    def instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of instances for the managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "instance_count")
+
+    @instance_count.setter
+    def instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgsDict(TypedDict):
+    auto_scaling_policy_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of autoscaling policy.
+    """
+    initial_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the managed compute cluster type compute target immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+    """
+    maximum_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the managed compute cluster type compute target is allowed to increase to (scale out).
+    """
+    minimum_instance_count: pulumi.Input[_builtins.int]
+    """
+    (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the managed compute cluster type compute target is allowed to decrease to (scale in).
+    """
+    rules: pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict']]]
+    """
+    (Updatable) The list of autoscaling policy rules.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyArgs:
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: pulumi.Input[_builtins.str],
+                 initial_instance_count: pulumi.Input[_builtins.int],
+                 maximum_instance_count: pulumi.Input[_builtins.int],
+                 minimum_instance_count: pulumi.Input[_builtins.int],
+                 rules: pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]]):
+        """
+        :param pulumi.Input[_builtins.str] auto_scaling_policy_type: (Updatable) The type of autoscaling policy.
+        :param pulumi.Input[_builtins.int] initial_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the managed compute cluster type compute target immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param pulumi.Input[_builtins.int] maximum_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the managed compute cluster type compute target is allowed to increase to (scale out).
+        :param pulumi.Input[_builtins.int] minimum_instance_count: (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the managed compute cluster type compute target is allowed to decrease to (scale in).
+        :param pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]] rules: (Updatable) The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @auto_scaling_policy_type.setter
+    def auto_scaling_policy_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "auto_scaling_policy_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the managed compute cluster type compute target immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @initial_instance_count.setter
+    def initial_instance_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "initial_instance_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the maximum number of instances the managed compute cluster type compute target is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @maximum_instance_count.setter
+    def maximum_instance_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "maximum_instance_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) For a threshold-based autoscaling policy, this value is the minimum number of instances the managed compute cluster type compute target is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @minimum_instance_count.setter
+    def minimum_instance_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "minimum_instance_count", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]]:
+        """
+        (Updatable) The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]]):
+        pulumi.set(self, "rules", value)
+
+
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
+    metric_expression_rule_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the managed compute cluster type compute target .
+    """
+    scale_in_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
+    """
+    (Updatable) The scaling configuration for the predefined metric expression rule.
+    """
+    scale_out_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
+    """
+    (Updatable) The scaling configuration for the predefined metric expression rule.
+    """
+    metric_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Metric type
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs:
+    def __init__(__self__, *,
+                 metric_expression_rule_type: pulumi.Input[_builtins.str],
+                 scale_in_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'],
+                 scale_out_configuration: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'],
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] metric_expression_rule_type: (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the managed compute cluster type compute target .
+        :param pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
+        :param pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
+        :param pulumi.Input[_builtins.str] metric_type: (Updatable) Metric type
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "scale_in_configuration", scale_in_configuration)
+        pulumi.set(__self__, "scale_out_configuration", scale_out_configuration)
+        if metric_type is not None:
+            pulumi.set(__self__, "metric_type", metric_type)
+
+    @_builtins.property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the managed compute cluster type compute target .
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @metric_expression_rule_type.setter
+    def metric_expression_rule_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "metric_expression_rule_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleInConfiguration")
+    def scale_in_configuration(self) -> pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']:
+        """
+        (Updatable) The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configuration")
+
+    @scale_in_configuration.setter
+    def scale_in_configuration(self, value: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']):
+        pulumi.set(self, "scale_in_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutConfiguration")
+    def scale_out_configuration(self) -> pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']:
+        """
+        (Updatable) The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configuration")
+
+    @scale_out_configuration.setter
+    def scale_out_configuration(self, value: pulumi.Input['ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']):
+        pulumi.set(self, "scale_out_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+    @metric_type.setter
+    def metric_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "metric_type", value)
+
+
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+    """
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) A metric value at which the scaling operation will be triggered.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs:
+    def __init__(__self__, *,
+                 instance_count_adjustment: pulumi.Input[Optional[_builtins.int]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling_configuration_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
+        :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        :param pulumi.Input[_builtins.str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param pulumi.Input[_builtins.str] scaling_configuration_type: (Updatable) The type of scaling configuration.
+        :param pulumi.Input[_builtins.int] threshold: (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @instance_count_adjustment.setter
+    def instance_count_adjustment(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_count_adjustment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_duration", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "query", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @scaling_configuration_type.setter
+    def scaling_configuration_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scaling_configuration_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threshold", value)
+
+
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict(TypedDict):
+    instance_count_adjustment: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+    """
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+    """
+    scaling_configuration_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The type of scaling configuration.
+    """
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) A metric value at which the scaling operation will be triggered.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs:
+    def __init__(__self__, *,
+                 instance_count_adjustment: pulumi.Input[Optional[_builtins.int]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling_configuration_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
+        :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        :param pulumi.Input[_builtins.str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param pulumi.Input[_builtins.str] scaling_configuration_type: (Updatable) The type of scaling configuration.
+        :param pulumi.Input[_builtins.int] threshold: (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @instance_count_adjustment.setter
+    def instance_count_adjustment(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_count_adjustment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_duration", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "query", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @scaling_configuration_type.setter
+    def scaling_configuration_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scaling_configuration_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "threshold", value)
+
+
+class ComputeTargetComputeTargetSystemDataArgsDict(TypedDict):
+    compute_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of compute target.
+    """
+    current_instance_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Current count of the instances in managed compute cluster type compute target.
+    """
+
+@pulumi.input_type
+class ComputeTargetComputeTargetSystemDataArgs:
+    def __init__(__self__, *,
+                 compute_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_instance_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] compute_type: Type of compute target.
+        :param pulumi.Input[_builtins.int] current_instance_count: Current count of the instances in managed compute cluster type compute target.
+        """
+        if compute_type is not None:
+            pulumi.set(__self__, "compute_type", compute_type)
+        if current_instance_count is not None:
+            pulumi.set(__self__, "current_instance_count", current_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="computeType")
+    def compute_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of compute target.
+        """
+        return pulumi.get(self, "compute_type")
+
+    @compute_type.setter
+    def compute_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentInstanceCount")
+    def current_instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Current count of the instances in managed compute cluster type compute target.
+        """
+        return pulumi.get(self, "current_instance_count")
+
+    @current_instance_count.setter
+    def current_instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "current_instance_count", value)
+
 
 class JobJobConfigurationDetailsArgsDict(TypedDict):
     job_type: pulumi.Input[_builtins.str]
@@ -704,9 +1519,17 @@ class JobJobInfrastructureConfigurationDetailsArgsDict(TypedDict):
     """
     (Updatable) The size of the block storage volume to attach to the instance running the job
     """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+    """
     job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    resource_configuration: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict']]]
+    """
+    (Updatable) Details for the compute target job resource configuration.
     """
     shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -722,21 +1545,29 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     def __init__(__self__, *,
                  job_infrastructure_type: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  job_shape_config_details: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']] = None,
+                 resource_configuration: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs']] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] job_infrastructure_type: (Updatable) The infrastructure type used for job run.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
+        :param pulumi.Input[_builtins.str] compute_target_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs'] resource_configuration: (Updatable) Details for the compute target job resource configuration.
         :param pulumi.Input[_builtins.str] shape_name: (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if resource_configuration is not None:
+            pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -767,6 +1598,18 @@ class JobJobInfrastructureConfigurationDetailsArgs:
         pulumi.set(self, "block_storage_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        """
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]:
         """
@@ -777,6 +1620,18 @@ class JobJobInfrastructureConfigurationDetailsArgs:
     @job_shape_config_details.setter
     def job_shape_config_details(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]):
         pulumi.set(self, "job_shape_config_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfiguration")
+    def resource_configuration(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]:
+        """
+        (Updatable) Details for the compute target job resource configuration.
+        """
+        return pulumi.get(self, "resource_configuration")
+
+    @resource_configuration.setter
+    def resource_configuration(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]):
+        pulumi.set(self, "resource_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
@@ -864,6 +1719,173 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict(TypedDict):
+    resource_limit_configuration: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict']]]
+    """
+    (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+    """
+    resource_request_configuration: NotRequired[pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict']]]
+    """
+    (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+    """
+
+@pulumi.input_type
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_limit_configuration: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']] = None,
+                 resource_request_configuration: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']] = None):
+        """
+        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configuration: (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        :param pulumi.Input['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configuration: (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        if resource_limit_configuration is not None:
+            pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
+        if resource_request_configuration is not None:
+            pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfiguration")
+    def resource_limit_configuration(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]:
+        """
+        (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        """
+        return pulumi.get(self, "resource_limit_configuration")
+
+    @resource_limit_configuration.setter
+    def resource_limit_configuration(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]):
+        pulumi.set(self, "resource_limit_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfiguration")
+    def resource_request_configuration(self) -> pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]:
+        """
+        (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        return pulumi.get(self, "resource_request_configuration")
+
+    @resource_request_configuration.setter
+    def resource_request_configuration(self, value: pulumi.Input[Optional['JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]):
+        pulumi.set(self, "resource_request_configuration", value)
+
+
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) Burstable limit for memory.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) Burstable limit for cpu.
+    """
+
+@pulumi.input_type
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) Burstable limit for memory.
+        :param pulumi.Input[_builtins.float] ocpus: (Updatable) Burstable limit for cpu.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) Burstable limit for memory.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) Burstable limit for cpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The total number of gpus required to be allocated to the workload.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    (Updatable) The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] gpus: (Updatable) The total number of gpus required to be allocated to the workload.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: (Updatable) The ocpus required to be allocated to run the workload.
+        """
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The total number of gpus required to be allocated to the workload.
+        """
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        (Updatable) The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1596,9 +2618,17 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     """
     The size of the block storage volume to attach to the instance running the job
     """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+    """
     job_shape_config_details: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    resource_configuration: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict']]]
+    """
+    Details for the compute target job resource configuration.
     """
     shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1614,21 +2644,29 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     def __init__(__self__, *,
                  job_infrastructure_type: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  job_shape_config_details: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']] = None,
+                 resource_configuration: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] job_infrastructure_type: The infrastructure type used for job run.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param pulumi.Input[_builtins.str] compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs'] resource_configuration: Details for the compute target job resource configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param pulumi.Input[_builtins.str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if resource_configuration is not None:
+            pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -1659,6 +2697,18 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
         pulumi.set(self, "block_storage_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        """
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]:
         """
@@ -1669,6 +2719,18 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     @job_shape_config_details.setter
     def job_shape_config_details(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]):
         pulumi.set(self, "job_shape_config_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfiguration")
+    def resource_configuration(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]:
+        """
+        Details for the compute target job resource configuration.
+        """
+        return pulumi.get(self, "resource_configuration")
+
+    @resource_configuration.setter
+    def resource_configuration(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]):
+        pulumi.set(self, "resource_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
@@ -1756,6 +2818,173 @@ class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfra
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict(TypedDict):
+    resource_limit_configuration: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict']]]
+    """
+    Resource limit configuration details for workload on managed compute cluster type compute target
+    """
+    resource_request_configuration: NotRequired[pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict']]]
+    """
+    Resource request configuration to run workload on managed compute cluster type compute target compute target.
+    """
+
+@pulumi.input_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_limit_configuration: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']] = None,
+                 resource_request_configuration: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']] = None):
+        """
+        :param pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configuration: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param pulumi.Input['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configuration: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        if resource_limit_configuration is not None:
+            pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
+        if resource_request_configuration is not None:
+            pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfiguration")
+    def resource_limit_configuration(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
+        return pulumi.get(self, "resource_limit_configuration")
+
+    @resource_limit_configuration.setter
+    def resource_limit_configuration(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]):
+        pulumi.set(self, "resource_limit_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfiguration")
+    def resource_request_configuration(self) -> pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        return pulumi.get(self, "resource_request_configuration")
+
+    @resource_request_configuration.setter
+    def resource_request_configuration(self, value: pulumi.Input[Optional['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]):
+        pulumi.set(self, "resource_request_configuration", value)
+
+
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for memory.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for cpu.
+    """
+
+@pulumi.input_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: Burstable limit for memory.
+        :param pulumi.Input[_builtins.float] ocpus: Burstable limit for cpu.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for memory.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for cpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of gpus required to be allocated to the workload.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] gpus: The total number of gpus required to be allocated to the workload.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
+        """
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
 
@@ -2278,6 +3507,10 @@ class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
     """
     The size of the block storage volume to attach to the instance running the job
     """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+    """
     job_infrastructure_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The infrastructure type used for job run.
@@ -2285,6 +3518,10 @@ class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
     job_shape_config_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict']]]]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    resource_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgsDict']]]]]
+    """
+    Details for the compute target job resource configuration.
     """
     shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2299,23 +3536,31 @@ class JobRunJobInfrastructureConfigurationDetailArgsDict(TypedDict):
 class JobRunJobInfrastructureConfigurationDetailArgs:
     def __init__(__self__, *,
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  job_infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
                  job_shape_config_details: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]] = None,
+                 resource_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs']]]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param pulumi.Input[_builtins.str] compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param pulumi.Input[_builtins.str] job_infrastructure_type: The infrastructure type used for job run.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs']]] resource_configurations: Details for the compute target job resource configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param pulumi.Input[_builtins.str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_infrastructure_type is not None:
             pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if resource_configurations is not None:
+            pulumi.set(__self__, "resource_configurations", resource_configurations)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -2332,6 +3577,18 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @block_storage_size_in_gbs.setter
     def block_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        """
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="jobInfrastructureType")
@@ -2356,6 +3613,18 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
     @job_shape_config_details.setter
     def job_shape_config_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]]):
         pulumi.set(self, "job_shape_config_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfigurations")
+    def resource_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs']]]]:
+        """
+        Details for the compute target job resource configuration.
+        """
+        return pulumi.get(self, "resource_configurations")
+
+    @resource_configurations.setter
+    def resource_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs']]]]):
+        pulumi.set(self, "resource_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
@@ -2389,11 +3658,11 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgsDict(Typ
     """
     memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
-    The total amount of memory available to the job run instance, in gigabytes.
+    The memory in Gbs required to be allocated to run the workload.
     """
     ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
-    The total number of OCPUs available to the job run instance.
+    The ocpus required to be allocated to run the workload.
     """
 
 @pulumi.input_type
@@ -2404,8 +3673,8 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
                  ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.str] cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the job run instance.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
         """
         if cpu_baseline is not None:
             pulumi.set(__self__, "cpu_baseline", cpu_baseline)
@@ -2430,7 +3699,7 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        The total amount of memory available to the job run instance, in gigabytes.
+        The memory in Gbs required to be allocated to run the workload.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2442,7 +3711,174 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @pulumi.getter
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        The total number of OCPUs available to the job run instance.
+        The ocpus required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgsDict(TypedDict):
+    resource_limit_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgsDict']]]]]
+    """
+    Resource limit configuration details for workload on managed compute cluster type compute target
+    """
+    resource_request_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgsDict']]]]]
+    """
+    Resource request configuration to run workload on managed compute cluster type compute target compute target.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_limit_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs']]]] = None,
+                 resource_request_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs']]] resource_limit_configurations: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs']]] resource_request_configurations: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        if resource_limit_configurations is not None:
+            pulumi.set(__self__, "resource_limit_configurations", resource_limit_configurations)
+        if resource_request_configurations is not None:
+            pulumi.set(__self__, "resource_request_configurations", resource_request_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfigurations")
+    def resource_limit_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs']]]]:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
+        return pulumi.get(self, "resource_limit_configurations")
+
+    @resource_limit_configurations.setter
+    def resource_limit_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs']]]]):
+        pulumi.set(self, "resource_limit_configurations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfigurations")
+    def resource_request_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs']]]]:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        return pulumi.get(self, "resource_request_configurations")
+
+    @resource_request_configurations.setter
+    def resource_request_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs']]]]):
+        pulumi.set(self, "resource_request_configurations", value)
+
+
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The ocpus required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of gpus required to be allocated to the workload.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationDetailResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] gpus: The total number of gpus required to be allocated to the workload.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
+        """
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
 
@@ -2460,9 +3896,17 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict(TypedDict):
     """
     The size of the block storage volume to attach to the instance running the job
     """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+    """
     job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    resource_configuration: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgsDict']]]
+    """
+    Details for the compute target job resource configuration.
     """
     shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2478,21 +3922,29 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgs:
     def __init__(__self__, *,
                  job_infrastructure_type: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  job_shape_config_details: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs']] = None,
+                 resource_configuration: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs']] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] job_infrastructure_type: The infrastructure type used for job run.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param pulumi.Input[_builtins.str] compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs'] resource_configuration: Details for the compute target job resource configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param pulumi.Input[_builtins.str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if resource_configuration is not None:
+            pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -2523,6 +3975,18 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgs:
         pulumi.set(self, "block_storage_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        """
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs']]:
         """
@@ -2533,6 +3997,18 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsArgs:
     @job_shape_config_details.setter
     def job_shape_config_details(self, value: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs']]):
         pulumi.set(self, "job_shape_config_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfiguration")
+    def resource_configuration(self) -> pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs']]:
+        """
+        Details for the compute target job resource configuration.
+        """
+        return pulumi.get(self, "resource_configuration")
+
+    @resource_configuration.setter
+    def resource_configuration(self, value: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs']]):
+        pulumi.set(self, "resource_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
@@ -2600,6 +4076,173 @@ class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsAr
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgsDict(TypedDict):
+    resource_limit_configuration: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgsDict']]]
+    """
+    Resource limit configuration details for workload on managed compute cluster type compute target
+    """
+    resource_request_configuration: NotRequired[pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgsDict']]]
+    """
+    Resource request configuration to run workload on managed compute cluster type compute target compute target.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_limit_configuration: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs']] = None,
+                 resource_request_configuration: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs']] = None):
+        """
+        :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configuration: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param pulumi.Input['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configuration: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        if resource_limit_configuration is not None:
+            pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
+        if resource_request_configuration is not None:
+            pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfiguration")
+    def resource_limit_configuration(self) -> pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs']]:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
+        return pulumi.get(self, "resource_limit_configuration")
+
+    @resource_limit_configuration.setter
+    def resource_limit_configuration(self, value: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs']]):
+        pulumi.set(self, "resource_limit_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfiguration")
+    def resource_request_configuration(self) -> pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs']]:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        return pulumi.get(self, "resource_request_configuration")
+
+    @resource_request_configuration.setter
+    def resource_request_configuration(self, value: pulumi.Input[Optional['JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs']]):
+        pulumi.set(self, "resource_request_configuration", value)
+
+
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for memory.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for cpu.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: Burstable limit for memory.
+        :param pulumi.Input[_builtins.float] ocpus: Burstable limit for cpu.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for memory.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for cpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of gpus required to be allocated to the workload.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] gpus: The total number of gpus required to be allocated to the workload.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
+        """
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3332,9 +4975,17 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     """
     The size of the block storage volume to attach to the instance running the job
     """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+    """
     job_shape_config_details: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgsDict']]]
     """
     Details for the job run shape configuration. Specify only when a flex shape is selected.
+    """
+    resource_configuration: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict']]]
+    """
+    Details for the compute target job resource configuration.
     """
     shape_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3350,21 +5001,29 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     def __init__(__self__, *,
                  job_infrastructure_type: pulumi.Input[_builtins.str],
                  block_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
                  job_shape_config_details: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']] = None,
+                 resource_configuration: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] job_infrastructure_type: The infrastructure type used for job run.
         :param pulumi.Input[_builtins.int] block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param pulumi.Input[_builtins.str] compute_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
         :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs'] resource_configuration: Details for the compute target job resource configuration.
         :param pulumi.Input[_builtins.str] shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param pulumi.Input[_builtins.str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if resource_configuration is not None:
+            pulumi.set(__self__, "resource_configuration", resource_configuration)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
@@ -3395,6 +5054,18 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
         pulumi.set(self, "block_storage_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        """
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]:
         """
@@ -3405,6 +5076,18 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     @job_shape_config_details.setter
     def job_shape_config_details(self, value: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']]):
         pulumi.set(self, "job_shape_config_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConfiguration")
+    def resource_configuration(self) -> pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]:
+        """
+        Details for the compute target job resource configuration.
+        """
+        return pulumi.get(self, "resource_configuration")
+
+    @resource_configuration.setter
+    def resource_configuration(self, value: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs']]):
+        pulumi.set(self, "resource_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
@@ -3472,6 +5155,173 @@ class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsL
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgsDict(TypedDict):
+    resource_limit_configuration: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict']]]
+    """
+    Resource limit configuration details for workload on managed compute cluster type compute target
+    """
+    resource_request_configuration: NotRequired[pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict']]]
+    """
+    Resource request configuration to run workload on managed compute cluster type compute target compute target.
+    """
+
+@pulumi.input_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_limit_configuration: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']] = None,
+                 resource_request_configuration: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']] = None):
+        """
+        :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs'] resource_limit_configuration: Resource limit configuration details for workload on managed compute cluster type compute target
+        :param pulumi.Input['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs'] resource_request_configuration: Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        if resource_limit_configuration is not None:
+            pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
+        if resource_request_configuration is not None:
+            pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfiguration")
+    def resource_limit_configuration(self) -> pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]:
+        """
+        Resource limit configuration details for workload on managed compute cluster type compute target
+        """
+        return pulumi.get(self, "resource_limit_configuration")
+
+    @resource_limit_configuration.setter
+    def resource_limit_configuration(self, value: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs']]):
+        pulumi.set(self, "resource_limit_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfiguration")
+    def resource_request_configuration(self) -> pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]:
+        """
+        Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
+        return pulumi.get(self, "resource_request_configuration")
+
+    @resource_request_configuration.setter
+    def resource_request_configuration(self, value: pulumi.Input[Optional['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs']]):
+        pulumi.set(self, "resource_request_configuration", value)
+
+
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for memory.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Burstable limit for cpu.
+    """
+
+@pulumi.input_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: Burstable limit for memory.
+        :param pulumi.Input[_builtins.float] ocpus: Burstable limit for cpu.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for memory.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Burstable limit for cpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
+
+
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The total number of gpus required to be allocated to the workload.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The memory in Gbs required to be allocated to run the workload.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The ocpus required to be allocated to run the workload.
+    """
+
+@pulumi.input_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.int] gpus: The total number of gpus required to be allocated to the workload.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The memory in Gbs required to be allocated to run the workload.
+        :param pulumi.Input[_builtins.float] ocpus: The ocpus required to be allocated to run the workload.
+        """
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The total number of gpus required to be allocated to the workload.
+        """
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The memory in Gbs required to be allocated to run the workload.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The ocpus required to be allocated to run the workload.
         """
         return pulumi.get(self, "ocpus")
 
@@ -4548,31 +6398,15 @@ class MlApplicationInstanceAuthConfigurationArgsDict(TypedDict):
     """
     Type of AuthN/Z
     """
-    application_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    Name of the IDCS application
-    """
-    domain_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    Identity Domain OCID
-    """
 
 @pulumi.input_type
 class MlApplicationInstanceAuthConfigurationArgs:
     def __init__(__self__, *,
-                 type: pulumi.Input[_builtins.str],
-                 application_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 domain_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 type: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] type: Type of AuthN/Z
-        :param pulumi.Input[_builtins.str] application_name: Name of the IDCS application
-        :param pulumi.Input[_builtins.str] domain_id: Identity Domain OCID
         """
         pulumi.set(__self__, "type", type)
-        if application_name is not None:
-            pulumi.set(__self__, "application_name", application_name)
-        if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
 
     @_builtins.property
     @pulumi.getter
@@ -4585,30 +6419,6 @@ class MlApplicationInstanceAuthConfigurationArgs:
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
-
-    @_builtins.property
-    @pulumi.getter(name="applicationName")
-    def application_name(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Name of the IDCS application
-        """
-        return pulumi.get(self, "application_name")
-
-    @application_name.setter
-    def application_name(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "application_name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="domainId")
-    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Identity Domain OCID
-        """
-        return pulumi.get(self, "domain_id")
-
-    @domain_id.setter
-    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "domain_id", value)
 
 
 class MlApplicationInstanceConfigurationArgsDict(TypedDict):
@@ -5489,6 +7299,10 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     """
     (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
     """
+    custom_http_endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgsDict']]]]]
+    """
+    (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+    """
     default_environment_variables: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Service injected Environment variables set for the web server container and can not be set or modified by user.
@@ -5517,6 +7331,10 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     """
     (Updatable) OCID of the container image signature
     """
+    predict_api_specification: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is 'openai', the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+    """
     server_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
@@ -5527,6 +7345,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     def __init__(__self__, *,
                  environment_configuration_type: pulumi.Input[_builtins.str],
                  cmds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 custom_http_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs']]]] = None,
                  default_environment_variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  entrypoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  environment_variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -5534,10 +7353,12 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  image: pulumi.Input[Optional[_builtins.str]] = None,
                  image_digest: pulumi.Input[Optional[_builtins.str]] = None,
                  image_signature_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 predict_api_specification: pulumi.Input[Optional[_builtins.str]] = None,
                  server_port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] environment_configuration_type: (Updatable) The environment configuration type
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs']]] custom_http_endpoints: (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] default_environment_variables: Service injected Environment variables set for the web server container and can not be set or modified by user.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
@@ -5545,11 +7366,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param pulumi.Input[_builtins.str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param pulumi.Input[_builtins.str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param pulumi.Input[_builtins.str] image_signature_id: (Updatable) OCID of the container image signature
+        :param pulumi.Input[_builtins.str] predict_api_specification: (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is 'openai', the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
         :param pulumi.Input[_builtins.int] server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         if cmds is not None:
             pulumi.set(__self__, "cmds", cmds)
+        if custom_http_endpoints is not None:
+            pulumi.set(__self__, "custom_http_endpoints", custom_http_endpoints)
         if default_environment_variables is not None:
             pulumi.set(__self__, "default_environment_variables", default_environment_variables)
         if entrypoints is not None:
@@ -5564,6 +7388,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
             pulumi.set(__self__, "image_digest", image_digest)
         if image_signature_id is not None:
             pulumi.set(__self__, "image_signature_id", image_signature_id)
+        if predict_api_specification is not None:
+            pulumi.set(__self__, "predict_api_specification", predict_api_specification)
         if server_port is not None:
             pulumi.set(__self__, "server_port", server_port)
 
@@ -5590,6 +7416,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @cmds.setter
     def cmds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cmds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customHttpEndpoints")
+    def custom_http_endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs']]]]:
+        """
+        (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+        """
+        return pulumi.get(self, "custom_http_endpoints")
+
+    @custom_http_endpoints.setter
+    def custom_http_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs']]]]):
+        pulumi.set(self, "custom_http_endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultEnvironmentVariables")
@@ -5676,6 +7514,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         pulumi.set(self, "image_signature_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="predictApiSpecification")
+    def predict_api_specification(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is 'openai', the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+        """
+        return pulumi.get(self, "predict_api_specification")
+
+    @predict_api_specification.setter
+    def predict_api_specification(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "predict_api_specification", value)
+
+    @_builtins.property
     @pulumi.getter(name="serverPort")
     def server_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -5688,23 +7538,74 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         pulumi.set(self, "server_port", value)
 
 
+class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgsDict(TypedDict):
+    endpoint_uri_suffix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The suffix part of the endpoint that will be allowed for invocation.
+    """
+    http_methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) List of HTTP methods acceptable by the URI.
+    """
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs:
+    def __init__(__self__, *,
+                 endpoint_uri_suffix: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] endpoint_uri_suffix: (Updatable) The suffix part of the endpoint that will be allowed for invocation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] http_methods: (Updatable) List of HTTP methods acceptable by the URI.
+        """
+        if endpoint_uri_suffix is not None:
+            pulumi.set(__self__, "endpoint_uri_suffix", endpoint_uri_suffix)
+        if http_methods is not None:
+            pulumi.set(__self__, "http_methods", http_methods)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointUriSuffix")
+    def endpoint_uri_suffix(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The suffix part of the endpoint that will be allowed for invocation.
+        """
+        return pulumi.get(self, "endpoint_uri_suffix")
+
+    @endpoint_uri_suffix.setter
+    def endpoint_uri_suffix(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint_uri_suffix", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpMethods")
+    def http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) List of HTTP methods acceptable by the URI.
+        """
+        return pulumi.get(self, "http_methods")
+
+    @http_methods.setter
+    def http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "http_methods", value)
+
+
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgsDict(TypedDict):
     infrastructure_type: pulumi.Input[_builtins.str]
     """
     The type of the model deployment infrastructure.
     """
-    instance_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict']
-    """
-    The model deployment instance configuration.
-    """
     bandwidth_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The minimum network bandwidth for the model deployment.
+    """
+    compute_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    instance_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgsDict']]]
+    """
+    The model deployment instance configuration.
     """
     maximum_bandwidth_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum network bandwidth for the model deployment.
     """
+    model_deployment_resource_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgsDict']]]
     scaling_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict']]]
     """
     The scaling policy to apply to each model of the deployment.
@@ -5714,23 +7615,30 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs:
     def __init__(__self__, *,
                  infrastructure_type: pulumi.Input[_builtins.str],
-                 instance_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs'],
                  bandwidth_mbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs']] = None,
                  maximum_bandwidth_mbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 model_deployment_resource_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs']] = None,
                  scaling_policy: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] infrastructure_type: The type of the model deployment infrastructure.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs'] instance_configuration: The model deployment instance configuration.
         :param pulumi.Input[_builtins.int] bandwidth_mbps: The minimum network bandwidth for the model deployment.
+        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs'] instance_configuration: The model deployment instance configuration.
         :param pulumi.Input[_builtins.int] maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs'] scaling_policy: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
-        pulumi.set(__self__, "instance_configuration", instance_configuration)
         if bandwidth_mbps is not None:
             pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if compute_target_id is not None:
+            pulumi.set(__self__, "compute_target_id", compute_target_id)
+        if instance_configuration is not None:
+            pulumi.set(__self__, "instance_configuration", instance_configuration)
         if maximum_bandwidth_mbps is not None:
             pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        if model_deployment_resource_configuration is not None:
+            pulumi.set(__self__, "model_deployment_resource_configuration", model_deployment_resource_configuration)
         if scaling_policy is not None:
             pulumi.set(__self__, "scaling_policy", scaling_policy)
 
@@ -5747,18 +7655,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "infrastructure_type", value)
 
     @_builtins.property
-    @pulumi.getter(name="instanceConfiguration")
-    def instance_configuration(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs']:
-        """
-        The model deployment instance configuration.
-        """
-        return pulumi.get(self, "instance_configuration")
-
-    @instance_configuration.setter
-    def instance_configuration(self, value: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs']):
-        pulumi.set(self, "instance_configuration", value)
-
-    @_builtins.property
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -5771,6 +7667,27 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "bandwidth_mbps", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeTargetId")
+    def compute_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "compute_target_id")
+
+    @compute_target_id.setter
+    def compute_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_target_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfiguration")
+    def instance_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs']]:
+        """
+        The model deployment instance configuration.
+        """
+        return pulumi.get(self, "instance_configuration")
+
+    @instance_configuration.setter
+    def instance_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs']]):
+        pulumi.set(self, "instance_configuration", value)
+
+    @_builtins.property
     @pulumi.getter(name="maximumBandwidthMbps")
     def maximum_bandwidth_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -5781,6 +7698,15 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @maximum_bandwidth_mbps.setter
     def maximum_bandwidth_mbps(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "maximum_bandwidth_mbps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelDeploymentResourceConfiguration")
+    def model_deployment_resource_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs']]:
+        return pulumi.get(self, "model_deployment_resource_configuration")
+
+    @model_deployment_resource_configuration.setter
+    def model_deployment_resource_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs']]):
+        pulumi.set(self, "model_deployment_resource_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="scalingPolicy")
@@ -5972,6 +7898,145 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "ocpus", value)
 
 
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgsDict(TypedDict):
+    resource_request_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgsDict']
+    resource_limit_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgsDict']]]
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs:
+    def __init__(__self__, *,
+                 resource_request_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs'],
+                 resource_limit_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs']] = None):
+        pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
+        if resource_limit_configuration is not None:
+            pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceRequestConfiguration")
+    def resource_request_configuration(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs']:
+        return pulumi.get(self, "resource_request_configuration")
+
+    @resource_request_configuration.setter
+    def resource_request_configuration(self, value: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs']):
+        pulumi.set(self, "resource_request_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceLimitConfiguration")
+    def resource_limit_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs']]:
+        return pulumi.get(self, "resource_limit_configuration")
+
+    @resource_limit_configuration.setter
+    def resource_limit_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs']]):
+        pulumi.set(self, "resource_limit_configuration", value)
+
+
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgsDict(TypedDict):
+    memory_in_gbs: pulumi.Input[_builtins.float]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+    """
+    ocpus: pulumi.Input[_builtins.float]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+    """
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[_builtins.float],
+                 ocpus: pulumi.Input[_builtins.float]):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param pulumi.Input[_builtins.float] ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "ocpus", value)
+
+
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgsDict(TypedDict):
+    memory_in_gbs: pulumi.Input[_builtins.float]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+    """
+    ocpus: pulumi.Input[_builtins.float]
+    """
+    A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+    """
+    gpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[_builtins.float],
+                 ocpus: pulumi.Input[_builtins.float],
+                 gpus: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.float] memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param pulumi.Input[_builtins.float] ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+        if gpus is not None:
+            pulumi.set(__self__, "gpus", gpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "gpus")
+
+    @gpus.setter
+    def gpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "gpus", value)
+
+
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgsDict(TypedDict):
     policy_type: pulumi.Input[_builtins.str]
     """
@@ -5983,7 +8048,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     """
     cool_down_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
     """
     instance_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -6005,7 +8070,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         """
         :param pulumi.Input[_builtins.str] policy_type: The type of scaling policy.
         :param pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]] auto_scaling_policies: The list of autoscaling policy details.
-        :param pulumi.Input[_builtins.int] cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param pulumi.Input[_builtins.int] cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         :param pulumi.Input[_builtins.int] instance_count: The number of instances for the model deployment.
         :param pulumi.Input[_builtins.bool] is_enabled: Whether the autoscaling policy is enabled.
         """
@@ -6047,7 +8112,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter(name="coolDownInSeconds")
     def cool_down_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         """
         return pulumi.get(self, "cool_down_in_seconds")
 
@@ -6101,6 +8166,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     """
     The list of autoscaling policy rules.
     """
+    scale_in_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgsDict']]]
+    scale_out_policy: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgsDict']]]
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs:
@@ -6109,7 +8176,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  initial_instance_count: pulumi.Input[_builtins.int],
                  maximum_instance_count: pulumi.Input[_builtins.int],
                  minimum_instance_count: pulumi.Input[_builtins.int],
-                 rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]]):
+                 rules: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]],
+                 scale_in_policy: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgs']] = None,
+                 scale_out_policy: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] auto_scaling_policy_type: The type of autoscaling policy.
         :param pulumi.Input[_builtins.int] initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
@@ -6122,6 +8191,10 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
         pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
         pulumi.set(__self__, "rules", rules)
+        if scale_in_policy is not None:
+            pulumi.set(__self__, "scale_in_policy", scale_in_policy)
+        if scale_out_policy is not None:
+            pulumi.set(__self__, "scale_out_policy", scale_out_policy)
 
     @_builtins.property
     @pulumi.getter(name="autoScalingPolicyType")
@@ -6183,43 +8256,67 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     def rules(self, value: pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs']]]):
         pulumi.set(self, "rules", value)
 
+    @_builtins.property
+    @pulumi.getter(name="scaleInPolicy")
+    def scale_in_policy(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgs']]:
+        return pulumi.get(self, "scale_in_policy")
+
+    @scale_in_policy.setter
+    def scale_in_policy(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgs']]):
+        pulumi.set(self, "scale_in_policy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutPolicy")
+    def scale_out_policy(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgs']]:
+        return pulumi.get(self, "scale_out_policy")
+
+    @scale_out_policy.setter
+    def scale_out_policy(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgs']]):
+        pulumi.set(self, "scale_out_policy", value)
+
 
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgsDict(TypedDict):
     metric_expression_rule_type: pulumi.Input[_builtins.str]
     """
     The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
     """
-    scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']
-    """
-    The scaling configuration for the predefined metric expression rule.
-    """
-    scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']
-    """
-    The scaling configuration for the predefined metric expression rule.
-    """
     metric_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Metric type
+    """
+    scale_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgsDict']]]
+    scale_in_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict']]]
+    """
+    The scaling configuration for the predefined metric expression rule.
+    """
+    scale_out_configuration: NotRequired[pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgsDict']]]
+    """
+    The scaling configuration for the predefined metric expression rule.
     """
 
 @pulumi.input_type
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs:
     def __init__(__self__, *,
                  metric_expression_rule_type: pulumi.Input[_builtins.str],
-                 scale_in_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'],
-                 scale_out_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'],
-                 metric_type: pulumi.Input[Optional[_builtins.str]] = None):
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs']] = None,
+                 scale_in_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']] = None,
+                 scale_out_configuration: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param pulumi.Input[_builtins.str] metric_type: Metric type
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configuration: The scaling configuration for the predefined metric expression rule.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configuration: The scaling configuration for the predefined metric expression rule.
-        :param pulumi.Input[_builtins.str] metric_type: Metric type
         """
         pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
-        pulumi.set(__self__, "scale_in_configuration", scale_in_configuration)
-        pulumi.set(__self__, "scale_out_configuration", scale_out_configuration)
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
+        if scale_configuration is not None:
+            pulumi.set(__self__, "scale_configuration", scale_configuration)
+        if scale_in_configuration is not None:
+            pulumi.set(__self__, "scale_in_configuration", scale_in_configuration)
+        if scale_out_configuration is not None:
+            pulumi.set(__self__, "scale_out_configuration", scale_out_configuration)
 
     @_builtins.property
     @pulumi.getter(name="metricExpressionRuleType")
@@ -6234,30 +8331,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         pulumi.set(self, "metric_expression_rule_type", value)
 
     @_builtins.property
-    @pulumi.getter(name="scaleInConfiguration")
-    def scale_in_configuration(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']:
-        """
-        The scaling configuration for the predefined metric expression rule.
-        """
-        return pulumi.get(self, "scale_in_configuration")
-
-    @scale_in_configuration.setter
-    def scale_in_configuration(self, value: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']):
-        pulumi.set(self, "scale_in_configuration", value)
-
-    @_builtins.property
-    @pulumi.getter(name="scaleOutConfiguration")
-    def scale_out_configuration(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']:
-        """
-        The scaling configuration for the predefined metric expression rule.
-        """
-        return pulumi.get(self, "scale_out_configuration")
-
-    @scale_out_configuration.setter
-    def scale_out_configuration(self, value: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']):
-        pulumi.set(self, "scale_out_configuration", value)
-
-    @_builtins.property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -6268,6 +8341,114 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @metric_type.setter
     def metric_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleConfiguration")
+    def scale_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs']]:
+        return pulumi.get(self, "scale_configuration")
+
+    @scale_configuration.setter
+    def scale_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs']]):
+        pulumi.set(self, "scale_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleInConfiguration")
+    def scale_in_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']]:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configuration")
+
+    @scale_in_configuration.setter
+    def scale_in_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs']]):
+        pulumi.set(self, "scale_in_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutConfiguration")
+    def scale_out_configuration(self) -> pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']]:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configuration")
+
+    @scale_out_configuration.setter
+    def scale_out_configuration(self, value: pulumi.Input[Optional['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs']]):
+        pulumi.set(self, "scale_out_configuration", value)
+
+
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgsDict(TypedDict):
+    metric_namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+    """
+    target_scaling_configuration_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    A metric value at which the scaling operation will be triggered.
+    """
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationArgs:
+    def __init__(__self__, *,
+                 metric_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_scaling_configuration_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param pulumi.Input[_builtins.float] threshold: A metric value at which the scaling operation will be triggered.
+        """
+        if metric_namespace is not None:
+            pulumi.set(__self__, "metric_namespace", metric_namespace)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if target_scaling_configuration_type is not None:
+            pulumi.set(__self__, "target_scaling_configuration_type", target_scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="metricNamespace")
+    def metric_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "metric_namespace")
+
+    @metric_namespace.setter
+    def metric_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "metric_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "query", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetScalingConfigurationType")
+    def target_scaling_configuration_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "target_scaling_configuration_type")
+
+    @target_scaling_configuration_type.setter
+    def target_scaling_configuration_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_scaling_configuration_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "threshold", value)
 
 
 class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgsDict(TypedDict):
@@ -6486,6 +8667,144 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @threshold.setter
     def threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threshold", value)
+
+
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgsDict(TypedDict):
+    cool_down_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    """
+    instance_count_adjustment: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+    """
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicyArgs:
+    def __init__(__self__, *,
+                 cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count_adjustment: pulumi.Input[Optional[_builtins.int]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param pulumi.Input[_builtins.int] instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param pulumi.Input[_builtins.str] pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @cool_down_in_seconds.setter
+    def cool_down_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cool_down_in_seconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @instance_count_adjustment.setter
+    def instance_count_adjustment(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_count_adjustment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_duration", value)
+
+
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgsDict(TypedDict):
+    cool_down_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    """
+    instance_count_adjustment: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The value is used for adjusting the count of instances by.
+    """
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+    """
+
+@pulumi.input_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicyArgs:
+    def __init__(__self__, *,
+                 cool_down_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_count_adjustment: pulumi.Input[Optional[_builtins.int]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param pulumi.Input[_builtins.int] instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param pulumi.Input[_builtins.str] pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @cool_down_in_seconds.setter
+    def cool_down_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cool_down_in_seconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @instance_count_adjustment.setter
+    def instance_count_adjustment(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_count_adjustment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_duration", value)
 
 
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgsDict(TypedDict):
@@ -6786,7 +9105,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     """
     cool_down_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+    (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
     """
     instance_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -6808,7 +9127,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         """
         :param pulumi.Input[_builtins.str] policy_type: (Updatable) The type of scaling policy.
         :param pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyArgs']]] auto_scaling_policies: (Updatable) The list of autoscaling policy details.
-        :param pulumi.Input[_builtins.int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param pulumi.Input[_builtins.int] cool_down_in_seconds: (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         :param pulumi.Input[_builtins.int] instance_count: (Updatable) The number of instances for the model deployment.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether the autoscaling policy is enabled.
         """
@@ -6850,7 +9169,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="coolDownInSeconds")
     def cool_down_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         """
         return pulumi.get(self, "cool_down_in_seconds")
 
@@ -14588,6 +16907,103 @@ class ScheduleTriggerArgs:
     @time_start.setter
     def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
+
+
+class GetComputeTargetShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the compute target shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetComputeTargetShapesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the compute target shape.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the compute target shape.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetComputeTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetComputeTargetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetContainersFilterArgsDict(TypedDict):

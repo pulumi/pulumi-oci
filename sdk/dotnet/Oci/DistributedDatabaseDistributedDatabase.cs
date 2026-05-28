@@ -334,6 +334,9 @@ namespace Pulumi.Oci.Oci
         [Output("downloadGsmCertificateSigningRequestTrigger")]
         public Output<int?> DownloadGsmCertificateSigningRequestTrigger { get; private set; } = null!;
 
+        [Output("effectiveReplicationUnit")]
+        public Output<int> EffectiveReplicationUnit { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -824,7 +827,7 @@ namespace Pulumi.Oci.Oci
         [Input("scanListenerPort")]
         public Input<int>? ScanListenerPort { get; set; }
 
-        [Input("shardDetails", required: true)]
+        [Input("shardDetails")]
         private InputList<Inputs.DistributedDatabaseDistributedDatabaseShardDetailArgs>? _shardDetails;
 
         /// <summary>
@@ -985,6 +988,9 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("downloadGsmCertificateSigningRequestTrigger")]
         public Input<int>? DownloadGsmCertificateSigningRequestTrigger { get; set; }
+
+        [Input("effectiveReplicationUnit")]
+        public Input<int>? EffectiveReplicationUnit { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

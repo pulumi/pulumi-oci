@@ -7,6 +7,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_network_firewall import *
+from .get_network_firewall_health_status import *
 from .get_network_firewall_policies import *
 from .get_network_firewall_policy import *
 from .get_network_firewall_policy_address_list import *

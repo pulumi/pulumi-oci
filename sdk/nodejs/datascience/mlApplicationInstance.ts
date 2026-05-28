@@ -26,12 +26,6 @@ import * as utilities from "../utilities";
  *     mlApplicationImplementationId: testMlApplicationImplementation.id,
  *     authConfiguration: {
  *         type: mlApplicationInstanceAuthConfigurationType,
- *         accessToken: mlApplicationInstanceAuthConfigurationAccessToken,
- *         applicationName: testApplication.name,
- *         audience: mlApplicationInstanceAuthConfigurationAudience,
- *         domainId: testDomain.id,
- *         roleName: mlApplicationInstanceAuthConfigurationRoleName,
- *         scope: mlApplicationInstanceAuthConfigurationScope,
  *     },
  *     configurations: [{
  *         key: mlApplicationInstanceConfigurationKey,

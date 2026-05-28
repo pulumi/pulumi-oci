@@ -13,6 +13,802 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray []GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput
+
+func (GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return vs[0].([]GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowMonthArgs and GetCloudExadataInfrastructureMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowMonthInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
+type GetCloudExadataInfrastructureMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudExadataInfrastructureMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowMonthArgs) ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowMonthArgs) ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowMonthArray and GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+type GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowMonthArray []GetCloudExadataInfrastructureMaintenanceWindowMonthInput
+
+func (GetCloudExadataInfrastructureMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowMonthArray) ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowMonthArray) ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthOutput) ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthOutput) ToGetCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindowMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureMaintenanceWindowMonth {
+		return vs[0].([]GetCloudExadataInfrastructureMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+	Id string `pulumi:"id"`
+	// Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+	UnAllocatedAdbStorageInTbs float64 `pulumi:"unAllocatedAdbStorageInTbs"`
+}
+
+// GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterInput is an input type that accepts GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs and GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterInput` via:
+//
+//	GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs{...}
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput
+	ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutputWithContext(context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput
+}
+
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+	UnAllocatedAdbStorageInTbs pulumi.Float64Input `pulumi:"unAllocatedAdbStorageInTbs"`
+}
+
+func (GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput {
+	return i.ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput)
+}
+
+// GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayInput is an input type that accepts GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray and GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayInput` via:
+//
+//	GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray{ GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs{...} }
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput
+	ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput
+}
+
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray []GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterInput
+
+func (GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput {
+	return i.ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput)
+}
+
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput) UnAllocatedAdbStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster) float64 {
+		return v.UnAllocatedAdbStorageInTbs
+	}).(pulumi.Float64Output)
+}
+
+type GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput() GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput) ToGetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster {
+		return vs[0].([]GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructure struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount int `pulumi:"activatedStorageCount"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount int `pulumi:"additionalStorageCount"`
+	// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+	AvailableStorageSizeInGbs int `pulumi:"availableStorageSizeInGbs"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The number of compute servers for the cloud Exadata infrastructure.
+	ComputeCount int `pulumi:"computeCount"`
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
+	// The total number of CPU cores allocated.
+	CpuCount int `pulumi:"cpuCount"`
+	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+	CustomerContacts []GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType string `pulumi:"databaseServerType"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	DbServerVersion string `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations []GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+	Id string `pulumi:"id"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated bool `pulumi:"isSchedulingPolicyAssociated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference `pulumi:"maintenanceVersionPreferences"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The total number of CPU cores available.
+	MaxCpuCount int `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs float64 `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs int `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs int `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
+	// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyStorageServerVersion string `pulumi:"monthlyStorageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	// The model name of the cloud Exadata infrastructure resource.
+	Shape string `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The number of storage servers for the cloud Exadata infrastructure.
+	StorageCount int `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType string `pulumi:"storageServerType"`
+	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	StorageServerVersion string `pulumi:"storageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the cloud Exadata infrastructure resource was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+	TotalStorageSizeInGbs int `pulumi:"totalStorageSizeInGbs"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount pulumi.IntInput `pulumi:"activatedStorageCount"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount pulumi.IntInput `pulumi:"additionalStorageCount"`
+	// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+	AvailableStorageSizeInGbs pulumi.IntInput `pulumi:"availableStorageSizeInGbs"`
+	// A filter to return only resources that match the given cluster placement group ID exactly.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The number of compute servers for the cloud Exadata infrastructure.
+	ComputeCount pulumi.IntInput `pulumi:"computeCount"`
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	// The total number of CPU cores allocated.
+	CpuCount pulumi.IntInput `pulumi:"cpuCount"`
+	// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+	CustomerContacts GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput `pulumi:"customerContacts"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	// The database server type of the Exadata infrastructure.
+	DatabaseServerType pulumi.StringInput `pulumi:"databaseServerType"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	DbServerVersion pulumi.StringInput `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput `pulumi:"definedFileSystemConfigurations"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput `pulumi:"exascaleConfigs"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, the infrastructure is using granular maintenance scheduling preference.
+	IsSchedulingPolicyAssociated pulumi.BoolInput `pulumi:"isSchedulingPolicyAssociated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId pulumi.StringInput `pulumi:"lastMaintenanceRunId"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput `pulumi:"maintenanceVersionPreferences"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// The total number of CPU cores available.
+	MaxCpuCount pulumi.IntInput `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs pulumi.Float64Input `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs pulumi.IntInput `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs pulumi.IntInput `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyDbServerVersion pulumi.StringInput `pulumi:"monthlyDbServerVersion"`
+	// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	MonthlyStorageServerVersion pulumi.StringInput `pulumi:"monthlyStorageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
+	// The model name of the cloud Exadata infrastructure resource.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The number of storage servers for the cloud Exadata infrastructure.
+	StorageCount pulumi.IntInput `pulumi:"storageCount"`
+	// The storage server type of the Exadata infrastructure.
+	StorageServerType pulumi.StringInput `pulumi:"storageServerType"`
+	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+	StorageServerVersion pulumi.StringInput `pulumi:"storageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the cloud Exadata infrastructure resource was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+	TotalStorageSizeInGbs pulumi.IntInput `pulumi:"totalStorageSizeInGbs"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructure)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructure)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructure)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput {
+	return o
+}
+
+// The requested number of additional storage servers activated for the Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ActivatedStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+}
+
+// The requested number of additional storage servers for the Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+}
+
+// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) AvailableStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int {
+		return v.AvailableStorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given cluster placement group ID exactly.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The number of compute servers for the cloud Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The total number of CPU cores allocated.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) CpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.CpuCount }).(pulumi.IntOutput)
+}
+
+// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) CustomerContacts() GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) []GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact {
+		return v.CustomerContacts
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput)
+}
+
+// Size, in terabytes, of the DATA disk group.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) float64 {
+		return v.DataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
+// The database server type of the Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DatabaseServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.DatabaseServerType }).(pulumi.StringOutput)
+}
+
+// The local node storage allocated in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.DbServerVersion }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DefinedFileSystemConfigurations() GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) []GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration {
+		return v.DefinedFileSystemConfigurations
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) ExascaleConfigs() GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) []GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig {
+		return v.ExascaleConfigs
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, the infrastructure is using granular maintenance scheduling preference.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) IsSchedulingPolicyAssociated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) bool {
+		return v.IsSchedulingPolicyAssociated
+	}).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) LastMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The preferences for target versions of future maintenance runs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaintenanceVersionPreferences() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference {
+		return v.MaintenanceVersionPreferences
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaintenanceWindows() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow {
+		return v.MaintenanceWindows
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+// The total number of CPU cores available.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaxCpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.MaxCpuCount }).(pulumi.IntOutput)
+}
+
+// The total available DATA disk group size.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaxDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) float64 { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+}
+
+// The total local node storage available in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The total memory available in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MaxMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The memory allocated in GBs.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MonthlyDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string {
+		return v.MonthlyDbServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) MonthlyStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string {
+		return v.MonthlyStorageServerVersion
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) NextMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The model name of the cloud Exadata infrastructure resource.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The number of storage servers for the cloud Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.StorageCount }).(pulumi.IntOutput)
+}
+
+// The storage server type of the Exadata infrastructure.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) StorageServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.StorageServerType }).(pulumi.StringOutput)
+}
+
+// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) StorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.StorageServerVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the cloud Exadata infrastructure resource was created.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput) TotalStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructure) int { return v.TotalStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructure)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructure {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructure)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput)
+}
+
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact struct {
 	// The email address used by Oracle to send notifications regarding databases and infrastructure.
 	Email string `pulumi:"email"`
@@ -372,6 +1168,105 @@ func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig {
 		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig)[vs[1].(int)]
 	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput)
 }
 
 type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow struct {
@@ -7534,9 +8429,11 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceH
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// A message that gives a description on how and why the window was created.
+	WindowDetails string `pulumi:"windowDetails"`
 	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 	WindowDurationInMins int `pulumi:"windowDurationInMins"`
-	// The execution window is of PLANNED or UNPLANNED type.
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
 	WindowType string `pulumi:"windowType"`
 }
 
@@ -7590,9 +8487,11 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceH
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// A message that gives a description on how and why the window was created.
+	WindowDetails pulumi.StringInput `pulumi:"windowDetails"`
 	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 	WindowDurationInMins pulumi.IntInput `pulumi:"windowDurationInMins"`
-	// The execution window is of PLANNED or UNPLANNED type.
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
 	WindowType pulumi.StringInput `pulumi:"windowType"`
 }
 
@@ -7780,6 +8679,13 @@ func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenan
 	}).(pulumi.IntOutput)
 }
 
+// A message that gives a description on how and why the window was created.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.WindowDetails
+	}).(pulumi.StringOutput)
+}
+
 // Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDurationInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
@@ -7787,7 +8693,7 @@ func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenan
 	}).(pulumi.IntOutput)
 }
 
-// The execution window is of PLANNED or UNPLANNED type.
+// The execution window type. Either "PLANNED" or "UNPLANNED".
 func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
 		return v.WindowType
@@ -7863,6 +8769,8 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail
 	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
 	// The state of the maintenance run history.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -7883,6 +8791,8 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail
 	TimeStarted string `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription `pulumi:"windowTypeDescriptions"`
 }
 
 // GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput values.
@@ -7945,6 +8855,8 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail
 	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
 	// The state of the maintenance run history.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -7965,6 +8877,8 @@ type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput `pulumi:"windowTypeDescriptions"`
 }
 
 func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
@@ -8186,6 +9100,13 @@ func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDet
 	}).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
 // The state of the maintenance run history.
 func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) string {
@@ -8254,6 +9175,13 @@ func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDet
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) int {
 		return v.TotalTimeTakenInMins
 	}).(pulumi.IntOutput)
+}
+
+// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailOutput) WindowTypeDescriptions() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription {
+		return v.WindowTypeDescriptions
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput)
 }
 
 type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8406,6 +9334,116 @@ func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDet
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
 		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
 	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages []string `pulumi:"messages"`
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{...}
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages pulumi.StringArrayInput `pulumi:"messages"`
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray and GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray{ GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{...} }
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput
+	ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return o
+}
+
+// A list of window detail messages from all the active execution windows based on the window type.
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) Messages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription) []string {
+		return v.Messages
+	}).(pulumi.StringArrayOutput)
+}
+
+// The execution window type. Either "PLANNED" or "UNPLANNED".
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription) string {
+		return v.WindowType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ToGetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput)
 }
 
 type GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail struct {
@@ -9254,9 +10292,11 @@ type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow s
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// A message that gives a description on how and why the window was created.
+	WindowDetails string `pulumi:"windowDetails"`
 	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 	WindowDurationInMins int `pulumi:"windowDurationInMins"`
-	// The execution window is of PLANNED or UNPLANNED type.
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
 	WindowType string `pulumi:"windowType"`
 }
 
@@ -9310,9 +10350,11 @@ type GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowAr
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// A message that gives a description on how and why the window was created.
+	WindowDetails pulumi.StringInput `pulumi:"windowDetails"`
 	// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 	WindowDurationInMins pulumi.IntInput `pulumi:"windowDurationInMins"`
-	// The execution window is of PLANNED or UNPLANNED type.
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
 	WindowType pulumi.StringInput `pulumi:"windowType"`
 }
 
@@ -9498,6 +10540,13 @@ func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindo
 	}).(pulumi.IntOutput)
 }
 
+// A message that gives a description on how and why the window was created.
+func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
+		return v.WindowDetails
+	}).(pulumi.StringOutput)
+}
+
 // Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowDurationInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) int {
@@ -9505,7 +10554,7 @@ func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindo
 	}).(pulumi.IntOutput)
 }
 
-// The execution window is of PLANNED or UNPLANNED type.
+// The execution window type. Either "PLANNED" or "UNPLANNED".
 func (o GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowOutput) WindowType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow) string {
 		return v.WindowType
@@ -9581,6 +10630,8 @@ type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail struct {
 	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
 	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -9601,6 +10652,8 @@ type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail struct {
 	TimeStarted string `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription `pulumi:"windowTypeDescriptions"`
 }
 
 // GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput values.
@@ -9663,6 +10716,8 @@ type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
 	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
 	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -9683,6 +10738,8 @@ type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs struct {
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput `pulumi:"windowTypeDescriptions"`
 }
 
 func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArgs) ElementType() reflect.Type {
@@ -9864,6 +10921,13 @@ func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) PeerMaintena
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) []string { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
 // The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) string { return v.State }).(pulumi.StringOutput)
@@ -9914,6 +10978,13 @@ func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TimeStarted(
 // The total time taken by corresponding resource activity in minutes.
 func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) TotalTimeTakenInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailOutput) WindowTypeDescriptions() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail) []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription {
+		return v.WindowTypeDescriptions
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput)
 }
 
 type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput struct{ *pulumi.OutputState }
@@ -10066,6 +11137,116 @@ func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTim
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime {
 		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime)[vs[1].(int)]
 	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages []string `pulumi:"messages"`
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{...}
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages pulumi.StringArrayInput `pulumi:"messages"`
+	// The execution window type. Either "PLANNED" or "UNPLANNED".
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput)
+}
+
+// GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput is an input type that accepts GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray and GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput` via:
+//
+//	GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray{ GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{...} }
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput
+	ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return i.ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return o
+}
+
+// A list of window detail messages from all the active execution windows based on the window type.
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) Messages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription) []string {
+		return v.Messages
+	}).(pulumi.StringArrayOutput)
+}
+
+// The execution window type. Either "PLANNED" or "UNPLANNED".
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription) string {
+		return v.WindowType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput() GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) ToGetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput) Index(i pulumi.IntInput) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription {
+		return vs[0].([]GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription)[vs[1].(int)]
+	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput)
 }
 
 type GetDatabasePdbConversionHistoryEntriesFilter struct {
@@ -26592,6 +27773,105 @@ func (o GetExadataInfrastructureExascaleConfigArrayOutput) Index(i pulumi.IntInp
 	}).(GetExadataInfrastructureExascaleConfigOutput)
 }
 
+type GetExadataInfrastructureMaintenanceVersionPreference struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+// GetExadataInfrastructureMaintenanceVersionPreferenceInput is an input type that accepts GetExadataInfrastructureMaintenanceVersionPreferenceArgs and GetExadataInfrastructureMaintenanceVersionPreferenceOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceVersionPreferenceInput` via:
+//
+//	GetExadataInfrastructureMaintenanceVersionPreferenceArgs{...}
+type GetExadataInfrastructureMaintenanceVersionPreferenceInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructureMaintenanceVersionPreferenceOutput
+	ToGetExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceOutput
+}
+
+type GetExadataInfrastructureMaintenanceVersionPreferenceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+func (GetExadataInfrastructureMaintenanceVersionPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return i.ToGetExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
+// GetExadataInfrastructureMaintenanceVersionPreferenceArrayInput is an input type that accepts GetExadataInfrastructureMaintenanceVersionPreferenceArray and GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructureMaintenanceVersionPreferenceArrayInput` via:
+//
+//	GetExadataInfrastructureMaintenanceVersionPreferenceArray{ GetExadataInfrastructureMaintenanceVersionPreferenceArgs{...} }
+type GetExadataInfrastructureMaintenanceVersionPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+	ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+}
+
+type GetExadataInfrastructureMaintenanceVersionPreferenceArray []GetExadataInfrastructureMaintenanceVersionPreferenceInput
+
+func (GetExadataInfrastructureMaintenanceVersionPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return i.ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
+}
+
+type GetExadataInfrastructureMaintenanceVersionPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceVersionPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureMaintenanceVersionPreference) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructureMaintenanceVersionPreference {
+		return vs[0].([]GetExadataInfrastructureMaintenanceVersionPreference)[vs[1].(int)]
+	}).(GetExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
 type GetExadataInfrastructureMaintenanceWindow struct {
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
 	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
@@ -27269,6 +28549,8 @@ type GetExadataInfrastructuresExadataInfrastructure struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus string `pulumi:"maintenanceSloStatus"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences []GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference `pulumi:"maintenanceVersionPreferences"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The total number of CPU cores available.
@@ -27391,6 +28673,8 @@ type GetExadataInfrastructuresExadataInfrastructureArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus pulumi.StringInput `pulumi:"maintenanceSloStatus"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayInput `pulumi:"maintenanceVersionPreferences"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
 	// The total number of CPU cores available.
@@ -27661,6 +28945,13 @@ func (o GetExadataInfrastructuresExadataInfrastructureOutput) LifecycleDetails()
 // A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaintenanceSloStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) string { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+}
+
+// The preferences for target versions of future maintenance runs.
+func (o GetExadataInfrastructuresExadataInfrastructureOutput) MaintenanceVersionPreferences() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructure) []GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference {
+		return v.MaintenanceVersionPreferences
+	}).(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
 }
 
 // The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -28178,6 +29469,105 @@ func (o GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureExascaleConfig {
 		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureExascaleConfig)[vs[1].(int)]
 	}).(GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+// GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs and GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs{...}
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput
+	ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+func (GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
+// GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayInput is an input type that accepts GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray and GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayInput` via:
+//
+//	GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray{ GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs{...} }
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+	ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+}
+
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray []GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceInput
+
+func (GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return i.ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) Index(i pulumi.IntInput) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference {
+		return vs[0].([]GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreference)[vs[1].(int)]
+	}).(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput)
 }
 
 type GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow struct {
@@ -38809,6 +40199,112 @@ func (o GetMaintenanceRunEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInp
 	}).(GetMaintenanceRunEstimatedPatchingTimeOutput)
 }
 
+type GetMaintenanceRunWindowTypeDescription struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages []string `pulumi:"messages"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetMaintenanceRunWindowTypeDescriptionInput is an input type that accepts GetMaintenanceRunWindowTypeDescriptionArgs and GetMaintenanceRunWindowTypeDescriptionOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunWindowTypeDescriptionInput` via:
+//
+//	GetMaintenanceRunWindowTypeDescriptionArgs{...}
+type GetMaintenanceRunWindowTypeDescriptionInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunWindowTypeDescriptionOutput
+	ToGetMaintenanceRunWindowTypeDescriptionOutputWithContext(context.Context) GetMaintenanceRunWindowTypeDescriptionOutput
+}
+
+type GetMaintenanceRunWindowTypeDescriptionArgs struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages pulumi.StringArrayInput `pulumi:"messages"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetMaintenanceRunWindowTypeDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunWindowTypeDescriptionArgs) ToGetMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunWindowTypeDescriptionOutput {
+	return i.ToGetMaintenanceRunWindowTypeDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunWindowTypeDescriptionArgs) ToGetMaintenanceRunWindowTypeDescriptionOutputWithContext(ctx context.Context) GetMaintenanceRunWindowTypeDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunWindowTypeDescriptionOutput)
+}
+
+// GetMaintenanceRunWindowTypeDescriptionArrayInput is an input type that accepts GetMaintenanceRunWindowTypeDescriptionArray and GetMaintenanceRunWindowTypeDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunWindowTypeDescriptionArrayInput` via:
+//
+//	GetMaintenanceRunWindowTypeDescriptionArray{ GetMaintenanceRunWindowTypeDescriptionArgs{...} }
+type GetMaintenanceRunWindowTypeDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunWindowTypeDescriptionArrayOutput
+	ToGetMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(context.Context) GetMaintenanceRunWindowTypeDescriptionArrayOutput
+}
+
+type GetMaintenanceRunWindowTypeDescriptionArray []GetMaintenanceRunWindowTypeDescriptionInput
+
+func (GetMaintenanceRunWindowTypeDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunWindowTypeDescriptionArray) ToGetMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return i.ToGetMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunWindowTypeDescriptionArray) ToGetMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunWindowTypeDescriptionArrayOutput)
+}
+
+type GetMaintenanceRunWindowTypeDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunWindowTypeDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunWindowTypeDescriptionOutput) ToGetMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunWindowTypeDescriptionOutput {
+	return o
+}
+
+func (o GetMaintenanceRunWindowTypeDescriptionOutput) ToGetMaintenanceRunWindowTypeDescriptionOutputWithContext(ctx context.Context) GetMaintenanceRunWindowTypeDescriptionOutput {
+	return o
+}
+
+// A list of window detail messages from all the active execution windows based on the window type.
+func (o GetMaintenanceRunWindowTypeDescriptionOutput) Messages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunWindowTypeDescription) []string { return v.Messages }).(pulumi.StringArrayOutput)
+}
+
+// The execution window is of PLANNED or UNPLANNED type.
+func (o GetMaintenanceRunWindowTypeDescriptionOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunWindowTypeDescription) string { return v.WindowType }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceRunWindowTypeDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunWindowTypeDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunWindowTypeDescriptionArrayOutput) ToGetMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunWindowTypeDescriptionArrayOutput) ToGetMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunWindowTypeDescriptionArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunWindowTypeDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunWindowTypeDescription {
+		return vs[0].([]GetMaintenanceRunWindowTypeDescription)[vs[1].(int)]
+	}).(GetMaintenanceRunWindowTypeDescriptionOutput)
+}
+
 type GetMaintenanceRunsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -38965,6 +40461,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -38985,6 +40483,8 @@ type GetMaintenanceRunsMaintenanceRun struct {
 	TimeStarted string `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins int `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions []GetMaintenanceRunsMaintenanceRunWindowTypeDescription `pulumi:"windowTypeDescriptions"`
 }
 
 // GetMaintenanceRunsMaintenanceRunInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArgs and GetMaintenanceRunsMaintenanceRunOutput values.
@@ -39048,6 +40548,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds pulumi.StringArrayInput `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -39068,6 +40570,8 @@ type GetMaintenanceRunsMaintenanceRunArgs struct {
 	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntInput `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayInput `pulumi:"windowTypeDescriptions"`
 }
 
 func (GetMaintenanceRunsMaintenanceRunArgs) ElementType() reflect.Type {
@@ -39247,6 +40751,11 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) PeerMaintenanceRunIds() pulumi.S
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) []string { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+func (o GetMaintenanceRunsMaintenanceRunOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.ReferenceResourceIdForImageUpdates }).(pulumi.StringOutput)
+}
+
 // A filter to return only resources that match the given lifecycle state exactly.
 func (o GetMaintenanceRunsMaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.State }).(pulumi.StringOutput)
@@ -39295,6 +40804,13 @@ func (o GetMaintenanceRunsMaintenanceRunOutput) TimeStarted() pulumi.StringOutpu
 // The total time taken by corresponding resource activity in minutes.
 func (o GetMaintenanceRunsMaintenanceRunOutput) TotalTimeTakenInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+func (o GetMaintenanceRunsMaintenanceRunOutput) WindowTypeDescriptions() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) []GetMaintenanceRunsMaintenanceRunWindowTypeDescription {
+		return v.WindowTypeDescriptions
+	}).(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput)
 }
 
 type GetMaintenanceRunsMaintenanceRunArrayOutput struct{ *pulumi.OutputState }
@@ -39445,6 +40961,112 @@ func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime {
 		return vs[0].([]GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)[vs[1].(int)]
 	}).(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescription struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages []string `pulumi:"messages"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType string `pulumi:"windowType"`
+}
+
+// GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionInput is an input type that accepts GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs and GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs{...}
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput
+	ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs struct {
+	// A list of window detail messages from all the active execution windows based on the window type.
+	Messages pulumi.StringArrayInput `pulumi:"messages"`
+	// The execution window is of PLANNED or UNPLANNED type.
+	WindowType pulumi.StringInput `pulumi:"windowType"`
+}
+
+func (GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput)
+}
+
+// GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayInput is an input type that accepts GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray and GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray{ GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs{...} }
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput
+	ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray []GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionInput
+
+func (GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput {
+	return o
+}
+
+// A list of window detail messages from all the active execution windows based on the window type.
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput) Messages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunWindowTypeDescription) []string { return v.Messages }).(pulumi.StringArrayOutput)
+}
+
+// The execution window is of PLANNED or UNPLANNED type.
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput) WindowType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunWindowTypeDescription) string { return v.WindowType }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRunWindowTypeDescription)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput() GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput) ToGetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunsMaintenanceRunWindowTypeDescription {
+		return vs[0].([]GetMaintenanceRunsMaintenanceRunWindowTypeDescription)[vs[1].(int)]
+	}).(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput)
 }
 
 type GetManagedPreferredCredentialsFilter struct {
@@ -51150,12 +52772,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterInput)(nil)).Elem(), GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -51256,6 +52888,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailArgs{})
@@ -51272,6 +52906,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{})
@@ -51492,6 +53128,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructureDefinedFileSystemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetExadataInfrastructureExascaleConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetExadataInfrastructureExascaleConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceVersionPreferenceInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceVersionPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceVersionPreferenceArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceVersionPreferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -51510,6 +53148,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureExascaleConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureExascaleConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
@@ -51662,12 +53302,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTimeInput)(nil)).Elem(), GetMaintenanceRunEstimatedPatchingTimeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetMaintenanceRunEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunWindowTypeDescriptionInput)(nil)).Elem(), GetMaintenanceRunWindowTypeDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunWindowTypeDescriptionArrayInput)(nil)).Elem(), GetMaintenanceRunWindowTypeDescriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsFilterInput)(nil)).Elem(), GetMaintenanceRunsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsFilterArrayInput)(nil)).Elem(), GetMaintenanceRunsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunArrayInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterArrayInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionArgs{})
@@ -51846,12 +53490,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
@@ -51952,6 +53606,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailOutput{})
@@ -51968,6 +53624,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput{})
@@ -52188,6 +53846,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureExascaleConfigOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureExascaleConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceVersionPreferenceOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
@@ -52206,6 +53866,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureExascaleConfigOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureExascaleConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceOutput{})
+	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
@@ -52358,12 +54020,16 @@ func init() {
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunEstimatedPatchingTimeOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunWindowTypeDescriptionOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunWindowTypeDescriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsFilterOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunArrayOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput{})
 	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionOutput{})

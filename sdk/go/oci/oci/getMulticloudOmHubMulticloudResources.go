@@ -13,7 +13,10 @@ import (
 
 // This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
 //
-// Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+// Lists Multicloud resources in the specified Multicloud subscription.
+// Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+// For more information, see
+// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
 //
 // ## Example Usage
 //
@@ -30,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetMulticloudOmHubMulticloudResources(ctx, &oci.GetMulticloudOmHubMulticloudResourcesArgs{
-//				SubscriptionId:          subscriptionId,
-//				SubscriptionServiceName: subscriptionServiceName,
+//				SubscriptionId:          pulumi.StringRef(subscriptionId),
+//				SubscriptionServiceName: pulumi.StringRef(subscriptionServiceName),
 //				CompartmentId:           pulumi.StringRef(compartmentId),
 //				ExternalLocation:        pulumi.StringRef(externalLocation),
 //				ResourceAnchorId:        pulumi.StringRef(resourceAnchorId),
@@ -58,21 +61,23 @@ func GetMulticloudOmHubMulticloudResources(ctx *pulumi.Context, args *GetMulticl
 type GetMulticloudOmHubMulticloudResourcesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation *string                                       `pulumi:"externalLocation"`
 	Filters          []GetMulticloudOmHubMulticloudResourcesFilter `pulumi:"filters"`
 	Limit            *int                                          `pulumi:"limit"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	ResourceAnchorId *string `pulumi:"resourceAnchorId"`
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
+	ResourceType *string `pulumi:"resourceType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
-	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// The cloud service provider.
+	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
 // A collection of values returned by getMulticloudOmHubMulticloudResources.
 type GetMulticloudOmHubMulticloudResourcesResult struct {
-	// Compartment Id of the resource.
+	// Id of the compartment associated with the resource.
 	CompartmentId    *string                                       `pulumi:"compartmentId"`
 	ExternalLocation *string                                       `pulumi:"externalLocation"`
 	Filters          []GetMulticloudOmHubMulticloudResourcesFilter `pulumi:"filters"`
@@ -82,8 +87,10 @@ type GetMulticloudOmHubMulticloudResourcesResult struct {
 	// The list of OmHubMulticloudResource.
 	MulticloudResourceCollections []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection `pulumi:"multicloudResourceCollections"`
 	ResourceAnchorId              *string                                                             `pulumi:"resourceAnchorId"`
-	SubscriptionId                string                                                              `pulumi:"subscriptionId"`
-	SubscriptionServiceName       string                                                              `pulumi:"subscriptionServiceName"`
+	// Type of resource, such as `VMCluster` or `ExaInfra`,
+	ResourceType            *string `pulumi:"resourceType"`
+	SubscriptionId          *string `pulumi:"subscriptionId"`
+	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
 func GetMulticloudOmHubMulticloudResourcesOutput(ctx *pulumi.Context, args GetMulticloudOmHubMulticloudResourcesOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudOmHubMulticloudResourcesResultOutput {
@@ -99,16 +106,18 @@ func GetMulticloudOmHubMulticloudResourcesOutput(ctx *pulumi.Context, args GetMu
 type GetMulticloudOmHubMulticloudResourcesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation pulumi.StringPtrInput                                 `pulumi:"externalLocation"`
 	Filters          GetMulticloudOmHubMulticloudResourcesFilterArrayInput `pulumi:"filters"`
 	Limit            pulumi.IntPtrInput                                    `pulumi:"limit"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
 	ResourceAnchorId pulumi.StringPtrInput `pulumi:"resourceAnchorId"`
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
-	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
+	// The cloud service provider.
+	SubscriptionServiceName pulumi.StringPtrInput `pulumi:"subscriptionServiceName"`
 }
 
 func (GetMulticloudOmHubMulticloudResourcesOutputArgs) ElementType() reflect.Type {
@@ -130,7 +139,7 @@ func (o GetMulticloudOmHubMulticloudResourcesResultOutput) ToGetMulticloudOmHubM
 	return o
 }
 
-// Compartment Id of the resource.
+// Id of the compartment associated with the resource.
 func (o GetMulticloudOmHubMulticloudResourcesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -165,12 +174,17 @@ func (o GetMulticloudOmHubMulticloudResourcesResultOutput) ResourceAnchorId() pu
 	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) *string { return v.ResourceAnchorId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMulticloudOmHubMulticloudResourcesResultOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+// Type of resource, such as `VMCluster` or `ExaInfra`,
+func (o GetMulticloudOmHubMulticloudResourcesResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMulticloudOmHubMulticloudResourcesResultOutput) SubscriptionServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) string { return v.SubscriptionServiceName }).(pulumi.StringOutput)
+func (o GetMulticloudOmHubMulticloudResourcesResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesResultOutput) SubscriptionServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesResult) *string { return v.SubscriptionServiceName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

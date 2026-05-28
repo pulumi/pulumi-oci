@@ -99,6 +99,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	Description string `pulumi:"description"`
 	// The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm string `pulumi:"distributionAlgorithm"`
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain string `pulumi:"domain"`
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
@@ -163,6 +165,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ScanListenerPortTls int `pulumi:"scanListenerPortTls"`
 	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage float64 `pulumi:"sgaPercentage"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape string `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -328,6 +332,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) Description() pulumi.StringO
 // The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 func (o LookupCloudAutonomousVmClusterResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The distribution algorithm used for the Autonomous VM cluster.
+func (o LookupCloudAutonomousVmClusterResultOutput) DistributionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.DistributionAlgorithm }).(pulumi.StringOutput)
 }
 
 // The domain name for the cloud Autonomous VM cluster.
@@ -499,6 +508,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ScanListenerPortTls() pulumi
 // Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 func (o LookupCloudAutonomousVmClusterResultOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// Percentage of ECPU memory allocated for SGA(System Global Area).
+func (o LookupCloudAutonomousVmClusterResultOutput) SgaPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.SgaPercentage }).(pulumi.Float64Output)
 }
 
 // The model name of the Exadata hardware running the cloud Autonomous VM cluster.

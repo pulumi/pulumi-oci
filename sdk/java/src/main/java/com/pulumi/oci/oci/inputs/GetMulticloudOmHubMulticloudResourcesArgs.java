@@ -5,7 +5,6 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesFilterArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -35,14 +34,14 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
     }
 
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      * 
      */
     @Import(name="externalLocation")
     private @Nullable Output<String> externalLocation;
 
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     public Optional<Output<String>> externalLocation() {
@@ -64,14 +63,14 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     @Import(name="resourceAnchorId")
     private @Nullable Output<String> resourceAnchorId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     public Optional<Output<String>> resourceAnchorId() {
@@ -79,33 +78,48 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
     }
 
     /**
+     * Filter alerts by resource type (e.g. ADBD, VMCluster).
+     * 
+     */
+    @Import(name="resourceType")
+    private @Nullable Output<String> resourceType;
+
+    /**
+     * @return Filter alerts by resource type (e.g. ADBD, VMCluster).
+     * 
+     */
+    public Optional<Output<String>> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    @Import(name="subscriptionId", required=true)
-    private Output<String> subscriptionId;
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    public Output<String> subscriptionId() {
-        return this.subscriptionId;
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      * 
      */
-    @Import(name="subscriptionServiceName", required=true)
-    private Output<String> subscriptionServiceName;
+    @Import(name="subscriptionServiceName")
+    private @Nullable Output<String> subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
      * 
      */
-    public Output<String> subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<Output<String>> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     private GetMulticloudOmHubMulticloudResourcesArgs() {}
@@ -116,6 +130,7 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         this.filters = $.filters;
         this.limit = $.limit;
         this.resourceAnchorId = $.resourceAnchorId;
+        this.resourceType = $.resourceType;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -160,7 +175,7 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -171,7 +186,7 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -203,7 +218,7 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
-         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * 
          * @return builder
          * 
@@ -214,7 +229,7 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
-         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+         * @param resourceAnchorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
          * 
          * @return builder
          * 
@@ -224,12 +239,33 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
+         * @param resourceType Filter alerts by resource type (e.g. ADBD, VMCluster).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(@Nullable Output<String> resourceType) {
+            $.resourceType = resourceType;
+            return this;
+        }
+
+        /**
+         * @param resourceType Filter alerts by resource type (e.g. ADBD, VMCluster).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(String resourceType) {
+            return resourceType(Output.of(resourceType));
+        }
+
+        /**
          * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionId(Output<String> subscriptionId) {
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
             $.subscriptionId = subscriptionId;
             return this;
         }
@@ -245,18 +281,18 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionServiceName(Output<String> subscriptionServiceName) {
+        public Builder subscriptionServiceName(@Nullable Output<String> subscriptionServiceName) {
             $.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 
@@ -266,12 +302,6 @@ public final class GetMulticloudOmHubMulticloudResourcesArgs extends com.pulumi.
         }
 
         public GetMulticloudOmHubMulticloudResourcesArgs build() {
-            if ($.subscriptionId == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesArgs", "subscriptionId");
-            }
-            if ($.subscriptionServiceName == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesArgs", "subscriptionServiceName");
-            }
             return $;
         }
     }

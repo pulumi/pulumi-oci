@@ -109,12 +109,17 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
      */
     private Integer totalTimeTakenInMins;
     /**
+     * @return A message that gives a description on how and why the window was created.
+     * 
+     */
+    private String windowDetails;
+    /**
      * @return Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      * 
      */
     private Integer windowDurationInMins;
     /**
-     * @return The execution window is of PLANNED or UNPLANNED type.
+     * @return The execution window type. Either &#34;PLANNED&#34; or &#34;UNPLANNED&#34;.
      * 
      */
     private String windowType;
@@ -254,6 +259,13 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
         return this.totalTimeTakenInMins;
     }
     /**
+     * @return A message that gives a description on how and why the window was created.
+     * 
+     */
+    public String windowDetails() {
+        return this.windowDetails;
+    }
+    /**
      * @return Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      * 
      */
@@ -261,7 +273,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
         return this.windowDurationInMins;
     }
     /**
-     * @return The execution window is of PLANNED or UNPLANNED type.
+     * @return The execution window type. Either &#34;PLANNED&#34; or &#34;UNPLANNED&#34;.
      * 
      */
     public String windowType() {
@@ -296,6 +308,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
         private String timeStarted;
         private String timeUpdated;
         private Integer totalTimeTakenInMins;
+        private String windowDetails;
         private Integer windowDurationInMins;
         private String windowType;
         public Builder() {}
@@ -320,6 +333,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
     	      this.timeStarted = defaults.timeStarted;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.totalTimeTakenInMins = defaults.totalTimeTakenInMins;
+    	      this.windowDetails = defaults.windowDetails;
     	      this.windowDurationInMins = defaults.windowDurationInMins;
     	      this.windowType = defaults.windowType;
         }
@@ -477,6 +491,14 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
             return this;
         }
         @CustomType.Setter
+        public Builder windowDetails(String windowDetails) {
+            if (windowDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow", "windowDetails");
+            }
+            this.windowDetails = windowDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder windowDurationInMins(Integer windowDurationInMins) {
             if (windowDurationInMins == null) {
               throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow", "windowDurationInMins");
@@ -513,6 +535,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
             _resultValue.timeStarted = timeStarted;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.totalTimeTakenInMins = totalTimeTakenInMins;
+            _resultValue.windowDetails = windowDetails;
             _resultValue.windowDurationInMins = windowDurationInMins;
             _resultValue.windowType = windowType;
             return _resultValue;

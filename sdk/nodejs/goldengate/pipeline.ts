@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     targetConnectionDetails: {
  *         connectionId: testConnection.id,
  *     },
+ *     cpuCoreCount: Number(pipelineCpuCoreCount),
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -38,6 +39,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isAutoScalingEnabled: pipelineIsAutoScalingEnabled === "true",
  *     locks: [{
  *         type: pipelineLocksType,
  *         message: pipelineLocksMessage,
@@ -48,6 +50,12 @@ import * as utilities from "../utilities";
  *         initialDataLoad: {
  *             isInitialLoad: pipelineProcessOptionsInitialDataLoadIsInitialLoad,
  *             actionOnExistingTable: pipelineProcessOptionsInitialDataLoadActionOnExistingTable,
+ *             adbWalletPath: pipelineProcessOptionsInitialDataLoadAdbWalletPath,
+ *             bucket: pipelineProcessOptionsInitialDataLoadBucket,
+ *             initialLoadType: pipelineProcessOptionsInitialDataLoadInitialLoadType,
+ *             namespace: pipelineProcessOptionsInitialDataLoadNamespace,
+ *             sourceWalletPath: pipelineProcessOptionsInitialDataLoadSourceWalletPath,
+ *             targetWalletPath: pipelineProcessOptionsInitialDataLoadTargetWalletPath,
  *         },
  *         replicateSchemaChange: {
  *             canReplicateSchemaChange: pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange,
@@ -102,9 +110,9 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The Minimum number of OCPUs to be made available for this Deployment.
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
-    declare public /*out*/ readonly cpuCoreCount: pulumi.Output<number>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -126,9 +134,9 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly ingressIps: pulumi.Output<outputs.GoldenGate.PipelineIngressIp[]>;
     /**
-     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    declare public /*out*/ readonly isAutoScalingEnabled: pulumi.Output<boolean>;
+    declare public readonly isAutoScalingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
@@ -252,10 +260,12 @@ export class Pipeline extends pulumi.CustomResource {
                 throw new Error("Missing required property 'targetConnectionDetails'");
             }
             resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoScalingEnabled"] = args?.isAutoScalingEnabled;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["locks"] = args?.locks;
             resourceInputs["processOptions"] = args?.processOptions;
@@ -263,9 +273,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["sourceConnectionDetails"] = args?.sourceConnectionDetails;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["targetConnectionDetails"] = args?.targetConnectionDetails;
-            resourceInputs["cpuCoreCount"] = undefined /*out*/;
             resourceInputs["ingressIps"] = undefined /*out*/;
-            resourceInputs["isAutoScalingEnabled"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
             resourceInputs["mappingRules"] = undefined /*out*/;
@@ -290,7 +298,7 @@ export interface PipelineState {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * The Minimum number of OCPUs to be made available for this Deployment.
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
     cpuCoreCount?: pulumi.Input<number | undefined>;
     /**
@@ -314,7 +322,7 @@ export interface PipelineState {
      */
     ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineIngressIp>[] | undefined>;
     /**
-     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -392,6 +400,10 @@ export interface PipelineArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+     */
+    cpuCoreCount?: pulumi.Input<number | undefined>;
+    /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
@@ -407,6 +419,10 @@ export interface PipelineArgs {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+     */
+    isAutoScalingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */

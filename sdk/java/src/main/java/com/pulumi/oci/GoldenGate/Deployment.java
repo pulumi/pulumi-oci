@@ -241,6 +241,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    @Export(name="disasterRecoveryStatus", refs={String.class}, tree="[0]")
+    private Output<String> disasterRecoveryStatus;
+
+    /**
+     * @return Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    public Output<String> disasterRecoveryStatus() {
+        return this.disasterRecoveryStatus;
+    }
+    /**
      * (Updatable) An object&#39;s Display Name.
      * 
      */

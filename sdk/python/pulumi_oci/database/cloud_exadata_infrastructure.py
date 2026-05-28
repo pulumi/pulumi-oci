@@ -31,6 +31,7 @@ class CloudExadataInfrastructureArgs:
                  database_server_type: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']] = None,
                  maintenance_window: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_server_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -48,6 +49,9 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs'] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+               
+               Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
@@ -73,6 +77,8 @@ class CloudExadataInfrastructureArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if maintenance_version_preferences is not None:
+            pulumi.set(__self__, "maintenance_version_preferences", maintenance_version_preferences)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if storage_count is not None:
@@ -203,6 +209,20 @@ class CloudExadataInfrastructureArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']]:
+        """
+        (Updatable) The preferences for target versions of future maintenance runs.
+
+        Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, value: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']]):
+        pulumi.set(self, "maintenance_version_preferences", value)
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]:
         """
@@ -280,6 +300,7 @@ class _CloudExadataInfrastructureState:
                  is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']] = None,
                  maintenance_window: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
                  max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -323,6 +344,9 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs'] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+               
+               Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[_builtins.float] max_data_storage_in_tbs: The total available DATA disk group size.
@@ -390,6 +414,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if maintenance_version_preferences is not None:
+            pulumi.set(__self__, "maintenance_version_preferences", maintenance_version_preferences)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if max_cpu_count is not None:
@@ -692,6 +718,20 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']]:
+        """
+        (Updatable) The preferences for target versions of future maintenance runs.
+
+        Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, value: pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs']]):
+        pulumi.set(self, "maintenance_version_preferences", value)
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> pulumi.Input[Optional['CloudExadataInfrastructureMaintenanceWindowArgs']]:
         """
@@ -927,6 +967,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
                  maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -961,6 +1002,9 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
+            },
+            maintenance_version_preferences={
+                "reference_resource_id_for_image_updates": cloud_exadata_infrastructure_maintenance_version_preferences_reference_resource_id_for_image_updates,
             },
             maintenance_window={
                 "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
@@ -1003,6 +1047,9 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+               
+               Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
         :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[_builtins.int] storage_count: (Updatable) The number of storage servers for the cloud Exadata infrastructure.
@@ -1047,6 +1094,9 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
+            },
+            maintenance_version_preferences={
+                "reference_resource_id_for_image_updates": cloud_exadata_infrastructure_maintenance_version_preferences_reference_resource_id_for_image_updates,
             },
             maintenance_window={
                 "custom_action_timeout_in_mins": int(cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
@@ -1102,6 +1152,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
                  maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1131,6 +1182,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["maintenance_version_preferences"] = maintenance_version_preferences
             __props__.__dict__["maintenance_window"] = maintenance_window
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
@@ -1196,6 +1248,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             is_scheduling_policy_associated: pulumi.Input[Optional[_builtins.bool]] = None,
             last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_version_preferences: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']]] = None,
             maintenance_window: pulumi.Input[Optional[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']]] = None,
             max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
             max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
@@ -1243,6 +1296,9 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceVersionPreferencesArgs', 'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict']] maintenance_version_preferences: (Updatable) The preferences for target versions of future maintenance runs.
+               
+               Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
         :param pulumi.Input[Union['CloudExadataInfrastructureMaintenanceWindowArgs', 'CloudExadataInfrastructureMaintenanceWindowArgsDict']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] max_cpu_count: The total number of CPU cores available.
         :param pulumi.Input[_builtins.float] max_data_storage_in_tbs: The total available DATA disk group size.
@@ -1292,6 +1348,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["is_scheduling_policy_associated"] = is_scheduling_policy_associated
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["maintenance_version_preferences"] = maintenance_version_preferences
         __props__.__dict__["maintenance_window"] = maintenance_window
         __props__.__dict__["max_cpu_count"] = max_cpu_count
         __props__.__dict__["max_data_storage_in_tbs"] = max_data_storage_in_tbs
@@ -1487,6 +1544,16 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> pulumi.Output['outputs.CloudExadataInfrastructureMaintenanceVersionPreferences']:
+        """
+        (Updatable) The preferences for target versions of future maintenance runs.
+
+        Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")

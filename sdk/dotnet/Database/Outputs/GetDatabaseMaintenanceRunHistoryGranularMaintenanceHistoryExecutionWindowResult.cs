@@ -90,11 +90,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int TotalTimeTakenInMins;
         /// <summary>
+        /// A message that gives a description on how and why the window was created.
+        /// </summary>
+        public readonly string WindowDetails;
+        /// <summary>
         /// Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
         /// </summary>
         public readonly int WindowDurationInMins;
         /// <summary>
-        /// The execution window is of PLANNED or UNPLANNED type.
+        /// The execution window type. Either "PLANNED" or "UNPLANNED".
         /// </summary>
         public readonly string WindowType;
 
@@ -138,6 +142,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int totalTimeTakenInMins,
 
+            string windowDetails,
+
             int windowDurationInMins,
 
             string windowType)
@@ -161,6 +167,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeStarted = timeStarted;
             TimeUpdated = timeUpdated;
             TotalTimeTakenInMins = totalTimeTakenInMins;
+            WindowDetails = windowDetails;
             WindowDurationInMins = windowDurationInMins;
             WindowType = windowType;
         }

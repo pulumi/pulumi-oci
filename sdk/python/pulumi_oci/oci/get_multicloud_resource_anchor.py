@@ -147,7 +147,7 @@ class GetMulticloudResourceAnchorResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         """
         return pulumi.get(self, "id")
 
@@ -155,7 +155,7 @@ class GetMulticloudResourceAnchorResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -163,7 +163,7 @@ class GetMulticloudResourceAnchorResult:
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> _builtins.str:
         """
-        The current state of the ResourceAnchor.
+        The current state of the resource anchor.
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -247,7 +247,7 @@ class GetMulticloudResourceAnchorResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -255,7 +255,7 @@ class GetMulticloudResourceAnchorResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -298,7 +298,9 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
     """
     This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets information about a ResourceAnchor.
+    Gets details for the specified resource anchor. The subscription OCID and service name are required.
+    For more information, see
+    [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
 
     ## Example Usage
 
@@ -313,10 +315,10 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
     ```
 
 
-    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['resourceAnchorId'] = resource_anchor_id
@@ -357,7 +359,9 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: pulumi.Input[Optio
     """
     This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets information about a ResourceAnchor.
+    Gets details for the specified resource anchor. The subscription OCID and service name are required.
+    For more information, see
+    [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
 
     ## Example Usage
 
@@ -372,10 +376,10 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: pulumi.Input[Optio
     ```
 
 
-    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['resourceAnchorId'] = resource_anchor_id

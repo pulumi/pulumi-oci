@@ -72,10 +72,25 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             JobInfrastructureType = jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
     ///             BlockStorageSizeInGbs = jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///             ComputeTargetId = testComputeTarget.Id,
     ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///             {
     ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///             },
+    ///             ResourceConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs
+    ///             {
+    ///                 ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
+    ///                 {
+    ///                     MemoryInGbs = jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+    ///                     Ocpus = jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+    ///                 },
+    ///                 ResourceRequestConfiguration = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs
+    ///                 {
+    ///                     Gpus = jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus,
+    ///                     MemoryInGbs = jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+    ///                     Ocpus = jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+    ///                 },
     ///             },
     ///             ShapeName = testShape.Name,
     ///             SubnetId = testSubnet.Id,
@@ -128,10 +143,25 @@ namespace Pulumi.Oci.DataScience
     ///                     {
     ///                         JobInfrastructureType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
     ///                         BlockStorageSizeInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///                         ComputeTargetId = testComputeTarget.Id,
     ///                         JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///                         {
     ///                             MemoryInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                             Ocpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///                         },
+    ///                         ResourceConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs
+    ///                         {
+    ///                             ResourceLimitConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs
+    ///                             {
+    ///                                 MemoryInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+    ///                                 Ocpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+    ///                             },
+    ///                             ResourceRequestConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs
+    ///                             {
+    ///                                 Gpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus,
+    ///                                 MemoryInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+    ///                                 Ocpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+    ///                             },
     ///                         },
     ///                         ShapeName = testShape.Name,
     ///                         SubnetId = testSubnet.Id,

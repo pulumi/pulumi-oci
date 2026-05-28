@@ -44,6 +44,13 @@ import (
 //						&clusterplacementgroups.ClusterPlacementGroupCapabilitiesItemArgs{
 //							Name:    pulumi.Any(clusterPlacementGroupCapabilitiesItemsName),
 //							Service: pulumi.Any(clusterPlacementGroupCapabilitiesItemsService),
+//							AdditionalDetails: &clusterplacementgroups.ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs{
+//								ServiceType:                pulumi.Any(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsServiceType),
+//								ClusterPlacementGroupCount: pulumi.Any(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsClusterPlacementGroupCount),
+//								MemoryInGbs:                pulumi.Any(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsMemoryInGbs),
+//								Nvmes:                      pulumi.Any(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsNvmes),
+//								Ocpus:                      pulumi.Any(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsOcpus),
+//							},
 //						},
 //					},
 //				},

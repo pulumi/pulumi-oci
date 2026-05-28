@@ -18,6 +18,9 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("bandwidthMbps")]
         public Input<int>? BandwidthMbps { get; set; }
 
+        [Input("computeTargetId")]
+        public Input<string>? ComputeTargetId { get; set; }
+
         /// <summary>
         /// The type of the model deployment infrastructure.
         /// </summary>
@@ -27,14 +30,17 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// <summary>
         /// The model deployment instance configuration.
         /// </summary>
-        [Input("instanceConfiguration", required: true)]
-        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs> InstanceConfiguration { get; set; } = null!;
+        [Input("instanceConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs>? InstanceConfiguration { get; set; }
 
         /// <summary>
         /// The maximum network bandwidth for the model deployment.
         /// </summary>
         [Input("maximumBandwidthMbps")]
         public Input<int>? MaximumBandwidthMbps { get; set; }
+
+        [Input("modelDeploymentResourceConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>? ModelDeploymentResourceConfiguration { get; set; }
 
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.

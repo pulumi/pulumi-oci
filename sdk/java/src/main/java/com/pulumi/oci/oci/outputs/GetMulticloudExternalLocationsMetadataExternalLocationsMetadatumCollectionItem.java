@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     private String clusterPlacementGroupId;
@@ -29,7 +29,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
      */
     private Map<String,String> definedTags;
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     private List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation> externalLocations;
@@ -76,7 +76,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
 
     private GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     public String clusterPlacementGroupId() {
@@ -97,7 +97,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         return this.definedTags;
     }
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     public List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation> externalLocations() {

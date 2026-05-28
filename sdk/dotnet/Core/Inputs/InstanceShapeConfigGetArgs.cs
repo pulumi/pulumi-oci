@@ -54,6 +54,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<double>? LocalDisksTotalSizeInGbs { get; set; }
 
         /// <summary>
+        /// (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        /// </summary>
+        [Input("localVolumeSizeInGbs")]
+        public Input<int>? LocalVolumeSizeInGbs { get; set; }
+
+        /// <summary>
         /// The maximum number of VNIC attachments for the instance.
         /// </summary>
         [Input("maxVnicAttachments")]

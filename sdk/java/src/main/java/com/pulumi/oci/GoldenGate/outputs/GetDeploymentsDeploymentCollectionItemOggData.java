@@ -51,6 +51,11 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
     private String identityDomainId;
     private String key;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    private String keySecretId;
+    /**
      * @return Version of OGG
      * 
      */
@@ -117,6 +122,13 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         return this.key;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    public String keySecretId() {
+        return this.keySecretId;
+    }
+    /**
      * @return Version of OGG
      * 
      */
@@ -148,6 +160,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         private List<GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMapping> groupToRolesMappings;
         private String identityDomainId;
         private String key;
+        private String keySecretId;
         private String oggVersion;
         private String passwordSecretId;
         public Builder() {}
@@ -161,6 +174,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
     	      this.groupToRolesMappings = defaults.groupToRolesMappings;
     	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
+    	      this.keySecretId = defaults.keySecretId;
     	      this.oggVersion = defaults.oggVersion;
     	      this.passwordSecretId = defaults.passwordSecretId;
         }
@@ -233,6 +247,14 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             return this;
         }
         @CustomType.Setter
+        public Builder keySecretId(String keySecretId) {
+            if (keySecretId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "keySecretId");
+            }
+            this.keySecretId = keySecretId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
             if (oggVersion == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemOggData", "oggVersion");
@@ -258,6 +280,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
             _resultValue.groupToRolesMappings = groupToRolesMappings;
             _resultValue.identityDomainId = identityDomainId;
             _resultValue.key = key;
+            _resultValue.keySecretId = keySecretId;
             _resultValue.oggVersion = oggVersion;
             _resultValue.passwordSecretId = passwordSecretId;
             return _resultValue;

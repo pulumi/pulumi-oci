@@ -47,17 +47,17 @@ public final class GetMulticloudResourceAnchorResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     private String id;
     /**
-     * @return A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return The current state of the ResourceAnchor.
+     * @return The current state of the resource anchor.
      * 
      */
     private String lifecycleState;
@@ -101,12 +101,12 @@ public final class GetMulticloudResourceAnchorResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeUpdated;
@@ -155,21 +155,21 @@ public final class GetMulticloudResourceAnchorResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+     * @return A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The current state of the ResourceAnchor.
+     * @return The current state of the resource anchor.
      * 
      */
     public String lifecycleState() {
@@ -237,14 +237,14 @@ public final class GetMulticloudResourceAnchorResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeUpdated() {

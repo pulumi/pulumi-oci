@@ -89,6 +89,9 @@ import * as utilities from "../utilities";
  *         sourceType: nodePoolNodeSourceDetailsSourceType,
  *         bootVolumeSizeInGbs: nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
  *     },
+ *     primaryVnic: {
+ *         securityAttributes: nodePoolPrimaryVnicSecurityAttributes,
+ *     },
  *     quantityPerSubnet: Number(nodePoolQuantityPerSubnet),
  *     secondaryVnics: [{
  *         createVnicDetails: {
@@ -109,6 +112,7 @@ import * as utilities from "../utilities";
  *                 ipv6subnetCidr: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
  *             nsgIds: nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
+ *             securityAttributes: nodePoolSecondaryVnicsCreateVnicDetailsSecurityAttributes,
  *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck === "true",
  *         },
  *         displayName: nodePoolSecondaryVnicsDisplayName,
@@ -240,6 +244,10 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly nodes: pulumi.Output<outputs.ContainerEngine.NodePoolNode[]>;
     /**
+     * (Updatable) Details for node's primary VNIC
+     */
+    declare public readonly primaryVnic: pulumi.Output<outputs.ContainerEngine.NodePoolPrimaryVnic>;
+    /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
     declare public readonly quantityPerSubnet: pulumi.Output<number>;
@@ -297,6 +305,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeSourceDetails"] = state?.nodeSourceDetails;
             resourceInputs["nodeSources"] = state?.nodeSources;
             resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["primaryVnic"] = state?.primaryVnic;
             resourceInputs["quantityPerSubnet"] = state?.quantityPerSubnet;
             resourceInputs["secondaryVnics"] = state?.secondaryVnics;
             resourceInputs["sshPublicKey"] = state?.sshPublicKey;
@@ -330,6 +339,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeShape"] = args?.nodeShape;
             resourceInputs["nodeShapeConfig"] = args?.nodeShapeConfig;
             resourceInputs["nodeSourceDetails"] = args?.nodeSourceDetails;
+            resourceInputs["primaryVnic"] = args?.primaryVnic;
             resourceInputs["quantityPerSubnet"] = args?.quantityPerSubnet;
             resourceInputs["secondaryVnics"] = args?.secondaryVnics;
             resourceInputs["sshPublicKey"] = args?.sshPublicKey;
@@ -433,6 +443,10 @@ export interface NodePoolState {
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.NodePoolNode>[] | undefined>;
     /**
+     * (Updatable) Details for node's primary VNIC
+     */
+    primaryVnic?: pulumi.Input<inputs.ContainerEngine.NodePoolPrimaryVnic | undefined>;
+    /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
     quantityPerSubnet?: pulumi.Input<number | undefined>;
@@ -534,6 +548,10 @@ export interface NodePoolArgs {
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      */
     nodeSourceDetails?: pulumi.Input<inputs.ContainerEngine.NodePoolNodeSourceDetails | undefined>;
+    /**
+     * (Updatable) Details for node's primary VNIC
+     */
+    primaryVnic?: pulumi.Input<inputs.ContainerEngine.NodePoolPrimaryVnic | undefined>;
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */

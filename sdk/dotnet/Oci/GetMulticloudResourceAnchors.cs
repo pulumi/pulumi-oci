@@ -14,7 +14,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of ResourceAnchors.
+        /// Lists resource anchors in the specified Multicloud subscription.
+        /// Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+        /// For more information, see
+        /// [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
         /// 
         /// ## Example Usage
         /// 
@@ -48,7 +51,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of ResourceAnchors.
+        /// Lists resource anchors in the specified Multicloud subscription.
+        /// Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+        /// For more information, see
+        /// [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
         /// 
         /// ## Example Usage
         /// 
@@ -82,7 +88,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of ResourceAnchors.
+        /// Lists resource anchors in the specified Multicloud subscription.
+        /// Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+        /// For more information, see
+        /// [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
         /// 
         /// ## Example Usage
         /// 
@@ -118,7 +127,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -138,13 +147,13 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// Check the sub-compartments of a given compartmentId
+        /// Check the sub-compartments of a given `compartmentId`.
         /// </summary>
         [Input("isCompartmentIdInSubtree")]
         public bool? IsCompartmentIdInSubtree { get; set; }
@@ -165,7 +174,7 @@ namespace Pulumi.Oci.Oci
         public string? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// Whether to fetch and include the compartment name. Setting this field to `True` might introduce additional latency.
         /// </summary>
         [Input("shouldFetchCompartmentName")]
         public bool? ShouldFetchCompartmentName { get; set; }
@@ -177,7 +186,7 @@ namespace Pulumi.Oci.Oci
         public string? SubscriptionId { get; set; }
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName")]
         public string? SubscriptionServiceName { get; set; }
@@ -191,7 +200,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -211,13 +220,13 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Check the sub-compartments of a given compartmentId
+        /// Check the sub-compartments of a given `compartmentId`.
         /// </summary>
         [Input("isCompartmentIdInSubtree")]
         public Input<bool>? IsCompartmentIdInSubtree { get; set; }
@@ -238,7 +247,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// Whether to fetch and include the compartment name. Setting this field to `True` might introduce additional latency.
         /// </summary>
         [Input("shouldFetchCompartmentName")]
         public Input<bool>? ShouldFetchCompartmentName { get; set; }
@@ -250,7 +259,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName")]
         public Input<string>? SubscriptionServiceName { get; set; }

@@ -575,6 +575,16 @@ export const getMulticloudExternalLocationsMetadata: typeof import("./getMulticl
 export const getMulticloudExternalLocationsMetadataOutput: typeof import("./getMulticloudExternalLocationsMetadata").getMulticloudExternalLocationsMetadataOutput = null as any;
 utilities.lazyLoad(exports, ["getMulticloudExternalLocationsMetadata","getMulticloudExternalLocationsMetadataOutput"], () => require("./getMulticloudExternalLocationsMetadata"));
 
+export { GetMulticloudMulticloudalertsArgs, GetMulticloudMulticloudalertsResult, GetMulticloudMulticloudalertsOutputArgs } from "./getMulticloudMulticloudalerts";
+export const getMulticloudMulticloudalerts: typeof import("./getMulticloudMulticloudalerts").getMulticloudMulticloudalerts = null as any;
+export const getMulticloudMulticloudalertsOutput: typeof import("./getMulticloudMulticloudalerts").getMulticloudMulticloudalertsOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudMulticloudalerts","getMulticloudMulticloudalertsOutput"], () => require("./getMulticloudMulticloudalerts"));
+
+export { GetMulticloudMulticloudpoliciesArgs, GetMulticloudMulticloudpoliciesResult, GetMulticloudMulticloudpoliciesOutputArgs } from "./getMulticloudMulticloudpolicies";
+export const getMulticloudMulticloudpolicies: typeof import("./getMulticloudMulticloudpolicies").getMulticloudMulticloudpolicies = null as any;
+export const getMulticloudMulticloudpoliciesOutput: typeof import("./getMulticloudMulticloudpolicies").getMulticloudMulticloudpoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudMulticloudpolicies","getMulticloudMulticloudpoliciesOutput"], () => require("./getMulticloudMulticloudpolicies"));
+
 export { GetMulticloudMulticloudsubscriptionsArgs, GetMulticloudMulticloudsubscriptionsResult, GetMulticloudMulticloudsubscriptionsOutputArgs } from "./getMulticloudMulticloudsubscriptions";
 export const getMulticloudMulticloudsubscriptions: typeof import("./getMulticloudMulticloudsubscriptions").getMulticloudMulticloudsubscriptions = null as any;
 export const getMulticloudMulticloudsubscriptionsOutput: typeof import("./getMulticloudMulticloudsubscriptions").getMulticloudMulticloudsubscriptionsOutput = null as any;

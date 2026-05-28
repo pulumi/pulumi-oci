@@ -44,6 +44,7 @@ import (
 //				TargetConnectionDetails: &goldengate.PipelineTargetConnectionDetailsArgs{
 //					ConnectionId: pulumi.Any(testConnection.Id),
 //				},
+//				CpuCoreCount: pulumi.Any(pipelineCpuCoreCount),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -51,6 +52,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				IsAutoScalingEnabled: pulumi.Any(pipelineIsAutoScalingEnabled),
 //				Locks: goldengate.PipelineLockArray{
 //					&goldengate.PipelineLockArgs{
 //						Type:              pulumi.Any(pipelineLocksType),
@@ -63,6 +65,12 @@ import (
 //					InitialDataLoad: &goldengate.PipelineProcessOptionsInitialDataLoadArgs{
 //						IsInitialLoad:         pulumi.Any(pipelineProcessOptionsInitialDataLoadIsInitialLoad),
 //						ActionOnExistingTable: pulumi.Any(pipelineProcessOptionsInitialDataLoadActionOnExistingTable),
+//						AdbWalletPath:         pulumi.Any(pipelineProcessOptionsInitialDataLoadAdbWalletPath),
+//						Bucket:                pulumi.Any(pipelineProcessOptionsInitialDataLoadBucket),
+//						InitialLoadType:       pulumi.Any(pipelineProcessOptionsInitialDataLoadInitialLoadType),
+//						Namespace:             pulumi.Any(pipelineProcessOptionsInitialDataLoadNamespace),
+//						SourceWalletPath:      pulumi.Any(pipelineProcessOptionsInitialDataLoadSourceWalletPath),
+//						TargetWalletPath:      pulumi.Any(pipelineProcessOptionsInitialDataLoadTargetWalletPath),
 //					},
 //					ReplicateSchemaChange: &goldengate.PipelineProcessOptionsReplicateSchemaChangeArgs{
 //						CanReplicateSchemaChange: pulumi.Any(pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange),
@@ -95,7 +103,7 @@ type Pipeline struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The Minimum number of OCPUs to be made available for this Deployment.
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -107,7 +115,7 @@ type Pipeline struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps PipelineIngressIpArrayOutput `pulumi:"ingressIps"`
-	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
@@ -193,7 +201,7 @@ func GetPipeline(ctx *pulumi.Context,
 type pipelineState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The Minimum number of OCPUs to be made available for this Deployment.
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -205,7 +213,7 @@ type pipelineState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps []PipelineIngressIp `pulumi:"ingressIps"`
-	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -244,7 +252,7 @@ type pipelineState struct {
 type PipelineState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
-	// The Minimum number of OCPUs to be made available for this Deployment.
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -256,7 +264,7 @@ type PipelineState struct {
 	FreeformTags pulumi.StringMapInput
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps PipelineIngressIpArrayInput
-	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringPtrInput
@@ -299,6 +307,8 @@ func (PipelineState) ElementType() reflect.Type {
 type pipelineArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Metadata about this specific object.
@@ -307,6 +317,8 @@ type pipelineArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Locks associated with this resource.
@@ -327,6 +339,8 @@ type pipelineArgs struct {
 type PipelineArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
+	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Metadata about this specific object.
@@ -335,6 +349,8 @@ type PipelineArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput
 	// Locks associated with this resource.
@@ -443,7 +459,7 @@ func (o PipelineOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The Minimum number of OCPUs to be made available for this Deployment.
+// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 func (o PipelineOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
@@ -473,7 +489,7 @@ func (o PipelineOutput) IngressIps() PipelineIngressIpArrayOutput {
 	return o.ApplyT(func(v *Pipeline) PipelineIngressIpArrayOutput { return v.IngressIps }).(PipelineIngressIpArrayOutput)
 }
 
-// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o PipelineOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.BoolOutput { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
 }

@@ -28,7 +28,7 @@ class GetDedicatedVmHostsResult:
     """
     A collection of values returned by getDedicatedVmHosts.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_hosts=None, display_name=None, filters=None, id=None, instance_shape_name=None, is_memory_encryption_enabled=None, remaining_memory_in_gbs_greater_than_or_equal_to=None, remaining_ocpus_greater_than_or_equal_to=None, state=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, dedicated_vm_hosts=None, display_name=None, filters=None, id=None, instance_shape_name=None, is_memory_encryption_enabled=None, remaining_local_volume_in_gbs_greater_than_or_equal_to=None, remaining_memory_in_gbs_greater_than_or_equal_to=None, remaining_ocpus_greater_than_or_equal_to=None, state=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -53,6 +53,9 @@ class GetDedicatedVmHostsResult:
         if is_memory_encryption_enabled and not isinstance(is_memory_encryption_enabled, bool):
             raise TypeError("Expected argument 'is_memory_encryption_enabled' to be a bool")
         pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
+        if remaining_local_volume_in_gbs_greater_than_or_equal_to and not isinstance(remaining_local_volume_in_gbs_greater_than_or_equal_to, float):
+            raise TypeError("Expected argument 'remaining_local_volume_in_gbs_greater_than_or_equal_to' to be a float")
+        pulumi.set(__self__, "remaining_local_volume_in_gbs_greater_than_or_equal_to", remaining_local_volume_in_gbs_greater_than_or_equal_to)
         if remaining_memory_in_gbs_greater_than_or_equal_to and not isinstance(remaining_memory_in_gbs_greater_than_or_equal_to, float):
             raise TypeError("Expected argument 'remaining_memory_in_gbs_greater_than_or_equal_to' to be a float")
         pulumi.set(__self__, "remaining_memory_in_gbs_greater_than_or_equal_to", remaining_memory_in_gbs_greater_than_or_equal_to)
@@ -122,6 +125,11 @@ class GetDedicatedVmHostsResult:
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbsGreaterThanOrEqualTo")
+    def remaining_local_volume_in_gbs_greater_than_or_equal_to(self) -> Optional[_builtins.float]:
+        return pulumi.get(self, "remaining_local_volume_in_gbs_greater_than_or_equal_to")
+
+    @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbsGreaterThanOrEqualTo")
     def remaining_memory_in_gbs_greater_than_or_equal_to(self) -> Optional[_builtins.float]:
         return pulumi.get(self, "remaining_memory_in_gbs_greater_than_or_equal_to")
@@ -154,6 +162,7 @@ class AwaitableGetDedicatedVmHostsResult(GetDedicatedVmHostsResult):
             id=self.id,
             instance_shape_name=self.instance_shape_name,
             is_memory_encryption_enabled=self.is_memory_encryption_enabled,
+            remaining_local_volume_in_gbs_greater_than_or_equal_to=self.remaining_local_volume_in_gbs_greater_than_or_equal_to,
             remaining_memory_in_gbs_greater_than_or_equal_to=self.remaining_memory_in_gbs_greater_than_or_equal_to,
             remaining_ocpus_greater_than_or_equal_to=self.remaining_ocpus_greater_than_or_equal_to,
             state=self.state)
@@ -165,6 +174,7 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
                            filters: Optional[Sequence[Union['GetDedicatedVmHostsFilterArgs', 'GetDedicatedVmHostsFilterArgsDict']]] = None,
                            instance_shape_name: Optional[_builtins.str] = None,
                            is_memory_encryption_enabled: Optional[_builtins.bool] = None,
+                           remaining_local_volume_in_gbs_greater_than_or_equal_to: Optional[_builtins.float] = None,
                            remaining_memory_in_gbs_greater_than_or_equal_to: Optional[_builtins.float] = None,
                            remaining_ocpus_greater_than_or_equal_to: Optional[_builtins.float] = None,
                            state: Optional[_builtins.str] = None,
@@ -188,6 +198,7 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
         display_name=dedicated_vm_host_display_name,
         instance_shape_name=dedicated_vm_host_instance_shape_name,
         is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
+        remaining_local_volume_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_local_volume_in_gbs_greater_than_or_equal_to,
         remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
         remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
         state=dedicated_vm_host_state)
@@ -199,6 +210,7 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str instance_shape_name: The name for the instance's shape.
     :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+    :param _builtins.float remaining_local_volume_in_gbs_greater_than_or_equal_to: The remaining local volume of the dedicated VM host, in GBs.
     :param _builtins.float remaining_memory_in_gbs_greater_than_or_equal_to: The remaining memory of the dedicated VM host, in GBs.
     :param _builtins.float remaining_ocpus_greater_than_or_equal_to: The available OCPUs of the dedicated VM host.
     :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
@@ -210,6 +222,7 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['instanceShapeName'] = instance_shape_name
     __args__['isMemoryEncryptionEnabled'] = is_memory_encryption_enabled
+    __args__['remainingLocalVolumeInGbsGreaterThanOrEqualTo'] = remaining_local_volume_in_gbs_greater_than_or_equal_to
     __args__['remainingMemoryInGbsGreaterThanOrEqualTo'] = remaining_memory_in_gbs_greater_than_or_equal_to
     __args__['remainingOcpusGreaterThanOrEqualTo'] = remaining_ocpus_greater_than_or_equal_to
     __args__['state'] = state
@@ -225,6 +238,7 @@ def get_dedicated_vm_hosts(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_shape_name=pulumi.get(__ret__, 'instance_shape_name'),
         is_memory_encryption_enabled=pulumi.get(__ret__, 'is_memory_encryption_enabled'),
+        remaining_local_volume_in_gbs_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_local_volume_in_gbs_greater_than_or_equal_to'),
         remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
         remaining_ocpus_greater_than_or_equal_to=pulumi.get(__ret__, 'remaining_ocpus_greater_than_or_equal_to'),
         state=pulumi.get(__ret__, 'state'))
@@ -234,6 +248,7 @@ def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Opt
                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostsFilterArgs', 'GetDedicatedVmHostsFilterArgsDict']]]]] = None,
                                   instance_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   is_memory_encryption_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                  remaining_local_volume_in_gbs_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
                                   remaining_memory_in_gbs_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
                                   remaining_ocpus_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -257,6 +272,7 @@ def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Opt
         display_name=dedicated_vm_host_display_name,
         instance_shape_name=dedicated_vm_host_instance_shape_name,
         is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
+        remaining_local_volume_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_local_volume_in_gbs_greater_than_or_equal_to,
         remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
         remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
         state=dedicated_vm_host_state)
@@ -268,6 +284,7 @@ def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Opt
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str instance_shape_name: The name for the instance's shape.
     :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
+    :param _builtins.float remaining_local_volume_in_gbs_greater_than_or_equal_to: The remaining local volume of the dedicated VM host, in GBs.
     :param _builtins.float remaining_memory_in_gbs_greater_than_or_equal_to: The remaining memory of the dedicated VM host, in GBs.
     :param _builtins.float remaining_ocpus_greater_than_or_equal_to: The available OCPUs of the dedicated VM host.
     :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
@@ -279,6 +296,7 @@ def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Opt
     __args__['filters'] = filters
     __args__['instanceShapeName'] = instance_shape_name
     __args__['isMemoryEncryptionEnabled'] = is_memory_encryption_enabled
+    __args__['remainingLocalVolumeInGbsGreaterThanOrEqualTo'] = remaining_local_volume_in_gbs_greater_than_or_equal_to
     __args__['remainingMemoryInGbsGreaterThanOrEqualTo'] = remaining_memory_in_gbs_greater_than_or_equal_to
     __args__['remainingOcpusGreaterThanOrEqualTo'] = remaining_ocpus_greater_than_or_equal_to
     __args__['state'] = state
@@ -293,6 +311,7 @@ def get_dedicated_vm_hosts_output(availability_domain: pulumi.Input[Optional[Opt
         id=pulumi.get(__response__, 'id'),
         instance_shape_name=pulumi.get(__response__, 'instance_shape_name'),
         is_memory_encryption_enabled=pulumi.get(__response__, 'is_memory_encryption_enabled'),
+        remaining_local_volume_in_gbs_greater_than_or_equal_to=pulumi.get(__response__, 'remaining_local_volume_in_gbs_greater_than_or_equal_to'),
         remaining_memory_in_gbs_greater_than_or_equal_to=pulumi.get(__response__, 'remaining_memory_in_gbs_greater_than_or_equal_to'),
         remaining_ocpus_greater_than_or_equal_to=pulumi.get(__response__, 'remaining_ocpus_greater_than_or_equal_to'),
         state=pulumi.get(__response__, 'state')))

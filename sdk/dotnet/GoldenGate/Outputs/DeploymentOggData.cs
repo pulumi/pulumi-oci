@@ -30,9 +30,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? CredentialStore;
         /// <summary>
-        /// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        /// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
         /// </summary>
-        public readonly string DeploymentName;
+        public readonly string? DeploymentName;
         /// <summary>
         /// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         /// </summary>
@@ -45,6 +45,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// (Updatable) The base64 encoded content of the PEM file containing the private key.
         /// </summary>
         public readonly string? Key;
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        /// </summary>
+        public readonly string? KeySecretId;
         /// <summary>
         /// Version of OGG
         /// </summary>
@@ -64,13 +68,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string? credentialStore,
 
-            string deploymentName,
+            string? deploymentName,
 
             Outputs.DeploymentOggDataGroupToRolesMapping? groupToRolesMapping,
 
             string? identityDomainId,
 
             string? key,
+
+            string? keySecretId,
 
             string? oggVersion,
 
@@ -84,6 +90,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             GroupToRolesMapping = groupToRolesMapping;
             IdentityDomainId = identityDomainId;
             Key = key;
+            KeySecretId = keySecretId;
             OggVersion = oggVersion;
             PasswordSecretId = passwordSecretId;
         }

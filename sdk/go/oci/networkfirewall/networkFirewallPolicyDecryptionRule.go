@@ -53,6 +53,7 @@ import (
 //					AfterRule:  pulumi.Any(networkFirewallPolicyDecryptionRulePositionAfterRule),
 //					BeforeRule: pulumi.Any(networkFirewallPolicyDecryptionRulePositionBeforeRule),
 //				},
+//				Secrets: pulumi.Any(networkFirewallPolicyDecryptionRuleSecrets),
 //			})
 //			if err != nil {
 //				return err
@@ -94,6 +95,8 @@ type NetworkFirewallPolicyDecryptionRule struct {
 	PriorityOrder pulumi.StringPtrOutput                            `pulumi:"priorityOrder"`
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret pulumi.StringPtrOutput `pulumi:"secret"`
+	// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets pulumi.StringArrayOutput `pulumi:"secrets"`
 }
 
 // NewNetworkFirewallPolicyDecryptionRule registers a new resource with the given unique name, arguments, and options.
@@ -156,6 +159,8 @@ type networkFirewallPolicyDecryptionRuleState struct {
 	PriorityOrder *string                                      `pulumi:"priorityOrder"`
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret *string `pulumi:"secret"`
+	// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets []string `pulumi:"secrets"`
 }
 
 type NetworkFirewallPolicyDecryptionRuleState struct {
@@ -180,6 +185,8 @@ type NetworkFirewallPolicyDecryptionRuleState struct {
 	PriorityOrder pulumi.StringPtrInput
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret pulumi.StringPtrInput
+	// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets pulumi.StringArrayInput
 }
 
 func (NetworkFirewallPolicyDecryptionRuleState) ElementType() reflect.Type {
@@ -206,6 +213,8 @@ type networkFirewallPolicyDecryptionRuleArgs struct {
 	PriorityOrder *string                                      `pulumi:"priorityOrder"`
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret *string `pulumi:"secret"`
+	// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets []string `pulumi:"secrets"`
 }
 
 // The set of arguments for constructing a NetworkFirewallPolicyDecryptionRule resource.
@@ -229,6 +238,8 @@ type NetworkFirewallPolicyDecryptionRuleArgs struct {
 	PriorityOrder pulumi.StringPtrInput
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret pulumi.StringPtrInput
+	// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets pulumi.StringArrayInput
 }
 
 func (NetworkFirewallPolicyDecryptionRuleArgs) ElementType() reflect.Type {
@@ -371,6 +382,11 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) PriorityOrder() pulumi.String
 // (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 func (o NetworkFirewallPolicyDecryptionRuleOutput) Secret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringPtrOutput { return v.Secret }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+func (o NetworkFirewallPolicyDecryptionRuleOutput) Secrets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringArrayOutput { return v.Secrets }).(pulumi.StringArrayOutput)
 }
 
 type NetworkFirewallPolicyDecryptionRuleArrayOutput struct{ *pulumi.OutputState }

@@ -192,14 +192,14 @@ def get_multicloud_external_locations_metadata(cluster_placement_group_id: Optio
     ```
 
 
-    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-    :param _builtins.str entity_type: The resource type query (i.e. dbsystem, instance etc.)
-    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
+    :param _builtins.str entity_type: The resource type query (for example, dbsystem or instance).
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
-    :param _builtins.str logical_zone: Oracle Cloud Infrastructure Logical AD to filter the response.
+    :param _builtins.str logical_zone: Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['clusterPlacementGroupId'] = cluster_placement_group_id
@@ -261,14 +261,14 @@ def get_multicloud_external_locations_metadata_output(cluster_placement_group_id
     ```
 
 
-    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-    :param _builtins.str entity_type: The resource type query (i.e. dbsystem, instance etc.)
-    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
+    :param _builtins.str entity_type: The resource type query (for example, dbsystem or instance).
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
-    :param _builtins.str logical_zone: Oracle Cloud Infrastructure Logical AD to filter the response.
+    :param _builtins.str logical_zone: Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['clusterPlacementGroupId'] = cluster_placement_group_id

@@ -42,6 +42,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string PeerType;
         /// <summary>
+        /// Status of the DR precheck result.
+        /// </summary>
+        public readonly string PrecheckStatus;
+        /// <summary>
         /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         /// </summary>
         public readonly string Region;
@@ -57,6 +61,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+        /// </summary>
+        public readonly string TimeLastPrecheckPerformed;
         /// <summary>
         /// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
@@ -86,6 +94,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string peerType,
 
+            string precheckStatus,
+
             string region,
 
             string state,
@@ -93,6 +103,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string subscriptionId,
 
             string timeCreated,
+
+            string timeLastPrecheckPerformed,
 
             string timeLastSynced,
 
@@ -107,10 +119,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             FaultDomain = faultDomain;
             PeerRole = peerRole;
             PeerType = peerType;
+            PrecheckStatus = precheckStatus;
             Region = region;
             State = state;
             SubscriptionId = subscriptionId;
             TimeCreated = timeCreated;
+            TimeLastPrecheckPerformed = timeLastPrecheckPerformed;
             TimeLastSynced = timeLastSynced;
             TimeRoleChanged = timeRoleChanged;
             TimeUpdated = timeUpdated;

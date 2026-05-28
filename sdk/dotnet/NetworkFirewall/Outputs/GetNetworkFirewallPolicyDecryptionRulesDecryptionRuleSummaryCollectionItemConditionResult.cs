@@ -14,11 +14,11 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     public sealed class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionResult
     {
         /// <summary>
-        /// An array of IP address list names to be evaluated against the traffic destination address.
+        /// An array of address list names to be evaluated against the traffic destination address.
         /// </summary>
         public readonly ImmutableArray<string> DestinationAddresses;
         /// <summary>
-        /// An array of IP address list names to be evaluated against the traffic source address.
+        /// An array of address list names to be evaluated against the traffic source address.
         /// </summary>
         public readonly ImmutableArray<string> SourceAddresses;
 

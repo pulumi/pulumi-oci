@@ -17,12 +17,12 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
      */
     private String activeCommitment;
     /**
-     * @return Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+     * @return Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
      * 
      */
     private String classicSubscriptionId;
     /**
-     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * @return Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
      * 
      */
     private Map<String,String> cspAdditionalProperties;
@@ -47,17 +47,22 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
      */
     private String partnerCloudAccountIdentifier;
     /**
+     * @return The partner cloud tenant ID.
+     * 
+     */
+    private String partnerCloudTenantIdentifier;
+    /**
      * @return Payment plan for the subscription.
      * 
      */
     private String paymentPlan;
     /**
-     * @return The serviceName that externalLocation map object belongs to.
+     * @return The cloud service provider.
      * 
      */
     private String serviceName;
     /**
-     * @return URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+     * @return URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
      * 
      */
     private String subscriptionId;
@@ -67,22 +72,22 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeEndDate;
     /**
-     * @return The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeLinkedDate;
     /**
-     * @return The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     private String timeUpdated;
@@ -96,14 +101,14 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
         return this.activeCommitment;
     }
     /**
-     * @return Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+     * @return Subscription ID for Oracle Cloud Infrastructure and partner cloud in classic format.
      * 
      */
     public String classicSubscriptionId() {
         return this.classicSubscriptionId;
     }
     /**
-     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * @return Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
      * 
      */
     public Map<String,String> cspAdditionalProperties() {
@@ -138,6 +143,13 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
         return this.partnerCloudAccountIdentifier;
     }
     /**
+     * @return The partner cloud tenant ID.
+     * 
+     */
+    public String partnerCloudTenantIdentifier() {
+        return this.partnerCloudTenantIdentifier;
+    }
+    /**
      * @return Payment plan for the subscription.
      * 
      */
@@ -145,14 +157,14 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
         return this.paymentPlan;
     }
     /**
-     * @return The serviceName that externalLocation map object belongs to.
+     * @return The cloud service provider.
      * 
      */
     public String serviceName() {
         return this.serviceName;
     }
     /**
-     * @return URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+     * @return URL to the subscription details page. Example: `https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.exampleuniqueid?region=us-ashburn-1`.
      * 
      */
     public String subscriptionId() {
@@ -166,28 +178,28 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
         return this.systemTags;
     }
     /**
-     * @return The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The end date and time for the subscription, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeEndDate() {
         return this.timeEndDate;
     }
     /**
-     * @return The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the Multicloud base compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeLinkedDate() {
         return this.timeLinkedDate;
     }
     /**
-     * @return The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * @return The date and time that the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     public String timeUpdated() {
@@ -210,6 +222,7 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
         private Map<String,String> freeformTags;
         private String lifecycleState;
         private String partnerCloudAccountIdentifier;
+        private String partnerCloudTenantIdentifier;
         private String paymentPlan;
         private String serviceName;
         private String subscriptionId;
@@ -228,6 +241,7 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
     	      this.freeformTags = defaults.freeformTags;
     	      this.lifecycleState = defaults.lifecycleState;
     	      this.partnerCloudAccountIdentifier = defaults.partnerCloudAccountIdentifier;
+    	      this.partnerCloudTenantIdentifier = defaults.partnerCloudTenantIdentifier;
     	      this.paymentPlan = defaults.paymentPlan;
     	      this.serviceName = defaults.serviceName;
     	      this.subscriptionId = defaults.subscriptionId;
@@ -292,6 +306,14 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
               throw new MissingRequiredPropertyException("GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem", "partnerCloudAccountIdentifier");
             }
             this.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder partnerCloudTenantIdentifier(String partnerCloudTenantIdentifier) {
+            if (partnerCloudTenantIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem", "partnerCloudTenantIdentifier");
+            }
+            this.partnerCloudTenantIdentifier = partnerCloudTenantIdentifier;
             return this;
         }
         @CustomType.Setter
@@ -367,6 +389,7 @@ public final class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCol
             _resultValue.freeformTags = freeformTags;
             _resultValue.lifecycleState = lifecycleState;
             _resultValue.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            _resultValue.partnerCloudTenantIdentifier = partnerCloudTenantIdentifier;
             _resultValue.paymentPlan = paymentPlan;
             _resultValue.serviceName = serviceName;
             _resultValue.subscriptionId = subscriptionId;

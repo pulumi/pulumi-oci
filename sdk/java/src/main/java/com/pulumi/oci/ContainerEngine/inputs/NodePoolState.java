@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+import com.pulumi.oci.ContainerEngine.inputs.NodePoolPrimaryVnicArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -344,6 +345,21 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Details for node&#39;s primary VNIC
+     * 
+     */
+    @Import(name="primaryVnic")
+    private @Nullable Output<NodePoolPrimaryVnicArgs> primaryVnic;
+
+    /**
+     * @return (Updatable) Details for node&#39;s primary VNIC
+     * 
+     */
+    public Optional<Output<NodePoolPrimaryVnicArgs>> primaryVnic() {
+        return Optional.ofNullable(this.primaryVnic);
+    }
+
+    /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      * 
      */
@@ -447,6 +463,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         this.nodeSourceDetails = $.nodeSourceDetails;
         this.nodeSources = $.nodeSources;
         this.nodes = $.nodes;
+        this.primaryVnic = $.primaryVnic;
         this.quantityPerSubnet = $.quantityPerSubnet;
         this.secondaryVnics = $.secondaryVnics;
         this.sshPublicKey = $.sshPublicKey;
@@ -936,6 +953,27 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodes(NodePoolNodeArgs... nodes) {
             return nodes(List.of(nodes));
+        }
+
+        /**
+         * @param primaryVnic (Updatable) Details for node&#39;s primary VNIC
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryVnic(@Nullable Output<NodePoolPrimaryVnicArgs> primaryVnic) {
+            $.primaryVnic = primaryVnic;
+            return this;
+        }
+
+        /**
+         * @param primaryVnic (Updatable) Details for node&#39;s primary VNIC
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryVnic(NodePoolPrimaryVnicArgs primaryVnic) {
+            return primaryVnic(Output.of(primaryVnic));
         }
 
         /**

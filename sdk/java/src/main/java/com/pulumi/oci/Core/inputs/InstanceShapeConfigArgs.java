@@ -118,6 +118,21 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    @Import(name="localVolumeSizeInGbs")
+    private @Nullable Output<Integer> localVolumeSizeInGbs;
+
+    /**
+     * @return (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+     * 
+     */
+    public Optional<Output<Integer>> localVolumeSizeInGbs() {
+        return Optional.ofNullable(this.localVolumeSizeInGbs);
+    }
+
+    /**
      * The maximum number of VNIC attachments for the instance.
      * 
      */
@@ -246,6 +261,7 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
         this.localDiskDescription = $.localDiskDescription;
         this.localDisks = $.localDisks;
         this.localDisksTotalSizeInGbs = $.localDisksTotalSizeInGbs;
+        this.localVolumeSizeInGbs = $.localVolumeSizeInGbs;
         this.maxVnicAttachments = $.maxVnicAttachments;
         this.memoryInGbs = $.memoryInGbs;
         this.networkingBandwidthInGbps = $.networkingBandwidthInGbps;
@@ -408,6 +424,27 @@ public final class InstanceShapeConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
             return localDisksTotalSizeInGbs(Output.of(localDisksTotalSizeInGbs));
+        }
+
+        /**
+         * @param localVolumeSizeInGbs (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localVolumeSizeInGbs(@Nullable Output<Integer> localVolumeSizeInGbs) {
+            $.localVolumeSizeInGbs = localVolumeSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param localVolumeSizeInGbs (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localVolumeSizeInGbs(Integer localVolumeSizeInGbs) {
+            return localVolumeSizeInGbs(Output.of(localVolumeSizeInGbs));
         }
 
         /**

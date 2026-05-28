@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem {
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     private String category;
@@ -65,7 +65,7 @@ public final class GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem 
 
     private GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem() {}
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     public String category() {

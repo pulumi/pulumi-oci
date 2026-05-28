@@ -17,7 +17,7 @@ public final class GetNetworkFirewallPolicySecurityRuleCondition {
      */
     private List<String> applications;
     /**
-     * @return An array of IP address list names to be evaluated against the traffic destination address.
+     * @return An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     private List<String> destinationAddresses;
@@ -27,7 +27,7 @@ public final class GetNetworkFirewallPolicySecurityRuleCondition {
      */
     private List<String> services;
     /**
-     * @return An array of IP address list names to be evaluated against the traffic source address.
+     * @return An array of address list names to be evaluated against the traffic source address.
      * 
      */
     private List<String> sourceAddresses;
@@ -46,7 +46,7 @@ public final class GetNetworkFirewallPolicySecurityRuleCondition {
         return this.applications;
     }
     /**
-     * @return An array of IP address list names to be evaluated against the traffic destination address.
+     * @return An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     public List<String> destinationAddresses() {
@@ -60,7 +60,7 @@ public final class GetNetworkFirewallPolicySecurityRuleCondition {
         return this.services;
     }
     /**
-     * @return An array of IP address list names to be evaluated against the traffic source address.
+     * @return An array of address list names to be evaluated against the traffic source address.
      * 
      */
     public List<String> sourceAddresses() {

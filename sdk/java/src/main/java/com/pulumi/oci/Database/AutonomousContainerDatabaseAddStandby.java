@@ -1020,14 +1020,14 @@ public class AutonomousContainerDatabaseAddStandby extends com.pulumi.resources.
         return this.versionPreference;
     }
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     @Export(name="vmFailoverReservation", refs={Integer.class}, tree="[0]")
     private Output<Integer> vmFailoverReservation;
 
     /**
-     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     public Output<Integer> vmFailoverReservation() {

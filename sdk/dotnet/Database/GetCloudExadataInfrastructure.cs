@@ -220,6 +220,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The preferences for target versions of future maintenance runs.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceVersionPreferenceResult> MaintenanceVersionPreferences;
+        /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowResult> MaintenanceWindows;
@@ -342,6 +346,8 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceVersionPreferenceResult> maintenanceVersionPreferences,
+
             ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowResult> maintenanceWindows,
 
             int maxCpuCount,
@@ -402,6 +408,7 @@ namespace Pulumi.Oci.Database
             IsSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
+            MaintenanceVersionPreferences = maintenanceVersionPreferences;
             MaintenanceWindows = maintenanceWindows;
             MaxCpuCount = maxCpuCount;
             MaxDataStorageInTbs = maxDataStorageInTbs;

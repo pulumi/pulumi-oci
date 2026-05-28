@@ -106,6 +106,9 @@ import (
 //					SourceType:          pulumi.Any(nodePoolNodeSourceDetailsSourceType),
 //					BootVolumeSizeInGbs: pulumi.Any(nodePoolNodeSourceDetailsBootVolumeSizeInGbs),
 //				},
+//				PrimaryVnic: &containerengine.NodePoolPrimaryVnicArgs{
+//					SecurityAttributes: pulumi.Any(nodePoolPrimaryVnicSecurityAttributes),
+//				},
 //				QuantityPerSubnet: pulumi.Any(nodePoolQuantityPerSubnet),
 //				SecondaryVnics: containerengine.NodePoolSecondaryVnicArray{
 //					&containerengine.NodePoolSecondaryVnicArgs{
@@ -129,6 +132,7 @@ import (
 //								},
 //							},
 //							NsgIds:              pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsNsgIds),
+//							SecurityAttributes:  pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsSecurityAttributes),
 //							SkipSourceDestCheck: pulumi.Any(nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
 //						},
 //						DisplayName: pulumi.Any(nodePoolSecondaryVnicsDisplayName),
@@ -201,6 +205,8 @@ type NodePool struct {
 	NodeSources NodePoolNodeSourceArrayOutput `pulumi:"nodeSources"`
 	// The nodes in the node pool.
 	Nodes NodePoolNodeArrayOutput `pulumi:"nodes"`
+	// (Updatable) Details for node's primary VNIC
+	PrimaryVnic NodePoolPrimaryVnicOutput `pulumi:"primaryVnic"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntOutput `pulumi:"quantityPerSubnet"`
 	// (Updatable) A list of secondary vnics to attach to nodes
@@ -299,6 +305,8 @@ type nodePoolState struct {
 	NodeSources []NodePoolNodeSource `pulumi:"nodeSources"`
 	// The nodes in the node pool.
 	Nodes []NodePoolNode `pulumi:"nodes"`
+	// (Updatable) Details for node's primary VNIC
+	PrimaryVnic *NodePoolPrimaryVnic `pulumi:"primaryVnic"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
 	// (Updatable) A list of secondary vnics to attach to nodes
@@ -359,6 +367,8 @@ type NodePoolState struct {
 	NodeSources NodePoolNodeSourceArrayInput
 	// The nodes in the node pool.
 	Nodes NodePoolNodeArrayInput
+	// (Updatable) Details for node's primary VNIC
+	PrimaryVnic NodePoolPrimaryVnicPtrInput
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntPtrInput
 	// (Updatable) A list of secondary vnics to attach to nodes
@@ -417,6 +427,8 @@ type nodePoolArgs struct {
 	NodeShapeConfig *NodePoolNodeShapeConfig `pulumi:"nodeShapeConfig"`
 	// (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
 	NodeSourceDetails *NodePoolNodeSourceDetails `pulumi:"nodeSourceDetails"`
+	// (Updatable) Details for node's primary VNIC
+	PrimaryVnic *NodePoolPrimaryVnic `pulumi:"primaryVnic"`
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
 	// (Updatable) A list of secondary vnics to attach to nodes
@@ -470,6 +482,8 @@ type NodePoolArgs struct {
 	NodeShapeConfig NodePoolNodeShapeConfigPtrInput
 	// (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
 	NodeSourceDetails NodePoolNodeSourceDetailsPtrInput
+	// (Updatable) Details for node's primary VNIC
+	PrimaryVnic NodePoolPrimaryVnicPtrInput
 	// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 	QuantityPerSubnet pulumi.IntPtrInput
 	// (Updatable) A list of secondary vnics to attach to nodes
@@ -672,6 +686,11 @@ func (o NodePoolOutput) NodeSources() NodePoolNodeSourceArrayOutput {
 // The nodes in the node pool.
 func (o NodePoolOutput) Nodes() NodePoolNodeArrayOutput {
 	return o.ApplyT(func(v *NodePool) NodePoolNodeArrayOutput { return v.Nodes }).(NodePoolNodeArrayOutput)
+}
+
+// (Updatable) Details for node's primary VNIC
+func (o NodePoolOutput) PrimaryVnic() NodePoolPrimaryVnicOutput {
+	return o.ApplyT(func(v *NodePool) NodePoolPrimaryVnicOutput { return v.PrimaryVnic }).(NodePoolPrimaryVnicOutput)
 }
 
 // (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.

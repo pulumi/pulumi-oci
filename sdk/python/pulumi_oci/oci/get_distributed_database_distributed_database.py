@@ -27,7 +27,7 @@ class GetDistributedDatabaseDistributedDatabaseResult:
     """
     A collection of values returned by getDistributedDatabaseDistributedDatabase.
     """
-    def __init__(__self__, catalog_details=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, defined_tags=None, display_name=None, distributed_database_id=None, download_gsm_certificate_signing_request_trigger=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, gsm_ssh_public_key=None, id=None, latest_gsm_image_details=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata=None, move_replication_unit_trigger=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, recreate_failed_resource_trigger=None, replication_factor=None, replication_method=None, replication_unit=None, scan_listener_port=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_network_details=None, validate_network_trigger=None):
+    def __init__(__self__, catalog_details=None, change_db_backup_config_trigger=None, character_set=None, chunks=None, compartment_id=None, configure_sharding_is_rebalance_required=None, configure_sharding_trigger=None, connection_strings=None, database_version=None, db_backup_configs=None, db_deployment_type=None, defined_tags=None, display_name=None, distributed_database_id=None, download_gsm_certificate_signing_request_trigger=None, effective_replication_unit=None, freeform_tags=None, generate_gsm_certificate_signing_request_trigger=None, generate_wallet_downloaded_wallet_content_length=None, generate_wallet_downloaded_wallet_etag=None, generate_wallet_downloaded_wallet_last_modified=None, generate_wallet_downloaded_wallet_zip_base64=None, generate_wallet_password=None, generate_wallet_trigger=None, gsm_details=None, gsm_ssh_public_key=None, id=None, latest_gsm_image_details=None, lifecycle_details=None, listener_port=None, listener_port_tls=None, metadata=None, move_replication_unit_trigger=None, ncharacter_set=None, ons_port_local=None, ons_port_remote=None, patch_operations=None, prefix=None, private_endpoint_ids=None, recreate_failed_resource_trigger=None, replication_factor=None, replication_method=None, replication_unit=None, scan_listener_port=None, shard_details=None, sharding_method=None, start_database_trigger=None, state=None, stop_database_trigger=None, system_tags=None, time_created=None, time_updated=None, upload_signed_certificate_and_generate_wallet_trigger=None, validate_network_details=None, validate_network_trigger=None):
         if catalog_details and not isinstance(catalog_details, list):
             raise TypeError("Expected argument 'catalog_details' to be a list")
         pulumi.set(__self__, "catalog_details", catalog_details)
@@ -73,6 +73,9 @@ class GetDistributedDatabaseDistributedDatabaseResult:
         if download_gsm_certificate_signing_request_trigger and not isinstance(download_gsm_certificate_signing_request_trigger, int):
             raise TypeError("Expected argument 'download_gsm_certificate_signing_request_trigger' to be a int")
         pulumi.set(__self__, "download_gsm_certificate_signing_request_trigger", download_gsm_certificate_signing_request_trigger)
+        if effective_replication_unit and not isinstance(effective_replication_unit, int):
+            raise TypeError("Expected argument 'effective_replication_unit' to be a int")
+        pulumi.set(__self__, "effective_replication_unit", effective_replication_unit)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -296,6 +299,11 @@ class GetDistributedDatabaseDistributedDatabaseResult:
     @_utilities.deprecated("""This trigger/action API is deprecated.""")
     def download_gsm_certificate_signing_request_trigger(self) -> _builtins.int:
         return pulumi.get(self, "download_gsm_certificate_signing_request_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> _builtins.int:
+        return pulumi.get(self, "effective_replication_unit")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -588,6 +596,7 @@ class AwaitableGetDistributedDatabaseDistributedDatabaseResult(GetDistributedDat
             display_name=self.display_name,
             distributed_database_id=self.distributed_database_id,
             download_gsm_certificate_signing_request_trigger=self.download_gsm_certificate_signing_request_trigger,
+            effective_replication_unit=self.effective_replication_unit,
             freeform_tags=self.freeform_tags,
             generate_gsm_certificate_signing_request_trigger=self.generate_gsm_certificate_signing_request_trigger,
             generate_wallet_downloaded_wallet_content_length=self.generate_wallet_downloaded_wallet_content_length,
@@ -663,6 +672,7 @@ def get_distributed_database_distributed_database(distributed_database_id: Optio
         display_name=pulumi.get(__ret__, 'display_name'),
         distributed_database_id=pulumi.get(__ret__, 'distributed_database_id'),
         download_gsm_certificate_signing_request_trigger=pulumi.get(__ret__, 'download_gsm_certificate_signing_request_trigger'),
+        effective_replication_unit=pulumi.get(__ret__, 'effective_replication_unit'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         generate_gsm_certificate_signing_request_trigger=pulumi.get(__ret__, 'generate_gsm_certificate_signing_request_trigger'),
         generate_wallet_downloaded_wallet_content_length=pulumi.get(__ret__, 'generate_wallet_downloaded_wallet_content_length'),
@@ -735,6 +745,7 @@ def get_distributed_database_distributed_database_output(distributed_database_id
         display_name=pulumi.get(__response__, 'display_name'),
         distributed_database_id=pulumi.get(__response__, 'distributed_database_id'),
         download_gsm_certificate_signing_request_trigger=pulumi.get(__response__, 'download_gsm_certificate_signing_request_trigger'),
+        effective_replication_unit=pulumi.get(__response__, 'effective_replication_unit'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         generate_gsm_certificate_signing_request_trigger=pulumi.get(__response__, 'generate_gsm_certificate_signing_request_trigger'),
         generate_wallet_downloaded_wallet_content_length=pulumi.get(__response__, 'generate_wallet_downloaded_wallet_content_length'),

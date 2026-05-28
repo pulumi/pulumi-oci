@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTime;
+import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -136,6 +137,11 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
      */
     private List<String> peerMaintenanceRunIds;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    private String referenceResourceIdForImageUpdates;
+    /**
      * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -185,6 +191,11 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
      * 
      */
     private Integer totalTimeTakenInMins;
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    private List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription> windowTypeDescriptions;
 
     private GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail() {}
     /**
@@ -356,6 +367,13 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
         return this.peerMaintenanceRunIds;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure&#39;s maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     * 
+     */
+    public String referenceResourceIdForImageUpdates() {
+        return this.referenceResourceIdForImageUpdates;
+    }
+    /**
      * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
@@ -425,6 +443,13 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
     public Integer totalTimeTakenInMins() {
         return this.totalTimeTakenInMins;
     }
+    /**
+     * @return A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     * 
+     */
+    public List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription> windowTypeDescriptions() {
+        return this.windowTypeDescriptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -459,6 +484,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
         private String patchingStatus;
         private String peerMaintenanceRunId;
         private List<String> peerMaintenanceRunIds;
+        private String referenceResourceIdForImageUpdates;
         private String state;
         private Map<String,String> systemTags;
         private String targetDbServerVersion;
@@ -469,6 +495,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
         private String timeScheduled;
         private String timeStarted;
         private Integer totalTimeTakenInMins;
+        private List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription> windowTypeDescriptions;
         public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -496,6 +523,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
     	      this.patchingStatus = defaults.patchingStatus;
     	      this.peerMaintenanceRunId = defaults.peerMaintenanceRunId;
     	      this.peerMaintenanceRunIds = defaults.peerMaintenanceRunIds;
+    	      this.referenceResourceIdForImageUpdates = defaults.referenceResourceIdForImageUpdates;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetDbServerVersion = defaults.targetDbServerVersion;
@@ -506,6 +534,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
     	      this.timeScheduled = defaults.timeScheduled;
     	      this.timeStarted = defaults.timeStarted;
     	      this.totalTimeTakenInMins = defaults.totalTimeTakenInMins;
+    	      this.windowTypeDescriptions = defaults.windowTypeDescriptions;
         }
 
         @CustomType.Setter
@@ -707,6 +736,14 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             return peerMaintenanceRunIds(List.of(peerMaintenanceRunIds));
         }
         @CustomType.Setter
+        public Builder referenceResourceIdForImageUpdates(String referenceResourceIdForImageUpdates) {
+            if (referenceResourceIdForImageUpdates == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail", "referenceResourceIdForImageUpdates");
+            }
+            this.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail", "state");
@@ -786,6 +823,17 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             this.totalTimeTakenInMins = totalTimeTakenInMins;
             return this;
         }
+        @CustomType.Setter
+        public Builder windowTypeDescriptions(List<GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription> windowTypeDescriptions) {
+            if (windowTypeDescriptions == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail", "windowTypeDescriptions");
+            }
+            this.windowTypeDescriptions = windowTypeDescriptions;
+            return this;
+        }
+        public Builder windowTypeDescriptions(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescription... windowTypeDescriptions) {
+            return windowTypeDescriptions(List.of(windowTypeDescriptions));
+        }
         public GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail build() {
             final var _resultValue = new GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail();
             _resultValue.compartmentId = compartmentId;
@@ -812,6 +860,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             _resultValue.patchingStatus = patchingStatus;
             _resultValue.peerMaintenanceRunId = peerMaintenanceRunId;
             _resultValue.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            _resultValue.referenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetDbServerVersion = targetDbServerVersion;
@@ -822,6 +871,7 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             _resultValue.timeScheduled = timeScheduled;
             _resultValue.timeStarted = timeStarted;
             _resultValue.totalTimeTakenInMins = totalTimeTakenInMins;
+            _resultValue.windowTypeDescriptions = windowTypeDescriptions;
             return _resultValue;
         }
     }

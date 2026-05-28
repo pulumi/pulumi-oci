@@ -62,6 +62,10 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The shape of a firewall to determine the bandwidth that the firewall allows.
         /// </summary>
         public readonly string Shape;
@@ -112,6 +116,8 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             ImmutableArray<string> networkSecurityGroupIds,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             string state,
@@ -136,6 +142,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
             NatConfigurations = natConfigurations;
             NetworkFirewallPolicyId = networkFirewallPolicyId;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             State = state;
             SubnetId = subnetId;

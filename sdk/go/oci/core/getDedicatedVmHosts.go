@@ -33,14 +33,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.GetDedicatedVmHosts(ctx, &core.GetDedicatedVmHostsArgs{
-//				CompartmentId:                            compartmentId,
-//				AvailabilityDomain:                       pulumi.StringRef(dedicatedVmHostAvailabilityDomain),
-//				DisplayName:                              pulumi.StringRef(dedicatedVmHostDisplayName),
-//				InstanceShapeName:                        pulumi.StringRef(dedicatedVmHostInstanceShapeName),
-//				IsMemoryEncryptionEnabled:                pulumi.BoolRef(dedicatedVmHostIsMemoryEncryptionEnabled),
-//				RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo),
-//				RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo),
-//				State:                                    pulumi.StringRef(dedicatedVmHostState),
+//				CompartmentId:             compartmentId,
+//				AvailabilityDomain:        pulumi.StringRef(dedicatedVmHostAvailabilityDomain),
+//				DisplayName:               pulumi.StringRef(dedicatedVmHostDisplayName),
+//				InstanceShapeName:         pulumi.StringRef(dedicatedVmHostInstanceShapeName),
+//				IsMemoryEncryptionEnabled: pulumi.BoolRef(dedicatedVmHostIsMemoryEncryptionEnabled),
+//				RemainingLocalVolumeInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(dedicatedVmHostRemainingLocalVolumeInGbsGreaterThanOrEqualTo),
+//				RemainingMemoryInGbsGreaterThanOrEqualTo:      pulumi.Float64Ref(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo),
+//				RemainingOcpusGreaterThanOrEqualTo:            pulumi.Float64Ref(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo),
+//				State:                                         pulumi.StringRef(dedicatedVmHostState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -73,6 +74,8 @@ type GetDedicatedVmHostsArgs struct {
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
 	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
 	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
+	// The remaining local volume of the dedicated VM host, in GBs.
+	RemainingLocalVolumeInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingLocalVolumeInGbsGreaterThanOrEqualTo"`
 	// The remaining memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	// The available OCPUs of the dedicated VM host.
@@ -96,9 +99,10 @@ type GetDedicatedVmHostsResult struct {
 	Id                string  `pulumi:"id"`
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
 	// Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
-	IsMemoryEncryptionEnabled                *bool    `pulumi:"isMemoryEncryptionEnabled"`
-	RemainingMemoryInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
-	RemainingOcpusGreaterThanOrEqualTo       *float64 `pulumi:"remainingOcpusGreaterThanOrEqualTo"`
+	IsMemoryEncryptionEnabled                     *bool    `pulumi:"isMemoryEncryptionEnabled"`
+	RemainingLocalVolumeInGbsGreaterThanOrEqualTo *float64 `pulumi:"remainingLocalVolumeInGbsGreaterThanOrEqualTo"`
+	RemainingMemoryInGbsGreaterThanOrEqualTo      *float64 `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
+	RemainingOcpusGreaterThanOrEqualTo            *float64 `pulumi:"remainingOcpusGreaterThanOrEqualTo"`
 	// The current state of the dedicated VM host.
 	State *string `pulumi:"state"`
 }
@@ -125,6 +129,8 @@ type GetDedicatedVmHostsOutputArgs struct {
 	InstanceShapeName pulumi.StringPtrInput `pulumi:"instanceShapeName"`
 	// A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
 	IsMemoryEncryptionEnabled pulumi.BoolPtrInput `pulumi:"isMemoryEncryptionEnabled"`
+	// The remaining local volume of the dedicated VM host, in GBs.
+	RemainingLocalVolumeInGbsGreaterThanOrEqualTo pulumi.Float64PtrInput `pulumi:"remainingLocalVolumeInGbsGreaterThanOrEqualTo"`
 	// The remaining memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbsGreaterThanOrEqualTo pulumi.Float64PtrInput `pulumi:"remainingMemoryInGbsGreaterThanOrEqualTo"`
 	// The available OCPUs of the dedicated VM host.
@@ -188,6 +194,10 @@ func (o GetDedicatedVmHostsResultOutput) InstanceShapeName() pulumi.StringPtrOut
 // Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
 func (o GetDedicatedVmHostsResultOutput) IsMemoryEncryptionEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostsResult) *bool { return v.IsMemoryEncryptionEnabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDedicatedVmHostsResultOutput) RemainingLocalVolumeInGbsGreaterThanOrEqualTo() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostsResult) *float64 { return v.RemainingLocalVolumeInGbsGreaterThanOrEqualTo }).(pulumi.Float64PtrOutput)
 }
 
 func (o GetDedicatedVmHostsResultOutput) RemainingMemoryInGbsGreaterThanOrEqualTo() pulumi.Float64PtrOutput {

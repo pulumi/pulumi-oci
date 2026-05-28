@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy;
 import java.lang.Integer;
 import java.lang.String;
@@ -20,6 +21,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * 
      */
     private @Nullable Integer bandwidthMbps;
+    private @Nullable String computeTargetId;
     /**
      * @return The type of the model deployment infrastructure.
      * 
@@ -29,12 +31,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * @return The model deployment instance configuration.
      * 
      */
-    private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration;
     /**
      * @return The maximum network bandwidth for the model deployment.
      * 
      */
     private @Nullable Integer maximumBandwidthMbps;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
@@ -49,6 +52,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public Optional<Integer> bandwidthMbps() {
         return Optional.ofNullable(this.bandwidthMbps);
     }
+    public Optional<String> computeTargetId() {
+        return Optional.ofNullable(this.computeTargetId);
+    }
     /**
      * @return The type of the model deployment infrastructure.
      * 
@@ -60,8 +66,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * @return The model deployment instance configuration.
      * 
      */
-    public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration() {
-        return this.instanceConfiguration;
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration> instanceConfiguration() {
+        return Optional.ofNullable(this.instanceConfiguration);
     }
     /**
      * @return The maximum network bandwidth for the model deployment.
@@ -69,6 +75,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      */
     public Optional<Integer> maximumBandwidthMbps() {
         return Optional.ofNullable(this.maximumBandwidthMbps);
+    }
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration> modelDeploymentResourceConfiguration() {
+        return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
     }
     /**
      * @return The scaling policy to apply to each model of the deployment.
@@ -88,17 +97,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer bandwidthMbps;
+        private @Nullable String computeTargetId;
         private String infrastructureType;
-        private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration;
         private @Nullable Integer maximumBandwidthMbps;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy scalingPolicy;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthMbps = defaults.bandwidthMbps;
+    	      this.computeTargetId = defaults.computeTargetId;
     	      this.infrastructureType = defaults.infrastructureType;
     	      this.instanceConfiguration = defaults.instanceConfiguration;
     	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
+    	      this.modelDeploymentResourceConfiguration = defaults.modelDeploymentResourceConfiguration;
     	      this.scalingPolicy = defaults.scalingPolicy;
         }
 
@@ -106,6 +119,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public Builder bandwidthMbps(@Nullable Integer bandwidthMbps) {
 
             this.bandwidthMbps = bandwidthMbps;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeTargetId(@Nullable String computeTargetId) {
+
+            this.computeTargetId = computeTargetId;
             return this;
         }
         @CustomType.Setter
@@ -117,10 +136,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration) {
-            if (instanceConfiguration == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails", "instanceConfiguration");
-            }
+        public Builder instanceConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration) {
+
             this.instanceConfiguration = instanceConfiguration;
             return this;
         }
@@ -128,6 +145,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public Builder maximumBandwidthMbps(@Nullable Integer maximumBandwidthMbps) {
 
             this.maximumBandwidthMbps = maximumBandwidthMbps;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelDeploymentResourceConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration) {
+
+            this.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
             return this;
         }
         @CustomType.Setter
@@ -139,9 +162,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails();
             _resultValue.bandwidthMbps = bandwidthMbps;
+            _resultValue.computeTargetId = computeTargetId;
             _resultValue.infrastructureType = infrastructureType;
             _resultValue.instanceConfiguration = instanceConfiguration;
             _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
+            _resultValue.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
             _resultValue.scalingPolicy = scalingPolicy;
             return _resultValue;
         }

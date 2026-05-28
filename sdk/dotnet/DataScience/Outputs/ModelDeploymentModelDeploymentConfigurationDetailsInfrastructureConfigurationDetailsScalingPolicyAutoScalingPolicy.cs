@@ -33,6 +33,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The list of autoscaling policy rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule> Rules;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicy? ScaleInPolicy;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicy? ScaleOutPolicy;
 
         [OutputConstructor]
         private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy(
@@ -44,13 +46,19 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             int minimumInstanceCount,
 
-            ImmutableArray<Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule> rules)
+            ImmutableArray<Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule> rules,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleInPolicy? scaleInPolicy,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyScaleOutPolicy? scaleOutPolicy)
         {
             AutoScalingPolicyType = autoScalingPolicyType;
             InitialInstanceCount = initialInstanceCount;
             MaximumInstanceCount = maximumInstanceCount;
             MinimumInstanceCount = minimumInstanceCount;
             Rules = rules;
+            ScaleInPolicy = scaleInPolicy;
+            ScaleOutPolicy = scaleOutPolicy;
         }
     }
 }

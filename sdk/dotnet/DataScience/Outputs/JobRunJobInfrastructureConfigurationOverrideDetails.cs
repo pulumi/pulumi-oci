@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? BlockStorageSizeInGbs;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        /// </summary>
+        public readonly string? ComputeTargetId;
+        /// <summary>
         /// The infrastructure type used for job run.
         /// </summary>
         public readonly string JobInfrastructureType;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Details for the job run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         public readonly Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails? JobShapeConfigDetails;
+        /// <summary>
+        /// Details for the compute target job resource configuration.
+        /// </summary>
+        public readonly Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration? ResourceConfiguration;
         /// <summary>
         /// The name that corresponds to the JobShapeSummary to use for the job node
         /// </summary>
@@ -38,17 +46,23 @@ namespace Pulumi.Oci.DataScience.Outputs
         private JobRunJobInfrastructureConfigurationOverrideDetails(
             int? blockStorageSizeInGbs,
 
+            string? computeTargetId,
+
             string jobInfrastructureType,
 
             Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails? jobShapeConfigDetails,
+
+            Outputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfiguration? resourceConfiguration,
 
             string? shapeName,
 
             string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
+            ComputeTargetId = computeTargetId;
             JobInfrastructureType = jobInfrastructureType;
             JobShapeConfigDetails = jobShapeConfigDetails;
+            ResourceConfiguration = resourceConfiguration;
             ShapeName = shapeName;
             SubnetId = subnetId;
         }

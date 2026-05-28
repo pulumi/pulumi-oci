@@ -36,9 +36,17 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.availabilityDomain);
     }
 
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     @Import(name="capacityBins")
     private @Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins;
 
+    /**
+     * @return A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     public Optional<Output<List<DedicatedVmHostCapacityBinArgs>>> capacityBins() {
         return Optional.ofNullable(this.capacityBins);
     }
@@ -202,6 +210,21 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Import(name="remainingLocalVolumeInGbs")
+    private @Nullable Output<Double> remainingLocalVolumeInGbs;
+
+    /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Output<Double>> remainingLocalVolumeInGbs() {
+        return Optional.ofNullable(this.remainingLocalVolumeInGbs);
+    }
+
+    /**
      * The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -262,6 +285,21 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Import(name="totalLocalVolumeInGbs")
+    private @Nullable Output<Double> totalLocalVolumeInGbs;
+
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Output<Double>> totalLocalVolumeInGbs() {
+        return Optional.ofNullable(this.totalLocalVolumeInGbs);
+    }
+
+    /**
      * The current total memory of the dedicated VM host, in GBs.
      * 
      */
@@ -306,10 +344,12 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         this.freeformTags = $.freeformTags;
         this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
         this.placementConstraintDetails = $.placementConstraintDetails;
+        this.remainingLocalVolumeInGbs = $.remainingLocalVolumeInGbs;
         this.remainingMemoryInGbs = $.remainingMemoryInGbs;
         this.remainingOcpus = $.remainingOcpus;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.totalLocalVolumeInGbs = $.totalLocalVolumeInGbs;
         this.totalMemoryInGbs = $.totalMemoryInGbs;
         this.totalOcpus = $.totalOcpus;
     }
@@ -353,15 +393,33 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
             return availabilityDomain(Output.of(availabilityDomain));
         }
 
+        /**
+         * @param capacityBins A list of total and remaining CPU, memory, and local volume per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityBins(@Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins) {
             $.capacityBins = capacityBins;
             return this;
         }
 
+        /**
+         * @param capacityBins A list of total and remaining CPU, memory, and local volume per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityBins(List<DedicatedVmHostCapacityBinArgs> capacityBins) {
             return capacityBins(Output.of(capacityBins));
         }
 
+        /**
+         * @param capacityBins A list of total and remaining CPU, memory, and local volume per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacityBins(DedicatedVmHostCapacityBinArgs... capacityBins) {
             return capacityBins(List.of(capacityBins));
         }
@@ -585,6 +643,27 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param remainingLocalVolumeInGbs The current available local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLocalVolumeInGbs(@Nullable Output<Double> remainingLocalVolumeInGbs) {
+            $.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
+            return this;
+        }
+
+        /**
+         * @param remainingLocalVolumeInGbs The current available local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLocalVolumeInGbs(Double remainingLocalVolumeInGbs) {
+            return remainingLocalVolumeInGbs(Output.of(remainingLocalVolumeInGbs));
+        }
+
+        /**
          * @param remainingMemoryInGbs The current available memory of the dedicated VM host, in GBs.
          * 
          * @return builder
@@ -666,6 +745,27 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param totalLocalVolumeInGbs The current total local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalLocalVolumeInGbs(@Nullable Output<Double> totalLocalVolumeInGbs) {
+            $.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
+            return this;
+        }
+
+        /**
+         * @param totalLocalVolumeInGbs The current total local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalLocalVolumeInGbs(Double totalLocalVolumeInGbs) {
+            return totalLocalVolumeInGbs(Output.of(totalLocalVolumeInGbs));
         }
 
         /**

@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.ExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureContact;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureExascaleConfig;
+import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceVersionPreferences;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.ExadataInfrastructureNetworkBondingModeDetails;
 import com.pulumi.oci.Utilities;
@@ -45,6 +46,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.ExadataInfrastructure;
  * import com.pulumi.oci.Database.ExadataInfrastructureArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceVersionPreferencesArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
  * import java.util.ArrayList;
@@ -88,6 +90,9 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCpsOfflineReportEnabled(exadataInfrastructureIsCpsOfflineReportEnabled)
  *             .isMultiRackDeployment(exadataInfrastructureIsMultiRackDeployment)
+ *             .maintenanceVersionPreferences(ExadataInfrastructureMaintenanceVersionPreferencesArgs.builder()
+ *                 .referenceResourceIdForImageUpdates(exadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates)
+ *                 .build())
  *             .maintenanceWindow(ExadataInfrastructureMaintenanceWindowArgs.builder()
  *                 .customActionTimeoutInMins(exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins)
  *                 .daysOfWeeks(ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
@@ -603,6 +608,22 @@ public class ExadataInfrastructure extends com.pulumi.resources.CustomResource {
      */
     public Output<String> maintenanceSloStatus() {
         return this.maintenanceSloStatus;
+    }
+    /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    @Export(name="maintenanceVersionPreferences", refs={ExadataInfrastructureMaintenanceVersionPreferences.class}, tree="[0]")
+    private Output<ExadataInfrastructureMaintenanceVersionPreferences> maintenanceVersionPreferences;
+
+    /**
+     * @return (Updatable) The preferences for target versions of future maintenance runs.
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    public Output<ExadataInfrastructureMaintenanceVersionPreferences> maintenanceVersionPreferences() {
+        return this.maintenanceVersionPreferences;
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

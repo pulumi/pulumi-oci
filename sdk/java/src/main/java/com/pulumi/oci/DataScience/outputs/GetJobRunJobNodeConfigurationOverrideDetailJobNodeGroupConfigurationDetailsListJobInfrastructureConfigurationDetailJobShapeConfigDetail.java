@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail {
     /**
-     * @return The total amount of memory available to the job run instance, in gigabytes.
+     * @return The memory in Gbs required to be allocated to run the workload.
      * 
      */
     private Double memoryInGbs;
     /**
-     * @return The total number of OCPUs available to the job run instance.
+     * @return The ocpus required to be allocated to run the workload.
      * 
      */
     private Double ocpus;
 
     private GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail() {}
     /**
-     * @return The total amount of memory available to the job run instance, in gigabytes.
+     * @return The memory in Gbs required to be allocated to run the workload.
      * 
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return The total number of OCPUs available to the job run instance.
+     * @return The ocpus required to be allocated to run the workload.
      * 
      */
     public Double ocpus() {

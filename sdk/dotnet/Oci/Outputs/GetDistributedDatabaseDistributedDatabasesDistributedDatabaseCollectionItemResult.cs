@@ -57,6 +57,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string DisplayName;
         public readonly int DownloadGsmCertificateSigningRequestTrigger;
+        public readonly int EffectiveReplicationUnit;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -205,6 +206,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             int downloadGsmCertificateSigningRequestTrigger,
 
+            int effectiveReplicationUnit,
+
             ImmutableDictionary<string, string> freeformTags,
 
             int generateGsmCertificateSigningRequestTrigger,
@@ -297,6 +300,7 @@ namespace Pulumi.Oci.Oci.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             DownloadGsmCertificateSigningRequestTrigger = downloadGsmCertificateSigningRequestTrigger;
+            EffectiveReplicationUnit = effectiveReplicationUnit;
             FreeformTags = freeformTags;
             GenerateGsmCertificateSigningRequestTrigger = generateGsmCertificateSigningRequestTrigger;
             GenerateWalletDownloadedWalletContentLength = generateWalletDownloadedWalletContentLength;

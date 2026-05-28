@@ -42,6 +42,14 @@ namespace Pulumi.Oci.ClusterPlacementGroups
     ///                 {
     ///                     Name = clusterPlacementGroupCapabilitiesItemsName,
     ///                     Service = clusterPlacementGroupCapabilitiesItemsService,
+    ///                     AdditionalDetails = new Oci.ClusterPlacementGroups.Inputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs
+    ///                     {
+    ///                         ServiceType = clusterPlacementGroupCapabilitiesItemsAdditionalDetailsServiceType,
+    ///                         ClusterPlacementGroupCount = clusterPlacementGroupCapabilitiesItemsAdditionalDetailsClusterPlacementGroupCount,
+    ///                         MemoryInGbs = clusterPlacementGroupCapabilitiesItemsAdditionalDetailsMemoryInGbs,
+    ///                         Nvmes = clusterPlacementGroupCapabilitiesItemsAdditionalDetailsNvmes,
+    ///                         Ocpus = clusterPlacementGroupCapabilitiesItemsAdditionalDetailsOcpus,
+    ///                     },
     ///                 },
     ///             },
     ///         },

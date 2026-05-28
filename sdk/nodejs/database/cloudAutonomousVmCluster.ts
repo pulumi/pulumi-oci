@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     dbServers: cloudAutonomousVmClusterDbServers,
  *     definedTags: cloudAutonomousVmClusterDefinedTags,
  *     description: cloudAutonomousVmClusterDescription,
+ *     distributionAlgorithm: cloudAutonomousVmClusterDistributionAlgorithm,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -60,6 +61,7 @@ import * as utilities from "../utilities";
  *     scanListenerPortNonTls: Number(cloudAutonomousVmClusterScanListenerPortNonTls),
  *     scanListenerPortTls: Number(cloudAutonomousVmClusterScanListenerPortTls),
  *     securityAttributes: cloudAutonomousVmClusterSecurityAttributes,
+ *     sgaPercentage: cloudAutonomousVmClusterSgaPercentage,
  *     subscriptionId: testSubscription.id,
  *     totalContainerDatabases: Number(cloudAutonomousVmClusterTotalContainerDatabases),
  * });
@@ -130,7 +132,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public readonly cloudExadataInfrastructureId: pulumi.Output<string>;
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     declare public readonly clusterTimeZone: pulumi.Output<string>;
     /**
@@ -182,6 +184,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     */
+    declare public readonly distributionAlgorithm: pulumi.Output<string>;
+    /**
      * The domain name for the cloud Autonomous VM cluster.
      */
     declare public /*out*/ readonly domain: pulumi.Output<string>;
@@ -198,7 +204,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      */
     declare public readonly isMtlsEnabledVmCluster: pulumi.Output<boolean>;
     /**
@@ -301,17 +307,21 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
     /**
-     * The SCAN Listener Non TLS port. Default is 1521.
+     * (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      */
     declare public readonly scanListenerPortNonTls: pulumi.Output<number>;
     /**
-     * The SCAN Listener TLS port. Default is 2484.
+     * (Updatable) The SCAN Listener TLS port. Default is 2484.
      */
     declare public readonly scanListenerPortTls: pulumi.Output<number>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     */
+    declare public readonly sgaPercentage: pulumi.Output<number>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -405,6 +415,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["distributionAlgorithm"] = state?.distributionAlgorithm;
             resourceInputs["domain"] = state?.domain;
             resourceInputs["exadataStorageInTbsLowestScaledValue"] = state?.exadataStorageInTbsLowestScaledValue;
             resourceInputs["freeformTags"] = state?.freeformTags;
@@ -437,6 +448,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortNonTls"] = state?.scanListenerPortNonTls;
             resourceInputs["scanListenerPortTls"] = state?.scanListenerPortTls;
             resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["sgaPercentage"] = state?.sgaPercentage;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
@@ -475,6 +487,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["distributionAlgorithm"] = args?.distributionAlgorithm;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isMtlsEnabledVmCluster"] = args?.isMtlsEnabledVmCluster;
             resourceInputs["licenseModel"] = args?.licenseModel;
@@ -486,6 +499,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortNonTls"] = args?.scanListenerPortNonTls;
             resourceInputs["scanListenerPortTls"] = args?.scanListenerPortTls;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["sgaPercentage"] = args?.sgaPercentage;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["tdeKeyStoreType"] = args?.tdeKeyStoreType;
@@ -570,7 +584,7 @@ export interface CloudAutonomousVmClusterState {
      */
     cloudExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     clusterTimeZone?: pulumi.Input<string | undefined>;
     /**
@@ -622,6 +636,10 @@ export interface CloudAutonomousVmClusterState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     */
+    distributionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
      * The domain name for the cloud Autonomous VM cluster.
      */
     domain?: pulumi.Input<string | undefined>;
@@ -638,7 +656,7 @@ export interface CloudAutonomousVmClusterState {
      */
     hostname?: pulumi.Input<string | undefined>;
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      */
     isMtlsEnabledVmCluster?: pulumi.Input<boolean | undefined>;
     /**
@@ -741,17 +759,21 @@ export interface CloudAutonomousVmClusterState {
      */
     reservedCpus?: pulumi.Input<number | undefined>;
     /**
-     * The SCAN Listener Non TLS port. Default is 1521.
+     * (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      */
     scanListenerPortNonTls?: pulumi.Input<number | undefined>;
     /**
-     * The SCAN Listener TLS port. Default is 2484.
+     * (Updatable) The SCAN Listener TLS port. Default is 2484.
      */
     scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     */
+    sgaPercentage?: pulumi.Input<number | undefined>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -826,7 +848,7 @@ export interface CloudAutonomousVmClusterArgs {
      */
     cloudExadataInfrastructureId: pulumi.Input<string>;
     /**
-     * The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     clusterTimeZone?: pulumi.Input<string | undefined>;
     /**
@@ -858,11 +880,15 @@ export interface CloudAutonomousVmClusterArgs {
      */
     displayName: pulumi.Input<string>;
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     */
+    distributionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      */
     isMtlsEnabledVmCluster?: pulumi.Input<boolean | undefined>;
     /**
@@ -893,17 +919,21 @@ export interface CloudAutonomousVmClusterArgs {
      */
     registerPkcsTrigger?: pulumi.Input<number | undefined>;
     /**
-     * The SCAN Listener Non TLS port. Default is 1521.
+     * (Updatable) The SCAN Listener Non TLS port. Default is 1521.
      */
     scanListenerPortNonTls?: pulumi.Input<number | undefined>;
     /**
-     * The SCAN Listener TLS port. Default is 2484.
+     * (Updatable) The SCAN Listener TLS port. Default is 2484.
      */
     scanListenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     */
+    sgaPercentage?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */

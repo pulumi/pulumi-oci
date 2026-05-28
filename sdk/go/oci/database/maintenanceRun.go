@@ -114,6 +114,8 @@ type MaintenanceRun struct {
 	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds pulumi.StringArrayOutput `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates pulumi.StringOutput `pulumi:"referenceResourceIdForImageUpdates"`
 	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -137,6 +139,8 @@ type MaintenanceRun struct {
 	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntOutput `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions MaintenanceRunWindowTypeDescriptionArrayOutput `pulumi:"windowTypeDescriptions"`
 }
 
 // NewMaintenanceRun registers a new resource with the given unique name, arguments, and options.
@@ -228,6 +232,8 @@ type maintenanceRunState struct {
 	PeerMaintenanceRunId *string `pulumi:"peerMaintenanceRunId"`
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates *string `pulumi:"referenceResourceIdForImageUpdates"`
 	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -251,6 +257,8 @@ type maintenanceRunState struct {
 	TimeStarted *string `pulumi:"timeStarted"`
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins *int `pulumi:"totalTimeTakenInMins"`
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions []MaintenanceRunWindowTypeDescription `pulumi:"windowTypeDescriptions"`
 }
 
 type MaintenanceRunState struct {
@@ -304,6 +312,8 @@ type MaintenanceRunState struct {
 	PeerMaintenanceRunId pulumi.StringPtrInput
 	// The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
 	PeerMaintenanceRunIds pulumi.StringArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+	ReferenceResourceIdForImageUpdates pulumi.StringPtrInput
 	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -327,6 +337,8 @@ type MaintenanceRunState struct {
 	TimeStarted pulumi.StringPtrInput
 	// The total time taken by corresponding resource activity in minutes.
 	TotalTimeTakenInMins pulumi.IntPtrInput
+	// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+	WindowTypeDescriptions MaintenanceRunWindowTypeDescriptionArrayInput
 }
 
 func (MaintenanceRunState) ElementType() reflect.Type {
@@ -589,6 +601,11 @@ func (o MaintenanceRunOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringArrayOutput { return v.PeerMaintenanceRunIds }).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+func (o MaintenanceRunOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.ReferenceResourceIdForImageUpdates }).(pulumi.StringOutput)
+}
+
 // The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o MaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -640,6 +657,13 @@ func (o MaintenanceRunOutput) TimeStarted() pulumi.StringOutput {
 // The total time taken by corresponding resource activity in minutes.
 func (o MaintenanceRunOutput) TotalTimeTakenInMins() pulumi.IntOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.TotalTimeTakenInMins }).(pulumi.IntOutput)
+}
+
+// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+func (o MaintenanceRunOutput) WindowTypeDescriptions() MaintenanceRunWindowTypeDescriptionArrayOutput {
+	return o.ApplyT(func(v *MaintenanceRun) MaintenanceRunWindowTypeDescriptionArrayOutput {
+		return v.WindowTypeDescriptions
+	}).(MaintenanceRunWindowTypeDescriptionArrayOutput)
 }
 
 type MaintenanceRunArrayOutput struct{ *pulumi.OutputState }

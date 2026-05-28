@@ -61,6 +61,11 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
      */
     private List<String> nsgIds;
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Whether the source/destination check is disabled on the VNIC
      * 
      */
@@ -136,6 +141,13 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
         return this.nsgIds;
     }
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Whether the source/destination check is disabled on the VNIC
      * 
      */
@@ -168,6 +180,7 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
         private Integer ipCount;
         private List<GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private List<String> nsgIds;
+        private Map<String,String> securityAttributes;
         private Boolean skipSourceDestCheck;
         private String subnetId;
         public Builder() {}
@@ -182,6 +195,7 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
     	      this.ipCount = defaults.ipCount;
     	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
     	      this.subnetId = defaults.subnetId;
         }
@@ -268,6 +282,14 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             if (skipSourceDestCheck == null) {
               throw new MissingRequiredPropertyException("GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail", "skipSourceDestCheck");
@@ -294,6 +316,7 @@ public final class GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail {
             _resultValue.ipCount = ipCount;
             _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
             _resultValue.subnetId = subnetId;
             return _resultValue;

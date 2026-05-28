@@ -183,6 +183,10 @@ import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataA
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
@@ -356,6 +360,8 @@ import com.pulumi.oci.oci.outputs.GetManagedKafkaNodeShapesResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationMappingMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationSummariesMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationsMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudMulticloudalertsResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudMulticloudpoliciesResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudMulticloudsubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorsResult;
@@ -19566,7 +19572,13 @@ public final class OciFunctions {
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * List mapped partner cloud regions and zones across cloud service providers
+     * for the specified Multicloud base compartment and subscription service name.
+     * Each mapping includes the Oracle Cloud Infrastructure region, logical availability domain, and physical availability domain,
+     * along with mapped partner cloud details that depend on the partner cloud.
+     * For example, Azure includes a logical zone while AWS doesn&#39;t.
+     * For more information, see
+     * [Cross-Cloud Region-Zone Mapping](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm).
      * 
      * ## Example Usage
      * 
@@ -19610,7 +19622,13 @@ public final class OciFunctions {
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * List mapped partner cloud regions and zones across cloud service providers
+     * for the specified Multicloud base compartment and subscription service name.
+     * Each mapping includes the Oracle Cloud Infrastructure region, logical availability domain, and physical availability domain,
+     * along with mapped partner cloud details that depend on the partner cloud.
+     * For example, Azure includes a logical zone while AWS doesn&#39;t.
+     * For more information, see
+     * [Cross-Cloud Region-Zone Mapping](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm).
      * 
      * ## Example Usage
      * 
@@ -19654,7 +19672,13 @@ public final class OciFunctions {
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * List mapped partner cloud regions and zones across cloud service providers
+     * for the specified Multicloud base compartment and subscription service name.
+     * Each mapping includes the Oracle Cloud Infrastructure region, logical availability domain, and physical availability domain,
+     * along with mapped partner cloud details that depend on the partner cloud.
+     * For example, Azure includes a logical zone while AWS doesn&#39;t.
+     * For more information, see
+     * [Cross-Cloud Region-Zone Mapping](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm).
      * 
      * ## Example Usage
      * 
@@ -19698,7 +19722,13 @@ public final class OciFunctions {
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * List mapped partner cloud regions and zones across cloud service providers
+     * for the specified Multicloud base compartment and subscription service name.
+     * Each mapping includes the Oracle Cloud Infrastructure region, logical availability domain, and physical availability domain,
+     * along with mapped partner cloud details that depend on the partner cloud.
+     * For example, Azure includes a logical zone while AWS doesn&#39;t.
+     * For more information, see
+     * [Cross-Cloud Region-Zone Mapping](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm).
      * 
      * ## Example Usage
      * 
@@ -19742,7 +19772,13 @@ public final class OciFunctions {
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * List mapped partner cloud regions and zones across cloud service providers
+     * for the specified Multicloud base compartment and subscription service name.
+     * Each mapping includes the Oracle Cloud Infrastructure region, logical availability domain, and physical availability domain,
+     * along with mapped partner cloud details that depend on the partner cloud.
+     * For example, Azure includes a logical zone while AWS doesn&#39;t.
+     * For more information, see
+     * [Cross-Cloud Region-Zone Mapping](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/view-cloud-mapping.htm).
      * 
      * ## Example Usage
      * 
@@ -20254,9 +20290,510 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", TypeShape.of(GetMulticloudExternalLocationsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This Data Source is currently in preview.
+     * 
+     * This data source provides the list of Multicloudalerts in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud Alerts for a given root compartment.
+     * Optional query parameters can be used to filter alerts by resource,
+     * subscription, severity, lifecycle state, and alert status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .alertFunctionName(testFunction.name())
+     *             .alertStatus(multicloudalertAlertStatus)
+     *             .alertType(multicloudalertAlertType)
+     *             .displayName(multicloudalertDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(multicloudalertResourceType)
+     *             .severity(multicloudalertSeverity)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionServiceName(testService.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudalertsResult> getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs args) {
+        return getMulticloudMulticloudalerts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This Data Source is currently in preview.
+     * 
+     * This data source provides the list of Multicloudalerts in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud Alerts for a given root compartment.
+     * Optional query parameters can be used to filter alerts by resource,
+     * subscription, severity, lifecycle state, and alert status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .alertFunctionName(testFunction.name())
+     *             .alertStatus(multicloudalertAlertStatus)
+     *             .alertType(multicloudalertAlertType)
+     *             .displayName(multicloudalertDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(multicloudalertResourceType)
+     *             .severity(multicloudalertSeverity)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionServiceName(testService.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudalertsResult> getMulticloudMulticloudalertsPlain(GetMulticloudMulticloudalertsPlainArgs args) {
+        return getMulticloudMulticloudalertsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This Data Source is currently in preview.
+     * 
+     * This data source provides the list of Multicloudalerts in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud Alerts for a given root compartment.
+     * Optional query parameters can be used to filter alerts by resource,
+     * subscription, severity, lifecycle state, and alert status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .alertFunctionName(testFunction.name())
+     *             .alertStatus(multicloudalertAlertStatus)
+     *             .alertType(multicloudalertAlertType)
+     *             .displayName(multicloudalertDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(multicloudalertResourceType)
+     *             .severity(multicloudalertSeverity)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionServiceName(testService.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudalertsResult> getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudalerts:getMulticloudMulticloudalerts", TypeShape.of(GetMulticloudMulticloudalertsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This Data Source is currently in preview.
+     * 
+     * This data source provides the list of Multicloudalerts in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud Alerts for a given root compartment.
+     * Optional query parameters can be used to filter alerts by resource,
+     * subscription, severity, lifecycle state, and alert status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .alertFunctionName(testFunction.name())
+     *             .alertStatus(multicloudalertAlertStatus)
+     *             .alertType(multicloudalertAlertType)
+     *             .displayName(multicloudalertDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(multicloudalertResourceType)
+     *             .severity(multicloudalertSeverity)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionServiceName(testService.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudalertsResult> getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudalerts:getMulticloudMulticloudalerts", TypeShape.of(GetMulticloudMulticloudalertsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This Data Source is currently in preview.
+     * 
+     * This data source provides the list of Multicloudalerts in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud Alerts for a given root compartment.
+     * Optional query parameters can be used to filter alerts by resource,
+     * subscription, severity, lifecycle state, and alert status.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudalertsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .alertFunctionName(testFunction.name())
+     *             .alertStatus(multicloudalertAlertStatus)
+     *             .alertType(multicloudalertAlertType)
+     *             .displayName(multicloudalertDisplayName)
+     *             .resourceId(testResource.id())
+     *             .resourceType(multicloudalertResourceType)
+     *             .severity(multicloudalertSeverity)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionServiceName(testService.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudalertsResult> getMulticloudMulticloudalertsPlain(GetMulticloudMulticloudalertsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudMulticloudalerts:getMulticloudMulticloudalerts", TypeShape.of(GetMulticloudMulticloudalertsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloudpolicies in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud IAM Policies.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudpolicies = OciFunctions.getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multicloudpolicyDisplayName)
+     *             .isForceRefresh(multicloudpolicyIsForceRefresh)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudpoliciesResult> getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs args) {
+        return getMulticloudMulticloudpolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multicloudpolicies in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud IAM Policies.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudpolicies = OciFunctions.getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multicloudpolicyDisplayName)
+     *             .isForceRefresh(multicloudpolicyIsForceRefresh)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudpoliciesResult> getMulticloudMulticloudpoliciesPlain(GetMulticloudMulticloudpoliciesPlainArgs args) {
+        return getMulticloudMulticloudpoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multicloudpolicies in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud IAM Policies.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudpolicies = OciFunctions.getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multicloudpolicyDisplayName)
+     *             .isForceRefresh(multicloudpolicyIsForceRefresh)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudpoliciesResult> getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudpolicies:getMulticloudMulticloudpolicies", TypeShape.of(GetMulticloudMulticloudpoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloudpolicies in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud IAM Policies.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudpolicies = OciFunctions.getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multicloudpolicyDisplayName)
+     *             .isForceRefresh(multicloudpolicyIsForceRefresh)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudpoliciesResult> getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudpolicies:getMulticloudMulticloudpolicies", TypeShape.of(GetMulticloudMulticloudpoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloudpolicies in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud IAM Policies.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudpoliciesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudpolicies = OciFunctions.getMulticloudMulticloudpolicies(GetMulticloudMulticloudpoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multicloudpolicyDisplayName)
+     *             .isForceRefresh(multicloudpolicyIsForceRefresh)
+     *             .subscriptionId(testSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudpoliciesResult> getMulticloudMulticloudpoliciesPlain(GetMulticloudMulticloudpoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudMulticloudpolicies:getMulticloudMulticloudpolicies", TypeShape.of(GetMulticloudMulticloudpoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of Multicloud subscriptions.
+     * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+     * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
      * 
      * ## Example Usage
      * 
@@ -20299,7 +20836,8 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of Multicloud subscriptions.
+     * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+     * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
      * 
      * ## Example Usage
      * 
@@ -20342,7 +20880,8 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of Multicloud subscriptions.
+     * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+     * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
      * 
      * ## Example Usage
      * 
@@ -20385,7 +20924,8 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of Multicloud subscriptions.
+     * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+     * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
      * 
      * ## Example Usage
      * 
@@ -20428,7 +20968,8 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of Multicloud subscriptions.
+     * Lists activated Multicloud subscriptions in the specified compartment. For more information, see
+     * [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
      * 
      * ## Example Usage
      * 
@@ -20471,7 +21012,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Network Anchor&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -20517,7 +21060,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Network Anchor&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -20563,7 +21108,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Network Anchor&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -20609,7 +21156,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Network Anchor&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -20655,7 +21204,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a NetworkAnchor.
+     * Gets details for the specified network anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Network Anchor&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -20701,7 +21252,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20735,7 +21289,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -20753,7 +21306,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20787,7 +21343,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -20805,7 +21360,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20839,7 +21397,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -20857,7 +21414,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20891,7 +21451,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -20909,7 +21468,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20943,7 +21505,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -20961,7 +21522,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -20995,7 +21559,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -21013,7 +21576,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of NetworkAnchors.
+     * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+     * Details listed for each resource include name, state, VCN, and ODB network ID.
+     * For more information, see
+     * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -21047,7 +21613,6 @@ public final class OciFunctions {
      *             .displayName(displayName)
      *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
-     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
      *             .shouldFetchVcnName(shouldFetchVcnName)
@@ -21278,8 +21843,12 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
-     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * This data source provides details about a specific Om Hub Multi Clouds Metadata resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets details for Multicloud metadata for the specified Multicloud subscription.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level Oracle Cloud Infrastructure compartment).
+     * For more information, see
+     * [Getting Details for Multicloud Metadata](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -21321,8 +21890,12 @@ public final class OciFunctions {
         return getMulticloudOmHubMultiCloudsMetadata(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
-     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * This data source provides details about a specific Om Hub Multi Clouds Metadata resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets details for Multicloud metadata for the specified Multicloud subscription.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level Oracle Cloud Infrastructure compartment).
+     * For more information, see
+     * [Getting Details for Multicloud Metadata](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -21364,8 +21937,12 @@ public final class OciFunctions {
         return getMulticloudOmHubMultiCloudsMetadataPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
-     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * This data source provides details about a specific Om Hub Multi Clouds Metadata resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets details for Multicloud metadata for the specified Multicloud subscription.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level Oracle Cloud Infrastructure compartment).
+     * For more information, see
+     * [Getting Details for Multicloud Metadata](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -21407,8 +21984,12 @@ public final class OciFunctions {
         return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
-     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * This data source provides details about a specific Om Hub Multi Clouds Metadata resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets details for Multicloud metadata for the specified Multicloud subscription.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level Oracle Cloud Infrastructure compartment).
+     * For more information, see
+     * [Getting Details for Multicloud Metadata](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -21450,8 +22031,12 @@ public final class OciFunctions {
         return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
-     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * This data source provides details about a specific Om Hub Multi Clouds Metadata resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets details for Multicloud metadata for the specified Multicloud subscription.
+     * Multicloud metadata for a subscription includes the Multicloud base compartment (top-level Oracle Cloud Infrastructure compartment).
+     * For more information, see
+     * [Getting Details for Multicloud Metadata](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-subscription-metadata.htm).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -21495,7 +22080,108 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResources() {
+        return getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResourcesPlain() {
+        return getMulticloudOmHubMulticloudResourcesPlain(GetMulticloudOmHubMulticloudResourcesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      * 
      * ## Example Usage
      * 
@@ -21541,7 +22227,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      * 
      * ## Example Usage
      * 
@@ -21587,7 +22276,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      * 
      * ## Example Usage
      * 
@@ -21633,7 +22325,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      * 
      * ## Example Usage
      * 
@@ -21679,7 +22374,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * Lists Multicloud resources in the specified Multicloud subscription.
+     * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+     * For more information, see
+     * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
      * 
      * ## Example Usage
      * 
@@ -21725,7 +22423,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor&#39;s Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -21770,7 +22470,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor&#39;s Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -21815,7 +22517,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor&#39;s Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -21860,7 +22564,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor&#39;s Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -21905,7 +22611,9 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets information about a ResourceAnchor.
+     * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+     * For more information, see
+     * [Getting a Resource Anchor&#39;s Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
      * 
      * ## Example Usage
      * 
@@ -21950,7 +22658,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22000,7 +22711,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22050,7 +22764,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22100,7 +22817,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22150,7 +22870,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22200,7 +22923,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 
@@ -22250,7 +22976,10 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
      * 
-     * Gets a list of ResourceAnchors.
+     * Lists resource anchors in the specified Multicloud subscription.
+     * Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+     * For more information, see
+     * [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
      * 
      * ## Example Usage
      * 

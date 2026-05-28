@@ -66,6 +66,9 @@ import (
 //				},
 //				IsCpsOfflineReportEnabled: pulumi.Any(exadataInfrastructureIsCpsOfflineReportEnabled),
 //				IsMultiRackDeployment:     pulumi.Any(exadataInfrastructureIsMultiRackDeployment),
+//				MaintenanceVersionPreferences: &database.ExadataInfrastructureMaintenanceVersionPreferencesArgs{
+//					ReferenceResourceIdForImageUpdates: pulumi.Any(exadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates),
+//				},
 //				MaintenanceWindow: &database.ExadataInfrastructureMaintenanceWindowArgs{
 //					CustomActionTimeoutInMins: pulumi.Any(exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
 //					DaysOfWeeks: database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
@@ -184,6 +187,9 @@ type ExadataInfrastructure struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus pulumi.StringOutput `pulumi:"maintenanceSloStatus"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences ExadataInfrastructureMaintenanceVersionPreferencesOutput `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow ExadataInfrastructureMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
 	// The total number of CPU cores available.
@@ -362,6 +368,9 @@ type exadataInfrastructureState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus *string `pulumi:"maintenanceSloStatus"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences *ExadataInfrastructureMaintenanceVersionPreferences `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *ExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// The total number of CPU cores available.
@@ -475,6 +484,9 @@ type ExadataInfrastructureState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus pulumi.StringPtrInput
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences ExadataInfrastructureMaintenanceVersionPreferencesPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow ExadataInfrastructureMaintenanceWindowPtrInput
 	// The total number of CPU cores available.
@@ -562,6 +574,9 @@ type exadataInfrastructureArgs struct {
 	IsCpsOfflineReportEnabled *bool `pulumi:"isCpsOfflineReportEnabled"`
 	// (Updatable) Indicates if deployment is Multi-Rack or not.
 	IsMultiRackDeployment *bool `pulumi:"isMultiRackDeployment"`
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences *ExadataInfrastructureMaintenanceVersionPreferences `pulumi:"maintenanceVersionPreferences"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *ExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// (Updatable) The base64 encoded Multi-Rack configuration json file.
@@ -624,6 +639,9 @@ type ExadataInfrastructureArgs struct {
 	IsCpsOfflineReportEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if deployment is Multi-Rack or not.
 	IsMultiRackDeployment pulumi.BoolPtrInput
+	// (Updatable) The preferences for target versions of future maintenance runs.
+	// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+	MaintenanceVersionPreferences ExadataInfrastructureMaintenanceVersionPreferencesPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow ExadataInfrastructureMaintenanceWindowPtrInput
 	// (Updatable) The base64 encoded Multi-Rack configuration json file.
@@ -905,6 +923,14 @@ func (o ExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
 // A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 func (o ExadataInfrastructureOutput) MaintenanceSloStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+}
+
+// (Updatable) The preferences for target versions of future maintenance runs.
+// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans. If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+func (o ExadataInfrastructureOutput) MaintenanceVersionPreferences() ExadataInfrastructureMaintenanceVersionPreferencesOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureMaintenanceVersionPreferencesOutput {
+		return v.MaintenanceVersionPreferences
+	}).(ExadataInfrastructureMaintenanceVersionPreferencesOutput)
 }
 
 // (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

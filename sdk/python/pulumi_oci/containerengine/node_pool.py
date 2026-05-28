@@ -38,6 +38,7 @@ class NodePoolArgs:
                  node_pool_cycling_details: pulumi.Input[Optional['NodePoolNodePoolCyclingDetailsArgs']] = None,
                  node_shape_config: pulumi.Input[Optional['NodePoolNodeShapeConfigArgs']] = None,
                  node_source_details: pulumi.Input[Optional['NodePoolNodeSourceDetailsArgs']] = None,
+                 primary_vnic: pulumi.Input[Optional['NodePoolPrimaryVnicArgs']] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
                  secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -62,6 +63,7 @@ class NodePoolArgs:
         :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input['NodePoolPrimaryVnicArgs'] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
@@ -108,6 +110,8 @@ class NodePoolArgs:
             pulumi.set(__self__, "node_shape_config", node_shape_config)
         if node_source_details is not None:
             pulumi.set(__self__, "node_source_details", node_source_details)
+        if primary_vnic is not None:
+            pulumi.set(__self__, "primary_vnic", primary_vnic)
         if quantity_per_subnet is not None:
             pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
         if secondary_vnics is not None:
@@ -324,6 +328,18 @@ class NodePoolArgs:
         pulumi.set(self, "node_source_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="primaryVnic")
+    def primary_vnic(self) -> pulumi.Input[Optional['NodePoolPrimaryVnicArgs']]:
+        """
+        (Updatable) Details for node's primary VNIC
+        """
+        return pulumi.get(self, "primary_vnic")
+
+    @primary_vnic.setter
+    def primary_vnic(self, value: pulumi.Input[Optional['NodePoolPrimaryVnicArgs']]):
+        pulumi.set(self, "primary_vnic", value)
+
+    @_builtins.property
     @pulumi.getter(name="quantityPerSubnet")
     def quantity_per_subnet(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -399,6 +415,7 @@ class _NodePoolState:
                  node_source_details: pulumi.Input[Optional['NodePoolNodeSourceDetailsArgs']] = None,
                  node_sources: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]]] = None,
                  nodes: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeArgs']]]] = None,
+                 primary_vnic: pulumi.Input[Optional['NodePoolPrimaryVnicArgs']] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
                  secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -427,6 +444,7 @@ class _NodePoolState:
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]] nodes: The nodes in the node pool.
+        :param pulumi.Input['NodePoolPrimaryVnicArgs'] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
@@ -483,6 +501,8 @@ class _NodePoolState:
             pulumi.set(__self__, "node_sources", node_sources)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
+        if primary_vnic is not None:
+            pulumi.set(__self__, "primary_vnic", primary_vnic)
         if quantity_per_subnet is not None:
             pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
         if secondary_vnics is not None:
@@ -737,6 +757,18 @@ class _NodePoolState:
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
+    @pulumi.getter(name="primaryVnic")
+    def primary_vnic(self) -> pulumi.Input[Optional['NodePoolPrimaryVnicArgs']]:
+        """
+        (Updatable) Details for node's primary VNIC
+        """
+        return pulumi.get(self, "primary_vnic")
+
+    @primary_vnic.setter
+    def primary_vnic(self, value: pulumi.Input[Optional['NodePoolPrimaryVnicArgs']]):
+        pulumi.set(self, "primary_vnic", value)
+
+    @_builtins.property
     @pulumi.getter(name="quantityPerSubnet")
     def quantity_per_subnet(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -824,6 +856,7 @@ class NodePool(pulumi.CustomResource):
                  node_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
                  node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
+                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
                  secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -912,6 +945,9 @@ class NodePool(pulumi.CustomResource):
                 "source_type": node_pool_node_source_details_source_type,
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
+            primary_vnic={
+                "security_attributes": node_pool_primary_vnic_security_attributes,
+            },
             quantity_per_subnet=int(node_pool_quantity_per_subnet),
             secondary_vnics=[{
                 "create_vnic_details": {
@@ -932,6 +968,7 @@ class NodePool(pulumi.CustomResource):
                         "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
                     "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
+                    "security_attributes": node_pool_secondary_vnics_create_vnic_details_security_attributes,
                     "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                 },
                 "display_name": node_pool_secondary_vnics_display_name,
@@ -969,6 +1006,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
@@ -1067,6 +1105,9 @@ class NodePool(pulumi.CustomResource):
                 "source_type": node_pool_node_source_details_source_type,
                 "boot_volume_size_in_gbs": node_pool_node_source_details_boot_volume_size_in_gbs,
             },
+            primary_vnic={
+                "security_attributes": node_pool_primary_vnic_security_attributes,
+            },
             quantity_per_subnet=int(node_pool_quantity_per_subnet),
             secondary_vnics=[{
                 "create_vnic_details": {
@@ -1087,6 +1128,7 @@ class NodePool(pulumi.CustomResource):
                         "ipv6subnet_cidr": node_pool_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
                     "nsg_ids": node_pool_secondary_vnics_create_vnic_details_nsg_ids,
+                    "security_attributes": node_pool_secondary_vnics_create_vnic_details_security_attributes,
                     "skip_source_dest_check": node_pool_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
                 },
                 "display_name": node_pool_secondary_vnics_display_name,
@@ -1137,6 +1179,7 @@ class NodePool(pulumi.CustomResource):
                  node_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  node_shape_config: pulumi.Input[Optional[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
                  node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
+                 primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
                  quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
                  secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1173,6 +1216,7 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["node_shape"] = node_shape
             __props__.__dict__["node_shape_config"] = node_shape_config
             __props__.__dict__["node_source_details"] = node_source_details
+            __props__.__dict__["primary_vnic"] = primary_vnic
             __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
             __props__.__dict__["secondary_vnics"] = secondary_vnics
             __props__.__dict__["ssh_public_key"] = ssh_public_key
@@ -1211,6 +1255,7 @@ class NodePool(pulumi.CustomResource):
             node_source_details: pulumi.Input[Optional[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']]] = None,
             node_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]]] = None,
             nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]]] = None,
+            primary_vnic: pulumi.Input[Optional[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']]] = None,
             quantity_per_subnet: pulumi.Input[Optional[_builtins.int]] = None,
             secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]]] = None,
             ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1243,6 +1288,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Union['NodePoolNodeSourceDetailsArgs', 'NodePoolNodeSourceDetailsArgsDict']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeSourceArgs', 'NodePoolNodeSourceArgsDict']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolNodeArgs', 'NodePoolNodeArgsDict']]]] nodes: The nodes in the node pool.
+        :param pulumi.Input[Union['NodePoolPrimaryVnicArgs', 'NodePoolPrimaryVnicArgsDict']] primary_vnic: (Updatable) Details for node's primary VNIC
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
@@ -1277,6 +1323,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["node_source_details"] = node_source_details
         __props__.__dict__["node_sources"] = node_sources
         __props__.__dict__["nodes"] = nodes
+        __props__.__dict__["primary_vnic"] = primary_vnic
         __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
         __props__.__dict__["secondary_vnics"] = secondary_vnics
         __props__.__dict__["ssh_public_key"] = ssh_public_key
@@ -1445,6 +1492,14 @@ class NodePool(pulumi.CustomResource):
         The nodes in the node pool.
         """
         return pulumi.get(self, "nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryVnic")
+    def primary_vnic(self) -> pulumi.Output['outputs.NodePoolPrimaryVnic']:
+        """
+        (Updatable) Details for node's primary VNIC
+        """
+        return pulumi.get(self, "primary_vnic")
 
     @_builtins.property
     @pulumi.getter(name="quantityPerSubnet")

@@ -5,11 +5,18 @@ package com.pulumi.oci.ClusterPlacementGroups.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ClusterPlacementGroups.outputs.GetClusterPlacementGroupCapabilityItemAdditionalDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetClusterPlacementGroupCapabilityItem {
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    private List<GetClusterPlacementGroupCapabilityItemAdditionalDetail> additionalDetails;
     /**
      * @return The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
      * 
@@ -22,6 +29,13 @@ public final class GetClusterPlacementGroupCapabilityItem {
     private String service;
 
     private GetClusterPlacementGroupCapabilityItem() {}
+    /**
+     * @return Additional details describing the selected capability.
+     * 
+     */
+    public List<GetClusterPlacementGroupCapabilityItemAdditionalDetail> additionalDetails() {
+        return this.additionalDetails;
+    }
     /**
      * @return The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
      * 
@@ -46,15 +60,28 @@ public final class GetClusterPlacementGroupCapabilityItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetClusterPlacementGroupCapabilityItemAdditionalDetail> additionalDetails;
         private String name;
         private String service;
         public Builder() {}
         public Builder(GetClusterPlacementGroupCapabilityItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalDetails = defaults.additionalDetails;
     	      this.name = defaults.name;
     	      this.service = defaults.service;
         }
 
+        @CustomType.Setter
+        public Builder additionalDetails(List<GetClusterPlacementGroupCapabilityItemAdditionalDetail> additionalDetails) {
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetClusterPlacementGroupCapabilityItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
+            return this;
+        }
+        public Builder additionalDetails(GetClusterPlacementGroupCapabilityItemAdditionalDetail... additionalDetails) {
+            return additionalDetails(List.of(additionalDetails));
+        }
         @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
@@ -73,6 +100,7 @@ public final class GetClusterPlacementGroupCapabilityItem {
         }
         public GetClusterPlacementGroupCapabilityItem build() {
             final var _resultValue = new GetClusterPlacementGroupCapabilityItem();
+            _resultValue.additionalDetails = additionalDetails;
             _resultValue.name = name;
             _resultValue.service = service;
             return _resultValue;

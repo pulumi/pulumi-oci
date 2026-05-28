@@ -14,7 +14,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a NetworkAnchor.
+        /// Gets details for the specified network anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -44,7 +47,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a NetworkAnchor.
+        /// Gets details for the specified network anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -74,7 +80,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a NetworkAnchor.
+        /// Gets details for the specified network anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -106,7 +115,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudNetworkAnchorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public string? ExternalLocation { get; set; }
@@ -124,13 +133,13 @@ namespace Pulumi.Oci.Oci
         public bool? ShouldFetchVcnName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public string SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public string SubscriptionServiceName { get; set; } = null!;
@@ -144,7 +153,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudNetworkAnchorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public Input<string>? ExternalLocation { get; set; }
@@ -162,13 +171,13 @@ namespace Pulumi.Oci.Oci
         public Input<bool>? ShouldFetchVcnName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public Input<string> SubscriptionServiceName { get; set; } = null!;

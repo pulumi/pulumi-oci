@@ -101,9 +101,17 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     @Export(name="capacityBins", refs={List.class,DedicatedVmHostCapacityBin.class}, tree="[0,1]")
     private Output<List<DedicatedVmHostCapacityBin>> capacityBins;
 
+    /**
+     * @return A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     public Output<List<DedicatedVmHostCapacityBin>> capacityBins() {
         return this.capacityBins;
     }
@@ -256,6 +264,20 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
         return this.placementConstraintDetails;
     }
     /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Export(name="remainingLocalVolumeInGbs", refs={Double.class}, tree="[0]")
+    private Output<Double> remainingLocalVolumeInGbs;
+
+    /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Output<Double> remainingLocalVolumeInGbs() {
+        return this.remainingLocalVolumeInGbs;
+    }
+    /**
      * The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -310,6 +332,20 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Export(name="totalLocalVolumeInGbs", refs={Double.class}, tree="[0]")
+    private Output<Double> totalLocalVolumeInGbs;
+
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Output<Double> totalLocalVolumeInGbs() {
+        return this.totalLocalVolumeInGbs;
     }
     /**
      * The current total memory of the dedicated VM host, in GBs.

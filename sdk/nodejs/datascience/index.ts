@@ -5,6 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ComputeTargetArgs, ComputeTargetState } from "./computeTarget";
+export type ComputeTarget = import("./computeTarget").ComputeTarget;
+export const ComputeTarget: typeof import("./computeTarget").ComputeTarget = null as any;
+utilities.lazyLoad(exports, ["ComputeTarget"], () => require("./computeTarget"));
+
+export { GetComputeTargetArgs, GetComputeTargetResult, GetComputeTargetOutputArgs } from "./getComputeTarget";
+export const getComputeTarget: typeof import("./getComputeTarget").getComputeTarget = null as any;
+export const getComputeTargetOutput: typeof import("./getComputeTarget").getComputeTargetOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeTarget","getComputeTargetOutput"], () => require("./getComputeTarget"));
+
+export { GetComputeTargetShapesArgs, GetComputeTargetShapesResult, GetComputeTargetShapesOutputArgs } from "./getComputeTargetShapes";
+export const getComputeTargetShapes: typeof import("./getComputeTargetShapes").getComputeTargetShapes = null as any;
+export const getComputeTargetShapesOutput: typeof import("./getComputeTargetShapes").getComputeTargetShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeTargetShapes","getComputeTargetShapesOutput"], () => require("./getComputeTargetShapes"));
+
+export { GetComputeTargetsArgs, GetComputeTargetsResult, GetComputeTargetsOutputArgs } from "./getComputeTargets";
+export const getComputeTargets: typeof import("./getComputeTargets").getComputeTargets = null as any;
+export const getComputeTargetsOutput: typeof import("./getComputeTargets").getComputeTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeTargets","getComputeTargetsOutput"], () => require("./getComputeTargets"));
+
 export { GetContainersArgs, GetContainersResult, GetContainersOutputArgs } from "./getContainers";
 export const getContainers: typeof import("./getContainers").getContainers = null as any;
 export const getContainersOutput: typeof import("./getContainers").getContainersOutput = null as any;
@@ -345,6 +365,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:DataScience/computeTarget:ComputeTarget":
+                return new ComputeTarget(name, <any>undefined, { urn })
             case "oci:DataScience/job:Job":
                 return new Job(name, <any>undefined, { urn })
             case "oci:DataScience/jobRun:JobRun":
@@ -394,6 +416,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "DataScience/computeTarget", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/job", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/jobRun", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/mlApplication", _module)

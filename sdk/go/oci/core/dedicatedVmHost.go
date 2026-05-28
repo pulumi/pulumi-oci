@@ -75,8 +75,9 @@ type DedicatedVmHost struct {
 	pulumi.CustomResourceState
 
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput                   `pulumi:"availabilityDomain"`
-	CapacityBins       DedicatedVmHostCapacityBinArrayOutput `pulumi:"capacityBins"`
+	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+	CapacityBins DedicatedVmHostCapacityBinArrayOutput `pulumi:"capacityBins"`
 	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
 	CapacityConfig pulumi.StringOutput `pulumi:"capacityConfig"`
 	// (Updatable) The OCID of the compartment.
@@ -101,6 +102,8 @@ type DedicatedVmHost struct {
 	IsMemoryEncryptionEnabled pulumi.BoolOutput `pulumi:"isMemoryEncryptionEnabled"`
 	// The details for providing placement constraints.
 	PlacementConstraintDetails DedicatedVmHostPlacementConstraintDetailsOutput `pulumi:"placementConstraintDetails"`
+	// The current available local volume of the dedicated VM host, in GBs.
+	RemainingLocalVolumeInGbs pulumi.Float64Output `pulumi:"remainingLocalVolumeInGbs"`
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs pulumi.Float64Output `pulumi:"remainingMemoryInGbs"`
 	// The current available OCPUs of the dedicated VM host.
@@ -109,6 +112,8 @@ type DedicatedVmHost struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The current total local volume of the dedicated VM host, in GBs.
+	TotalLocalVolumeInGbs pulumi.Float64Output `pulumi:"totalLocalVolumeInGbs"`
 	// The current total memory of the dedicated VM host, in GBs.
 	TotalMemoryInGbs pulumi.Float64Output `pulumi:"totalMemoryInGbs"`
 	// The current total OCPUs of the dedicated VM host.
@@ -155,8 +160,9 @@ func GetDedicatedVmHost(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DedicatedVmHost resources.
 type dedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain *string                      `pulumi:"availabilityDomain"`
-	CapacityBins       []DedicatedVmHostCapacityBin `pulumi:"capacityBins"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+	CapacityBins []DedicatedVmHostCapacityBin `pulumi:"capacityBins"`
 	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
 	CapacityConfig *string `pulumi:"capacityConfig"`
 	// (Updatable) The OCID of the compartment.
@@ -181,6 +187,8 @@ type dedicatedVmHostState struct {
 	IsMemoryEncryptionEnabled *bool `pulumi:"isMemoryEncryptionEnabled"`
 	// The details for providing placement constraints.
 	PlacementConstraintDetails *DedicatedVmHostPlacementConstraintDetails `pulumi:"placementConstraintDetails"`
+	// The current available local volume of the dedicated VM host, in GBs.
+	RemainingLocalVolumeInGbs *float64 `pulumi:"remainingLocalVolumeInGbs"`
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs *float64 `pulumi:"remainingMemoryInGbs"`
 	// The current available OCPUs of the dedicated VM host.
@@ -189,6 +197,8 @@ type dedicatedVmHostState struct {
 	State *string `pulumi:"state"`
 	// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The current total local volume of the dedicated VM host, in GBs.
+	TotalLocalVolumeInGbs *float64 `pulumi:"totalLocalVolumeInGbs"`
 	// The current total memory of the dedicated VM host, in GBs.
 	TotalMemoryInGbs *float64 `pulumi:"totalMemoryInGbs"`
 	// The current total OCPUs of the dedicated VM host.
@@ -198,7 +208,8 @@ type dedicatedVmHostState struct {
 type DedicatedVmHostState struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
-	CapacityBins       DedicatedVmHostCapacityBinArrayInput
+	// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+	CapacityBins DedicatedVmHostCapacityBinArrayInput
 	// The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
 	CapacityConfig pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment.
@@ -223,6 +234,8 @@ type DedicatedVmHostState struct {
 	IsMemoryEncryptionEnabled pulumi.BoolPtrInput
 	// The details for providing placement constraints.
 	PlacementConstraintDetails DedicatedVmHostPlacementConstraintDetailsPtrInput
+	// The current available local volume of the dedicated VM host, in GBs.
+	RemainingLocalVolumeInGbs pulumi.Float64PtrInput
 	// The current available memory of the dedicated VM host, in GBs.
 	RemainingMemoryInGbs pulumi.Float64PtrInput
 	// The current available OCPUs of the dedicated VM host.
@@ -231,6 +244,8 @@ type DedicatedVmHostState struct {
 	State pulumi.StringPtrInput
 	// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The current total local volume of the dedicated VM host, in GBs.
+	TotalLocalVolumeInGbs pulumi.Float64PtrInput
 	// The current total memory of the dedicated VM host, in GBs.
 	TotalMemoryInGbs pulumi.Float64PtrInput
 	// The current total OCPUs of the dedicated VM host.
@@ -388,6 +403,7 @@ func (o DedicatedVmHostOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of total and remaining CPU, memory, and local volume per capacity bucket.
 func (o DedicatedVmHostOutput) CapacityBins() DedicatedVmHostCapacityBinArrayOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) DedicatedVmHostCapacityBinArrayOutput { return v.CapacityBins }).(DedicatedVmHostCapacityBinArrayOutput)
 }
@@ -448,6 +464,11 @@ func (o DedicatedVmHostOutput) PlacementConstraintDetails() DedicatedVmHostPlace
 	}).(DedicatedVmHostPlacementConstraintDetailsOutput)
 }
 
+// The current available local volume of the dedicated VM host, in GBs.
+func (o DedicatedVmHostOutput) RemainingLocalVolumeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.RemainingLocalVolumeInGbs }).(pulumi.Float64Output)
+}
+
 // The current available memory of the dedicated VM host, in GBs.
 func (o DedicatedVmHostOutput) RemainingMemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.RemainingMemoryInGbs }).(pulumi.Float64Output)
@@ -466,6 +487,11 @@ func (o DedicatedVmHostOutput) State() pulumi.StringOutput {
 // The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o DedicatedVmHostOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DedicatedVmHost) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The current total local volume of the dedicated VM host, in GBs.
+func (o DedicatedVmHostOutput) TotalLocalVolumeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *DedicatedVmHost) pulumi.Float64Output { return v.TotalLocalVolumeInGbs }).(pulumi.Float64Output)
 }
 
 // The current total memory of the dedicated VM host, in GBs.

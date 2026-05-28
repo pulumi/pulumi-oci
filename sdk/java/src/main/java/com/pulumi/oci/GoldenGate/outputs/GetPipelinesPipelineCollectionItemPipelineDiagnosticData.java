@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
     /**
-     * @return Name of the bucket where the object is to be uploaded in the object storage
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     private String bucket;
@@ -21,7 +21,7 @@ public final class GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
      */
     private String diagnosticState;
     /**
-     * @return Name of namespace that serves as a container for all of your buckets
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     private String namespace;
@@ -38,7 +38,7 @@ public final class GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
 
     private GetPipelinesPipelineCollectionItemPipelineDiagnosticData() {}
     /**
-     * @return Name of the bucket where the object is to be uploaded in the object storage
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public String bucket() {
@@ -52,7 +52,7 @@ public final class GetPipelinesPipelineCollectionItemPipelineDiagnosticData {
         return this.diagnosticState;
     }
     /**
-     * @return Name of namespace that serves as a container for all of your buckets
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
      * 
      */
     public String namespace() {

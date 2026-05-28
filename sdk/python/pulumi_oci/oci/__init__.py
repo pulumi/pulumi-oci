@@ -120,6 +120,8 @@ from .get_managed_kafka_node_shapes import *
 from .get_multicloud_external_location_mapping_metadata import *
 from .get_multicloud_external_location_summaries_metadata import *
 from .get_multicloud_external_locations_metadata import *
+from .get_multicloud_multicloudalerts import *
+from .get_multicloud_multicloudpolicies import *
 from .get_multicloud_multicloudsubscriptions import *
 from .get_multicloud_network_anchor import *
 from .get_multicloud_network_anchors import *

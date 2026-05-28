@@ -27,9 +27,11 @@ class PipelineArgs:
                  recipe_type: pulumi.Input[_builtins.str],
                  source_connection_details: pulumi.Input['PipelineSourceConnectionDetailsArgs'],
                  target_connection_details: pulumi.Input['PipelineTargetConnectionDetailsArgs'],
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  locks: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
                  process_options: pulumi.Input[Optional['PipelineProcessOptionsArgs']] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
@@ -42,9 +44,11 @@ class PipelineArgs:
         :param pulumi.Input[_builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input['PipelineSourceConnectionDetailsArgs'] source_connection_details: The source connection details for creating a pipeline.
         :param pulumi.Input['PipelineTargetConnectionDetailsArgs'] target_connection_details: The target connection details for creating a pipeline.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['PipelineProcessOptionsArgs'] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
@@ -55,12 +59,16 @@ class PipelineArgs:
         pulumi.set(__self__, "recipe_type", recipe_type)
         pulumi.set(__self__, "source_connection_details", source_connection_details)
         pulumi.set(__self__, "target_connection_details", target_connection_details)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_auto_scaling_enabled is not None:
+            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if locks is not None:
             pulumi.set(__self__, "locks", locks)
         if process_options is not None:
@@ -141,6 +149,18 @@ class PipelineArgs:
         pulumi.set(self, "target_connection_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cpu_core_count", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -175,6 +195,18 @@ class PipelineArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoScalingEnabled")
+    def is_auto_scaling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        """
+        return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_auto_scaling_enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -244,13 +276,13 @@ class _PipelineState:
         Input properties used for looking up and filtering Pipeline resources.
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[_builtins.int] cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: Possible lifecycle substates when retrieving a pipeline.
@@ -333,7 +365,7 @@ class _PipelineState:
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The Minimum number of OCPUs to be made available for this Deployment.
+        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -405,7 +437,7 @@ class _PipelineState:
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
@@ -613,10 +645,12 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
                  process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
@@ -650,6 +684,7 @@ class Pipeline(pulumi.CustomResource):
             target_connection_details={
                 "connection_id": test_connection["id"],
             },
+            cpu_core_count=int(pipeline_cpu_core_count),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -657,6 +692,7 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled == "true",
             locks=[{
                 "type": pipeline_locks_type,
                 "message": pipeline_locks_message,
@@ -667,6 +703,12 @@ class Pipeline(pulumi.CustomResource):
                 "initial_data_load": {
                     "is_initial_load": pipeline_process_options_initial_data_load_is_initial_load,
                     "action_on_existing_table": pipeline_process_options_initial_data_load_action_on_existing_table,
+                    "adb_wallet_path": pipeline_process_options_initial_data_load_adb_wallet_path,
+                    "bucket": pipeline_process_options_initial_data_load_bucket,
+                    "initial_load_type": pipeline_process_options_initial_data_load_initial_load_type,
+                    "namespace": pipeline_process_options_initial_data_load_namespace,
+                    "source_wallet_path": pipeline_process_options_initial_data_load_source_wallet_path,
+                    "target_wallet_path": pipeline_process_options_initial_data_load_target_wallet_path,
                 },
                 "replicate_schema_change": {
                     "can_replicate_schema_change": pipeline_process_options_replicate_schema_change_can_replicate_schema_change,
@@ -691,10 +733,12 @@ class Pipeline(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
@@ -734,6 +778,7 @@ class Pipeline(pulumi.CustomResource):
             target_connection_details={
                 "connection_id": test_connection["id"],
             },
+            cpu_core_count=int(pipeline_cpu_core_count),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -741,6 +786,7 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled == "true",
             locks=[{
                 "type": pipeline_locks_type,
                 "message": pipeline_locks_message,
@@ -751,6 +797,12 @@ class Pipeline(pulumi.CustomResource):
                 "initial_data_load": {
                     "is_initial_load": pipeline_process_options_initial_data_load_is_initial_load,
                     "action_on_existing_table": pipeline_process_options_initial_data_load_action_on_existing_table,
+                    "adb_wallet_path": pipeline_process_options_initial_data_load_adb_wallet_path,
+                    "bucket": pipeline_process_options_initial_data_load_bucket,
+                    "initial_load_type": pipeline_process_options_initial_data_load_initial_load_type,
+                    "namespace": pipeline_process_options_initial_data_load_namespace,
+                    "source_wallet_path": pipeline_process_options_initial_data_load_source_wallet_path,
+                    "target_wallet_path": pipeline_process_options_initial_data_load_target_wallet_path,
                 },
                 "replicate_schema_change": {
                     "can_replicate_schema_change": pipeline_process_options_replicate_schema_change_can_replicate_schema_change,
@@ -788,10 +840,12 @@ class Pipeline(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
                  process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
@@ -811,12 +865,14 @@ class Pipeline(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
             if license_model is None and not opts.urn:
                 raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
@@ -832,9 +888,7 @@ class Pipeline(pulumi.CustomResource):
             if target_connection_details is None and not opts.urn:
                 raise TypeError("Missing required property 'target_connection_details'")
             __props__.__dict__["target_connection_details"] = target_connection_details
-            __props__.__dict__["cpu_core_count"] = None
             __props__.__dict__["ingress_ips"] = None
-            __props__.__dict__["is_auto_scaling_enabled"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecycle_sub_state"] = None
             __props__.__dict__["mapping_rules"] = None
@@ -886,13 +940,13 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[_builtins.int] cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
+        :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[_builtins.str] lifecycle_sub_state: Possible lifecycle substates when retrieving a pipeline.
@@ -952,7 +1006,7 @@ class Pipeline(pulumi.CustomResource):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[_builtins.int]:
         """
-        The Minimum number of OCPUs to be made available for this Deployment.
+        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -1000,7 +1054,7 @@ class Pipeline(pulumi.CustomResource):
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 

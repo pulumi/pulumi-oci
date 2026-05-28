@@ -16,10 +16,40 @@ public final class GetPipelineProcessOptionInitialDataLoad {
      */
     private String actionOnExistingTable;
     /**
+     * @return Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+     * 
+     */
+    private String adbWalletPath;
+    /**
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    private String bucket;
+    /**
+     * @return Type of Initial load, which can be objectStorage or dbLink.
+     * 
+     */
+    private String initialLoadType;
+    /**
      * @return If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
      * 
      */
     private String isInitialLoad;
+    /**
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    private String namespace;
+    /**
+     * @return Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+     * 
+     */
+    private String sourceWalletPath;
+    /**
+     * @return Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+     * 
+     */
+    private String targetWalletPath;
 
     private GetPipelineProcessOptionInitialDataLoad() {}
     /**
@@ -30,11 +60,53 @@ public final class GetPipelineProcessOptionInitialDataLoad {
         return this.actionOnExistingTable;
     }
     /**
+     * @return Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path &#34;/u01/targetwallet&#34; will be used.
+     * 
+     */
+    public String adbWalletPath() {
+        return this.adbWalletPath;
+    }
+    /**
+     * @return Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    public String bucket() {
+        return this.bucket;
+    }
+    /**
+     * @return Type of Initial load, which can be objectStorage or dbLink.
+     * 
+     */
+    public String initialLoadType() {
+        return this.initialLoadType;
+    }
+    /**
      * @return If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
      * 
      */
     public String isInitialLoad() {
         return this.isInitialLoad;
+    }
+    /**
+     * @return Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+     * 
+     */
+    public String namespace() {
+        return this.namespace;
+    }
+    /**
+     * @return Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+     * 
+     */
+    public String sourceWalletPath() {
+        return this.sourceWalletPath;
+    }
+    /**
+     * @return Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+     * 
+     */
+    public String targetWalletPath() {
+        return this.targetWalletPath;
     }
 
     public static Builder builder() {
@@ -47,12 +119,24 @@ public final class GetPipelineProcessOptionInitialDataLoad {
     @CustomType.Builder
     public static final class Builder {
         private String actionOnExistingTable;
+        private String adbWalletPath;
+        private String bucket;
+        private String initialLoadType;
         private String isInitialLoad;
+        private String namespace;
+        private String sourceWalletPath;
+        private String targetWalletPath;
         public Builder() {}
         public Builder(GetPipelineProcessOptionInitialDataLoad defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionOnExistingTable = defaults.actionOnExistingTable;
+    	      this.adbWalletPath = defaults.adbWalletPath;
+    	      this.bucket = defaults.bucket;
+    	      this.initialLoadType = defaults.initialLoadType;
     	      this.isInitialLoad = defaults.isInitialLoad;
+    	      this.namespace = defaults.namespace;
+    	      this.sourceWalletPath = defaults.sourceWalletPath;
+    	      this.targetWalletPath = defaults.targetWalletPath;
         }
 
         @CustomType.Setter
@@ -64,6 +148,30 @@ public final class GetPipelineProcessOptionInitialDataLoad {
             return this;
         }
         @CustomType.Setter
+        public Builder adbWalletPath(String adbWalletPath) {
+            if (adbWalletPath == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "adbWalletPath");
+            }
+            this.adbWalletPath = adbWalletPath;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder bucket(String bucket) {
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "bucket");
+            }
+            this.bucket = bucket;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialLoadType(String initialLoadType) {
+            if (initialLoadType == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "initialLoadType");
+            }
+            this.initialLoadType = initialLoadType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isInitialLoad(String isInitialLoad) {
             if (isInitialLoad == null) {
               throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "isInitialLoad");
@@ -71,10 +179,40 @@ public final class GetPipelineProcessOptionInitialDataLoad {
             this.isInitialLoad = isInitialLoad;
             return this;
         }
+        @CustomType.Setter
+        public Builder namespace(String namespace) {
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "namespace");
+            }
+            this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceWalletPath(String sourceWalletPath) {
+            if (sourceWalletPath == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "sourceWalletPath");
+            }
+            this.sourceWalletPath = sourceWalletPath;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetWalletPath(String targetWalletPath) {
+            if (targetWalletPath == null) {
+              throw new MissingRequiredPropertyException("GetPipelineProcessOptionInitialDataLoad", "targetWalletPath");
+            }
+            this.targetWalletPath = targetWalletPath;
+            return this;
+        }
         public GetPipelineProcessOptionInitialDataLoad build() {
             final var _resultValue = new GetPipelineProcessOptionInitialDataLoad();
             _resultValue.actionOnExistingTable = actionOnExistingTable;
+            _resultValue.adbWalletPath = adbWalletPath;
+            _resultValue.bucket = bucket;
+            _resultValue.initialLoadType = initialLoadType;
             _resultValue.isInitialLoad = isInitialLoad;
+            _resultValue.namespace = namespace;
+            _resultValue.sourceWalletPath = sourceWalletPath;
+            _resultValue.targetWalletPath = targetWalletPath;
             return _resultValue;
         }
     }

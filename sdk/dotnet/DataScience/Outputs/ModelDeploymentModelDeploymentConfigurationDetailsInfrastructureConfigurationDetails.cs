@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The minimum network bandwidth for the model deployment.
         /// </summary>
         public readonly int? BandwidthMbps;
+        public readonly string? ComputeTargetId;
         /// <summary>
         /// The type of the model deployment infrastructure.
         /// </summary>
@@ -24,11 +25,12 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The model deployment instance configuration.
         /// </summary>
-        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration InstanceConfiguration;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration? InstanceConfiguration;
         /// <summary>
         /// The maximum network bandwidth for the model deployment.
         /// </summary>
         public readonly int? MaximumBandwidthMbps;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration? ModelDeploymentResourceConfiguration;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -38,18 +40,24 @@ namespace Pulumi.Oci.DataScience.Outputs
         private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails(
             int? bandwidthMbps,
 
+            string? computeTargetId,
+
             string infrastructureType,
 
-            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration instanceConfiguration,
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration? instanceConfiguration,
 
             int? maximumBandwidthMbps,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration? modelDeploymentResourceConfiguration,
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy? scalingPolicy)
         {
             BandwidthMbps = bandwidthMbps;
+            ComputeTargetId = computeTargetId;
             InfrastructureType = infrastructureType;
             InstanceConfiguration = instanceConfiguration;
             MaximumBandwidthMbps = maximumBandwidthMbps;
+            ModelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
             ScalingPolicy = scalingPolicy;
         }
     }

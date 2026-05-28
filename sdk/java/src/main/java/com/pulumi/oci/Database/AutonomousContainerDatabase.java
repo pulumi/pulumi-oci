@@ -403,14 +403,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.dbName;
     }
     /**
-     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     @Export(name="dbSplitThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbSplitThreshold;
 
     /**
-     * @return The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Output<Integer> dbSplitThreshold() {
@@ -473,14 +473,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.displayName;
     }
     /**
-     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     @Export(name="distributionAffinity", refs={String.class}, tree="[0]")
     private Output<String> distributionAffinity;
 
     /**
-     * @return Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * @return (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     public Output<String> distributionAffinity() {
@@ -815,14 +815,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.memoryPerOracleComputeUnitInGbs;
     }
     /**
-     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      * 
      */
     @Export(name="netServicesArchitecture", refs={String.class}, tree="[0]")
     private Output<String> netServicesArchitecture;
 
     /**
-     * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * @return (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      * 
      */
     public Output<String> netServicesArchitecture() {
@@ -1275,14 +1275,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.versionPreference;
     }
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     @Export(name="vmFailoverReservation", refs={Integer.class}, tree="[0]")
     private Output<Integer> vmFailoverReservation;
 
     /**
-     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * @return (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     public Output<Integer> vmFailoverReservation() {

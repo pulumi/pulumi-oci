@@ -100,6 +100,11 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      */
     private String displayName;
     /**
+     * @return The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    private String distributionAlgorithm;
+    /**
      * @return If provided, filters the results for the given Exadata Infrastructure.
      * 
      */
@@ -223,6 +228,11 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * 
      */
     private Integer scanListenerPortTls;
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    private Double sgaPercentage;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
@@ -383,6 +393,13 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public String distributionAlgorithm() {
+        return this.distributionAlgorithm;
     }
     /**
      * @return If provided, filters the results for the given Exadata Infrastructure.
@@ -561,6 +578,13 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         return this.scanListenerPortTls;
     }
     /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Double sgaPercentage() {
+        return this.sgaPercentage;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -647,6 +671,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private List<String> dbServers;
         private Map<String,String> definedTags;
         private String displayName;
+        private String distributionAlgorithm;
         private String exadataInfrastructureId;
         private Double exadataStorageInTbsLowestScaledValue;
         private Map<String,String> freeformTags;
@@ -673,6 +698,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private Double reservedCpus;
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
+        private Double sgaPercentage;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -703,6 +729,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.dbServers = defaults.dbServers;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.distributionAlgorithm = defaults.distributionAlgorithm;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
     	      this.exadataStorageInTbsLowestScaledValue = defaults.exadataStorageInTbsLowestScaledValue;
     	      this.freeformTags = defaults.freeformTags;
@@ -729,6 +756,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.reservedCpus = defaults.reservedCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
+    	      this.sgaPercentage = defaults.sgaPercentage;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -885,6 +913,14 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
               throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder distributionAlgorithm(String distributionAlgorithm) {
+            if (distributionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "distributionAlgorithm");
+            }
+            this.distributionAlgorithm = distributionAlgorithm;
             return this;
         }
         @CustomType.Setter
@@ -1102,6 +1138,14 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder sgaPercentage(Double sgaPercentage) {
+            if (sgaPercentage == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "sgaPercentage");
+            }
+            this.sgaPercentage = sgaPercentage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "state");
@@ -1193,6 +1237,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             _resultValue.dbServers = dbServers;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.distributionAlgorithm = distributionAlgorithm;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
             _resultValue.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             _resultValue.freeformTags = freeformTags;
@@ -1219,6 +1264,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             _resultValue.reservedCpus = reservedCpus;
             _resultValue.scanListenerPortNonTls = scanListenerPortNonTls;
             _resultValue.scanListenerPortTls = scanListenerPortTls;
+            _resultValue.sgaPercentage = sgaPercentage;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

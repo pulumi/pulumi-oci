@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     private String compartmentId;
@@ -52,7 +52,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     private String id;
@@ -81,6 +81,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
      * 
      */
     private String partnerCloudAccountIdentifier;
+    private String resourceAnchorUri;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
@@ -104,7 +105,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
 
     private GetMulticloudResourceAnchorsResourceAnchorCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public String compartmentId() {
@@ -160,7 +161,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      * 
      */
     public String id() {
@@ -200,6 +201,9 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
      */
     public String partnerCloudAccountIdentifier() {
         return this.partnerCloudAccountIdentifier;
+    }
+    public String resourceAnchorUri() {
+        return this.resourceAnchorUri;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
@@ -253,6 +257,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
         private String linkedCompartmentId;
         private String linkedCompartmentName;
         private String partnerCloudAccountIdentifier;
+        private String resourceAnchorUri;
         private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -274,6 +279,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
     	      this.linkedCompartmentId = defaults.linkedCompartmentId;
     	      this.linkedCompartmentName = defaults.linkedCompartmentName;
     	      this.partnerCloudAccountIdentifier = defaults.partnerCloudAccountIdentifier;
+    	      this.resourceAnchorUri = defaults.resourceAnchorUri;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -393,6 +399,14 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceAnchorUri(String resourceAnchorUri) {
+            if (resourceAnchorUri == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "resourceAnchorUri");
+            }
+            this.resourceAnchorUri = resourceAnchorUri;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             if (subscriptionId == null) {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "subscriptionId");
@@ -440,6 +454,7 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
             _resultValue.linkedCompartmentId = linkedCompartmentId;
             _resultValue.linkedCompartmentName = linkedCompartmentName;
             _resultValue.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            _resultValue.resourceAnchorUri = resourceAnchorUri;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

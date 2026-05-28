@@ -51,6 +51,7 @@ import (
 //					MustEnablePrivateNat: pulumi.Any(networkFirewallNatConfigurationMustEnablePrivateNat),
 //				},
 //				NetworkSecurityGroupIds: pulumi.Any(networkFirewallNetworkSecurityGroupIds),
+//				SecurityAttributes:      pulumi.Any(networkFirewallSecurityAttributes),
 //				Shape:                   pulumi.Any(networkFirewallShape),
 //			})
 //			if err != nil {
@@ -94,6 +95,8 @@ type NetworkFirewall struct {
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the Network Firewall.
@@ -172,6 +175,8 @@ type networkFirewallState struct {
 	NetworkFirewallPolicyId *string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape *string `pulumi:"shape"`
 	// The current state of the Network Firewall.
@@ -212,6 +217,8 @@ type NetworkFirewallState struct {
 	NetworkFirewallPolicyId pulumi.StringPtrInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape pulumi.StringPtrInput
 	// The current state of the Network Firewall.
@@ -254,6 +261,8 @@ type networkFirewallArgs struct {
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape *string `pulumi:"shape"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -285,6 +294,8 @@ type NetworkFirewallArgs struct {
 	NetworkFirewallPolicyId pulumi.StringInput
 	// (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
 	Shape pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -434,6 +445,11 @@ func (o NetworkFirewallOutput) NetworkFirewallPolicyId() pulumi.StringOutput {
 // (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
 func (o NetworkFirewallOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringArrayOutput { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+func (o NetworkFirewallOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkFirewall) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.

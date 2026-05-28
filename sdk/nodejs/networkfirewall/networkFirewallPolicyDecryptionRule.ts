@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *         afterRule: networkFirewallPolicyDecryptionRulePositionAfterRule,
  *         beforeRule: networkFirewallPolicyDecryptionRulePositionBeforeRule,
  *     },
+ *     secrets: networkFirewallPolicyDecryptionRuleSecrets,
  * });
  * ```
  *
@@ -116,6 +117,10 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
     declare public readonly secret: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     */
+    declare public readonly secrets: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a NetworkFirewallPolicyDecryptionRule resource with the given unique name, arguments, and options.
@@ -140,6 +145,7 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
             resourceInputs["position"] = state?.position;
             resourceInputs["priorityOrder"] = state?.priorityOrder;
             resourceInputs["secret"] = state?.secret;
+            resourceInputs["secrets"] = state?.secrets;
         } else {
             const args = argsOrState as NetworkFirewallPolicyDecryptionRuleArgs | undefined;
             if (args?.action === undefined && !opts.urn) {
@@ -160,6 +166,7 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
             resourceInputs["position"] = args?.position;
             resourceInputs["priorityOrder"] = args?.priorityOrder;
             resourceInputs["secret"] = args?.secret;
+            resourceInputs["secrets"] = args?.secrets;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -210,6 +217,10 @@ export interface NetworkFirewallPolicyDecryptionRuleState {
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
     secret?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     */
+    secrets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -251,4 +262,8 @@ export interface NetworkFirewallPolicyDecryptionRuleArgs {
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
     secret?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     */
+    secrets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

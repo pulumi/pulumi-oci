@@ -320,7 +320,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly versionPreference: string;
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      */
     readonly vmFailoverReservation: number;
 }

@@ -43,6 +43,11 @@ public final class GetInstancesInstanceShapeConfig {
      */
     private Double localDisksTotalSizeInGbs;
     /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+     * 
+     */
+    private Integer localVolumeSizeInGbs;
+    /**
      * @return The maximum number of VNIC attachments for the instance.
      * 
      */
@@ -123,6 +128,13 @@ public final class GetInstancesInstanceShapeConfig {
         return this.localDisksTotalSizeInGbs;
     }
     /**
+     * @return The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+     * 
+     */
+    public Integer localVolumeSizeInGbs() {
+        return this.localVolumeSizeInGbs;
+    }
+    /**
      * @return The maximum number of VNIC attachments for the instance.
      * 
      */
@@ -190,6 +202,7 @@ public final class GetInstancesInstanceShapeConfig {
         private String localDiskDescription;
         private Integer localDisks;
         private Double localDisksTotalSizeInGbs;
+        private Integer localVolumeSizeInGbs;
         private Integer maxVnicAttachments;
         private Double memoryInGbs;
         private Double networkingBandwidthInGbps;
@@ -207,6 +220,7 @@ public final class GetInstancesInstanceShapeConfig {
     	      this.localDiskDescription = defaults.localDiskDescription;
     	      this.localDisks = defaults.localDisks;
     	      this.localDisksTotalSizeInGbs = defaults.localDisksTotalSizeInGbs;
+    	      this.localVolumeSizeInGbs = defaults.localVolumeSizeInGbs;
     	      this.maxVnicAttachments = defaults.maxVnicAttachments;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.networkingBandwidthInGbps = defaults.networkingBandwidthInGbps;
@@ -263,6 +277,14 @@ public final class GetInstancesInstanceShapeConfig {
               throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "localDisksTotalSizeInGbs");
             }
             this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localVolumeSizeInGbs(Integer localVolumeSizeInGbs) {
+            if (localVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "localVolumeSizeInGbs");
+            }
+            this.localVolumeSizeInGbs = localVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -337,6 +359,7 @@ public final class GetInstancesInstanceShapeConfig {
             _resultValue.localDiskDescription = localDiskDescription;
             _resultValue.localDisks = localDisks;
             _resultValue.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            _resultValue.localVolumeSizeInGbs = localVolumeSizeInGbs;
             _resultValue.maxVnicAttachments = maxVnicAttachments;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;

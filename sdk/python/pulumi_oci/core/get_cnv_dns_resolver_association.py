@@ -44,8 +44,7 @@ class GetCnvDnsResolverAssociationResult:
     @pulumi.getter(name="dnsResolverId")
     def dns_resolver_id(self) -> _builtins.str:
         """
-        The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn 
-        is created, we will create it asynchronously. It would be null until it is actually created.
+        The OCID of the DNS resolver in the association. The resolver is created asynchronously when the VCN is created, and this data source waits until the association reaches AVAILABLE before returning this value.
         """
         return pulumi.get(self, "dns_resolver_id")
 
@@ -61,10 +60,7 @@ class GetCnvDnsResolverAssociationResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the association. Resolver will be created when vcn is created. But the creation happens 
-        asynchronously and may take longer because it is a background event that needs to run. The state will be PROVISIONING
-        until the resolver is actually created. After the resolver is actually created, the state will be set to AVAILABLE. Users
-        need to do a terraform refresh to poll and update the state file after sometime to get the dns_resolver_id and state AVAILABLE.
+        The current state of the association.
         """
         return pulumi.get(self, "state")
 

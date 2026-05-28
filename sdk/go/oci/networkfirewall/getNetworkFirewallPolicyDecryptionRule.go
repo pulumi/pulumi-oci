@@ -57,6 +57,8 @@ type LookupNetworkFirewallPolicyDecryptionRuleResult struct {
 	PriorityOrder string                                           `pulumi:"priorityOrder"`
 	// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret string `pulumi:"secret"`
+	// An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+	Secrets []string `pulumi:"secrets"`
 }
 
 func LookupNetworkFirewallPolicyDecryptionRuleOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyDecryptionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyDecryptionRuleResultOutput {
@@ -151,6 +153,11 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) PriorityOrder() p
 // The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Secret() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.Secret }).(pulumi.StringOutput)
+}
+
+// An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Secrets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) []string { return v.Secrets }).(pulumi.StringArrayOutput)
 }
 
 func init() {

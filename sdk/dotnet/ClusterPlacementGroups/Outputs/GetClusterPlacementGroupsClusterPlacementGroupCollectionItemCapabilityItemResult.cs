@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
     public sealed class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemResult
     {
         /// <summary>
+        /// Additional details describing the selected capability.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult> AdditionalDetails;
+        /// <summary>
         /// A filter to return only the resources that match the entire display name specified.
         /// </summary>
         public readonly string Name;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
 
         [OutputConstructor]
         private GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemResult(
+            ImmutableArray<Outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult> additionalDetails,
+
             string name,
 
             string service)
         {
+            AdditionalDetails = additionalDetails;
             Name = name;
             Service = service;
         }

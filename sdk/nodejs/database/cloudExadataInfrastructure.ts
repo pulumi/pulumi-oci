@@ -35,6 +35,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     maintenanceVersionPreferences: {
+ *         referenceResourceIdForImageUpdates: cloudExadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates,
+ *     },
  *     maintenanceWindow: {
  *         customActionTimeoutInMins: Number(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
@@ -182,6 +185,12 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     *
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    declare public readonly maintenanceVersionPreferences: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceVersionPreferences>;
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     declare public readonly maintenanceWindow: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
@@ -293,6 +302,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
             resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceVersionPreferences"] = state?.maintenanceVersionPreferences;
             resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
             resourceInputs["maxCpuCount"] = state?.maxCpuCount;
             resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
@@ -334,6 +344,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["maintenanceVersionPreferences"] = args?.maintenanceVersionPreferences;
             resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["storageCount"] = args?.storageCount;
@@ -464,6 +475,12 @@ export interface CloudExadataInfrastructureState {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     *
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    maintenanceVersionPreferences?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceVersionPreferences | undefined>;
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow | undefined>;
@@ -581,6 +598,12 @@ export interface CloudExadataInfrastructureArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     *
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+     */
+    maintenanceVersionPreferences?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceVersionPreferences | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */

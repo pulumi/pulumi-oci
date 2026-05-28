@@ -29,9 +29,9 @@ namespace Pulumi.Oci.NetworkFirewall
     /// {
     ///     var testNetworkFirewallPolicyApplicationGroup = new Oci.NetworkFirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group", new()
     ///     {
-    ///         Apps = networkFirewallPolicyApplicationGroupApps,
     ///         Name = networkFirewallPolicyApplicationGroupName,
     ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Apps = networkFirewallPolicyApplicationGroupApps,
     ///         Description = networkFirewallPolicyApplicationGroupDescription,
     ///     });
     /// 

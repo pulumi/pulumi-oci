@@ -194,6 +194,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The distribution algorithm used for the Autonomous VM cluster.
+        /// </summary>
+        public readonly string DistributionAlgorithm;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         public readonly string ExadataInfrastructureId;
@@ -294,6 +298,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int ScanListenerPortTls;
         /// <summary>
+        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// </summary>
+        public readonly double SgaPercentage;
+        /// <summary>
         /// The current state of the Autonomous VM cluster.
         /// </summary>
         public readonly string State;
@@ -367,6 +375,8 @@ namespace Pulumi.Oci.Database
 
             string displayName,
 
+            string distributionAlgorithm,
+
             string exadataInfrastructureId,
 
             double exadataStorageInTbsLowestScaledValue,
@@ -419,6 +429,8 @@ namespace Pulumi.Oci.Database
 
             int scanListenerPortTls,
 
+            double sgaPercentage,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -456,6 +468,7 @@ namespace Pulumi.Oci.Database
             DbServers = dbServers;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DistributionAlgorithm = distributionAlgorithm;
             ExadataInfrastructureId = exadataInfrastructureId;
             ExadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             FreeformTags = freeformTags;
@@ -482,6 +495,7 @@ namespace Pulumi.Oci.Database
             ReservedCpus = reservedCpus;
             ScanListenerPortNonTls = scanListenerPortNonTls;
             ScanListenerPortTls = scanListenerPortTls;
+            SgaPercentage = sgaPercentage;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

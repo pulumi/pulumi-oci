@@ -29,6 +29,8 @@ import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatePlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentEnvironmentsPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPeersArgs;
@@ -80,6 +82,7 @@ import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificateResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificatesResult;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentDisasterRecoveryPrecheckReportResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentEnvironmentsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentPeersResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentResult;
@@ -2359,6 +2362,226 @@ public final class GoldenGateFunctions {
      */
     public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", TypeShape.of(GetDeploymentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
+     *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
+     *             .deploymentId(testDeployment.id())
+     *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDeploymentDisasterRecoveryPrecheckReportResult> getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs args) {
+        return getDeploymentDisasterRecoveryPrecheckReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
+     *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
+     *             .deploymentId(testDeployment.id())
+     *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDeploymentDisasterRecoveryPrecheckReportResult> getDeploymentDisasterRecoveryPrecheckReportPlain(GetDeploymentDisasterRecoveryPrecheckReportPlainArgs args) {
+        return getDeploymentDisasterRecoveryPrecheckReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
+     *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
+     *             .deploymentId(testDeployment.id())
+     *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDeploymentDisasterRecoveryPrecheckReportResult> getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentDisasterRecoveryPrecheckReport:getDeploymentDisasterRecoveryPrecheckReport", TypeShape.of(GetDeploymentDisasterRecoveryPrecheckReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
+     *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
+     *             .deploymentId(testDeployment.id())
+     *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDeploymentDisasterRecoveryPrecheckReportResult> getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentDisasterRecoveryPrecheckReport:getDeploymentDisasterRecoveryPrecheckReport", TypeShape.of(GetDeploymentDisasterRecoveryPrecheckReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentDisasterRecoveryPrecheckReportArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentDisasterRecoveryPrecheckReport = GoldenGateFunctions.getDeploymentDisasterRecoveryPrecheckReport(GetDeploymentDisasterRecoveryPrecheckReportArgs.builder()
+     *             .availabilityDomain(deploymentDisasterRecoveryPrecheckReportAvailabilityDomain)
+     *             .deploymentId(testDeployment.id())
+     *             .faultDomain(deploymentDisasterRecoveryPrecheckReportFaultDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDeploymentDisasterRecoveryPrecheckReportResult> getDeploymentDisasterRecoveryPrecheckReportPlain(GetDeploymentDisasterRecoveryPrecheckReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentDisasterRecoveryPrecheckReport:getDeploymentDisasterRecoveryPrecheckReport", TypeShape.of(GetDeploymentDisasterRecoveryPrecheckReportResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Deployment Environments in Oracle Cloud Infrastructure Golden Gate service.

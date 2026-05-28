@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Ocvp
     {
         /// <summary>
         /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.  
-        /// !&gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
+        /// &gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
         /// 
         /// Lists supported SKUs.
         /// 
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Ocvp
 
         /// <summary>
         /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.  
-        /// !&gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
+        /// &gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
         /// 
         /// Lists supported SKUs.
         /// 
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Ocvp
 
         /// <summary>
         /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.  
-        /// !&gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
+        /// &gt; **WARNING:** This data source is deprecated and will be removed, please use "oci.Ocvp.getSupportedCommitments" instead.
         /// 
         /// Lists supported SKUs.
         /// 

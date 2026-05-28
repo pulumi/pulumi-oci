@@ -95,8 +95,8 @@ def get_supported_skus(compartment_id: Optional[_builtins.str] = None,
                        host_shape_name: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedSkusResult:
     """
-    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\\
-    !> **WARNING:** This data source is deprecated and will be removed, please use "ocvp_get_supported_commitments" instead.
+    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    > **WARNING:** This data source is deprecated and will be removed, please use "ocvp_get_supported_commitments" instead.
 
     Lists supported SKUs.
 
@@ -132,8 +132,8 @@ def get_supported_skus_output(compartment_id: pulumi.Input[Optional[_builtins.st
                               host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedSkusResult]:
     """
-    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\\
-    !> **WARNING:** This data source is deprecated and will be removed, please use "ocvp_get_supported_commitments" instead.
+    This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    > **WARNING:** This data source is deprecated and will be removed, please use "ocvp_get_supported_commitments" instead.
 
     Lists supported SKUs.
 

@@ -4530,8 +4530,8 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", TypeShape.of(GetSupportedHostShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * &gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -4574,8 +4574,8 @@ public final class OcvpFunctions {
         return getSupportedSkus(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * &gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -4618,8 +4618,8 @@ public final class OcvpFunctions {
         return getSupportedSkusPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * &gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -4662,8 +4662,8 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", TypeShape.of(GetSupportedSkusResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * &gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -4706,8 +4706,8 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invoke("oci:Ocvp/getSupportedSkus:getSupportedSkus", TypeShape.of(GetSupportedSkusResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
+     * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * &gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 

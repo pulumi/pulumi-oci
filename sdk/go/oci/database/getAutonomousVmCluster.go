@@ -93,6 +93,8 @@ type LookupAutonomousVmClusterResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm string `pulumi:"distributionAlgorithm"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// The lowest value to which exadataStorage(in TBs) can be scaled down.
@@ -145,6 +147,8 @@ type LookupAutonomousVmClusterResult struct {
 	ScanListenerPortNonTls int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port number. Default value is 2484.
 	ScanListenerPortTls int `pulumi:"scanListenerPortTls"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage float64 `pulumi:"sgaPercentage"`
 	// The current state of the Autonomous VM cluster.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -290,6 +294,11 @@ func (o LookupAutonomousVmClusterResultOutput) DisplayName() pulumi.StringOutput
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// The distribution algorithm used for the Autonomous VM cluster.
+func (o LookupAutonomousVmClusterResultOutput) DistributionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.DistributionAlgorithm }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o LookupAutonomousVmClusterResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
@@ -422,6 +431,11 @@ func (o LookupAutonomousVmClusterResultOutput) ScanListenerPortNonTls() pulumi.I
 // The SCAN Listener TLS port number. Default value is 2484.
 func (o LookupAutonomousVmClusterResultOutput) ScanListenerPortTls() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.ScanListenerPortTls }).(pulumi.IntOutput)
+}
+
+// Percentage of ECPU memory allocated for SGA(System Global Area).
+func (o LookupAutonomousVmClusterResultOutput) SgaPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.SgaPercentage }).(pulumi.Float64Output)
 }
 
 // The current state of the Autonomous VM cluster.

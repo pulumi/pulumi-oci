@@ -14,7 +14,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a ResourceAnchor.
+        /// Gets details for the specified resource anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -43,7 +46,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a ResourceAnchor.
+        /// Gets details for the specified resource anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -72,7 +78,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets information about a ResourceAnchor.
+        /// Gets details for the specified resource anchor. The subscription OCID and service name are required.
+        /// For more information, see
+        /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -103,13 +112,13 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("resourceAnchorId", required: true)]
         public string ResourceAnchorId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// Whether to fetch and include the compartment name. Setting this field to `True` might introduce additional latency.
         /// </summary>
         [Input("shouldFetchCompartmentName")]
         public bool? ShouldFetchCompartmentName { get; set; }
@@ -121,7 +130,7 @@ namespace Pulumi.Oci.Oci
         public string SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public string SubscriptionServiceName { get; set; } = null!;
@@ -135,13 +144,13 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("resourceAnchorId", required: true)]
         public Input<string> ResourceAnchorId { get; set; } = null!;
 
         /// <summary>
-        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// Whether to fetch and include the compartment name. Setting this field to `True` might introduce additional latency.
         /// </summary>
         [Input("shouldFetchCompartmentName")]
         public Input<bool>? ShouldFetchCompartmentName { get; set; }
@@ -153,7 +162,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public Input<string> SubscriptionServiceName { get; set; } = null!;
@@ -193,15 +202,15 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        /// A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The current state of the ResourceAnchor.
+        /// The current state of the resource anchor.
         /// </summary>
         public readonly string LifecycleState;
         /// <summary>
@@ -237,11 +246,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
 

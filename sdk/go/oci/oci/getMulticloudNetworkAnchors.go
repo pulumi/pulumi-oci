@@ -13,7 +13,10 @@ import (
 
 // This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
 //
-// Gets a list of NetworkAnchors.
+// Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+// Details listed for each resource include name, state, VCN, and ODB network ID.
+// For more information, see
+// [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
 //
 // ## Example Usage
 //
@@ -37,7 +40,6 @@ import (
 //				DisplayName:                 pulumi.StringRef(displayName),
 //				ExternalLocation:            pulumi.StringRef(externalLocation),
 //				NetworkAnchorOciSubnetId:    pulumi.StringRef(networkAnchorOciSubnetId),
-//				CompartmentIdInSubtree:      pulumi.BoolRef(compartmentIdInSubtree),
 //				NetworkAnchorOciVcnId:       pulumi.StringRef(networkAnchorOciVcnId),
 //				Id:                          pulumi.StringRef(id),
 //				ShouldFetchVcnName:          pulumi.BoolRef(shouldFetchVcnName),
@@ -62,13 +64,12 @@ func GetMulticloudNetworkAnchors(ctx *pulumi.Context, args *GetMulticloudNetwork
 
 // A collection of arguments for invoking getMulticloudNetworkAnchors.
 type GetMulticloudNetworkAnchorsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-	CompartmentId *string `pulumi:"compartmentId"`
-	// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
+	CompartmentId          *string `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string `pulumi:"displayName"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation *string `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	Id    *string `pulumi:"id"`
@@ -80,12 +81,12 @@ type GetMulticloudNetworkAnchorsArgs struct {
 	// A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
 	NetworkAnchorOciVcnId *string `pulumi:"networkAnchorOciVcnId"`
 	// Whether to fetch and include the vcn display name, which may introduce additional latency.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	ShouldFetchVcnName *bool `pulumi:"shouldFetchVcnName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId *string `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
@@ -122,13 +123,12 @@ func GetMulticloudNetworkAnchorsOutput(ctx *pulumi.Context, args GetMulticloudNe
 
 // A collection of arguments for invoking getMulticloudNetworkAnchors.
 type GetMulticloudNetworkAnchorsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
+	CompartmentId          pulumi.StringPtrInput `pulumi:"compartmentId"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput   `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// The Cloud Service Provider region.
+	// The cloud service provider region.
 	ExternalLocation pulumi.StringPtrInput `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	Id    pulumi.StringPtrInput `pulumi:"id"`
@@ -140,12 +140,12 @@ type GetMulticloudNetworkAnchorsOutputArgs struct {
 	// A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
 	NetworkAnchorOciVcnId pulumi.StringPtrInput `pulumi:"networkAnchorOciVcnId"`
 	// Whether to fetch and include the vcn display name, which may introduce additional latency.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	ShouldFetchVcnName pulumi.BoolPtrInput `pulumi:"shouldFetchVcnName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
-	// The subscription service name of the Cloud Service Provider.
+	// The cloud service provider.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	SubscriptionServiceName pulumi.StringPtrInput `pulumi:"subscriptionServiceName"`
 }
 

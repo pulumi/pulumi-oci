@@ -27,7 +27,7 @@ class GetNodePoolResult:
     """
     A collection of values returned by getNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, network_launch_type=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, quantity_per_subnet=None, secondary_vnics=None, ssh_public_key=None, state=None, subnet_ids=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, network_launch_type=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, primary_vnics=None, quantity_per_subnet=None, secondary_vnics=None, ssh_public_key=None, state=None, subnet_ids=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -94,6 +94,9 @@ class GetNodePoolResult:
         if nodes and not isinstance(nodes, list):
             raise TypeError("Expected argument 'nodes' to be a list")
         pulumi.set(__self__, "nodes", nodes)
+        if primary_vnics and not isinstance(primary_vnics, list):
+            raise TypeError("Expected argument 'primary_vnics' to be a list")
+        pulumi.set(__self__, "primary_vnics", primary_vnics)
         if quantity_per_subnet and not isinstance(quantity_per_subnet, int):
             raise TypeError("Expected argument 'quantity_per_subnet' to be a int")
         pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
@@ -289,6 +292,14 @@ class GetNodePoolResult:
         return pulumi.get(self, "nodes")
 
     @_builtins.property
+    @pulumi.getter(name="primaryVnics")
+    def primary_vnics(self) -> Sequence['outputs.GetNodePoolPrimaryVnicResult']:
+        """
+        Details for node's primary VNIC
+        """
+        return pulumi.get(self, "primary_vnics")
+
+    @_builtins.property
     @pulumi.getter(name="quantityPerSubnet")
     def quantity_per_subnet(self) -> _builtins.int:
         """
@@ -357,6 +368,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             node_source_details=self.node_source_details,
             node_sources=self.node_sources,
             nodes=self.nodes,
+            primary_vnics=self.primary_vnics,
             quantity_per_subnet=self.quantity_per_subnet,
             secondary_vnics=self.secondary_vnics,
             ssh_public_key=self.ssh_public_key,
@@ -411,6 +423,7 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
         node_source_details=pulumi.get(__ret__, 'node_source_details'),
         node_sources=pulumi.get(__ret__, 'node_sources'),
         nodes=pulumi.get(__ret__, 'nodes'),
+        primary_vnics=pulumi.get(__ret__, 'primary_vnics'),
         quantity_per_subnet=pulumi.get(__ret__, 'quantity_per_subnet'),
         secondary_vnics=pulumi.get(__ret__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
@@ -462,6 +475,7 @@ def get_node_pool_output(node_pool_id: pulumi.Input[Optional[_builtins.str]] = N
         node_source_details=pulumi.get(__response__, 'node_source_details'),
         node_sources=pulumi.get(__response__, 'node_sources'),
         nodes=pulumi.get(__response__, 'nodes'),
+        primary_vnics=pulumi.get(__response__, 'primary_vnics'),
         quantity_per_subnet=pulumi.get(__response__, 'quantity_per_subnet'),
         secondary_vnics=pulumi.get(__response__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__response__, 'ssh_public_key'),

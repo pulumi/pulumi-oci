@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfig;
+import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -134,6 +135,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
@@ -388,6 +394,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.lifecycleDetails;
     }
     /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    public List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences() {
+        return this.maintenanceVersionPreferences;
+    }
+    /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -546,6 +559,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private Boolean isSchedulingPolicyAssociated;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
+        private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
         private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
         private Integer maxCpuCount;
         private Double maxDataStorageInTbs;
@@ -590,6 +604,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceVersionPreferences = defaults.maintenanceVersionPreferences;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.maxCpuCount = defaults.maxCpuCount;
     	      this.maxDataStorageInTbs = defaults.maxDataStorageInTbs;
@@ -804,6 +819,17 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceVersionPreferences(List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences) {
+            if (maintenanceVersionPreferences == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "maintenanceVersionPreferences");
+            }
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            return this;
+        }
+        public Builder maintenanceVersionPreferences(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreference... maintenanceVersionPreferences) {
+            return maintenanceVersionPreferences(List.of(maintenanceVersionPreferences));
+        }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
             if (maintenanceWindows == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "maintenanceWindows");
@@ -975,6 +1001,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceVersionPreferences = maintenanceVersionPreferences;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.maxCpuCount = maxCpuCount;
             _resultValue.maxDataStorageInTbs = maxDataStorageInTbs;

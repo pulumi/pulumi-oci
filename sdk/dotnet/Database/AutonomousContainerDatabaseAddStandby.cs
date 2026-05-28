@@ -471,7 +471,7 @@ namespace Pulumi.Oci.Database
         public Output<string> VersionPreference { get; private set; } = null!;
 
         /// <summary>
-        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         /// </summary>
         [Output("vmFailoverReservation")]
         public Output<int> VmFailoverReservation { get; private set; } = null!;
@@ -1055,7 +1055,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? VersionPreference { get; set; }
 
         /// <summary>
-        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        /// The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         /// </summary>
         [Input("vmFailoverReservation")]
         public Input<int>? VmFailoverReservation { get; set; }

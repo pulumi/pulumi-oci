@@ -1510,10 +1510,6 @@ class DeploymentMaintenanceWindowArgs:
 
 
 class DeploymentOggDataArgsDict(TypedDict):
-    deployment_name: pulumi.Input[_builtins.str]
-    """
-    The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-    """
     admin_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
@@ -1530,6 +1526,10 @@ class DeploymentOggDataArgsDict(TypedDict):
     """
     (Updatable) The type of credential store for OGG.
     """
+    deployment_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+    """
     group_to_roles_mapping: NotRequired[pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgsDict']]]
     """
     (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
@@ -1541,6 +1541,10 @@ class DeploymentOggDataArgsDict(TypedDict):
     key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64 encoded content of the PEM file containing the private key.
+    """
+    key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
     """
     ogg_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1554,29 +1558,30 @@ class DeploymentOggDataArgsDict(TypedDict):
 @pulumi.input_type
 class DeploymentOggDataArgs:
     def __init__(__self__, *,
-                 deployment_name: pulumi.Input[_builtins.str],
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
                  certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  credential_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_name: pulumi.Input[Optional[_builtins.str]] = None,
                  group_to_roles_mapping: pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']] = None,
                  identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ogg_version: pulumi.Input[Optional[_builtins.str]] = None,
                  password_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param pulumi.Input[_builtins.str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[_builtins.str] certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] credential_store: (Updatable) The type of credential store for OGG.
+        :param pulumi.Input[_builtins.str] deployment_name: The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
         :param pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs'] group_to_roles_mapping: (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param pulumi.Input[_builtins.str] identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param pulumi.Input[_builtins.str] key: (Updatable) The base64 encoded content of the PEM file containing the private key.
+        :param pulumi.Input[_builtins.str] key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
         :param pulumi.Input[_builtins.str] ogg_version: Version of OGG
         :param pulumi.Input[_builtins.str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
             warnings.warn("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""", DeprecationWarning)
             pulumi.log.warn("""admin_password is deprecated: The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
@@ -1588,28 +1593,20 @@ class DeploymentOggDataArgs:
             pulumi.set(__self__, "certificate", certificate)
         if credential_store is not None:
             pulumi.set(__self__, "credential_store", credential_store)
+        if deployment_name is not None:
+            pulumi.set(__self__, "deployment_name", deployment_name)
         if group_to_roles_mapping is not None:
             pulumi.set(__self__, "group_to_roles_mapping", group_to_roles_mapping)
         if identity_domain_id is not None:
             pulumi.set(__self__, "identity_domain_id", identity_domain_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if key_secret_id is not None:
+            pulumi.set(__self__, "key_secret_id", key_secret_id)
         if ogg_version is not None:
             pulumi.set(__self__, "ogg_version", ogg_version)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
-
-    @_builtins.property
-    @pulumi.getter(name="deploymentName")
-    def deployment_name(self) -> pulumi.Input[_builtins.str]:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
-        return pulumi.get(self, "deployment_name")
-
-    @deployment_name.setter
-    def deployment_name(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "deployment_name", value)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -1661,6 +1658,18 @@ class DeploymentOggDataArgs:
         pulumi.set(self, "credential_store", value)
 
     @_builtins.property
+    @pulumi.getter(name="deploymentName")
+    def deployment_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+        """
+        return pulumi.get(self, "deployment_name")
+
+    @deployment_name.setter
+    def deployment_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deployment_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="groupToRolesMapping")
     def group_to_roles_mapping(self) -> pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']]:
         """
@@ -1695,6 +1704,18 @@ class DeploymentOggDataArgs:
     @key.setter
     def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keySecretId")
+    def key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        """
+        return pulumi.get(self, "key_secret_id")
+
+    @key_secret_id.setter
+    def key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="oggVersion")
@@ -2047,7 +2068,7 @@ class PipelineMappingRuleArgs:
 class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
     bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Name of the bucket where the object is to be uploaded in the object storage
+    Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
     """
     diagnostic_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2055,7 +2076,7 @@ class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
     """
     namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Name of namespace that serves as a container for all of your buckets
+    Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
     """
     object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -2075,9 +2096,9 @@ class PipelinePipelineDiagnosticDataArgs:
                  object: pulumi.Input[Optional[_builtins.str]] = None,
                  time_last_collected: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param pulumi.Input[_builtins.str] bucket: Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param pulumi.Input[_builtins.str] diagnostic_state: The state of the pipeline diagnostics collection.
-        :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
+        :param pulumi.Input[_builtins.str] namespace: Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         :param pulumi.Input[_builtins.str] object: Name of the diagnostic collected and uploaded to object storage
         :param pulumi.Input[_builtins.str] time_last_collected: The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
@@ -2096,7 +2117,7 @@ class PipelinePipelineDiagnosticDataArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name of the bucket where the object is to be uploaded in the object storage
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "bucket")
 
@@ -2120,7 +2141,7 @@ class PipelinePipelineDiagnosticDataArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name of namespace that serves as a container for all of your buckets
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         """
         return pulumi.get(self, "namespace")
 
@@ -2248,19 +2269,67 @@ class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
     """
     (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
     """
+    adb_wallet_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+    """
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+    """
+    initial_load_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+    """
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+    """
+    source_wallet_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+    """
+    target_wallet_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+    """
 
 @pulumi.input_type
 class PipelineProcessOptionsInitialDataLoadArgs:
     def __init__(__self__, *,
                  is_initial_load: pulumi.Input[_builtins.str],
-                 action_on_existing_table: pulumi.Input[Optional[_builtins.str]] = None):
+                 action_on_existing_table: pulumi.Input[Optional[_builtins.str]] = None,
+                 adb_wallet_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_load_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_wallet_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_wallet_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] is_initial_load: (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
         :param pulumi.Input[_builtins.str] action_on_existing_table: (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+        :param pulumi.Input[_builtins.str] adb_wallet_path: (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        :param pulumi.Input[_builtins.str] bucket: (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param pulumi.Input[_builtins.str] initial_load_type: (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        :param pulumi.Input[_builtins.str] source_wallet_path: (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        :param pulumi.Input[_builtins.str] target_wallet_path: (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
         """
         pulumi.set(__self__, "is_initial_load", is_initial_load)
         if action_on_existing_table is not None:
             pulumi.set(__self__, "action_on_existing_table", action_on_existing_table)
+        if adb_wallet_path is not None:
+            pulumi.set(__self__, "adb_wallet_path", adb_wallet_path)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if initial_load_type is not None:
+            pulumi.set(__self__, "initial_load_type", initial_load_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if source_wallet_path is not None:
+            pulumi.set(__self__, "source_wallet_path", source_wallet_path)
+        if target_wallet_path is not None:
+            pulumi.set(__self__, "target_wallet_path", target_wallet_path)
 
     @_builtins.property
     @pulumi.getter(name="isInitialLoad")
@@ -2285,6 +2354,78 @@ class PipelineProcessOptionsInitialDataLoadArgs:
     @action_on_existing_table.setter
     def action_on_existing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_existing_table", value)
+
+    @_builtins.property
+    @pulumi.getter(name="adbWalletPath")
+    def adb_wallet_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+        """
+        return pulumi.get(self, "adb_wallet_path")
+
+    @adb_wallet_path.setter
+    def adb_wallet_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "adb_wallet_path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialLoadType")
+    def initial_load_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+        """
+        return pulumi.get(self, "initial_load_type")
+
+    @initial_load_type.setter
+    def initial_load_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "initial_load_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceWalletPath")
+    def source_wallet_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+        """
+        return pulumi.get(self, "source_wallet_path")
+
+    @source_wallet_path.setter
+    def source_wallet_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_wallet_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetWalletPath")
+    def target_wallet_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+        """
+        return pulumi.get(self, "target_wallet_path")
+
+    @target_wallet_path.setter
+    def target_wallet_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_wallet_path", value)
 
 
 class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):

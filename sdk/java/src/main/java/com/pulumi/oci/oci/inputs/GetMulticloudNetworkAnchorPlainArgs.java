@@ -17,14 +17,14 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
     public static final GetMulticloudNetworkAnchorPlainArgs Empty = new GetMulticloudNetworkAnchorPlainArgs();
 
     /**
-     * OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * The cloud service provider region.
      * 
      */
     @Import(name="externalLocation")
     private @Nullable String externalLocation;
 
     /**
-     * @return OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * @return The cloud service provider region.
      * 
      */
     public Optional<String> externalLocation() {
@@ -62,14 +62,14 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     @Import(name="subscriptionId", required=true)
     private String subscriptionId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     public String subscriptionId() {
@@ -77,14 +77,14 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The cloud service provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private String subscriptionServiceName;
 
     /**
-     * @return The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * @return The cloud service provider.
      * 
      */
     public String subscriptionServiceName() {
@@ -120,7 +120,7 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param externalLocation OMHub Control Plane must know underlying CSP CP Region External Location Name.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class GetMulticloudNetworkAnchorPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 

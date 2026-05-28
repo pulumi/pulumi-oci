@@ -86,6 +86,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     private String displayName;
     private Integer downloadGsmCertificateSigningRequestTrigger;
     private String downloadedGsmCsrPem;
+    private Integer effectiveReplicationUnit;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -324,6 +325,9 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     }
     public String downloadedGsmCsrPem() {
         return this.downloadedGsmCsrPem;
+    }
+    public Integer effectiveReplicationUnit() {
+        return this.effectiveReplicationUnit;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -570,6 +574,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
         private String displayName;
         private Integer downloadGsmCertificateSigningRequestTrigger;
         private String downloadedGsmCsrPem;
+        private Integer effectiveReplicationUnit;
         private Map<String,String> freeformTags;
         private Integer generateGsmCertificateSigningRequestTrigger;
         private String generateGsmCertificateSigningRequestTriggerCaBundleId;
@@ -632,6 +637,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
     	      this.displayName = defaults.displayName;
     	      this.downloadGsmCertificateSigningRequestTrigger = defaults.downloadGsmCertificateSigningRequestTrigger;
     	      this.downloadedGsmCsrPem = defaults.downloadedGsmCsrPem;
+    	      this.effectiveReplicationUnit = defaults.effectiveReplicationUnit;
     	      this.freeformTags = defaults.freeformTags;
     	      this.generateGsmCertificateSigningRequestTrigger = defaults.generateGsmCertificateSigningRequestTrigger;
     	      this.generateGsmCertificateSigningRequestTriggerCaBundleId = defaults.generateGsmCertificateSigningRequestTriggerCaBundleId;
@@ -833,6 +839,14 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
               throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "downloadedGsmCsrPem");
             }
             this.downloadedGsmCsrPem = downloadedGsmCsrPem;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder effectiveReplicationUnit(Integer effectiveReplicationUnit) {
+            if (effectiveReplicationUnit == null) {
+              throw new MissingRequiredPropertyException("GetDistributedDatabaseDistributedAutonomousDatabasesDistributedAutonomousDatabaseCollectionItem", "effectiveReplicationUnit");
+            }
+            this.effectiveReplicationUnit = effectiveReplicationUnit;
             return this;
         }
         @CustomType.Setter
@@ -1197,6 +1211,7 @@ public final class GetDistributedDatabaseDistributedAutonomousDatabasesDistribut
             _resultValue.displayName = displayName;
             _resultValue.downloadGsmCertificateSigningRequestTrigger = downloadGsmCertificateSigningRequestTrigger;
             _resultValue.downloadedGsmCsrPem = downloadedGsmCsrPem;
+            _resultValue.effectiveReplicationUnit = effectiveReplicationUnit;
             _resultValue.freeformTags = freeformTags;
             _resultValue.generateGsmCertificateSigningRequestTrigger = generateGsmCertificateSigningRequestTrigger;
             _resultValue.generateGsmCertificateSigningRequestTriggerCaBundleId = generateGsmCertificateSigningRequestTriggerCaBundleId;

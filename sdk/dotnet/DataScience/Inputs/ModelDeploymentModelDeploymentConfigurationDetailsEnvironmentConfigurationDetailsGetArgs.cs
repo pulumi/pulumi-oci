@@ -24,6 +24,18 @@ namespace Pulumi.Oci.DataScience.Inputs
             set => _cmds = value;
         }
 
+        [Input("customHttpEndpoints")]
+        private InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointGetArgs>? _customHttpEndpoints;
+
+        /// <summary>
+        /// (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+        /// </summary>
+        public InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointGetArgs> CustomHttpEndpoints
+        {
+            get => _customHttpEndpoints ?? (_customHttpEndpoints = new InputList<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointGetArgs>());
+            set => _customHttpEndpoints = value;
+        }
+
         [Input("defaultEnvironmentVariables")]
         private InputMap<string>? _defaultEnvironmentVariables;
 
@@ -89,6 +101,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// </summary>
         [Input("imageSignatureId")]
         public Input<string>? ImageSignatureId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is 'openai', the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+        /// </summary>
+        [Input("predictApiSpecification")]
+        public Input<string>? PredictApiSpecification { get; set; }
 
         /// <summary>
         /// (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.

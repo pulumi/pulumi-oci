@@ -20,14 +20,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     public static final GetMulticloudExternalLocationsMetadataArgs Empty = new GetMulticloudExternalLocationsMetadataArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     @Import(name="clusterPlacementGroupId")
     private @Nullable Output<String> clusterPlacementGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
      * 
      */
     public Optional<Output<String>> clusterPlacementGroupId() {
@@ -35,14 +35,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -50,14 +50,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The resource type query (i.e. dbsystem, instance etc.)
+     * The resource type query (for example, dbsystem or instance).
      * 
      */
     @Import(name="entityType")
     private @Nullable Output<String> entityType;
 
     /**
-     * @return The resource type query (i.e. dbsystem, instance etc.)
+     * @return The resource type query (for example, dbsystem or instance).
      * 
      */
     public Optional<Output<String>> entityType() {
@@ -65,14 +65,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      * 
      */
     @Import(name="externalLocation")
     private @Nullable Output<String> externalLocation;
 
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     public Optional<Output<String>> externalLocation() {
@@ -109,14 +109,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * Oracle Cloud Infrastructure Logical AD to filter the response.
+     * Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
      * 
      */
     @Import(name="logicalZone")
     private @Nullable Output<String> logicalZone;
 
     /**
-     * @return Oracle Cloud Infrastructure Logical AD to filter the response.
+     * @return Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
      * 
      */
     public Optional<Output<String>> logicalZone() {
@@ -139,14 +139,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private Output<String> subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
      * 
      */
     public Output<String> subscriptionServiceName() {
@@ -187,7 +187,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param entityType The resource type query (i.e. dbsystem, instance etc.)
+         * @param entityType The resource type query (for example, dbsystem or instance).
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param entityType The resource type query (i.e. dbsystem, instance etc.)
+         * @param entityType The resource type query (for example, dbsystem or instance).
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param logicalZone Oracle Cloud Infrastructure Logical AD to filter the response.
+         * @param logicalZone Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param logicalZone Oracle Cloud Infrastructure Logical AD to filter the response.
+         * @param logicalZone Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
          * 
          * @return builder
          * 

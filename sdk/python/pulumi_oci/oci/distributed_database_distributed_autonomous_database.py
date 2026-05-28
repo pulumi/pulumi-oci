@@ -746,6 +746,7 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  downloaded_gsm_csr_pem: pulumi.Input[Optional[_builtins.str]] = None,
+                 effective_replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -880,6 +881,8 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
             pulumi.set(__self__, "download_gsm_certificate_signing_request_trigger", download_gsm_certificate_signing_request_trigger)
         if downloaded_gsm_csr_pem is not None:
             pulumi.set(__self__, "downloaded_gsm_csr_pem", downloaded_gsm_csr_pem)
+        if effective_replication_unit is not None:
+            pulumi.set(__self__, "effective_replication_unit", effective_replication_unit)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if generate_gsm_certificate_signing_request_trigger is not None:
@@ -1183,6 +1186,15 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
     @downloaded_gsm_csr_pem.setter
     def downloaded_gsm_csr_pem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "downloaded_gsm_csr_pem", value)
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "effective_replication_unit")
+
+    @effective_replication_unit.setter
+    def effective_replication_unit(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "effective_replication_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -2117,6 +2129,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["validate_network_trigger"] = validate_network_trigger
             __props__.__dict__["connection_strings"] = None
             __props__.__dict__["downloaded_gsm_csr_pem"] = None
+            __props__.__dict__["effective_replication_unit"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_content_length"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_etag"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_last_modified"] = None
@@ -2159,6 +2172,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             downloaded_gsm_csr_pem: pulumi.Input[Optional[_builtins.str]] = None,
+            effective_replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             generate_gsm_certificate_signing_request_trigger_ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2282,6 +2296,7 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["download_gsm_certificate_signing_request_trigger"] = download_gsm_certificate_signing_request_trigger
         __props__.__dict__["downloaded_gsm_csr_pem"] = downloaded_gsm_csr_pem
+        __props__.__dict__["effective_replication_unit"] = effective_replication_unit
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["generate_gsm_certificate_signing_request_trigger"] = generate_gsm_certificate_signing_request_trigger
         __props__.__dict__["generate_gsm_certificate_signing_request_trigger_ca_bundle_id"] = generate_gsm_certificate_signing_request_trigger_ca_bundle_id
@@ -2471,6 +2486,11 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="downloadedGsmCsrPem")
     def downloaded_gsm_csr_pem(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "downloaded_gsm_csr_pem")
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "effective_replication_unit")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")

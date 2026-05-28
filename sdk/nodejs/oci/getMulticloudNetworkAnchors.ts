@@ -9,7 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of NetworkAnchors.
+ * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+ * Details listed for each resource include name, state, VCN, and ODB network ID.
+ * For more information, see
+ * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
  *
  * ## Example Usage
  *
@@ -25,7 +28,6 @@ import * as utilities from "../utilities";
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
  *     shouldFetchVcnName: shouldFetchVcnName === "true",
@@ -56,19 +58,16 @@ export function getMulticloudNetworkAnchors(args?: GetMulticloudNetworkAnchorsAr
  */
 export interface GetMulticloudNetworkAnchorsArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      */
     compartmentId?: string;
-    /**
-     * If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-     */
     compartmentIdInSubtree?: boolean;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
     displayName?: string;
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      */
     externalLocation?: string;
     /**
@@ -90,8 +89,6 @@ export interface GetMulticloudNetworkAnchorsArgs {
     networkAnchorOciVcnId?: string;
     /**
      * Whether to fetch and include the vcn display name, which may introduce additional latency.
-     *
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
      */
     shouldFetchVcnName?: boolean;
     /**
@@ -99,7 +96,9 @@ export interface GetMulticloudNetworkAnchorsArgs {
      */
     subscriptionId?: string;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
+     *
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      */
     subscriptionServiceName?: string;
 }
@@ -140,7 +139,10 @@ export interface GetMulticloudNetworkAnchorsResult {
 /**
  * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of NetworkAnchors.
+ * Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+ * Details listed for each resource include name, state, VCN, and ODB network ID.
+ * For more information, see
+ * [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
  *
  * ## Example Usage
  *
@@ -156,7 +158,6 @@ export interface GetMulticloudNetworkAnchorsResult {
  *     displayName: displayName,
  *     externalLocation: externalLocation,
  *     networkAnchorOciSubnetId: networkAnchorOciSubnetId,
- *     compartmentIdInSubtree: compartmentIdInSubtree === "true",
  *     networkAnchorOciVcnId: networkAnchorOciVcnId,
  *     id: id,
  *     shouldFetchVcnName: shouldFetchVcnName === "true",
@@ -187,19 +188,16 @@ export function getMulticloudNetworkAnchorsOutput(args?: GetMulticloudNetworkAnc
  */
 export interface GetMulticloudNetworkAnchorsOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      */
     compartmentId?: pulumi.Input<string | undefined>;
-    /**
-     * If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-     */
     compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      */
     externalLocation?: pulumi.Input<string | undefined>;
     /**
@@ -221,8 +219,6 @@ export interface GetMulticloudNetworkAnchorsOutputArgs {
     networkAnchorOciVcnId?: pulumi.Input<string | undefined>;
     /**
      * Whether to fetch and include the vcn display name, which may introduce additional latency.
-     *
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
      */
     shouldFetchVcnName?: pulumi.Input<boolean | undefined>;
     /**
@@ -230,7 +226,9 @@ export interface GetMulticloudNetworkAnchorsOutputArgs {
      */
     subscriptionId?: pulumi.Input<string | undefined>;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
+     *
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      */
     subscriptionServiceName?: pulumi.Input<string | undefined>;
 }

@@ -351,7 +351,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[_builtins.int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: The next maintenance version preference.
-        :param pulumi.Input[_builtins.int] vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        :param pulumi.Input[_builtins.int] vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         if autonomous_container_database_id is not None:
             pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -1274,7 +1274,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="vmFailoverReservation")
     def vm_failover_reservation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 
@@ -1684,7 +1684,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: The next maintenance version preference.
-        :param pulumi.Input[_builtins.int] vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        :param pulumi.Input[_builtins.int] vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2286,7 +2286,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="vmFailoverReservation")
     def vm_failover_reservation(self) -> pulumi.Output[_builtins.int]:
         """
-        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 

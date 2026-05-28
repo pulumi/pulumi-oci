@@ -208,6 +208,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The distribution algorithm used for the Autonomous VM cluster.
+        /// </summary>
+        public readonly string DistributionAlgorithm;
+        /// <summary>
         /// The domain name for the cloud Autonomous VM cluster.
         /// </summary>
         public readonly string Domain;
@@ -332,6 +336,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>
+        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// </summary>
+        public readonly double SgaPercentage;
+        /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
         public readonly string Shape;
@@ -429,6 +437,8 @@ namespace Pulumi.Oci.Database
 
             string displayName,
 
+            string distributionAlgorithm,
+
             string domain,
 
             double exadataStorageInTbsLowestScaledValue,
@@ -495,6 +505,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableDictionary<string, string> securityAttributes,
 
+            double sgaPercentage,
+
             string shape,
 
             string state,
@@ -544,6 +556,7 @@ namespace Pulumi.Oci.Database
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            DistributionAlgorithm = distributionAlgorithm;
             Domain = domain;
             ExadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             FreeformTags = freeformTags;
@@ -577,6 +590,7 @@ namespace Pulumi.Oci.Database
             ScanListenerPortNonTls = scanListenerPortNonTls;
             ScanListenerPortTls = scanListenerPortTls;
             SecurityAttributes = securityAttributes;
+            SgaPercentage = sgaPercentage;
             Shape = shape;
             State = state;
             SubnetId = subnetId;

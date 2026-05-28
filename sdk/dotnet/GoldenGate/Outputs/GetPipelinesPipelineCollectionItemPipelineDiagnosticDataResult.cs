@@ -14,7 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetPipelinesPipelineCollectionItemPipelineDiagnosticDataResult
     {
         /// <summary>
-        /// Name of the bucket where the object is to be uploaded in the object storage
+        /// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         /// </summary>
         public readonly string Bucket;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DiagnosticState;
         /// <summary>
-        /// Name of namespace that serves as a container for all of your buckets
+        /// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         /// </summary>
         public readonly string Namespace;
         /// <summary>

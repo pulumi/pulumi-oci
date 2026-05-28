@@ -21,6 +21,51 @@ import * as utilities from "../utilities";
  *     modelDeploymentId: testModelDeploymentOciDatascienceModelDeployment.id,
  * });
  * ```
+ *
+ * ## SINGLE_MODEL_FLEX Returned Contract
+ *
+ * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+ *
+ * * `modelDeploymentConfigurationDetails`
+ *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+ *   * * `modelConfigurationDetails` - The single model configuration details.
+ *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+ *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+ *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+ *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+ *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+ *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+ *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+ *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+ *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+ *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+ *               * * `memoryInGbs` - Burstable limit for memory.
+ *               * * `ocpus` - Burstable limit for cpu.
+ *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+ *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+ *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+ *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+ *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+ *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+ *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+ *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+ *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+ *               * * `rules` - The list of autoscaling policy rules.
+ *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+ *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+ *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+ *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+ *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+ *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+ *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+ *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+ *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+ *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+ *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+ *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+ *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+ *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+ *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
  */
 export function getModelDeployment(args: GetModelDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -121,6 +166,51 @@ export interface GetModelDeploymentResult {
  *     modelDeploymentId: testModelDeploymentOciDatascienceModelDeployment.id,
  * });
  * ```
+ *
+ * ## SINGLE_MODEL_FLEX Returned Contract
+ *
+ * The following attributes are returned for `deploymentType = SINGLE_MODEL_FLEX`.
+ *
+ * * `modelDeploymentConfigurationDetails`
+ *   * * `deploymentType` - `SINGLE_MODEL_FLEX`
+ *   * * `modelConfigurationDetails` - The single model configuration details.
+ *       * * `modelId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
+ *   * * `infrastructureConfigurationDetails` - The infrastructure configuration details for managed compute cluster type compute target.
+ *       * * `infrastructureType` - `MANAGED_COMPUTE_CLUSTER`
+ *       * * `computeTargetId` - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Compute Target.
+ *       * * `modelDeploymentResourceConfiguration` - Resource configuration details for model deploy on managed compute cluster type compute target.
+ *           * * `resourceRequestConfiguration` - Resource request configuration to run workload on managed compute cluster type compute target compute target.
+ *               * * `gpus` - The total number of gpus required to be allocated to the workload.
+ *               * * `memoryInGbs` - The memory in Gbs required to be allocated to run the workload.
+ *               * * `ocpus` - The ocpus required to be allocated to run the workload.
+ *           * * `resourceLimitConfiguration` - Resource limit configuration details for workload on managed compute cluster type compute target.
+ *               * * `memoryInGbs` - Burstable limit for memory.
+ *               * * `ocpus` - Burstable limit for cpu.
+ *       * * `scalingPolicy` - The scaling policy to apply to workloads on managed compute cluster type compute target.
+ *           * * `policyType` - The type of scaling policy. Supported values are `FIXED_SIZE` and `AUTOSCALING`.
+ *           * * `instanceCount` - Returned for `policy_type=FIXED_SIZE`. The number of instances for the workload.
+ *           * * `isEnabled` - Returned for `policy_type=AUTOSCALING`. Whether the autoscaling policy is enabled.
+ *           * * `autoScalingPolicies` - Returned for `policy_type=AUTOSCALING`. The list of autoscaling policy details.
+ *               * * `autoScalingPolicyType` - The type of autoscaling policy. The supported value is `THRESHOLD`.
+ *               * * `initialInstanceCount` - For a threshold-based autoscaling policy, this value is the initial number of workload instances to launch immediately after autoscaling is enabled.
+ *               * * `maximumInstanceCount` - For a threshold-based autoscaling policy, this value is the maximum number of workload instances allowed to increase to (scale out).
+ *               * * `minimumInstanceCount` - For a threshold-based autoscaling policy, this value is the minimum number of workload instances allowed to decrease to (scale in). This should be zero for scale-to-zero.
+ *               * * `rules` - The list of autoscaling policy rules.
+ *                   * * `metricExpressionRuleType` - The metric expression for creating the alarm used to trigger autoscaling actions for workload. Supported values are `TARGET_PREDEFINED_EXPRESSION` and `TARGET_CUSTOM_EXPRESSION`.
+ *                   * * `metricType` - Returned for `TARGET_PREDEFINED_EXPRESSION`. Metric type.
+ *                   * * `scaleConfiguration` - The scaling configuration for the target-based workload rule.
+ *                       * * `targetScalingConfigurationType` - The type of target scaling configuration. Supported values are `THRESHOLD` and `QUERY`.
+ *                       * * `threshold` - A metric value at which the scaling operation will be triggered.
+ *                       * * `query` - Returned for `TARGET_CUSTOM_EXPRESSION`. The Monitoring Query Language (MQL) expression to evaluate for the alarm.
+ *                       * * `metricNamespace` - Returned for `TARGET_CUSTOM_EXPRESSION`. Namespace to read the metrics from.
+ *               * * `scaleInPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+ *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+ *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+ *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
+ *               * * `scaleOutPolicy` - Workload scaling policy configuration for workloads on managed compute cluster type compute target.
+ *                   * * `coolDownInSeconds` - The duration of time window used to restrict flapping of instance count when the metrics used for scaling keep fluctuating.
+ *                   * * `instanceCountAdjustment` - The value used for adjusting the count of instances.
+ *                   * * `pendingDuration` - The period of time that the alarm condition must persist before the alarm state changes.
  */
 export function getModelDeploymentOutput(args: GetModelDeploymentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelDeploymentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

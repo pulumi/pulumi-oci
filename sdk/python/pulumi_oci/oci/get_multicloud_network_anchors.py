@@ -186,7 +186,10 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
     """
     This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of NetworkAnchors.
+    Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+    Details listed for each resource include name, state, VCN, and ODB network ID.
+    For more information, see
+    [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
 
     ## Example Usage
 
@@ -201,26 +204,24 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
         should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-    :param _builtins.bool compartment_id_in_subtree: If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
     :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     :param _builtins.str network_anchor_oci_subnet_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure subnet Id.
     :param _builtins.str network_anchor_oci_vcn_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
     :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The cloud service provider.
            
            Note: one of the arguments `compartment_id` or `id` must be specified.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -268,7 +269,10 @@ def get_multicloud_network_anchors_output(compartment_id: pulumi.Input[Optional[
     """
     This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of NetworkAnchors.
+    Lists network anchors in the specified Multicloud subscription, Multicloud compartment, and partner cloud region.
+    Details listed for each resource include name, state, VCN, and ODB network ID.
+    For more information, see
+    [Listing Network Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-network-anchors.htm).
 
     ## Example Usage
 
@@ -283,26 +287,24 @@ def get_multicloud_network_anchors_output(compartment_id: pulumi.Input[Optional[
         display_name=display_name,
         external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
-        compartment_id_in_subtree=compartment_id_in_subtree == "true",
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
         id=id,
         should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
-    :param _builtins.bool compartment_id_in_subtree: If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
     :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     :param _builtins.str network_anchor_oci_subnet_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure subnet Id.
     :param _builtins.str network_anchor_oci_vcn_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
     :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The cloud service provider.
            
            Note: one of the arguments `compartment_id` or `id` must be specified.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

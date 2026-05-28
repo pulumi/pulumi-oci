@@ -104,6 +104,8 @@ type LookupExadataInfrastructureResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 	MaintenanceSloStatus string `pulumi:"maintenanceSloStatus"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences []GetExadataInfrastructureMaintenanceVersionPreference `pulumi:"maintenanceVersionPreferences"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The total number of CPU cores available.
@@ -359,6 +361,13 @@ func (o LookupExadataInfrastructureResultOutput) LifecycleDetails() pulumi.Strin
 // A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
 func (o LookupExadataInfrastructureResultOutput) MaintenanceSloStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.MaintenanceSloStatus }).(pulumi.StringOutput)
+}
+
+// The preferences for target versions of future maintenance runs.
+func (o LookupExadataInfrastructureResultOutput) MaintenanceVersionPreferences() GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) []GetExadataInfrastructureMaintenanceVersionPreference {
+		return v.MaintenanceVersionPreferences
+	}).(GetExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
 }
 
 // The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

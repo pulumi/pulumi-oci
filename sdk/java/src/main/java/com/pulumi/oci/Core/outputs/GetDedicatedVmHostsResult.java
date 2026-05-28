@@ -49,6 +49,7 @@ public final class GetDedicatedVmHostsResult {
      * 
      */
     private @Nullable Boolean isMemoryEncryptionEnabled;
+    private @Nullable Double remainingLocalVolumeInGbsGreaterThanOrEqualTo;
     private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
     private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
     /**
@@ -106,6 +107,9 @@ public final class GetDedicatedVmHostsResult {
     public Optional<Boolean> isMemoryEncryptionEnabled() {
         return Optional.ofNullable(this.isMemoryEncryptionEnabled);
     }
+    public Optional<Double> remainingLocalVolumeInGbsGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.remainingLocalVolumeInGbsGreaterThanOrEqualTo);
+    }
     public Optional<Double> remainingMemoryInGbsGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.remainingMemoryInGbsGreaterThanOrEqualTo);
     }
@@ -137,6 +141,7 @@ public final class GetDedicatedVmHostsResult {
         private String id;
         private @Nullable String instanceShapeName;
         private @Nullable Boolean isMemoryEncryptionEnabled;
+        private @Nullable Double remainingLocalVolumeInGbsGreaterThanOrEqualTo;
         private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
         private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
         private @Nullable String state;
@@ -151,6 +156,7 @@ public final class GetDedicatedVmHostsResult {
     	      this.id = defaults.id;
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
+    	      this.remainingLocalVolumeInGbsGreaterThanOrEqualTo = defaults.remainingLocalVolumeInGbsGreaterThanOrEqualTo;
     	      this.remainingMemoryInGbsGreaterThanOrEqualTo = defaults.remainingMemoryInGbsGreaterThanOrEqualTo;
     	      this.remainingOcpusGreaterThanOrEqualTo = defaults.remainingOcpusGreaterThanOrEqualTo;
     	      this.state = defaults.state;
@@ -217,6 +223,12 @@ public final class GetDedicatedVmHostsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder remainingLocalVolumeInGbsGreaterThanOrEqualTo(@Nullable Double remainingLocalVolumeInGbsGreaterThanOrEqualTo) {
+
+            this.remainingLocalVolumeInGbsGreaterThanOrEqualTo = remainingLocalVolumeInGbsGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remainingMemoryInGbsGreaterThanOrEqualTo(@Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo) {
 
             this.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
@@ -244,6 +256,7 @@ public final class GetDedicatedVmHostsResult {
             _resultValue.id = id;
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            _resultValue.remainingLocalVolumeInGbsGreaterThanOrEqualTo = remainingLocalVolumeInGbsGreaterThanOrEqualTo;
             _resultValue.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
             _resultValue.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
             _resultValue.state = state;

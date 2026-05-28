@@ -113,6 +113,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        /// </summary>
+        [Output("disasterRecoveryStatus")]
+        public Output<string> DisasterRecoveryStatus { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) An object's Display Name.
         /// </summary>
         [Output("displayName")]
@@ -489,6 +495,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        /// </summary>
+        [Input("disasterRecoveryStatus")]
+        public Input<string>? DisasterRecoveryStatus { get; set; }
+
+        /// <summary>
         /// (Updatable) An object's Display Name.
         /// </summary>
         [Input("displayName", required: true)]
@@ -765,6 +777,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        /// </summary>
+        [Input("disasterRecoveryStatus")]
+        public Input<string>? DisasterRecoveryStatus { get; set; }
 
         /// <summary>
         /// (Updatable) An object's Display Name.

@@ -13,6 +13,12 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Inputs
     public sealed class ClusterPlacementGroupCapabilitiesItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Additional details describing the selected capability.
+        /// </summary>
+        [Input("additionalDetails")]
+        public Input<Inputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetailsGetArgs>? AdditionalDetails { get; set; }
+
+        /// <summary>
         /// The type of resource.
         /// </summary>
         [Input("name", required: true)]

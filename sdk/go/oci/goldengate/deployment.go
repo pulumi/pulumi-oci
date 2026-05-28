@@ -57,6 +57,8 @@ type Deployment struct {
 	DeploymentUrl pulumi.StringOutput `pulumi:"deploymentUrl"`
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus pulumi.StringOutput `pulumi:"disasterRecoveryStatus"`
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
@@ -225,6 +227,8 @@ type deploymentState struct {
 	DeploymentUrl *string `pulumi:"deploymentUrl"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus *string `pulumi:"disasterRecoveryStatus"`
 	// (Updatable) An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
@@ -355,6 +359,8 @@ type DeploymentState struct {
 	DeploymentUrl pulumi.StringPtrInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
@@ -481,6 +487,8 @@ type deploymentArgs struct {
 	DeploymentType *string `pulumi:"deploymentType"`
 	// (Updatable) Metadata about this specific object.
 	Description *string `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus *string `pulumi:"disasterRecoveryStatus"`
 	// (Updatable) An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
@@ -562,6 +570,8 @@ type DeploymentArgs struct {
 	DeploymentType pulumi.StringPtrInput
 	// (Updatable) Metadata about this specific object.
 	Description pulumi.StringPtrInput
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus pulumi.StringPtrInput
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
@@ -776,6 +786,11 @@ func (o DeploymentOutput) DeploymentUrl() pulumi.StringOutput {
 // (Updatable) Metadata about this specific object.
 func (o DeploymentOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+func (o DeploymentOutput) DisasterRecoveryStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DisasterRecoveryStatus }).(pulumi.StringOutput)
 }
 
 // (Updatable) An object's Display Name.

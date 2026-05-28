@@ -19,13 +19,13 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? CpuBaseline { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to the job run instance, in gigabytes.
+        /// The memory in Gbs required to be allocated to run the workload.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<double>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// The total number of OCPUs available to the job run instance.
+        /// The ocpus required to be allocated to run the workload.
         /// </summary>
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }

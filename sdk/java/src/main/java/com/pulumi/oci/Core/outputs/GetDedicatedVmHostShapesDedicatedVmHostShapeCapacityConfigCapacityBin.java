@@ -24,6 +24,11 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
      */
     private List<String> supportedShapes;
     /**
+     * @return The total local volume of the capacity bucket, in GBs.
+     * 
+     */
+    private Double totalLocalVolumeInGbs;
+    /**
      * @return The total memory of the capacity bucket, in GBs.
      * 
      */
@@ -48,6 +53,13 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
      */
     public List<String> supportedShapes() {
         return this.supportedShapes;
+    }
+    /**
+     * @return The total local volume of the capacity bucket, in GBs.
+     * 
+     */
+    public Double totalLocalVolumeInGbs() {
+        return this.totalLocalVolumeInGbs;
     }
     /**
      * @return The total memory of the capacity bucket, in GBs.
@@ -75,6 +87,7 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
     public static final class Builder {
         private Integer capacityIndex;
         private List<String> supportedShapes;
+        private Double totalLocalVolumeInGbs;
         private Double totalMemoryInGbs;
         private Double totalOcpus;
         public Builder() {}
@@ -82,6 +95,7 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
     	      Objects.requireNonNull(defaults);
     	      this.capacityIndex = defaults.capacityIndex;
     	      this.supportedShapes = defaults.supportedShapes;
+    	      this.totalLocalVolumeInGbs = defaults.totalLocalVolumeInGbs;
     	      this.totalMemoryInGbs = defaults.totalMemoryInGbs;
     	      this.totalOcpus = defaults.totalOcpus;
         }
@@ -106,6 +120,14 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
             return supportedShapes(List.of(supportedShapes));
         }
         @CustomType.Setter
+        public Builder totalLocalVolumeInGbs(Double totalLocalVolumeInGbs) {
+            if (totalLocalVolumeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBin", "totalLocalVolumeInGbs");
+            }
+            this.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalMemoryInGbs(Double totalMemoryInGbs) {
             if (totalMemoryInGbs == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBin", "totalMemoryInGbs");
@@ -125,6 +147,7 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCap
             final var _resultValue = new GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBin();
             _resultValue.capacityIndex = capacityIndex;
             _resultValue.supportedShapes = supportedShapes;
+            _resultValue.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
             _resultValue.totalMemoryInGbs = totalMemoryInGbs;
             _resultValue.totalOcpus = totalOcpus;
             return _resultValue;

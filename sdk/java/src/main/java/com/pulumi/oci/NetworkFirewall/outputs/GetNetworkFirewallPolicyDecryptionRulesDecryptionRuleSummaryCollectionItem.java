@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -62,6 +63,11 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
      * 
      */
     private @Nullable String secret;
+    /**
+     * @return An array of mapped secrets.
+     * 
+     */
+    private @Nullable List<String> secrets;
 
     private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem() {}
     /**
@@ -132,6 +138,13 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
     public Optional<String> secret() {
         return Optional.ofNullable(this.secret);
     }
+    /**
+     * @return An array of mapped secrets.
+     * 
+     */
+    public List<String> secrets() {
+        return this.secrets == null ? List.of() : this.secrets;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -152,6 +165,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
         private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition position;
         private @Nullable String priorityOrder;
         private @Nullable String secret;
+        private @Nullable List<String> secrets;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -165,6 +179,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
     	      this.position = defaults.position;
     	      this.priorityOrder = defaults.priorityOrder;
     	      this.secret = defaults.secret;
+    	      this.secrets = defaults.secrets;
         }
 
         @CustomType.Setter
@@ -239,6 +254,15 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             this.secret = secret;
             return this;
         }
+        @CustomType.Setter
+        public Builder secrets(@Nullable List<String> secrets) {
+
+            this.secrets = secrets;
+            return this;
+        }
+        public Builder secrets(String... secrets) {
+            return secrets(List.of(secrets));
+        }
         public GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem build() {
             final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem();
             _resultValue.action = action;
@@ -251,6 +275,7 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             _resultValue.position = position;
             _resultValue.priorityOrder = priorityOrder;
             _resultValue.secret = secret;
+            _resultValue.secrets = secrets;
             return _resultValue;
         }
     }

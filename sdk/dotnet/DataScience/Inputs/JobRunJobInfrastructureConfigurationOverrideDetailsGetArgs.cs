@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+        /// </summary>
+        [Input("computeTargetId")]
+        public Input<string>? ComputeTargetId { get; set; }
+
+        /// <summary>
         /// The infrastructure type used for job run.
         /// </summary>
         [Input("jobInfrastructureType", required: true)]
@@ -29,6 +35,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// </summary>
         [Input("jobShapeConfigDetails")]
         public Input<Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsGetArgs>? JobShapeConfigDetails { get; set; }
+
+        /// <summary>
+        /// Details for the compute target job resource configuration.
+        /// </summary>
+        [Input("resourceConfiguration")]
+        public Input<Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationGetArgs>? ResourceConfiguration { get; set; }
 
         /// <summary>
         /// The name that corresponds to the JobShapeSummary to use for the job node

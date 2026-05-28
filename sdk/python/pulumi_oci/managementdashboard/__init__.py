@@ -7,4 +7,9 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_management_dashboards_export import *
+from .get_management_saved_search import *
+from .get_management_saved_searches import *
 from .management_dashboards_import import *
+from .management_saved_search import *
+from ._inputs import *
+from . import outputs

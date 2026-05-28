@@ -84,6 +84,9 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
     declare public readonly availabilityDomain: pulumi.Output<string>;
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     */
     declare public /*out*/ readonly capacityBins: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
@@ -130,6 +133,10 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      */
     declare public readonly placementConstraintDetails: pulumi.Output<outputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     */
+    declare public /*out*/ readonly remainingLocalVolumeInGbs: pulumi.Output<number>;
+    /**
      * The current available memory of the dedicated VM host, in GBs.
      */
     declare public /*out*/ readonly remainingMemoryInGbs: pulumi.Output<number>;
@@ -145,6 +152,10 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     */
+    declare public /*out*/ readonly totalLocalVolumeInGbs: pulumi.Output<number>;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */
@@ -179,10 +190,12 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isMemoryEncryptionEnabled"] = state?.isMemoryEncryptionEnabled;
             resourceInputs["placementConstraintDetails"] = state?.placementConstraintDetails;
+            resourceInputs["remainingLocalVolumeInGbs"] = state?.remainingLocalVolumeInGbs;
             resourceInputs["remainingMemoryInGbs"] = state?.remainingMemoryInGbs;
             resourceInputs["remainingOcpus"] = state?.remainingOcpus;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["totalLocalVolumeInGbs"] = state?.totalLocalVolumeInGbs;
             resourceInputs["totalMemoryInGbs"] = state?.totalMemoryInGbs;
             resourceInputs["totalOcpus"] = state?.totalOcpus;
         } else {
@@ -208,10 +221,12 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["placementConstraintDetails"] = args?.placementConstraintDetails;
             resourceInputs["capacityBins"] = undefined /*out*/;
             resourceInputs["computeBareMetalHostId"] = undefined /*out*/;
+            resourceInputs["remainingLocalVolumeInGbs"] = undefined /*out*/;
             resourceInputs["remainingMemoryInGbs"] = undefined /*out*/;
             resourceInputs["remainingOcpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["totalLocalVolumeInGbs"] = undefined /*out*/;
             resourceInputs["totalMemoryInGbs"] = undefined /*out*/;
             resourceInputs["totalOcpus"] = undefined /*out*/;
         }
@@ -228,6 +243,9 @@ export interface DedicatedVmHostState {
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string | undefined>;
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     */
     capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[] | undefined>;
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
@@ -274,6 +292,10 @@ export interface DedicatedVmHostState {
      */
     placementConstraintDetails?: pulumi.Input<inputs.Core.DedicatedVmHostPlacementConstraintDetails | undefined>;
     /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     */
+    remainingLocalVolumeInGbs?: pulumi.Input<number | undefined>;
+    /**
      * The current available memory of the dedicated VM host, in GBs.
      */
     remainingMemoryInGbs?: pulumi.Input<number | undefined>;
@@ -289,6 +311,10 @@ export interface DedicatedVmHostState {
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     */
+    totalLocalVolumeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */

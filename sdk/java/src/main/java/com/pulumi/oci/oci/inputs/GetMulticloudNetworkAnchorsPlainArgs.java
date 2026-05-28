@@ -17,31 +17,23 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     public static final GetMulticloudNetworkAnchorsPlainArgs Empty = new GetMulticloudNetworkAnchorsPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
-    /**
-     * If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-     * 
-     */
     @Import(name="compartmentIdInSubtree")
     private @Nullable Boolean compartmentIdInSubtree;
 
-    /**
-     * @return If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-     * 
-     */
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
@@ -62,14 +54,14 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      * 
      */
     @Import(name="externalLocation")
     private @Nullable String externalLocation;
 
     /**
-     * @return The Cloud Service Provider region.
+     * @return The cloud service provider region.
      * 
      */
     public Optional<String> externalLocation() {
@@ -146,16 +138,12 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     /**
      * Whether to fetch and include the vcn display name, which may introduce additional latency.
      * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
-     * 
      */
     @Import(name="shouldFetchVcnName")
     private @Nullable Boolean shouldFetchVcnName;
 
     /**
      * @return Whether to fetch and include the vcn display name, which may introduce additional latency.
-     * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
     public Optional<Boolean> shouldFetchVcnName() {
@@ -178,14 +166,18 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
+     * 
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
     @Import(name="subscriptionServiceName")
     private @Nullable String subscriptionServiceName;
 
     /**
-     * @return The subscription service name of the Cloud Service Provider.
+     * @return The cloud service provider.
+     * 
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
     public Optional<String> subscriptionServiceName() {
@@ -228,7 +220,7 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
          * 
          * @return builder
          * 
@@ -238,12 +230,6 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
             return this;
         }
 
-        /**
-         * @param compartmentIdInSubtree If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
@@ -261,7 +247,7 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalLocation The Cloud Service Provider region.
+         * @param externalLocation The cloud service provider region.
          * 
          * @return builder
          * 
@@ -323,8 +309,6 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         /**
          * @param shouldFetchVcnName Whether to fetch and include the vcn display name, which may introduce additional latency.
          * 
-         * Note: one of the arguments `compartmentId` or `id` must be specified.
-         * 
          * @return builder
          * 
          */
@@ -345,7 +329,9 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
+         * @param subscriptionServiceName The cloud service provider.
+         * 
+         * Note: one of the arguments `compartmentId` or `id` must be specified.
          * 
          * @return builder
          * 

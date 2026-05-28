@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +33,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     public Optional<Output<List<String>>> cmds() {
         return Optional.ofNullable(this.cmds);
+    }
+
+    /**
+     * (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     * 
+     */
+    @Import(name="customHttpEndpoints")
+    private @Nullable Output<List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs>> customHttpEndpoints;
+
+    /**
+     * @return (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     * 
+     */
+    public Optional<Output<List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs>>> customHttpEndpoints() {
+        return Optional.ofNullable(this.customHttpEndpoints);
     }
 
     /**
@@ -155,6 +171,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     }
 
     /**
+     * (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     * 
+     */
+    @Import(name="predictApiSpecification")
+    private @Nullable Output<String> predictApiSpecification;
+
+    /**
+     * @return (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     * 
+     */
+    public Optional<Output<String>> predictApiSpecification() {
+        return Optional.ofNullable(this.predictApiSpecification);
+    }
+
+    /**
      * (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -173,6 +204,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
 
     private ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs $) {
         this.cmds = $.cmds;
+        this.customHttpEndpoints = $.customHttpEndpoints;
         this.defaultEnvironmentVariables = $.defaultEnvironmentVariables;
         this.entrypoints = $.entrypoints;
         this.environmentConfigurationType = $.environmentConfigurationType;
@@ -181,6 +213,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         this.image = $.image;
         this.imageDigest = $.imageDigest;
         this.imageSignatureId = $.imageSignatureId;
+        this.predictApiSpecification = $.predictApiSpecification;
         this.serverPort = $.serverPort;
     }
 
@@ -231,6 +264,37 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          */
         public Builder cmds(String... cmds) {
             return cmds(List.of(cmds));
+        }
+
+        /**
+         * @param customHttpEndpoints (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHttpEndpoints(@Nullable Output<List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs>> customHttpEndpoints) {
+            $.customHttpEndpoints = customHttpEndpoints;
+            return this;
+        }
+
+        /**
+         * @param customHttpEndpoints (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHttpEndpoints(List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs> customHttpEndpoints) {
+            return customHttpEndpoints(Output.of(customHttpEndpoints));
+        }
+
+        /**
+         * @param customHttpEndpoints (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHttpEndpoints(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpointArgs... customHttpEndpoints) {
+            return customHttpEndpoints(List.of(customHttpEndpoints));
         }
 
         /**
@@ -409,6 +473,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          */
         public Builder imageSignatureId(String imageSignatureId) {
             return imageSignatureId(Output.of(imageSignatureId));
+        }
+
+        /**
+         * @param predictApiSpecification (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder predictApiSpecification(@Nullable Output<String> predictApiSpecification) {
+            $.predictApiSpecification = predictApiSpecification;
+            return this;
+        }
+
+        /**
+         * @param predictApiSpecification (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder predictApiSpecification(String predictApiSpecification) {
+            return predictApiSpecification(Output.of(predictApiSpecification));
         }
 
         /**

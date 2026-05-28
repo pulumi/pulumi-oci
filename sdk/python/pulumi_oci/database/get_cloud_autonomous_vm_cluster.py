@@ -27,7 +27,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, register_pkcs_trigger=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, tde_key_store_type=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None, unregister_pkcs_trigger=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, distribution_algorithm=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, register_pkcs_trigger=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, sga_percentage=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, tde_key_store_type=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None, unregister_pkcs_trigger=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -91,6 +91,9 @@ class GetCloudAutonomousVmClusterResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if distribution_algorithm and not isinstance(distribution_algorithm, str):
+            raise TypeError("Expected argument 'distribution_algorithm' to be a str")
+        pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
         pulumi.set(__self__, "domain", domain)
@@ -190,6 +193,9 @@ class GetCloudAutonomousVmClusterResult:
         if security_attributes and not isinstance(security_attributes, dict):
             raise TypeError("Expected argument 'security_attributes' to be a dict")
         pulumi.set(__self__, "security_attributes", security_attributes)
+        if sga_percentage and not isinstance(sga_percentage, float):
+            raise TypeError("Expected argument 'sga_percentage' to be a float")
+        pulumi.set(__self__, "sga_percentage", sga_percentage)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -397,6 +403,14 @@ class GetCloudAutonomousVmClusterResult:
         The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> _builtins.str:
+        """
+        The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
 
     @_builtins.property
     @pulumi.getter
@@ -655,6 +669,14 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "security_attributes")
 
     @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> _builtins.float:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
@@ -791,6 +813,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            distribution_algorithm=self.distribution_algorithm,
             domain=self.domain,
             exadata_storage_in_tbs_lowest_scaled_value=self.exadata_storage_in_tbs_lowest_scaled_value,
             freeform_tags=self.freeform_tags,
@@ -824,6 +847,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             scan_listener_port_non_tls=self.scan_listener_port_non_tls,
             scan_listener_port_tls=self.scan_listener_port_tls,
             security_attributes=self.security_attributes,
+            sga_percentage=self.sga_percentage,
             shape=self.shape,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -886,6 +910,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        distribution_algorithm=pulumi.get(__ret__, 'distribution_algorithm'),
         domain=pulumi.get(__ret__, 'domain'),
         exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__ret__, 'exadata_storage_in_tbs_lowest_scaled_value'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -919,6 +944,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         scan_listener_port_non_tls=pulumi.get(__ret__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__ret__, 'scan_listener_port_tls'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
+        sga_percentage=pulumi.get(__ret__, 'sga_percentage'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -978,6 +1004,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: pulum
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        distribution_algorithm=pulumi.get(__response__, 'distribution_algorithm'),
         domain=pulumi.get(__response__, 'domain'),
         exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__response__, 'exadata_storage_in_tbs_lowest_scaled_value'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
@@ -1011,6 +1038,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: pulum
         scan_listener_port_non_tls=pulumi.get(__response__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__response__, 'scan_listener_port_tls'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
+        sga_percentage=pulumi.get(__response__, 'sga_percentage'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -69,6 +69,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Partner Cloud Account Identifier of the Cloud Service Provider.
         /// </summary>
         public readonly string PartnerCloudAccountIdentifier;
+        public readonly string ResourceAnchorUri;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
@@ -116,6 +117,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string partnerCloudAccountIdentifier,
 
+            string resourceAnchorUri,
+
             string subscriptionId,
 
             ImmutableDictionary<string, string> systemTags,
@@ -138,6 +141,7 @@ namespace Pulumi.Oci.Oci.Outputs
             LinkedCompartmentId = linkedCompartmentId;
             LinkedCompartmentName = linkedCompartmentName;
             PartnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            ResourceAnchorUri = resourceAnchorUri;
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

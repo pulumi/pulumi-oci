@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .cpuCoreCountPerNode(autonomousVmClusterCpuCoreCountPerNode)
  *             .dbServers(autonomousVmClusterDbServers)
  *             .definedTags(autonomousVmClusterDefinedTags)
+ *             .distributionAlgorithm(autonomousVmClusterDistributionAlgorithm)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isLocalBackupEnabled(autonomousVmClusterIsLocalBackupEnabled)
  *             .isMtlsEnabled(autonomousVmClusterIsMtlsEnabled)
@@ -83,6 +84,7 @@ import javax.annotation.Nullable;
  *             .memoryPerOracleComputeUnitInGbs(autonomousVmClusterMemoryPerOracleComputeUnitInGbs)
  *             .scanListenerPortNonTls(autonomousVmClusterScanListenerPortNonTls)
  *             .scanListenerPortTls(autonomousVmClusterScanListenerPortTls)
+ *             .sgaPercentage(autonomousVmClusterSgaPercentage)
  *             .timeZone(autonomousVmClusterTimeZone)
  *             .totalContainerDatabases(autonomousVmClusterTotalContainerDatabases)
  *             .build());
@@ -324,6 +326,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    @Export(name="distributionAlgorithm", refs={String.class}, tree="[0]")
+    private Output<String> distributionAlgorithm;
+
+    /**
+     * @return (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public Output<String> distributionAlgorithm() {
+        return this.distributionAlgorithm;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
@@ -380,14 +396,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.isLocalBackupEnabled;
     }
     /**
-     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      * 
      */
     @Export(name="isMtlsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMtlsEnabled;
 
     /**
-     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * @return (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      * 
      */
     public Output<Boolean> isMtlsEnabled() {
@@ -642,32 +658,46 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.reservedCpus;
     }
     /**
-     * The SCAN Listener Non TLS port number. Default value is 1521.
+     * (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
      * 
      */
     @Export(name="scanListenerPortNonTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortNonTls;
 
     /**
-     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * @return (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
      * 
      */
     public Output<Integer> scanListenerPortNonTls() {
         return this.scanListenerPortNonTls;
     }
     /**
-     * The SCAN Listener TLS port number. Default value is 2484.
+     * (Updatable) The SCAN Listener TLS port number. Default value is 2484.
      * 
      */
     @Export(name="scanListenerPortTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortTls;
 
     /**
-     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * @return (Updatable) The SCAN Listener TLS port number. Default value is 2484.
      * 
      */
     public Output<Integer> scanListenerPortTls() {
         return this.scanListenerPortTls;
+    }
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    @Export(name="sgaPercentage", refs={Double.class}, tree="[0]")
+    private Output<Double> sgaPercentage;
+
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Output<Double> sgaPercentage() {
+        return this.sgaPercentage;
     }
     /**
      * The current state of the Autonomous VM cluster.
@@ -740,14 +770,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.timeOrdsCertificateExpires;
     }
     /**
-     * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
-     * @return The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * @return (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     public Output<String> timeZone() {

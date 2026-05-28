@@ -9,7 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+ * Lists Multicloud resources in the specified Multicloud subscription.
+ * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+ * For more information, see
+ * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
  *
  * ## Example Usage
  *
@@ -26,7 +29,8 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getMulticloudOmHubMulticloudResources(args: GetMulticloudOmHubMulticloudResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetMulticloudOmHubMulticloudResourcesResult> {
+export function getMulticloudOmHubMulticloudResources(args?: GetMulticloudOmHubMulticloudResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetMulticloudOmHubMulticloudResourcesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", {
         "compartmentId": args.compartmentId,
@@ -34,6 +38,7 @@ export function getMulticloudOmHubMulticloudResources(args: GetMulticloudOmHubMu
         "filters": args.filters,
         "limit": args.limit,
         "resourceAnchorId": args.resourceAnchorId,
+        "resourceType": args.resourceType,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -48,23 +53,27 @@ export interface GetMulticloudOmHubMulticloudResourcesArgs {
      */
     compartmentId?: string;
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      */
     externalLocation?: string;
     filters?: inputs.oci.GetMulticloudOmHubMulticloudResourcesFilter[];
     limit?: number;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     resourceAnchorId?: string;
     /**
+     * Filter alerts by resource type (e.g. ADBD, VMCluster).
+     */
+    resourceType?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionId: string;
+    subscriptionId?: string;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
-    subscriptionServiceName: string;
+    subscriptionServiceName?: string;
 }
 
 /**
@@ -72,7 +81,7 @@ export interface GetMulticloudOmHubMulticloudResourcesArgs {
  */
 export interface GetMulticloudOmHubMulticloudResourcesResult {
     /**
-     * Compartment Id of the resource.
+     * Id of the compartment associated with the resource.
      */
     readonly compartmentId?: string;
     readonly externalLocation?: string;
@@ -87,13 +96,20 @@ export interface GetMulticloudOmHubMulticloudResourcesResult {
      */
     readonly multicloudResourceCollections: outputs.oci.GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection[];
     readonly resourceAnchorId?: string;
-    readonly subscriptionId: string;
-    readonly subscriptionServiceName: string;
+    /**
+     * Type of resource, such as `VMCluster` or `ExaInfra`,
+     */
+    readonly resourceType?: string;
+    readonly subscriptionId?: string;
+    readonly subscriptionServiceName?: string;
 }
 /**
  * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+ * Lists Multicloud resources in the specified Multicloud subscription.
+ * Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+ * For more information, see
+ * [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
  *
  * ## Example Usage
  *
@@ -110,7 +126,8 @@ export interface GetMulticloudOmHubMulticloudResourcesResult {
  * });
  * ```
  */
-export function getMulticloudOmHubMulticloudResourcesOutput(args: GetMulticloudOmHubMulticloudResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMulticloudOmHubMulticloudResourcesResult> {
+export function getMulticloudOmHubMulticloudResourcesOutput(args?: GetMulticloudOmHubMulticloudResourcesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMulticloudOmHubMulticloudResourcesResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", {
         "compartmentId": args.compartmentId,
@@ -118,6 +135,7 @@ export function getMulticloudOmHubMulticloudResourcesOutput(args: GetMulticloudO
         "filters": args.filters,
         "limit": args.limit,
         "resourceAnchorId": args.resourceAnchorId,
+        "resourceType": args.resourceType,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -132,21 +150,25 @@ export interface GetMulticloudOmHubMulticloudResourcesOutputArgs {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * The Cloud Service Provider region.
+     * The cloud service provider region.
      */
     externalLocation?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudOmHubMulticloudResourcesFilterArgs>[] | undefined>;
     limit?: pulumi.Input<number | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     resourceAnchorId?: pulumi.Input<string | undefined>;
     /**
+     * Filter alerts by resource type (e.g. ADBD, VMCluster).
+     */
+    resourceType?: pulumi.Input<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionId: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
-    subscriptionServiceName: pulumi.Input<string>;
+    subscriptionServiceName?: pulumi.Input<string | undefined>;
 }

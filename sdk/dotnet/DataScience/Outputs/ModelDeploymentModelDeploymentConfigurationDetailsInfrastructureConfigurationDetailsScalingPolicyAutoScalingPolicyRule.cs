@@ -21,14 +21,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Metric type
         /// </summary>
         public readonly string? MetricType;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration? ScaleConfiguration;
         /// <summary>
         /// The scaling configuration for the predefined metric expression rule.
         /// </summary>
-        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration ScaleInConfiguration;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration? ScaleInConfiguration;
         /// <summary>
         /// The scaling configuration for the predefined metric expression rule.
         /// </summary>
-        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration ScaleOutConfiguration;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration? ScaleOutConfiguration;
 
         [OutputConstructor]
         private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule(
@@ -36,12 +37,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string? metricType,
 
-            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration scaleInConfiguration,
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfiguration? scaleConfiguration,
 
-            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration scaleOutConfiguration)
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration? scaleInConfiguration,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration? scaleOutConfiguration)
         {
             MetricExpressionRuleType = metricExpressionRuleType;
             MetricType = metricType;
+            ScaleConfiguration = scaleConfiguration;
             ScaleInConfiguration = scaleInConfiguration;
             ScaleOutConfiguration = scaleOutConfiguration;
         }

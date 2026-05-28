@@ -201,6 +201,8 @@ __all__ = [
     'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict',
     'CloudExadataInfrastructureExascaleConfigArgs',
     'CloudExadataInfrastructureExascaleConfigArgsDict',
+    'CloudExadataInfrastructureMaintenanceVersionPreferencesArgs',
+    'CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict',
     'CloudExadataInfrastructureMaintenanceWindowArgs',
     'CloudExadataInfrastructureMaintenanceWindowArgsDict',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -373,6 +375,8 @@ __all__ = [
     'ExadataInfrastructureDefinedFileSystemConfigurationArgsDict',
     'ExadataInfrastructureExascaleConfigArgs',
     'ExadataInfrastructureExascaleConfigArgsDict',
+    'ExadataInfrastructureMaintenanceVersionPreferencesArgs',
+    'ExadataInfrastructureMaintenanceVersionPreferencesArgsDict',
     'ExadataInfrastructureMaintenanceWindowArgs',
     'ExadataInfrastructureMaintenanceWindowArgsDict',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -433,6 +437,8 @@ __all__ = [
     'KeyStoreTypeDetailsArgsDict',
     'MaintenanceRunEstimatedPatchingTimeArgs',
     'MaintenanceRunEstimatedPatchingTimeArgsDict',
+    'MaintenanceRunWindowTypeDescriptionArgs',
+    'MaintenanceRunWindowTypeDescriptionArgsDict',
     'PluggableDatabaseConnectionStringArgs',
     'PluggableDatabaseConnectionStringArgsDict',
     'PluggableDatabaseManagementsManagementConnectionStringArgs',
@@ -11094,6 +11100,35 @@ class CloudExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
+class CloudExadataInfrastructureMaintenanceVersionPreferencesArgsDict(TypedDict):
+    reference_resource_id_for_image_updates: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+    """
+
+@pulumi.input_type
+class CloudExadataInfrastructureMaintenanceVersionPreferencesArgs:
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] reference_resource_id_for_image_updates: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        if reference_resource_id_for_image_updates is not None:
+            pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @reference_resource_id_for_image_updates.setter
+    def reference_resource_id_for_image_updates(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reference_resource_id_for_image_updates", value)
+
+
 class CloudExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     custom_action_timeout_in_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -21401,6 +21436,35 @@ class ExadataInfrastructureExascaleConfigArgs:
         pulumi.set(self, "total_vm_storage_in_gbs", value)
 
 
+class ExadataInfrastructureMaintenanceVersionPreferencesArgsDict(TypedDict):
+    reference_resource_id_for_image_updates: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+    """
+
+@pulumi.input_type
+class ExadataInfrastructureMaintenanceVersionPreferencesArgs:
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] reference_resource_id_for_image_updates: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        if reference_resource_id_for_image_updates is not None:
+            pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @reference_resource_id_for_image_updates.setter
+    def reference_resource_id_for_image_updates(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reference_resource_id_for_image_updates", value)
+
+
 class ExadataInfrastructureMaintenanceWindowArgsDict(TypedDict):
     custom_action_timeout_in_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -23625,6 +23689,55 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
     @total_estimated_patching_time.setter
     def total_estimated_patching_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_estimated_patching_time", value)
+
+
+class MaintenanceRunWindowTypeDescriptionArgsDict(TypedDict):
+    messages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of window detail messages from all the active execution windows based on the window type.
+    """
+    window_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The execution window is of PLANNED or UNPLANNED type.
+    """
+
+@pulumi.input_type
+class MaintenanceRunWindowTypeDescriptionArgs:
+    def __init__(__self__, *,
+                 messages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 window_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param pulumi.Input[_builtins.str] window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        if messages is not None:
+            pulumi.set(__self__, "messages", messages)
+        if window_type is not None:
+            pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @messages.setter
+    def messages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "messages", value)
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
+
+    @window_type.setter
+    def window_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "window_type", value)
 
 
 class PluggableDatabaseConnectionStringArgsDict(TypedDict):

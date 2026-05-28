@@ -38,13 +38,7 @@ import (
 //				MlApplicationId:               pulumi.Any(testMlApplication.Id),
 //				MlApplicationImplementationId: pulumi.Any(testMlApplicationImplementation.Id),
 //				AuthConfiguration: &datascience.MlApplicationInstanceAuthConfigurationArgs{
-//					Type:            pulumi.Any(mlApplicationInstanceAuthConfigurationType),
-//					AccessToken:     mlApplicationInstanceAuthConfigurationAccessToken,
-//					ApplicationName: pulumi.Any(testApplication.Name),
-//					Audience:        mlApplicationInstanceAuthConfigurationAudience,
-//					DomainId:        pulumi.Any(testDomain.Id),
-//					RoleName:        mlApplicationInstanceAuthConfigurationRoleName,
-//					Scope:           mlApplicationInstanceAuthConfigurationScope,
+//					Type: pulumi.Any(mlApplicationInstanceAuthConfigurationType),
 //				},
 //				Configurations: datascience.MlApplicationInstanceConfigurationArray{
 //					&datascience.MlApplicationInstanceConfigurationArgs{

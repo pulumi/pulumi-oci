@@ -125,6 +125,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly displayName: string;
     /**
+     * The distribution algorithm used for the Autonomous VM cluster.
+     */
+    readonly distributionAlgorithm: string;
+    /**
      * The domain name for the cloud Autonomous VM cluster.
      */
     readonly domain: string;
@@ -248,6 +252,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
     readonly securityAttributes: {[key: string]: string};
+    /**
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     */
+    readonly sgaPercentage: number;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */

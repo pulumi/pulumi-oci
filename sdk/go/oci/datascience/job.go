@@ -71,9 +71,21 @@ import (
 //				JobInfrastructureConfigurationDetails: &datascience.JobJobInfrastructureConfigurationDetailsArgs{
 //					JobInfrastructureType: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobInfrastructureType),
 //					BlockStorageSizeInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//					ComputeTargetId:       pulumi.Any(testComputeTarget.Id),
 //					JobShapeConfigDetails: &datascience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
 //						MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//					},
+//					ResourceConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
+//						ResourceLimitConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
+//							MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
+//							Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus),
+//						},
+//						ResourceRequestConfiguration: &datascience.JobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs{
+//							Gpus:        pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+//							MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs),
+//							Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus),
+//						},
 //					},
 //					ShapeName: pulumi.Any(testShape.Name),
 //					SubnetId:  pulumi.Any(testSubnet.Id),
@@ -117,9 +129,21 @@ import (
 //							JobInfrastructureConfigurationDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{
 //								JobInfrastructureType: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType),
 //								BlockStorageSizeInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//								ComputeTargetId:       pulumi.Any(testComputeTarget.Id),
 //								JobShapeConfigDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
 //									MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //									Ocpus:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//								},
+//								ResourceConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
+//									ResourceLimitConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
+//										MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
+//										Ocpus:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus),
+//									},
+//									ResourceRequestConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs{
+//										Gpus:        pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+//										MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs),
+//										Ocpus:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus),
+//									},
 //								},
 //								ShapeName: pulumi.Any(testShape.Name),
 //								SubnetId:  pulumi.Any(testSubnet.Id),

@@ -183,7 +183,10 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
     """
     This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of ResourceAnchors.
+    Lists resource anchors in the specified Multicloud subscription.
+    Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+    For more information, see
+    [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
 
     ## Example Usage
 
@@ -203,15 +206,15 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given compartmentId
+    :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given `compartmentId`.
     :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
     :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
-    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -256,7 +259,10 @@ def get_multicloud_resource_anchors_output(compartment_id: pulumi.Input[Optional
     """
     This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of ResourceAnchors.
+    Lists resource anchors in the specified Multicloud subscription.
+    Details listed for each resource anchor include name, state, and the related Multicloud compartment.
+    For more information, see
+    [Listing Resource Anchors](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resource-anchors.htm).
 
     ## Example Usage
 
@@ -276,15 +282,15 @@ def get_multicloud_resource_anchors_output(compartment_id: pulumi.Input[Optional
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given compartmentId
+    :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given `compartmentId`.
     :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
     :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
-    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

@@ -234,9 +234,9 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application_group = oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
-            apps=network_firewall_policy_application_group_apps,
             name=network_firewall_policy_application_group_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
+            apps=network_firewall_policy_application_group_apps,
             description=network_firewall_policy_application_group_description)
         ```
 
@@ -281,9 +281,9 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_network_firewall_policy_application_group = oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
-            apps=network_firewall_policy_application_group_apps,
             name=network_firewall_policy_application_group_name,
             network_firewall_policy_id=test_network_firewall_policy["id"],
+            apps=network_firewall_policy_application_group_apps,
             description=network_firewall_policy_application_group_description)
         ```
 

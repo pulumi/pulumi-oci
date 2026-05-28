@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,11 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
      */
     private Integer blockStorageSizeInGbs;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    private String computeTargetId;
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -28,6 +34,11 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
      * 
      */
     private List<GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    private List<GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
@@ -48,6 +59,13 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
         return this.blockStorageSizeInGbs;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    public String computeTargetId() {
+        return this.computeTargetId;
+    }
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -60,6 +78,13 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
      */
     public List<GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
         return this.jobShapeConfigDetails;
+    }
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    public List<GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations() {
+        return this.resourceConfigurations;
     }
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
@@ -86,16 +111,20 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
     @CustomType.Builder
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
+        private String computeTargetId;
         private String jobInfrastructureType;
         private List<GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private List<GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
         private String shapeName;
         private String subnetId;
         public Builder() {}
         public Builder(GetJobRunsJobRunJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.computeTargetId = defaults.computeTargetId;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
     	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
+    	      this.resourceConfigurations = defaults.resourceConfigurations;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -106,6 +135,14 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
               throw new MissingRequiredPropertyException("GetJobRunsJobRunJobInfrastructureConfigurationDetail", "blockStorageSizeInGbs");
             }
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeTargetId(String computeTargetId) {
+            if (computeTargetId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRunJobInfrastructureConfigurationDetail", "computeTargetId");
+            }
+            this.computeTargetId = computeTargetId;
             return this;
         }
         @CustomType.Setter
@@ -128,6 +165,17 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder resourceConfigurations(List<GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations) {
+            if (resourceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRunJobInfrastructureConfigurationDetail", "resourceConfigurations");
+            }
+            this.resourceConfigurations = resourceConfigurations;
+            return this;
+        }
+        public Builder resourceConfigurations(GetJobRunsJobRunJobInfrastructureConfigurationDetailResourceConfiguration... resourceConfigurations) {
+            return resourceConfigurations(List.of(resourceConfigurations));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetJobRunsJobRunJobInfrastructureConfigurationDetail", "shapeName");
@@ -146,8 +194,10 @@ public final class GetJobRunsJobRunJobInfrastructureConfigurationDetail {
         public GetJobRunsJobRunJobInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetJobRunsJobRunJobInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.computeTargetId = computeTargetId;
             _resultValue.jobInfrastructureType = jobInfrastructureType;
             _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.resourceConfigurations = resourceConfigurations;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

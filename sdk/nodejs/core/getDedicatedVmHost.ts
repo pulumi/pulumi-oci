@@ -47,6 +47,9 @@ export interface GetDedicatedVmHostResult {
      * The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
      */
     readonly availabilityDomain: string;
+    /**
+     * A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     */
     readonly capacityBins: outputs.Core.GetDedicatedVmHostCapacityBin[];
     /**
      * The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
@@ -94,6 +97,10 @@ export interface GetDedicatedVmHostResult {
      */
     readonly placementConstraintDetails: outputs.Core.GetDedicatedVmHostPlacementConstraintDetail[];
     /**
+     * The current available local volume of the dedicated VM host, in GBs.
+     */
+    readonly remainingLocalVolumeInGbs: number;
+    /**
      * The current available memory of the dedicated VM host, in GBs.
      */
     readonly remainingMemoryInGbs: number;
@@ -109,6 +116,10 @@ export interface GetDedicatedVmHostResult {
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
+    /**
+     * The current total local volume of the dedicated VM host, in GBs.
+     */
+    readonly totalLocalVolumeInGbs: number;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int CapacityIndex;
         /// <summary>
+        /// The current available local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        public readonly double RemainingLocalVolumeInGbs;
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         public readonly double RemainingMemoryInGbs;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// List of VMI shapes supported on each capacity bucket.
         /// </summary>
         public readonly ImmutableArray<string> SupportedShapes;
+        /// <summary>
+        /// The current total local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        public readonly double TotalLocalVolumeInGbs;
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.
         /// </summary>
@@ -42,20 +50,26 @@ namespace Pulumi.Oci.Core.Outputs
         private GetDedicatedVmHostCapacityBinResult(
             int capacityIndex,
 
+            double remainingLocalVolumeInGbs,
+
             double remainingMemoryInGbs,
 
             double remainingOcpus,
 
             ImmutableArray<string> supportedShapes,
 
+            double totalLocalVolumeInGbs,
+
             double totalMemoryInGbs,
 
             double totalOcpus)
         {
             CapacityIndex = capacityIndex;
+            RemainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             RemainingMemoryInGbs = remainingMemoryInGbs;
             RemainingOcpus = remainingOcpus;
             SupportedShapes = supportedShapes;
+            TotalLocalVolumeInGbs = totalLocalVolumeInGbs;
             TotalMemoryInGbs = totalMemoryInGbs;
             TotalOcpus = totalOcpus;
         }

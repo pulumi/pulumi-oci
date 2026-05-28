@@ -238,6 +238,13 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         return Optional.ofNullable(this.downloadGsmCertificateSigningRequestTrigger);
     }
 
+    @Import(name="effectiveReplicationUnit")
+    private @Nullable Output<Integer> effectiveReplicationUnit;
+
+    public Optional<Output<Integer>> effectiveReplicationUnit() {
+        return Optional.ofNullable(this.effectiveReplicationUnit);
+    }
+
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -799,6 +806,7 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.downloadGsmCertificateSigningRequestTrigger = $.downloadGsmCertificateSigningRequestTrigger;
+        this.effectiveReplicationUnit = $.effectiveReplicationUnit;
         this.freeformTags = $.freeformTags;
         this.generateGsmCertificateSigningRequestTrigger = $.generateGsmCertificateSigningRequestTrigger;
         this.generateWalletDownloadedWalletContentLength = $.generateWalletDownloadedWalletContentLength;
@@ -1165,6 +1173,15 @@ public final class DistributedDatabaseDistributedDatabaseState extends com.pulum
         @Deprecated /* This trigger/action API is deprecated. */
         public Builder downloadGsmCertificateSigningRequestTrigger(Integer downloadGsmCertificateSigningRequestTrigger) {
             return downloadGsmCertificateSigningRequestTrigger(Output.of(downloadGsmCertificateSigningRequestTrigger));
+        }
+
+        public Builder effectiveReplicationUnit(@Nullable Output<Integer> effectiveReplicationUnit) {
+            $.effectiveReplicationUnit = effectiveReplicationUnit;
+            return this;
+        }
+
+        public Builder effectiveReplicationUnit(Integer effectiveReplicationUnit) {
+            return effectiveReplicationUnit(Output.of(effectiveReplicationUnit));
         }
 
         /**

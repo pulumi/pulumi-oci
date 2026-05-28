@@ -33,7 +33,6 @@ class DistributedDatabaseDistributedDatabaseArgs:
                  ons_port_remote: pulumi.Input[_builtins.int],
                  prefix: pulumi.Input[_builtins.str],
                  private_endpoint_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 shard_details: pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]],
                  sharding_method: pulumi.Input[_builtins.str],
                  change_db_backup_config_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  chunks: pulumi.Input[Optional[_builtins.int]] = None,
@@ -55,6 +54,7 @@ class DistributedDatabaseDistributedDatabaseArgs:
                  replication_method: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 shard_details: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]] = None,
                  start_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  stop_database_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -76,7 +76,6 @@ class DistributedDatabaseDistributedDatabaseArgs:
         :param pulumi.Input[_builtins.int] ons_port_remote: The ons remote port number for the Globally distributed database. The onsPortRemote has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
         :param pulumi.Input[_builtins.str] prefix: Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_endpoint_ids: The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]] shard_details: Collection of shards for the Globally distributed database.
         :param pulumi.Input[_builtins.str] sharding_method: Sharding Methods for the Globally distributed database.
         :param pulumi.Input[_builtins.int] change_db_backup_config_trigger: (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] chunks: Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
@@ -96,6 +95,7 @@ class DistributedDatabaseDistributedDatabaseArgs:
         :param pulumi.Input[_builtins.str] replication_method: The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
         :param pulumi.Input[_builtins.int] replication_unit: The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
         :param pulumi.Input[_builtins.int] scan_listener_port: The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
+        :param pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]] shard_details: Collection of shards for the Globally distributed database.
         :param pulumi.Input[_builtins.int] start_database_trigger: Increment this value to trigger StartDistributedDatabase action.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Distributed Database. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[_builtins.int] stop_database_trigger: Increment this value to trigger StopDistributedDatabase action.
@@ -118,7 +118,6 @@ class DistributedDatabaseDistributedDatabaseArgs:
         pulumi.set(__self__, "ons_port_remote", ons_port_remote)
         pulumi.set(__self__, "prefix", prefix)
         pulumi.set(__self__, "private_endpoint_ids", private_endpoint_ids)
-        pulumi.set(__self__, "shard_details", shard_details)
         pulumi.set(__self__, "sharding_method", sharding_method)
         if change_db_backup_config_trigger is not None:
             pulumi.set(__self__, "change_db_backup_config_trigger", change_db_backup_config_trigger)
@@ -166,6 +165,8 @@ class DistributedDatabaseDistributedDatabaseArgs:
             pulumi.set(__self__, "replication_unit", replication_unit)
         if scan_listener_port is not None:
             pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+        if shard_details is not None:
+            pulumi.set(__self__, "shard_details", shard_details)
         if start_database_trigger is not None:
             pulumi.set(__self__, "start_database_trigger", start_database_trigger)
         if state is not None:
@@ -325,18 +326,6 @@ class DistributedDatabaseDistributedDatabaseArgs:
     @private_endpoint_ids.setter
     def private_endpoint_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         pulumi.set(self, "private_endpoint_ids", value)
-
-    @_builtins.property
-    @pulumi.getter(name="shardDetails")
-    def shard_details(self) -> pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]:
-        """
-        Collection of shards for the Globally distributed database.
-        """
-        return pulumi.get(self, "shard_details")
-
-    @shard_details.setter
-    def shard_details(self, value: pulumi.Input[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]):
-        pulumi.set(self, "shard_details", value)
 
     @_builtins.property
     @pulumi.getter(name="shardingMethod")
@@ -587,6 +576,18 @@ class DistributedDatabaseDistributedDatabaseArgs:
         pulumi.set(self, "scan_listener_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="shardDetails")
+    def shard_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]]:
+        """
+        Collection of shards for the Globally distributed database.
+        """
+        return pulumi.get(self, "shard_details")
+
+    @shard_details.setter
+    def shard_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DistributedDatabaseDistributedDatabaseShardDetailArgs']]]]):
+        pulumi.set(self, "shard_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="startDatabaseTrigger")
     def start_database_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -678,6 +679,7 @@ class _DistributedDatabaseDistributedDatabaseState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 effective_replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  generate_wallet_downloaded_wallet_content_length: pulumi.Input[Optional[_builtins.int]] = None,
@@ -800,6 +802,8 @@ class _DistributedDatabaseDistributedDatabaseState:
             pulumi.log.warn("""download_gsm_certificate_signing_request_trigger is deprecated: This trigger/action API is deprecated.""")
         if download_gsm_certificate_signing_request_trigger is not None:
             pulumi.set(__self__, "download_gsm_certificate_signing_request_trigger", download_gsm_certificate_signing_request_trigger)
+        if effective_replication_unit is not None:
+            pulumi.set(__self__, "effective_replication_unit", effective_replication_unit)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if generate_gsm_certificate_signing_request_trigger is not None:
@@ -1048,6 +1052,15 @@ class _DistributedDatabaseDistributedDatabaseState:
     @download_gsm_certificate_signing_request_trigger.setter
     def download_gsm_certificate_signing_request_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "download_gsm_certificate_signing_request_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "effective_replication_unit")
+
+    @effective_replication_unit.setter
+    def effective_replication_unit(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "effective_replication_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -2109,8 +2122,6 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             __props__.__dict__["replication_method"] = replication_method
             __props__.__dict__["replication_unit"] = replication_unit
             __props__.__dict__["scan_listener_port"] = scan_listener_port
-            if shard_details is None and not opts.urn:
-                raise TypeError("Missing required property 'shard_details'")
             __props__.__dict__["shard_details"] = shard_details
             if sharding_method is None and not opts.urn:
                 raise TypeError("Missing required property 'sharding_method'")
@@ -2122,6 +2133,7 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             __props__.__dict__["validate_network_details"] = validate_network_details
             __props__.__dict__["validate_network_trigger"] = validate_network_trigger
             __props__.__dict__["connection_strings"] = None
+            __props__.__dict__["effective_replication_unit"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_content_length"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_etag"] = None
             __props__.__dict__["generate_wallet_downloaded_wallet_last_modified"] = None
@@ -2159,6 +2171,7 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             download_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            effective_replication_unit: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             generate_gsm_certificate_signing_request_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             generate_wallet_downloaded_wallet_content_length: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2272,6 +2285,7 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["download_gsm_certificate_signing_request_trigger"] = download_gsm_certificate_signing_request_trigger
+        __props__.__dict__["effective_replication_unit"] = effective_replication_unit
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["generate_gsm_certificate_signing_request_trigger"] = generate_gsm_certificate_signing_request_trigger
         __props__.__dict__["generate_wallet_downloaded_wallet_content_length"] = generate_wallet_downloaded_wallet_content_length
@@ -2423,6 +2437,11 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
         return pulumi.get(self, "download_gsm_certificate_signing_request_trigger")
 
     @_builtins.property
+    @pulumi.getter(name="effectiveReplicationUnit")
+    def effective_replication_unit(self) -> pulumi.Output[_builtins.int]:
+        return pulumi.get(self, "effective_replication_unit")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
@@ -2562,7 +2581,7 @@ class DistributedDatabaseDistributedDatabase(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> pulumi.Output[Optional[Sequence['outputs.DistributedDatabaseDistributedDatabasePatchOperation']]]:
+    def patch_operations(self) -> pulumi.Output[Sequence['outputs.DistributedDatabaseDistributedDatabasePatchOperation']]:
         """
         (Updatable)
         """

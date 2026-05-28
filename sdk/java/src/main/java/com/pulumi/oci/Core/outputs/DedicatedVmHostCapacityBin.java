@@ -20,6 +20,11 @@ public final class DedicatedVmHostCapacityBin {
      */
     private @Nullable Integer capacityIndex;
     /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private @Nullable Double remainingLocalVolumeInGbs;
+    /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -34,6 +39,11 @@ public final class DedicatedVmHostCapacityBin {
      * 
      */
     private @Nullable List<String> supportedShapes;
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private @Nullable Double totalLocalVolumeInGbs;
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
      * 
@@ -52,6 +62,13 @@ public final class DedicatedVmHostCapacityBin {
      */
     public Optional<Integer> capacityIndex() {
         return Optional.ofNullable(this.capacityIndex);
+    }
+    /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Double> remainingLocalVolumeInGbs() {
+        return Optional.ofNullable(this.remainingLocalVolumeInGbs);
     }
     /**
      * @return The current available memory of the dedicated VM host, in GBs.
@@ -73,6 +90,13 @@ public final class DedicatedVmHostCapacityBin {
      */
     public List<String> supportedShapes() {
         return this.supportedShapes == null ? List.of() : this.supportedShapes;
+    }
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Double> totalLocalVolumeInGbs() {
+        return Optional.ofNullable(this.totalLocalVolumeInGbs);
     }
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
@@ -99,18 +123,22 @@ public final class DedicatedVmHostCapacityBin {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer capacityIndex;
+        private @Nullable Double remainingLocalVolumeInGbs;
         private @Nullable Double remainingMemoryInGbs;
         private @Nullable Double remainingOcpus;
         private @Nullable List<String> supportedShapes;
+        private @Nullable Double totalLocalVolumeInGbs;
         private @Nullable Double totalMemoryInGbs;
         private @Nullable Double totalOcpus;
         public Builder() {}
         public Builder(DedicatedVmHostCapacityBin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacityIndex = defaults.capacityIndex;
+    	      this.remainingLocalVolumeInGbs = defaults.remainingLocalVolumeInGbs;
     	      this.remainingMemoryInGbs = defaults.remainingMemoryInGbs;
     	      this.remainingOcpus = defaults.remainingOcpus;
     	      this.supportedShapes = defaults.supportedShapes;
+    	      this.totalLocalVolumeInGbs = defaults.totalLocalVolumeInGbs;
     	      this.totalMemoryInGbs = defaults.totalMemoryInGbs;
     	      this.totalOcpus = defaults.totalOcpus;
         }
@@ -119,6 +147,12 @@ public final class DedicatedVmHostCapacityBin {
         public Builder capacityIndex(@Nullable Integer capacityIndex) {
 
             this.capacityIndex = capacityIndex;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remainingLocalVolumeInGbs(@Nullable Double remainingLocalVolumeInGbs) {
+
+            this.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -143,6 +177,12 @@ public final class DedicatedVmHostCapacityBin {
             return supportedShapes(List.of(supportedShapes));
         }
         @CustomType.Setter
+        public Builder totalLocalVolumeInGbs(@Nullable Double totalLocalVolumeInGbs) {
+
+            this.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalMemoryInGbs(@Nullable Double totalMemoryInGbs) {
 
             this.totalMemoryInGbs = totalMemoryInGbs;
@@ -157,9 +197,11 @@ public final class DedicatedVmHostCapacityBin {
         public DedicatedVmHostCapacityBin build() {
             final var _resultValue = new DedicatedVmHostCapacityBin();
             _resultValue.capacityIndex = capacityIndex;
+            _resultValue.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
             _resultValue.remainingOcpus = remainingOcpus;
             _resultValue.supportedShapes = supportedShapes;
+            _resultValue.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
             _resultValue.totalMemoryInGbs = totalMemoryInGbs;
             _resultValue.totalOcpus = totalOcpus;
             return _resultValue;

@@ -169,6 +169,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly peerMaintenanceRunIds: pulumi.Output<string[]>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     */
+    declare public /*out*/ readonly referenceResourceIdForImageUpdates: pulumi.Output<string>;
+    /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -212,6 +216,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      * The total time taken by corresponding resource activity in minutes.
      */
     declare public /*out*/ readonly totalTimeTakenInMins: pulumi.Output<number>;
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     */
+    declare public /*out*/ readonly windowTypeDescriptions: pulumi.Output<outputs.Database.MaintenanceRunWindowTypeDescription[]>;
 
     /**
      * Create a MaintenanceRun resource with the given unique name, arguments, and options.
@@ -250,6 +258,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["patchingStatus"] = state?.patchingStatus;
             resourceInputs["peerMaintenanceRunId"] = state?.peerMaintenanceRunId;
             resourceInputs["peerMaintenanceRunIds"] = state?.peerMaintenanceRunIds;
+            resourceInputs["referenceResourceIdForImageUpdates"] = state?.referenceResourceIdForImageUpdates;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["targetDbServerVersion"] = state?.targetDbServerVersion;
@@ -260,6 +269,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["timeScheduled"] = state?.timeScheduled;
             resourceInputs["timeStarted"] = state?.timeStarted;
             resourceInputs["totalTimeTakenInMins"] = state?.totalTimeTakenInMins;
+            resourceInputs["windowTypeDescriptions"] = state?.windowTypeDescriptions;
         } else {
             const args = argsOrState as MaintenanceRunArgs | undefined;
             if (args?.patchType === undefined && !opts.urn) {
@@ -297,6 +307,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["patchingStatus"] = undefined /*out*/;
             resourceInputs["peerMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["peerMaintenanceRunIds"] = undefined /*out*/;
+            resourceInputs["referenceResourceIdForImageUpdates"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetDbServerVersion"] = undefined /*out*/;
@@ -305,6 +316,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["timeEnded"] = undefined /*out*/;
             resourceInputs["timeStarted"] = undefined /*out*/;
             resourceInputs["totalTimeTakenInMins"] = undefined /*out*/;
+            resourceInputs["windowTypeDescriptions"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaintenanceRun.__pulumiType, name, resourceInputs, opts);
@@ -414,6 +426,10 @@ export interface MaintenanceRunState {
      */
     peerMaintenanceRunIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     */
+    referenceResourceIdForImageUpdates?: pulumi.Input<string | undefined>;
+    /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     state?: pulumi.Input<string | undefined>;
@@ -457,6 +473,10 @@ export interface MaintenanceRunState {
      * The total time taken by corresponding resource activity in minutes.
      */
     totalTimeTakenInMins?: pulumi.Input<number | undefined>;
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     */
+    windowTypeDescriptions?: pulumi.Input<pulumi.Input<inputs.Database.MaintenanceRunWindowTypeDescription>[] | undefined>;
 }
 
 /**

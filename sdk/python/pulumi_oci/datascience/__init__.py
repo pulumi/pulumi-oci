@@ -6,6 +6,10 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .compute_target import *
+from .get_compute_target import *
+from .get_compute_target_shapes import *
+from .get_compute_targets import *
 from .get_containers import *
 from .get_fast_launch_job_configs import *
 from .get_job import *

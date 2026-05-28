@@ -58,6 +58,11 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
      * 
      */
     private String secret;
+    /**
+     * @return An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    private List<String> secrets;
 
     private GetNetworkFirewallPolicyDecryptionRuleResult() {}
     /**
@@ -127,6 +132,13 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
     public String secret() {
         return this.secret;
     }
+    /**
+     * @return An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    public List<String> secrets() {
+        return this.secrets;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -148,6 +160,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
         private List<GetNetworkFirewallPolicyDecryptionRulePosition> positions;
         private String priorityOrder;
         private String secret;
+        private List<String> secrets;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -162,6 +175,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
     	      this.positions = defaults.positions;
     	      this.priorityOrder = defaults.priorityOrder;
     	      this.secret = defaults.secret;
+    	      this.secrets = defaults.secrets;
         }
 
         @CustomType.Setter
@@ -258,6 +272,17 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
             this.secret = secret;
             return this;
         }
+        @CustomType.Setter
+        public Builder secrets(List<String> secrets) {
+            if (secrets == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyDecryptionRuleResult", "secrets");
+            }
+            this.secrets = secrets;
+            return this;
+        }
+        public Builder secrets(String... secrets) {
+            return secrets(List.of(secrets));
+        }
         public GetNetworkFirewallPolicyDecryptionRuleResult build() {
             final var _resultValue = new GetNetworkFirewallPolicyDecryptionRuleResult();
             _resultValue.action = action;
@@ -271,6 +296,7 @@ public final class GetNetworkFirewallPolicyDecryptionRuleResult {
             _resultValue.positions = positions;
             _resultValue.priorityOrder = priorityOrder;
             _resultValue.secret = secret;
+            _resultValue.secrets = secrets;
             return _resultValue;
         }
     }

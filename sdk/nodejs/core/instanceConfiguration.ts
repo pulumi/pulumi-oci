@@ -178,6 +178,7 @@ import * as utilities from "../utilities";
  *             shape: instanceConfigurationInstanceDetailsLaunchDetailsShape,
  *             shapeConfig: {
  *                 baselineOcpuUtilization: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+ *                 localVolumeSizeInGbs: Number(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
  *                 memoryInGbs: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs,
  *                 nvmes: Number(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes),
  *                 ocpus: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus,
@@ -340,6 +341,7 @@ import * as utilities from "../utilities";
  *                 shape: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShape,
  *                 shapeConfig: {
  *                     baselineOcpuUtilization: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+ *                     localVolumeSizeInGbs: Number(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
  *                     memoryInGbs: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs,
  *                     nvmes: Number(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes),
  *                     ocpus: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus,

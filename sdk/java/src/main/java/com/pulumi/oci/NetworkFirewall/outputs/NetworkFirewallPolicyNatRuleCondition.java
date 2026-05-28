@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NetworkFirewallPolicyNatRuleCondition {
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     private @Nullable List<String> destinationAddresses;
@@ -23,14 +23,14 @@ public final class NetworkFirewallPolicyNatRuleCondition {
      */
     private @Nullable String service;
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
     private @Nullable List<String> sourceAddresses;
 
     private NetworkFirewallPolicyNatRuleCondition() {}
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     public List<String> destinationAddresses() {
@@ -44,7 +44,7 @@ public final class NetworkFirewallPolicyNatRuleCondition {
         return Optional.ofNullable(this.service);
     }
     /**
-     * @return (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+     * @return (Updatable) An array of address list names to be evaluated against the traffic source address.
      * 
      */
     public List<String> sourceAddresses() {

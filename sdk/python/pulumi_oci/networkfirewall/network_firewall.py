@@ -32,6 +32,7 @@ class NetworkFirewallArgs:
                  ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
                  nat_configuration: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewall resource.
@@ -51,6 +52,7 @@ class NetworkFirewallArgs:
         :param pulumi.Input[_builtins.str] ipv6address: IPv6 address for the Network Firewall.
         :param pulumi.Input['NetworkFirewallNatConfigurationArgs'] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -72,6 +74,8 @@ class NetworkFirewallArgs:
             pulumi.set(__self__, "nat_configuration", nat_configuration)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
 
@@ -212,6 +216,18 @@ class NetworkFirewallArgs:
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -238,6 +254,7 @@ class _NetworkFirewallState:
                  nat_configuration: pulumi.Input[Optional['NetworkFirewallNatConfigurationArgs']] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -258,6 +275,7 @@ class _NetworkFirewallState:
         :param pulumi.Input['NetworkFirewallNatConfigurationArgs'] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         :param pulumi.Input[_builtins.str] state: The current state of the Network Firewall.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -291,6 +309,8 @@ class _NetworkFirewallState:
             pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if state is not None:
@@ -437,6 +457,18 @@ class _NetworkFirewallState:
         pulumi.set(self, "network_security_group_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -529,6 +561,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -564,6 +597,7 @@ class NetworkFirewall(pulumi.CustomResource):
                 "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
+            security_attributes=network_firewall_security_attributes,
             shape=network_firewall_shape)
         ```
 
@@ -588,6 +622,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
                
@@ -633,6 +668,7 @@ class NetworkFirewall(pulumi.CustomResource):
                 "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
+            security_attributes=network_firewall_security_attributes,
             shape=network_firewall_shape)
         ```
 
@@ -670,6 +706,7 @@ class NetworkFirewall(pulumi.CustomResource):
                  nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
                  network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -695,6 +732,7 @@ class NetworkFirewall(pulumi.CustomResource):
                 raise TypeError("Missing required property 'network_firewall_policy_id'")
             __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shape"] = shape
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
@@ -725,6 +763,7 @@ class NetworkFirewall(pulumi.CustomResource):
             nat_configuration: pulumi.Input[Optional[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']]] = None,
             network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
             network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -749,6 +788,7 @@ class NetworkFirewall(pulumi.CustomResource):
         :param pulumi.Input[Union['NetworkFirewallNatConfigurationArgs', 'NetworkFirewallNatConfigurationArgsDict']] nat_configuration: (Updatable) Request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
         :param pulumi.Input[_builtins.str] shape: (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         :param pulumi.Input[_builtins.str] state: The current state of the Network Firewall.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -775,6 +815,7 @@ class NetworkFirewall(pulumi.CustomResource):
         __props__.__dict__["nat_configuration"] = nat_configuration
         __props__.__dict__["network_firewall_policy_id"] = network_firewall_policy_id
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
@@ -870,6 +911,14 @@ class NetworkFirewall(pulumi.CustomResource):
         (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

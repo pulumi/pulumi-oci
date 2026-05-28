@@ -273,6 +273,9 @@ namespace Pulumi.Oci.Oci
         [Output("downloadedGsmCsrPem")]
         public Output<string> DownloadedGsmCsrPem { get; private set; } = null!;
 
+        [Output("effectiveReplicationUnit")]
+        public Output<int> EffectiveReplicationUnit { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -1001,6 +1004,9 @@ namespace Pulumi.Oci.Oci
                 _downloadedGsmCsrPem = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
+
+        [Input("effectiveReplicationUnit")]
+        public Input<int>? EffectiveReplicationUnit { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

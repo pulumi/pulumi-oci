@@ -4657,6 +4657,10 @@ class DedicatedVmHostCapacityBinArgsDict(TypedDict):
     """
     Zero-based index for the corresponding capacity bucket.
     """
+    remaining_local_volume_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The current available local volume of the dedicated VM host, in GBs.
+    """
     remaining_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The current available memory of the dedicated VM host, in GBs.
@@ -4668,6 +4672,10 @@ class DedicatedVmHostCapacityBinArgsDict(TypedDict):
     supported_shapes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of VMI shapes supported on each capacity bucket.
+    """
+    total_local_volume_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The current total local volume of the dedicated VM host, in GBs.
     """
     total_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
@@ -4682,27 +4690,35 @@ class DedicatedVmHostCapacityBinArgsDict(TypedDict):
 class DedicatedVmHostCapacityBinArgs:
     def __init__(__self__, *,
                  capacity_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 remaining_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
                  supported_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 total_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  total_ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.int] capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param pulumi.Input[_builtins.float] remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param pulumi.Input[_builtins.float] total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         if capacity_index is not None:
             pulumi.set(__self__, "capacity_index", capacity_index)
+        if remaining_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         if remaining_memory_in_gbs is not None:
             pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         if remaining_ocpus is not None:
             pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         if supported_shapes is not None:
             pulumi.set(__self__, "supported_shapes", supported_shapes)
+        if total_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         if total_memory_in_gbs is not None:
             pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         if total_ocpus is not None:
@@ -4719,6 +4735,18 @@ class DedicatedVmHostCapacityBinArgs:
     @capacity_index.setter
     def capacity_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "capacity_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
+
+    @remaining_local_volume_in_gbs.setter
+    def remaining_local_volume_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "remaining_local_volume_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
@@ -4755,6 +4783,18 @@ class DedicatedVmHostCapacityBinArgs:
     @supported_shapes.setter
     def supported_shapes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "supported_shapes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "total_local_volume_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -9587,6 +9627,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgsDict(Typed
     * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
     * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
     """
+    local_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+    """
     memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total amount of memory available to the instance, in gigabytes.
@@ -9612,6 +9656,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgsDict(Typed
 class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     def __init__(__self__, *,
                  baseline_ocpu_utilization: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  nvmes: pulumi.Input[Optional[_builtins.int]] = None,
                  ocpus: pulumi.Input[Optional[_builtins.float]] = None,
@@ -9624,6 +9669,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
                * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
                * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
                * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param pulumi.Input[_builtins.int] local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
@@ -9632,6 +9678,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -9659,6 +9707,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @baseline_ocpu_utilization.setter
     def baseline_ocpu_utilization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "baseline_ocpu_utilization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -12561,6 +12621,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgsDict
     """
     The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
     """
+    local_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+    """
     memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total amount of memory available to the instance, in gigabytes.
@@ -12586,6 +12650,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgsDict
 class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     def __init__(__self__, *,
                  baseline_ocpu_utilization: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  nvmes: pulumi.Input[Optional[_builtins.int]] = None,
                  ocpus: pulumi.Input[Optional[_builtins.float]] = None,
@@ -12593,6 +12658,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
                  vcpus: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param pulumi.Input[_builtins.int] local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
@@ -12601,6 +12667,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -12623,6 +12691,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @baseline_ocpu_utilization.setter
     def baseline_ocpu_utilization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "baseline_ocpu_utilization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -16202,6 +16282,10 @@ class InstanceShapeConfigArgsDict(TypedDict):
     """
     The aggregate size of all local disks, in gigabytes.
     """
+    local_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+    """
     max_vnic_attachments: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum number of VNIC attachments for the instance.
@@ -16244,6 +16328,7 @@ class InstanceShapeConfigArgs:
                  local_disk_description: pulumi.Input[Optional[_builtins.str]] = None,
                  local_disks: pulumi.Input[Optional[_builtins.int]] = None,
                  local_disks_total_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 local_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  max_vnic_attachments: pulumi.Input[Optional[_builtins.int]] = None,
                  memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  networking_bandwidth_in_gbps: pulumi.Input[Optional[_builtins.float]] = None,
@@ -16264,6 +16349,7 @@ class InstanceShapeConfigArgs:
         :param pulumi.Input[_builtins.str] local_disk_description: A short description of the local disks available to this instance.
         :param pulumi.Input[_builtins.int] local_disks: The number of local disks available to the instance.
         :param pulumi.Input[_builtins.float] local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes.
+        :param pulumi.Input[_builtins.int] local_volume_size_in_gbs: (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param pulumi.Input[_builtins.int] max_vnic_attachments: The maximum number of VNIC attachments for the instance.
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.float] networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
@@ -16285,6 +16371,8 @@ class InstanceShapeConfigArgs:
             pulumi.set(__self__, "local_disks", local_disks)
         if local_disks_total_size_in_gbs is not None:
             pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if max_vnic_attachments is not None:
             pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         if memory_in_gbs is not None:
@@ -16378,6 +16466,18 @@ class InstanceShapeConfigArgs:
     @local_disks_total_size_in_gbs.setter
     def local_disks_total_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "local_disks_total_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
+
+    @local_volume_size_in_gbs.setter
+    def local_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "local_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxVnicAttachments")

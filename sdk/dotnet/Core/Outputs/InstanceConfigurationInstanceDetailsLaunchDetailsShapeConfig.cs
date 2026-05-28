@@ -23,6 +23,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? BaselineOcpuUtilization;
         /// <summary>
+        /// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        /// </summary>
+        public readonly int? LocalVolumeSizeInGbs;
+        /// <summary>
         /// The total amount of memory available to the instance, in gigabytes.
         /// </summary>
         public readonly double? MemoryInGbs;
@@ -47,6 +51,8 @@ namespace Pulumi.Oci.Core.Outputs
         private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(
             string? baselineOcpuUtilization,
 
+            int? localVolumeSizeInGbs,
+
             double? memoryInGbs,
 
             int? nvmes,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.Core.Outputs
             int? vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
+            LocalVolumeSizeInGbs = localVolumeSizeInGbs;
             MemoryInGbs = memoryInGbs;
             Nvmes = nvmes;
             Ocpus = ocpus;

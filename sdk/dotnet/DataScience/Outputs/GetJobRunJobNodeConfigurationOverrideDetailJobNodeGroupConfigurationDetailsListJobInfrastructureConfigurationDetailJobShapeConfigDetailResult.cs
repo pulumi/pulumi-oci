@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult
     {
         /// <summary>
-        /// The total amount of memory available to the job run instance, in gigabytes.
+        /// The memory in Gbs required to be allocated to run the workload.
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
-        /// The total number of OCPUs available to the job run instance.
+        /// The ocpus required to be allocated to run the workload.
         /// </summary>
         public readonly double Ocpus;
 

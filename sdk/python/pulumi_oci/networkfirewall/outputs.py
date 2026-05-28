@@ -278,9 +278,9 @@ class NetworkFirewallPolicyNatRuleCondition(dict):
                  service: Optional[_builtins.str] = None,
                  source_addresses: Optional[Sequence[_builtins.str]] = None):
         """
-        :param Sequence[_builtins.str] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
         :param _builtins.str service: (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -293,7 +293,7 @@ class NetworkFirewallPolicyNatRuleCondition(dict):
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -309,7 +309,7 @@ class NetworkFirewallPolicyNatRuleCondition(dict):
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -1531,8 +1531,8 @@ class GetNetworkFirewallPolicyDecryptionRuleConditionResult(dict):
                  destination_addresses: Sequence[_builtins.str],
                  source_addresses: Sequence[_builtins.str]):
         """
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         """
         pulumi.set(__self__, "destination_addresses", destination_addresses)
         pulumi.set(__self__, "source_addresses", source_addresses)
@@ -1541,7 +1541,7 @@ class GetNetworkFirewallPolicyDecryptionRuleConditionResult(dict):
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -1549,7 +1549,7 @@ class GetNetworkFirewallPolicyDecryptionRuleConditionResult(dict):
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -1607,7 +1607,8 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
                  decryption_profile: Optional[_builtins.str] = None,
                  description: Optional[_builtins.str] = None,
                  priority_order: Optional[_builtins.str] = None,
-                 secret: Optional[_builtins.str] = None):
+                 secret: Optional[_builtins.str] = None,
+                 secrets: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str action: Action:
                * NO_DECRYPT - Matching traffic is not decrypted.
@@ -1620,6 +1621,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
         :param _builtins.str decryption_profile: The name of the decryption profile to use.
         :param _builtins.str description: The description of the decryption rule. This field can be used to add additional info.
         :param _builtins.str secret: The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        :param Sequence[_builtins.str] secrets: An array of mapped secrets.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "condition", condition)
@@ -1635,6 +1637,8 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
             pulumi.set(__self__, "priority_order", priority_order)
         if secret is not None:
             pulumi.set(__self__, "secret", secret)
+        if secrets is not None:
+            pulumi.set(__self__, "secrets", secrets)
 
     @_builtins.property
     @pulumi.getter
@@ -1715,6 +1719,14 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
         """
         return pulumi.get(self, "secret")
 
+    @_builtins.property
+    @pulumi.getter
+    def secrets(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        An array of mapped secrets.
+        """
+        return pulumi.get(self, "secrets")
+
 
 @pulumi.output_type
 class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemConditionResult(dict):
@@ -1722,8 +1734,8 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
                  destination_addresses: Optional[Sequence[_builtins.str]] = None,
                  source_addresses: Optional[Sequence[_builtins.str]] = None):
         """
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -1734,7 +1746,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -1742,7 +1754,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -1928,9 +1940,9 @@ class GetNetworkFirewallPolicyNatRuleConditionResult(dict):
                  service: _builtins.str,
                  source_addresses: Sequence[_builtins.str]):
         """
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
         :param _builtins.str service: A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         """
         pulumi.set(__self__, "destination_addresses", destination_addresses)
         pulumi.set(__self__, "service", service)
@@ -1940,7 +1952,7 @@ class GetNetworkFirewallPolicyNatRuleConditionResult(dict):
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -1956,7 +1968,7 @@ class GetNetworkFirewallPolicyNatRuleConditionResult(dict):
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -2153,9 +2165,9 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult(dict)
                  service: Optional[_builtins.str] = None,
                  source_addresses: Optional[Sequence[_builtins.str]] = None):
         """
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
         :param _builtins.str service: A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -2168,7 +2180,7 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult(dict)
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -2184,7 +2196,7 @@ class GetNetworkFirewallPolicyNatRulesNatRuleCollectionItemConditionResult(dict)
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -2228,9 +2240,9 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
                  urls: Sequence[_builtins.str]):
         """
         :param Sequence[_builtins.str] applications: An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
         :param Sequence[_builtins.str] services: An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         :param Sequence[_builtins.str] urls: An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
         pulumi.set(__self__, "applications", applications)
@@ -2251,7 +2263,7 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -2267,7 +2279,7 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Sequence[_builtins.str]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -2481,9 +2493,9 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
                  urls: Optional[Sequence[_builtins.str]] = None):
         """
         :param Sequence[_builtins.str] applications: An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] destination_addresses: An array of IP address list names to be evaluated against the traffic destination address.
+        :param Sequence[_builtins.str] destination_addresses: An array of address list names to be evaluated against the traffic destination address.
         :param Sequence[_builtins.str] services: An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param Sequence[_builtins.str] source_addresses: An array of IP address list names to be evaluated against the traffic source address.
+        :param Sequence[_builtins.str] source_addresses: An array of address list names to be evaluated against the traffic source address.
         :param Sequence[_builtins.str] urls: An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
         if applications is not None:
@@ -2509,7 +2521,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic destination address.
+        An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -2525,7 +2537,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[Sequence[_builtins.str]]:
         """
-        An array of IP address list names to be evaluated against the traffic source address.
+        An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 
@@ -3419,6 +3431,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
                  nat_configurations: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationResult'],
                  network_firewall_policy_id: _builtins.str,
                  network_security_group_ids: Sequence[_builtins.str],
+                 security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
@@ -3438,6 +3451,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         :param Sequence['GetNetworkFirewallsNetworkFirewallCollectionItemNatConfigurationArgs'] nat_configurations: Response to a request to configure Network Address Translation (NAT) on a firewall. To perform NAT on traffic passing the private NAT IPs to the firewall, the attached network firewall policy must also have NAT rules and NAT configuration must be enabled. If NAT configuration is enabled and the attached firewall policy does not contain NAT rule then NAT IPs will get allocated but NAT will not be performed on any traffic.
         :param _builtins.str network_firewall_policy_id: A filter to return only resources that match the entire networkFirewallPolicyId given.
         :param Sequence[_builtins.str] network_security_group_ids: An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
         :param _builtins.str shape: The shape of a firewall to determine the bandwidth that the firewall allows.
         :param _builtins.str state: A filter to return only resources with a lifecycleState matching the given value.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
@@ -3457,6 +3471,7 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         pulumi.set(__self__, "nat_configurations", nat_configurations)
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -3559,6 +3574,14 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
         """
         return pulumi.get(self, "network_security_group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

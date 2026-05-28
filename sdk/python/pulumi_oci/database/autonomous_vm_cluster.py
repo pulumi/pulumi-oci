@@ -30,6 +30,7 @@ class AutonomousVmClusterArgs:
                  cpu_core_count_per_node: pulumi.Input[Optional[_builtins.int]] = None,
                  db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 distribution_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_mtls_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -38,6 +39,7 @@ class AutonomousVmClusterArgs:
                  memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_non_tls: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 sga_percentage: pulumi.Input[Optional[_builtins.float]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  total_container_databases: pulumi.Input[Optional[_builtins.int]] = None):
         """
@@ -56,15 +58,17 @@ class AutonomousVmClusterArgs:
         :param pulumi.Input[_builtins.int] cpu_core_count_per_node: (Updatable) The number of CPU cores to enable per VM cluster node.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[_builtins.str] distribution_algorithm: (Updatable) The distribution algorithm used for the Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-        :param pulumi.Input[_builtins.bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailArgs']]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
-        :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
+        :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,6 +85,8 @@ class AutonomousVmClusterArgs:
             pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if distribution_algorithm is not None:
+            pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
@@ -97,6 +103,8 @@ class AutonomousVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        if sga_percentage is not None:
+            pulumi.set(__self__, "sga_percentage", sga_percentage)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if total_container_databases is not None:
@@ -215,6 +223,18 @@ class AutonomousVmClusterArgs:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "distribution_algorithm", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -242,7 +262,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="isMtlsEnabled")
     def is_mtls_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         """
         return pulumi.get(self, "is_mtls_enabled")
 
@@ -290,7 +310,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="scanListenerPortNonTls")
     def scan_listener_port_non_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The SCAN Listener Non TLS port number. Default value is 1521.
+        (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         """
         return pulumi.get(self, "scan_listener_port_non_tls")
 
@@ -302,7 +322,7 @@ class AutonomousVmClusterArgs:
     @pulumi.getter(name="scanListenerPortTls")
     def scan_listener_port_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The SCAN Listener TLS port number. Default value is 2484.
+        (Updatable) The SCAN Listener TLS port number. Default value is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tls")
 
@@ -311,10 +331,22 @@ class AutonomousVmClusterArgs:
         pulumi.set(self, "scan_listener_port_tls", value)
 
     @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
+
+    @sga_percentage.setter
+    def sga_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "sga_percentage", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
@@ -356,6 +388,7 @@ class _AutonomousVmClusterState:
                  db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_storage_in_tbs_lowest_scaled_value: pulumi.Input[Optional[_builtins.float]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -381,6 +414,7 @@ class _AutonomousVmClusterState:
                  reserved_cpus: pulumi.Input[Optional[_builtins.float]] = None,
                  scan_listener_port_non_tls: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 sga_percentage: pulumi.Input[Optional[_builtins.float]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -407,11 +441,12 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        :param pulumi.Input[_builtins.str] distribution_algorithm: (Updatable) The distribution algorithm used for the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.float] exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage(in TBs) can be scaled down.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-        :param pulumi.Input[_builtins.bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -431,14 +466,15 @@ class _AutonomousVmClusterState:
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
-        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
-        :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
+        :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[_builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[_builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
-        :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
                
@@ -482,6 +518,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if distribution_algorithm is not None:
+            pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if exadata_storage_in_tbs_lowest_scaled_value is not None:
@@ -532,6 +570,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        if sga_percentage is not None:
+            pulumi.set(__self__, "sga_percentage", sga_percentage)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -756,6 +796,18 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "distribution_algorithm", value)
+
+    @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -807,7 +859,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="isMtlsEnabled")
     def is_mtls_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         """
         return pulumi.get(self, "is_mtls_enabled")
 
@@ -1034,7 +1086,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="scanListenerPortNonTls")
     def scan_listener_port_non_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The SCAN Listener Non TLS port number. Default value is 1521.
+        (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         """
         return pulumi.get(self, "scan_listener_port_non_tls")
 
@@ -1046,13 +1098,25 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="scanListenerPortTls")
     def scan_listener_port_tls(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The SCAN Listener TLS port number. Default value is 2484.
+        (Updatable) The SCAN Listener TLS port number. Default value is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tls")
 
     @scan_listener_port_tls.setter
     def scan_listener_port_tls(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port_tls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
+
+    @sga_percentage.setter
+    def sga_percentage(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "sga_percentage", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1118,7 +1182,7 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
@@ -1177,6 +1241,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1186,6 +1251,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_non_tls: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 sga_percentage: pulumi.Input[Optional[_builtins.float]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  total_container_databases: pulumi.Input[Optional[_builtins.int]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1214,6 +1280,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             cpu_core_count_per_node=int(autonomous_vm_cluster_cpu_core_count_per_node),
             db_servers=autonomous_vm_cluster_db_servers,
             defined_tags=autonomous_vm_cluster_defined_tags,
+            distribution_algorithm=autonomous_vm_cluster_distribution_algorithm,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1236,6 +1303,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             memory_per_oracle_compute_unit_in_gbs=int(autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
             scan_listener_port_non_tls=int(autonomous_vm_cluster_scan_listener_port_non_tls),
             scan_listener_port_tls=int(autonomous_vm_cluster_scan_listener_port_tls),
+            sga_percentage=autonomous_vm_cluster_sga_percentage,
             time_zone=autonomous_vm_cluster_time_zone,
             total_container_databases=int(autonomous_vm_cluster_total_container_databases))
         ```
@@ -1258,16 +1326,18 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        :param pulumi.Input[_builtins.str] distribution_algorithm: (Updatable) The distribution algorithm used for the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-        :param pulumi.Input[_builtins.bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousVmClusterMaintenanceWindowDetailArgs', 'AutonomousVmClusterMaintenanceWindowDetailArgsDict']]]] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
-        :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
-        :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
+        :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
+        :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
                
@@ -1305,6 +1375,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             cpu_core_count_per_node=int(autonomous_vm_cluster_cpu_core_count_per_node),
             db_servers=autonomous_vm_cluster_db_servers,
             defined_tags=autonomous_vm_cluster_defined_tags,
+            distribution_algorithm=autonomous_vm_cluster_distribution_algorithm,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1327,6 +1398,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             memory_per_oracle_compute_unit_in_gbs=int(autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
             scan_listener_port_non_tls=int(autonomous_vm_cluster_scan_listener_port_non_tls),
             scan_listener_port_tls=int(autonomous_vm_cluster_scan_listener_port_tls),
+            sga_percentage=autonomous_vm_cluster_sga_percentage,
             time_zone=autonomous_vm_cluster_time_zone,
             total_container_databases=int(autonomous_vm_cluster_total_container_databases))
         ```
@@ -1362,6 +1434,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1371,6 +1444,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
                  memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_non_tls: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+                 sga_percentage: pulumi.Input[Optional[_builtins.float]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  total_container_databases: pulumi.Input[Optional[_builtins.int]] = None,
                  vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1394,6 +1468,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["distribution_algorithm"] = distribution_algorithm
             if exadata_infrastructure_id is None and not opts.urn:
                 raise TypeError("Missing required property 'exadata_infrastructure_id'")
             __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
@@ -1405,6 +1480,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
             __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
             __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
+            __props__.__dict__["sga_percentage"] = sga_percentage
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["total_container_databases"] = total_container_databases
             if vm_cluster_network_id is None and not opts.urn:
@@ -1471,6 +1547,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            distribution_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
             exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
             exadata_storage_in_tbs_lowest_scaled_value: pulumi.Input[Optional[_builtins.float]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1496,6 +1573,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             reserved_cpus: pulumi.Input[Optional[_builtins.float]] = None,
             scan_listener_port_non_tls: pulumi.Input[Optional[_builtins.int]] = None,
             scan_listener_port_tls: pulumi.Input[Optional[_builtins.int]] = None,
+            sga_percentage: pulumi.Input[Optional[_builtins.float]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1526,11 +1604,12 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+        :param pulumi.Input[_builtins.str] distribution_algorithm: (Updatable) The distribution algorithm used for the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param pulumi.Input[_builtins.float] exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage(in TBs) can be scaled down.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-        :param pulumi.Input[_builtins.bool] is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        :param pulumi.Input[_builtins.bool] is_mtls_enabled: (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -1550,14 +1629,15 @@ class AutonomousVmCluster(pulumi.CustomResource):
                * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
                * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
-        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
-        :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
+        :param pulumi.Input[_builtins.int] scan_listener_port_tls: (Updatable) The SCAN Listener TLS port number. Default value is 2484.
+        :param pulumi.Input[_builtins.float] sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[_builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[_builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
-        :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.str] time_zone: (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
         :param pulumi.Input[_builtins.str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
                
@@ -1587,6 +1667,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["db_servers"] = db_servers
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["distribution_algorithm"] = distribution_algorithm
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
         __props__.__dict__["exadata_storage_in_tbs_lowest_scaled_value"] = exadata_storage_in_tbs_lowest_scaled_value
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -1612,6 +1693,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["reserved_cpus"] = reserved_cpus
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
+        __props__.__dict__["sga_percentage"] = sga_percentage
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -1756,6 +1838,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
+
+    @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1791,7 +1881,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="isMtlsEnabled")
     def is_mtls_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         """
         return pulumi.get(self, "is_mtls_enabled")
 
@@ -1942,7 +2032,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="scanListenerPortNonTls")
     def scan_listener_port_non_tls(self) -> pulumi.Output[_builtins.int]:
         """
-        The SCAN Listener Non TLS port number. Default value is 1521.
+        (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
         """
         return pulumi.get(self, "scan_listener_port_non_tls")
 
@@ -1950,9 +2040,17 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="scanListenerPortTls")
     def scan_listener_port_tls(self) -> pulumi.Output[_builtins.int]:
         """
-        The SCAN Listener TLS port number. Default value is 2484.
+        (Updatable) The SCAN Listener TLS port number. Default value is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tls")
+
+    @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> pulumi.Output[_builtins.float]:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
 
     @_builtins.property
     @pulumi.getter
@@ -1998,7 +2096,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Output[_builtins.str]:
         """
-        The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 

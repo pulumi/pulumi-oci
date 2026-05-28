@@ -525,6 +525,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "shape": instance_configuration_instance_details_launch_details_shape,
                     "shape_config": {
                         "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
+                        "local_volume_size_in_gbs": int(instance_configuration_instance_details_launch_details_shape_config_local_volume_size_in_gbs),
                         "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
                         "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
                         "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
@@ -687,6 +688,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "shape": instance_configuration_instance_details_options_launch_details_shape,
                         "shape_config": {
                             "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
+                            "local_volume_size_in_gbs": int(instance_configuration_instance_details_options_launch_details_shape_config_local_volume_size_in_gbs),
                             "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
                             "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
                             "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
@@ -980,6 +982,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     "shape": instance_configuration_instance_details_launch_details_shape,
                     "shape_config": {
                         "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
+                        "local_volume_size_in_gbs": int(instance_configuration_instance_details_launch_details_shape_config_local_volume_size_in_gbs),
                         "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
                         "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
                         "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
@@ -1142,6 +1145,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         "shape": instance_configuration_instance_details_options_launch_details_shape,
                         "shape_config": {
                             "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
+                            "local_volume_size_in_gbs": int(instance_configuration_instance_details_options_launch_details_shape_config_local_volume_size_in_gbs),
                             "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
                             "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
                             "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,

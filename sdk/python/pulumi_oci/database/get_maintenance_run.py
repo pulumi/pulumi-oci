@@ -27,7 +27,7 @@ class GetMaintenanceRunResult:
     """
     A collection of values returned by getMaintenanceRun.
     """
-    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, is_maintenance_run_granular=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, peer_maintenance_run_ids=None, state=None, system_tags=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None, total_time_taken_in_mins=None):
+    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, is_maintenance_run_granular=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, peer_maintenance_run_ids=None, reference_resource_id_for_image_updates=None, state=None, system_tags=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None, total_time_taken_in_mins=None, window_type_descriptions=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -106,6 +106,9 @@ class GetMaintenanceRunResult:
         if peer_maintenance_run_ids and not isinstance(peer_maintenance_run_ids, list):
             raise TypeError("Expected argument 'peer_maintenance_run_ids' to be a list")
         pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
+        if reference_resource_id_for_image_updates and not isinstance(reference_resource_id_for_image_updates, str):
+            raise TypeError("Expected argument 'reference_resource_id_for_image_updates' to be a str")
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -136,6 +139,9 @@ class GetMaintenanceRunResult:
         if total_time_taken_in_mins and not isinstance(total_time_taken_in_mins, int):
             raise TypeError("Expected argument 'total_time_taken_in_mins' to be a int")
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        if window_type_descriptions and not isinstance(window_type_descriptions, list):
+            raise TypeError("Expected argument 'window_type_descriptions' to be a list")
+        pulumi.set(__self__, "window_type_descriptions", window_type_descriptions)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -340,6 +346,14 @@ class GetMaintenanceRunResult:
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -419,6 +433,14 @@ class GetMaintenanceRunResult:
         """
         return pulumi.get(self, "total_time_taken_in_mins")
 
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> Sequence['outputs.GetMaintenanceRunWindowTypeDescriptionResult']:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
+
 
 class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
     # pylint: disable=using-constant-test
@@ -452,6 +474,7 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             patching_status=self.patching_status,
             peer_maintenance_run_id=self.peer_maintenance_run_id,
             peer_maintenance_run_ids=self.peer_maintenance_run_ids,
+            reference_resource_id_for_image_updates=self.reference_resource_id_for_image_updates,
             state=self.state,
             system_tags=self.system_tags,
             target_db_server_version=self.target_db_server_version,
@@ -461,7 +484,8 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             time_ended=self.time_ended,
             time_scheduled=self.time_scheduled,
             time_started=self.time_started,
-            total_time_taken_in_mins=self.total_time_taken_in_mins)
+            total_time_taken_in_mins=self.total_time_taken_in_mins,
+            window_type_descriptions=self.window_type_descriptions)
 
 
 def get_maintenance_run(maintenance_run_id: Optional[_builtins.str] = None,
@@ -515,6 +539,7 @@ def get_maintenance_run(maintenance_run_id: Optional[_builtins.str] = None,
         patching_status=pulumi.get(__ret__, 'patching_status'),
         peer_maintenance_run_id=pulumi.get(__ret__, 'peer_maintenance_run_id'),
         peer_maintenance_run_ids=pulumi.get(__ret__, 'peer_maintenance_run_ids'),
+        reference_resource_id_for_image_updates=pulumi.get(__ret__, 'reference_resource_id_for_image_updates'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_db_server_version=pulumi.get(__ret__, 'target_db_server_version'),
@@ -524,7 +549,8 @@ def get_maintenance_run(maintenance_run_id: Optional[_builtins.str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'),
         time_started=pulumi.get(__ret__, 'time_started'),
-        total_time_taken_in_mins=pulumi.get(__ret__, 'total_time_taken_in_mins'))
+        total_time_taken_in_mins=pulumi.get(__ret__, 'total_time_taken_in_mins'),
+        window_type_descriptions=pulumi.get(__ret__, 'window_type_descriptions'))
 def get_maintenance_run_output(maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceRunResult]:
     """
@@ -575,6 +601,7 @@ def get_maintenance_run_output(maintenance_run_id: pulumi.Input[Optional[_builti
         patching_status=pulumi.get(__response__, 'patching_status'),
         peer_maintenance_run_id=pulumi.get(__response__, 'peer_maintenance_run_id'),
         peer_maintenance_run_ids=pulumi.get(__response__, 'peer_maintenance_run_ids'),
+        reference_resource_id_for_image_updates=pulumi.get(__response__, 'reference_resource_id_for_image_updates'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_db_server_version=pulumi.get(__response__, 'target_db_server_version'),
@@ -584,4 +611,5 @@ def get_maintenance_run_output(maintenance_run_id: pulumi.Input[Optional[_builti
         time_ended=pulumi.get(__response__, 'time_ended'),
         time_scheduled=pulumi.get(__response__, 'time_scheduled'),
         time_started=pulumi.get(__response__, 'time_started'),
-        total_time_taken_in_mins=pulumi.get(__response__, 'total_time_taken_in_mins')))
+        total_time_taken_in_mins=pulumi.get(__response__, 'total_time_taken_in_mins'),
+        window_type_descriptions=pulumi.get(__response__, 'window_type_descriptions')))

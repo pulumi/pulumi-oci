@@ -219,7 +219,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly dbName: pulumi.Output<string>;
     /**
-     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     declare public readonly dbSplitThreshold: pulumi.Output<number>;
     /**
@@ -239,7 +239,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     declare public readonly distributionAffinity: pulumi.Output<string>;
     /**
@@ -336,7 +336,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
-     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
     declare public readonly netServicesArchitecture: pulumi.Output<string>;
     /**
@@ -469,7 +469,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     declare public readonly versionPreference: pulumi.Output<string>;
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      */
     declare public readonly vmFailoverReservation: pulumi.Output<number>;
 
@@ -729,7 +729,7 @@ export interface AutonomousContainerDatabaseState {
      */
     dbName?: pulumi.Input<string | undefined>;
     /**
-     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number | undefined>;
     /**
@@ -749,7 +749,7 @@ export interface AutonomousContainerDatabaseState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string | undefined>;
     /**
@@ -846,7 +846,7 @@ export interface AutonomousContainerDatabaseState {
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
-     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
     netServicesArchitecture?: pulumi.Input<string | undefined>;
     /**
@@ -979,7 +979,7 @@ export interface AutonomousContainerDatabaseState {
      */
     versionPreference?: pulumi.Input<string | undefined>;
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      */
     vmFailoverReservation?: pulumi.Input<number | undefined>;
 }
@@ -1025,7 +1025,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     dbName?: pulumi.Input<string | undefined>;
     /**
-     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * (Updatable) The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number | undefined>;
     /**
@@ -1045,7 +1045,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * (Updatable) Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string | undefined>;
     /**
@@ -1086,7 +1086,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowDetails | undefined>;
     /**
-     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * (Updatable) Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
     netServicesArchitecture?: pulumi.Input<string | undefined>;
     /**
@@ -1163,7 +1163,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     versionPreference?: pulumi.Input<string | undefined>;
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      */
     vmFailoverReservation?: pulumi.Input<number | undefined>;
 }

@@ -41,6 +41,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         {
     ///             ConnectionId = testConnection.Id,
     ///         },
+    ///         CpuCoreCount = pipelineCpuCoreCount,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -50,6 +51,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsAutoScalingEnabled = pipelineIsAutoScalingEnabled,
     ///         Locks = new[]
     ///         {
     ///             new Oci.GoldenGate.Inputs.PipelineLockArgs
@@ -66,6 +68,12 @@ namespace Pulumi.Oci.GoldenGate
     ///             {
     ///                 IsInitialLoad = pipelineProcessOptionsInitialDataLoadIsInitialLoad,
     ///                 ActionOnExistingTable = pipelineProcessOptionsInitialDataLoadActionOnExistingTable,
+    ///                 AdbWalletPath = pipelineProcessOptionsInitialDataLoadAdbWalletPath,
+    ///                 Bucket = pipelineProcessOptionsInitialDataLoadBucket,
+    ///                 InitialLoadType = pipelineProcessOptionsInitialDataLoadInitialLoadType,
+    ///                 Namespace = pipelineProcessOptionsInitialDataLoadNamespace,
+    ///                 SourceWalletPath = pipelineProcessOptionsInitialDataLoadSourceWalletPath,
+    ///                 TargetWalletPath = pipelineProcessOptionsInitialDataLoadTargetWalletPath,
     ///             },
     ///             ReplicateSchemaChange = new Oci.GoldenGate.Inputs.PipelineProcessOptionsReplicateSchemaChangeArgs
     ///             {
@@ -100,7 +108,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The Minimum number of OCPUs to be made available for this Deployment.
+        /// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
@@ -136,7 +144,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<Outputs.PipelineIngressIp>> IngressIps { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
         [Output("isAutoScalingEnabled")]
         public Output<bool> IsAutoScalingEnabled { get; private set; } = null!;
@@ -289,6 +297,12 @@ namespace Pulumi.Oci.GoldenGate
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
+        /// </summary>
+        [Input("cpuCoreCount")]
+        public Input<int>? CpuCoreCount { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -324,6 +338,12 @@ namespace Pulumi.Oci.GoldenGate
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        /// </summary>
+        [Input("isAutoScalingEnabled")]
+        public Input<bool>? IsAutoScalingEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to a Deployment.
@@ -388,7 +408,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The Minimum number of OCPUs to be made available for this Deployment.
+        /// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -442,7 +462,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
         [Input("isAutoScalingEnabled")]
         public Input<bool>? IsAutoScalingEnabled { get; set; }

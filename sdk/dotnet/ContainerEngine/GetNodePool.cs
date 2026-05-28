@@ -212,6 +212,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolNodeResult> Nodes;
         /// <summary>
+        /// Details for node's primary VNIC
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolPrimaryVnicResult> PrimaryVnics;
+        /// <summary>
         /// The number of nodes in each subnet.
         /// </summary>
         public readonly int QuantityPerSubnet;
@@ -278,6 +282,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetNodePoolNodeResult> nodes,
 
+            ImmutableArray<Outputs.GetNodePoolPrimaryVnicResult> primaryVnics,
+
             int quantityPerSubnet,
 
             ImmutableArray<Outputs.GetNodePoolSecondaryVnicResult> secondaryVnics,
@@ -310,6 +316,7 @@ namespace Pulumi.Oci.ContainerEngine
             NodeSourceDetails = nodeSourceDetails;
             NodeSources = nodeSources;
             Nodes = nodes;
+            PrimaryVnics = primaryVnics;
             QuantityPerSubnet = quantityPerSubnet;
             SecondaryVnics = secondaryVnics;
             SshPublicKey = sshPublicKey;

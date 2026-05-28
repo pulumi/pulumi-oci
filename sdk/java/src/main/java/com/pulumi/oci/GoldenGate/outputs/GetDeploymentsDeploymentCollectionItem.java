@@ -38,7 +38,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private Integer byolCpuCoreCountLimit;
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     private String category;
@@ -92,6 +92,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String description;
+    /**
+     * @return Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    private String disasterRecoveryStatus;
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
@@ -331,7 +336,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.byolCpuCoreCountLimit;
     }
     /**
-     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39;, &#39;DATA_TRANSFORMS&#39; and &#39;DATA_VERIFICATION&#39;.
      * 
      */
     public String category() {
@@ -406,6 +411,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    public String disasterRecoveryStatus() {
+        return this.disasterRecoveryStatus;
     }
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
@@ -732,6 +744,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String deploymentType;
         private String deploymentUrl;
         private String description;
+        private String disasterRecoveryStatus;
         private String displayName;
         private String environmentType;
         private String faultDomain;
@@ -792,6 +805,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.deploymentType = defaults.deploymentType;
     	      this.deploymentUrl = defaults.deploymentUrl;
     	      this.description = defaults.description;
+    	      this.disasterRecoveryStatus = defaults.disasterRecoveryStatus;
     	      this.displayName = defaults.displayName;
     	      this.environmentType = defaults.environmentType;
     	      this.faultDomain = defaults.faultDomain;
@@ -953,6 +967,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder disasterRecoveryStatus(String disasterRecoveryStatus) {
+            if (disasterRecoveryStatus == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "disasterRecoveryStatus");
+            }
+            this.disasterRecoveryStatus = disasterRecoveryStatus;
             return this;
         }
         @CustomType.Setter
@@ -1336,6 +1358,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.deploymentType = deploymentType;
             _resultValue.deploymentUrl = deploymentUrl;
             _resultValue.description = description;
+            _resultValue.disasterRecoveryStatus = disasterRecoveryStatus;
             _resultValue.displayName = displayName;
             _resultValue.environmentType = environmentType;
             _resultValue.faultDomain = faultDomain;

@@ -14,11 +14,15 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult
     {
         /// <summary>
+        /// An Azure/GCP/AWS cidrBlocks
+        /// </summary>
+        public readonly ImmutableArray<object> CidrBlocks;
+        /// <summary>
         /// The CPG ID in which Network Anchor will be created.
         /// </summary>
         public readonly string ClusterPlacementGroupId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
         [OutputConstructor]
         private GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(
+            ImmutableArray<object> cidrBlocks,
+
             string clusterPlacementGroupId,
 
             string compartmentId,
@@ -130,6 +136,7 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string vcnName)
         {
+            CidrBlocks = cidrBlocks;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             CspAdditionalProperties = cspAdditionalProperties;

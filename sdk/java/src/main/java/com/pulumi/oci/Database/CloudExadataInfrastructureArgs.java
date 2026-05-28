@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
+import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -157,6 +158,25 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    @Import(name="maintenanceVersionPreferences")
+    private @Nullable Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs> maintenanceVersionPreferences;
+
+    /**
+     * @return (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    public Optional<Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs>> maintenanceVersionPreferences() {
+        return Optional.ofNullable(this.maintenanceVersionPreferences);
+    }
+
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -249,6 +269,7 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.maintenanceVersionPreferences = $.maintenanceVersionPreferences;
         this.maintenanceWindow = $.maintenanceWindow;
         this.shape = $.shape;
         this.storageCount = $.storageCount;
@@ -471,6 +492,31 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param maintenanceVersionPreferences (Updatable) The preferences for target versions of future maintenance runs.
+         * 
+         * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceVersionPreferences(@Nullable Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs> maintenanceVersionPreferences) {
+            $.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            return this;
+        }
+
+        /**
+         * @param maintenanceVersionPreferences (Updatable) The preferences for target versions of future maintenance runs.
+         * 
+         * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceVersionPreferences(CloudExadataInfrastructureMaintenanceVersionPreferencesArgs maintenanceVersionPreferences) {
+            return maintenanceVersionPreferences(Output.of(maintenanceVersionPreferences));
         }
 
         /**

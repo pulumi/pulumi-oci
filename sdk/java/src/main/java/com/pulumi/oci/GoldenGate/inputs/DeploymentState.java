@@ -238,6 +238,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    @Import(name="disasterRecoveryStatus")
+    private @Nullable Output<String> disasterRecoveryStatus;
+
+    /**
+     * @return Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+     * 
+     */
+    public Optional<Output<String>> disasterRecoveryStatus() {
+        return Optional.ofNullable(this.disasterRecoveryStatus);
+    }
+
+    /**
      * (Updatable) An object&#39;s Display Name.
      * 
      */
@@ -912,6 +927,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.deploymentType = $.deploymentType;
         this.deploymentUrl = $.deploymentUrl;
         this.description = $.description;
+        this.disasterRecoveryStatus = $.disasterRecoveryStatus;
         this.displayName = $.displayName;
         this.environmentType = $.environmentType;
         this.faultDomain = $.faultDomain;
@@ -1276,6 +1292,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param disasterRecoveryStatus Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disasterRecoveryStatus(@Nullable Output<String> disasterRecoveryStatus) {
+            $.disasterRecoveryStatus = disasterRecoveryStatus;
+            return this;
+        }
+
+        /**
+         * @param disasterRecoveryStatus Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disasterRecoveryStatus(String disasterRecoveryStatus) {
+            return disasterRecoveryStatus(Output.of(disasterRecoveryStatus));
         }
 
         /**

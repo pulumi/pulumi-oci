@@ -222,6 +222,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> PeerMaintenanceRunIds;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        /// </summary>
+        public readonly string ReferenceResourceIdForImageUpdates;
+        /// <summary>
         /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string State;
@@ -261,6 +265,10 @@ namespace Pulumi.Oci.Database
         /// The total time taken by corresponding resource activity in minutes.
         /// </summary>
         public readonly int TotalTimeTakenInMins;
+        /// <summary>
+        /// A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMaintenanceRunWindowTypeDescriptionResult> WindowTypeDescriptions;
 
         [OutputConstructor]
         private GetMaintenanceRunResult(
@@ -316,6 +324,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> peerMaintenanceRunIds,
 
+            string referenceResourceIdForImageUpdates,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -334,7 +344,9 @@ namespace Pulumi.Oci.Database
 
             string timeStarted,
 
-            int totalTimeTakenInMins)
+            int totalTimeTakenInMins,
+
+            ImmutableArray<Outputs.GetMaintenanceRunWindowTypeDescriptionResult> windowTypeDescriptions)
         {
             CompartmentId = compartmentId;
             CurrentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
@@ -362,6 +374,7 @@ namespace Pulumi.Oci.Database
             PatchingStatus = patchingStatus;
             PeerMaintenanceRunId = peerMaintenanceRunId;
             PeerMaintenanceRunIds = peerMaintenanceRunIds;
+            ReferenceResourceIdForImageUpdates = referenceResourceIdForImageUpdates;
             State = state;
             SystemTags = systemTags;
             TargetDbServerVersion = targetDbServerVersion;
@@ -372,6 +385,7 @@ namespace Pulumi.Oci.Database
             TimeScheduled = timeScheduled;
             TimeStarted = timeStarted;
             TotalTimeTakenInMins = totalTimeTakenInMins;
+            WindowTypeDescriptions = windowTypeDescriptions;
         }
     }
 }

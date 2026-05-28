@@ -64,7 +64,7 @@ type LookupDeploymentResult struct {
 	BackupSchedules []GetDeploymentBackupSchedule `pulumi:"backupSchedules"`
 	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit int `pulumi:"byolCpuCoreCountLimit"`
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category string `pulumi:"category"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
@@ -87,6 +87,8 @@ type LookupDeploymentResult struct {
 	DeploymentUrl string `pulumi:"deploymentUrl"`
 	// Metadata about this specific object.
 	Description string `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus string `pulumi:"disasterRecoveryStatus"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
@@ -225,7 +227,7 @@ func (o LookupDeploymentResultOutput) ByolCpuCoreCountLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) int { return v.ByolCpuCoreCountLimit }).(pulumi.IntOutput)
 }
 
-// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 func (o LookupDeploymentResultOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -284,6 +286,11 @@ func (o LookupDeploymentResultOutput) DeploymentUrl() pulumi.StringOutput {
 // Metadata about this specific object.
 func (o LookupDeploymentResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+func (o LookupDeploymentResultOutput) DisasterRecoveryStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DisasterRecoveryStatus }).(pulumi.StringOutput)
 }
 
 // An object's Display Name.

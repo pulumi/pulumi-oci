@@ -199,6 +199,7 @@ import (
 //						Shape:                      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShape),
 //						ShapeConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs{
 //							BaselineOcpuUtilization: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization),
+//							LocalVolumeSizeInGbs:    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
 //							MemoryInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs),
 //							Nvmes:                   pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes),
 //							Ocpus:                   pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus),
@@ -370,6 +371,7 @@ import (
 //								Shape:                      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShape),
 //								ShapeConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs{
 //									BaselineOcpuUtilization: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization),
+//									LocalVolumeSizeInGbs:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
 //									MemoryInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs),
 //									Nvmes:                   pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes),
 //									Ocpus:                   pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus),

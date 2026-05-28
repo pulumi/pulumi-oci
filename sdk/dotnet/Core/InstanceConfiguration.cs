@@ -227,6 +227,7 @@ namespace Pulumi.Oci.Core
     ///                 ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs
     ///                 {
     ///                     BaselineOcpuUtilization = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+    ///                     LocalVolumeSizeInGbs = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigLocalVolumeSizeInGbs,
     ///                     MemoryInGbs = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs,
     ///                     Nvmes = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes,
     ///                     Ocpus = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus,
@@ -431,6 +432,7 @@ namespace Pulumi.Oci.Core
     ///                         ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs
     ///                         {
     ///                             BaselineOcpuUtilization = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+    ///                             LocalVolumeSizeInGbs = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigLocalVolumeSizeInGbs,
     ///                             MemoryInGbs = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs,
     ///                             Nvmes = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes,
     ///                             Ocpus = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus,

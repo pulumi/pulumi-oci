@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,6 +21,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      * 
      */
     private @Nullable List<String> cmds;
+    /**
+     * @return (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     * 
+     */
+    private @Nullable List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint> customHttpEndpoints;
     /**
      * @return Service injected Environment variables set for the web server container and can not be set or modified by user.
      * 
@@ -61,6 +67,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     private @Nullable String imageSignatureId;
     /**
+     * @return (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     * 
+     */
+    private @Nullable String predictApiSpecification;
+    /**
      * @return (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -73,6 +84,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     public List<String> cmds() {
         return this.cmds == null ? List.of() : this.cmds;
+    }
+    /**
+     * @return (Updatable) List of custom inference HTTP endpoints configured on the model deployment instance for inferencing.
+     * 
+     */
+    public List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint> customHttpEndpoints() {
+        return this.customHttpEndpoints == null ? List.of() : this.customHttpEndpoints;
     }
     /**
      * @return Service injected Environment variables set for the web server container and can not be set or modified by user.
@@ -131,6 +149,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         return Optional.ofNullable(this.imageSignatureId);
     }
     /**
+     * @return (Updatable) The chosen specification from predefined set of endpoints a user can access.  For example, if the value is &#39;openai&#39;, the user can access OpenAI-compliant endpoints  like /v1/completions, /v1/chat/completions, /v1/models, etc., for inference.
+     * 
+     */
+    public Optional<String> predictApiSpecification() {
+        return Optional.ofNullable(this.predictApiSpecification);
+    }
+    /**
      * @return (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
      */
@@ -148,6 +173,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> cmds;
+        private @Nullable List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint> customHttpEndpoints;
         private @Nullable Map<String,String> defaultEnvironmentVariables;
         private @Nullable List<String> entrypoints;
         private String environmentConfigurationType;
@@ -156,11 +182,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         private @Nullable String image;
         private @Nullable String imageDigest;
         private @Nullable String imageSignatureId;
+        private @Nullable String predictApiSpecification;
         private @Nullable Integer serverPort;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cmds = defaults.cmds;
+    	      this.customHttpEndpoints = defaults.customHttpEndpoints;
     	      this.defaultEnvironmentVariables = defaults.defaultEnvironmentVariables;
     	      this.entrypoints = defaults.entrypoints;
     	      this.environmentConfigurationType = defaults.environmentConfigurationType;
@@ -169,6 +197,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     	      this.image = defaults.image;
     	      this.imageDigest = defaults.imageDigest;
     	      this.imageSignatureId = defaults.imageSignatureId;
+    	      this.predictApiSpecification = defaults.predictApiSpecification;
     	      this.serverPort = defaults.serverPort;
         }
 
@@ -180,6 +209,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
         public Builder cmds(String... cmds) {
             return cmds(List.of(cmds));
+        }
+        @CustomType.Setter
+        public Builder customHttpEndpoints(@Nullable List<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint> customHttpEndpoints) {
+
+            this.customHttpEndpoints = customHttpEndpoints;
+            return this;
+        }
+        public Builder customHttpEndpoints(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsCustomHttpEndpoint... customHttpEndpoints) {
+            return customHttpEndpoints(List.of(customHttpEndpoints));
         }
         @CustomType.Setter
         public Builder defaultEnvironmentVariables(@Nullable Map<String,String> defaultEnvironmentVariables) {
@@ -235,6 +273,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
             return this;
         }
         @CustomType.Setter
+        public Builder predictApiSpecification(@Nullable String predictApiSpecification) {
+
+            this.predictApiSpecification = predictApiSpecification;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serverPort(@Nullable Integer serverPort) {
 
             this.serverPort = serverPort;
@@ -243,6 +287,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         public ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails();
             _resultValue.cmds = cmds;
+            _resultValue.customHttpEndpoints = customHttpEndpoints;
             _resultValue.defaultEnvironmentVariables = defaultEnvironmentVariables;
             _resultValue.entrypoints = entrypoints;
             _resultValue.environmentConfigurationType = environmentConfigurationType;
@@ -251,6 +296,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
             _resultValue.image = image;
             _resultValue.imageDigest = imageDigest;
             _resultValue.imageSignatureId = imageSignatureId;
+            _resultValue.predictApiSpecification = predictApiSpecification;
             _resultValue.serverPort = serverPort;
             return _resultValue;
         }

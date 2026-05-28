@@ -33,6 +33,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The list of autoscaling policy rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> Rules;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicyResult> ScaleInPolicies;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicyResult> ScaleOutPolicies;
 
         [OutputConstructor]
         private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult(
@@ -44,13 +46,19 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             int minimumInstanceCount,
 
-            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> rules)
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> rules,
+
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicyResult> scaleInPolicies,
+
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicyResult> scaleOutPolicies)
         {
             AutoScalingPolicyType = autoScalingPolicyType;
             InitialInstanceCount = initialInstanceCount;
             MaximumInstanceCount = maximumInstanceCount;
             MinimumInstanceCount = minimumInstanceCount;
             Rules = rules;
+            ScaleInPolicies = scaleInPolicies;
+            ScaleOutPolicies = scaleOutPolicies;
         }
     }
 }

@@ -207,16 +207,19 @@ class _DedicatedVmHostState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  placement_constraint_details: pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']] = None,
+                 remaining_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
                  total_ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
 
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]] capacity_bins: A list of total and remaining CPU, memory, and local volume per capacity bucket.
         :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -231,10 +234,12 @@ class _DedicatedVmHostState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
         :param pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs'] placement_constraint_details: The details for providing placement constraints.
+        :param pulumi.Input[_builtins.float] remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[_builtins.str] state: The current state of the dedicated VM host.
         :param pulumi.Input[_builtins.str] time_created: The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.float] total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
@@ -262,6 +267,8 @@ class _DedicatedVmHostState:
             pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         if placement_constraint_details is not None:
             pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
+        if remaining_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         if remaining_memory_in_gbs is not None:
             pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         if remaining_ocpus is not None:
@@ -270,6 +277,8 @@ class _DedicatedVmHostState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if total_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         if total_memory_in_gbs is not None:
             pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         if total_ocpus is not None:
@@ -290,6 +299,9 @@ class _DedicatedVmHostState:
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
+        """
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        """
         return pulumi.get(self, "capacity_bins")
 
     @capacity_bins.setter
@@ -421,6 +433,18 @@ class _DedicatedVmHostState:
         pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
+
+    @remaining_local_volume_in_gbs.setter
+    def remaining_local_volume_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "remaining_local_volume_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
@@ -467,6 +491,18 @@ class _DedicatedVmHostState:
     @time_created.setter
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "total_local_volume_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -677,10 +713,12 @@ class DedicatedVmHost(pulumi.CustomResource):
             __props__.__dict__["placement_constraint_details"] = placement_constraint_details
             __props__.__dict__["capacity_bins"] = None
             __props__.__dict__["compute_bare_metal_host_id"] = None
+            __props__.__dict__["remaining_local_volume_in_gbs"] = None
             __props__.__dict__["remaining_memory_in_gbs"] = None
             __props__.__dict__["remaining_ocpus"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["total_local_volume_in_gbs"] = None
             __props__.__dict__["total_memory_in_gbs"] = None
             __props__.__dict__["total_ocpus"] = None
         super(DedicatedVmHost, __self__).__init__(
@@ -705,10 +743,12 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             placement_constraint_details: pulumi.Input[Optional[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
+            remaining_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
             total_ocpus: pulumi.Input[Optional[_builtins.float]] = None) -> 'DedicatedVmHost':
         """
@@ -719,6 +759,7 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]] capacity_bins: A list of total and remaining CPU, memory, and local volume per capacity bucket.
         :param pulumi.Input[_builtins.str] capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[_builtins.str] compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -733,10 +774,12 @@ class DedicatedVmHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_memory_encryption_enabled: Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
         :param pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']] placement_constraint_details: The details for providing placement constraints.
+        :param pulumi.Input[_builtins.float] remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param pulumi.Input[_builtins.str] state: The current state of the dedicated VM host.
         :param pulumi.Input[_builtins.str] time_created: The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.float] total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param pulumi.Input[_builtins.float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
@@ -756,10 +799,12 @@ class DedicatedVmHost(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_memory_encryption_enabled"] = is_memory_encryption_enabled
         __props__.__dict__["placement_constraint_details"] = placement_constraint_details
+        __props__.__dict__["remaining_local_volume_in_gbs"] = remaining_local_volume_in_gbs
         __props__.__dict__["remaining_memory_in_gbs"] = remaining_memory_in_gbs
         __props__.__dict__["remaining_ocpus"] = remaining_ocpus
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["total_local_volume_in_gbs"] = total_local_volume_in_gbs
         __props__.__dict__["total_memory_in_gbs"] = total_memory_in_gbs
         __props__.__dict__["total_ocpus"] = total_ocpus
         return DedicatedVmHost(resource_name, opts=opts, __props__=__props__)
@@ -775,6 +820,9 @@ class DedicatedVmHost(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> pulumi.Output[Sequence['outputs.DedicatedVmHostCapacityBin']]:
+        """
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property
@@ -862,6 +910,14 @@ class DedicatedVmHost(pulumi.CustomResource):
         return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> pulumi.Output[_builtins.float]:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> pulumi.Output[_builtins.float]:
         """
@@ -892,6 +948,14 @@ class DedicatedVmHost(pulumi.CustomResource):
         The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> pulumi.Output[_builtins.float]:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")

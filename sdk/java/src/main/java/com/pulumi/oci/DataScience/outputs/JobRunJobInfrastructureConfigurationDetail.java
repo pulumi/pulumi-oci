@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetailResourceConfiguration;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,6 +21,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      */
     private @Nullable Integer blockStorageSizeInGbs;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    private @Nullable String computeTargetId;
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -29,6 +35,11 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      * 
      */
     private @Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    private @Nullable List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
@@ -49,6 +60,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    public Optional<String> computeTargetId() {
+        return Optional.ofNullable(this.computeTargetId);
+    }
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -61,6 +79,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      */
     public List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
         return this.jobShapeConfigDetails == null ? List.of() : this.jobShapeConfigDetails;
+    }
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    public List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations() {
+        return this.resourceConfigurations == null ? List.of() : this.resourceConfigurations;
     }
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
@@ -87,16 +112,20 @@ public final class JobRunJobInfrastructureConfigurationDetail {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable String computeTargetId;
         private @Nullable String jobInfrastructureType;
         private @Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private @Nullable List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
         private @Nullable String shapeName;
         private @Nullable String subnetId;
         public Builder() {}
         public Builder(JobRunJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.computeTargetId = defaults.computeTargetId;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
     	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
+    	      this.resourceConfigurations = defaults.resourceConfigurations;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -105,6 +134,12 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
 
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeTargetId(@Nullable String computeTargetId) {
+
+            this.computeTargetId = computeTargetId;
             return this;
         }
         @CustomType.Setter
@@ -123,6 +158,15 @@ public final class JobRunJobInfrastructureConfigurationDetail {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder resourceConfigurations(@Nullable List<JobRunJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations) {
+
+            this.resourceConfigurations = resourceConfigurations;
+            return this;
+        }
+        public Builder resourceConfigurations(JobRunJobInfrastructureConfigurationDetailResourceConfiguration... resourceConfigurations) {
+            return resourceConfigurations(List.of(resourceConfigurations));
+        }
+        @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
 
             this.shapeName = shapeName;
@@ -137,8 +181,10 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         public JobRunJobInfrastructureConfigurationDetail build() {
             final var _resultValue = new JobRunJobInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.computeTargetId = computeTargetId;
             _resultValue.jobInfrastructureType = jobInfrastructureType;
             _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.resourceConfigurations = resourceConfigurations;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

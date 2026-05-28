@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition {
     /**
-     * @return An array of IP address list names to be evaluated against the traffic destination address.
+     * @return An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     private @Nullable List<String> destinationAddresses;
     /**
-     * @return An array of IP address list names to be evaluated against the traffic source address.
+     * @return An array of address list names to be evaluated against the traffic source address.
      * 
      */
     private @Nullable List<String> sourceAddresses;
 
     private GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition() {}
     /**
-     * @return An array of IP address list names to be evaluated against the traffic destination address.
+     * @return An array of address list names to be evaluated against the traffic destination address.
      * 
      */
     public List<String> destinationAddresses() {
         return this.destinationAddresses == null ? List.of() : this.destinationAddresses;
     }
     /**
-     * @return An array of IP address list names to be evaluated against the traffic source address.
+     * @return An array of address list names to be evaluated against the traffic source address.
      * 
      */
     public List<String> sourceAddresses() {

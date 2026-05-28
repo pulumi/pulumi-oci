@@ -305,6 +305,13 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         return Optional.ofNullable(this.downloadedGsmCsrPem);
     }
 
+    @Import(name="effectiveReplicationUnit")
+    private @Nullable Output<Integer> effectiveReplicationUnit;
+
+    public Optional<Output<Integer>> effectiveReplicationUnit() {
+        return Optional.ofNullable(this.effectiveReplicationUnit);
+    }
+
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -854,6 +861,7 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
         this.displayName = $.displayName;
         this.downloadGsmCertificateSigningRequestTrigger = $.downloadGsmCertificateSigningRequestTrigger;
         this.downloadedGsmCsrPem = $.downloadedGsmCsrPem;
+        this.effectiveReplicationUnit = $.effectiveReplicationUnit;
         this.freeformTags = $.freeformTags;
         this.generateGsmCertificateSigningRequestTrigger = $.generateGsmCertificateSigningRequestTrigger;
         this.generateGsmCertificateSigningRequestTriggerCaBundleId = $.generateGsmCertificateSigningRequestTriggerCaBundleId;
@@ -1318,6 +1326,15 @@ public final class DistributedDatabaseDistributedAutonomousDatabaseState extends
 
         public Builder downloadedGsmCsrPem(String downloadedGsmCsrPem) {
             return downloadedGsmCsrPem(Output.of(downloadedGsmCsrPem));
+        }
+
+        public Builder effectiveReplicationUnit(@Nullable Output<Integer> effectiveReplicationUnit) {
+            $.effectiveReplicationUnit = effectiveReplicationUnit;
+            return this;
+        }
+
+        public Builder effectiveReplicationUnit(Integer effectiveReplicationUnit) {
+            return effectiveReplicationUnit(Output.of(effectiveReplicationUnit));
         }
 
         /**

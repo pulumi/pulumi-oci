@@ -69,9 +69,21 @@ import (
 //				JobInfrastructureConfigurationOverrideDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsArgs{
 //					JobInfrastructureType: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType),
 //					BlockStorageSizeInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+//					ComputeTargetId:       pulumi.Any(testComputeTarget.Id),
 //					JobShapeConfigDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs{
 //						MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus),
+//					},
+//					ResourceConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs{
+//						ResourceLimitConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs{
+//							MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
+//							Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationOcpus),
+//						},
+//						ResourceRequestConfiguration: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs{
+//							Gpus:        pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationGpus),
+//							MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs),
+//							Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationOcpus),
+//						},
 //					},
 //					ShapeName: pulumi.Any(testShape.Name),
 //					SubnetId:  pulumi.Any(testSubnet.Id),
@@ -115,9 +127,21 @@ import (
 //							JobInfrastructureConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{
 //								JobInfrastructureType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType),
 //								BlockStorageSizeInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//								ComputeTargetId:       pulumi.Any(testComputeTarget.Id),
 //								JobShapeConfigDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
 //									MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //									Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//								},
+//								ResourceConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs{
+//									ResourceLimitConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs{
+//										MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs),
+//										Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus),
+//									},
+//									ResourceRequestConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs{
+//										Gpus:        pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+//										MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs),
+//										Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus),
+//									},
 //								},
 //								ShapeName: pulumi.Any(testShape.Name),
 //								SubnetId:  pulumi.Any(testSubnet.Id),

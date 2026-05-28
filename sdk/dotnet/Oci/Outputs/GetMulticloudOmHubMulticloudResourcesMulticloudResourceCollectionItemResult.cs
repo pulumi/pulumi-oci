@@ -18,15 +18,15 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Compartment name associated the resource.
+        /// Name of the compartment associated with the resource.
         /// </summary>
         public readonly string CompartmentName;
         /// <summary>
-        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// Properties specific to the cloud service provider. For example, AzureSubnetId for Azure.
         /// </summary>
         public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
         /// <summary>
-        /// Resource Id that comes from the Multi Cloud Control Plane
+        /// The resource Id that comes from the Multicloud control plane.
         /// </summary>
         public readonly string CspResourceId;
         /// <summary>
@@ -38,19 +38,23 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The current state of the multicloud resource.
+        /// The current state of the Multicloud resource.
         /// </summary>
         public readonly string LifecycleState;
         /// <summary>
-        /// OCID of the Network Anchor
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network anchor associated with the resource.
         /// </summary>
         public readonly string NetworkAnchorId;
         /// <summary>
-        /// Name of the network anchor associated to the resource.
+        /// Name of the network anchor associated with the resource.
         /// </summary>
         public readonly string NetworkAnchorName;
         /// <summary>
-        /// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        /// Additional attributes specific to certain resource types, used to construct a URL for accessing the resource in the Oracle Cloud Infrastructure console.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> ResourceAdditionalProperties;
+        /// <summary>
+        /// Endpoint used to retrieve the resource's display name and lifecycle state.
         /// </summary>
         public readonly string ResourceDisplayName;
         /// <summary>
@@ -58,7 +62,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string ResourceId;
         /// <summary>
-        /// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        /// Filter alerts by resource type (e.g. ADBD, VMCluster).
         /// </summary>
         public readonly string ResourceType;
         /// <summary>
@@ -74,11 +78,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Id of the Virtual Cloud Network associated to the resource.
+        /// Id of the virtual cloud network (VCN) associated with the resource.
         /// </summary>
         public readonly string VcnId;
         /// <summary>
-        /// Resource Anchor name.
+        /// Name of the virtual cloud network (VCN) associated with the resource.
         /// </summary>
         public readonly string VcnName;
 
@@ -101,6 +105,8 @@ namespace Pulumi.Oci.Oci.Outputs
             string networkAnchorId,
 
             string networkAnchorName,
+
+            ImmutableDictionary<string, string> resourceAdditionalProperties,
 
             string resourceDisplayName,
 
@@ -127,6 +133,7 @@ namespace Pulumi.Oci.Oci.Outputs
             LifecycleState = lifecycleState;
             NetworkAnchorId = networkAnchorId;
             NetworkAnchorName = networkAnchorName;
+            ResourceAdditionalProperties = resourceAdditionalProperties;
             ResourceDisplayName = resourceDisplayName;
             ResourceId = resourceId;
             ResourceType = resourceType;

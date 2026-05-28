@@ -124,6 +124,10 @@ namespace Pulumi.Oci.NetworkFirewall
         /// The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         public readonly string Secret;
+        /// <summary>
+        /// An array of mapped secrets. Its `Type` must match that of the specified decryption profile.
+        /// </summary>
+        public readonly ImmutableArray<string> Secrets;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyDecryptionRuleResult(
@@ -147,7 +151,9 @@ namespace Pulumi.Oci.NetworkFirewall
 
             string priorityOrder,
 
-            string secret)
+            string secret,
+
+            ImmutableArray<string> secrets)
         {
             Action = action;
             Conditions = conditions;
@@ -160,6 +166,7 @@ namespace Pulumi.Oci.NetworkFirewall
             Positions = positions;
             PriorityOrder = priorityOrder;
             Secret = secret;
+            Secrets = secrets;
         }
     }
 }

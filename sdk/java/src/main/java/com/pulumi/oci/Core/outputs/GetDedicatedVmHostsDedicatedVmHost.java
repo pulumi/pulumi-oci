@@ -21,6 +21,10 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     private List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins;
     /**
      * @return The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
@@ -78,6 +82,11 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      */
     private List<GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
     /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private Double remainingLocalVolumeInGbs;
+    /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -98,6 +107,11 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      */
     private String timeCreated;
     /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private Double totalLocalVolumeInGbs;
+    /**
      * @return The current total memory of the dedicated VM host, in GBs.
      * 
      */
@@ -116,6 +130,10 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
+    /**
+     * @return A list of total and remaining CPU, memory, and local volume per capacity bucket.
+     * 
+     */
     public List<GetDedicatedVmHostsDedicatedVmHostCapacityBin> capacityBins() {
         return this.capacityBins;
     }
@@ -197,6 +215,13 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
         return this.placementConstraintDetails;
     }
     /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Double remainingLocalVolumeInGbs() {
+        return this.remainingLocalVolumeInGbs;
+    }
+    /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -223,6 +248,13 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Double totalLocalVolumeInGbs() {
+        return this.totalLocalVolumeInGbs;
     }
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
@@ -261,10 +293,12 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
         private String id;
         private Boolean isMemoryEncryptionEnabled;
         private List<GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetail> placementConstraintDetails;
+        private Double remainingLocalVolumeInGbs;
         private Double remainingMemoryInGbs;
         private Double remainingOcpus;
         private String state;
         private String timeCreated;
+        private Double totalLocalVolumeInGbs;
         private Double totalMemoryInGbs;
         private Double totalOcpus;
         public Builder() {}
@@ -283,10 +317,12 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
     	      this.id = defaults.id;
     	      this.isMemoryEncryptionEnabled = defaults.isMemoryEncryptionEnabled;
     	      this.placementConstraintDetails = defaults.placementConstraintDetails;
+    	      this.remainingLocalVolumeInGbs = defaults.remainingLocalVolumeInGbs;
     	      this.remainingMemoryInGbs = defaults.remainingMemoryInGbs;
     	      this.remainingOcpus = defaults.remainingOcpus;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.totalLocalVolumeInGbs = defaults.totalLocalVolumeInGbs;
     	      this.totalMemoryInGbs = defaults.totalMemoryInGbs;
     	      this.totalOcpus = defaults.totalOcpus;
         }
@@ -402,6 +438,14 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
             return placementConstraintDetails(List.of(placementConstraintDetails));
         }
         @CustomType.Setter
+        public Builder remainingLocalVolumeInGbs(Double remainingLocalVolumeInGbs) {
+            if (remainingLocalVolumeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "remainingLocalVolumeInGbs");
+            }
+            this.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remainingMemoryInGbs(Double remainingMemoryInGbs) {
             if (remainingMemoryInGbs == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "remainingMemoryInGbs");
@@ -431,6 +475,14 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder totalLocalVolumeInGbs(Double totalLocalVolumeInGbs) {
+            if (totalLocalVolumeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHost", "totalLocalVolumeInGbs");
+            }
+            this.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -464,10 +516,12 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
             _resultValue.id = id;
             _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             _resultValue.placementConstraintDetails = placementConstraintDetails;
+            _resultValue.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
             _resultValue.remainingOcpus = remainingOcpus;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
             _resultValue.totalMemoryInGbs = totalMemoryInGbs;
             _resultValue.totalOcpus = totalOcpus;
             return _resultValue;

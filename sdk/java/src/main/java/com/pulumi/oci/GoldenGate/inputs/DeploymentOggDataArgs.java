@@ -5,7 +5,6 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataGroupToRolesMappingArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -86,18 +85,18 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
      * 
      */
-    @Import(name="deploymentName", required=true)
-    private Output<String> deploymentName;
+    @Import(name="deploymentName")
+    private @Nullable Output<String> deploymentName;
 
     /**
-     * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * @return The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
      * 
      */
-    public Output<String> deploymentName() {
-        return this.deploymentName;
+    public Optional<Output<String>> deploymentName() {
+        return Optional.ofNullable(this.deploymentName);
     }
 
     /**
@@ -146,6 +145,21 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    @Import(name="keySecretId")
+    private @Nullable Output<String> keySecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    public Optional<Output<String>> keySecretId() {
+        return Optional.ofNullable(this.keySecretId);
+    }
+
+    /**
      * Version of OGG
      * 
      */
@@ -186,6 +200,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         this.groupToRolesMapping = $.groupToRolesMapping;
         this.identityDomainId = $.identityDomainId;
         this.key = $.key;
+        this.keySecretId = $.keySecretId;
         this.oggVersion = $.oggVersion;
         this.passwordSecretId = $.passwordSecretId;
     }
@@ -301,18 +316,18 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param deploymentName The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * @param deploymentName The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
          * 
          * @return builder
          * 
          */
-        public Builder deploymentName(Output<String> deploymentName) {
+        public Builder deploymentName(@Nullable Output<String> deploymentName) {
             $.deploymentName = deploymentName;
             return this;
         }
 
         /**
-         * @param deploymentName The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * @param deploymentName The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
          * 
          * @return builder
          * 
@@ -385,6 +400,27 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param keySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keySecretId(@Nullable Output<String> keySecretId) {
+            $.keySecretId = keySecretId;
+            return this;
+        }
+
+        /**
+         * @param keySecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keySecretId(String keySecretId) {
+            return keySecretId(Output.of(keySecretId));
+        }
+
+        /**
          * @param oggVersion Version of OGG
          * 
          * @return builder
@@ -427,9 +463,6 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DeploymentOggDataArgs build() {
-            if ($.deploymentName == null) {
-                throw new MissingRequiredPropertyException("DeploymentOggDataArgs", "deploymentName");
-            }
             return $;
         }
     }

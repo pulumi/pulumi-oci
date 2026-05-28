@@ -77,6 +77,7 @@ import javax.annotation.Nullable;
  *             .endpointConfig(ClusterEndpointConfigArgs.builder()
  *                 .isPublicIpEnabled(clusterEndpointConfigIsPublicIpEnabled)
  *                 .nsgIds(clusterEndpointConfigNsgIds)
+ *                 .securityAttributes(clusterEndpointConfigSecurityAttributes)
  *                 .subnetId(testSubnet.id())
  *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))

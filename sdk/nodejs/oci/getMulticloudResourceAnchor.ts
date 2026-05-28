@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets information about a ResourceAnchor.
+ * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+ * For more information, see
+ * [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
  *
  * ## Example Usage
  *
@@ -40,11 +42,11 @@ export function getMulticloudResourceAnchor(args: GetMulticloudResourceAnchorArg
  */
 export interface GetMulticloudResourceAnchorArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     resourceAnchorId: string;
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      */
     shouldFetchCompartmentName?: boolean;
     /**
@@ -52,7 +54,7 @@ export interface GetMulticloudResourceAnchorArgs {
      */
     subscriptionId: string;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     subscriptionServiceName: string;
 }
@@ -86,15 +88,15 @@ export interface GetMulticloudResourceAnchorResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     readonly id: string;
     /**
-     * A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+     * A message that describes the current state of the resource anchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     readonly lifecycleDetails: string;
     /**
-     * The current state of the ResourceAnchor.
+     * The current state of the resource anchor.
      */
     readonly lifecycleState: string;
     /**
@@ -130,18 +132,20 @@ export interface GetMulticloudResourceAnchorResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the resource anchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the resource anchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets information about a ResourceAnchor.
+ * Gets details for the specified resource anchor. The subscription OCID and service name are required.
+ * For more information, see
+ * [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
  *
  * ## Example Usage
  *
@@ -172,11 +176,11 @@ export function getMulticloudResourceAnchorOutput(args: GetMulticloudResourceAnc
  */
 export interface GetMulticloudResourceAnchorOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
      */
     resourceAnchorId: pulumi.Input<string>;
     /**
-     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * Whether to fetch and include the compartment name. Setting this field to `true` might introduce additional latency.
      */
     shouldFetchCompartmentName?: pulumi.Input<boolean | undefined>;
     /**
@@ -184,7 +188,7 @@ export interface GetMulticloudResourceAnchorOutputArgs {
      */
     subscriptionId: pulumi.Input<string>;
     /**
-     * The subscription service name of the Cloud Service Provider.
+     * The cloud service provider.
      */
     subscriptionServiceName: pulumi.Input<string>;
 }

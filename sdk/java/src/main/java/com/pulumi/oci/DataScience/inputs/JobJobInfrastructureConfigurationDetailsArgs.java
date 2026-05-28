@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -31,6 +32,21 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
      */
     public Optional<Output<Integer>> blockStorageSizeInGbs() {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    @Import(name="computeTargetId")
+    private @Nullable Output<String> computeTargetId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    public Optional<Output<String>> computeTargetId() {
+        return Optional.ofNullable(this.computeTargetId);
     }
 
     /**
@@ -61,6 +77,21 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
      */
     public Optional<Output<JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs>> jobShapeConfigDetails() {
         return Optional.ofNullable(this.jobShapeConfigDetails);
+    }
+
+    /**
+     * (Updatable) Details for the compute target job resource configuration.
+     * 
+     */
+    @Import(name="resourceConfiguration")
+    private @Nullable Output<JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs> resourceConfiguration;
+
+    /**
+     * @return (Updatable) Details for the compute target job resource configuration.
+     * 
+     */
+    public Optional<Output<JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs>> resourceConfiguration() {
+        return Optional.ofNullable(this.resourceConfiguration);
     }
 
     /**
@@ -97,8 +128,10 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
 
     private JobJobInfrastructureConfigurationDetailsArgs(JobJobInfrastructureConfigurationDetailsArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
+        this.computeTargetId = $.computeTargetId;
         this.jobInfrastructureType = $.jobInfrastructureType;
         this.jobShapeConfigDetails = $.jobShapeConfigDetails;
+        this.resourceConfiguration = $.resourceConfiguration;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
     }
@@ -143,6 +176,27 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
         }
 
         /**
+         * @param computeTargetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeTargetId(@Nullable Output<String> computeTargetId) {
+            $.computeTargetId = computeTargetId;
+            return this;
+        }
+
+        /**
+         * @param computeTargetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeTargetId(String computeTargetId) {
+            return computeTargetId(Output.of(computeTargetId));
+        }
+
+        /**
          * @param jobInfrastructureType (Updatable) The infrastructure type used for job run.
          * 
          * @return builder
@@ -182,6 +236,27 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
          */
         public Builder jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs jobShapeConfigDetails) {
             return jobShapeConfigDetails(Output.of(jobShapeConfigDetails));
+        }
+
+        /**
+         * @param resourceConfiguration (Updatable) Details for the compute target job resource configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceConfiguration(@Nullable Output<JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs> resourceConfiguration) {
+            $.resourceConfiguration = resourceConfiguration;
+            return this;
+        }
+
+        /**
+         * @param resourceConfiguration (Updatable) Details for the compute target job resource configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceConfiguration(JobJobInfrastructureConfigurationDetailsResourceConfigurationArgs resourceConfiguration) {
+            return resourceConfiguration(Output.of(resourceConfiguration));
         }
 
         /**

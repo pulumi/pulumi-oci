@@ -105,6 +105,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The preferences for target versions of future maintenance runs.
+	MaintenanceVersionPreferences []GetCloudExadataInfrastructureMaintenanceVersionPreference `pulumi:"maintenanceVersionPreferences"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetCloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The total number of CPU cores available.
@@ -300,6 +302,13 @@ func (o LookupCloudExadataInfrastructureResultOutput) LastMaintenanceRunId() pul
 // Additional information about the current lifecycle state.
 func (o LookupCloudExadataInfrastructureResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The preferences for target versions of future maintenance runs.
+func (o LookupCloudExadataInfrastructureResultOutput) MaintenanceVersionPreferences() GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) []GetCloudExadataInfrastructureMaintenanceVersionPreference {
+		return v.MaintenanceVersionPreferences
+	}).(GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
 }
 
 // The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

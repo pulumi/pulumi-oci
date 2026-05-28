@@ -19,6 +19,11 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
      */
     private Integer capacityIndex;
     /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private Double remainingLocalVolumeInGbs;
+    /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
@@ -33,6 +38,11 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
      * 
      */
     private List<String> supportedShapes;
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    private Double totalLocalVolumeInGbs;
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
      * 
@@ -51,6 +61,13 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
      */
     public Integer capacityIndex() {
         return this.capacityIndex;
+    }
+    /**
+     * @return The current available local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Double remainingLocalVolumeInGbs() {
+        return this.remainingLocalVolumeInGbs;
     }
     /**
      * @return The current available memory of the dedicated VM host, in GBs.
@@ -72,6 +89,13 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
      */
     public List<String> supportedShapes() {
         return this.supportedShapes;
+    }
+    /**
+     * @return The current total local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Double totalLocalVolumeInGbs() {
+        return this.totalLocalVolumeInGbs;
     }
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
@@ -98,18 +122,22 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
     @CustomType.Builder
     public static final class Builder {
         private Integer capacityIndex;
+        private Double remainingLocalVolumeInGbs;
         private Double remainingMemoryInGbs;
         private Double remainingOcpus;
         private List<String> supportedShapes;
+        private Double totalLocalVolumeInGbs;
         private Double totalMemoryInGbs;
         private Double totalOcpus;
         public Builder() {}
         public Builder(GetDedicatedVmHostsDedicatedVmHostCapacityBin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacityIndex = defaults.capacityIndex;
+    	      this.remainingLocalVolumeInGbs = defaults.remainingLocalVolumeInGbs;
     	      this.remainingMemoryInGbs = defaults.remainingMemoryInGbs;
     	      this.remainingOcpus = defaults.remainingOcpus;
     	      this.supportedShapes = defaults.supportedShapes;
+    	      this.totalLocalVolumeInGbs = defaults.totalLocalVolumeInGbs;
     	      this.totalMemoryInGbs = defaults.totalMemoryInGbs;
     	      this.totalOcpus = defaults.totalOcpus;
         }
@@ -120,6 +148,14 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHostCapacityBin", "capacityIndex");
             }
             this.capacityIndex = capacityIndex;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remainingLocalVolumeInGbs(Double remainingLocalVolumeInGbs) {
+            if (remainingLocalVolumeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHostCapacityBin", "remainingLocalVolumeInGbs");
+            }
+            this.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -150,6 +186,14 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
             return supportedShapes(List.of(supportedShapes));
         }
         @CustomType.Setter
+        public Builder totalLocalVolumeInGbs(Double totalLocalVolumeInGbs) {
+            if (totalLocalVolumeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHostCapacityBin", "totalLocalVolumeInGbs");
+            }
+            this.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalMemoryInGbs(Double totalMemoryInGbs) {
             if (totalMemoryInGbs == null) {
               throw new MissingRequiredPropertyException("GetDedicatedVmHostsDedicatedVmHostCapacityBin", "totalMemoryInGbs");
@@ -168,9 +212,11 @@ public final class GetDedicatedVmHostsDedicatedVmHostCapacityBin {
         public GetDedicatedVmHostsDedicatedVmHostCapacityBin build() {
             final var _resultValue = new GetDedicatedVmHostsDedicatedVmHostCapacityBin();
             _resultValue.capacityIndex = capacityIndex;
+            _resultValue.remainingLocalVolumeInGbs = remainingLocalVolumeInGbs;
             _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
             _resultValue.remainingOcpus = remainingOcpus;
             _resultValue.supportedShapes = supportedShapes;
+            _resultValue.totalLocalVolumeInGbs = totalLocalVolumeInGbs;
             _resultValue.totalMemoryInGbs = totalMemoryInGbs;
             _resultValue.totalOcpus = totalOcpus;
             return _resultValue;

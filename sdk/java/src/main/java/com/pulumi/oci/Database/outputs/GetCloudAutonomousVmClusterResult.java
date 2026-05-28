@@ -120,6 +120,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String displayName;
     /**
+     * @return The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    private String distributionAlgorithm;
+    /**
      * @return The domain name for the cloud Autonomous VM cluster.
      * 
      */
@@ -273,6 +278,11 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Map<String,String> securityAttributes;
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    private Double sgaPercentage;
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
@@ -483,6 +493,13 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public String distributionAlgorithm() {
+        return this.distributionAlgorithm;
     }
     /**
      * @return The domain name for the cloud Autonomous VM cluster.
@@ -705,6 +722,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.securityAttributes;
     }
     /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Double sgaPercentage() {
+        return this.sgaPercentage;
+    }
+    /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
@@ -829,6 +853,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private String distributionAlgorithm;
         private String domain;
         private Double exadataStorageInTbsLowestScaledValue;
         private Map<String,String> freeformTags;
@@ -862,6 +887,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
         private Map<String,String> securityAttributes;
+        private Double sgaPercentage;
         private String shape;
         private String state;
         private String subnetId;
@@ -900,6 +926,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.distributionAlgorithm = defaults.distributionAlgorithm;
     	      this.domain = defaults.domain;
     	      this.exadataStorageInTbsLowestScaledValue = defaults.exadataStorageInTbsLowestScaledValue;
     	      this.freeformTags = defaults.freeformTags;
@@ -933,6 +960,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
     	      this.securityAttributes = defaults.securityAttributes;
+    	      this.sgaPercentage = defaults.sgaPercentage;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -1118,6 +1146,14 @@ public final class GetCloudAutonomousVmClusterResult {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder distributionAlgorithm(String distributionAlgorithm) {
+            if (distributionAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "distributionAlgorithm");
+            }
+            this.distributionAlgorithm = distributionAlgorithm;
             return this;
         }
         @CustomType.Setter
@@ -1397,6 +1433,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sgaPercentage(Double sgaPercentage) {
+            if (sgaPercentage == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "sgaPercentage");
+            }
+            this.sgaPercentage = sgaPercentage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "shape");
@@ -1531,6 +1575,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.distributionAlgorithm = distributionAlgorithm;
             _resultValue.domain = domain;
             _resultValue.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             _resultValue.freeformTags = freeformTags;
@@ -1564,6 +1609,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.scanListenerPortNonTls = scanListenerPortNonTls;
             _resultValue.scanListenerPortTls = scanListenerPortTls;
             _resultValue.securityAttributes = securityAttributes;
+            _resultValue.sgaPercentage = sgaPercentage;
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

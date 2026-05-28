@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureExascaleConfig;
+import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceVersionPreferences;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -43,6 +44,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.CloudExadataInfrastructure;
  * import com.pulumi.oci.Database.CloudExadataInfrastructureArgs;
  * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
+ * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs;
  * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
@@ -70,6 +72,9 @@ import javax.annotation.Nullable;
  *             .databaseServerType(cloudExadataInfrastructureDatabaseServerType)
  *             .definedTags(cloudExadataInfrastructureDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .maintenanceVersionPreferences(CloudExadataInfrastructureMaintenanceVersionPreferencesArgs.builder()
+ *                 .referenceResourceIdForImageUpdates(cloudExadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates)
+ *                 .build())
  *             .maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs.builder()
  *                 .customActionTimeoutInMins(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins)
  *                 .daysOfWeeks(CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
@@ -414,6 +419,24 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    @Export(name="maintenanceVersionPreferences", refs={CloudExadataInfrastructureMaintenanceVersionPreferences.class}, tree="[0]")
+    private Output<CloudExadataInfrastructureMaintenanceVersionPreferences> maintenanceVersionPreferences;
+
+    /**
+     * @return (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    public Output<CloudExadataInfrastructureMaintenanceVersionPreferences> maintenanceVersionPreferences() {
+        return this.maintenanceVersionPreferences;
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

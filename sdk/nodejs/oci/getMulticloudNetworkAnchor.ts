@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets information about a NetworkAnchor.
+ * Gets details for the specified network anchor. The subscription OCID and service name are required.
+ * For more information, see
+ * [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
  *
  * ## Example Usage
  *
@@ -42,7 +44,7 @@ export function getMulticloudNetworkAnchor(args: GetMulticloudNetworkAnchorArgs,
  */
 export interface GetMulticloudNetworkAnchorArgs {
     /**
-     * OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * The cloud service provider region.
      */
     externalLocation?: string;
     /**
@@ -54,11 +56,11 @@ export interface GetMulticloudNetworkAnchorArgs {
      */
     shouldFetchVcnName?: boolean;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
     subscriptionId: string;
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The cloud service provider.
      */
     subscriptionServiceName: string;
 }
@@ -140,7 +142,9 @@ export interface GetMulticloudNetworkAnchorResult {
 /**
  * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
  *
- * Gets information about a NetworkAnchor.
+ * Gets details for the specified network anchor. The subscription OCID and service name are required.
+ * For more information, see
+ * [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
  *
  * ## Example Usage
  *
@@ -173,7 +177,7 @@ export function getMulticloudNetworkAnchorOutput(args: GetMulticloudNetworkAncho
  */
 export interface GetMulticloudNetworkAnchorOutputArgs {
     /**
-     * OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * The cloud service provider region.
      */
     externalLocation?: pulumi.Input<string | undefined>;
     /**
@@ -185,11 +189,11 @@ export interface GetMulticloudNetworkAnchorOutputArgs {
      */
     shouldFetchVcnName?: pulumi.Input<boolean | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
     subscriptionId: pulumi.Input<string>;
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The cloud service provider.
      */
     subscriptionServiceName: pulumi.Input<string>;
 }

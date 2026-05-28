@@ -137,6 +137,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * The preferences for target versions of future maintenance runs.
+     */
+    readonly maintenanceVersionPreferences: outputs.Database.GetCloudExadataInfrastructureMaintenanceVersionPreference[];
+    /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     readonly maintenanceWindows: outputs.Database.GetCloudExadataInfrastructureMaintenanceWindow[];

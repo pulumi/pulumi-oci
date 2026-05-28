@@ -136,6 +136,10 @@ export interface GetNodePoolResult {
      */
     readonly nodes: outputs.ContainerEngine.GetNodePoolNode[];
     /**
+     * Details for node's primary VNIC
+     */
+    readonly primaryVnics: outputs.ContainerEngine.GetNodePoolPrimaryVnic[];
+    /**
      * The number of nodes in each subnet.
      */
     readonly quantityPerSubnet: number;

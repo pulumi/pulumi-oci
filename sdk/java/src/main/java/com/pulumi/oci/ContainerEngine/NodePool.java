@@ -17,6 +17,7 @@ import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodePoolCyclingDetails;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeSourceDetails;
+import com.pulumi.oci.ContainerEngine.outputs.NodePoolPrimaryVnic;
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolSecondaryVnic;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -52,6 +53,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodePoolCyclingDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolPrimaryVnicArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.NodePoolSecondaryVnicCreateVnicDetailsArgs;
  * import java.util.ArrayList;
@@ -128,6 +130,9 @@ import javax.annotation.Nullable;
  *                 .sourceType(nodePoolNodeSourceDetailsSourceType)
  *                 .bootVolumeSizeInGbs(nodePoolNodeSourceDetailsBootVolumeSizeInGbs)
  *                 .build())
+ *             .primaryVnic(NodePoolPrimaryVnicArgs.builder()
+ *                 .securityAttributes(nodePoolPrimaryVnicSecurityAttributes)
+ *                 .build())
  *             .quantityPerSubnet(nodePoolQuantityPerSubnet)
  *             .secondaryVnics(NodePoolSecondaryVnicArgs.builder()
  *                 .createVnicDetails(NodePoolSecondaryVnicCreateVnicDetailsArgs.builder()
@@ -144,6 +149,7 @@ import javax.annotation.Nullable;
  *                         .ipv6subnetCidr(nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr)
  *                         .build())
  *                     .nsgIds(nodePoolSecondaryVnicsCreateVnicDetailsNsgIds)
+ *                     .securityAttributes(nodePoolSecondaryVnicsCreateVnicDetailsSecurityAttributes)
  *                     .skipSourceDestCheck(nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck)
  *                     .build())
  *                 .displayName(nodePoolSecondaryVnicsDisplayName)
@@ -456,6 +462,20 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<List<NodePoolNode>> nodes() {
         return this.nodes;
+    }
+    /**
+     * (Updatable) Details for node&#39;s primary VNIC
+     * 
+     */
+    @Export(name="primaryVnic", refs={NodePoolPrimaryVnic.class}, tree="[0]")
+    private Output<NodePoolPrimaryVnic> primaryVnic;
+
+    /**
+     * @return (Updatable) Details for node&#39;s primary VNIC
+     * 
+     */
+    public Output<NodePoolPrimaryVnic> primaryVnic() {
+        return this.primaryVnic;
     }
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.

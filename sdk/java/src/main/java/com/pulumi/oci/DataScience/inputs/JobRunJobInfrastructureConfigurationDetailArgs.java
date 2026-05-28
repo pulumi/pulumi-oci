@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -31,6 +32,21 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
      */
     public Optional<Output<Integer>> blockStorageSizeInGbs() {
         return Optional.ofNullable(this.blockStorageSizeInGbs);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    @Import(name="computeTargetId")
+    private @Nullable Output<String> computeTargetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    public Optional<Output<String>> computeTargetId() {
+        return Optional.ofNullable(this.computeTargetId);
     }
 
     /**
@@ -61,6 +77,21 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
      */
     public Optional<Output<List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs>>> jobShapeConfigDetails() {
         return Optional.ofNullable(this.jobShapeConfigDetails);
+    }
+
+    /**
+     * Details for the compute target job resource configuration.
+     * 
+     */
+    @Import(name="resourceConfigurations")
+    private @Nullable Output<List<JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs>> resourceConfigurations;
+
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    public Optional<Output<List<JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs>>> resourceConfigurations() {
+        return Optional.ofNullable(this.resourceConfigurations);
     }
 
     /**
@@ -97,8 +128,10 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
 
     private JobRunJobInfrastructureConfigurationDetailArgs(JobRunJobInfrastructureConfigurationDetailArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
+        this.computeTargetId = $.computeTargetId;
         this.jobInfrastructureType = $.jobInfrastructureType;
         this.jobShapeConfigDetails = $.jobShapeConfigDetails;
+        this.resourceConfigurations = $.resourceConfigurations;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
     }
@@ -140,6 +173,27 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
          */
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
             return blockStorageSizeInGbs(Output.of(blockStorageSizeInGbs));
+        }
+
+        /**
+         * @param computeTargetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeTargetId(@Nullable Output<String> computeTargetId) {
+            $.computeTargetId = computeTargetId;
+            return this;
+        }
+
+        /**
+         * @param computeTargetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeTargetId(String computeTargetId) {
+            return computeTargetId(Output.of(computeTargetId));
         }
 
         /**
@@ -192,6 +246,37 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
          */
         public Builder jobShapeConfigDetails(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs... jobShapeConfigDetails) {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
+        }
+
+        /**
+         * @param resourceConfigurations Details for the compute target job resource configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceConfigurations(@Nullable Output<List<JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs>> resourceConfigurations) {
+            $.resourceConfigurations = resourceConfigurations;
+            return this;
+        }
+
+        /**
+         * @param resourceConfigurations Details for the compute target job resource configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceConfigurations(List<JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs> resourceConfigurations) {
+            return resourceConfigurations(Output.of(resourceConfigurations));
+        }
+
+        /**
+         * @param resourceConfigurations Details for the compute target job resource configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceConfigurations(JobRunJobInfrastructureConfigurationDetailResourceConfigurationArgs... resourceConfigurations) {
+            return resourceConfigurations(List.of(resourceConfigurations));
         }
 
         /**

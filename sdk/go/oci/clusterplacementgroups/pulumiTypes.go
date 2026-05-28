@@ -151,6 +151,8 @@ func (o ClusterPlacementGroupCapabilitiesPtrOutput) Items() ClusterPlacementGrou
 }
 
 type ClusterPlacementGroupCapabilitiesItem struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails *ClusterPlacementGroupCapabilitiesItemAdditionalDetails `pulumi:"additionalDetails"`
 	// The type of resource.
 	Name string `pulumi:"name"`
 	// The service that the resource is part of.
@@ -169,6 +171,8 @@ type ClusterPlacementGroupCapabilitiesItemInput interface {
 }
 
 type ClusterPlacementGroupCapabilitiesItemArgs struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput `pulumi:"additionalDetails"`
 	// The type of resource.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The service that the resource is part of.
@@ -226,6 +230,13 @@ func (o ClusterPlacementGroupCapabilitiesItemOutput) ToClusterPlacementGroupCapa
 	return o
 }
 
+// Additional details describing the selected capability.
+func (o ClusterPlacementGroupCapabilitiesItemOutput) AdditionalDetails() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItem) *ClusterPlacementGroupCapabilitiesItemAdditionalDetails {
+		return v.AdditionalDetails
+	}).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput)
+}
+
 // The type of resource.
 func (o ClusterPlacementGroupCapabilitiesItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItem) string { return v.Name }).(pulumi.StringOutput)
@@ -254,6 +265,221 @@ func (o ClusterPlacementGroupCapabilitiesItemArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterPlacementGroupCapabilitiesItem {
 		return vs[0].([]ClusterPlacementGroupCapabilitiesItem)[vs[1].(int)]
 	}).(ClusterPlacementGroupCapabilitiesItemOutput)
+}
+
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetails struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount *int `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes *int `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus *float64 `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// ClusterPlacementGroupCapabilitiesItemAdditionalDetailsInput is an input type that accepts ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs and ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput values.
+// You can construct a concrete instance of `ClusterPlacementGroupCapabilitiesItemAdditionalDetailsInput` via:
+//
+//	ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs{...}
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetailsInput interface {
+	pulumi.Input
+
+	ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput
+	ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutputWithContext(context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput
+}
+
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount pulumi.IntPtrInput `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemAdditionalDetails)(nil)).Elem()
+}
+
+func (i ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput {
+	return i.ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput)
+}
+
+func (i ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return i.ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput).ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput is an input type that accepts ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs, ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtr and ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput` via:
+//
+//	        ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput
+	ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput
+}
+
+type clusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrType ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs
+
+func ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtr(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput {
+	return (*clusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrType)(v)
+}
+
+func (*clusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterPlacementGroupCapabilitiesItemAdditionalDetails)(nil)).Elem()
+}
+
+func (i *clusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrType) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return i.ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrType) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput)
+}
+
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemAdditionalDetails)(nil)).Elem()
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput {
+	return o
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput {
+	return o
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return o.ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *ClusterPlacementGroupCapabilitiesItemAdditionalDetails {
+		return &v
+	}).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput)
+}
+
+// The number of instances or size of the resource.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ClusterPlacementGroupCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *int {
+		return v.ClusterPlacementGroupCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The amount of memory (in GBs) needed in the instance.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
+}
+
+// The number of NVMe drives to use for storage.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
+// The number of OCPUs needed in the instance.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
+}
+
+// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItemAdditionalDetails) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterPlacementGroupCapabilitiesItemAdditionalDetails)(nil)).Elem()
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) ToClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutputWithContext(ctx context.Context) ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) Elem() ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) ClusterPlacementGroupCapabilitiesItemAdditionalDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterPlacementGroupCapabilitiesItemAdditionalDetails
+		return ret
+	}).(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput)
+}
+
+// The number of instances or size of the resource.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) ClusterPlacementGroupCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ClusterPlacementGroupCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The amount of memory (in GBs) needed in the instance.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.Float64PtrOutput)
+}
+
+// The number of NVMe drives to use for storage.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of OCPUs needed in the instance.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+func (o ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput) ServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroupCapabilitiesItemAdditionalDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ServiceType
+	}).(pulumi.StringPtrOutput)
 }
 
 type ClusterPlacementGroupPlacementInstruction struct {
@@ -510,6 +736,8 @@ func (o GetClusterPlacementGroupCapabilityArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetClusterPlacementGroupCapabilityItem struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails []GetClusterPlacementGroupCapabilityItemAdditionalDetail `pulumi:"additionalDetails"`
 	// The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
 	Name string `pulumi:"name"`
 	// The service that the resource is part of.
@@ -528,6 +756,8 @@ type GetClusterPlacementGroupCapabilityItemInput interface {
 }
 
 type GetClusterPlacementGroupCapabilityItemArgs struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayInput `pulumi:"additionalDetails"`
 	// The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The service that the resource is part of.
@@ -585,6 +815,13 @@ func (o GetClusterPlacementGroupCapabilityItemOutput) ToGetClusterPlacementGroup
 	return o
 }
 
+// Additional details describing the selected capability.
+func (o GetClusterPlacementGroupCapabilityItemOutput) AdditionalDetails() GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItem) []GetClusterPlacementGroupCapabilityItemAdditionalDetail {
+		return v.AdditionalDetails
+	}).(GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput)
+}
+
 // The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
 func (o GetClusterPlacementGroupCapabilityItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItem) string { return v.Name }).(pulumi.StringOutput)
@@ -613,6 +850,141 @@ func (o GetClusterPlacementGroupCapabilityItemArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterPlacementGroupCapabilityItem {
 		return vs[0].([]GetClusterPlacementGroupCapabilityItem)[vs[1].(int)]
 	}).(GetClusterPlacementGroupCapabilityItemOutput)
+}
+
+type GetClusterPlacementGroupCapabilityItemAdditionalDetail struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount int `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes int `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetClusterPlacementGroupCapabilityItemAdditionalDetailInput is an input type that accepts GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs and GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput values.
+// You can construct a concrete instance of `GetClusterPlacementGroupCapabilityItemAdditionalDetailInput` via:
+//
+//	GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs{...}
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput
+	ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutputWithContext(context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput
+}
+
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount pulumi.IntInput `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput {
+	return i.ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutputWithContext(ctx context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput)
+}
+
+// GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayInput is an input type that accepts GetClusterPlacementGroupCapabilityItemAdditionalDetailArray and GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayInput` via:
+//
+//	GetClusterPlacementGroupCapabilityItemAdditionalDetailArray{ GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs{...} }
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput
+	ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutputWithContext(context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput
+}
+
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailArray []GetClusterPlacementGroupCapabilityItemAdditionalDetailInput
+
+func (GetClusterPlacementGroupCapabilityItemAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterPlacementGroupCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetClusterPlacementGroupCapabilityItemAdditionalDetailArray) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput {
+	return i.ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterPlacementGroupCapabilityItemAdditionalDetailArray) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutputWithContext(ctx context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput)
+}
+
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailOutputWithContext(ctx context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput {
+	return o
+}
+
+// The number of instances or size of the resource.
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) ClusterPlacementGroupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItemAdditionalDetail) int {
+		return v.ClusterPlacementGroupCount
+	}).(pulumi.IntOutput)
+}
+
+// The amount of memory (in GBs) needed in the instance.
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItemAdditionalDetail) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The number of NVMe drives to use for storage.
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItemAdditionalDetail) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The number of OCPUs needed in the instance.
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItemAdditionalDetail) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupCapabilityItemAdditionalDetail) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterPlacementGroupCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput) ToGetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutputWithContext(ctx context.Context) GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput) Index(i pulumi.IntInput) GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterPlacementGroupCapabilityItemAdditionalDetail {
+		return vs[0].([]GetClusterPlacementGroupCapabilityItemAdditionalDetail)[vs[1].(int)]
+	}).(GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput)
 }
 
 type GetClusterPlacementGroupPlacementInstruction struct {
@@ -1163,6 +1535,8 @@ func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityAr
 }
 
 type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails []GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail `pulumi:"additionalDetails"`
 	// A filter to return only the resources that match the entire display name specified.
 	Name string `pulumi:"name"`
 	// The service that the resource is part of.
@@ -1181,6 +1555,8 @@ type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemI
 }
 
 type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemArgs struct {
+	// Additional details describing the selected capability.
+	AdditionalDetails GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayInput `pulumi:"additionalDetails"`
 	// A filter to return only the resources that match the entire display name specified.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The service that the resource is part of.
@@ -1238,6 +1614,13 @@ func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityIt
 	return o
 }
 
+// Additional details describing the selected capability.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemOutput) AdditionalDetails() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem) []GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail {
+		return v.AdditionalDetails
+	}).(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput)
+}
+
 // A filter to return only the resources that match the entire display name specified.
 func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem) string {
@@ -1270,6 +1653,149 @@ func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityIt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem {
 		return vs[0].([]GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem)[vs[1].(int)]
 	}).(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemOutput)
+}
+
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount int `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes int `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailInput is an input type that accepts GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs and GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput values.
+// You can construct a concrete instance of `GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailInput` via:
+//
+//	GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs{...}
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailInput interface {
+	pulumi.Input
+
+	ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput
+	ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutputWithContext(context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput
+}
+
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs struct {
+	// The number of instances or size of the resource.
+	ClusterPlacementGroupCount pulumi.IntInput `pulumi:"clusterPlacementGroupCount"`
+	// The amount of memory (in GBs) needed in the instance.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to use for storage.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The number of OCPUs needed in the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput {
+	return i.ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutputWithContext(context.Background())
+}
+
+func (i GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutputWithContext(ctx context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput)
+}
+
+// GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayInput is an input type that accepts GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray and GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput values.
+// You can construct a concrete instance of `GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayInput` via:
+//
+//	GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray{ GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs{...} }
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput
+	ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutputWithContext(context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput
+}
+
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray []GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailInput
+
+func (GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (i GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput {
+	return i.ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutputWithContext(ctx context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput)
+}
+
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput struct{ *pulumi.OutputState }
+
+func (GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutputWithContext(ctx context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput {
+	return o
+}
+
+// The number of instances or size of the resource.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) ClusterPlacementGroupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail) int {
+		return v.ClusterPlacementGroupCount
+	}).(pulumi.IntOutput)
+}
+
+// The amount of memory (in GBs) needed in the instance.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of NVMe drives to use for storage.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail) int {
+		return v.Nvmes
+	}).(pulumi.IntOutput)
+}
+
+// The number of OCPUs needed in the instance.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail) string {
+		return v.ServiceType
+	}).(pulumi.StringOutput)
+}
+
+type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail)(nil)).Elem()
+}
+
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput() GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput) ToGetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutputWithContext(ctx context.Context) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput {
+	return o
+}
+
+func (o GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput) Index(i pulumi.IntInput) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail {
+		return vs[0].([]GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetail)[vs[1].(int)]
+	}).(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput)
 }
 
 type GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstruction struct {
@@ -1496,12 +2022,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupCapabilitiesPtrInput)(nil)).Elem(), ClusterPlacementGroupCapabilitiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemInput)(nil)).Elem(), ClusterPlacementGroupCapabilitiesItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemArrayInput)(nil)).Elem(), ClusterPlacementGroupCapabilitiesItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemAdditionalDetailsInput)(nil)).Elem(), ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrInput)(nil)).Elem(), ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupPlacementInstructionInput)(nil)).Elem(), ClusterPlacementGroupPlacementInstructionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterPlacementGroupPlacementInstructionPtrInput)(nil)).Elem(), ClusterPlacementGroupPlacementInstructionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityArrayInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemArrayInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemAdditionalDetailInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayInput)(nil)).Elem(), GetClusterPlacementGroupCapabilityItemAdditionalDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupPlacementInstructionInput)(nil)).Elem(), GetClusterPlacementGroupPlacementInstructionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupPlacementInstructionArrayInput)(nil)).Elem(), GetClusterPlacementGroupPlacementInstructionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionArgs{})
@@ -1512,6 +2042,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityArrayInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemArrayInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionArrayInput)(nil)).Elem(), GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterPlacementGroupsFilterInput)(nil)).Elem(), GetClusterPlacementGroupsFilterArgs{})
@@ -1520,12 +2052,16 @@ func init() {
 	pulumi.RegisterOutputType(ClusterPlacementGroupCapabilitiesPtrOutput{})
 	pulumi.RegisterOutputType(ClusterPlacementGroupCapabilitiesItemOutput{})
 	pulumi.RegisterOutputType(ClusterPlacementGroupCapabilitiesItemArrayOutput{})
+	pulumi.RegisterOutputType(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterPlacementGroupCapabilitiesItemAdditionalDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterPlacementGroupPlacementInstructionOutput{})
 	pulumi.RegisterOutputType(ClusterPlacementGroupPlacementInstructionPtrOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityItemOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityItemAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterPlacementGroupCapabilityItemAdditionalDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupPlacementInstructionOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupPlacementInstructionArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionOutput{})
@@ -1536,6 +2072,8 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailOutput{})
+	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterPlacementGroupsFilterOutput{})

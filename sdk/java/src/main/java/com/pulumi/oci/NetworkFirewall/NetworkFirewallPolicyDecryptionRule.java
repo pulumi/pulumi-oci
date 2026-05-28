@@ -13,6 +13,7 @@ import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyDecryptionRul
 import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyDecryptionRulePosition;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
@@ -66,6 +67,7 @@ import javax.annotation.Nullable;
  *                 .afterRule(networkFirewallPolicyDecryptionRulePositionAfterRule)
  *                 .beforeRule(networkFirewallPolicyDecryptionRulePositionBeforeRule)
  *                 .build())
+ *             .secrets(networkFirewallPolicyDecryptionRuleSecrets)
  *             .build());
  * 
  *     }
@@ -219,6 +221,20 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
      */
     public Output<Optional<String>> secret() {
         return Codegen.optional(this.secret);
+    }
+    /**
+     * (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    @Export(name="secrets", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> secrets;
+
+    /**
+     * @return (Updatable) An array of mapped secrets. Its `type` must match that of the specified decryption profile.
+     * 
+     */
+    public Output<Optional<List<String>>> secrets() {
+        return Codegen.optional(this.secrets);
     }
 
     /**

@@ -228,7 +228,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
      * * LH - indicates an Oracle Autonomous AI Lakehouse database
      *
-     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter. When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
@@ -1292,7 +1292,7 @@ export interface AutonomousDatabaseState {
      * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
      * * LH - indicates an Oracle Autonomous AI Lakehouse database
      *
-     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter. When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
@@ -1960,7 +1960,7 @@ export interface AutonomousDatabaseArgs {
      * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
      * * LH - indicates an Oracle Autonomous AI Lakehouse database
      *
-     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+     * **Note** Starting December 2026, DW will not be supported as a valid value for this parameter. When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */

@@ -223,6 +223,7 @@ export class DistributedDatabaseDistributedAutonomousDatabase extends pulumi.Cus
      */
     declare public readonly downloadGsmCertificateSigningRequestTrigger: pulumi.Output<number | undefined>;
     declare public /*out*/ readonly downloadedGsmCsrPem: pulumi.Output<string>;
+    declare public /*out*/ readonly effectiveReplicationUnit: pulumi.Output<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -392,6 +393,7 @@ export class DistributedDatabaseDistributedAutonomousDatabase extends pulumi.Cus
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = state?.downloadGsmCertificateSigningRequestTrigger;
             resourceInputs["downloadedGsmCsrPem"] = state?.downloadedGsmCsrPem;
+            resourceInputs["effectiveReplicationUnit"] = state?.effectiveReplicationUnit;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["generateGsmCertificateSigningRequestTrigger"] = state?.generateGsmCertificateSigningRequestTrigger;
             resourceInputs["generateGsmCertificateSigningRequestTriggerCaBundleId"] = state?.generateGsmCertificateSigningRequestTriggerCaBundleId;
@@ -525,6 +527,7 @@ export class DistributedDatabaseDistributedAutonomousDatabase extends pulumi.Cus
             resourceInputs["validateNetworkTrigger"] = args?.validateNetworkTrigger;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["downloadedGsmCsrPem"] = undefined /*out*/;
+            resourceInputs["effectiveReplicationUnit"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletContentLength"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletEtag"] = undefined /*out*/;
             resourceInputs["generateWalletDownloadedWalletLastModified"] = undefined /*out*/;
@@ -621,6 +624,7 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseState {
      */
     downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
     downloadedGsmCsrPem?: pulumi.Input<string | undefined>;
+    effectiveReplicationUnit?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

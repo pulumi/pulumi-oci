@@ -175,6 +175,7 @@ class _MaintenanceRunState:
                  patching_status: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                  peer_maintenance_run_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 reference_resource_id_for_image_updates: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -184,7 +185,8 @@ class _MaintenanceRunState:
                  time_ended: pulumi.Input[Optional[_builtins.str]] = None,
                  time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
                  time_started: pulumi.Input[Optional[_builtins.str]] = None,
-                 total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None):
+                 total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 window_type_descriptions: pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunWindowTypeDescriptionArgs']]]] = None):
         """
         Input properties used for looking up and filtering MaintenanceRun resources.
 
@@ -214,6 +216,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[_builtins.str] patching_status: The status of the patching operation.
         :param pulumi.Input[_builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        :param pulumi.Input[_builtins.str] reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
         :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_db_server_version: The target software version for the database server patching operation.
@@ -228,6 +231,7 @@ class _MaintenanceRunState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_started: The date and time the maintenance run starts.
         :param pulumi.Input[_builtins.int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param pulumi.Input[Sequence[pulumi.Input['MaintenanceRunWindowTypeDescriptionArgs']]] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -277,6 +281,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
         if peer_maintenance_run_ids is not None:
             pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
+        if reference_resource_id_for_image_updates is not None:
+            pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -297,6 +303,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "time_started", time_started)
         if total_time_taken_in_mins is not None:
             pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        if window_type_descriptions is not None:
+            pulumi.set(__self__, "window_type_descriptions", window_type_descriptions)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -589,6 +597,18 @@ class _MaintenanceRunState:
         pulumi.set(self, "peer_maintenance_run_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @reference_resource_id_for_image_updates.setter
+    def reference_resource_id_for_image_updates(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reference_resource_id_for_image_updates", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -711,6 +731,18 @@ class _MaintenanceRunState:
     @total_time_taken_in_mins.setter
     def total_time_taken_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_time_taken_in_mins", value)
+
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunWindowTypeDescriptionArgs']]]]:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
+
+    @window_type_descriptions.setter
+    def window_type_descriptions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunWindowTypeDescriptionArgs']]]]):
+        pulumi.set(self, "window_type_descriptions", value)
 
 
 @pulumi.type_token("oci:Database/maintenanceRun:MaintenanceRun")
@@ -884,6 +916,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["patching_status"] = None
             __props__.__dict__["peer_maintenance_run_id"] = None
             __props__.__dict__["peer_maintenance_run_ids"] = None
+            __props__.__dict__["reference_resource_id_for_image_updates"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["target_db_server_version"] = None
@@ -892,6 +925,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["time_ended"] = None
             __props__.__dict__["time_started"] = None
             __props__.__dict__["total_time_taken_in_mins"] = None
+            __props__.__dict__["window_type_descriptions"] = None
         super(MaintenanceRun, __self__).__init__(
             'oci:Database/maintenanceRun:MaintenanceRun',
             resource_name,
@@ -926,6 +960,7 @@ class MaintenanceRun(pulumi.CustomResource):
             patching_status: pulumi.Input[Optional[_builtins.str]] = None,
             peer_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
             peer_maintenance_run_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            reference_resource_id_for_image_updates: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -935,7 +970,8 @@ class MaintenanceRun(pulumi.CustomResource):
             time_ended: pulumi.Input[Optional[_builtins.str]] = None,
             time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
             time_started: pulumi.Input[Optional[_builtins.str]] = None,
-            total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None) -> 'MaintenanceRun':
+            total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            window_type_descriptions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict']]]]] = None) -> 'MaintenanceRun':
         """
         Get an existing MaintenanceRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -969,6 +1005,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] patching_status: The status of the patching operation.
         :param pulumi.Input[_builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        :param pulumi.Input[_builtins.str] reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
         :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_db_server_version: The target software version for the database server patching operation.
@@ -983,6 +1020,7 @@ class MaintenanceRun(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_started: The date and time the maintenance run starts.
         :param pulumi.Input[_builtins.int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict']]]] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1012,6 +1050,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["patching_status"] = patching_status
         __props__.__dict__["peer_maintenance_run_id"] = peer_maintenance_run_id
         __props__.__dict__["peer_maintenance_run_ids"] = peer_maintenance_run_ids
+        __props__.__dict__["reference_resource_id_for_image_updates"] = reference_resource_id_for_image_updates
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_db_server_version"] = target_db_server_version
@@ -1022,6 +1061,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["time_scheduled"] = time_scheduled
         __props__.__dict__["time_started"] = time_started
         __props__.__dict__["total_time_taken_in_mins"] = total_time_taken_in_mins
+        __props__.__dict__["window_type_descriptions"] = window_type_descriptions
         return MaintenanceRun(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -1219,6 +1259,14 @@ class MaintenanceRun(pulumi.CustomResource):
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1301,4 +1349,12 @@ class MaintenanceRun(pulumi.CustomResource):
         The total time taken by corresponding resource activity in minutes.
         """
         return pulumi.get(self, "total_time_taken_in_mins")
+
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> pulumi.Output[Sequence['outputs.MaintenanceRunWindowTypeDescription']]:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
 

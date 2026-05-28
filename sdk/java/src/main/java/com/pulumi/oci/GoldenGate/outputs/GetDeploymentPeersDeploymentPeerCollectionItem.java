@@ -46,6 +46,11 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     private String peerType;
     /**
+     * @return Status of the DR precheck result.
+     * 
+     */
+    private String precheckStatus;
+    /**
      * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
@@ -65,6 +70,11 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    private String timeLastPrecheckPerformed;
     /**
      * @return The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
@@ -132,6 +142,13 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         return this.peerType;
     }
     /**
+     * @return Status of the DR precheck result.
+     * 
+     */
+    public String precheckStatus() {
+        return this.precheckStatus;
+    }
+    /**
      * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
      * 
      */
@@ -158,6 +175,13 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+     * 
+     */
+    public String timeLastPrecheckPerformed() {
+        return this.timeLastPrecheckPerformed;
     }
     /**
      * @return The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -197,10 +221,12 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         private String faultDomain;
         private String peerRole;
         private String peerType;
+        private String precheckStatus;
         private String region;
         private String state;
         private String subscriptionId;
         private String timeCreated;
+        private String timeLastPrecheckPerformed;
         private String timeLastSynced;
         private String timeRoleChanged;
         private String timeUpdated;
@@ -214,10 +240,12 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
     	      this.faultDomain = defaults.faultDomain;
     	      this.peerRole = defaults.peerRole;
     	      this.peerType = defaults.peerType;
+    	      this.precheckStatus = defaults.precheckStatus;
     	      this.region = defaults.region;
     	      this.state = defaults.state;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastPrecheckPerformed = defaults.timeLastPrecheckPerformed;
     	      this.timeLastSynced = defaults.timeLastSynced;
     	      this.timeRoleChanged = defaults.timeRoleChanged;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -280,6 +308,14 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder precheckStatus(String precheckStatus) {
+            if (precheckStatus == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "precheckStatus");
+            }
+            this.precheckStatus = precheckStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder region(String region) {
             if (region == null) {
               throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "region");
@@ -309,6 +345,14 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLastPrecheckPerformed(String timeLastPrecheckPerformed) {
+            if (timeLastPrecheckPerformed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "timeLastPrecheckPerformed");
+            }
+            this.timeLastPrecheckPerformed = timeLastPrecheckPerformed;
             return this;
         }
         @CustomType.Setter
@@ -344,10 +388,12 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             _resultValue.faultDomain = faultDomain;
             _resultValue.peerRole = peerRole;
             _resultValue.peerType = peerType;
+            _resultValue.precheckStatus = precheckStatus;
             _resultValue.region = region;
             _resultValue.state = state;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastPrecheckPerformed = timeLastPrecheckPerformed;
             _resultValue.timeLastSynced = timeLastSynced;
             _resultValue.timeRoleChanged = timeRoleChanged;
             _resultValue.timeUpdated = timeUpdated;

@@ -14,7 +14,10 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+        /// Lists Multicloud resources in the specified Multicloud subscription.
+        /// Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+        /// For more information, see
+        /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -39,13 +42,16 @@ namespace Pulumi.Oci.Oci
         /// });
         /// ```
         /// </summary>
-        public static Task<GetMulticloudOmHubMulticloudResourcesResult> InvokeAsync(GetMulticloudOmHubMulticloudResourcesArgs args, InvokeOptions? options = null)
+        public static Task<GetMulticloudOmHubMulticloudResourcesResult> InvokeAsync(GetMulticloudOmHubMulticloudResourcesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMulticloudOmHubMulticloudResourcesResult>("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", args ?? new GetMulticloudOmHubMulticloudResourcesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+        /// Lists Multicloud resources in the specified Multicloud subscription.
+        /// Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+        /// For more information, see
+        /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -70,13 +76,16 @@ namespace Pulumi.Oci.Oci
         /// });
         /// ```
         /// </summary>
-        public static Output<GetMulticloudOmHubMulticloudResourcesResult> Invoke(GetMulticloudOmHubMulticloudResourcesInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetMulticloudOmHubMulticloudResourcesResult> Invoke(GetMulticloudOmHubMulticloudResourcesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMulticloudOmHubMulticloudResourcesResult>("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", args ?? new GetMulticloudOmHubMulticloudResourcesInvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
         /// 
-        /// Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+        /// Lists Multicloud resources in the specified Multicloud subscription.
+        /// Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+        /// For more information, see
+        /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -115,7 +124,7 @@ namespace Pulumi.Oci.Oci
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// The Cloud Service Provider region.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public string? ExternalLocation { get; set; }
@@ -132,22 +141,28 @@ namespace Pulumi.Oci.Oci
         public int? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("resourceAnchorId")]
         public string? ResourceAnchorId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        /// Filter alerts by resource type (e.g. ADBD, VMCluster).
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public string SubscriptionId { get; set; } = null!;
+        [Input("resourceType")]
+        public string? ResourceType { get; set; }
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public string SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The cloud service provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public string? SubscriptionServiceName { get; set; }
 
         public GetMulticloudOmHubMulticloudResourcesArgs()
         {
@@ -164,7 +179,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The Cloud Service Provider region.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public Input<string>? ExternalLocation { get; set; }
@@ -181,22 +196,28 @@ namespace Pulumi.Oci.Oci
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
         /// </summary>
         [Input("resourceAnchorId")]
         public Input<string>? ResourceAnchorId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+        /// Filter alerts by resource type (e.g. ADBD, VMCluster).
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public Input<string> SubscriptionId { get; set; } = null!;
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public Input<string> SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The cloud service provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public Input<string>? SubscriptionServiceName { get; set; }
 
         public GetMulticloudOmHubMulticloudResourcesInvokeArgs()
         {
@@ -209,7 +230,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudOmHubMulticloudResourcesResult
     {
         /// <summary>
-        /// Compartment Id of the resource.
+        /// Id of the compartment associated with the resource.
         /// </summary>
         public readonly string? CompartmentId;
         public readonly string? ExternalLocation;
@@ -224,8 +245,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionResult> MulticloudResourceCollections;
         public readonly string? ResourceAnchorId;
-        public readonly string SubscriptionId;
-        public readonly string SubscriptionServiceName;
+        /// <summary>
+        /// Type of resource, such as `VMCluster` or `ExaInfra`,
+        /// </summary>
+        public readonly string? ResourceType;
+        public readonly string? SubscriptionId;
+        public readonly string? SubscriptionServiceName;
 
         [OutputConstructor]
         private GetMulticloudOmHubMulticloudResourcesResult(
@@ -243,9 +268,11 @@ namespace Pulumi.Oci.Oci
 
             string? resourceAnchorId,
 
-            string subscriptionId,
+            string? resourceType,
 
-            string subscriptionServiceName)
+            string? subscriptionId,
+
+            string? subscriptionServiceName)
         {
             CompartmentId = compartmentId;
             ExternalLocation = externalLocation;
@@ -254,6 +281,7 @@ namespace Pulumi.Oci.Oci
             Limit = limit;
             MulticloudResourceCollections = multicloudResourceCollections;
             ResourceAnchorId = resourceAnchorId;
+            ResourceType = resourceType;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
         }

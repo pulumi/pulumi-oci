@@ -48,6 +48,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///         {
     ///             IsPublicIpEnabled = clusterEndpointConfigIsPublicIpEnabled,
     ///             NsgIds = clusterEndpointConfigNsgIds,
+    ///             SecurityAttributes = clusterEndpointConfigSecurityAttributes,
     ///             SubnetId = testSubnet.Id,
     ///         },
     ///         FreeformTags = 

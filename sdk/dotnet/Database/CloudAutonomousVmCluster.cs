@@ -40,6 +40,7 @@ namespace Pulumi.Oci.Database
     ///         DbServers = cloudAutonomousVmClusterDbServers,
     ///         DefinedTags = cloudAutonomousVmClusterDefinedTags,
     ///         Description = cloudAutonomousVmClusterDescription,
+    ///         DistributionAlgorithm = cloudAutonomousVmClusterDistributionAlgorithm,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -78,6 +79,7 @@ namespace Pulumi.Oci.Database
     ///         ScanListenerPortNonTls = cloudAutonomousVmClusterScanListenerPortNonTls,
     ///         ScanListenerPortTls = cloudAutonomousVmClusterScanListenerPortTls,
     ///         SecurityAttributes = cloudAutonomousVmClusterSecurityAttributes,
+    ///         SgaPercentage = cloudAutonomousVmClusterSgaPercentage,
     ///         SubscriptionId = testSubscription.Id,
     ///         TotalContainerDatabases = cloudAutonomousVmClusterTotalContainerDatabases,
     ///     });
@@ -139,7 +141,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CloudExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
-        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Output("clusterTimeZone")]
         public Output<string> ClusterTimeZone { get; private set; } = null!;
@@ -217,6 +219,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        /// </summary>
+        [Output("distributionAlgorithm")]
+        public Output<string> DistributionAlgorithm { get; private set; } = null!;
+
+        /// <summary>
         /// The domain name for the cloud Autonomous VM cluster.
         /// </summary>
         [Output("domain")]
@@ -241,7 +249,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Hostname { get; private set; } = null!;
 
         /// <summary>
-        /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        /// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         /// </summary>
         [Output("isMtlsEnabledVmCluster")]
         public Output<bool> IsMtlsEnabledVmCluster { get; private set; } = null!;
@@ -394,13 +402,13 @@ namespace Pulumi.Oci.Database
         public Output<double> ReservedCpus { get; private set; } = null!;
 
         /// <summary>
-        /// The SCAN Listener Non TLS port. Default is 1521.
+        /// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Output("scanListenerPortNonTls")]
         public Output<int> ScanListenerPortNonTls { get; private set; } = null!;
 
         /// <summary>
-        /// The SCAN Listener TLS port. Default is 2484.
+        /// (Updatable) The SCAN Listener TLS port. Default is 2484.
         /// </summary>
         [Output("scanListenerPortTls")]
         public Output<int> ScanListenerPortTls { get; private set; } = null!;
@@ -410,6 +418,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("securityAttributes")]
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// </summary>
+        [Output("sgaPercentage")]
+        public Output<double> SgaPercentage { get; private set; } = null!;
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -557,7 +571,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CloudExadataInfrastructureId { get; set; } = null!;
 
         /// <summary>
-        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Input("clusterTimeZone")]
         public Input<string>? ClusterTimeZone { get; set; }
@@ -616,6 +630,12 @@ namespace Pulumi.Oci.Database
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        /// </summary>
+        [Input("distributionAlgorithm")]
+        public Input<string>? DistributionAlgorithm { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -629,7 +649,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        /// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         /// </summary>
         [Input("isMtlsEnabledVmCluster")]
         public Input<bool>? IsMtlsEnabledVmCluster { get; set; }
@@ -680,13 +700,13 @@ namespace Pulumi.Oci.Database
         public Input<int>? RegisterPkcsTrigger { get; set; }
 
         /// <summary>
-        /// The SCAN Listener Non TLS port. Default is 1521.
+        /// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Input("scanListenerPortNonTls")]
         public Input<int>? ScanListenerPortNonTls { get; set; }
 
         /// <summary>
-        /// The SCAN Listener TLS port. Default is 2484.
+        /// (Updatable) The SCAN Listener TLS port. Default is 2484.
         /// </summary>
         [Input("scanListenerPortTls")]
         public Input<int>? ScanListenerPortTls { get; set; }
@@ -702,6 +722,12 @@ namespace Pulumi.Oci.Database
             get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
             set => _securityAttributes = value;
         }
+
+        /// <summary>
+        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// </summary>
+        [Input("sgaPercentage")]
+        public Input<double>? SgaPercentage { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -793,7 +819,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CloudExadataInfrastructureId { get; set; }
 
         /// <summary>
-        /// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Input("clusterTimeZone")]
         public Input<string>? ClusterTimeZone { get; set; }
@@ -883,6 +909,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+        /// </summary>
+        [Input("distributionAlgorithm")]
+        public Input<string>? DistributionAlgorithm { get; set; }
+
+        /// <summary>
         /// The domain name for the cloud Autonomous VM cluster.
         /// </summary>
         [Input("domain")]
@@ -913,7 +945,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
-        /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+        /// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         /// </summary>
         [Input("isMtlsEnabledVmCluster")]
         public Input<bool>? IsMtlsEnabledVmCluster { get; set; }
@@ -1084,13 +1116,13 @@ namespace Pulumi.Oci.Database
         public Input<double>? ReservedCpus { get; set; }
 
         /// <summary>
-        /// The SCAN Listener Non TLS port. Default is 1521.
+        /// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Input("scanListenerPortNonTls")]
         public Input<int>? ScanListenerPortNonTls { get; set; }
 
         /// <summary>
-        /// The SCAN Listener TLS port. Default is 2484.
+        /// (Updatable) The SCAN Listener TLS port. Default is 2484.
         /// </summary>
         [Input("scanListenerPortTls")]
         public Input<int>? ScanListenerPortTls { get; set; }
@@ -1106,6 +1138,12 @@ namespace Pulumi.Oci.Database
             get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
             set => _securityAttributes = value;
         }
+
+        /// <summary>
+        /// Percentage of ECPU memory allocated for SGA(System Global Area).
+        /// </summary>
+        [Input("sgaPercentage")]
+        public Input<double>? SgaPercentage { get; set; }
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.

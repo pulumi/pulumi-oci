@@ -7,21 +7,9 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class MlApplicationInstanceAuthConfiguration {
-    /**
-     * @return Name of the IDCS application
-     * 
-     */
-    private @Nullable String applicationName;
-    /**
-     * @return Identity Domain OCID
-     * 
-     */
-    private @Nullable String domainId;
     /**
      * @return Type of AuthN/Z
      * 
@@ -29,20 +17,6 @@ public final class MlApplicationInstanceAuthConfiguration {
     private String type;
 
     private MlApplicationInstanceAuthConfiguration() {}
-    /**
-     * @return Name of the IDCS application
-     * 
-     */
-    public Optional<String> applicationName() {
-        return Optional.ofNullable(this.applicationName);
-    }
-    /**
-     * @return Identity Domain OCID
-     * 
-     */
-    public Optional<String> domainId() {
-        return Optional.ofNullable(this.domainId);
-    }
     /**
      * @return Type of AuthN/Z
      * 
@@ -60,29 +34,13 @@ public final class MlApplicationInstanceAuthConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String applicationName;
-        private @Nullable String domainId;
         private String type;
         public Builder() {}
         public Builder(MlApplicationInstanceAuthConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.applicationName = defaults.applicationName;
-    	      this.domainId = defaults.domainId;
     	      this.type = defaults.type;
         }
 
-        @CustomType.Setter
-        public Builder applicationName(@Nullable String applicationName) {
-
-            this.applicationName = applicationName;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder domainId(@Nullable String domainId) {
-
-            this.domainId = domainId;
-            return this;
-        }
         @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
@@ -93,8 +51,6 @@ public final class MlApplicationInstanceAuthConfiguration {
         }
         public MlApplicationInstanceAuthConfiguration build() {
             final var _resultValue = new MlApplicationInstanceAuthConfiguration();
-            _resultValue.applicationName = applicationName;
-            _resultValue.domainId = domainId;
             _resultValue.type = type;
             return _resultValue;
         }

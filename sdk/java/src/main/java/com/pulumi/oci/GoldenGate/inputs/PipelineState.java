@@ -42,14 +42,14 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Minimum number of OCPUs to be made available for this Deployment.
+     * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
     @Import(name="cpuCoreCount")
     private @Nullable Output<Integer> cpuCoreCount;
 
     /**
-     * @return The Minimum number of OCPUs to be made available for this Deployment.
+     * @return (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCount() {
@@ -132,14 +132,14 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
     @Import(name="isAutoScalingEnabled")
     private @Nullable Output<Boolean> isAutoScalingEnabled;
 
     /**
-     * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+     * @return (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
     public Optional<Output<Boolean>> isAutoScalingEnabled() {
@@ -455,7 +455,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuCoreCount The Minimum number of OCPUs to be made available for this Deployment.
+         * @param cpuCoreCount (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuCoreCount The Minimum number of OCPUs to be made available for this Deployment.
+         * @param cpuCoreCount (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoScalingEnabled Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+         * @param isAutoScalingEnabled (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoScalingEnabled Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
+         * @param isAutoScalingEnabled (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
          * 
          * @return builder
          * 

@@ -4,7 +4,6 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggDataGroupToRolesMapping;
 import java.lang.String;
 import java.util.Objects;
@@ -38,10 +37,10 @@ public final class DeploymentOggData {
      */
     private @Nullable String credentialStore;
     /**
-     * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * @return The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
      * 
      */
-    private String deploymentName;
+    private @Nullable String deploymentName;
     /**
      * @return (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
      * 
@@ -57,6 +56,11 @@ public final class DeploymentOggData {
      * 
      */
     private @Nullable String key;
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    private @Nullable String keySecretId;
     /**
      * @return Version of OGG
      * 
@@ -102,11 +106,11 @@ public final class DeploymentOggData {
         return Optional.ofNullable(this.credentialStore);
     }
     /**
-     * @return The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * @return The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
      * 
      */
-    public String deploymentName() {
-        return this.deploymentName;
+    public Optional<String> deploymentName() {
+        return Optional.ofNullable(this.deploymentName);
     }
     /**
      * @return (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
@@ -128,6 +132,13 @@ public final class DeploymentOggData {
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
+    }
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+     * 
+     */
+    public Optional<String> keySecretId() {
+        return Optional.ofNullable(this.keySecretId);
     }
     /**
      * @return Version of OGG
@@ -157,10 +168,11 @@ public final class DeploymentOggData {
         private @Nullable String adminUsername;
         private @Nullable String certificate;
         private @Nullable String credentialStore;
-        private String deploymentName;
+        private @Nullable String deploymentName;
         private @Nullable DeploymentOggDataGroupToRolesMapping groupToRolesMapping;
         private @Nullable String identityDomainId;
         private @Nullable String key;
+        private @Nullable String keySecretId;
         private @Nullable String oggVersion;
         private @Nullable String passwordSecretId;
         public Builder() {}
@@ -174,6 +186,7 @@ public final class DeploymentOggData {
     	      this.groupToRolesMapping = defaults.groupToRolesMapping;
     	      this.identityDomainId = defaults.identityDomainId;
     	      this.key = defaults.key;
+    	      this.keySecretId = defaults.keySecretId;
     	      this.oggVersion = defaults.oggVersion;
     	      this.passwordSecretId = defaults.passwordSecretId;
         }
@@ -203,10 +216,8 @@ public final class DeploymentOggData {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentName(String deploymentName) {
-            if (deploymentName == null) {
-              throw new MissingRequiredPropertyException("DeploymentOggData", "deploymentName");
-            }
+        public Builder deploymentName(@Nullable String deploymentName) {
+
             this.deploymentName = deploymentName;
             return this;
         }
@@ -226,6 +237,12 @@ public final class DeploymentOggData {
         public Builder key(@Nullable String key) {
 
             this.key = key;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keySecretId(@Nullable String keySecretId) {
+
+            this.keySecretId = keySecretId;
             return this;
         }
         @CustomType.Setter
@@ -250,6 +267,7 @@ public final class DeploymentOggData {
             _resultValue.groupToRolesMapping = groupToRolesMapping;
             _resultValue.identityDomainId = identityDomainId;
             _resultValue.key = key;
+            _resultValue.keySecretId = keySecretId;
             _resultValue.oggVersion = oggVersion;
             _resultValue.passwordSecretId = passwordSecretId;
             return _resultValue;

@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 //
-// Gets information about a NetworkAnchor.
+// Gets details for the specified network anchor. The subscription OCID and service name are required.
+// For more information, see
+// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
 //
 // ## Example Usage
 //
@@ -56,15 +58,15 @@ func GetMulticloudNetworkAnchor(ctx *pulumi.Context, args *GetMulticloudNetworkA
 
 // A collection of arguments for invoking getMulticloudNetworkAnchor.
 type GetMulticloudNetworkAnchorArgs struct {
-	// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+	// The cloud service provider region.
 	ExternalLocation *string `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	NetworkAnchorId string `pulumi:"networkAnchorId"`
 	// Whether to fetch and include the vcn display name, which may introduce additional latency.
 	ShouldFetchVcnName *bool `pulumi:"shouldFetchVcnName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+	// The cloud service provider.
 	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
 }
 
@@ -120,15 +122,15 @@ func GetMulticloudNetworkAnchorOutput(ctx *pulumi.Context, args GetMulticloudNet
 
 // A collection of arguments for invoking getMulticloudNetworkAnchor.
 type GetMulticloudNetworkAnchorOutputArgs struct {
-	// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+	// The cloud service provider region.
 	ExternalLocation pulumi.StringPtrInput `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	NetworkAnchorId pulumi.StringInput `pulumi:"networkAnchorId"`
 	// Whether to fetch and include the vcn display name, which may introduce additional latency.
 	ShouldFetchVcnName pulumi.BoolPtrInput `pulumi:"shouldFetchVcnName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+	// The cloud service provider.
 	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
 }
 

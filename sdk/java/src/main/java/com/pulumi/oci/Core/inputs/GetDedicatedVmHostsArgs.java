@@ -103,6 +103,21 @@ public final class GetDedicatedVmHostsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    @Import(name="remainingLocalVolumeInGbsGreaterThanOrEqualTo")
+    private @Nullable Output<Double> remainingLocalVolumeInGbsGreaterThanOrEqualTo;
+
+    /**
+     * @return The remaining local volume of the dedicated VM host, in GBs.
+     * 
+     */
+    public Optional<Output<Double>> remainingLocalVolumeInGbsGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.remainingLocalVolumeInGbsGreaterThanOrEqualTo);
+    }
+
+    /**
      * The remaining memory of the dedicated VM host, in GBs.
      * 
      */
@@ -156,6 +171,7 @@ public final class GetDedicatedVmHostsArgs extends com.pulumi.resources.InvokeAr
         this.filters = $.filters;
         this.instanceShapeName = $.instanceShapeName;
         this.isMemoryEncryptionEnabled = $.isMemoryEncryptionEnabled;
+        this.remainingLocalVolumeInGbsGreaterThanOrEqualTo = $.remainingLocalVolumeInGbsGreaterThanOrEqualTo;
         this.remainingMemoryInGbsGreaterThanOrEqualTo = $.remainingMemoryInGbsGreaterThanOrEqualTo;
         this.remainingOcpusGreaterThanOrEqualTo = $.remainingOcpusGreaterThanOrEqualTo;
         this.state = $.state;
@@ -295,6 +311,27 @@ public final class GetDedicatedVmHostsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
             return isMemoryEncryptionEnabled(Output.of(isMemoryEncryptionEnabled));
+        }
+
+        /**
+         * @param remainingLocalVolumeInGbsGreaterThanOrEqualTo The remaining local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLocalVolumeInGbsGreaterThanOrEqualTo(@Nullable Output<Double> remainingLocalVolumeInGbsGreaterThanOrEqualTo) {
+            $.remainingLocalVolumeInGbsGreaterThanOrEqualTo = remainingLocalVolumeInGbsGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param remainingLocalVolumeInGbsGreaterThanOrEqualTo The remaining local volume of the dedicated VM host, in GBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLocalVolumeInGbsGreaterThanOrEqualTo(Double remainingLocalVolumeInGbsGreaterThanOrEqualTo) {
+            return remainingLocalVolumeInGbsGreaterThanOrEqualTo(Output.of(remainingLocalVolumeInGbsGreaterThanOrEqualTo));
         }
 
         /**

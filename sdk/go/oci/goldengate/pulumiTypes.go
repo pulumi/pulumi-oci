@@ -2324,14 +2324,16 @@ type DeploymentOggData struct {
 	Certificate *string `pulumi:"certificate"`
 	// (Updatable) The type of credential store for OGG.
 	CredentialStore *string `pulumi:"credentialStore"`
-	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-	DeploymentName string `pulumi:"deploymentName"`
+	// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+	DeploymentName *string `pulumi:"deploymentName"`
 	// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
 	GroupToRolesMapping *DeploymentOggDataGroupToRolesMapping `pulumi:"groupToRolesMapping"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId *string `pulumi:"identityDomainId"`
 	// (Updatable) The base64 encoded content of the PEM file containing the private key.
 	Key *string `pulumi:"key"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId *string `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion *string `pulumi:"oggVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -2360,14 +2362,16 @@ type DeploymentOggDataArgs struct {
 	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
 	// (Updatable) The type of credential store for OGG.
 	CredentialStore pulumi.StringPtrInput `pulumi:"credentialStore"`
-	// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
+	// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+	DeploymentName pulumi.StringPtrInput `pulumi:"deploymentName"`
 	// (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
 	GroupToRolesMapping DeploymentOggDataGroupToRolesMappingPtrInput `pulumi:"groupToRolesMapping"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringPtrInput `pulumi:"identityDomainId"`
 	// (Updatable) The base64 encoded content of the PEM file containing the private key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId pulumi.StringPtrInput `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -2473,9 +2477,9 @@ func (o DeploymentOggDataOutput) CredentialStore() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.CredentialStore }).(pulumi.StringPtrOutput)
 }
 
-// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-func (o DeploymentOggDataOutput) DeploymentName() pulumi.StringOutput {
-	return o.ApplyT(func(v DeploymentOggData) string { return v.DeploymentName }).(pulumi.StringOutput)
+// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+func (o DeploymentOggDataOutput) DeploymentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.DeploymentName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
@@ -2491,6 +2495,11 @@ func (o DeploymentOggDataOutput) IdentityDomainId() pulumi.StringPtrOutput {
 // (Updatable) The base64 encoded content of the PEM file containing the private key.
 func (o DeploymentOggDataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+func (o DeploymentOggDataOutput) KeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentOggData) *string { return v.KeySecretId }).(pulumi.StringPtrOutput)
 }
 
 // Version of OGG
@@ -2569,13 +2578,13 @@ func (o DeploymentOggDataPtrOutput) CredentialStore() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
 func (o DeploymentOggDataPtrOutput) DeploymentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.DeploymentName
+		return v.DeploymentName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2606,6 +2615,16 @@ func (o DeploymentOggDataPtrOutput) Key() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+func (o DeploymentOggDataPtrOutput) KeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentOggData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeySecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3266,11 +3285,11 @@ func (o PipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) PipelineMapping
 }
 
 type PipelinePipelineDiagnosticData struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket *string `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState *string `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace *string `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object *string `pulumi:"object"`
@@ -3290,11 +3309,11 @@ type PipelinePipelineDiagnosticDataInput interface {
 }
 
 type PipelinePipelineDiagnosticDataArgs struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState pulumi.StringPtrInput `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -3353,7 +3372,7 @@ func (o PipelinePipelineDiagnosticDataOutput) ToPipelinePipelineDiagnosticDataOu
 	return o
 }
 
-// Name of the bucket where the object is to be uploaded in the object storage
+// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o PipelinePipelineDiagnosticDataOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
@@ -3363,7 +3382,7 @@ func (o PipelinePipelineDiagnosticDataOutput) DiagnosticState() pulumi.StringPtr
 	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.DiagnosticState }).(pulumi.StringPtrOutput)
 }
 
-// Name of namespace that serves as a container for all of your buckets
+// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o PipelinePipelineDiagnosticDataOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelinePipelineDiagnosticData) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -3597,8 +3616,20 @@ func (o PipelineProcessOptionsPtrOutput) StartUsingDefaultMapping() pulumi.Strin
 type PipelineProcessOptionsInitialDataLoad struct {
 	// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable *string `pulumi:"actionOnExistingTable"`
+	// (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath *string `pulumi:"adbWalletPath"`
+	// (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType *string `pulumi:"initialLoadType"`
 	// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad string `pulumi:"isInitialLoad"`
+	// (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath *string `pulumi:"sourceWalletPath"`
+	// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath *string `pulumi:"targetWalletPath"`
 }
 
 // PipelineProcessOptionsInitialDataLoadInput is an input type that accepts PipelineProcessOptionsInitialDataLoadArgs and PipelineProcessOptionsInitialDataLoadOutput values.
@@ -3615,8 +3646,20 @@ type PipelineProcessOptionsInitialDataLoadInput interface {
 type PipelineProcessOptionsInitialDataLoadArgs struct {
 	// (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable pulumi.StringPtrInput `pulumi:"actionOnExistingTable"`
+	// (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath pulumi.StringPtrInput `pulumi:"adbWalletPath"`
+	// (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType pulumi.StringPtrInput `pulumi:"initialLoadType"`
 	// (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+	// (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath pulumi.StringPtrInput `pulumi:"sourceWalletPath"`
+	// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath pulumi.StringPtrInput `pulumi:"targetWalletPath"`
 }
 
 func (PipelineProcessOptionsInitialDataLoadArgs) ElementType() reflect.Type {
@@ -3701,9 +3744,39 @@ func (o PipelineProcessOptionsInitialDataLoadOutput) ActionOnExistingTable() pul
 	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.ActionOnExistingTable }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+func (o PipelineProcessOptionsInitialDataLoadOutput) AdbWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.AdbWalletPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o PipelineProcessOptionsInitialDataLoadOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+func (o PipelineProcessOptionsInitialDataLoadOutput) InitialLoadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.InitialLoadType }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 func (o PipelineProcessOptionsInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+// (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o PipelineProcessOptionsInitialDataLoadOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+func (o PipelineProcessOptionsInitialDataLoadOutput) SourceWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.SourceWalletPath }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+func (o PipelineProcessOptionsInitialDataLoadOutput) TargetWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineProcessOptionsInitialDataLoad) *string { return v.TargetWalletPath }).(pulumi.StringPtrOutput)
 }
 
 type PipelineProcessOptionsInitialDataLoadPtrOutput struct{ *pulumi.OutputState }
@@ -3740,6 +3813,36 @@ func (o PipelineProcessOptionsInitialDataLoadPtrOutput) ActionOnExistingTable() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) AdbWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AdbWalletPath
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of Initial load, which can be objectStorage or dbLink.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) InitialLoadType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InitialLoadType
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 func (o PipelineProcessOptionsInitialDataLoadPtrOutput) IsInitialLoad() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
@@ -3747,6 +3850,36 @@ func (o PipelineProcessOptionsInitialDataLoadPtrOutput) IsInitialLoad() pulumi.S
 			return nil
 		}
 		return &v.IsInitialLoad
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) SourceWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceWalletPath
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+func (o PipelineProcessOptionsInitialDataLoadPtrOutput) TargetWalletPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineProcessOptionsInitialDataLoad) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TargetWalletPath
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9780,6 +9913,166 @@ func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInpu
 	}).(GetDeploymentDeploymentDiagnosticDataOutput)
 }
 
+type GetDeploymentDisasterRecoveryPrecheckReportCheck struct {
+	// The code returned when GoldenGate reports an error while running a step during pipeline initialization. https://docs.oracle.com/en/middleware/goldengate/core/23/error-messages/ogg-00001-ogg-40000.html#GUID-97FF7AA7-7A5C-4AA7-B29F-3CC8D26761F2
+	Code string `pulumi:"code"`
+	// The corrective action for non-passing checks. Null for passed checks.
+	CorrectiveAction string `pulumi:"correctiveAction"`
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName string `pulumi:"displayName"`
+	// UUID to uniquely identify the each check result.
+	Key string `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the corresponding check.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Type of resource related to corresponding check.
+	RelatedResourceType string `pulumi:"relatedResourceType"`
+	// Status of the DR precheck result.
+	Status string `pulumi:"status"`
+}
+
+// GetDeploymentDisasterRecoveryPrecheckReportCheckInput is an input type that accepts GetDeploymentDisasterRecoveryPrecheckReportCheckArgs and GetDeploymentDisasterRecoveryPrecheckReportCheckOutput values.
+// You can construct a concrete instance of `GetDeploymentDisasterRecoveryPrecheckReportCheckInput` via:
+//
+//	GetDeploymentDisasterRecoveryPrecheckReportCheckArgs{...}
+type GetDeploymentDisasterRecoveryPrecheckReportCheckInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckOutput
+	ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutputWithContext(context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckOutput
+}
+
+type GetDeploymentDisasterRecoveryPrecheckReportCheckArgs struct {
+	// The code returned when GoldenGate reports an error while running a step during pipeline initialization. https://docs.oracle.com/en/middleware/goldengate/core/23/error-messages/ogg-00001-ogg-40000.html#GUID-97FF7AA7-7A5C-4AA7-B29F-3CC8D26761F2
+	Code pulumi.StringInput `pulumi:"code"`
+	// The corrective action for non-passing checks. Null for passed checks.
+	CorrectiveAction pulumi.StringInput `pulumi:"correctiveAction"`
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// UUID to uniquely identify the each check result.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the corresponding check.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Type of resource related to corresponding check.
+	RelatedResourceType pulumi.StringInput `pulumi:"relatedResourceType"`
+	// Status of the DR precheck result.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDeploymentDisasterRecoveryPrecheckReportCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDisasterRecoveryPrecheckReportCheck)(nil)).Elem()
+}
+
+func (i GetDeploymentDisasterRecoveryPrecheckReportCheckArgs) ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckOutput {
+	return i.ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDisasterRecoveryPrecheckReportCheckArgs) ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutputWithContext(ctx context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDisasterRecoveryPrecheckReportCheckOutput)
+}
+
+// GetDeploymentDisasterRecoveryPrecheckReportCheckArrayInput is an input type that accepts GetDeploymentDisasterRecoveryPrecheckReportCheckArray and GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDisasterRecoveryPrecheckReportCheckArrayInput` via:
+//
+//	GetDeploymentDisasterRecoveryPrecheckReportCheckArray{ GetDeploymentDisasterRecoveryPrecheckReportCheckArgs{...} }
+type GetDeploymentDisasterRecoveryPrecheckReportCheckArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput
+	ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutputWithContext(context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput
+}
+
+type GetDeploymentDisasterRecoveryPrecheckReportCheckArray []GetDeploymentDisasterRecoveryPrecheckReportCheckInput
+
+func (GetDeploymentDisasterRecoveryPrecheckReportCheckArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDisasterRecoveryPrecheckReportCheck)(nil)).Elem()
+}
+
+func (i GetDeploymentDisasterRecoveryPrecheckReportCheckArray) ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput {
+	return i.ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDisasterRecoveryPrecheckReportCheckArray) ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutputWithContext(ctx context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput)
+}
+
+type GetDeploymentDisasterRecoveryPrecheckReportCheckOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDisasterRecoveryPrecheckReportCheck)(nil)).Elem()
+}
+
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckOutput {
+	return o
+}
+
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) ToGetDeploymentDisasterRecoveryPrecheckReportCheckOutputWithContext(ctx context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckOutput {
+	return o
+}
+
+// The code returned when GoldenGate reports an error while running a step during pipeline initialization. https://docs.oracle.com/en/middleware/goldengate/core/23/error-messages/ogg-00001-ogg-40000.html#GUID-97FF7AA7-7A5C-4AA7-B29F-3CC8D26761F2
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// The corrective action for non-passing checks. Null for passed checks.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) CorrectiveAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.CorrectiveAction }).(pulumi.StringOutput)
+}
+
+// Metadata about this specific object.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An object's Display Name.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// UUID to uniquely identify the each check result.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource related to the corresponding check.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Type of resource related to corresponding check.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) RelatedResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.RelatedResourceType }).(pulumi.StringOutput)
+}
+
+// Status of the DR precheck result.
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDisasterRecoveryPrecheckReportCheck) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDisasterRecoveryPrecheckReportCheck)(nil)).Elem()
+}
+
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput) ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput() GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput) ToGetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutputWithContext(ctx context.Context) GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput) Index(i pulumi.IntInput) GetDeploymentDisasterRecoveryPrecheckReportCheckOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDisasterRecoveryPrecheckReportCheck {
+		return vs[0].([]GetDeploymentDisasterRecoveryPrecheckReportCheck)[vs[1].(int)]
+	}).(GetDeploymentDisasterRecoveryPrecheckReportCheckOutput)
+}
+
 type GetDeploymentEnvironmentsDeploymentEnvironmentCollection struct {
 	// Array of DeploymentEnvironmentSummary objects.
 	Items []GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem `pulumi:"items"`
@@ -9880,7 +10173,7 @@ func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput) Ind
 }
 
 type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem struct {
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category string `pulumi:"category"`
 	// The default CPU core count.
 	DefaultCpuCoreCount int `pulumi:"defaultCpuCoreCount"`
@@ -9914,7 +10207,7 @@ type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput interface
 }
 
 type GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs struct {
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// The default CPU core count.
 	DefaultCpuCoreCount pulumi.IntInput `pulumi:"defaultCpuCoreCount"`
@@ -9987,7 +10280,7 @@ func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) ToGe
 	return o
 }
 
-// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 func (o GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItem) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -10645,6 +10938,8 @@ type GetDeploymentOggData struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId string `pulumi:"identityDomainId"`
 	Key              string `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId string `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion string `pulumi:"oggVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -10678,6 +10973,8 @@ type GetDeploymentOggDataArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
 	Key              pulumi.StringInput `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId pulumi.StringInput `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -10772,6 +11069,11 @@ func (o GetDeploymentOggDataOutput) IdentityDomainId() pulumi.StringOutput {
 
 func (o GetDeploymentOggDataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+func (o GetDeploymentOggDataOutput) KeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentOggData) string { return v.KeySecretId }).(pulumi.StringOutput)
 }
 
 // Version of OGG
@@ -11042,6 +11344,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItem struct {
 	PeerRole string `pulumi:"peerRole"`
 	// The type of the deployment peer.
 	PeerType string `pulumi:"peerType"`
+	// Status of the DR precheck result.
+	PrecheckStatus string `pulumi:"precheckStatus"`
 	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
 	Region string `pulumi:"region"`
 	// A filter to return only the deployment peers having the 'lifecycleState' given.
@@ -11050,6 +11354,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItem struct {
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeLastPrecheckPerformed string `pulumi:"timeLastPrecheckPerformed"`
 	// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeLastSynced string `pulumi:"timeLastSynced"`
 	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -11084,6 +11390,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItemArgs struct {
 	PeerRole pulumi.StringInput `pulumi:"peerRole"`
 	// The type of the deployment peer.
 	PeerType pulumi.StringInput `pulumi:"peerType"`
+	// Status of the DR precheck result.
+	PrecheckStatus pulumi.StringInput `pulumi:"precheckStatus"`
 	// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
 	Region pulumi.StringInput `pulumi:"region"`
 	// A filter to return only the deployment peers having the 'lifecycleState' given.
@@ -11092,6 +11400,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItemArgs struct {
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+	TimeLastPrecheckPerformed pulumi.StringInput `pulumi:"timeLastPrecheckPerformed"`
 	// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeLastSynced pulumi.StringInput `pulumi:"timeLastSynced"`
 	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -11186,6 +11496,11 @@ func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) PeerType() pulumi.
 	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.PeerType }).(pulumi.StringOutput)
 }
 
+// Status of the DR precheck result.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) PrecheckStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.PrecheckStatus }).(pulumi.StringOutput)
+}
+
 // The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
 func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.Region }).(pulumi.StringOutput)
@@ -11204,6 +11519,11 @@ func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) SubscriptionId() p
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp when pre-check started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeLastPrecheckPerformed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeLastPrecheckPerformed }).(pulumi.StringOutput)
 }
 
 // The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -11695,7 +12015,7 @@ func (o GetDeploymentTypesDeploymentTypeCollectionArrayOutput) Index(i pulumi.In
 }
 
 type GetDeploymentTypesDeploymentTypeCollectionItem struct {
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category string `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes []string `pulumi:"connectionTypes"`
@@ -11711,6 +12031,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItem struct {
 	SourceTechnologies []string `pulumi:"sourceTechnologies"`
 	// Specifies supported capabilities or features by a deployment type .
 	SupportedCapabilities []string `pulumi:"supportedCapabilities"`
+	// The list of Oracle license models supported by the deployment type.
+	SupportedLicenseTypes []string `pulumi:"supportedLicenseTypes"`
 	// The URL to the webpage listing the supported technologies.
 	SupportedTechnologiesUrl string `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -11729,7 +12051,7 @@ type GetDeploymentTypesDeploymentTypeCollectionItemInput interface {
 }
 
 type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
@@ -11745,6 +12067,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
 	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
 	// Specifies supported capabilities or features by a deployment type .
 	SupportedCapabilities pulumi.StringArrayInput `pulumi:"supportedCapabilities"`
+	// The list of Oracle license models supported by the deployment type.
+	SupportedLicenseTypes pulumi.StringArrayInput `pulumi:"supportedLicenseTypes"`
 	// The URL to the webpage listing the supported technologies.
 	SupportedTechnologiesUrl pulumi.StringInput `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -11802,7 +12126,7 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ToGetDeploymentTyp
 	return o
 }
 
-// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -11840,6 +12164,11 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SourceTechnologies
 // Specifies supported capabilities or features by a deployment type .
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SupportedCapabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SupportedCapabilities }).(pulumi.StringArrayOutput)
+}
+
+// The list of Oracle license models supported by the deployment type.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SupportedLicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SupportedLicenseTypes }).(pulumi.StringArrayOutput)
 }
 
 // The URL to the webpage listing the supported technologies.
@@ -12985,7 +13314,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	BackupSchedules []GetDeploymentsDeploymentCollectionItemBackupSchedule `pulumi:"backupSchedules"`
 	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit int `pulumi:"byolCpuCoreCountLimit"`
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category string `pulumi:"category"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
@@ -13007,6 +13336,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DeploymentUrl string `pulumi:"deploymentUrl"`
 	// Metadata about this specific object.
 	Description string `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus string `pulumi:"disasterRecoveryStatus"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
@@ -13114,7 +13445,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	BackupSchedules GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput `pulumi:"backupSchedules"`
 	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit pulumi.IntInput `pulumi:"byolCpuCoreCountLimit"`
-	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+	// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
 	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
@@ -13136,6 +13467,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DeploymentUrl pulumi.StringInput `pulumi:"deploymentUrl"`
 	// Metadata about this specific object.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+	DisasterRecoveryStatus pulumi.StringInput `pulumi:"disasterRecoveryStatus"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Specifies whether the deployment is used in a production or development/testing environment.
@@ -13293,7 +13626,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ByolCpuCoreCountLimit() pu
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) int { return v.ByolCpuCoreCountLimit }).(pulumi.IntOutput)
 }
 
-// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+// The deployment category defines the broad separation of the deployment type into four categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 func (o GetDeploymentsDeploymentCollectionItemOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -13348,6 +13681,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentUrl() pulumi.Str
 // Metadata about this specific object.
 func (o GetDeploymentsDeploymentCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+func (o GetDeploymentsDeploymentCollectionItemOutput) DisasterRecoveryStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DisasterRecoveryStatus }).(pulumi.StringOutput)
 }
 
 // A filter to return only the resources that match the entire 'displayName' given.
@@ -14374,6 +14712,8 @@ type GetDeploymentsDeploymentCollectionItemOggData struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId string `pulumi:"identityDomainId"`
 	Key              string `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId string `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion string `pulumi:"oggVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -14407,6 +14747,8 @@ type GetDeploymentsDeploymentCollectionItemOggDataArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringInput `pulumi:"identityDomainId"`
 	Key              pulumi.StringInput `pulumi:"key"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+	KeySecretId pulumi.StringInput `pulumi:"keySecretId"`
 	// Version of OGG
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
@@ -14503,6 +14845,11 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) IdentityDomainId() 
 
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) KeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.KeySecretId }).(pulumi.StringOutput)
 }
 
 // Version of OGG
@@ -15649,11 +15996,11 @@ func (o GetPipelineMappingRuleArrayOutput) Index(i pulumi.IntInput) GetPipelineM
 }
 
 type GetPipelinePipelineDiagnosticData struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket string `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState string `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace string `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object string `pulumi:"object"`
@@ -15673,11 +16020,11 @@ type GetPipelinePipelineDiagnosticDataInput interface {
 }
 
 type GetPipelinePipelineDiagnosticDataArgs struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object pulumi.StringInput `pulumi:"object"`
@@ -15736,7 +16083,7 @@ func (o GetPipelinePipelineDiagnosticDataOutput) ToGetPipelinePipelineDiagnostic
 	return o
 }
 
-// Name of the bucket where the object is to be uploaded in the object storage
+// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o GetPipelinePipelineDiagnosticDataOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -15746,7 +16093,7 @@ func (o GetPipelinePipelineDiagnosticDataOutput) DiagnosticState() pulumi.String
 	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.DiagnosticState }).(pulumi.StringOutput)
 }
 
-// Name of namespace that serves as a container for all of your buckets
+// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o GetPipelinePipelineDiagnosticDataOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinePipelineDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -15910,8 +16257,20 @@ func (o GetPipelineProcessOptionArrayOutput) Index(i pulumi.IntInput) GetPipelin
 type GetPipelineProcessOptionInitialDataLoad struct {
 	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable string `pulumi:"actionOnExistingTable"`
+	// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath string `pulumi:"adbWalletPath"`
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket string `pulumi:"bucket"`
+	// Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType string `pulumi:"initialLoadType"`
 	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad string `pulumi:"isInitialLoad"`
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace string `pulumi:"namespace"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath string `pulumi:"sourceWalletPath"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath string `pulumi:"targetWalletPath"`
 }
 
 // GetPipelineProcessOptionInitialDataLoadInput is an input type that accepts GetPipelineProcessOptionInitialDataLoadArgs and GetPipelineProcessOptionInitialDataLoadOutput values.
@@ -15928,8 +16287,20 @@ type GetPipelineProcessOptionInitialDataLoadInput interface {
 type GetPipelineProcessOptionInitialDataLoadArgs struct {
 	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable pulumi.StringInput `pulumi:"actionOnExistingTable"`
+	// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath pulumi.StringInput `pulumi:"adbWalletPath"`
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType pulumi.StringInput `pulumi:"initialLoadType"`
 	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath pulumi.StringInput `pulumi:"sourceWalletPath"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath pulumi.StringInput `pulumi:"targetWalletPath"`
 }
 
 func (GetPipelineProcessOptionInitialDataLoadArgs) ElementType() reflect.Type {
@@ -15988,9 +16359,39 @@ func (o GetPipelineProcessOptionInitialDataLoadOutput) ActionOnExistingTable() p
 	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.ActionOnExistingTable }).(pulumi.StringOutput)
 }
 
+// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) AdbWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.AdbWalletPath }).(pulumi.StringOutput)
+}
+
+// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Type of Initial load, which can be objectStorage or dbLink.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) InitialLoadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.InitialLoadType }).(pulumi.StringOutput)
+}
+
 // If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 func (o GetPipelineProcessOptionInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) SourceWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.SourceWalletPath }).(pulumi.StringOutput)
+}
+
+// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+func (o GetPipelineProcessOptionInitialDataLoadOutput) TargetWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineProcessOptionInitialDataLoad) string { return v.TargetWalletPath }).(pulumi.StringOutput)
 }
 
 type GetPipelineProcessOptionInitialDataLoadArrayOutput struct{ *pulumi.OutputState }
@@ -18169,11 +18570,11 @@ func (o GetPipelinesPipelineCollectionItemMappingRuleArrayOutput) Index(i pulumi
 }
 
 type GetPipelinesPipelineCollectionItemPipelineDiagnosticData struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket string `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState string `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace string `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object string `pulumi:"object"`
@@ -18193,11 +18594,11 @@ type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataInput interface {
 }
 
 type GetPipelinesPipelineCollectionItemPipelineDiagnosticDataArgs struct {
-	// Name of the bucket where the object is to be uploaded in the object storage
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The state of the pipeline diagnostics collection.
 	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
-	// Name of namespace that serves as a container for all of your buckets
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Name of the diagnostic collected and uploaded to object storage
 	Object pulumi.StringInput `pulumi:"object"`
@@ -18256,7 +18657,7 @@ func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) ToGetPip
 	return o
 }
 
-// Name of the bucket where the object is to be uploaded in the object storage
+// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -18266,7 +18667,7 @@ func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Diagnost
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.DiagnosticState }).(pulumi.StringOutput)
 }
 
-// Name of namespace that serves as a container for all of your buckets
+// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
 func (o GetPipelinesPipelineCollectionItemPipelineDiagnosticDataOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemPipelineDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -18432,8 +18833,20 @@ func (o GetPipelinesPipelineCollectionItemProcessOptionArrayOutput) Index(i pulu
 type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad struct {
 	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable string `pulumi:"actionOnExistingTable"`
+	// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath string `pulumi:"adbWalletPath"`
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket string `pulumi:"bucket"`
+	// Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType string `pulumi:"initialLoadType"`
 	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad string `pulumi:"isInitialLoad"`
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace string `pulumi:"namespace"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath string `pulumi:"sourceWalletPath"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath string `pulumi:"targetWalletPath"`
 }
 
 // GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput is an input type that accepts GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs and GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput values.
@@ -18450,8 +18863,20 @@ type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadInput interfa
 type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs struct {
 	// Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
 	ActionOnExistingTable pulumi.StringInput `pulumi:"actionOnExistingTable"`
+	// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+	AdbWalletPath pulumi.StringInput `pulumi:"adbWalletPath"`
+	// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Type of Initial load, which can be objectStorage or dbLink.
+	InitialLoadType pulumi.StringInput `pulumi:"initialLoadType"`
 	// If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 	IsInitialLoad pulumi.StringInput `pulumi:"isInitialLoad"`
+	// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+	SourceWalletPath pulumi.StringInput `pulumi:"sourceWalletPath"`
+	// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+	TargetWalletPath pulumi.StringInput `pulumi:"targetWalletPath"`
 }
 
 func (GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs) ElementType() reflect.Type {
@@ -18512,9 +18937,45 @@ func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) Ac
 	}).(pulumi.StringOutput)
 }
 
+// Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path "/u01/targetwallet" will be used.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) AdbWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string { return v.AdbWalletPath }).(pulumi.StringOutput)
+}
+
+// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Type of Initial load, which can be objectStorage or dbLink.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) InitialLoadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string {
+		return v.InitialLoadType
+	}).(pulumi.StringOutput)
+}
+
 // If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
 func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) IsInitialLoad() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string { return v.IsInitialLoad }).(pulumi.StringOutput)
+}
+
+// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) SourceWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string {
+		return v.SourceWalletPath
+	}).(pulumi.StringOutput)
+}
+
+// Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+func (o GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadOutput) TargetWalletPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoad) string {
+		return v.TargetWalletPath
+	}).(pulumi.StringOutput)
 }
 
 type GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArrayOutput struct{ *pulumi.OutputState }
@@ -20325,6 +20786,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesFilterArrayInput)(nil)).Elem(), GetDeploymentCertificatesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDisasterRecoveryPrecheckReportCheckInput)(nil)).Elem(), GetDeploymentDisasterRecoveryPrecheckReportCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDisasterRecoveryPrecheckReportCheckArrayInput)(nil)).Elem(), GetDeploymentDisasterRecoveryPrecheckReportCheckArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemInput)(nil)).Elem(), GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemArgs{})
@@ -20597,6 +21060,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentCertificatesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDisasterRecoveryPrecheckReportCheckOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDisasterRecoveryPrecheckReportCheckArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentEnvironmentsDeploymentEnvironmentCollectionItemOutput{})

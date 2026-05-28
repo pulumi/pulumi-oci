@@ -52,6 +52,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///             AfterRule = networkFirewallPolicyDecryptionRulePositionAfterRule,
     ///             BeforeRule = networkFirewallPolicyDecryptionRulePositionBeforeRule,
     ///         },
+    ///         Secrets = networkFirewallPolicyDecryptionRuleSecrets,
     ///     });
     /// 
     /// });
@@ -126,6 +127,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("secret")]
         public Output<string?> Secret { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An array of mapped secrets. Its `Type` must match that of the specified decryption profile.
+        /// </summary>
+        [Output("secrets")]
+        public Output<ImmutableArray<string>> Secrets { get; private set; } = null!;
 
 
         /// <summary>
@@ -226,6 +233,18 @@ namespace Pulumi.Oci.NetworkFirewall
         [Input("secret")]
         public Input<string>? Secret { get; set; }
 
+        [Input("secrets")]
+        private InputList<string>? _secrets;
+
+        /// <summary>
+        /// (Updatable) An array of mapped secrets. Its `Type` must match that of the specified decryption profile.
+        /// </summary>
+        public InputList<string> Secrets
+        {
+            get => _secrets ?? (_secrets = new InputList<string>());
+            set => _secrets = value;
+        }
+
         public NetworkFirewallPolicyDecryptionRuleArgs()
         {
         }
@@ -292,6 +311,18 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Input("secret")]
         public Input<string>? Secret { get; set; }
+
+        [Input("secrets")]
+        private InputList<string>? _secrets;
+
+        /// <summary>
+        /// (Updatable) An array of mapped secrets. Its `Type` must match that of the specified decryption profile.
+        /// </summary>
+        public InputList<string> Secrets
+        {
+            get => _secrets ?? (_secrets = new InputList<string>());
+            set => _secrets = value;
+        }
 
         public NetworkFirewallPolicyDecryptionRuleState()
         {

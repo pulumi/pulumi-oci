@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         }
 
         /// <summary>
-        /// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        /// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
         /// </summary>
         [Input("coolDownInSeconds")]
         public Input<int>? CoolDownInSeconds { get; set; }

@@ -23,6 +23,7 @@ from .get_deployment_backup import *
 from .get_deployment_backups import *
 from .get_deployment_certificate import *
 from .get_deployment_certificates import *
+from .get_deployment_disaster_recovery_precheck_report import *
 from .get_deployment_environments import *
 from .get_deployment_peers import *
 from .get_deployment_type import *

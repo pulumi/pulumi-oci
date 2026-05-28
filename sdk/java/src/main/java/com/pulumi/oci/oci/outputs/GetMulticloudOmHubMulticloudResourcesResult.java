@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetMulticloudOmHubMulticloudResourcesResult {
     /**
-     * @return Compartment Id of the resource.
+     * @return Id of the compartment associated with the resource.
      * 
      */
     private @Nullable String compartmentId;
@@ -35,12 +35,17 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
      */
     private List<GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection> multicloudResourceCollections;
     private @Nullable String resourceAnchorId;
-    private String subscriptionId;
-    private String subscriptionServiceName;
+    /**
+     * @return Type of resource, such as `VMCluster` or `ExaInfra`,
+     * 
+     */
+    private @Nullable String resourceType;
+    private @Nullable String subscriptionId;
+    private @Nullable String subscriptionServiceName;
 
     private GetMulticloudOmHubMulticloudResourcesResult() {}
     /**
-     * @return Compartment Id of the resource.
+     * @return Id of the compartment associated with the resource.
      * 
      */
     public Optional<String> compartmentId() {
@@ -72,11 +77,18 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
     public Optional<String> resourceAnchorId() {
         return Optional.ofNullable(this.resourceAnchorId);
     }
-    public String subscriptionId() {
-        return this.subscriptionId;
+    /**
+     * @return Type of resource, such as `VMCluster` or `ExaInfra`,
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
-    public String subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+    public Optional<String> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     public static Builder builder() {
@@ -95,8 +107,9 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
         private @Nullable Integer limit;
         private List<GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection> multicloudResourceCollections;
         private @Nullable String resourceAnchorId;
-        private String subscriptionId;
-        private String subscriptionServiceName;
+        private @Nullable String resourceType;
+        private @Nullable String subscriptionId;
+        private @Nullable String subscriptionServiceName;
         public Builder() {}
         public Builder(GetMulticloudOmHubMulticloudResourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -107,6 +120,7 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
     	      this.limit = defaults.limit;
     	      this.multicloudResourceCollections = defaults.multicloudResourceCollections;
     	      this.resourceAnchorId = defaults.resourceAnchorId;
+    	      this.resourceType = defaults.resourceType;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
         }
@@ -164,18 +178,20 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            if (subscriptionId == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesResult", "subscriptionId");
-            }
+        public Builder resourceType(@Nullable String resourceType) {
+
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionServiceName(String subscriptionServiceName) {
-            if (subscriptionServiceName == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudOmHubMulticloudResourcesResult", "subscriptionServiceName");
-            }
+        public Builder subscriptionServiceName(@Nullable String subscriptionServiceName) {
+
             this.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
@@ -188,6 +204,7 @@ public final class GetMulticloudOmHubMulticloudResourcesResult {
             _resultValue.limit = limit;
             _resultValue.multicloudResourceCollections = multicloudResourceCollections;
             _resultValue.resourceAnchorId = resourceAnchorId;
+            _resultValue.resourceType = resourceType;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
             return _resultValue;

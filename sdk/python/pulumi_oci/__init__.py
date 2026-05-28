@@ -2663,6 +2663,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataScience/computeTarget",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/computeTarget:ComputeTarget": "ComputeTarget"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataScience/job",
   "fqn": "pulumi_oci.datascience",
   "classes": {
@@ -6019,6 +6027,14 @@ _utilities.register(
   "fqn": "pulumi_oci.managementdashboard",
   "classes": {
    "oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport": "ManagementDashboardsImport"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ManagementDashboard/managementSavedSearch",
+  "fqn": "pulumi_oci.managementdashboard",
+  "classes": {
+   "oci:ManagementDashboard/managementSavedSearch:ManagementSavedSearch": "ManagementSavedSearch"
   }
  },
  {

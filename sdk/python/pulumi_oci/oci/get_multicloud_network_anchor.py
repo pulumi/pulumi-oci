@@ -284,7 +284,9 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
     """
     This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets information about a NetworkAnchor.
+    Gets details for the specified network anchor. The subscription OCID and service name are required.
+    For more information, see
+    [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
 
     ## Example Usage
 
@@ -300,11 +302,11 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
     ```
 
 
-    :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str network_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
     :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['externalLocation'] = external_location
@@ -346,7 +348,9 @@ def get_multicloud_network_anchor_output(external_location: pulumi.Input[Optiona
     """
     This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets information about a NetworkAnchor.
+    Gets details for the specified network anchor. The subscription OCID and service name are required.
+    For more information, see
+    [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
 
     ## Example Usage
 
@@ -362,11 +366,11 @@ def get_multicloud_network_anchor_output(external_location: pulumi.Input[Optiona
     ```
 
 
-    :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
+    :param _builtins.str external_location: The cloud service provider region.
     :param _builtins.str network_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
     :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['externalLocation'] = external_location

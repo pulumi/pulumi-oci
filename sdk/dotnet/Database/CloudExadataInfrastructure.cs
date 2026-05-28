@@ -48,6 +48,10 @@ namespace Pulumi.Oci.Database
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         MaintenanceVersionPreferences = new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs
+    ///         {
+    ///             ReferenceResourceIdForImageUpdates = cloudExadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates,
+    ///         },
     ///         MaintenanceWindow = new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowArgs
     ///         {
     ///             CustomActionTimeoutInMins = cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
@@ -223,6 +227,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The preferences for target versions of future maintenance runs.
+        /// 
+        /// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        /// </summary>
+        [Output("maintenanceVersionPreferences")]
+        public Output<Outputs.CloudExadataInfrastructureMaintenanceVersionPreferences> MaintenanceVersionPreferences { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -455,6 +467,14 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) The preferences for target versions of future maintenance runs.
+        /// 
+        /// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        /// </summary>
+        [Input("maintenanceVersionPreferences")]
+        public Input<Inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs>? MaintenanceVersionPreferences { get; set; }
+
+        /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         [Input("maintenanceWindow")]
@@ -657,6 +677,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The preferences for target versions of future maintenance runs.
+        /// 
+        /// Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to "Latest". Changing preferences will not change versions for an already existing maintenance run.
+        /// </summary>
+        [Input("maintenanceVersionPreferences")]
+        public Input<Inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesGetArgs>? MaintenanceVersionPreferences { get; set; }
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.

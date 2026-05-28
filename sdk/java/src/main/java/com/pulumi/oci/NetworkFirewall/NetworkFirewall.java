@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *                 .mustEnablePrivateNat(networkFirewallNatConfigurationMustEnablePrivateNat)
  *                 .build())
  *             .networkSecurityGroupIds(networkFirewallNetworkSecurityGroupIds)
+ *             .securityAttributes(networkFirewallSecurityAttributes)
  *             .shape(networkFirewallShape)
  *             .build());
  * 
@@ -235,6 +236,20 @@ public class NetworkFirewall extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.

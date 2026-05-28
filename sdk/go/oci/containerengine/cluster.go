@@ -47,9 +47,10 @@ import (
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				EndpointConfig: &containerengine.ClusterEndpointConfigArgs{
-//					IsPublicIpEnabled: pulumi.Any(clusterEndpointConfigIsPublicIpEnabled),
-//					NsgIds:            pulumi.Any(clusterEndpointConfigNsgIds),
-//					SubnetId:          pulumi.Any(testSubnet.Id),
+//					IsPublicIpEnabled:  pulumi.Any(clusterEndpointConfigIsPublicIpEnabled),
+//					NsgIds:             pulumi.Any(clusterEndpointConfigNsgIds),
+//					SecurityAttributes: pulumi.Any(clusterEndpointConfigSecurityAttributes),
+//					SubnetId:           pulumi.Any(testSubnet.Id),
 //				},
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),

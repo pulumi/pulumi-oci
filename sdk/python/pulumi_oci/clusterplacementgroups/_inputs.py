@@ -19,6 +19,8 @@ __all__ = [
     'ClusterPlacementGroupCapabilitiesArgsDict',
     'ClusterPlacementGroupCapabilitiesItemArgs',
     'ClusterPlacementGroupCapabilitiesItemArgsDict',
+    'ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs',
+    'ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgsDict',
     'ClusterPlacementGroupPlacementInstructionArgs',
     'ClusterPlacementGroupPlacementInstructionArgsDict',
     'GetClusterPlacementGroupsFilterArgs',
@@ -62,18 +64,26 @@ class ClusterPlacementGroupCapabilitiesItemArgsDict(TypedDict):
     """
     The service that the resource is part of.
     """
+    additional_details: NotRequired[pulumi.Input[Optional['ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgsDict']]]
+    """
+    Additional details describing the selected capability.
+    """
 
 @pulumi.input_type
 class ClusterPlacementGroupCapabilitiesItemArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
-                 service: pulumi.Input[_builtins.str]):
+                 service: pulumi.Input[_builtins.str],
+                 additional_details: pulumi.Input[Optional['ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] name: The type of resource.
         :param pulumi.Input[_builtins.str] service: The service that the resource is part of.
+        :param pulumi.Input['ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs'] additional_details: Additional details describing the selected capability.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
 
     @_builtins.property
     @pulumi.getter
@@ -98,6 +108,126 @@ class ClusterPlacementGroupCapabilitiesItemArgs:
     @service.setter
     def service(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "service", value)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> pulumi.Input[Optional['ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs']]:
+        """
+        Additional details describing the selected capability.
+        """
+        return pulumi.get(self, "additional_details")
+
+    @additional_details.setter
+    def additional_details(self, value: pulumi.Input[Optional['ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs']]):
+        pulumi.set(self, "additional_details", value)
+
+
+class ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgsDict(TypedDict):
+    service_type: pulumi.Input[_builtins.str]
+    """
+    Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+    """
+    cluster_placement_group_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of instances or size of the resource.
+    """
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The amount of memory (in GBs) needed in the instance.
+    """
+    nvmes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of NVMe drives to use for storage.
+    """
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The number of OCPUs needed in the instance.
+    """
+
+@pulumi.input_type
+class ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs:
+    def __init__(__self__, *,
+                 service_type: pulumi.Input[_builtins.str],
+                 cluster_placement_group_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 nvmes: pulumi.Input[Optional[_builtins.int]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] service_type: Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        :param pulumi.Input[_builtins.int] cluster_placement_group_count: The number of instances or size of the resource.
+        :param pulumi.Input[_builtins.float] memory_in_gbs: The amount of memory (in GBs) needed in the instance.
+        :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to use for storage.
+        :param pulumi.Input[_builtins.float] ocpus: The number of OCPUs needed in the instance.
+        """
+        pulumi.set(__self__, "service_type", service_type)
+        if cluster_placement_group_count is not None:
+            pulumi.set(__self__, "cluster_placement_group_count", cluster_placement_group_count)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        return pulumi.get(self, "service_type")
+
+    @service_type.setter
+    def service_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "service_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupCount")
+    def cluster_placement_group_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of instances or size of the resource.
+        """
+        return pulumi.get(self, "cluster_placement_group_count")
+
+    @cluster_placement_group_count.setter
+    def cluster_placement_group_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cluster_placement_group_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The amount of memory (in GBs) needed in the instance.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of NVMe drives to use for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @nvmes.setter
+    def nvmes(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "nvmes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The number of OCPUs needed in the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "ocpus", value)
 
 
 class ClusterPlacementGroupPlacementInstructionArgsDict(TypedDict):

@@ -228,7 +228,7 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
 class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
     destination_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+    (Updatable) An array of address list names to be evaluated against the traffic destination address.
     """
     service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -236,7 +236,7 @@ class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
     """
     source_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+    (Updatable) An array of address list names to be evaluated against the traffic source address.
     """
 
 @pulumi.input_type
@@ -246,9 +246,9 @@ class NetworkFirewallPolicyNatRuleConditionArgs:
                  service: pulumi.Input[Optional[_builtins.str]] = None,
                  source_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
         :param pulumi.Input[_builtins.str] service: (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
@@ -261,7 +261,7 @@ class NetworkFirewallPolicyNatRuleConditionArgs:
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+        (Updatable) An array of address list names to be evaluated against the traffic destination address.
         """
         return pulumi.get(self, "destination_addresses")
 
@@ -285,7 +285,7 @@ class NetworkFirewallPolicyNatRuleConditionArgs:
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+        (Updatable) An array of address list names to be evaluated against the traffic source address.
         """
         return pulumi.get(self, "source_addresses")
 

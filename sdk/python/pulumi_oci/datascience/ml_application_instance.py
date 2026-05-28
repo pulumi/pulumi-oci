@@ -517,12 +517,6 @@ class MlApplicationInstance(pulumi.CustomResource):
             ml_application_implementation_id=test_ml_application_implementation["id"],
             auth_configuration={
                 "type": ml_application_instance_auth_configuration_type,
-                "access_token": ml_application_instance_auth_configuration_access_token,
-                "application_name": test_application["name"],
-                "audience": ml_application_instance_auth_configuration_audience,
-                "domain_id": test_domain["id"],
-                "role_name": ml_application_instance_auth_configuration_role_name,
-                "scope": ml_application_instance_auth_configuration_scope,
             },
             configurations=[{
                 "key": ml_application_instance_configuration_key,
@@ -589,12 +583,6 @@ class MlApplicationInstance(pulumi.CustomResource):
             ml_application_implementation_id=test_ml_application_implementation["id"],
             auth_configuration={
                 "type": ml_application_instance_auth_configuration_type,
-                "access_token": ml_application_instance_auth_configuration_access_token,
-                "application_name": test_application["name"],
-                "audience": ml_application_instance_auth_configuration_audience,
-                "domain_id": test_domain["id"],
-                "role_name": ml_application_instance_auth_configuration_role_name,
-                "scope": ml_application_instance_auth_configuration_scope,
             },
             configurations=[{
                 "key": ml_application_instance_configuration_key,

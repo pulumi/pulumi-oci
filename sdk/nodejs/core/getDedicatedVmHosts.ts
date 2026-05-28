@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
  *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
+ *     remainingLocalVolumeInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingLocalVolumeInGbsGreaterThanOrEqualTo,
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -41,6 +42,7 @@ export function getDedicatedVmHosts(args: GetDedicatedVmHostsArgs, opts?: pulumi
         "filters": args.filters,
         "instanceShapeName": args.instanceShapeName,
         "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
+        "remainingLocalVolumeInGbsGreaterThanOrEqualTo": args.remainingLocalVolumeInGbsGreaterThanOrEqualTo,
         "remainingMemoryInGbsGreaterThanOrEqualTo": args.remainingMemoryInGbsGreaterThanOrEqualTo,
         "remainingOcpusGreaterThanOrEqualTo": args.remainingOcpusGreaterThanOrEqualTo,
         "state": args.state,
@@ -72,6 +74,10 @@ export interface GetDedicatedVmHostsArgs {
      * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
      */
     isMemoryEncryptionEnabled?: boolean;
+    /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     */
+    remainingLocalVolumeInGbsGreaterThanOrEqualTo?: number;
     /**
      * The remaining memory of the dedicated VM host, in GBs.
      */
@@ -116,6 +122,7 @@ export interface GetDedicatedVmHostsResult {
      * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
      */
     readonly isMemoryEncryptionEnabled?: boolean;
+    readonly remainingLocalVolumeInGbsGreaterThanOrEqualTo?: number;
     readonly remainingMemoryInGbsGreaterThanOrEqualTo?: number;
     readonly remainingOcpusGreaterThanOrEqualTo?: number;
     /**
@@ -143,6 +150,7 @@ export interface GetDedicatedVmHostsResult {
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
  *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
+ *     remainingLocalVolumeInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingLocalVolumeInGbsGreaterThanOrEqualTo,
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -158,6 +166,7 @@ export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, o
         "filters": args.filters,
         "instanceShapeName": args.instanceShapeName,
         "isMemoryEncryptionEnabled": args.isMemoryEncryptionEnabled,
+        "remainingLocalVolumeInGbsGreaterThanOrEqualTo": args.remainingLocalVolumeInGbsGreaterThanOrEqualTo,
         "remainingMemoryInGbsGreaterThanOrEqualTo": args.remainingMemoryInGbsGreaterThanOrEqualTo,
         "remainingOcpusGreaterThanOrEqualTo": args.remainingOcpusGreaterThanOrEqualTo,
         "state": args.state,
@@ -189,6 +198,10 @@ export interface GetDedicatedVmHostsOutputArgs {
      * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
      */
     isMemoryEncryptionEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * The remaining local volume of the dedicated VM host, in GBs.
+     */
+    remainingLocalVolumeInGbsGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * The remaining memory of the dedicated VM host, in GBs.
      */

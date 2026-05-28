@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? CapacityIndex { get; set; }
 
         /// <summary>
+        /// The current available local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Input("remainingLocalVolumeInGbs")]
+        public Input<double>? RemainingLocalVolumeInGbs { get; set; }
+
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         [Input("remainingMemoryInGbs")]
@@ -41,6 +47,12 @@ namespace Pulumi.Oci.Core.Inputs
             get => _supportedShapes ?? (_supportedShapes = new InputList<string>());
             set => _supportedShapes = value;
         }
+
+        /// <summary>
+        /// The current total local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Input("totalLocalVolumeInGbs")]
+        public Input<double>? TotalLocalVolumeInGbs { get; set; }
 
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.

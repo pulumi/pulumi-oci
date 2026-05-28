@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureExascaleConfig;
+import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureMaintenanceVersionPreference;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureMaintenanceWindow;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -135,6 +136,11 @@ public final class GetCloudExadataInfrastructureResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    private List<GetCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
@@ -392,6 +398,13 @@ public final class GetCloudExadataInfrastructureResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return The preferences for target versions of future maintenance runs.
+     * 
+     */
+    public List<GetCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences() {
+        return this.maintenanceVersionPreferences;
+    }
+    /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -551,6 +564,7 @@ public final class GetCloudExadataInfrastructureResult {
         private Boolean isSchedulingPolicyAssociated;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
+        private List<GetCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences;
         private List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
         private Integer maxCpuCount;
         private Double maxDataStorageInTbs;
@@ -596,6 +610,7 @@ public final class GetCloudExadataInfrastructureResult {
     	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceVersionPreferences = defaults.maintenanceVersionPreferences;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.maxCpuCount = defaults.maxCpuCount;
     	      this.maxDataStorageInTbs = defaults.maxDataStorageInTbs;
@@ -818,6 +833,17 @@ public final class GetCloudExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceVersionPreferences(List<GetCloudExadataInfrastructureMaintenanceVersionPreference> maintenanceVersionPreferences) {
+            if (maintenanceVersionPreferences == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maintenanceVersionPreferences");
+            }
+            this.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            return this;
+        }
+        public Builder maintenanceVersionPreferences(GetCloudExadataInfrastructureMaintenanceVersionPreference... maintenanceVersionPreferences) {
+            return maintenanceVersionPreferences(List.of(maintenanceVersionPreferences));
+        }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
             if (maintenanceWindows == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "maintenanceWindows");
@@ -990,6 +1016,7 @@ public final class GetCloudExadataInfrastructureResult {
             _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceVersionPreferences = maintenanceVersionPreferences;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.maxCpuCount = maxCpuCount;
             _resultValue.maxDataStorageInTbs = maxDataStorageInTbs;

@@ -137,6 +137,7 @@ namespace Pulumi.Oci.Oci
         public readonly string DistributedAutonomousDatabaseId;
         public readonly int DownloadGsmCertificateSigningRequestTrigger;
         public readonly string DownloadedGsmCsrPem;
+        public readonly int EffectiveReplicationUnit;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -287,6 +288,8 @@ namespace Pulumi.Oci.Oci
 
             string downloadedGsmCsrPem,
 
+            int effectiveReplicationUnit,
+
             ImmutableDictionary<string, string> freeformTags,
 
             int generateGsmCertificateSigningRequestTrigger,
@@ -389,6 +392,7 @@ namespace Pulumi.Oci.Oci
             DistributedAutonomousDatabaseId = distributedAutonomousDatabaseId;
             DownloadGsmCertificateSigningRequestTrigger = downloadGsmCertificateSigningRequestTrigger;
             DownloadedGsmCsrPem = downloadedGsmCsrPem;
+            EffectiveReplicationUnit = effectiveReplicationUnit;
             FreeformTags = freeformTags;
             GenerateGsmCertificateSigningRequestTrigger = generateGsmCertificateSigningRequestTrigger;
             GenerateGsmCertificateSigningRequestTriggerCaBundleId = generateGsmCertificateSigningRequestTriggerCaBundleId;

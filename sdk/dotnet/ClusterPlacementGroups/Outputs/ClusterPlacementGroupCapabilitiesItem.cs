@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
     public sealed class ClusterPlacementGroupCapabilitiesItem
     {
         /// <summary>
+        /// Additional details describing the selected capability.
+        /// </summary>
+        public readonly Outputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetails? AdditionalDetails;
+        /// <summary>
         /// The type of resource.
         /// </summary>
         public readonly string Name;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
 
         [OutputConstructor]
         private ClusterPlacementGroupCapabilitiesItem(
+            Outputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetails? additionalDetails,
+
             string name,
 
             string service)
         {
+            AdditionalDetails = additionalDetails;
             Name = name;
             Service = service;
         }

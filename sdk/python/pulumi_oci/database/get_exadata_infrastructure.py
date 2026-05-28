@@ -27,7 +27,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, compute_model=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, exascale_configs=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, system_tags=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, compute_model=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, exascale_configs=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, is_scheduling_policy_associated=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_version_preferences=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, system_tags=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -136,6 +136,9 @@ class GetExadataInfrastructureResult:
         if maintenance_slo_status and not isinstance(maintenance_slo_status, str):
             raise TypeError("Expected argument 'maintenance_slo_status' to be a str")
         pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
+        if maintenance_version_preferences and not isinstance(maintenance_version_preferences, list):
+            raise TypeError("Expected argument 'maintenance_version_preferences' to be a list")
+        pulumi.set(__self__, "maintenance_version_preferences", maintenance_version_preferences)
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -477,6 +480,14 @@ class GetExadataInfrastructureResult:
         return pulumi.get(self, "maintenance_slo_status")
 
     @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> Sequence['outputs.GetExadataInfrastructureMaintenanceVersionPreferenceResult']:
+        """
+        The preferences for target versions of future maintenance runs.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Sequence['outputs.GetExadataInfrastructureMaintenanceWindowResult']:
         """
@@ -679,6 +690,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             is_scheduling_policy_associated=self.is_scheduling_policy_associated,
             lifecycle_details=self.lifecycle_details,
             maintenance_slo_status=self.maintenance_slo_status,
+            maintenance_version_preferences=self.maintenance_version_preferences,
             maintenance_windows=self.maintenance_windows,
             max_cpu_count=self.max_cpu_count,
             max_data_storage_in_tbs=self.max_data_storage_in_tbs,
@@ -756,6 +768,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[_builtins.str
         is_scheduling_policy_associated=pulumi.get(__ret__, 'is_scheduling_policy_associated'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_slo_status=pulumi.get(__ret__, 'maintenance_slo_status'),
+        maintenance_version_preferences=pulumi.get(__ret__, 'maintenance_version_preferences'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         max_cpu_count=pulumi.get(__ret__, 'max_cpu_count'),
         max_data_storage_in_tbs=pulumi.get(__ret__, 'max_data_storage_in_tbs'),
@@ -830,6 +843,7 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: pulumi.Input[Op
         is_scheduling_policy_associated=pulumi.get(__response__, 'is_scheduling_policy_associated'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenance_slo_status=pulumi.get(__response__, 'maintenance_slo_status'),
+        maintenance_version_preferences=pulumi.get(__response__, 'maintenance_version_preferences'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
         max_cpu_count=pulumi.get(__response__, 'max_cpu_count'),
         max_data_storage_in_tbs=pulumi.get(__response__, 'max_data_storage_in_tbs'),

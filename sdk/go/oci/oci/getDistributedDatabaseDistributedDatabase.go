@@ -60,6 +60,7 @@ type LookupDistributedDatabaseDistributedDatabaseResult struct {
 	DistributedDatabaseId string `pulumi:"distributedDatabaseId"`
 	// Deprecated: This trigger/action API is deprecated.
 	DownloadGsmCertificateSigningRequestTrigger int `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
+	EffectiveReplicationUnit                    int `pulumi:"effectiveReplicationUnit"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated: This trigger/action API is deprecated.
@@ -242,6 +243,10 @@ func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) DownloadGsmCer
 	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int {
 		return v.DownloadGsmCertificateSigningRequestTrigger
 	}).(pulumi.IntOutput)
+}
+
+func (o LookupDistributedDatabaseDistributedDatabaseResultOutput) EffectiveReplicationUnit() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDistributedDatabaseDistributedDatabaseResult) int { return v.EffectiveReplicationUnit }).(pulumi.IntOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

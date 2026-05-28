@@ -33,6 +33,7 @@ class DeploymentArgs:
                  deployment_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disaster_recovery_status: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  fqdn: pulumi.Input[Optional[_builtins.str]] = None,
@@ -68,6 +69,7 @@ class DeploymentArgs:
         :param pulumi.Input[_builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[_builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
+        :param pulumi.Input[_builtins.str] disaster_recovery_status: Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain of a placement.
         :param pulumi.Input[_builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
@@ -124,6 +126,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "deployment_type", deployment_type)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if disaster_recovery_status is not None:
+            pulumi.set(__self__, "disaster_recovery_status", disaster_recovery_status)
         if environment_type is not None:
             pulumi.set(__self__, "environment_type", environment_type)
         if fault_domain is not None:
@@ -308,6 +312,18 @@ class DeploymentArgs:
     @description.setter
     def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disasterRecoveryStatus")
+    def disaster_recovery_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        """
+        return pulumi.get(self, "disaster_recovery_status")
+
+    @disaster_recovery_status.setter
+    def disaster_recovery_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "disaster_recovery_status", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentType")
@@ -579,6 +595,7 @@ class _DeploymentState:
                  deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_url: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disaster_recovery_status: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
@@ -638,6 +655,7 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[_builtins.str] deployment_url: The URL of a resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
+        :param pulumi.Input[_builtins.str] disaster_recovery_status: Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain of a placement.
@@ -723,6 +741,8 @@ class _DeploymentState:
             pulumi.set(__self__, "deployment_url", deployment_url)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if disaster_recovery_status is not None:
+            pulumi.set(__self__, "disaster_recovery_status", disaster_recovery_status)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if environment_type is not None:
@@ -978,6 +998,18 @@ class _DeploymentState:
     @description.setter
     def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disasterRecoveryStatus")
+    def disaster_recovery_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        """
+        return pulumi.get(self, "disaster_recovery_status")
+
+    @disaster_recovery_status.setter
+    def disaster_recovery_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "disaster_recovery_status", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -1513,6 +1545,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disaster_recovery_status: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1565,6 +1598,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[_builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
+        :param pulumi.Input[_builtins.str] disaster_recovery_status: Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain of a placement.
@@ -1650,6 +1684,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disaster_recovery_status: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  environment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1693,6 +1728,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["deployment_backup_id"] = deployment_backup_id
             __props__.__dict__["deployment_type"] = deployment_type
             __props__.__dict__["description"] = description
+            __props__.__dict__["disaster_recovery_status"] = disaster_recovery_status
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
@@ -1767,6 +1803,7 @@ class Deployment(pulumi.CustomResource):
             deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
             deployment_url: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
+            disaster_recovery_status: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             environment_type: pulumi.Input[Optional[_builtins.str]] = None,
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1830,6 +1867,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[_builtins.str] deployment_url: The URL of a resource.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
+        :param pulumi.Input[_builtins.str] disaster_recovery_status: Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.str] environment_type: (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
         :param pulumi.Input[_builtins.str] fault_domain: The fault domain of a placement.
@@ -1905,6 +1943,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["deployment_type"] = deployment_type
         __props__.__dict__["deployment_url"] = deployment_url
         __props__.__dict__["description"] = description
+        __props__.__dict__["disaster_recovery_status"] = disaster_recovery_status
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["environment_type"] = environment_type
         __props__.__dict__["fault_domain"] = fault_domain
@@ -2060,6 +2099,14 @@ class Deployment(pulumi.CustomResource):
         (Updatable) Metadata about this specific object.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="disasterRecoveryStatus")
+    def disaster_recovery_status(self) -> pulumi.Output[_builtins.str]:
+        """
+        Indicates if disaster recovery is enabled for a deployment. If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+        """
+        return pulumi.get(self, "disaster_recovery_status")
 
     @_builtins.property
     @pulumi.getter(name="displayName")

@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,11 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
      */
     private Integer blockStorageSizeInGbs;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    private String computeTargetId;
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -28,6 +34,11 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
      * 
      */
     private List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    private List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
@@ -48,6 +59,13 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
         return this.blockStorageSizeInGbs;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute target.
+     * 
+     */
+    public String computeTargetId() {
+        return this.computeTargetId;
+    }
+    /**
      * @return The infrastructure type used for job run.
      * 
      */
@@ -60,6 +78,13 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
      */
     public List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
         return this.jobShapeConfigDetails;
+    }
+    /**
+     * @return Details for the compute target job resource configuration.
+     * 
+     */
+    public List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations() {
+        return this.resourceConfigurations;
     }
     /**
      * @return The name that corresponds to the JobShapeSummary to use for the job node
@@ -86,16 +111,20 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
     @CustomType.Builder
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
+        private String computeTargetId;
         private String jobInfrastructureType;
         private List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations;
         private String shapeName;
         private String subnetId;
         public Builder() {}
         public Builder(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.computeTargetId = defaults.computeTargetId;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
     	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
+    	      this.resourceConfigurations = defaults.resourceConfigurations;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -106,6 +135,14 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
               throw new MissingRequiredPropertyException("GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "blockStorageSizeInGbs");
             }
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeTargetId(String computeTargetId) {
+            if (computeTargetId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "computeTargetId");
+            }
+            this.computeTargetId = computeTargetId;
             return this;
         }
         @CustomType.Setter
@@ -128,6 +165,17 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder resourceConfigurations(List<GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration> resourceConfigurations) {
+            if (resourceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "resourceConfigurations");
+            }
+            this.resourceConfigurations = resourceConfigurations;
+            return this;
+        }
+        public Builder resourceConfigurations(GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResourceConfiguration... resourceConfigurations) {
+            return resourceConfigurations(List.of(resourceConfigurations));
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail", "shapeName");
@@ -146,8 +194,10 @@ public final class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfig
         public GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.computeTargetId = computeTargetId;
             _resultValue.jobInfrastructureType = jobInfrastructureType;
             _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.resourceConfigurations = resourceConfigurations;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;
             return _resultValue;

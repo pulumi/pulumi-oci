@@ -50,6 +50,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs;
@@ -98,9 +101,21 @@ import javax.annotation.Nullable;
  *             .jobInfrastructureConfigurationOverrideDetails(JobRunJobInfrastructureConfigurationOverrideDetailsArgs.builder()
  *                 .jobInfrastructureType(jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType)
  *                 .blockStorageSizeInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs)
+ *                 .computeTargetId(testComputeTarget.id())
  *                 .jobShapeConfigDetails(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs.builder()
  *                     .memoryInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .resourceConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationArgs.builder()
+ *                     .resourceLimitConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
+ *                         .memoryInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
+ *                         .ocpus(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationOcpus)
+ *                         .build())
+ *                     .resourceRequestConfiguration(JobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationArgs.builder()
+ *                         .gpus(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationGpus)
+ *                         .memoryInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs)
+ *                         .ocpus(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationOcpus)
+ *                         .build())
  *                     .build())
  *                 .shapeName(testShape.name())
  *                 .subnetId(testSubnet.id())
@@ -143,9 +158,21 @@ import javax.annotation.Nullable;
  *                     .jobInfrastructureConfigurationDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs.builder()
  *                         .jobInfrastructureType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType)
  *                         .blockStorageSizeInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                         .computeTargetId(testComputeTarget.id())
  *                         .jobShapeConfigDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
  *                             .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                             .ocpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                             .build())
+ *                         .resourceConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationArgs.builder()
+ *                             .resourceLimitConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationArgs.builder()
+ *                                 .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs)
+ *                                 .ocpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus)
+ *                                 .build())
+ *                             .resourceRequestConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationArgs.builder()
+ *                                 .gpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus)
+ *                                 .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs)
+ *                                 .ocpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus)
+ *                                 .build())
  *                             .build())
  *                         .shapeName(testShape.name())
  *                         .subnetId(testSubnet.id())

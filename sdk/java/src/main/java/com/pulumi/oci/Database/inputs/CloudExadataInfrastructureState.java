@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureExascaleConfigArgs;
+import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -355,6 +356,25 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
     }
 
     /**
+     * (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    @Import(name="maintenanceVersionPreferences")
+    private @Nullable Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs> maintenanceVersionPreferences;
+
+    /**
+     * @return (Updatable) The preferences for target versions of future maintenance runs.
+     * 
+     * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+     * 
+     */
+    public Optional<Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs>> maintenanceVersionPreferences() {
+        return Optional.ofNullable(this.maintenanceVersionPreferences);
+    }
+
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -655,6 +675,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.isSchedulingPolicyAssociated = $.isSchedulingPolicyAssociated;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.maintenanceVersionPreferences = $.maintenanceVersionPreferences;
         this.maintenanceWindow = $.maintenanceWindow;
         this.maxCpuCount = $.maxCpuCount;
         this.maxDataStorageInTbs = $.maxDataStorageInTbs;
@@ -1183,6 +1204,31 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param maintenanceVersionPreferences (Updatable) The preferences for target versions of future maintenance runs.
+         * 
+         * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceVersionPreferences(@Nullable Output<CloudExadataInfrastructureMaintenanceVersionPreferencesArgs> maintenanceVersionPreferences) {
+            $.maintenanceVersionPreferences = maintenanceVersionPreferences;
+            return this;
+        }
+
+        /**
+         * @param maintenanceVersionPreferences (Updatable) The preferences for target versions of future maintenance runs.
+         * 
+         * Currently these preferences are only supported for Monthly maintenance runs created via scheduling plans If no preferences are specified then the version will be set by default to &#34;Latest&#34;. Changing preferences will not change versions for an already existing maintenance run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceVersionPreferences(CloudExadataInfrastructureMaintenanceVersionPreferencesArgs maintenanceVersionPreferences) {
+            return maintenanceVersionPreferences(Output.of(maintenanceVersionPreferences));
         }
 
         /**

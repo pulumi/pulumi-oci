@@ -33,6 +33,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The list of autoscaling policy rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> Rules;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicyResult> ScaleInPolicies;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicyResult> ScaleOutPolicies;
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult(
@@ -44,13 +46,19 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             int minimumInstanceCount,
 
-            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> rules)
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult> rules,
+
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicyResult> scaleInPolicies,
+
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicyResult> scaleOutPolicies)
         {
             AutoScalingPolicyType = autoScalingPolicyType;
             InitialInstanceCount = initialInstanceCount;
             MaximumInstanceCount = maximumInstanceCount;
             MinimumInstanceCount = minimumInstanceCount;
             Rules = rules;
+            ScaleInPolicies = scaleInPolicies;
+            ScaleOutPolicies = scaleOutPolicies;
         }
     }
 }

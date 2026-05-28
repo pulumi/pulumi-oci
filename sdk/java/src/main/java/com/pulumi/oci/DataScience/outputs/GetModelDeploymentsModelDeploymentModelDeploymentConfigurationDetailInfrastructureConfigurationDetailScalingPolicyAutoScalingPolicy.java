@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRule;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -38,6 +40,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * 
      */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRule> rules;
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy> scaleInPolicies;
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy> scaleOutPolicies;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy() {}
     /**
@@ -75,6 +79,12 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRule> rules() {
         return this.rules;
     }
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy> scaleInPolicies() {
+        return this.scaleInPolicies;
+    }
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy> scaleOutPolicies() {
+        return this.scaleOutPolicies;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -90,6 +100,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         private Integer maximumInstanceCount;
         private Integer minimumInstanceCount;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRule> rules;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy> scaleInPolicies;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy> scaleOutPolicies;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,6 +110,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     	      this.maximumInstanceCount = defaults.maximumInstanceCount;
     	      this.minimumInstanceCount = defaults.minimumInstanceCount;
     	      this.rules = defaults.rules;
+    	      this.scaleInPolicies = defaults.scaleInPolicies;
+    	      this.scaleOutPolicies = defaults.scaleOutPolicies;
         }
 
         @CustomType.Setter
@@ -143,6 +157,28 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public Builder rules(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
+        public Builder scaleInPolicies(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy> scaleInPolicies) {
+            if (scaleInPolicies == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy", "scaleInPolicies");
+            }
+            this.scaleInPolicies = scaleInPolicies;
+            return this;
+        }
+        public Builder scaleInPolicies(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleInPolicy... scaleInPolicies) {
+            return scaleInPolicies(List.of(scaleInPolicies));
+        }
+        @CustomType.Setter
+        public Builder scaleOutPolicies(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy> scaleOutPolicies) {
+            if (scaleOutPolicies == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy", "scaleOutPolicies");
+            }
+            this.scaleOutPolicies = scaleOutPolicies;
+            return this;
+        }
+        public Builder scaleOutPolicies(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyScaleOutPolicy... scaleOutPolicies) {
+            return scaleOutPolicies(List.of(scaleOutPolicies));
+        }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy build() {
             final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicy();
             _resultValue.autoScalingPolicyType = autoScalingPolicyType;
@@ -150,6 +186,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             _resultValue.maximumInstanceCount = maximumInstanceCount;
             _resultValue.minimumInstanceCount = minimumInstanceCount;
             _resultValue.rules = rules;
+            _resultValue.scaleInPolicies = scaleInPolicies;
+            _resultValue.scaleOutPolicies = scaleOutPolicies;
             return _resultValue;
         }
     }

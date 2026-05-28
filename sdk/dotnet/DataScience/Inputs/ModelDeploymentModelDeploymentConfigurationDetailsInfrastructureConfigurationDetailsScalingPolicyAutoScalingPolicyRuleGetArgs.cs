@@ -24,17 +24,20 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("metricType")]
         public Input<string>? MetricType { get; set; }
 
-        /// <summary>
-        /// The scaling configuration for the predefined metric expression rule.
-        /// </summary>
-        [Input("scaleInConfiguration", required: true)]
-        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationGetArgs> ScaleInConfiguration { get; set; } = null!;
+        [Input("scaleConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleConfigurationGetArgs>? ScaleConfiguration { get; set; }
 
         /// <summary>
         /// The scaling configuration for the predefined metric expression rule.
         /// </summary>
-        [Input("scaleOutConfiguration", required: true)]
-        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationGetArgs> ScaleOutConfiguration { get; set; } = null!;
+        [Input("scaleInConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationGetArgs>? ScaleInConfiguration { get; set; }
+
+        /// <summary>
+        /// The scaling configuration for the predefined metric expression rule.
+        /// </summary>
+        [Input("scaleOutConfiguration")]
+        public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationGetArgs>? ScaleOutConfiguration { get; set; }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleGetArgs()
         {

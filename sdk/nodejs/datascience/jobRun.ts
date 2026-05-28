@@ -56,9 +56,21 @@ import * as utilities from "../utilities";
  *     jobInfrastructureConfigurationOverrideDetails: {
  *         jobInfrastructureType: jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
  *         blockStorageSizeInGbs: Number(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+ *         computeTargetId: testComputeTarget.id,
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
+ *         },
+ *         resourceConfiguration: {
+ *             resourceLimitConfiguration: {
+ *                 memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+ *                 ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+ *             },
+ *             resourceRequestConfiguration: {
+ *                 gpus: Number(jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationGpus),
+ *                 memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+ *                 ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+ *             },
  *         },
  *         shapeName: testShape.name,
  *         subnetId: testSubnet.id,
@@ -101,9 +113,21 @@ import * as utilities from "../utilities";
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
  *                 blockStorageSizeInGbs: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+ *                 computeTargetId: testComputeTarget.id,
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *                 },
+ *                 resourceConfiguration: {
+ *                     resourceLimitConfiguration: {
+ *                         memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationMemoryInGbs,
+ *                         ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceLimitConfigurationOcpus,
+ *                     },
+ *                     resourceRequestConfiguration: {
+ *                         gpus: Number(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationGpus),
+ *                         memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationMemoryInGbs,
+ *                         ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsResourceConfigurationResourceRequestConfigurationOcpus,
+ *                     },
  *                 },
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,

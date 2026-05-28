@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodePoolCyclin
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeSourceDetail;
+import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolPrimaryVnic;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolSecondaryVnic;
 import java.lang.Integer;
 import java.lang.String;
@@ -128,6 +129,11 @@ public final class GetNodePoolsNodePool {
      */
     private List<GetNodePoolsNodePoolNodeSource> nodeSources;
     private List<GetNodePoolsNodePoolNode> nodes;
+    /**
+     * @return Details for node&#39;s primary VNIC
+     * 
+     */
+    private List<GetNodePoolsNodePoolPrimaryVnic> primaryVnics;
     /**
      * @return The number of nodes in each subnet.
      * 
@@ -306,6 +312,13 @@ public final class GetNodePoolsNodePool {
         return this.nodes;
     }
     /**
+     * @return Details for node&#39;s primary VNIC
+     * 
+     */
+    public List<GetNodePoolsNodePoolPrimaryVnic> primaryVnics() {
+        return this.primaryVnics;
+    }
+    /**
      * @return The number of nodes in each subnet.
      * 
      */
@@ -372,6 +385,7 @@ public final class GetNodePoolsNodePool {
         private List<GetNodePoolsNodePoolNodeSourceDetail> nodeSourceDetails;
         private List<GetNodePoolsNodePoolNodeSource> nodeSources;
         private List<GetNodePoolsNodePoolNode> nodes;
+        private List<GetNodePoolsNodePoolPrimaryVnic> primaryVnics;
         private Integer quantityPerSubnet;
         private List<GetNodePoolsNodePoolSecondaryVnic> secondaryVnics;
         private String sshPublicKey;
@@ -402,6 +416,7 @@ public final class GetNodePoolsNodePool {
     	      this.nodeSourceDetails = defaults.nodeSourceDetails;
     	      this.nodeSources = defaults.nodeSources;
     	      this.nodes = defaults.nodes;
+    	      this.primaryVnics = defaults.primaryVnics;
     	      this.quantityPerSubnet = defaults.quantityPerSubnet;
     	      this.secondaryVnics = defaults.secondaryVnics;
     	      this.sshPublicKey = defaults.sshPublicKey;
@@ -610,6 +625,17 @@ public final class GetNodePoolsNodePool {
             return nodes(List.of(nodes));
         }
         @CustomType.Setter
+        public Builder primaryVnics(List<GetNodePoolsNodePoolPrimaryVnic> primaryVnics) {
+            if (primaryVnics == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "primaryVnics");
+            }
+            this.primaryVnics = primaryVnics;
+            return this;
+        }
+        public Builder primaryVnics(GetNodePoolsNodePoolPrimaryVnic... primaryVnics) {
+            return primaryVnics(List.of(primaryVnics));
+        }
+        @CustomType.Setter
         public Builder quantityPerSubnet(Integer quantityPerSubnet) {
             if (quantityPerSubnet == null) {
               throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "quantityPerSubnet");
@@ -679,6 +705,7 @@ public final class GetNodePoolsNodePool {
             _resultValue.nodeSourceDetails = nodeSourceDetails;
             _resultValue.nodeSources = nodeSources;
             _resultValue.nodes = nodes;
+            _resultValue.primaryVnics = primaryVnics;
             _resultValue.quantityPerSubnet = quantityPerSubnet;
             _resultValue.secondaryVnics = secondaryVnics;
             _resultValue.sshPublicKey = sshPublicKey;

@@ -117,6 +117,10 @@ namespace Pulumi.Oci.ContainerEngine
     ///             SourceType = nodePoolNodeSourceDetailsSourceType,
     ///             BootVolumeSizeInGbs = nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
     ///         },
+    ///         PrimaryVnic = new Oci.ContainerEngine.Inputs.NodePoolPrimaryVnicArgs
+    ///         {
+    ///             SecurityAttributes = nodePoolPrimaryVnicSecurityAttributes,
+    ///         },
     ///         QuantityPerSubnet = nodePoolQuantityPerSubnet,
     ///         SecondaryVnics = new[]
     ///         {
@@ -147,6 +151,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                         },
     ///                     },
     ///                     NsgIds = nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
+    ///                     SecurityAttributes = nodePoolSecondaryVnicsCreateVnicDetailsSecurityAttributes,
     ///                     SkipSourceDestCheck = nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
     ///                 },
     ///                 DisplayName = nodePoolSecondaryVnicsDisplayName,
@@ -290,6 +295,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.NodePoolNode>> Nodes { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details for node's primary VNIC
+        /// </summary>
+        [Output("primaryVnic")]
+        public Output<Outputs.NodePoolPrimaryVnic> PrimaryVnic { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
@@ -498,6 +509,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<Inputs.NodePoolNodeSourceDetailsArgs>? NodeSourceDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) Details for node's primary VNIC
+        /// </summary>
+        [Input("primaryVnic")]
+        public Input<Inputs.NodePoolPrimaryVnicArgs>? PrimaryVnic { get; set; }
+
+        /// <summary>
         /// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         /// </summary>
         [Input("quantityPerSubnet")]
@@ -700,6 +717,12 @@ namespace Pulumi.Oci.ContainerEngine
             get => _nodes ?? (_nodes = new InputList<Inputs.NodePoolNodeGetArgs>());
             set => _nodes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Details for node's primary VNIC
+        /// </summary>
+        [Input("primaryVnic")]
+        public Input<Inputs.NodePoolPrimaryVnicGetArgs>? PrimaryVnic { get; set; }
 
         /// <summary>
         /// (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.

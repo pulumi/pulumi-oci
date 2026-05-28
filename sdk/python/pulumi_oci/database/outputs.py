@@ -109,6 +109,7 @@ __all__ = [
     'CloudExadataInfrastructureCustomerContact',
     'CloudExadataInfrastructureDefinedFileSystemConfiguration',
     'CloudExadataInfrastructureExascaleConfig',
+    'CloudExadataInfrastructureMaintenanceVersionPreferences',
     'CloudExadataInfrastructureMaintenanceWindow',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'CloudExadataInfrastructureMaintenanceWindowMonth',
@@ -195,6 +196,7 @@ __all__ = [
     'ExadataInfrastructureContact',
     'ExadataInfrastructureDefinedFileSystemConfiguration',
     'ExadataInfrastructureExascaleConfig',
+    'ExadataInfrastructureMaintenanceVersionPreferences',
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureMaintenanceWindowMonth',
@@ -225,6 +227,7 @@ __all__ = [
     'KeyStoreAssociatedLongTermBackup',
     'KeyStoreTypeDetails',
     'MaintenanceRunEstimatedPatchingTime',
+    'MaintenanceRunWindowTypeDescription',
     'PluggableDatabaseConnectionString',
     'PluggableDatabaseManagementsManagementConnectionString',
     'PluggableDatabaseManagementsManagementCredentialDetails',
@@ -511,6 +514,7 @@ __all__ = [
     'GetCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetCloudExadataInfrastructureExascaleConfigResult',
+    'GetCloudExadataInfrastructureMaintenanceVersionPreferenceResult',
     'GetCloudExadataInfrastructureMaintenanceWindowResult',
     'GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructureMaintenanceWindowMonthResult',
@@ -519,6 +523,7 @@ __all__ = [
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult',
+    'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthResult',
@@ -569,6 +574,7 @@ __all__ = [
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult',
     'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
+    'GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult',
     'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult',
     'GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult',
     'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryResult',
@@ -577,6 +583,7 @@ __all__ = [
     'GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
+    'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult',
     'GetDatabasePdbConversionHistoryEntriesFilterResult',
     'GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult',
     'GetDatabaseSoftwareImagesDatabaseSoftwareImageResult',
@@ -687,6 +694,7 @@ __all__ = [
     'GetExadataInfrastructureContactResult',
     'GetExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetExadataInfrastructureExascaleConfigResult',
+    'GetExadataInfrastructureMaintenanceVersionPreferenceResult',
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
@@ -696,6 +704,7 @@ __all__ = [
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult',
+    'GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult',
@@ -772,9 +781,11 @@ __all__ = [
     'GetKeyStoresKeyStoreAssociatedLongTermBackupResult',
     'GetKeyStoresKeyStoreTypeDetailResult',
     'GetMaintenanceRunEstimatedPatchingTimeResult',
+    'GetMaintenanceRunWindowTypeDescriptionResult',
     'GetMaintenanceRunsFilterResult',
     'GetMaintenanceRunsMaintenanceRunResult',
     'GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeResult',
+    'GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionResult',
     'GetManagedPreferredCredentialsFilterResult',
     'GetManagedPreferredCredentialsPreferredCredentialCollectionResult',
     'GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult',
@@ -9009,6 +9020,42 @@ class CloudExadataInfrastructureExascaleConfig(dict):
 
 
 @pulumi.output_type
+class CloudExadataInfrastructureMaintenanceVersionPreferences(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "referenceResourceIdForImageUpdates":
+            suggest = "reference_resource_id_for_image_updates"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureMaintenanceVersionPreferences. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudExadataInfrastructureMaintenanceVersionPreferences.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudExadataInfrastructureMaintenanceVersionPreferences.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        if reference_resource_id_for_image_updates is not None:
+            pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+
+@pulumi.output_type
 class CloudExadataInfrastructureMaintenanceWindow(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -17220,6 +17267,42 @@ class ExadataInfrastructureExascaleConfig(dict):
 
 
 @pulumi.output_type
+class ExadataInfrastructureMaintenanceVersionPreferences(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "referenceResourceIdForImageUpdates":
+            suggest = "reference_resource_id_for_image_updates"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureMaintenanceVersionPreferences. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureMaintenanceVersionPreferences.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureMaintenanceVersionPreferences.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        if reference_resource_id_for_image_updates is not None:
+            pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+
+@pulumi.output_type
 class ExadataInfrastructureMaintenanceWindow(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -19120,6 +19203,54 @@ class MaintenanceRunEstimatedPatchingTime(dict):
         The estimated total time required in minutes for all patching operations.
         """
         return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
+class MaintenanceRunWindowTypeDescription(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "windowType":
+            suggest = "window_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceRunWindowTypeDescription. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceRunWindowTypeDescription.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceRunWindowTypeDescription.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 messages: Optional[Sequence[_builtins.str]] = None,
+                 window_type: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param _builtins.str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        if messages is not None:
+            pulumi.set(__self__, "messages", messages)
+        if window_type is not None:
+            pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> Optional[_builtins.str]:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
 
 
 @pulumi.output_type
@@ -24444,7 +24575,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param _builtins.int total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str version_preference: The next maintenance version preference.
-        :param _builtins.int vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        :param _builtins.int vm_failover_reservation: The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
         pulumi.set(__self__, "autonomous_container_database_backup_id", autonomous_container_database_backup_id)
@@ -25124,7 +25255,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="vmFailoverReservation")
     def vm_failover_reservation(self) -> _builtins.int:
         """
-        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 
@@ -38754,6 +38885,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  db_servers: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 distribution_algorithm: _builtins.str,
                  exadata_infrastructure_id: _builtins.str,
                  exadata_storage_in_tbs_lowest_scaled_value: _builtins.float,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -38780,6 +38912,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  reserved_cpus: _builtins.float,
                  scan_listener_port_non_tls: _builtins.int,
                  scan_listener_port_tls: _builtins.int,
+                 sga_percentage: _builtins.float,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
@@ -38806,6 +38939,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param Sequence[_builtins.str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param _builtins.str distribution_algorithm: The distribution algorithm used for the Autonomous VM cluster.
         :param _builtins.str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
         :param _builtins.float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage(in TBs) can be scaled down.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -38832,6 +38966,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param _builtins.float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param _builtins.int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param _builtins.int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
+        :param _builtins.float sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str time_created: The date and time that the Autonomous VM cluster was created.
@@ -38859,6 +38994,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "db_servers", db_servers)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         pulumi.set(__self__, "exadata_storage_in_tbs_lowest_scaled_value", exadata_storage_in_tbs_lowest_scaled_value)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -38885,6 +39021,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
+        pulumi.set(__self__, "sga_percentage", sga_percentage)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -39032,6 +39169,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> _builtins.str:
+        """
+        The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
@@ -39236,6 +39381,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         The SCAN Listener TLS port number. Default value is 2484.
         """
         return pulumi.get(self, "scan_listener_port_tls")
+
+    @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> _builtins.float:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
 
     @_builtins.property
     @pulumi.getter
@@ -41310,6 +41463,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
+                 distribution_algorithm: _builtins.str,
                  domain: _builtins.str,
                  exadata_storage_in_tbs_lowest_scaled_value: _builtins.float,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -41343,6 +41497,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  scan_listener_port_non_tls: _builtins.int,
                  scan_listener_port_tls: _builtins.int,
                  security_attributes: Mapping[str, _builtins.str],
+                 sga_percentage: _builtins.float,
                  shape: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
@@ -41378,6 +41533,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str description: User defined description of the cloud Autonomous VM cluster.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param _builtins.str distribution_algorithm: The distribution algorithm used for the Autonomous VM cluster.
         :param _builtins.str domain: The domain name for the cloud Autonomous VM cluster.
         :param _builtins.float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage (in TBs) can be scaled down.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -41409,6 +41565,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.int scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param _builtins.int scan_listener_port_tls: The SCAN Listenenr TLS port. Default is 2484.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param _builtins.float sga_percentage: Percentage of ECPU memory allocated for SGA(System Global Area).
         :param _builtins.str shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -41443,6 +41600,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "distribution_algorithm", distribution_algorithm)
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "exadata_storage_in_tbs_lowest_scaled_value", exadata_storage_in_tbs_lowest_scaled_value)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -41476,6 +41634,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         pulumi.set(__self__, "security_attributes", security_attributes)
+        pulumi.set(__self__, "sga_percentage", sga_percentage)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -41650,6 +41809,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="distributionAlgorithm")
+    def distribution_algorithm(self) -> _builtins.str:
+        """
+        The distribution algorithm used for the Autonomous VM cluster.
+        """
+        return pulumi.get(self, "distribution_algorithm")
 
     @_builtins.property
     @pulumi.getter
@@ -41906,6 +42073,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="sgaPercentage")
+    def sga_percentage(self) -> _builtins.float:
+        """
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+        """
+        return pulumi.get(self, "sga_percentage")
 
     @_builtins.property
     @pulumi.getter
@@ -42532,6 +42707,24 @@ class GetCloudExadataInfrastructureExascaleConfigResult(dict):
 
 
 @pulumi.output_type
+class GetCloudExadataInfrastructureMaintenanceVersionPreferenceResult(dict):
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: _builtins.str):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+
+@pulumi.output_type
 class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: _builtins.int,
@@ -42748,6 +42941,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  is_scheduling_policy_associated: _builtins.bool,
                  last_maintenance_run_id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 maintenance_version_preferences: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceResult'],
                  maintenance_windows: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult'],
                  max_cpu_count: _builtins.int,
                  max_data_storage_in_tbs: _builtins.float,
@@ -42790,6 +42984,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param _builtins.bool is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceArgs'] maintenance_version_preferences: The preferences for target versions of future maintenance runs.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param _builtins.int max_cpu_count: The total number of CPU cores available.
         :param _builtins.float max_data_storage_in_tbs: The total available DATA disk group size.
@@ -42832,6 +43027,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_version_preferences", maintenance_version_preferences)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "max_cpu_count", max_cpu_count)
         pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
@@ -43034,6 +43230,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceResult']:
+        """
+        The preferences for target versions of future maintenance runs.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
@@ -43298,6 +43502,24 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResu
         Storage size needed for VM storage on Exascale in GBs.
         """
         return pulumi.get(self, "total_vm_storage_in_gbs")
+
+
+@pulumi.output_type
+class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceVersionPreferenceResult(dict):
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: _builtins.str):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
 
 
 @pulumi.output_type
@@ -47044,6 +47266,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenance
                  time_started: _builtins.str,
                  time_updated: _builtins.str,
                  total_time_taken_in_mins: _builtins.int,
+                 window_details: _builtins.str,
                  window_duration_in_mins: _builtins.int,
                  window_type: _builtins.str):
         """
@@ -47066,8 +47289,9 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenance
         :param _builtins.str time_started: The date and time the maintenance run starts.
         :param _builtins.str time_updated: The last date and time that the execution window was updated.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param _builtins.str window_details: A message that gives a description on how and why the window was created.
         :param _builtins.int window_duration_in_mins: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
-        :param _builtins.str window_type: The execution window is of PLANNED or UNPLANNED type.
+        :param _builtins.str window_type: The execution window type. Either "PLANNED" or "UNPLANNED".
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "deferred_execution_window_id", deferred_execution_window_id)
@@ -47088,6 +47312,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenance
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_details", window_details)
         pulumi.set(__self__, "window_duration_in_mins", window_duration_in_mins)
         pulumi.set(__self__, "window_type", window_type)
 
@@ -47244,6 +47469,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenance
         return pulumi.get(self, "total_time_taken_in_mins")
 
     @_builtins.property
+    @pulumi.getter(name="windowDetails")
+    def window_details(self) -> _builtins.str:
+        """
+        A message that gives a description on how and why the window was created.
+        """
+        return pulumi.get(self, "window_details")
+
+    @_builtins.property
     @pulumi.getter(name="windowDurationInMins")
     def window_duration_in_mins(self) -> _builtins.int:
         """
@@ -47255,7 +47488,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenance
     @pulumi.getter(name="windowType")
     def window_type(self) -> _builtins.str:
         """
-        The execution window is of PLANNED or UNPLANNED type.
+        The execution window type. Either "PLANNED" or "UNPLANNED".
         """
         return pulumi.get(self, "window_type")
 
@@ -47287,6 +47520,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  patching_status: _builtins.str,
                  peer_maintenance_run_id: _builtins.str,
                  peer_maintenance_run_ids: Sequence[_builtins.str],
+                 reference_resource_id_for_image_updates: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  target_db_server_version: _builtins.str,
@@ -47296,7 +47530,8 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
                  time_ended: _builtins.str,
                  time_scheduled: _builtins.str,
                  time_started: _builtins.str,
-                 total_time_taken_in_mins: _builtins.int):
+                 total_time_taken_in_mins: _builtins.int,
+                 window_type_descriptions: Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult']):
         """
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -47322,6 +47557,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param _builtins.str patching_status: The status of the patching operation.
         :param _builtins.str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param Sequence[_builtins.str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
         :param _builtins.str state: The state of the maintenance run history.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str target_db_server_version: The target software version for the database server patching operation.
@@ -47332,6 +47568,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         :param _builtins.str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param _builtins.str time_started: The date and time the maintenance run starts.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param Sequence['GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs'] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -47357,6 +47594,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
         pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
@@ -47367,6 +47605,7 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_type_descriptions", window_type_descriptions)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -47561,6 +47800,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -47640,6 +47887,14 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         """
         return pulumi.get(self, "total_time_taken_in_mins")
 
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult']:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
+
 
 @pulumi.output_type
 class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult(dict):
@@ -47690,6 +47945,35 @@ class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetai
         The estimated total time required in minutes for all patching operations.
         """
         return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult(dict):
+    def __init__(__self__, *,
+                 messages: Sequence[_builtins.str],
+                 window_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param _builtins.str window_type: The execution window type. Either "PLANNED" or "UNPLANNED".
+        """
+        pulumi.set(__self__, "messages", messages)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> Sequence[_builtins.str]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> _builtins.str:
+        """
+        The execution window type. Either "PLANNED" or "UNPLANNED".
+        """
+        return pulumi.get(self, "window_type")
 
 
 @pulumi.output_type
@@ -48115,6 +48399,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
                  time_started: _builtins.str,
                  time_updated: _builtins.str,
                  total_time_taken_in_mins: _builtins.int,
+                 window_details: _builtins.str,
                  window_duration_in_mins: _builtins.int,
                  window_type: _builtins.str):
         """
@@ -48137,8 +48422,9 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
         :param _builtins.str time_started: The date and time the maintenance run starts.
         :param _builtins.str time_updated: The last date and time that the execution window was updated.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param _builtins.str window_details: A message that gives a description on how and why the window was created.
         :param _builtins.int window_duration_in_mins: Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
-        :param _builtins.str window_type: The execution window is of PLANNED or UNPLANNED type.
+        :param _builtins.str window_type: The execution window type. Either "PLANNED" or "UNPLANNED".
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "deferred_execution_window_id", deferred_execution_window_id)
@@ -48159,6 +48445,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_details", window_details)
         pulumi.set(__self__, "window_duration_in_mins", window_duration_in_mins)
         pulumi.set(__self__, "window_type", window_type)
 
@@ -48315,6 +48602,14 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
         return pulumi.get(self, "total_time_taken_in_mins")
 
     @_builtins.property
+    @pulumi.getter(name="windowDetails")
+    def window_details(self) -> _builtins.str:
+        """
+        A message that gives a description on how and why the window was created.
+        """
+        return pulumi.get(self, "window_details")
+
+    @_builtins.property
     @pulumi.getter(name="windowDurationInMins")
     def window_duration_in_mins(self) -> _builtins.int:
         """
@@ -48326,7 +48621,7 @@ class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowR
     @pulumi.getter(name="windowType")
     def window_type(self) -> _builtins.str:
         """
-        The execution window is of PLANNED or UNPLANNED type.
+        The execution window type. Either "PLANNED" or "UNPLANNED".
         """
         return pulumi.get(self, "window_type")
 
@@ -48358,6 +48653,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  patching_status: _builtins.str,
                  peer_maintenance_run_id: _builtins.str,
                  peer_maintenance_run_ids: Sequence[_builtins.str],
+                 reference_resource_id_for_image_updates: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  target_db_server_version: _builtins.str,
@@ -48367,7 +48663,8 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
                  time_ended: _builtins.str,
                  time_scheduled: _builtins.str,
                  time_started: _builtins.str,
-                 total_time_taken_in_mins: _builtins.int):
+                 total_time_taken_in_mins: _builtins.int,
+                 window_type_descriptions: Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult']):
         """
         :param _builtins.str compartment_id: The OCID of the compartment.
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -48393,6 +48690,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param _builtins.str patching_status: The status of the patching operation.
         :param _builtins.str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param Sequence[_builtins.str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
         :param _builtins.str state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str target_db_server_version: The target software version for the database server patching operation.
@@ -48403,6 +48701,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param _builtins.str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param _builtins.str time_started: The date and time the maintenance run starts.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param Sequence['GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs'] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -48428,6 +48727,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
         pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
@@ -48438,6 +48738,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_type_descriptions", window_type_descriptions)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -48632,6 +48933,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -48711,6 +49020,14 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         """
         return pulumi.get(self, "total_time_taken_in_mins")
 
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult']:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
+
 
 @pulumi.output_type
 class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult(dict):
@@ -48761,6 +49078,35 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeR
         The estimated total time required in minutes for all patching operations.
         """
         return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
+class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult(dict):
+    def __init__(__self__, *,
+                 messages: Sequence[_builtins.str],
+                 window_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param _builtins.str window_type: The execution window type. Either "PLANNED" or "UNPLANNED".
+        """
+        pulumi.set(__self__, "messages", messages)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> Sequence[_builtins.str]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> _builtins.str:
+        """
+        The execution window type. Either "PLANNED" or "UNPLANNED".
+        """
+        return pulumi.get(self, "window_type")
 
 
 @pulumi.output_type
@@ -57509,6 +57855,24 @@ class GetExadataInfrastructureExascaleConfigResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureMaintenanceVersionPreferenceResult(dict):
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: _builtins.str):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+
+@pulumi.output_type
 class GetExadataInfrastructureMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: _builtins.int,
@@ -57777,6 +58141,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  is_scheduling_policy_associated: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  maintenance_slo_status: _builtins.str,
+                 maintenance_version_preferences: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceResult'],
                  maintenance_windows: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult'],
                  max_cpu_count: _builtins.int,
                  max_data_storage_in_tbs: _builtins.float,
@@ -57831,6 +58196,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param _builtins.bool is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
+        :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceArgs'] maintenance_version_preferences: The preferences for target versions of future maintenance runs.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param _builtins.int max_cpu_count: The total number of CPU cores available.
         :param _builtins.float max_data_storage_in_tbs: The total available DATA disk group size.
@@ -57887,6 +58253,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
+        pulumi.set(__self__, "maintenance_version_preferences", maintenance_version_preferences)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "max_cpu_count", max_cpu_count)
         pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
@@ -58181,6 +58548,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         """
         return pulumi.get(self, "maintenance_slo_status")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceVersionPreferences")
+    def maintenance_version_preferences(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceResult']:
+        """
+        The preferences for target versions of future maintenance runs.
+        """
+        return pulumi.get(self, "maintenance_version_preferences")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
@@ -58505,6 +58880,24 @@ class GetExadataInfrastructuresExadataInfrastructureExascaleConfigResult(dict):
         Storage size needed for VM storage on Exascale in GBs.
         """
         return pulumi.get(self, "total_vm_storage_in_gbs")
+
+
+@pulumi.output_type
+class GetExadataInfrastructuresExadataInfrastructureMaintenanceVersionPreferenceResult(dict):
+    def __init__(__self__, *,
+                 reference_resource_id_for_image_updates: _builtins.str):
+        """
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
 
 
 @pulumi.output_type
@@ -63600,6 +63993,35 @@ class GetMaintenanceRunEstimatedPatchingTimeResult(dict):
 
 
 @pulumi.output_type
+class GetMaintenanceRunWindowTypeDescriptionResult(dict):
+    def __init__(__self__, *,
+                 messages: Sequence[_builtins.str],
+                 window_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param _builtins.str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        pulumi.set(__self__, "messages", messages)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> Sequence[_builtins.str]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> _builtins.str:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
+
+
+@pulumi.output_type
 class GetMaintenanceRunsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -63654,6 +64076,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  patching_status: _builtins.str,
                  peer_maintenance_run_id: _builtins.str,
                  peer_maintenance_run_ids: Sequence[_builtins.str],
+                 reference_resource_id_for_image_updates: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  target_db_server_version: _builtins.str,
@@ -63663,7 +64086,8 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
                  time_ended: _builtins.str,
                  time_scheduled: _builtins.str,
                  time_started: _builtins.str,
-                 total_time_taken_in_mins: _builtins.int):
+                 total_time_taken_in_mins: _builtins.int,
+                 window_type_descriptions: Sequence['outputs.GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionResult']):
         """
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.int current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
@@ -63689,6 +64113,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param _builtins.str patching_status: The status of the patching operation.
         :param _builtins.str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param Sequence[_builtins.str] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+        :param _builtins.str reference_resource_id_for_image_updates: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str target_db_server_version: The target software version for the database server patching operation.
@@ -63699,6 +64124,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         :param _builtins.str time_scheduled: The date and time the maintenance run is scheduled to occur.
         :param _builtins.str time_started: The date and time the maintenance run starts.
         :param _builtins.int total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
+        :param Sequence['GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionArgs'] window_type_descriptions: A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
@@ -63725,6 +64151,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "patching_status", patching_status)
         pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
         pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
+        pulumi.set(__self__, "reference_resource_id_for_image_updates", reference_resource_id_for_image_updates)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
@@ -63735,6 +64162,7 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         pulumi.set(__self__, "time_scheduled", time_scheduled)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "total_time_taken_in_mins", total_time_taken_in_mins)
+        pulumi.set(__self__, "window_type_descriptions", window_type_descriptions)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -63934,6 +64362,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @_builtins.property
+    @pulumi.getter(name="referenceResourceIdForImageUpdates")
+    def reference_resource_id_for_image_updates(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+        """
+        return pulumi.get(self, "reference_resource_id_for_image_updates")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -64013,6 +64449,14 @@ class GetMaintenanceRunsMaintenanceRunResult(dict):
         """
         return pulumi.get(self, "total_time_taken_in_mins")
 
+    @_builtins.property
+    @pulumi.getter(name="windowTypeDescriptions")
+    def window_type_descriptions(self) -> Sequence['outputs.GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionResult']:
+        """
+        A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+        """
+        return pulumi.get(self, "window_type_descriptions")
+
 
 @pulumi.output_type
 class GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeResult(dict):
@@ -64063,6 +64507,35 @@ class GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeResult(dict):
         The estimated total time required in minutes for all patching operations.
         """
         return pulumi.get(self, "total_estimated_patching_time")
+
+
+@pulumi.output_type
+class GetMaintenanceRunsMaintenanceRunWindowTypeDescriptionResult(dict):
+    def __init__(__self__, *,
+                 messages: Sequence[_builtins.str],
+                 window_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] messages: A list of window detail messages from all the active execution windows based on the window type.
+        :param _builtins.str window_type: The execution window is of PLANNED or UNPLANNED type.
+        """
+        pulumi.set(__self__, "messages", messages)
+        pulumi.set(__self__, "window_type", window_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def messages(self) -> Sequence[_builtins.str]:
+        """
+        A list of window detail messages from all the active execution windows based on the window type.
+        """
+        return pulumi.get(self, "messages")
+
+    @_builtins.property
+    @pulumi.getter(name="windowType")
+    def window_type(self) -> _builtins.str:
+        """
+        The execution window is of PLANNED or UNPLANNED type.
+        """
+        return pulumi.get(self, "window_type")
 
 
 @pulumi.output_type

@@ -18,14 +18,17 @@ from . import outputs
 __all__ = [
     'ClusterPlacementGroupCapabilities',
     'ClusterPlacementGroupCapabilitiesItem',
+    'ClusterPlacementGroupCapabilitiesItemAdditionalDetails',
     'ClusterPlacementGroupPlacementInstruction',
     'GetClusterPlacementGroupCapabilityResult',
     'GetClusterPlacementGroupCapabilityItemResult',
+    'GetClusterPlacementGroupCapabilityItemAdditionalDetailResult',
     'GetClusterPlacementGroupPlacementInstructionResult',
     'GetClusterPlacementGroupsClusterPlacementGroupCollectionResult',
     'GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult',
     'GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityResult',
     'GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemResult',
+    'GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult',
     'GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionResult',
     'GetClusterPlacementGroupsFilterResult',
 ]
@@ -50,15 +53,36 @@ class ClusterPlacementGroupCapabilities(dict):
 
 @pulumi.output_type
 class ClusterPlacementGroupCapabilitiesItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalDetails":
+            suggest = "additional_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterPlacementGroupCapabilitiesItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterPlacementGroupCapabilitiesItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterPlacementGroupCapabilitiesItem.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  name: _builtins.str,
-                 service: _builtins.str):
+                 service: _builtins.str,
+                 additional_details: Optional['outputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetails'] = None):
         """
         :param _builtins.str name: The type of resource.
         :param _builtins.str service: The service that the resource is part of.
+        :param 'ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs' additional_details: Additional details describing the selected capability.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
 
     @_builtins.property
     @pulumi.getter
@@ -75,6 +99,101 @@ class ClusterPlacementGroupCapabilitiesItem(dict):
         The service that the resource is part of.
         """
         return pulumi.get(self, "service")
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional['outputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetails']:
+        """
+        Additional details describing the selected capability.
+        """
+        return pulumi.get(self, "additional_details")
+
+
+@pulumi.output_type
+class ClusterPlacementGroupCapabilitiesItemAdditionalDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serviceType":
+            suggest = "service_type"
+        elif key == "clusterPlacementGroupCount":
+            suggest = "cluster_placement_group_count"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterPlacementGroupCapabilitiesItemAdditionalDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterPlacementGroupCapabilitiesItemAdditionalDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterPlacementGroupCapabilitiesItemAdditionalDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 service_type: _builtins.str,
+                 cluster_placement_group_count: Optional[_builtins.int] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 nvmes: Optional[_builtins.int] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str service_type: Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        :param _builtins.int cluster_placement_group_count: The number of instances or size of the resource.
+        :param _builtins.float memory_in_gbs: The amount of memory (in GBs) needed in the instance.
+        :param _builtins.int nvmes: The number of NVMe drives to use for storage.
+        :param _builtins.float ocpus: The number of OCPUs needed in the instance.
+        """
+        pulumi.set(__self__, "service_type", service_type)
+        if cluster_placement_group_count is not None:
+            pulumi.set(__self__, "cluster_placement_group_count", cluster_placement_group_count)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if nvmes is not None:
+            pulumi.set(__self__, "nvmes", nvmes)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        return pulumi.get(self, "service_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupCount")
+    def cluster_placement_group_count(self) -> Optional[_builtins.int]:
+        """
+        The number of instances or size of the resource.
+        """
+        return pulumi.get(self, "cluster_placement_group_count")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The amount of memory (in GBs) needed in the instance.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> Optional[_builtins.int]:
+        """
+        The number of NVMe drives to use for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        The number of OCPUs needed in the instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -127,14 +246,25 @@ class GetClusterPlacementGroupCapabilityResult(dict):
 @pulumi.output_type
 class GetClusterPlacementGroupCapabilityItemResult(dict):
     def __init__(__self__, *,
+                 additional_details: Sequence['outputs.GetClusterPlacementGroupCapabilityItemAdditionalDetailResult'],
                  name: _builtins.str,
                  service: _builtins.str):
         """
+        :param Sequence['GetClusterPlacementGroupCapabilityItemAdditionalDetailArgs'] additional_details: Additional details describing the selected capability.
         :param _builtins.str name: The user-friendly name of the cluster placement group. The display name for a cluster placement must be unique and you cannot change it. Avoid entering confidential information.
         :param _builtins.str service: The service that the resource is part of.
         """
+        pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Sequence['outputs.GetClusterPlacementGroupCapabilityItemAdditionalDetailResult']:
+        """
+        Additional details describing the selected capability.
+        """
+        return pulumi.get(self, "additional_details")
 
     @_builtins.property
     @pulumi.getter
@@ -151,6 +281,68 @@ class GetClusterPlacementGroupCapabilityItemResult(dict):
         The service that the resource is part of.
         """
         return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetClusterPlacementGroupCapabilityItemAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 cluster_placement_group_count: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.int cluster_placement_group_count: The number of instances or size of the resource.
+        :param _builtins.float memory_in_gbs: The amount of memory (in GBs) needed in the instance.
+        :param _builtins.int nvmes: The number of NVMe drives to use for storage.
+        :param _builtins.float ocpus: The number of OCPUs needed in the instance.
+        :param _builtins.str service_type: Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        pulumi.set(__self__, "cluster_placement_group_count", cluster_placement_group_count)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupCount")
+    def cluster_placement_group_count(self) -> _builtins.int:
+        """
+        The number of instances or size of the resource.
+        """
+        return pulumi.get(self, "cluster_placement_group_count")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) needed in the instance.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to use for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The number of OCPUs needed in the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        return pulumi.get(self, "service_type")
 
 
 @pulumi.output_type
@@ -400,14 +592,25 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityResu
 @pulumi.output_type
 class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemResult(dict):
     def __init__(__self__, *,
+                 additional_details: Sequence['outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult'],
                  name: _builtins.str,
                  service: _builtins.str):
         """
+        :param Sequence['GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailArgs'] additional_details: Additional details describing the selected capability.
         :param _builtins.str name: A filter to return only the resources that match the entire display name specified.
         :param _builtins.str service: The service that the resource is part of.
         """
+        pulumi.set(__self__, "additional_details", additional_details)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Sequence['outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult']:
+        """
+        Additional details describing the selected capability.
+        """
+        return pulumi.get(self, "additional_details")
 
     @_builtins.property
     @pulumi.getter
@@ -424,6 +627,68 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItem
         The service that the resource is part of.
         """
         return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityItemAdditionalDetailResult(dict):
+    def __init__(__self__, *,
+                 cluster_placement_group_count: _builtins.int,
+                 memory_in_gbs: _builtins.float,
+                 nvmes: _builtins.int,
+                 ocpus: _builtins.float,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.int cluster_placement_group_count: The number of instances or size of the resource.
+        :param _builtins.float memory_in_gbs: The amount of memory (in GBs) needed in the instance.
+        :param _builtins.int nvmes: The number of NVMe drives to use for storage.
+        :param _builtins.float ocpus: The number of OCPUs needed in the instance.
+        :param _builtins.str service_type: Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        pulumi.set(__self__, "cluster_placement_group_count", cluster_placement_group_count)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "nvmes", nvmes)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupCount")
+    def cluster_placement_group_count(self) -> _builtins.int:
+        """
+        The number of instances or size of the resource.
+        """
+        return pulumi.get(self, "cluster_placement_group_count")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) needed in the instance.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def nvmes(self) -> _builtins.int:
+        """
+        The number of NVMe drives to use for storage.
+        """
+        return pulumi.get(self, "nvmes")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The number of OCPUs needed in the instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        Additional details about what service provides the capability. For example, `COMPUTE` means that the Oracle Cloud Infrastructure Compute service provides the selected capability.
+        """
+        return pulumi.get(self, "service_type")
 
 
 @pulumi.output_type

@@ -469,6 +469,8 @@ type ClusterEndpointConfig struct {
 	IsPublicIpEnabled *bool `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -489,6 +491,8 @@ type ClusterEndpointConfigArgs struct {
 	IsPublicIpEnabled pulumi.BoolPtrInput `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -580,6 +584,11 @@ func (o ClusterEndpointConfigOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterEndpointConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o ClusterEndpointConfigOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ClusterEndpointConfig) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The OCID of the regional subnet in which to place the Cluster endpoint.
 func (o ClusterEndpointConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterEndpointConfig) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -627,6 +636,16 @@ func (o ClusterEndpointConfigPtrOutput) NsgIds() pulumi.StringArrayOutput {
 		}
 		return v.NsgIds
 	}).(pulumi.StringArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o ClusterEndpointConfigPtrOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterEndpointConfig) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the regional subnet in which to place the Cluster endpoint.
@@ -7161,6 +7180,143 @@ func (o NodePoolNodeSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+type NodePoolPrimaryVnic struct {
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+}
+
+// NodePoolPrimaryVnicInput is an input type that accepts NodePoolPrimaryVnicArgs and NodePoolPrimaryVnicOutput values.
+// You can construct a concrete instance of `NodePoolPrimaryVnicInput` via:
+//
+//	NodePoolPrimaryVnicArgs{...}
+type NodePoolPrimaryVnicInput interface {
+	pulumi.Input
+
+	ToNodePoolPrimaryVnicOutput() NodePoolPrimaryVnicOutput
+	ToNodePoolPrimaryVnicOutputWithContext(context.Context) NodePoolPrimaryVnicOutput
+}
+
+type NodePoolPrimaryVnicArgs struct {
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+}
+
+func (NodePoolPrimaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i NodePoolPrimaryVnicArgs) ToNodePoolPrimaryVnicOutput() NodePoolPrimaryVnicOutput {
+	return i.ToNodePoolPrimaryVnicOutputWithContext(context.Background())
+}
+
+func (i NodePoolPrimaryVnicArgs) ToNodePoolPrimaryVnicOutputWithContext(ctx context.Context) NodePoolPrimaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolPrimaryVnicOutput)
+}
+
+func (i NodePoolPrimaryVnicArgs) ToNodePoolPrimaryVnicPtrOutput() NodePoolPrimaryVnicPtrOutput {
+	return i.ToNodePoolPrimaryVnicPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolPrimaryVnicArgs) ToNodePoolPrimaryVnicPtrOutputWithContext(ctx context.Context) NodePoolPrimaryVnicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolPrimaryVnicOutput).ToNodePoolPrimaryVnicPtrOutputWithContext(ctx)
+}
+
+// NodePoolPrimaryVnicPtrInput is an input type that accepts NodePoolPrimaryVnicArgs, NodePoolPrimaryVnicPtr and NodePoolPrimaryVnicPtrOutput values.
+// You can construct a concrete instance of `NodePoolPrimaryVnicPtrInput` via:
+//
+//	        NodePoolPrimaryVnicArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodePoolPrimaryVnicPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolPrimaryVnicPtrOutput() NodePoolPrimaryVnicPtrOutput
+	ToNodePoolPrimaryVnicPtrOutputWithContext(context.Context) NodePoolPrimaryVnicPtrOutput
+}
+
+type nodePoolPrimaryVnicPtrType NodePoolPrimaryVnicArgs
+
+func NodePoolPrimaryVnicPtr(v *NodePoolPrimaryVnicArgs) NodePoolPrimaryVnicPtrInput {
+	return (*nodePoolPrimaryVnicPtrType)(v)
+}
+
+func (*nodePoolPrimaryVnicPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i *nodePoolPrimaryVnicPtrType) ToNodePoolPrimaryVnicPtrOutput() NodePoolPrimaryVnicPtrOutput {
+	return i.ToNodePoolPrimaryVnicPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolPrimaryVnicPtrType) ToNodePoolPrimaryVnicPtrOutputWithContext(ctx context.Context) NodePoolPrimaryVnicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolPrimaryVnicPtrOutput)
+}
+
+type NodePoolPrimaryVnicOutput struct{ *pulumi.OutputState }
+
+func (NodePoolPrimaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o NodePoolPrimaryVnicOutput) ToNodePoolPrimaryVnicOutput() NodePoolPrimaryVnicOutput {
+	return o
+}
+
+func (o NodePoolPrimaryVnicOutput) ToNodePoolPrimaryVnicOutputWithContext(ctx context.Context) NodePoolPrimaryVnicOutput {
+	return o
+}
+
+func (o NodePoolPrimaryVnicOutput) ToNodePoolPrimaryVnicPtrOutput() NodePoolPrimaryVnicPtrOutput {
+	return o.ToNodePoolPrimaryVnicPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolPrimaryVnicOutput) ToNodePoolPrimaryVnicPtrOutputWithContext(ctx context.Context) NodePoolPrimaryVnicPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolPrimaryVnic) *NodePoolPrimaryVnic {
+		return &v
+	}).(NodePoolPrimaryVnicPtrOutput)
+}
+
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o NodePoolPrimaryVnicOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolPrimaryVnic) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+type NodePoolPrimaryVnicPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolPrimaryVnicPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o NodePoolPrimaryVnicPtrOutput) ToNodePoolPrimaryVnicPtrOutput() NodePoolPrimaryVnicPtrOutput {
+	return o
+}
+
+func (o NodePoolPrimaryVnicPtrOutput) ToNodePoolPrimaryVnicPtrOutputWithContext(ctx context.Context) NodePoolPrimaryVnicPtrOutput {
+	return o
+}
+
+func (o NodePoolPrimaryVnicPtrOutput) Elem() NodePoolPrimaryVnicOutput {
+	return o.ApplyT(func(v *NodePoolPrimaryVnic) NodePoolPrimaryVnic {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolPrimaryVnic
+		return ret
+	}).(NodePoolPrimaryVnicOutput)
+}
+
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o NodePoolPrimaryVnicPtrOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePoolPrimaryVnic) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
 type NodePoolSecondaryVnic struct {
 	// (Updatable) The properties of the secondary vnics
 	CreateVnicDetails NodePoolSecondaryVnicCreateVnicDetails `pulumi:"createVnicDetails"`
@@ -7295,6 +7451,8 @@ type NodePoolSecondaryVnicCreateVnicDetails struct {
 	Ipv6addressIpv6subnetCidrPairDetails []NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck *bool `pulumi:"skipSourceDestCheck"`
 	// (Updatable) the ocid of the subnet to create the vnic in
@@ -7331,6 +7489,8 @@ type NodePoolSecondaryVnicCreateVnicDetailsArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// (Updatable) Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck pulumi.BoolPtrInput `pulumi:"skipSourceDestCheck"`
 	// (Updatable) the ocid of the subnet to create the vnic in
@@ -7408,6 +7568,11 @@ func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) Ipv6addressIpv6subnetCidrP
 // (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o NodePoolSecondaryVnicCreateVnicDetailsOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolSecondaryVnicCreateVnicDetails) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether the source/destination check is disabled on the VNIC
@@ -9847,6 +10012,8 @@ type GetClusterEndpointConfig struct {
 	IsPublicIpEnabled bool `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -9867,6 +10034,8 @@ type GetClusterEndpointConfigArgs struct {
 	IsPublicIpEnabled pulumi.BoolInput `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -9930,6 +10099,11 @@ func (o GetClusterEndpointConfigOutput) IsPublicIpEnabled() pulumi.BoolOutput {
 // A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o GetClusterEndpointConfigOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterEndpointConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetClusterEndpointConfigOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterEndpointConfig) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the regional subnet in which to place the Cluster endpoint.
@@ -12312,6 +12486,8 @@ type GetClustersClusterEndpointConfig struct {
 	IsPublicIpEnabled bool `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -12332,6 +12508,8 @@ type GetClustersClusterEndpointConfigArgs struct {
 	IsPublicIpEnabled pulumi.BoolInput `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -12395,6 +12573,11 @@ func (o GetClustersClusterEndpointConfigOutput) IsPublicIpEnabled() pulumi.BoolO
 // A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o GetClustersClusterEndpointConfigOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClustersClusterEndpointConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetClustersClusterEndpointConfigOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpointConfig) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the regional subnet in which to place the Cluster endpoint.
@@ -15782,6 +15965,103 @@ func (o GetNodePoolOptionSourceArrayOutput) Index(i pulumi.IntInput) GetNodePool
 	}).(GetNodePoolOptionSourceOutput)
 }
 
+type GetNodePoolPrimaryVnic struct {
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+}
+
+// GetNodePoolPrimaryVnicInput is an input type that accepts GetNodePoolPrimaryVnicArgs and GetNodePoolPrimaryVnicOutput values.
+// You can construct a concrete instance of `GetNodePoolPrimaryVnicInput` via:
+//
+//	GetNodePoolPrimaryVnicArgs{...}
+type GetNodePoolPrimaryVnicInput interface {
+	pulumi.Input
+
+	ToGetNodePoolPrimaryVnicOutput() GetNodePoolPrimaryVnicOutput
+	ToGetNodePoolPrimaryVnicOutputWithContext(context.Context) GetNodePoolPrimaryVnicOutput
+}
+
+type GetNodePoolPrimaryVnicArgs struct {
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+}
+
+func (GetNodePoolPrimaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolPrimaryVnicArgs) ToGetNodePoolPrimaryVnicOutput() GetNodePoolPrimaryVnicOutput {
+	return i.ToGetNodePoolPrimaryVnicOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolPrimaryVnicArgs) ToGetNodePoolPrimaryVnicOutputWithContext(ctx context.Context) GetNodePoolPrimaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolPrimaryVnicOutput)
+}
+
+// GetNodePoolPrimaryVnicArrayInput is an input type that accepts GetNodePoolPrimaryVnicArray and GetNodePoolPrimaryVnicArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolPrimaryVnicArrayInput` via:
+//
+//	GetNodePoolPrimaryVnicArray{ GetNodePoolPrimaryVnicArgs{...} }
+type GetNodePoolPrimaryVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolPrimaryVnicArrayOutput() GetNodePoolPrimaryVnicArrayOutput
+	ToGetNodePoolPrimaryVnicArrayOutputWithContext(context.Context) GetNodePoolPrimaryVnicArrayOutput
+}
+
+type GetNodePoolPrimaryVnicArray []GetNodePoolPrimaryVnicInput
+
+func (GetNodePoolPrimaryVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolPrimaryVnicArray) ToGetNodePoolPrimaryVnicArrayOutput() GetNodePoolPrimaryVnicArrayOutput {
+	return i.ToGetNodePoolPrimaryVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolPrimaryVnicArray) ToGetNodePoolPrimaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolPrimaryVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolPrimaryVnicArrayOutput)
+}
+
+type GetNodePoolPrimaryVnicOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolPrimaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolPrimaryVnicOutput) ToGetNodePoolPrimaryVnicOutput() GetNodePoolPrimaryVnicOutput {
+	return o
+}
+
+func (o GetNodePoolPrimaryVnicOutput) ToGetNodePoolPrimaryVnicOutputWithContext(ctx context.Context) GetNodePoolPrimaryVnicOutput {
+	return o
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetNodePoolPrimaryVnicOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolPrimaryVnic) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+type GetNodePoolPrimaryVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolPrimaryVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolPrimaryVnicArrayOutput) ToGetNodePoolPrimaryVnicArrayOutput() GetNodePoolPrimaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolPrimaryVnicArrayOutput) ToGetNodePoolPrimaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolPrimaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolPrimaryVnicArrayOutput) Index(i pulumi.IntInput) GetNodePoolPrimaryVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolPrimaryVnic {
+		return vs[0].([]GetNodePoolPrimaryVnic)[vs[1].(int)]
+	}).(GetNodePoolPrimaryVnicOutput)
+}
+
 type GetNodePoolSecondaryVnic struct {
 	// The properties of the secondary vnics
 	CreateVnicDetails []GetNodePoolSecondaryVnicCreateVnicDetail `pulumi:"createVnicDetails"`
@@ -15918,6 +16198,8 @@ type GetNodePoolSecondaryVnicCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds []string `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
 	// the ocid of the subnet to create the vnic in
@@ -15954,6 +16236,8 @@ type GetNodePoolSecondaryVnicCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
 	// the ocid of the subnet to create the vnic in
@@ -16056,6 +16340,11 @@ func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) Ipv6addressIpv6subnetCid
 // A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetNodePoolSecondaryVnicCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolSecondaryVnicCreateVnicDetail) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Whether the source/destination check is disabled on the VNIC
@@ -16353,6 +16642,8 @@ type GetNodePoolsNodePool struct {
 	// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 	NodeSources []GetNodePoolsNodePoolNodeSource `pulumi:"nodeSources"`
 	Nodes       []GetNodePoolsNodePoolNode       `pulumi:"nodes"`
+	// Details for node's primary VNIC
+	PrimaryVnics []GetNodePoolsNodePoolPrimaryVnic `pulumi:"primaryVnics"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
 	// A list of secondary vnics to attach to nodes
@@ -16422,6 +16713,8 @@ type GetNodePoolsNodePoolArgs struct {
 	// Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 	NodeSources GetNodePoolsNodePoolNodeSourceArrayInput `pulumi:"nodeSources"`
 	Nodes       GetNodePoolsNodePoolNodeArrayInput       `pulumi:"nodes"`
+	// Details for node's primary VNIC
+	PrimaryVnics GetNodePoolsNodePoolPrimaryVnicArrayInput `pulumi:"primaryVnics"`
 	// The number of nodes in each subnet.
 	QuantityPerSubnet pulumi.IntInput `pulumi:"quantityPerSubnet"`
 	// A list of secondary vnics to attach to nodes
@@ -16598,6 +16891,11 @@ func (o GetNodePoolsNodePoolOutput) NodeSources() GetNodePoolsNodePoolNodeSource
 
 func (o GetNodePoolsNodePoolOutput) Nodes() GetNodePoolsNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolNode { return v.Nodes }).(GetNodePoolsNodePoolNodeArrayOutput)
+}
+
+// Details for node's primary VNIC
+func (o GetNodePoolsNodePoolOutput) PrimaryVnics() GetNodePoolsNodePoolPrimaryVnicArrayOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) []GetNodePoolsNodePoolPrimaryVnic { return v.PrimaryVnics }).(GetNodePoolsNodePoolPrimaryVnicArrayOutput)
 }
 
 // The number of nodes in each subnet.
@@ -18269,6 +18567,103 @@ func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput
 	}).(GetNodePoolsNodePoolNodeSourceDetailOutput)
 }
 
+type GetNodePoolsNodePoolPrimaryVnic struct {
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+}
+
+// GetNodePoolsNodePoolPrimaryVnicInput is an input type that accepts GetNodePoolsNodePoolPrimaryVnicArgs and GetNodePoolsNodePoolPrimaryVnicOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolPrimaryVnicInput` via:
+//
+//	GetNodePoolsNodePoolPrimaryVnicArgs{...}
+type GetNodePoolsNodePoolPrimaryVnicInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolPrimaryVnicOutput() GetNodePoolsNodePoolPrimaryVnicOutput
+	ToGetNodePoolsNodePoolPrimaryVnicOutputWithContext(context.Context) GetNodePoolsNodePoolPrimaryVnicOutput
+}
+
+type GetNodePoolsNodePoolPrimaryVnicArgs struct {
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+}
+
+func (GetNodePoolsNodePoolPrimaryVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolPrimaryVnicArgs) ToGetNodePoolsNodePoolPrimaryVnicOutput() GetNodePoolsNodePoolPrimaryVnicOutput {
+	return i.ToGetNodePoolsNodePoolPrimaryVnicOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolPrimaryVnicArgs) ToGetNodePoolsNodePoolPrimaryVnicOutputWithContext(ctx context.Context) GetNodePoolsNodePoolPrimaryVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolPrimaryVnicOutput)
+}
+
+// GetNodePoolsNodePoolPrimaryVnicArrayInput is an input type that accepts GetNodePoolsNodePoolPrimaryVnicArray and GetNodePoolsNodePoolPrimaryVnicArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolsNodePoolPrimaryVnicArrayInput` via:
+//
+//	GetNodePoolsNodePoolPrimaryVnicArray{ GetNodePoolsNodePoolPrimaryVnicArgs{...} }
+type GetNodePoolsNodePoolPrimaryVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolsNodePoolPrimaryVnicArrayOutput() GetNodePoolsNodePoolPrimaryVnicArrayOutput
+	ToGetNodePoolsNodePoolPrimaryVnicArrayOutputWithContext(context.Context) GetNodePoolsNodePoolPrimaryVnicArrayOutput
+}
+
+type GetNodePoolsNodePoolPrimaryVnicArray []GetNodePoolsNodePoolPrimaryVnicInput
+
+func (GetNodePoolsNodePoolPrimaryVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (i GetNodePoolsNodePoolPrimaryVnicArray) ToGetNodePoolsNodePoolPrimaryVnicArrayOutput() GetNodePoolsNodePoolPrimaryVnicArrayOutput {
+	return i.ToGetNodePoolsNodePoolPrimaryVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolsNodePoolPrimaryVnicArray) ToGetNodePoolsNodePoolPrimaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolPrimaryVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolPrimaryVnicArrayOutput)
+}
+
+type GetNodePoolsNodePoolPrimaryVnicOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolPrimaryVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolsNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolPrimaryVnicOutput) ToGetNodePoolsNodePoolPrimaryVnicOutput() GetNodePoolsNodePoolPrimaryVnicOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolPrimaryVnicOutput) ToGetNodePoolsNodePoolPrimaryVnicOutputWithContext(ctx context.Context) GetNodePoolsNodePoolPrimaryVnicOutput {
+	return o
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetNodePoolsNodePoolPrimaryVnicOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolPrimaryVnic) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+type GetNodePoolsNodePoolPrimaryVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolsNodePoolPrimaryVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolsNodePoolPrimaryVnic)(nil)).Elem()
+}
+
+func (o GetNodePoolsNodePoolPrimaryVnicArrayOutput) ToGetNodePoolsNodePoolPrimaryVnicArrayOutput() GetNodePoolsNodePoolPrimaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolPrimaryVnicArrayOutput) ToGetNodePoolsNodePoolPrimaryVnicArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolPrimaryVnicArrayOutput {
+	return o
+}
+
+func (o GetNodePoolsNodePoolPrimaryVnicArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolPrimaryVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolPrimaryVnic {
+		return vs[0].([]GetNodePoolsNodePoolPrimaryVnic)[vs[1].(int)]
+	}).(GetNodePoolsNodePoolPrimaryVnicOutput)
+}
+
 type GetNodePoolsNodePoolSecondaryVnic struct {
 	// The properties of the secondary vnics
 	CreateVnicDetails []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail `pulumi:"createVnicDetails"`
@@ -18405,6 +18800,8 @@ type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail struct {
 	Ipv6addressIpv6subnetCidrPairDetails []GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds []string `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
 	// the ocid of the subnet to create the vnic in
@@ -18441,6 +18838,8 @@ type GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs struct {
 	Ipv6addressIpv6subnetCidrPairDetails GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC
 	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
 	// the ocid of the subnet to create the vnic in
@@ -18543,6 +18942,13 @@ func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) Ipv6addressIpv6
 // A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
 func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+func (o GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolSecondaryVnicCreateVnicDetail) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // Whether the source/destination check is disabled on the VNIC
@@ -21689,6 +22095,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceArrayInput)(nil)).Elem(), NodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeSourceDetailsPtrInput)(nil)).Elem(), NodePoolNodeSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolPrimaryVnicInput)(nil)).Elem(), NodePoolPrimaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolPrimaryVnicPtrInput)(nil)).Elem(), NodePoolPrimaryVnicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicInput)(nil)).Elem(), NodePoolSecondaryVnicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicArrayInput)(nil)).Elem(), NodePoolSecondaryVnicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolSecondaryVnicCreateVnicDetailsInput)(nil)).Elem(), NodePoolSecondaryVnicCreateVnicDetailsArgs{})
@@ -21824,6 +22232,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolNodeSourceDetailArrayInput)(nil)).Elem(), GetNodePoolNodeSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolOptionSourceInput)(nil)).Elem(), GetNodePoolOptionSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolOptionSourceArrayInput)(nil)).Elem(), GetNodePoolOptionSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolPrimaryVnicInput)(nil)).Elem(), GetNodePoolPrimaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolPrimaryVnicArrayInput)(nil)).Elem(), GetNodePoolPrimaryVnicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicInput)(nil)).Elem(), GetNodePoolSecondaryVnicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicArrayInput)(nil)).Elem(), GetNodePoolSecondaryVnicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolSecondaryVnicCreateVnicDetailInput)(nil)).Elem(), GetNodePoolSecondaryVnicCreateVnicDetailArgs{})
@@ -21860,6 +22270,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolNodeSourceDetailArrayInput)(nil)).Elem(), GetNodePoolsNodePoolNodeSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolPrimaryVnicInput)(nil)).Elem(), GetNodePoolsNodePoolPrimaryVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolPrimaryVnicArrayInput)(nil)).Elem(), GetNodePoolsNodePoolPrimaryVnicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicArrayInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailInput)(nil)).Elem(), GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailArgs{})
@@ -22000,6 +22412,8 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolPrimaryVnicOutput{})
+	pulumi.RegisterOutputType(NodePoolPrimaryVnicPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolSecondaryVnicOutput{})
 	pulumi.RegisterOutputType(NodePoolSecondaryVnicArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolSecondaryVnicCreateVnicDetailsOutput{})
@@ -22135,6 +22549,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolNodeSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolOptionSourceOutput{})
 	pulumi.RegisterOutputType(GetNodePoolOptionSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolPrimaryVnicOutput{})
+	pulumi.RegisterOutputType(GetNodePoolPrimaryVnicArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicOutput{})
 	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolSecondaryVnicCreateVnicDetailOutput{})
@@ -22171,6 +22587,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolNodeSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolPrimaryVnicOutput{})
+	pulumi.RegisterOutputType(GetNodePoolsNodePoolPrimaryVnicArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolsNodePoolSecondaryVnicCreateVnicDetailOutput{})

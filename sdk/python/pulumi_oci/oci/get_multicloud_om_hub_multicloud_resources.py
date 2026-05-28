@@ -28,7 +28,7 @@ class GetMulticloudOmHubMulticloudResourcesResult:
     """
     A collection of values returned by getMulticloudOmHubMulticloudResources.
     """
-    def __init__(__self__, compartment_id=None, external_location=None, filters=None, id=None, limit=None, multicloud_resource_collections=None, resource_anchor_id=None, subscription_id=None, subscription_service_name=None):
+    def __init__(__self__, compartment_id=None, external_location=None, filters=None, id=None, limit=None, multicloud_resource_collections=None, resource_anchor_id=None, resource_type=None, subscription_id=None, subscription_service_name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetMulticloudOmHubMulticloudResourcesResult:
         if resource_anchor_id and not isinstance(resource_anchor_id, str):
             raise TypeError("Expected argument 'resource_anchor_id' to be a str")
         pulumi.set(__self__, "resource_anchor_id", resource_anchor_id)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -61,7 +64,7 @@ class GetMulticloudOmHubMulticloudResourcesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        Compartment Id of the resource.
+        Id of the compartment associated with the resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -102,13 +105,21 @@ class GetMulticloudOmHubMulticloudResourcesResult:
         return pulumi.get(self, "resource_anchor_id")
 
     @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[_builtins.str]:
+        """
+        Type of resource, such as `VMCluster` or `ExaInfra`,
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> _builtins.str:
+    def subscription_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="subscriptionServiceName")
-    def subscription_service_name(self) -> _builtins.str:
+    def subscription_service_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subscription_service_name")
 
 
@@ -125,6 +136,7 @@ class AwaitableGetMulticloudOmHubMulticloudResourcesResult(GetMulticloudOmHubMul
             limit=self.limit,
             multicloud_resource_collections=self.multicloud_resource_collections,
             resource_anchor_id=self.resource_anchor_id,
+            resource_type=self.resource_type,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name)
 
@@ -134,13 +146,17 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
                                                filters: Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]] = None,
                                                limit: Optional[_builtins.int] = None,
                                                resource_anchor_id: Optional[_builtins.str] = None,
+                                               resource_type: Optional[_builtins.str] = None,
                                                subscription_id: Optional[_builtins.str] = None,
                                                subscription_service_name: Optional[_builtins.str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudOmHubMulticloudResourcesResult:
     """
     This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+    Lists Multicloud resources in the specified Multicloud subscription.
+    Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+    For more information, see
+    [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
 
     ## Example Usage
 
@@ -157,10 +173,11 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.str external_location: The Cloud Service Provider region.
-    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+    :param _builtins.str external_location: The cloud service provider region.
+    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.str resource_type: Filter alerts by resource type (e.g. ADBD, VMCluster).
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,6 +185,7 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
     __args__['filters'] = filters
     __args__['limit'] = limit
     __args__['resourceAnchorId'] = resource_anchor_id
+    __args__['resourceType'] = resource_type
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -181,6 +199,7 @@ def get_multicloud_om_hub_multicloud_resources(compartment_id: Optional[_builtin
         limit=pulumi.get(__ret__, 'limit'),
         multicloud_resource_collections=pulumi.get(__ret__, 'multicloud_resource_collections'),
         resource_anchor_id=pulumi.get(__ret__, 'resource_anchor_id'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -188,13 +207,17 @@ def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Inp
                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudOmHubMulticloudResourcesFilterArgs', 'GetMulticloudOmHubMulticloudResourcesFilterArgsDict']]]]] = None,
                                                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                       resource_anchor_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                      subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      subscription_service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudOmHubMulticloudResourcesResult]:
     """
     This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
 
-    Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+    Lists Multicloud resources in the specified Multicloud subscription.
+    Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
+    For more information, see
+    [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
 
     ## Example Usage
 
@@ -211,10 +234,11 @@ def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Inp
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param _builtins.str external_location: The Cloud Service Provider region.
-    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+    :param _builtins.str external_location: The cloud service provider region.
+    :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource anchor.
+    :param _builtins.str resource_type: Filter alerts by resource type (e.g. ADBD, VMCluster).
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
+    :param _builtins.str subscription_service_name: The cloud service provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -222,6 +246,7 @@ def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Inp
     __args__['filters'] = filters
     __args__['limit'] = limit
     __args__['resourceAnchorId'] = resource_anchor_id
+    __args__['resourceType'] = resource_type
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -234,5 +259,6 @@ def get_multicloud_om_hub_multicloud_resources_output(compartment_id: pulumi.Inp
         limit=pulumi.get(__response__, 'limit'),
         multicloud_resource_collections=pulumi.get(__response__, 'multicloud_resource_collections'),
         resource_anchor_id=pulumi.get(__response__, 'resource_anchor_id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name')))

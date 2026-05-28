@@ -74,6 +74,9 @@ namespace Pulumi.Oci.Core
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        /// </summary>
         [Output("capacityBins")]
         public Output<ImmutableArray<Outputs.DedicatedVmHostCapacityBin>> CapacityBins { get; private set; } = null!;
 
@@ -142,6 +145,12 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.DedicatedVmHostPlacementConstraintDetails> PlacementConstraintDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The current available local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Output("remainingLocalVolumeInGbs")]
+        public Output<double> RemainingLocalVolumeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         [Output("remainingMemoryInGbs")]
@@ -164,6 +173,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The current total local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Output("totalLocalVolumeInGbs")]
+        public Output<double> TotalLocalVolumeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.
@@ -315,6 +330,10 @@ namespace Pulumi.Oci.Core
 
         [Input("capacityBins")]
         private InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>? _capacityBins;
+
+        /// <summary>
+        /// A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        /// </summary>
         public InputList<Inputs.DedicatedVmHostCapacityBinGetArgs> CapacityBins
         {
             get => _capacityBins ?? (_capacityBins = new InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>());
@@ -398,6 +417,12 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.DedicatedVmHostPlacementConstraintDetailsGetArgs>? PlacementConstraintDetails { get; set; }
 
         /// <summary>
+        /// The current available local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Input("remainingLocalVolumeInGbs")]
+        public Input<double>? RemainingLocalVolumeInGbs { get; set; }
+
+        /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         [Input("remainingMemoryInGbs")]
@@ -420,6 +445,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The current total local volume of the dedicated VM host, in GBs.
+        /// </summary>
+        [Input("totalLocalVolumeInGbs")]
+        public Input<double>? TotalLocalVolumeInGbs { get; set; }
 
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.

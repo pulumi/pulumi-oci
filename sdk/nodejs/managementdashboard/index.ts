@@ -10,10 +10,25 @@ export const getManagementDashboardsExport: typeof import("./getManagementDashbo
 export const getManagementDashboardsExportOutput: typeof import("./getManagementDashboardsExport").getManagementDashboardsExportOutput = null as any;
 utilities.lazyLoad(exports, ["getManagementDashboardsExport","getManagementDashboardsExportOutput"], () => require("./getManagementDashboardsExport"));
 
+export { GetManagementSavedSearchArgs, GetManagementSavedSearchResult, GetManagementSavedSearchOutputArgs } from "./getManagementSavedSearch";
+export const getManagementSavedSearch: typeof import("./getManagementSavedSearch").getManagementSavedSearch = null as any;
+export const getManagementSavedSearchOutput: typeof import("./getManagementSavedSearch").getManagementSavedSearchOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementSavedSearch","getManagementSavedSearchOutput"], () => require("./getManagementSavedSearch"));
+
+export { GetManagementSavedSearchesArgs, GetManagementSavedSearchesResult, GetManagementSavedSearchesOutputArgs } from "./getManagementSavedSearches";
+export const getManagementSavedSearches: typeof import("./getManagementSavedSearches").getManagementSavedSearches = null as any;
+export const getManagementSavedSearchesOutput: typeof import("./getManagementSavedSearches").getManagementSavedSearchesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementSavedSearches","getManagementSavedSearchesOutput"], () => require("./getManagementSavedSearches"));
+
 export { ManagementDashboardsImportArgs, ManagementDashboardsImportState } from "./managementDashboardsImport";
 export type ManagementDashboardsImport = import("./managementDashboardsImport").ManagementDashboardsImport;
 export const ManagementDashboardsImport: typeof import("./managementDashboardsImport").ManagementDashboardsImport = null as any;
 utilities.lazyLoad(exports, ["ManagementDashboardsImport"], () => require("./managementDashboardsImport"));
+
+export { ManagementSavedSearchArgs, ManagementSavedSearchState } from "./managementSavedSearch";
+export type ManagementSavedSearch = import("./managementSavedSearch").ManagementSavedSearch;
+export const ManagementSavedSearch: typeof import("./managementSavedSearch").ManagementSavedSearch = null as any;
+utilities.lazyLoad(exports, ["ManagementSavedSearch"], () => require("./managementSavedSearch"));
 
 
 const _module = {
@@ -22,9 +37,12 @@ const _module = {
         switch (type) {
             case "oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport":
                 return new ManagementDashboardsImport(name, <any>undefined, { urn })
+            case "oci:ManagementDashboard/managementSavedSearch:ManagementSavedSearch":
+                return new ManagementSavedSearch(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "ManagementDashboard/managementDashboardsImport", _module)
+pulumi.runtime.registerResourceModule("oci", "ManagementDashboard/managementSavedSearch", _module)

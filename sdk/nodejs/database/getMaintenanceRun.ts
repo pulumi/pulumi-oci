@@ -142,6 +142,10 @@ export interface GetMaintenanceRunResult {
      */
     readonly peerMaintenanceRunIds: string[];
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions. This field is set during maintenance run creation based on infrastructure's maintenance run version preferences.  Currently this is only be supported for monthly maintenance runs created via scheduling plans.
+     */
+    readonly referenceResourceIdForImageUpdates: string;
+    /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     readonly state: string;
@@ -181,6 +185,10 @@ export interface GetMaintenanceRunResult {
      * The total time taken by corresponding resource activity in minutes.
      */
     readonly totalTimeTakenInMins: number;
+    /**
+     * A list of key-value pairs where the key will contain the window type and value contains all the windowDetails of that window type.
+     */
+    readonly windowTypeDescriptions: outputs.Database.GetMaintenanceRunWindowTypeDescription[];
 }
 /**
  * This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.

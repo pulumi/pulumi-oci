@@ -50,6 +50,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? SecurityAttributes;
+        /// <summary>
         /// (Updatable) Whether the source/destination check is disabled on the VNIC
         /// </summary>
         public readonly bool? SkipSourceDestCheck;
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            ImmutableDictionary<string, string>? securityAttributes,
+
             bool? skipSourceDestCheck,
 
             string subnetId)
@@ -91,6 +97,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             IpCount = ipCount;
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             NsgIds = nsgIds;
+            SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
             SubnetId = subnetId;
         }

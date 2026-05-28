@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SupportedShapes;
         /// <summary>
+        /// The total local volume of the capacity bucket, in GBs.
+        /// </summary>
+        public readonly double TotalLocalVolumeInGbs;
+        /// <summary>
         /// The total memory of the capacity bucket, in GBs.
         /// </summary>
         public readonly double TotalMemoryInGbs;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> supportedShapes,
 
+            double totalLocalVolumeInGbs,
+
             double totalMemoryInGbs,
 
             double totalOcpus)
         {
             CapacityIndex = capacityIndex;
             SupportedShapes = supportedShapes;
+            TotalLocalVolumeInGbs = totalLocalVolumeInGbs;
             TotalMemoryInGbs = totalMemoryInGbs;
             TotalOcpus = totalOcpus;
         }

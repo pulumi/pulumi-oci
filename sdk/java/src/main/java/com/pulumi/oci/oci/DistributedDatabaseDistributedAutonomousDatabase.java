@@ -426,6 +426,12 @@ public class DistributedDatabaseDistributedAutonomousDatabase extends com.pulumi
     public Output<String> downloadedGsmCsrPem() {
         return this.downloadedGsmCsrPem;
     }
+    @Export(name="effectiveReplicationUnit", refs={Integer.class}, tree="[0]")
+    private Output<Integer> effectiveReplicationUnit;
+
+    public Output<Integer> effectiveReplicationUnit() {
+        return this.effectiveReplicationUnit;
+    }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 

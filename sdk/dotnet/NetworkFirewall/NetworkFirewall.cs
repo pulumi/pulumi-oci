@@ -49,6 +49,7 @@ namespace Pulumi.Oci.NetworkFirewall
     ///             MustEnablePrivateNat = networkFirewallNatConfigurationMustEnablePrivateNat,
     ///         },
     ///         NetworkSecurityGroupIds = networkFirewallNetworkSecurityGroupIds,
+    ///         SecurityAttributes = networkFirewallSecurityAttributes,
     ///         Shape = networkFirewallShape,
     ///     });
     /// 
@@ -131,6 +132,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// </summary>
         [Output("networkSecurityGroupIds")]
         public Output<ImmutableArray<string>> NetworkSecurityGroupIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
@@ -296,6 +303,18 @@ namespace Pulumi.Oci.NetworkFirewall
             set => _networkSecurityGroupIds = value;
         }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// (Updatable) The shape of a firewall to determine the bandwidth that the firewall allows.
         /// </summary>
@@ -402,6 +421,18 @@ namespace Pulumi.Oci.NetworkFirewall
         {
             get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
             set => _networkSecurityGroupIds = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

@@ -45,6 +45,7 @@ import (
 //				DbServers:                      pulumi.Any(cloudAutonomousVmClusterDbServers),
 //				DefinedTags:                    pulumi.Any(cloudAutonomousVmClusterDefinedTags),
 //				Description:                    pulumi.Any(cloudAutonomousVmClusterDescription),
+//				DistributionAlgorithm:          pulumi.Any(cloudAutonomousVmClusterDistributionAlgorithm),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
@@ -77,6 +78,7 @@ import (
 //				ScanListenerPortNonTls:          pulumi.Any(cloudAutonomousVmClusterScanListenerPortNonTls),
 //				ScanListenerPortTls:             pulumi.Any(cloudAutonomousVmClusterScanListenerPortTls),
 //				SecurityAttributes:              pulumi.Any(cloudAutonomousVmClusterSecurityAttributes),
+//				SgaPercentage:                   pulumi.Any(cloudAutonomousVmClusterSgaPercentage),
 //				SubscriptionId:                  pulumi.Any(testSubscription.Id),
 //				TotalContainerDatabases:         pulumi.Any(cloudAutonomousVmClusterTotalContainerDatabases),
 //			})
@@ -113,7 +115,7 @@ type CloudAutonomousVmCluster struct {
 	AvailableCpus pulumi.Float64Output `pulumi:"availableCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId pulumi.StringOutput `pulumi:"cloudExadataInfrastructureId"`
-	// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	ClusterTimeZone pulumi.StringOutput `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -139,6 +141,8 @@ type CloudAutonomousVmCluster struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm pulumi.StringOutput `pulumi:"distributionAlgorithm"`
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
@@ -147,7 +151,7 @@ type CloudAutonomousVmCluster struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
-	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolOutput `pulumi:"isMtlsEnabledVmCluster"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
@@ -200,12 +204,14 @@ type CloudAutonomousVmCluster struct {
 	RegisterPkcsTrigger pulumi.IntPtrOutput `pulumi:"registerPkcsTrigger"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64Output `pulumi:"reservedCpus"`
-	// The SCAN Listener Non TLS port. Default is 1521.
+	// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls pulumi.IntOutput `pulumi:"scanListenerPortNonTls"`
-	// The SCAN Listener TLS port. Default is 2484.
+	// (Updatable) The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage pulumi.Float64Output `pulumi:"sgaPercentage"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -295,7 +301,7 @@ type cloudAutonomousVmClusterState struct {
 	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId *string `pulumi:"cloudExadataInfrastructureId"`
-	// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	ClusterTimeZone *string `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -321,6 +327,8 @@ type cloudAutonomousVmClusterState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm *string `pulumi:"distributionAlgorithm"`
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain *string `pulumi:"domain"`
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
@@ -329,7 +337,7 @@ type cloudAutonomousVmClusterState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname *string `pulumi:"hostname"`
-	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster *bool `pulumi:"isMtlsEnabledVmCluster"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
@@ -382,12 +390,14 @@ type cloudAutonomousVmClusterState struct {
 	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus *float64 `pulumi:"reservedCpus"`
-	// The SCAN Listener Non TLS port. Default is 1521.
+	// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
-	// The SCAN Listener TLS port. Default is 2484.
+	// (Updatable) The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape *string `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -436,7 +446,7 @@ type CloudAutonomousVmClusterState struct {
 	AvailableCpus pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId pulumi.StringPtrInput
-	// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	ClusterTimeZone pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -462,6 +472,8 @@ type CloudAutonomousVmClusterState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm pulumi.StringPtrInput
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain pulumi.StringPtrInput
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
@@ -470,7 +482,7 @@ type CloudAutonomousVmClusterState struct {
 	FreeformTags pulumi.StringMapInput
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname pulumi.StringPtrInput
-	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
@@ -523,12 +535,14 @@ type CloudAutonomousVmClusterState struct {
 	RegisterPkcsTrigger pulumi.IntPtrInput
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64PtrInput
-	// The SCAN Listener Non TLS port. Default is 1521.
+	// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
-	// The SCAN Listener TLS port. Default is 2484.
+	// (Updatable) The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage pulumi.Float64PtrInput
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape pulumi.StringPtrInput
 	// The current state of the cloud Autonomous VM cluster.
@@ -571,7 +585,7 @@ type cloudAutonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
-	// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	ClusterTimeZone *string `pulumi:"clusterTimeZone"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -587,9 +601,11 @@ type cloudAutonomousVmClusterArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm *string `pulumi:"distributionAlgorithm"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster *bool `pulumi:"isMtlsEnabledVmCluster"`
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	//
@@ -606,12 +622,14 @@ type cloudAutonomousVmClusterArgs struct {
 	OpcDryRun *bool `pulumi:"opcDryRun"`
 	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
 	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
-	// The SCAN Listener Non TLS port. Default is 1521.
+	// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
-	// The SCAN Listener TLS port. Default is 2484.
+	// (Updatable) The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage *float64 `pulumi:"sgaPercentage"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -635,7 +653,7 @@ type CloudAutonomousVmClusterArgs struct {
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId pulumi.StringInput
-	// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+	// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	ClusterTimeZone pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
@@ -651,9 +669,11 @@ type CloudAutonomousVmClusterArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringInput
+	// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 	//
@@ -670,12 +690,14 @@ type CloudAutonomousVmClusterArgs struct {
 	OpcDryRun pulumi.BoolPtrInput
 	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
 	RegisterPkcsTrigger pulumi.IntPtrInput
-	// The SCAN Listener Non TLS port. Default is 1521.
+	// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
-	// The SCAN Listener TLS port. Default is 2484.
+	// (Updatable) The SCAN Listener TLS port. Default is 2484.
 	ScanListenerPortTls pulumi.IntPtrInput
 	// (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 	SecurityAttributes pulumi.StringMapInput
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -817,7 +839,7 @@ func (o CloudAutonomousVmClusterOutput) CloudExadataInfrastructureId() pulumi.St
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.CloudExadataInfrastructureId }).(pulumi.StringOutput)
 }
 
-// The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+// (Updatable) The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o CloudAutonomousVmClusterOutput) ClusterTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.ClusterTimeZone }).(pulumi.StringOutput)
 }
@@ -882,6 +904,11 @@ func (o CloudAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+func (o CloudAutonomousVmClusterOutput) DistributionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.DistributionAlgorithm }).(pulumi.StringOutput)
+}
+
 // The domain name for the cloud Autonomous VM cluster.
 func (o CloudAutonomousVmClusterOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
@@ -902,7 +929,7 @@ func (o CloudAutonomousVmClusterOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+// (Updatable) Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 func (o CloudAutonomousVmClusterOutput) IsMtlsEnabledVmCluster() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.BoolOutput { return v.IsMtlsEnabledVmCluster }).(pulumi.BoolOutput)
 }
@@ -1038,12 +1065,12 @@ func (o CloudAutonomousVmClusterOutput) ReservedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.ReservedCpus }).(pulumi.Float64Output)
 }
 
-// The SCAN Listener Non TLS port. Default is 1521.
+// (Updatable) The SCAN Listener Non TLS port. Default is 1521.
 func (o CloudAutonomousVmClusterOutput) ScanListenerPortNonTls() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortNonTls }).(pulumi.IntOutput)
 }
 
-// The SCAN Listener TLS port. Default is 2484.
+// (Updatable) The SCAN Listener TLS port. Default is 2484.
 func (o CloudAutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortTls }).(pulumi.IntOutput)
 }
@@ -1051,6 +1078,11 @@ func (o CloudAutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
 // (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
 func (o CloudAutonomousVmClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// Percentage of ECPU memory allocated for SGA(System Global Area).
+func (o CloudAutonomousVmClusterOutput) SgaPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.SgaPercentage }).(pulumi.Float64Output)
 }
 
 // The model name of the Exadata hardware running the cloud Autonomous VM cluster.

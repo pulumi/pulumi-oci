@@ -11,36 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetMlApplicationInstanceAuthConfiguration {
     /**
-     * @return Name of the IDCS application
-     * 
-     */
-    private String applicationName;
-    /**
-     * @return Identity Domain OCID
-     * 
-     */
-    private String domainId;
-    /**
      * @return Type of AuthN/Z
      * 
      */
     private String type;
 
     private GetMlApplicationInstanceAuthConfiguration() {}
-    /**
-     * @return Name of the IDCS application
-     * 
-     */
-    public String applicationName() {
-        return this.applicationName;
-    }
-    /**
-     * @return Identity Domain OCID
-     * 
-     */
-    public String domainId() {
-        return this.domainId;
-    }
     /**
      * @return Type of AuthN/Z
      * 
@@ -58,33 +34,13 @@ public final class GetMlApplicationInstanceAuthConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applicationName;
-        private String domainId;
         private String type;
         public Builder() {}
         public Builder(GetMlApplicationInstanceAuthConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.applicationName = defaults.applicationName;
-    	      this.domainId = defaults.domainId;
     	      this.type = defaults.type;
         }
 
-        @CustomType.Setter
-        public Builder applicationName(String applicationName) {
-            if (applicationName == null) {
-              throw new MissingRequiredPropertyException("GetMlApplicationInstanceAuthConfiguration", "applicationName");
-            }
-            this.applicationName = applicationName;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder domainId(String domainId) {
-            if (domainId == null) {
-              throw new MissingRequiredPropertyException("GetMlApplicationInstanceAuthConfiguration", "domainId");
-            }
-            this.domainId = domainId;
-            return this;
-        }
         @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
@@ -95,8 +51,6 @@ public final class GetMlApplicationInstanceAuthConfiguration {
         }
         public GetMlApplicationInstanceAuthConfiguration build() {
             final var _resultValue = new GetMlApplicationInstanceAuthConfiguration();
-            _resultValue.applicationName = applicationName;
-            _resultValue.domainId = domainId;
             _resultValue.type = type;
             return _resultValue;
         }

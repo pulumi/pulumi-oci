@@ -13,7 +13,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
     public sealed class PipelinePipelineDiagnosticDataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the bucket where the object is to be uploaded in the object storage
+        /// Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? DiagnosticState { get; set; }
 
         /// <summary>
-        /// Name of namespace that serves as a container for all of your buckets
+        /// Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

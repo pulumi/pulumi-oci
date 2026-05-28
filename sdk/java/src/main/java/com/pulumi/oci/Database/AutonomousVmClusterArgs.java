@@ -128,6 +128,21 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    @Import(name="distributionAlgorithm")
+    private @Nullable Output<String> distributionAlgorithm;
+
+    /**
+     * @return (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+     * 
+     */
+    public Optional<Output<String>> distributionAlgorithm() {
+        return Optional.ofNullable(this.distributionAlgorithm);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
@@ -173,14 +188,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      * 
      */
     @Import(name="isMtlsEnabled")
     private @Nullable Output<Boolean> isMtlsEnabled;
 
     /**
-     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * @return (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      * 
      */
     public Optional<Output<Boolean>> isMtlsEnabled() {
@@ -233,14 +248,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The SCAN Listener Non TLS port number. Default value is 1521.
+     * (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
      * 
      */
     @Import(name="scanListenerPortNonTls")
     private @Nullable Output<Integer> scanListenerPortNonTls;
 
     /**
-     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * @return (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
      * 
      */
     public Optional<Output<Integer>> scanListenerPortNonTls() {
@@ -248,14 +263,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The SCAN Listener TLS port number. Default value is 2484.
+     * (Updatable) The SCAN Listener TLS port number. Default value is 2484.
      * 
      */
     @Import(name="scanListenerPortTls")
     private @Nullable Output<Integer> scanListenerPortTls;
 
     /**
-     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * @return (Updatable) The SCAN Listener TLS port number. Default value is 2484.
      * 
      */
     public Optional<Output<Integer>> scanListenerPortTls() {
@@ -263,14 +278,29 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    @Import(name="sgaPercentage")
+    private @Nullable Output<Double> sgaPercentage;
+
+    /**
+     * @return Percentage of ECPU memory allocated for SGA(System Global Area).
+     * 
+     */
+    public Optional<Output<Double>> sgaPercentage() {
+        return Optional.ofNullable(this.sgaPercentage);
+    }
+
+    /**
+     * (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * @return (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -323,6 +353,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.distributionAlgorithm = $.distributionAlgorithm;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
@@ -332,6 +363,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
+        this.sgaPercentage = $.sgaPercentage;
         this.timeZone = $.timeZone;
         this.totalContainerDatabases = $.totalContainerDatabases;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
@@ -513,6 +545,27 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param distributionAlgorithm (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAlgorithm(@Nullable Output<String> distributionAlgorithm) {
+            $.distributionAlgorithm = distributionAlgorithm;
+            return this;
+        }
+
+        /**
+         * @param distributionAlgorithm (Updatable) The distribution algorithm used for the Autonomous VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder distributionAlgorithm(String distributionAlgorithm) {
+            return distributionAlgorithm(Output.of(distributionAlgorithm));
+        }
+
+        /**
          * @param exadataInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * 
          * @return builder
@@ -576,7 +629,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isMtlsEnabled Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+         * @param isMtlsEnabled (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
          * 
          * @return builder
          * 
@@ -587,7 +640,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isMtlsEnabled Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+         * @param isMtlsEnabled (Updatable) Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
          * 
          * @return builder
          * 
@@ -670,7 +723,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scanListenerPortNonTls The SCAN Listener Non TLS port number. Default value is 1521.
+         * @param scanListenerPortNonTls (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
          * 
          * @return builder
          * 
@@ -681,7 +734,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scanListenerPortNonTls The SCAN Listener Non TLS port number. Default value is 1521.
+         * @param scanListenerPortNonTls (Updatable) The SCAN Listener Non TLS port number. Default value is 1521.
          * 
          * @return builder
          * 
@@ -691,7 +744,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scanListenerPortTls The SCAN Listener TLS port number. Default value is 2484.
+         * @param scanListenerPortTls (Updatable) The SCAN Listener TLS port number. Default value is 2484.
          * 
          * @return builder
          * 
@@ -702,7 +755,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param scanListenerPortTls The SCAN Listener TLS port number. Default value is 2484.
+         * @param scanListenerPortTls (Updatable) The SCAN Listener TLS port number. Default value is 2484.
          * 
          * @return builder
          * 
@@ -712,7 +765,28 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeZone The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sgaPercentage(@Nullable Output<Double> sgaPercentage) {
+            $.sgaPercentage = sgaPercentage;
+            return this;
+        }
+
+        /**
+         * @param sgaPercentage Percentage of ECPU memory allocated for SGA(System Global Area).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sgaPercentage(Double sgaPercentage) {
+            return sgaPercentage(Output.of(sgaPercentage));
+        }
+
+        /**
+         * @param timeZone (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
          * @return builder
          * 
@@ -723,7 +797,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param timeZone The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * @param timeZone (Updatable) The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
          * @return builder
          * 

@@ -4195,12 +4195,16 @@ class DedicatedVmHostCapacityBin(dict):
         suggest = None
         if key == "capacityIndex":
             suggest = "capacity_index"
+        elif key == "remainingLocalVolumeInGbs":
+            suggest = "remaining_local_volume_in_gbs"
         elif key == "remainingMemoryInGbs":
             suggest = "remaining_memory_in_gbs"
         elif key == "remainingOcpus":
             suggest = "remaining_ocpus"
         elif key == "supportedShapes":
             suggest = "supported_shapes"
+        elif key == "totalLocalVolumeInGbs":
+            suggest = "total_local_volume_in_gbs"
         elif key == "totalMemoryInGbs":
             suggest = "total_memory_in_gbs"
         elif key == "totalOcpus":
@@ -4219,27 +4223,35 @@ class DedicatedVmHostCapacityBin(dict):
 
     def __init__(__self__, *,
                  capacity_index: Optional[_builtins.int] = None,
+                 remaining_local_volume_in_gbs: Optional[_builtins.float] = None,
                  remaining_memory_in_gbs: Optional[_builtins.float] = None,
                  remaining_ocpus: Optional[_builtins.float] = None,
                  supported_shapes: Optional[Sequence[_builtins.str]] = None,
+                 total_local_volume_in_gbs: Optional[_builtins.float] = None,
                  total_memory_in_gbs: Optional[_builtins.float] = None,
                  total_ocpus: Optional[_builtins.float] = None):
         """
         :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param _builtins.float remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param _builtins.float total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param _builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param _builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         if capacity_index is not None:
             pulumi.set(__self__, "capacity_index", capacity_index)
+        if remaining_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         if remaining_memory_in_gbs is not None:
             pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         if remaining_ocpus is not None:
             pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         if supported_shapes is not None:
             pulumi.set(__self__, "supported_shapes", supported_shapes)
+        if total_local_volume_in_gbs is not None:
+            pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         if total_memory_in_gbs is not None:
             pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         if total_ocpus is not None:
@@ -4252,6 +4264,14 @@ class DedicatedVmHostCapacityBin(dict):
         Zero-based index for the corresponding capacity bucket.
         """
         return pulumi.get(self, "capacity_index")
+
+    @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
@@ -4276,6 +4296,14 @@ class DedicatedVmHostCapacityBin(dict):
         List of VMI shapes supported on each capacity bucket.
         """
         return pulumi.get(self, "supported_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -8174,6 +8202,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
         suggest = None
         if key == "baselineOcpuUtilization":
             suggest = "baseline_ocpu_utilization"
+        elif key == "localVolumeSizeInGbs":
+            suggest = "local_volume_size_in_gbs"
         elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
         elif key == "resourceManagement":
@@ -8192,6 +8222,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
 
     def __init__(__self__, *,
                  baseline_ocpu_utilization: Optional[_builtins.str] = None,
+                 local_volume_size_in_gbs: Optional[_builtins.int] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  nvmes: Optional[_builtins.int] = None,
                  ocpus: Optional[_builtins.float] = None,
@@ -8204,6 +8235,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
                * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
                * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
                * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -8212,6 +8244,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -8235,6 +8269,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
         * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -10565,6 +10607,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
         suggest = None
         if key == "baselineOcpuUtilization":
             suggest = "baseline_ocpu_utilization"
+        elif key == "localVolumeSizeInGbs":
+            suggest = "local_volume_size_in_gbs"
         elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
         elif key == "resourceManagement":
@@ -10583,6 +10627,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
 
     def __init__(__self__, *,
                  baseline_ocpu_utilization: Optional[_builtins.str] = None,
+                 local_volume_size_in_gbs: Optional[_builtins.int] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  nvmes: Optional[_builtins.int] = None,
                  ocpus: Optional[_builtins.float] = None,
@@ -10590,6 +10635,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
                  vcpus: Optional[_builtins.int] = None):
         """
         :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -10598,6 +10644,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
         """
         if baseline_ocpu_utilization is not None:
             pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -10616,6 +10664,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -13535,6 +13591,8 @@ class InstanceShapeConfig(dict):
             suggest = "local_disks"
         elif key == "localDisksTotalSizeInGbs":
             suggest = "local_disks_total_size_in_gbs"
+        elif key == "localVolumeSizeInGbs":
+            suggest = "local_volume_size_in_gbs"
         elif key == "maxVnicAttachments":
             suggest = "max_vnic_attachments"
         elif key == "memoryInGbs":
@@ -13564,6 +13622,7 @@ class InstanceShapeConfig(dict):
                  local_disk_description: Optional[_builtins.str] = None,
                  local_disks: Optional[_builtins.int] = None,
                  local_disks_total_size_in_gbs: Optional[_builtins.float] = None,
+                 local_volume_size_in_gbs: Optional[_builtins.int] = None,
                  max_vnic_attachments: Optional[_builtins.int] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  networking_bandwidth_in_gbps: Optional[_builtins.float] = None,
@@ -13584,6 +13643,7 @@ class InstanceShapeConfig(dict):
         :param _builtins.str local_disk_description: A short description of the local disks available to this instance.
         :param _builtins.int local_disks: The number of local disks available to the instance.
         :param _builtins.float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes.
+        :param _builtins.int local_volume_size_in_gbs: (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.int max_vnic_attachments: The maximum number of VNIC attachments for the instance.
         :param _builtins.float memory_in_gbs: (Updatable) The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
@@ -13605,6 +13665,8 @@ class InstanceShapeConfig(dict):
             pulumi.set(__self__, "local_disks", local_disks)
         if local_disks_total_size_in_gbs is not None:
             pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
+        if local_volume_size_in_gbs is not None:
+            pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         if max_vnic_attachments is not None:
             pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         if memory_in_gbs is not None:
@@ -13674,6 +13736,14 @@ class InstanceShapeConfig(dict):
         The aggregate size of all local disks, in gigabytes.
         """
         return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="maxVnicAttachments")
@@ -27630,23 +27700,29 @@ class GetCrossConnectsFilterResult(dict):
 class GetDedicatedVmHostCapacityBinResult(dict):
     def __init__(__self__, *,
                  capacity_index: _builtins.int,
+                 remaining_local_volume_in_gbs: _builtins.float,
                  remaining_memory_in_gbs: _builtins.float,
                  remaining_ocpus: _builtins.float,
                  supported_shapes: Sequence[_builtins.str],
+                 total_local_volume_in_gbs: _builtins.float,
                  total_memory_in_gbs: _builtins.float,
                  total_ocpus: _builtins.float):
         """
         :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param _builtins.float remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param _builtins.float total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param _builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param _builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         pulumi.set(__self__, "capacity_index", capacity_index)
+        pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         pulumi.set(__self__, "total_ocpus", total_ocpus)
 
@@ -27657,6 +27733,14 @@ class GetDedicatedVmHostCapacityBinResult(dict):
         Zero-based index for the corresponding capacity bucket.
         """
         return pulumi.get(self, "capacity_index")
+
+    @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
@@ -27681,6 +27765,14 @@ class GetDedicatedVmHostCapacityBinResult(dict):
         List of VMI shapes supported on each capacity bucket.
         """
         return pulumi.get(self, "supported_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -28009,16 +28101,19 @@ class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResul
     def __init__(__self__, *,
                  capacity_index: _builtins.int,
                  supported_shapes: Sequence[_builtins.str],
+                 total_local_volume_in_gbs: _builtins.float,
                  total_memory_in_gbs: _builtins.float,
                  total_ocpus: _builtins.float):
         """
         :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
         :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param _builtins.float total_local_volume_in_gbs: The total local volume of the capacity bucket, in GBs.
         :param _builtins.float total_memory_in_gbs: The total memory of the capacity bucket, in GBs.
         :param _builtins.float total_ocpus: The total OCPUs of the capacity bucket.
         """
         pulumi.set(__self__, "capacity_index", capacity_index)
         pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         pulumi.set(__self__, "total_ocpus", total_ocpus)
 
@@ -28037,6 +28132,14 @@ class GetDedicatedVmHostShapesDedicatedVmHostShapeCapacityConfigCapacityBinResul
         List of VMI shapes supported on each capacity bucket.
         """
         return pulumi.get(self, "supported_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The total local volume of the capacity bucket, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -28116,14 +28219,17 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  id: _builtins.str,
                  is_memory_encryption_enabled: _builtins.bool,
                  placement_constraint_details: Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult'],
+                 remaining_local_volume_in_gbs: _builtins.float,
                  remaining_memory_in_gbs: _builtins.float,
                  remaining_ocpus: _builtins.float,
                  state: _builtins.str,
                  time_created: _builtins.str,
+                 total_local_volume_in_gbs: _builtins.float,
                  total_memory_in_gbs: _builtins.float,
                  total_ocpus: _builtins.float):
         """
         :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param Sequence['GetDedicatedVmHostsDedicatedVmHostCapacityBinArgs'] capacity_bins: A list of total and remaining CPU, memory, and local volume per capacity bucket.
         :param _builtins.str capacity_config: The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API to see details of this capacity configuration.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
@@ -28135,10 +28241,12 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
         :param _builtins.bool is_memory_encryption_enabled: A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
         :param Sequence['GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
+        :param _builtins.float remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
         :param _builtins.str time_created: The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.float total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param _builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param _builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
@@ -28155,10 +28263,12 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_memory_encryption_enabled", is_memory_encryption_enabled)
         pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
+        pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         pulumi.set(__self__, "total_ocpus", total_ocpus)
 
@@ -28173,6 +28283,9 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityBins")
     def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult']:
+        """
+        A list of total and remaining CPU, memory, and local volume per capacity bucket.
+        """
         return pulumi.get(self, "capacity_bins")
 
     @_builtins.property
@@ -28264,6 +28377,14 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
     def remaining_memory_in_gbs(self) -> _builtins.float:
         """
@@ -28296,6 +28417,14 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         return pulumi.get(self, "time_created")
 
     @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
     def total_memory_in_gbs(self) -> _builtins.float:
         """
@@ -28316,23 +28445,29 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
 class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
     def __init__(__self__, *,
                  capacity_index: _builtins.int,
+                 remaining_local_volume_in_gbs: _builtins.float,
                  remaining_memory_in_gbs: _builtins.float,
                  remaining_ocpus: _builtins.float,
                  supported_shapes: Sequence[_builtins.str],
+                 total_local_volume_in_gbs: _builtins.float,
                  total_memory_in_gbs: _builtins.float,
                  total_ocpus: _builtins.float):
         """
         :param _builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param _builtins.float remaining_local_volume_in_gbs: The current available local volume of the dedicated VM host, in GBs.
         :param _builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param _builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
         :param Sequence[_builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param _builtins.float total_local_volume_in_gbs: The current total local volume of the dedicated VM host, in GBs.
         :param _builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param _builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         pulumi.set(__self__, "capacity_index", capacity_index)
+        pulumi.set(__self__, "remaining_local_volume_in_gbs", remaining_local_volume_in_gbs)
         pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
         pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
         pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_local_volume_in_gbs", total_local_volume_in_gbs)
         pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
         pulumi.set(__self__, "total_ocpus", total_ocpus)
 
@@ -28343,6 +28478,14 @@ class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
         Zero-based index for the corresponding capacity bucket.
         """
         return pulumi.get(self, "capacity_index")
+
+    @_builtins.property
+    @pulumi.getter(name="remainingLocalVolumeInGbs")
+    def remaining_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current available local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
@@ -28367,6 +28510,14 @@ class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
         List of VMI shapes supported on each capacity bucket.
         """
         return pulumi.get(self, "supported_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalLocalVolumeInGbs")
+    def total_local_volume_in_gbs(self) -> _builtins.float:
+        """
+        The current total local volume of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_local_volume_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
@@ -32583,6 +32734,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfi
 class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  nvmes: _builtins.int,
                  ocpus: _builtins.float,
@@ -32590,6 +32742,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
                  vcpus: _builtins.int):
         """
         :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -32597,6 +32750,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
         :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -32610,6 +32764,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -34242,6 +34404,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanc
 class GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  nvmes: _builtins.int,
                  ocpus: _builtins.float,
@@ -34249,6 +34412,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult(
                  vcpus: _builtins.int):
         """
         :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -34256,6 +34420,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult(
         :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -34269,6 +34434,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult(
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -36576,6 +36749,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPr
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  nvmes: _builtins.int,
                  ocpus: _builtins.float,
@@ -36583,6 +36757,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSh
                  vcpus: _builtins.int):
         """
         :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -36590,6 +36765,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSh
         :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -36603,6 +36779,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSh
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -38235,6 +38419,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigResult(dict):
     def __init__(__self__, *,
                  baseline_ocpu_utilization: _builtins.str,
+                 local_volume_size_in_gbs: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  nvmes: _builtins.int,
                  ocpus: _builtins.float,
@@ -38242,6 +38427,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  vcpus: _builtins.int):
         """
         :param _builtins.str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param _builtins.float ocpus: The total number of OCPUs available to the instance.
@@ -38249,6 +38435,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param _builtins.int vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -38262,6 +38449,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -41538,6 +41733,7 @@ class GetInstanceShapeConfigResult(dict):
                  local_disk_description: _builtins.str,
                  local_disks: _builtins.int,
                  local_disks_total_size_in_gbs: _builtins.float,
+                 local_volume_size_in_gbs: _builtins.int,
                  max_vnic_attachments: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  networking_bandwidth_in_gbps: _builtins.float,
@@ -41553,6 +41749,7 @@ class GetInstanceShapeConfigResult(dict):
         :param _builtins.str local_disk_description: A short description of the local disks available to this instance.
         :param _builtins.int local_disks: The number of local disks available to the instance.
         :param _builtins.float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
         :param _builtins.int max_vnic_attachments: The maximum number of VNIC attachments for the instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
@@ -41567,6 +41764,7 @@ class GetInstanceShapeConfigResult(dict):
         pulumi.set(__self__, "local_disk_description", local_disk_description)
         pulumi.set(__self__, "local_disks", local_disks)
         pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
@@ -41623,6 +41821,14 @@ class GetInstanceShapeConfigResult(dict):
         The aggregate size of all local disks, in gigabytes.
         """
         return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="maxVnicAttachments")
@@ -43202,6 +43408,7 @@ class GetInstancesInstanceShapeConfigResult(dict):
                  local_disk_description: _builtins.str,
                  local_disks: _builtins.int,
                  local_disks_total_size_in_gbs: _builtins.float,
+                 local_volume_size_in_gbs: _builtins.int,
                  max_vnic_attachments: _builtins.int,
                  memory_in_gbs: _builtins.float,
                  networking_bandwidth_in_gbps: _builtins.float,
@@ -43217,6 +43424,7 @@ class GetInstancesInstanceShapeConfigResult(dict):
         :param _builtins.str local_disk_description: A short description of the local disks available to this instance.
         :param _builtins.int local_disks: The number of local disks available to the instance.
         :param _builtins.float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes.
+        :param _builtins.int local_volume_size_in_gbs: The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
         :param _builtins.int max_vnic_attachments: The maximum number of VNIC attachments for the instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.float networking_bandwidth_in_gbps: The networking bandwidth available to the instance, in gigabits per second.
@@ -43231,6 +43439,7 @@ class GetInstancesInstanceShapeConfigResult(dict):
         pulumi.set(__self__, "local_disk_description", local_disk_description)
         pulumi.set(__self__, "local_disks", local_disks)
         pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
+        pulumi.set(__self__, "local_volume_size_in_gbs", local_volume_size_in_gbs)
         pulumi.set(__self__, "max_vnic_attachments", max_vnic_attachments)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
@@ -43287,6 +43496,14 @@ class GetInstancesInstanceShapeConfigResult(dict):
         The aggregate size of all local disks, in gigabytes.
         """
         return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeSizeInGbs")
+    def local_volume_size_in_gbs(self) -> _builtins.int:
+        """
+        The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+        """
+        return pulumi.get(self, "local_volume_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="maxVnicAttachments")

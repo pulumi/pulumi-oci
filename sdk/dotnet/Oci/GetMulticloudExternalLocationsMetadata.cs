@@ -115,25 +115,25 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudExternalLocationsMetadataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
         /// </summary>
         [Input("clusterPlacementGroupId")]
         public string? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// The resource type query (i.e. dbsystem, instance etc.)
+        /// The resource type query (for example, dbsystem or instance).
         /// </summary>
         [Input("entityType")]
         public string? EntityType { get; set; }
 
         /// <summary>
-        /// The Cloud Service Provider region.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public string? ExternalLocation { get; set; }
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Oci
         public string? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// Oracle Cloud Infrastructure Logical AD to filter the response.
+        /// Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
         /// </summary>
         [Input("logicalZone")]
         public string? LogicalZone { get; set; }
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Oci
         public string SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public string SubscriptionServiceName { get; set; } = null!;
@@ -182,25 +182,25 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudExternalLocationsMetadataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
         /// </summary>
         [Input("clusterPlacementGroupId")]
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources. A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a cloud service provider (such as Azure or AWS).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The resource type query (i.e. dbsystem, instance etc.)
+        /// The resource type query (for example, dbsystem or instance).
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
 
         /// <summary>
-        /// The Cloud Service Provider region.
+        /// The cloud service provider region.
         /// </summary>
         [Input("externalLocation")]
         public Input<string>? ExternalLocation { get; set; }
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// Oracle Cloud Infrastructure Logical AD to filter the response.
+        /// Oracle Cloud Infrastructure logical availability domain (AD) to filter the response.
         /// </summary>
         [Input("logicalZone")]
         public Input<string>? LogicalZone { get; set; }
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name of the Cloud Service Provider.
+        /// The cloud service provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public Input<string> SubscriptionServiceName { get; set; } = null!;

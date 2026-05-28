@@ -1009,14 +1009,14 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
     }
 
     /**
-     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     @Import(name="vmFailoverReservation")
     private @Nullable Output<Integer> vmFailoverReservation;
 
     /**
-     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * @return The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
      * 
      */
     public Optional<Output<Integer>> vmFailoverReservation() {
@@ -2564,7 +2564,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         }
 
         /**
-         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
          * 
          * @return builder
          * 
@@ -2575,7 +2575,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         }
 
         /**
-         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         * @param vmFailoverReservation The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
          * 
          * @return builder
          * 

@@ -3548,6 +3548,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig struct {
 	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
 	// The total amount of memory available to the instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
@@ -3574,6 +3576,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSha
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs struct {
 	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
 	// The total amount of memory available to the instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
@@ -3642,6 +3646,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) string {
 		return v.BaselineOcpuUtilization
 	}).(pulumi.StringOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntOutput)
 }
 
 // The total amount of memory available to the instance, in gigabytes.
@@ -7099,6 +7110,8 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig struct {
 	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
 	// The total amount of memory available to the instance, in gigabytes.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
@@ -7125,6 +7138,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs struct {
 	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
 	// The total amount of memory available to the instance, in gigabytes.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
@@ -7193,6 +7208,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
 		return v.BaselineOcpuUtilization
 	}).(pulumi.StringOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntOutput)
 }
 
 // The total amount of memory available to the instance, in gigabytes.
@@ -14495,6 +14517,8 @@ type GetInstanceShapeConfig struct {
 	LocalDisks int `pulumi:"localDisks"`
 	// The aggregate size of all local disks, in gigabytes.
 	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
 	// The maximum number of VNIC attachments for the instance.
 	MaxVnicAttachments int `pulumi:"maxVnicAttachments"`
 	// The total amount of memory available to the instance, in gigabytes.
@@ -14536,6 +14560,8 @@ type GetInstanceShapeConfigArgs struct {
 	LocalDisks pulumi.IntInput `pulumi:"localDisks"`
 	// The aggregate size of all local disks, in gigabytes.
 	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
 	// The maximum number of VNIC attachments for the instance.
 	MaxVnicAttachments pulumi.IntInput `pulumi:"maxVnicAttachments"`
 	// The total amount of memory available to the instance, in gigabytes.
@@ -14632,6 +14658,11 @@ func (o GetInstanceShapeConfigOutput) LocalDisks() pulumi.IntOutput {
 // The aggregate size of all local disks, in gigabytes.
 func (o GetInstanceShapeConfigOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShapeConfig) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+func (o GetInstanceShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.LocalVolumeSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The maximum number of VNIC attachments for the instance.
@@ -17507,6 +17538,8 @@ type GetInstancesInstanceShapeConfig struct {
 	LocalDisks int `pulumi:"localDisks"`
 	// The aggregate size of all local disks, in gigabytes.
 	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
 	// The maximum number of VNIC attachments for the instance.
 	MaxVnicAttachments int `pulumi:"maxVnicAttachments"`
 	// The total amount of memory available to the instance, in gigabytes.
@@ -17548,6 +17581,8 @@ type GetInstancesInstanceShapeConfigArgs struct {
 	LocalDisks pulumi.IntInput `pulumi:"localDisks"`
 	// The aggregate size of all local disks, in gigabytes.
 	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
 	// The maximum number of VNIC attachments for the instance.
 	MaxVnicAttachments pulumi.IntInput `pulumi:"maxVnicAttachments"`
 	// The total amount of memory available to the instance, in gigabytes.
@@ -17644,6 +17679,11 @@ func (o GetInstancesInstanceShapeConfigOutput) LocalDisks() pulumi.IntOutput {
 // The aggregate size of all local disks, in gigabytes.
 func (o GetInstancesInstanceShapeConfigOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstancesInstanceShapeConfig) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the shape  is DenseLV, the value will be greater than 0. For all other shapes, the value will be null.
+func (o GetInstancesInstanceShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancesInstanceShapeConfig) int { return v.LocalVolumeSizeInGbs }).(pulumi.IntOutput)
 }
 
 // The maximum number of VNIC attachments for the instance.

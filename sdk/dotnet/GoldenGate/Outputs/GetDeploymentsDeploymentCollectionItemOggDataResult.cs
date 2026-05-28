@@ -40,6 +40,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string IdentityDomainId;
         public readonly string Key;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
+        /// </summary>
+        public readonly string KeySecretId;
+        /// <summary>
         /// Version of OGG
         /// </summary>
         public readonly string OggVersion;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string key,
 
+            string keySecretId,
+
             string oggVersion,
 
             string passwordSecretId)
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             GroupToRolesMappings = groupToRolesMappings;
             IdentityDomainId = identityDomainId;
             Key = key;
+            KeySecretId = keySecretId;
             OggVersion = oggVersion;
             PasswordSecretId = passwordSecretId;
         }

@@ -21,6 +21,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Metric type
         /// </summary>
         public readonly string MetricType;
+        public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleConfigurationResult> ScaleConfigurations;
         /// <summary>
         /// The scaling configuration for the predefined metric expression rule.
         /// </summary>
@@ -36,12 +37,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string metricType,
 
+            ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleConfigurationResult> scaleConfigurations,
+
             ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult> scaleInConfigurations,
 
             ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult> scaleOutConfigurations)
         {
             MetricExpressionRuleType = metricExpressionRuleType;
             MetricType = metricType;
+            ScaleConfigurations = scaleConfigurations;
             ScaleInConfigurations = scaleInConfigurations;
             ScaleOutConfigurations = scaleOutConfigurations;
         }

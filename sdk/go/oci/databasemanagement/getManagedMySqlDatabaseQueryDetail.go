@@ -13,7 +13,8 @@ import (
 
 // This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
 //
-// Retrieves query sample details, explain plan and potential warnings for a given digest.
+// Retrieves query sample details, explain plan, and potential warnings for a given digest.
+// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 //
 // ## Example Usage
 //
@@ -65,11 +66,11 @@ type GetManagedMySqlDatabaseQueryDetailResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                     string `pulumi:"id"`
 	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
-	// The explain plan for a given MySQL query.
+	// The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	QueryExplainPlans []GetManagedMySqlDatabaseQueryDetailQueryExplainPlan `pulumi:"queryExplainPlans"`
-	// The errors, warnings and notes that could be raised by the execution of the query.
+	// The errors, warnings, and notes that could be raised by the execution of the query.
 	QueryMessages []GetManagedMySqlDatabaseQueryDetailQueryMessage `pulumi:"queryMessages"`
-	// The details of a query sample including the query text, execution time and other details.
+	// The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	QuerySampleDetails []GetManagedMySqlDatabaseQueryDetailQuerySampleDetail `pulumi:"querySampleDetails"`
 }
 
@@ -122,21 +123,21 @@ func (o GetManagedMySqlDatabaseQueryDetailResultOutput) ManagedMySqlDatabaseId()
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailResult) string { return v.ManagedMySqlDatabaseId }).(pulumi.StringOutput)
 }
 
-// The explain plan for a given MySQL query.
+// The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseQueryDetailResultOutput) QueryExplainPlans() GetManagedMySqlDatabaseQueryDetailQueryExplainPlanArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailResult) []GetManagedMySqlDatabaseQueryDetailQueryExplainPlan {
 		return v.QueryExplainPlans
 	}).(GetManagedMySqlDatabaseQueryDetailQueryExplainPlanArrayOutput)
 }
 
-// The errors, warnings and notes that could be raised by the execution of the query.
+// The errors, warnings, and notes that could be raised by the execution of the query.
 func (o GetManagedMySqlDatabaseQueryDetailResultOutput) QueryMessages() GetManagedMySqlDatabaseQueryDetailQueryMessageArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailResult) []GetManagedMySqlDatabaseQueryDetailQueryMessage {
 		return v.QueryMessages
 	}).(GetManagedMySqlDatabaseQueryDetailQueryMessageArrayOutput)
 }
 
-// The details of a query sample including the query text, execution time and other details.
+// The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseQueryDetailResultOutput) QuerySampleDetails() GetManagedMySqlDatabaseQueryDetailQuerySampleDetailArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailResult) []GetManagedMySqlDatabaseQueryDetailQuerySampleDetail {
 		return v.QuerySampleDetails

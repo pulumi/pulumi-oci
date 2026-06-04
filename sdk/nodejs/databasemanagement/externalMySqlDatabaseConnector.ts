@@ -13,6 +13,7 @@ import * as utilities from "../utilities";
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
  *
  * Creates an external MySQL connector resource.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -93,7 +94,7 @@ export class ExternalMySqlDatabaseConnector extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly connectionStatus: pulumi.Output<string>;
     /**
-     * (Updatable) Create Details of external database connector.
+     * (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      */
     declare public readonly connectorDetails: pulumi.Output<outputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails>;
     /**
@@ -264,7 +265,7 @@ export interface ExternalMySqlDatabaseConnectorState {
      */
     connectionStatus?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Create Details of external database connector.
+     * (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      */
     connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails | undefined>;
     /**
@@ -354,7 +355,7 @@ export interface ExternalMySqlDatabaseConnectorArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Create Details of external database connector.
+     * (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      */
     connectorDetails: pulumi.Input<inputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails>;
     /**

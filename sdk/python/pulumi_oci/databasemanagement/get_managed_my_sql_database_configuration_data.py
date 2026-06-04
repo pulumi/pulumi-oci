@@ -87,7 +87,9 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[Un
     """
     This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves Configuration Data for given MySQL Instance.
+    Retrieves configuration data for a specific MySQL database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -118,7 +120,9 @@ def get_managed_my_sql_database_configuration_data_output(filters: pulumi.Input[
     """
     This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves Configuration Data for given MySQL Instance.
+    Retrieves configuration data for a specific MySQL database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

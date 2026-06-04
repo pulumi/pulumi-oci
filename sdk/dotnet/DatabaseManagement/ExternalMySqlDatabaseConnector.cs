@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
     /// 
     /// Creates an external MySQL connector resource.
+    /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
     /// 
     /// ## Example Usage
     /// 
@@ -87,7 +88,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> ConnectionStatus { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Create Details of external database connector.
+        /// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         [Output("connectorDetails")]
         public Output<Outputs.ExternalMySqlDatabaseConnectorConnectorDetails> ConnectorDetails { get; private set; } = null!;
@@ -257,7 +258,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Create Details of external database connector.
+        /// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         [Input("connectorDetails", required: true)]
         public Input<Inputs.ExternalMySqlDatabaseConnectorConnectorDetailsArgs> ConnectorDetails { get; set; } = null!;
@@ -305,7 +306,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? ConnectionStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) Create Details of external database connector.
+        /// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         [Input("connectorDetails")]
         public Input<Inputs.ExternalMySqlDatabaseConnectorConnectorDetailsGetArgs>? ConnectorDetails { get; set; }

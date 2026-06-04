@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string SinglePrimaryMode;
         /// <summary>
-        /// High availability status summary of a MySQL server.
+        /// High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult> StatusSummaries;
         /// <summary>

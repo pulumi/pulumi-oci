@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseQueryDetailQueryMessageResult
     {
         /// <summary>
-        /// The MySQL code of the raised error, warning or note.
+        /// The MySQL code of the raised error, warning, or note.
         /// </summary>
         public readonly int Code;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Level;
         /// <summary>
-        /// The MySQL message text of the raised error, warning or note.
+        /// The MySQL message text of the raised error, warning, or note.
         /// </summary>
         public readonly string MessageText;
 

@@ -22,17 +22,17 @@ public final class GetManagedMySqlDatabaseQueryDetailResult {
     private String id;
     private String managedMySqlDatabaseId;
     /**
-     * @return The explain plan for a given MySQL query.
+     * @return The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseQueryDetailQueryExplainPlan> queryExplainPlans;
     /**
-     * @return The errors, warnings and notes that could be raised by the execution of the query.
+     * @return The errors, warnings, and notes that could be raised by the execution of the query.
      * 
      */
     private List<GetManagedMySqlDatabaseQueryDetailQueryMessage> queryMessages;
     /**
-     * @return The details of a query sample including the query text, execution time and other details.
+     * @return The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseQueryDetailQuerySampleDetail> querySampleDetails;
@@ -52,21 +52,21 @@ public final class GetManagedMySqlDatabaseQueryDetailResult {
         return this.managedMySqlDatabaseId;
     }
     /**
-     * @return The explain plan for a given MySQL query.
+     * @return The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseQueryDetailQueryExplainPlan> queryExplainPlans() {
         return this.queryExplainPlans;
     }
     /**
-     * @return The errors, warnings and notes that could be raised by the execution of the query.
+     * @return The errors, warnings, and notes that could be raised by the execution of the query.
      * 
      */
     public List<GetManagedMySqlDatabaseQueryDetailQueryMessage> queryMessages() {
         return this.queryMessages;
     }
     /**
-     * @return The details of a query sample including the query text, execution time and other details.
+     * @return The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseQueryDetailQuerySampleDetail> querySampleDetails() {

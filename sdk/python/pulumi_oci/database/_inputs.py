@@ -10931,6 +10931,10 @@ class CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict
     """
     If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
     """
+    max_size_gb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The maximum size of file system.
+    """
     min_size_gb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The minimum size of file system.
@@ -10945,11 +10949,13 @@ class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
     def __init__(__self__, *,
                  is_backup_partition: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_resizable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_size_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  min_size_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  mount_point: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
         :param pulumi.Input[_builtins.bool] is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param pulumi.Input[_builtins.int] max_size_gb: The maximum size of file system.
         :param pulumi.Input[_builtins.int] min_size_gb: The minimum size of file system.
         :param pulumi.Input[_builtins.str] mount_point: The mount point of file system.
         """
@@ -10957,6 +10963,8 @@ class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
             pulumi.set(__self__, "is_backup_partition", is_backup_partition)
         if is_resizable is not None:
             pulumi.set(__self__, "is_resizable", is_resizable)
+        if max_size_gb is not None:
+            pulumi.set(__self__, "max_size_gb", max_size_gb)
         if min_size_gb is not None:
             pulumi.set(__self__, "min_size_gb", min_size_gb)
         if mount_point is not None:
@@ -10985,6 +10993,18 @@ class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
     @is_resizable.setter
     def is_resizable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resizable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSizeGb")
+    def max_size_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The maximum size of file system.
+        """
+        return pulumi.get(self, "max_size_gb")
+
+    @max_size_gb.setter
+    def max_size_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "max_size_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="minSizeGb")
@@ -21267,6 +21287,10 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgsDict(TypedDict):
     """
     If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
     """
+    max_size_gb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The maximum size of file system.
+    """
     min_size_gb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The minimum size of file system.
@@ -21281,11 +21305,13 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
     def __init__(__self__, *,
                  is_backup_partition: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_resizable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_size_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  min_size_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  mount_point: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
         :param pulumi.Input[_builtins.bool] is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param pulumi.Input[_builtins.int] max_size_gb: The maximum size of file system.
         :param pulumi.Input[_builtins.int] min_size_gb: The minimum size of file system.
         :param pulumi.Input[_builtins.str] mount_point: The mount point of file system.
         """
@@ -21293,6 +21319,8 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
             pulumi.set(__self__, "is_backup_partition", is_backup_partition)
         if is_resizable is not None:
             pulumi.set(__self__, "is_resizable", is_resizable)
+        if max_size_gb is not None:
+            pulumi.set(__self__, "max_size_gb", max_size_gb)
         if min_size_gb is not None:
             pulumi.set(__self__, "min_size_gb", min_size_gb)
         if mount_point is not None:
@@ -21321,6 +21349,18 @@ class ExadataInfrastructureDefinedFileSystemConfigurationArgs:
     @is_resizable.setter
     def is_resizable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resizable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSizeGb")
+    def max_size_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The maximum size of file system.
+        """
+        return pulumi.get(self, "max_size_gb")
+
+    @max_size_gb.setter
+    def max_size_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "max_size_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="minSizeGb")

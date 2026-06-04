@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string DbSystemDiscoveryId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
         /// </summary>
         public readonly string DbaasParentInfrastructureId;
         /// <summary>
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// The deployment type of cloud dbsystem.
+        /// The deployment type of cloud DB system.
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>

@@ -90,7 +90,7 @@ export class CloudDbSystem extends pulumi.CustomResource {
      */
     declare public readonly dbSystemDiscoveryId: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
     declare public /*out*/ readonly dbaasParentInfrastructureId: pulumi.Output<string>;
     /**
@@ -98,7 +98,7 @@ export class CloudDbSystem extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      */
     declare public /*out*/ readonly deploymentType: pulumi.Output<string>;
     /**
@@ -224,7 +224,7 @@ export interface CloudDbSystemState {
      */
     dbSystemDiscoveryId?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
     dbaasParentInfrastructureId?: pulumi.Input<string | undefined>;
     /**
@@ -232,7 +232,7 @@ export interface CloudDbSystemState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      */
     deploymentType?: pulumi.Input<string | undefined>;
     /**

@@ -47,7 +47,8 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				NsgIds: pulumi.Any(operationsInsightsPrivateEndpointNsgIds),
+//				NsgIds:             pulumi.Any(operationsInsightsPrivateEndpointNsgIds),
+//				SecurityAttributes: pulumi.Any(operationsInsightsPrivateEndpointSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -88,6 +89,8 @@ type OperationsInsightsPrivateEndpoint struct {
 	PrivateEndpointStatusDetails pulumi.StringOutput `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -168,6 +171,8 @@ type operationsInsightsPrivateEndpointState struct {
 	PrivateEndpointStatusDetails *string `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp *string `pulumi:"privateIp"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the private endpoint.
 	State *string `pulumi:"state"`
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -204,6 +209,8 @@ type OperationsInsightsPrivateEndpointState struct {
 	PrivateEndpointStatusDetails pulumi.StringPtrInput
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the private endpoint.
 	State pulumi.StringPtrInput
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -240,6 +247,8 @@ type operationsInsightsPrivateEndpointArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
 	PrivateEndpointStatusDetails *string `pulumi:"privateEndpointStatusDetails"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 	SubnetId string `pulumi:"subnetId"`
 	// The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -267,6 +276,8 @@ type OperationsInsightsPrivateEndpointArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
 	PrivateEndpointStatusDetails pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 	SubnetId pulumi.StringInput
 	// The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -411,6 +422,11 @@ func (o OperationsInsightsPrivateEndpointOutput) PrivateEndpointStatusDetails() 
 // The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 func (o OperationsInsightsPrivateEndpointOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o OperationsInsightsPrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the private endpoint.

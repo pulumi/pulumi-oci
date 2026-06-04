@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudDatabasesCloudDatabaseCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
      * 
      */
     private String cloudDbHomeId;
@@ -57,7 +57,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
      */
     private List<GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfo> dbSystemInfos;
     /**
-     * @return The `DB_UNIQUE_NAME` of the external database.
+     * @return The `DB_UNIQUE_NAME` of the cloud database.
      * 
      */
     private String dbUniqueName;
@@ -82,7 +82,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      * 
      */
     private String id;
@@ -97,7 +97,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
      */
     private String parentContainerDatabaseId;
     /**
-     * @return The current lifecycle state of the external database resource.
+     * @return The current lifecycle state of the cloud database resource.
      * 
      */
     private String state;
@@ -107,14 +107,14 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the external DB system was created.
+     * @return The date and time the cloud DB system was created.
      * 
      */
     private String timeCreated;
 
     private GetCloudDatabasesCloudDatabaseCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
      * 
      */
     public String cloudDbHomeId() {
@@ -170,7 +170,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
         return this.dbSystemInfos;
     }
     /**
-     * @return The `DB_UNIQUE_NAME` of the external database.
+     * @return The `DB_UNIQUE_NAME` of the cloud database.
      * 
      */
     public String dbUniqueName() {
@@ -205,7 +205,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      * 
      */
     public String id() {
@@ -226,7 +226,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
         return this.parentContainerDatabaseId;
     }
     /**
-     * @return The current lifecycle state of the external database resource.
+     * @return The current lifecycle state of the cloud database resource.
      * 
      */
     public String state() {
@@ -240,7 +240,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The date and time the external DB system was created.
+     * @return The date and time the cloud DB system was created.
      * 
      */
     public String timeCreated() {

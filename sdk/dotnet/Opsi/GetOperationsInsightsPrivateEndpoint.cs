@@ -169,6 +169,10 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the private endpoint.
         /// </summary>
         public readonly string State;
@@ -215,6 +219,8 @@ namespace Pulumi.Oci.Opsi
 
             string privateIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -237,6 +243,7 @@ namespace Pulumi.Oci.Opsi
             OperationsInsightsPrivateEndpointId = operationsInsightsPrivateEndpointId;
             PrivateEndpointStatusDetails = privateEndpointStatusDetails;
             PrivateIp = privateIp;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

@@ -29,7 +29,7 @@ public final class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionIt
      */
     private String adrHomeDirectory;
     /**
-     * @return The list of asm instances for the cloud Asm.
+     * @return The list of ASM instances for the cloud Asm.
      * 
      */
     private List<GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances;
@@ -139,7 +139,7 @@ public final class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionIt
      */
     private String dbVersion;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     private String dbaasId;
@@ -293,7 +293,7 @@ public final class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionIt
         return this.adrHomeDirectory;
     }
     /**
-     * @return The list of asm instances for the cloud Asm.
+     * @return The list of ASM instances for the cloud Asm.
      * 
      */
     public List<GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances() {
@@ -447,7 +447,7 @@ public final class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionIt
         return this.dbVersion;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     public String dbaasId() {

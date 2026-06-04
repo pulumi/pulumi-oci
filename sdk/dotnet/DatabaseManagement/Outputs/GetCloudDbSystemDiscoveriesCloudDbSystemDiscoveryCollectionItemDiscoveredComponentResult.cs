@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string AdrHomeDirectory;
         /// <summary>
-        /// The list of asm instances for the cloud Asm.
+        /// The list of ASM instances for the cloud Asm.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult> AsmInstances;
         /// <summary>
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         /// </summary>
         public readonly string DbaasId;
         /// <summary>

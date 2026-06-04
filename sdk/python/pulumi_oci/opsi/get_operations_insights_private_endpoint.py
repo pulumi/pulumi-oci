@@ -26,7 +26,7 @@ class GetOperationsInsightsPrivateEndpointResult:
     """
     A collection of values returned by getOperationsInsightsPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_used_for_rac_dbs=None, lifecycle_details=None, nsg_ids=None, operations_insights_private_endpoint_id=None, private_endpoint_status_details=None, private_ip=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_used_for_rac_dbs=None, lifecycle_details=None, nsg_ids=None, operations_insights_private_endpoint_id=None, private_endpoint_status_details=None, private_ip=None, security_attributes=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -63,6 +63,9 @@ class GetOperationsInsightsPrivateEndpointResult:
         if private_ip and not isinstance(private_ip, str):
             raise TypeError("Expected argument 'private_ip' to be a str")
         pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -173,6 +176,14 @@ class GetOperationsInsightsPrivateEndpointResult:
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -231,6 +242,7 @@ class AwaitableGetOperationsInsightsPrivateEndpointResult(GetOperationsInsightsP
             operations_insights_private_endpoint_id=self.operations_insights_private_endpoint_id,
             private_endpoint_status_details=self.private_endpoint_status_details,
             private_ip=self.private_ip,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -275,6 +287,7 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
         operations_insights_private_endpoint_id=pulumi.get(__ret__, 'operations_insights_private_endpoint_id'),
         private_endpoint_status_details=pulumi.get(__ret__, 'private_endpoint_status_details'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -316,6 +329,7 @@ def get_operations_insights_private_endpoint_output(operations_insights_private_
         operations_insights_private_endpoint_id=pulumi.get(__response__, 'operations_insights_private_endpoint_id'),
         private_endpoint_status_details=pulumi.get(__response__, 'private_endpoint_status_details'),
         private_ip=pulumi.get(__response__, 'private_ip'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

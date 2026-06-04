@@ -1100,7 +1100,7 @@ class CloudAsmServicedDatabase(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
         :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
@@ -1161,7 +1161,7 @@ class CloudAsmServicedDatabase(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -1878,7 +1878,7 @@ class CloudDbSystemDiscoveryDiscoveredComponent(dict):
                  vip_configurations: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration']] = None):
         """
         :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of ASM instances for the cloud Asm.
         :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -1900,7 +1900,7 @@ class CloudDbSystemDiscoveryDiscoveredComponent(dict):
         :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
         :param _builtins.str db_version: The Oracle Database version.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
@@ -2047,7 +2047,7 @@ class CloudDbSystemDiscoveryDiscoveredComponent(dict):
     @pulumi.getter(name="asmInstances")
     def asm_instances(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentAsmInstance']]:
         """
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
         """
         return pulumi.get(self, "asm_instances")
 
@@ -2223,7 +2223,7 @@ class CloudDbSystemDiscoveryDiscoveredComponent(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -6053,7 +6053,7 @@ class CloudListenerServicedDatabase(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
@@ -6111,7 +6111,7 @@ class CloudListenerServicedDatabase(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -14675,7 +14675,7 @@ class GetCloudAsmServicedDatabaseResult(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
         :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
@@ -14727,7 +14727,7 @@ class GetCloudAsmServicedDatabaseResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -14897,7 +14897,7 @@ class GetCloudAsmsCloudAsmCollectionItemResult(dict):
         :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str component_name: The name of the cloud ASM.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -14984,7 +14984,7 @@ class GetCloudAsmsCloudAsmCollectionItemResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -15118,7 +15118,7 @@ class GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
@@ -15170,7 +15170,7 @@ class GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -16105,7 +16105,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str):
         """
-        :param _builtins.str cloud_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        :param _builtins.str cloud_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str database_platform_name: The operating system of database.
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
@@ -16113,17 +16113,17 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
         :param _builtins.str database_version: The Oracle database version.
         :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigArgs'] db_management_configs: The configuration details of Database Management for a cloud DB system.
         :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoArgs'] db_system_infos: The basic information about a cloud DB system.
-        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
+        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
         :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigArgs'] dbmgmt_feature_configs: The list of feature configurations
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailArgs'] instance_details: The list of database instances if the database is a RAC database.
         :param _builtins.str parent_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
-        :param _builtins.str state: The current lifecycle state of the external database resource.
+        :param _builtins.str state: The current lifecycle state of the cloud database resource.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time the external DB system was created.
+        :param _builtins.str time_created: The date and time the cloud DB system was created.
         """
         pulumi.set(__self__, "cloud_db_home_id", cloud_db_home_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -16149,7 +16149,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="cloudDbHomeId")
     def cloud_db_home_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
         """
         return pulumi.get(self, "cloud_db_home_id")
 
@@ -16213,7 +16213,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> _builtins.str:
         """
-        The `DB_UNIQUE_NAME` of the external database.
+        The `DB_UNIQUE_NAME` of the cloud database.
         """
         return pulumi.get(self, "db_unique_name")
 
@@ -16253,7 +16253,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         """
         return pulumi.get(self, "id")
 
@@ -16277,7 +16277,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the external database resource.
+        The current lifecycle state of the cloud database resource.
         """
         return pulumi.get(self, "state")
 
@@ -16293,7 +16293,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the external DB system was created.
+        The date and time the cloud DB system was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -16336,7 +16336,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult(dict):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -16362,7 +16362,7 @@ class GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         """
         return pulumi.get(self, "id")
 
@@ -16984,7 +16984,7 @@ class GetCloudDbNodesCloudDbNodeCollectionItemResult(dict):
         :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node in DBaas service.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
-        :param _builtins.str domain_name: Name of the domain.
+        :param _builtins.str domain_name: The name of the domain.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str host_name: The host name for the DB node.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
@@ -17097,7 +17097,7 @@ class GetCloudDbNodesCloudDbNodeCollectionItemResult(dict):
     @pulumi.getter(name="domainName")
     def domain_name(self) -> _builtins.str:
         """
-        Name of the domain.
+        The name of the domain.
         """
         return pulumi.get(self, "domain_name")
 
@@ -17871,9 +17871,9 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult(dict
         """
         :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param _builtins.str dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        :param _builtins.str dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str deployment_type: The deployment type of cloud dbsystem.
+        :param _builtins.str deployment_type: The deployment type of cloud DB system.
         :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentArgs'] discovered_components: The list of DB system components that were found in the DB system discovery.
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -17930,7 +17930,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult(dict
     @pulumi.getter(name="dbaasParentInfrastructureId")
     def dbaas_parent_infrastructure_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
         """
         return pulumi.get(self, "dbaas_parent_infrastructure_id")
 
@@ -17946,7 +17946,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult(dict
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> _builtins.str:
         """
-        The deployment type of cloud dbsystem.
+        The deployment type of cloud DB system.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -18101,7 +18101,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredC
                  vip_configurations: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult']):
         """
         :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of ASM instances for the cloud Asm.
         :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -18123,7 +18123,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredC
         :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
         :param _builtins.str db_version: The Oracle Database version.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
@@ -18218,7 +18218,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredC
     @pulumi.getter(name="asmInstances")
     def asm_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult']:
         """
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
         """
         return pulumi.get(self, "asm_instances")
 
@@ -18394,7 +18394,7 @@ class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredC
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -20279,7 +20279,7 @@ class GetCloudDbSystemDiscoveryDiscoveredComponentResult(dict):
                  vip_configurations: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationResult']):
         """
         :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of ASM instances for the cloud Asm.
         :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -20301,7 +20301,7 @@ class GetCloudDbSystemDiscoveryDiscoveredComponentResult(dict):
         :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
         :param _builtins.str db_version: The Oracle Database version.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
         :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
@@ -20396,7 +20396,7 @@ class GetCloudDbSystemDiscoveryDiscoveredComponentResult(dict):
     @pulumi.getter(name="asmInstances")
     def asm_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceResult']:
         """
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
         """
         return pulumi.get(self, "asm_instances")
 
@@ -20572,7 +20572,7 @@ class GetCloudDbSystemDiscoveryDiscoveredComponentResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -25118,7 +25118,7 @@ class GetCloudListenerServicedDatabaseResult(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
@@ -25168,7 +25168,7 @@ class GetCloudListenerServicedDatabaseResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -25342,7 +25342,7 @@ class GetCloudListenersCloudListenerCollectionItemResult(dict):
         :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str component_name: The name of the cloud listener.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param Sequence['GetCloudListenersCloudListenerCollectionItemEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
@@ -25468,7 +25468,7 @@ class GetCloudListenersCloudListenerCollectionItemResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -25751,7 +25751,7 @@ class GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult(dict):
         :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param _builtins.str database_type: The type of Oracle Database installation.
         :param _builtins.str db_unique_name: The unique name of the cloud database.
-        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
@@ -25801,7 +25801,7 @@ class GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult(dict):
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -26035,6 +26035,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
                  name: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -26051,6 +26052,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         :param _builtins.str name: A filter to return only resources that match the entire name.
         :param Sequence[_builtins.str] nsg_ids: The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         :param _builtins.str private_ip: The IP addresses assigned to the Database Management private endpoint.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: The lifecycle state of a resource.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -26067,6 +26069,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -26152,6 +26155,14 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         The IP addresses assigned to the Database Management private endpoint.
         """
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -48082,7 +48093,7 @@ class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult(d
                  errors: Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult'],
                  occurrence_count: _builtins.int):
         """
-        :param Sequence['GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArgs'] errors: The MySQL error, warning or note raised when a query is run, if any.
+        :param Sequence['GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArgs'] errors: The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param _builtins.int occurrence_count: The number of times a MySQL error is encountered.
         """
         pulumi.set(__self__, "errors", errors)
@@ -48092,7 +48103,7 @@ class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult(d
     @pulumi.getter
     def errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult']:
         """
-        The MySQL error, warning or note raised when a query is run, if any.
+        The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "errors")
 
@@ -48112,9 +48123,9 @@ class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorRes
                  level: _builtins.str,
                  message_text: _builtins.str):
         """
-        :param _builtins.int code: The MySQL code of the raised error, warning or note.
+        :param _builtins.int code: The MySQL code of the raised error, warning, or note.
         :param _builtins.str level: The level of severity of the MySQL message.
-        :param _builtins.str message_text: The MySQL message text of the raised error, warning or note.
+        :param _builtins.str message_text: The MySQL message text of the raised error, warning, or note.
         """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "level", level)
@@ -48124,7 +48135,7 @@ class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorRes
     @pulumi.getter
     def code(self) -> _builtins.int:
         """
-        The MySQL code of the raised error, warning or note.
+        The MySQL code of the raised error, warning, or note.
         """
         return pulumi.get(self, "code")
 
@@ -48140,7 +48151,7 @@ class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorRes
     @pulumi.getter(name="messageText")
     def message_text(self) -> _builtins.str:
         """
-        The MySQL message text of the raised error, warning or note.
+        The MySQL message text of the raised error, warning, or note.
         """
         return pulumi.get(self, "message_text")
 
@@ -48233,7 +48244,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
         :param _builtins.str member_role: The role of this server as a group replication member.
         :param _builtins.str member_state: The state of this server as a group replication member.
         :param _builtins.str single_primary_mode: Indicates if the replication group is running in single-primary mode.
-        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArgs'] status_summaries: High availability status summary of a MySQL server.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArgs'] status_summaries: High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param _builtins.str transactions_in_gtid_executed: The number of transactions that were replicated within the cluster.
         :param _builtins.str view_id: The current view identifier for this group.
         """
@@ -48308,7 +48319,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="statusSummaries")
     def status_summaries(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult']:
         """
-        High availability status summary of a MySQL server.
+        High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "status_summaries")
 
@@ -48426,7 +48437,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
                  apply_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult'],
                  channel_name: _builtins.str):
         """
-        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param _builtins.str channel_name: The name of the replication channel.
         """
         pulumi.set(__self__, "apply_errors", apply_errors)
@@ -48436,7 +48447,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="applyErrors")
     def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult']:
         """
-        Error from the apply operation of a MySQL server replication channel.
+        Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "apply_errors")
 
@@ -48547,7 +48558,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
                  fetch_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']):
         """
         :param _builtins.str channel_name: The name of the replication channel.
-        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "fetch_errors", fetch_errors)
@@ -48564,7 +48575,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="fetchErrors")
     def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']:
         """
-        Error from the fetch operation of a MySQL server replication channel.
+        Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "fetch_errors")
 
@@ -48734,12 +48745,12 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
         """
         :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterArgs'] applier_filters: A list of MySqlReplicationApplierFilter records.
         :param _builtins.float apply_delay: The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
-        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param _builtins.str apply_status: The current status of apply operations.
         :param _builtins.int busy_workers: The number of workers currently busy applying transactions from the source server.
         :param _builtins.str channel_name: The name of the replication channel.
         :param _builtins.str desired_delay_seconds: The desired number of seconds that the replica must lag the source.
-        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param _builtins.str fetch_status: The current status of fetch operations.
         :param _builtins.str gtid_assignment: Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
         :param _builtins.str relay_log_storage_space_used: The total size in bytes of all the existing relay log files pertaining to this channel.
@@ -48792,7 +48803,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="applyErrors")
     def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult']:
         """
-        Error from the apply operation of a MySQL server replication channel.
+        Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "apply_errors")
 
@@ -48832,7 +48843,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="fetchErrors")
     def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult']:
         """
-        Error from the fetch operation of a MySQL server replication channel.
+        Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "fetch_errors")
 
@@ -49198,8 +49209,8 @@ class GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult(dict):
                  json_explain: _builtins.str,
                  json_explain_version: _builtins.str):
         """
-        :param _builtins.str json_explain: The json format of the explain plan.
-        :param _builtins.str json_explain_version: The version of the Json format of MySQL Explain.
+        :param _builtins.str json_explain: The JSON format of the explain plan.
+        :param _builtins.str json_explain_version: The version of the JSON format of the MySQL explain plan.
         """
         pulumi.set(__self__, "json_explain", json_explain)
         pulumi.set(__self__, "json_explain_version", json_explain_version)
@@ -49208,7 +49219,7 @@ class GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult(dict):
     @pulumi.getter(name="jsonExplain")
     def json_explain(self) -> _builtins.str:
         """
-        The json format of the explain plan.
+        The JSON format of the explain plan.
         """
         return pulumi.get(self, "json_explain")
 
@@ -49216,7 +49227,7 @@ class GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult(dict):
     @pulumi.getter(name="jsonExplainVersion")
     def json_explain_version(self) -> _builtins.str:
         """
-        The version of the Json format of MySQL Explain.
+        The version of the JSON format of the MySQL explain plan.
         """
         return pulumi.get(self, "json_explain_version")
 
@@ -49228,9 +49239,9 @@ class GetManagedMySqlDatabaseQueryDetailQueryMessageResult(dict):
                  level: _builtins.str,
                  message_text: _builtins.str):
         """
-        :param _builtins.int code: The MySQL code of the raised error, warning or note.
+        :param _builtins.int code: The MySQL code of the raised error, warning, or note.
         :param _builtins.str level: The level of severity of the MySQL message.
-        :param _builtins.str message_text: The MySQL message text of the raised error, warning or note.
+        :param _builtins.str message_text: The MySQL message text of the raised error, warning, or note.
         """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "level", level)
@@ -49240,7 +49251,7 @@ class GetManagedMySqlDatabaseQueryDetailQueryMessageResult(dict):
     @pulumi.getter
     def code(self) -> _builtins.int:
         """
-        The MySQL code of the raised error, warning or note.
+        The MySQL code of the raised error, warning, or note.
         """
         return pulumi.get(self, "code")
 
@@ -49256,7 +49267,7 @@ class GetManagedMySqlDatabaseQueryDetailQueryMessageResult(dict):
     @pulumi.getter(name="messageText")
     def message_text(self) -> _builtins.str:
         """
-        The MySQL message text of the raised error, warning or note.
+        The MySQL message text of the raised error, warning, or note.
         """
         return pulumi.get(self, "message_text")
 
@@ -49276,7 +49287,7 @@ class GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult(dict):
         :param _builtins.str host: The host from which the query sample was run.
         :param _builtins.str mysql_instance: The MySQL instance against which the query sample was run.
         :param _builtins.str query_sample_text: The query sample mapped by MySQL to a given normalized query.
-        :param _builtins.int thread_id: The thread id of the connection.
+        :param _builtins.int thread_id: The thread ID of the connection.
         :param _builtins.str time_query_sample_seen: The date and time the query sample was last seen.
         :param _builtins.str user: The user who ran the query sample.
         """
@@ -49324,7 +49335,7 @@ class GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult(dict):
     @pulumi.getter(name="threadId")
     def thread_id(self) -> _builtins.int:
         """
-        The thread id of the connection.
+        The thread ID of the connection.
         """
         return pulumi.get(self, "thread_id")
 
@@ -49877,7 +49888,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
         :param _builtins.str db_name: The name of the MySQL Database.
         :param _builtins.str db_version: The version of the MySQL Database.
         :param _builtins.str heat_wave_cluster_display_name: The name of the HeatWave cluster.
-        :param _builtins.str heat_wave_management_type: The customer's selected type for HeatWave management.
+        :param _builtins.str heat_wave_management_type: The selected management type for a HeatWave MySQL DB system.
         :param _builtins.int heat_wave_memory_size: The total memory belonging to the HeatWave cluster in GBs.
         :param _builtins.str heat_wave_node_shape: Shape of the nodes in the HeatWave cluster.
         :param Sequence['GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs'] heat_wave_nodes: The information about an individual HeatWave nodes in the cluster.
@@ -49955,7 +49966,7 @@ class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(dict):
     @pulumi.getter(name="heatWaveManagementType")
     def heat_wave_management_type(self) -> _builtins.str:
         """
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
         """
         return pulumi.get(self, "heat_wave_management_type")
 

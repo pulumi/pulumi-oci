@@ -27,7 +27,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
      */
     private Double applyDelay;
     /**
-     * @return Error from the apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError> applyErrors;
@@ -52,7 +52,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
      */
     private String desiredDelaySeconds;
     /**
-     * @return Error from the fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError> fetchErrors;
@@ -128,7 +128,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
         return this.applyDelay;
     }
     /**
-     * @return Error from the apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError> applyErrors() {
@@ -163,7 +163,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
         return this.desiredDelaySeconds;
     }
     /**
-     * @return Error from the fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError> fetchErrors() {

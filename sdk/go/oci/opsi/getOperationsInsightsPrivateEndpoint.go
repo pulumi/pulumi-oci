@@ -81,6 +81,8 @@ type LookupOperationsInsightsPrivateEndpointResult struct {
 	PrivateEndpointStatusDetails string `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp string `pulumi:"privateIp"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the private endpoint.
 	State string `pulumi:"state"`
 	// The OCID of the subnet.
@@ -186,6 +188,11 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateEndpointStat
 // The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 func (o LookupOperationsInsightsPrivateEndpointResultOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the private endpoint.

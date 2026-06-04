@@ -14,7 +14,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves query sample details, explain plan and potential warnings for a given digest.
+        /// Retrieves query sample details, explain plan, and potential warnings for a given digest.
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage
@@ -42,7 +43,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves query sample details, explain plan and potential warnings for a given digest.
+        /// Retrieves query sample details, explain plan, and potential warnings for a given digest.
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage
@@ -70,7 +72,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves query sample details, explain plan and potential warnings for a given digest.
+        /// Retrieves query sample details, explain plan, and potential warnings for a given digest.
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage
@@ -148,15 +151,15 @@ namespace Pulumi.Oci.DatabaseManagement
         public readonly string Id;
         public readonly string ManagedMySqlDatabaseId;
         /// <summary>
-        /// The explain plan for a given MySQL query.
+        /// The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult> QueryExplainPlans;
         /// <summary>
-        /// The errors, warnings and notes that could be raised by the execution of the query.
+        /// The errors, warnings, and notes that could be raised by the execution of the query.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseQueryDetailQueryMessageResult> QueryMessages;
         /// <summary>
-        /// The details of a query sample including the query text, execution time and other details.
+        /// The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult> QuerySampleDetails;
 

@@ -23,6 +23,11 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
      */
     private Boolean isResizable;
     /**
+     * @return The maximum size of file system.
+     * 
+     */
+    private Integer maxSizeGb;
+    /**
      * @return The minimum size of file system.
      * 
      */
@@ -47,6 +52,13 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
      */
     public Boolean isResizable() {
         return this.isResizable;
+    }
+    /**
+     * @return The maximum size of file system.
+     * 
+     */
+    public Integer maxSizeGb() {
+        return this.maxSizeGb;
     }
     /**
      * @return The minimum size of file system.
@@ -74,6 +86,7 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
     public static final class Builder {
         private Boolean isBackupPartition;
         private Boolean isResizable;
+        private Integer maxSizeGb;
         private Integer minSizeGb;
         private String mountPoint;
         public Builder() {}
@@ -81,6 +94,7 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.isBackupPartition = defaults.isBackupPartition;
     	      this.isResizable = defaults.isResizable;
+    	      this.maxSizeGb = defaults.maxSizeGb;
     	      this.minSizeGb = defaults.minSizeGb;
     	      this.mountPoint = defaults.mountPoint;
         }
@@ -99,6 +113,14 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
               throw new MissingRequiredPropertyException("GetExadataInfrastructureDefinedFileSystemConfiguration", "isResizable");
             }
             this.isResizable = isResizable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxSizeGb(Integer maxSizeGb) {
+            if (maxSizeGb == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureDefinedFileSystemConfiguration", "maxSizeGb");
+            }
+            this.maxSizeGb = maxSizeGb;
             return this;
         }
         @CustomType.Setter
@@ -121,6 +143,7 @@ public final class GetExadataInfrastructureDefinedFileSystemConfiguration {
             final var _resultValue = new GetExadataInfrastructureDefinedFileSystemConfiguration();
             _resultValue.isBackupPartition = isBackupPartition;
             _resultValue.isResizable = isResizable;
+            _resultValue.maxSizeGb = maxSizeGb;
             _resultValue.minSizeGb = minSizeGb;
             _resultValue.mountPoint = mountPoint;
             return _resultValue;

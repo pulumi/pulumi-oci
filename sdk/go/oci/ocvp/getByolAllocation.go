@@ -77,6 +77,8 @@ type LookupByolAllocationResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
 	Id string `pulumi:"id"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId string `pulumi:"siteId"`
 	// The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -178,6 +180,11 @@ func (o LookupByolAllocationResultOutput) FreeformTags() pulumi.StringMapOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
 func (o LookupByolAllocationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupByolAllocationResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The hyperscaler identifier in Broadcom systems.
+func (o LookupByolAllocationResultOutput) SiteId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupByolAllocationResult) string { return v.SiteId }).(pulumi.StringOutput)
 }
 
 // The type of VMware software the BYOL applies to.  Supported values:

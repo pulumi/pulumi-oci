@@ -79,7 +79,7 @@ export interface GetCloudDbNodeResult {
      */
     readonly displayName: string;
     /**
-     * Name of the domain.
+     * The name of the domain.
      */
     readonly domainName: string;
     /**

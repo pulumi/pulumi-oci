@@ -108,6 +108,10 @@ export class ByolAllocation extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * The hyperscaler identifier in Broadcom systems.
+     */
+    declare public /*out*/ readonly siteId: pulumi.Output<string>;
+    /**
      * The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)
@@ -161,6 +165,7 @@ export class ByolAllocation extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["entitlementKey"] = state?.entitlementKey;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["siteId"] = state?.siteId;
             resourceInputs["softwareType"] = state?.softwareType;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -190,6 +195,7 @@ export class ByolAllocation extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["availableUnits"] = undefined /*out*/;
             resourceInputs["entitlementKey"] = undefined /*out*/;
+            resourceInputs["siteId"] = undefined /*out*/;
             resourceInputs["softwareType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -243,6 +249,10 @@ export interface ByolAllocationState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The hyperscaler identifier in Broadcom systems.
+     */
+    siteId?: pulumi.Input<string | undefined>;
     /**
      * The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)

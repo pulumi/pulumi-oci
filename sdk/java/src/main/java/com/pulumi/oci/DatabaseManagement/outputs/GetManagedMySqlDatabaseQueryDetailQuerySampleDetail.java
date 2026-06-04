@@ -32,7 +32,7 @@ public final class GetManagedMySqlDatabaseQueryDetailQuerySampleDetail {
      */
     private String querySampleText;
     /**
-     * @return The thread id of the connection.
+     * @return The thread ID of the connection.
      * 
      */
     private Integer threadId;
@@ -77,7 +77,7 @@ public final class GetManagedMySqlDatabaseQueryDetailQuerySampleDetail {
         return this.querySampleText;
     }
     /**
-     * @return The thread id of the connection.
+     * @return The thread ID of the connection.
      * 
      */
     public Integer threadId() {

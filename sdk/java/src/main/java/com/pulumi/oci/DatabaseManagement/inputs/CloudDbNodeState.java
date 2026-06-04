@@ -168,14 +168,14 @@ public final class CloudDbNodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the domain.
+     * The name of the domain.
      * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
-     * @return Name of the domain.
+     * @return The name of the domain.
      * 
      */
     public Optional<Output<String>> domainName() {
@@ -561,7 +561,7 @@ public final class CloudDbNodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName Name of the domain.
+         * @param domainName The name of the domain.
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class CloudDbNodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domainName Name of the domain.
+         * @param domainName The name of the domain.
          * 
          * @return builder
          * 

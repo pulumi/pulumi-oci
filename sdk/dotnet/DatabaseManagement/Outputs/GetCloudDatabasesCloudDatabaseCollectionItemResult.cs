@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetCloudDatabasesCloudDatabaseCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
         /// </summary>
         public readonly string CloudDbHomeId;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult> DbSystemInfos;
         /// <summary>
-        /// The `DB_UNIQUE_NAME` of the external database.
+        /// The `DB_UNIQUE_NAME` of the cloud database.
         /// </summary>
         public readonly string DbUniqueName;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string ParentContainerDatabaseId;
         /// <summary>
-        /// The current lifecycle state of the external database resource.
+        /// The current lifecycle state of the cloud database resource.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the external DB system was created.
+        /// The date and time the cloud DB system was created.
         /// </summary>
         public readonly string TimeCreated;
 

@@ -69,7 +69,7 @@ class GetManagedMySqlDatabaseQueryDetailResult:
     @pulumi.getter(name="queryExplainPlans")
     def query_explain_plans(self) -> Sequence['outputs.GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult']:
         """
-        The explain plan for a given MySQL query.
+        The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "query_explain_plans")
 
@@ -77,7 +77,7 @@ class GetManagedMySqlDatabaseQueryDetailResult:
     @pulumi.getter(name="queryMessages")
     def query_messages(self) -> Sequence['outputs.GetManagedMySqlDatabaseQueryDetailQueryMessageResult']:
         """
-        The errors, warnings and notes that could be raised by the execution of the query.
+        The errors, warnings, and notes that could be raised by the execution of the query.
         """
         return pulumi.get(self, "query_messages")
 
@@ -85,7 +85,7 @@ class GetManagedMySqlDatabaseQueryDetailResult:
     @pulumi.getter(name="querySampleDetails")
     def query_sample_details(self) -> Sequence['outputs.GetManagedMySqlDatabaseQueryDetailQuerySampleDetailResult']:
         """
-        The details of a query sample including the query text, execution time and other details.
+        The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "query_sample_details")
 
@@ -110,7 +110,8 @@ def get_managed_my_sql_database_query_detail(digest: Optional[_builtins.str] = N
     """
     This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves query sample details, explain plan and potential warnings for a given digest.
+    Retrieves query sample details, explain plan, and potential warnings for a given digest.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -145,7 +146,8 @@ def get_managed_my_sql_database_query_detail_output(digest: pulumi.Input[Optiona
     """
     This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves query sample details, explain plan and potential warnings for a given digest.
+    Retrieves query sample details, explain plan, and potential warnings for a given digest.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

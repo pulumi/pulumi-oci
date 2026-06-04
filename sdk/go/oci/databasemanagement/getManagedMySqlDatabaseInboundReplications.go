@@ -14,6 +14,7 @@ import (
 // This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
 //
 // Retrieves information about the inbound replications of a specific MySQL server.
+// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 //
 // ## Example Usage
 //

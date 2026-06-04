@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItem {
     /**
-     * @return The MySQL error, warning or note raised when a query is run, if any.
+     * @return The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError> errors;
@@ -25,7 +25,7 @@ public final class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectio
 
     private GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItem() {}
     /**
-     * @return The MySQL error, warning or note raised when a query is run, if any.
+     * @return The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError> errors() {

@@ -42,7 +42,7 @@ import (
 //				BillingDonorHostId:        pulumi.Any(testBillingDonorHost.Id),
 //				CapacityReservationId:     pulumi.Any(testCapacityReservation.Id),
 //				ComputeAvailabilityDomain: pulumi.Any(esxiHostComputeAvailabilityDomain),
-//				CurrentCommitment:         esxiHostCurrentCommitment,
+//				CurrentCommitment:         pulumi.Any(esxiHostCurrentCommitment),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -54,7 +54,7 @@ import (
 //				HostOcpuCount:       pulumi.Any(esxiHostHostOcpuCount),
 //				HostShapeName:       pulumi.Any(testShape.Name),
 //				IsVsanByolEnabled:   pulumi.Any(esxiHostIsVsanByolEnabled),
-//				NextCommitment:      esxiHostNextCommitment,
+//				NextCommitment:      pulumi.Any(esxiHostNextCommitment),
 //				VcfByolAllocationId: pulumi.Any(testByolAllocation.Id),
 //			})
 //			if err != nil {
@@ -414,6 +414,8 @@ type esxiHostArgs struct {
 	ClusterId *string `pulumi:"clusterId"`
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
+	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	CurrentCommitment *string `pulumi:"currentCommitment"`
 	// (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
@@ -441,6 +443,8 @@ type esxiHostArgs struct {
 	HostShapeName *string `pulumi:"hostShapeName"`
 	// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
 	IsVsanByolEnabled *bool `pulumi:"isVsanByolEnabled"`
+	// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	NextCommitment *string `pulumi:"nextCommitment"`
 	// (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
@@ -475,6 +479,8 @@ type EsxiHostArgs struct {
 	ClusterId pulumi.StringPtrInput
 	// The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
 	ComputeAvailabilityDomain pulumi.StringPtrInput
+	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	CurrentCommitment pulumi.StringPtrInput
 	// (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
@@ -502,6 +508,8 @@ type EsxiHostArgs struct {
 	HostShapeName pulumi.StringPtrInput
 	// (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
 	IsVsanByolEnabled pulumi.BoolPtrInput
+	// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	NextCommitment pulumi.StringPtrInput
 	// (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.

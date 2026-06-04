@@ -85,14 +85,14 @@ public final class ExternalMySqlDatabaseConnectorState extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Create Details of external database connector.
+     * (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     @Import(name="connectorDetails")
     private @Nullable Output<ExternalMySqlDatabaseConnectorConnectorDetailsArgs> connectorDetails;
 
     /**
-     * @return (Updatable) Create Details of external database connector.
+     * @return (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public Optional<Output<ExternalMySqlDatabaseConnectorConnectorDetailsArgs>> connectorDetails() {
@@ -490,7 +490,7 @@ public final class ExternalMySqlDatabaseConnectorState extends com.pulumi.resour
         }
 
         /**
-         * @param connectorDetails (Updatable) Create Details of external database connector.
+         * @param connectorDetails (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class ExternalMySqlDatabaseConnectorState extends com.pulumi.resour
         }
 
         /**
-         * @param connectorDetails (Updatable) Create Details of external database connector.
+         * @param connectorDetails (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
          * 
          * @return builder
          * 

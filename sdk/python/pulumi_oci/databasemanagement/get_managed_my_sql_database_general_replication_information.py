@@ -268,6 +268,7 @@ def get_managed_my_sql_database_general_replication_information(managed_my_sql_d
     This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves general information regarding the replication of a specific MySQL server.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -312,6 +313,7 @@ def get_managed_my_sql_database_general_replication_information_output(managed_m
     This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves general information regarding the replication of a specific MySQL server.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

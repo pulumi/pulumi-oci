@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseQueryDetailQueryMessage {
     /**
-     * @return The MySQL code of the raised error, warning or note.
+     * @return The MySQL code of the raised error, warning, or note.
      * 
      */
     private Integer code;
@@ -22,14 +22,14 @@ public final class GetManagedMySqlDatabaseQueryDetailQueryMessage {
      */
     private String level;
     /**
-     * @return The MySQL message text of the raised error, warning or note.
+     * @return The MySQL message text of the raised error, warning, or note.
      * 
      */
     private String messageText;
 
     private GetManagedMySqlDatabaseQueryDetailQueryMessage() {}
     /**
-     * @return The MySQL code of the raised error, warning or note.
+     * @return The MySQL code of the raised error, warning, or note.
      * 
      */
     public Integer code() {
@@ -43,7 +43,7 @@ public final class GetManagedMySqlDatabaseQueryDetailQueryMessage {
         return this.level;
     }
     /**
-     * @return The MySQL message text of the raised error, warning or note.
+     * @return The MySQL message text of the raised error, warning, or note.
      * 
      */
     public String messageText() {

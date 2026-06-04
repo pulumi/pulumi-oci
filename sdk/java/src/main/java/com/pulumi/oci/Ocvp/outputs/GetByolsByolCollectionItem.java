@@ -53,6 +53,11 @@ public final class GetByolsByolCollectionItem {
      */
     private String id;
     /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    private String siteId;
+    /**
      * @return A filter to return only resources whose softwareType matches the given value.
      * 
      */
@@ -154,6 +159,13 @@ public final class GetByolsByolCollectionItem {
         return this.id;
     }
     /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    public String siteId() {
+        return this.siteId;
+    }
+    /**
      * @return A filter to return only resources whose softwareType matches the given value.
      * 
      */
@@ -230,6 +242,7 @@ public final class GetByolsByolCollectionItem {
         private String entitlementKey;
         private Map<String,String> freeformTags;
         private String id;
+        private String siteId;
         private String softwareType;
         private String state;
         private Map<String,String> systemTags;
@@ -249,6 +262,7 @@ public final class GetByolsByolCollectionItem {
     	      this.entitlementKey = defaults.entitlementKey;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.siteId = defaults.siteId;
     	      this.softwareType = defaults.softwareType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -321,6 +335,14 @@ public final class GetByolsByolCollectionItem {
               throw new MissingRequiredPropertyException("GetByolsByolCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder siteId(String siteId) {
+            if (siteId == null) {
+              throw new MissingRequiredPropertyException("GetByolsByolCollectionItem", "siteId");
+            }
+            this.siteId = siteId;
             return this;
         }
         @CustomType.Setter
@@ -397,6 +419,7 @@ public final class GetByolsByolCollectionItem {
             _resultValue.entitlementKey = entitlementKey;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.siteId = siteId;
             _resultValue.softwareType = softwareType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

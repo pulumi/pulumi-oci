@@ -24,6 +24,11 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
      */
     private @Nullable Boolean isResizable;
     /**
+     * @return The maximum size of file system.
+     * 
+     */
+    private @Nullable Integer maxSizeGb;
+    /**
      * @return The minimum size of file system.
      * 
      */
@@ -48,6 +53,13 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
      */
     public Optional<Boolean> isResizable() {
         return Optional.ofNullable(this.isResizable);
+    }
+    /**
+     * @return The maximum size of file system.
+     * 
+     */
+    public Optional<Integer> maxSizeGb() {
+        return Optional.ofNullable(this.maxSizeGb);
     }
     /**
      * @return The minimum size of file system.
@@ -75,6 +87,7 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
     public static final class Builder {
         private @Nullable Boolean isBackupPartition;
         private @Nullable Boolean isResizable;
+        private @Nullable Integer maxSizeGb;
         private @Nullable Integer minSizeGb;
         private @Nullable String mountPoint;
         public Builder() {}
@@ -82,6 +95,7 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.isBackupPartition = defaults.isBackupPartition;
     	      this.isResizable = defaults.isResizable;
+    	      this.maxSizeGb = defaults.maxSizeGb;
     	      this.minSizeGb = defaults.minSizeGb;
     	      this.mountPoint = defaults.mountPoint;
         }
@@ -96,6 +110,12 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
         public Builder isResizable(@Nullable Boolean isResizable) {
 
             this.isResizable = isResizable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxSizeGb(@Nullable Integer maxSizeGb) {
+
+            this.maxSizeGb = maxSizeGb;
             return this;
         }
         @CustomType.Setter
@@ -114,6 +134,7 @@ public final class CloudExadataInfrastructureDefinedFileSystemConfiguration {
             final var _resultValue = new CloudExadataInfrastructureDefinedFileSystemConfiguration();
             _resultValue.isBackupPartition = isBackupPartition;
             _resultValue.isResizable = isResizable;
+            _resultValue.maxSizeGb = maxSizeGb;
             _resultValue.minSizeGb = minSizeGb;
             _resultValue.mountPoint = mountPoint;
             return _resultValue;

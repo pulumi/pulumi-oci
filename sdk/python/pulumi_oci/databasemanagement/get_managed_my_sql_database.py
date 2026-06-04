@@ -133,7 +133,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="heatWaveManagementType")
     def heat_wave_management_type(self) -> _builtins.str:
         """
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
         """
         return pulumi.get(self, "heat_wave_management_type")
 
@@ -280,7 +280,9 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[_builtins.s
     """
     This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves General Information for given MySQL Instance.
+    Retrieves the general information for a specific MySQL Database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -325,7 +327,9 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: pulumi.Input[
     """
     This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves General Information for given MySQL Instance.
+    Retrieves the general information for a specific MySQL Database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

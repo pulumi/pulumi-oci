@@ -126,7 +126,7 @@ export class EsxiHost extends pulumi.CustomResource {
     /**
      * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    declare public /*out*/ readonly currentCommitment: pulumi.Output<string>;
+    declare public readonly currentCommitment: pulumi.Output<string>;
     /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
@@ -195,7 +195,7 @@ export class EsxiHost extends pulumi.CustomResource {
     /**
      * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    declare public /*out*/ readonly nextCommitment: pulumi.Output<string>;
+    declare public readonly nextCommitment: pulumi.Output<string>;
     /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      *
@@ -314,6 +314,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["capacityReservationId"] = args?.capacityReservationId;
             resourceInputs["clusterId"] = args?.clusterId;
             resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
+            resourceInputs["currentCommitment"] = args?.currentCommitment;
             resourceInputs["currentSku"] = args?.currentSku;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["detachDatastoreClusterIds"] = args?.detachDatastoreClusterIds;
@@ -324,6 +325,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["hostOcpuCount"] = args?.hostOcpuCount;
             resourceInputs["hostShapeName"] = args?.hostShapeName;
             resourceInputs["isVsanByolEnabled"] = args?.isVsanByolEnabled;
+            resourceInputs["nextCommitment"] = args?.nextCommitment;
             resourceInputs["nextSku"] = args?.nextSku;
             resourceInputs["nonUpgradedEsxiHostId"] = args?.nonUpgradedEsxiHostId;
             resourceInputs["sddcId"] = args?.sddcId;
@@ -332,13 +334,11 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
-            resourceInputs["currentCommitment"] = undefined /*out*/;
             resourceInputs["datastoreAttachments"] = undefined /*out*/;
             resourceInputs["datastoreClusterIds"] = undefined /*out*/;
             resourceInputs["gracePeriodEndDate"] = undefined /*out*/;
             resourceInputs["isBillingContinuationInProgress"] = undefined /*out*/;
             resourceInputs["isBillingSwappingInProgress"] = undefined /*out*/;
-            resourceInputs["nextCommitment"] = undefined /*out*/;
             resourceInputs["primaryVnicMacAddress"] = undefined /*out*/;
             resourceInputs["replacementEsxiHostId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -546,6 +546,10 @@ export interface EsxiHostArgs {
      */
     computeAvailabilityDomain?: pulumi.Input<string | undefined>;
     /**
+     * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    currentCommitment?: pulumi.Input<string | undefined>;
+    /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
@@ -590,6 +594,10 @@ export interface EsxiHostArgs {
      * (Updatable) Indicates whether this host embedded VMware vSAN with BYOL Allocation.
      */
     isVsanByolEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    nextCommitment?: pulumi.Input<string | undefined>;
     /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      *

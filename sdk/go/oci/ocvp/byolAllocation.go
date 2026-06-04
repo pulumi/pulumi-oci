@@ -86,6 +86,8 @@ type ByolAllocation struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringOutput `pulumi:"siteId"`
 	// The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -167,6 +169,8 @@ type byolAllocationState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId *string `pulumi:"siteId"`
 	// The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -207,6 +211,8 @@ type ByolAllocationState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringPtrInput
 	// The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -396,6 +402,11 @@ func (o ByolAllocationOutput) EntitlementKey() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ByolAllocationOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ByolAllocation) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The hyperscaler identifier in Broadcom systems.
+func (o ByolAllocationOutput) SiteId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ByolAllocation) pulumi.StringOutput { return v.SiteId }).(pulumi.StringOutput)
 }
 
 // The type of VMware software the BYOL applies to.  Supported values:

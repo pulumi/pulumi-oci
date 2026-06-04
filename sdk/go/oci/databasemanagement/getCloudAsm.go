@@ -69,7 +69,7 @@ type LookupCloudAsmResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the cloud ASM.
 	ComponentName string `pulumi:"componentName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
 	DbaasId string `pulumi:"dbaasId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -164,7 +164,7 @@ func (o LookupCloudAsmResultOutput) ComponentName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAsmResult) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
 func (o LookupCloudAsmResultOutput) DbaasId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAsmResult) string { return v.DbaasId }).(pulumi.StringOutput)
 }

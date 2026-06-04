@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
 //
-// Retrieves General Information for given MySQL Instance.
+// Retrieves the general information for a specific MySQL Database.
+//
+// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 //
 // ## Example Usage
 //
@@ -68,7 +70,7 @@ type GetManagedMySqlDatabaseResult struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// The name of the HeatWave cluster.
 	HeatWaveClusterDisplayName string `pulumi:"heatWaveClusterDisplayName"`
-	// The customer's selected type for HeatWave management.
+	// The selected management type for a HeatWave MySQL DB system.
 	HeatWaveManagementType string `pulumi:"heatWaveManagementType"`
 	// The total memory belonging to the HeatWave cluster in GBs.
 	HeatWaveMemorySize int `pulumi:"heatWaveMemorySize"`
@@ -158,7 +160,7 @@ func (o GetManagedMySqlDatabaseResultOutput) HeatWaveClusterDisplayName() pulumi
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveClusterDisplayName }).(pulumi.StringOutput)
 }
 
-// The customer's selected type for HeatWave management.
+// The selected management type for a HeatWave MySQL DB system.
 func (o GetManagedMySqlDatabaseResultOutput) HeatWaveManagementType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveManagementType }).(pulumi.StringOutput)
 }

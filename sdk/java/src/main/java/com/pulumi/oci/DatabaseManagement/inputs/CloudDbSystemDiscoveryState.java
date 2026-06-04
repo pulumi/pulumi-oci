@@ -57,14 +57,14 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     @Import(name="dbaasParentInfrastructureId")
     private @Nullable Output<String> dbaasParentInfrastructureId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     public Optional<Output<String>> dbaasParentInfrastructureId() {
@@ -87,14 +87,14 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      * 
      */
     @Import(name="deploymentType")
     private @Nullable Output<String> deploymentType;
 
     /**
-     * @return The deployment type of cloud dbsystem.
+     * @return The deployment type of cloud DB system.
      * 
      */
     public Optional<Output<String>> deploymentType() {
@@ -358,7 +358,7 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dbaasParentInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+         * @param dbaasParentInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dbaasParentInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+         * @param dbaasParentInfrastructureId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param deploymentType The deployment type of cloud dbsystem.
+         * @param deploymentType The deployment type of cloud DB system.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class CloudDbSystemDiscoveryState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param deploymentType The deployment type of cloud dbsystem.
+         * @param deploymentType The deployment type of cloud DB system.
          * 
          * @return builder
          * 

@@ -102,6 +102,8 @@ def get_external_my_sql_databases(compartment_id: Optional[_builtins.str] = None
 
     Gets the list of External MySQL Databases.
 
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+
     ## Example Usage
 
     ```python
@@ -137,6 +139,8 @@ def get_external_my_sql_databases_output(compartment_id: pulumi.Input[Optional[_
     This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
 
     Gets the list of External MySQL Databases.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

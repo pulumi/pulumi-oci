@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string HeatWaveClusterDisplayName;
         /// <summary>
-        /// The customer's selected type for HeatWave management.
+        /// The selected management type for a HeatWave MySQL DB system.
         /// </summary>
         public readonly string HeatWaveManagementType;
         /// <summary>

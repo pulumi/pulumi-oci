@@ -69,6 +69,11 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
      */
     private String privateIp;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Lifecycle states
      * 
      */
@@ -173,6 +178,13 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
         return this.privateIp;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Lifecycle states
      * 
      */
@@ -228,6 +240,7 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
         private List<String> nsgIds;
         private String privateEndpointStatusDetails;
         private String privateIp;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -247,6 +260,7 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpointStatusDetails = defaults.privateEndpointStatusDetails;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -346,6 +360,14 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem", "state");
@@ -398,6 +420,7 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateEndpointStatusDetails = privateEndpointStatusDetails;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

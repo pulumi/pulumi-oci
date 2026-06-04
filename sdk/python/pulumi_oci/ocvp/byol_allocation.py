@@ -136,6 +136,7 @@ class _ByolAllocationState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 site_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -158,6 +159,7 @@ class _ByolAllocationState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] site_id: The hyperscaler identifier in Broadcom systems.
         :param pulumi.Input[_builtins.str] software_type: The type of VMware software the BYOL applies to.  Supported values:
                * VCF (VMware Cloud Foundation)
                * VSAN (VMware vSAN)
@@ -186,6 +188,8 @@ class _ByolAllocationState:
             pulumi.set(__self__, "entitlement_key", entitlement_key)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if site_id is not None:
+            pulumi.set(__self__, "site_id", site_id)
         if software_type is not None:
             pulumi.set(__self__, "software_type", software_type)
         if state is not None:
@@ -300,6 +304,18 @@ class _ByolAllocationState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
+
+    @site_id.setter
+    def site_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "site_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareType")
@@ -546,6 +562,7 @@ class ByolAllocation(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["available_units"] = None
             __props__.__dict__["entitlement_key"] = None
+            __props__.__dict__["site_id"] = None
             __props__.__dict__["software_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -571,6 +588,7 @@ class ByolAllocation(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            site_id: pulumi.Input[Optional[_builtins.str]] = None,
             software_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -597,6 +615,7 @@ class ByolAllocation(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] site_id: The hyperscaler identifier in Broadcom systems.
         :param pulumi.Input[_builtins.str] software_type: The type of VMware software the BYOL applies to.  Supported values:
                * VCF (VMware Cloud Foundation)
                * VSAN (VMware vSAN)
@@ -621,6 +640,7 @@ class ByolAllocation(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["entitlement_key"] = entitlement_key
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["site_id"] = site_id
         __props__.__dict__["software_type"] = software_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -697,6 +717,14 @@ class ByolAllocation(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
 
     @_builtins.property
     @pulumi.getter(name="softwareType")

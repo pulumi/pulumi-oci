@@ -174,7 +174,7 @@ def get_managed_preferred_credential(credential_name: Optional[_builtins.str] = 
     ```
 
 
-    :param _builtins.str credential_name: The name of the preferred credential.
+    :param _builtins.str credential_name: The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
     :param _builtins.str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
     """
@@ -216,7 +216,7 @@ def get_managed_preferred_credential_output(credential_name: pulumi.Input[Option
     ```
 
 
-    :param _builtins.str credential_name: The name of the preferred credential.
+    :param _builtins.str credential_name: The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
     :param _builtins.str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
     :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
     """

@@ -59,7 +59,7 @@ public final class GetCloudDbNodesCloudDbNodeCollectionItem {
      */
     private String displayName;
     /**
-     * @return Name of the domain.
+     * @return The name of the domain.
      * 
      */
     private String domainName;
@@ -177,7 +177,7 @@ public final class GetCloudDbNodesCloudDbNodeCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Name of the domain.
+     * @return The name of the domain.
      * 
      */
     public String domainName() {

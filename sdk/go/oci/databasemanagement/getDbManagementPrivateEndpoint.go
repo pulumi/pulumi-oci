@@ -79,6 +79,8 @@ type LookupDbManagementPrivateEndpointResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IP addresses assigned to the Database Management private endpoint.
 	PrivateIp string `pulumi:"privateIp"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current lifecycle state of the Database Management private endpoint.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -177,6 +179,11 @@ func (o LookupDbManagementPrivateEndpointResultOutput) NsgIds() pulumi.StringArr
 // The IP addresses assigned to the Database Management private endpoint.
 func (o LookupDbManagementPrivateEndpointResultOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupDbManagementPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current lifecycle state of the Database Management private endpoint.

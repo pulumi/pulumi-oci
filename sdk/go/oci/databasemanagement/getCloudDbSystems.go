@@ -75,9 +75,9 @@ type GetCloudDbSystemsResult struct {
 	CloudDbSystemCollections []GetCloudDbSystemsCloudDbSystemCollection `pulumi:"cloudDbSystemCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 	DbaasParentInfrastructureId *string `pulumi:"dbaasParentInfrastructureId"`
-	// The deployment type of cloud dbsystem.
+	// The deployment type of cloud DB system.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
 	DisplayName *string                   `pulumi:"displayName"`
@@ -143,12 +143,12 @@ func (o GetCloudDbSystemsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudDbSystemsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 func (o GetCloudDbSystemsResultOutput) DbaasParentInfrastructureId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCloudDbSystemsResult) *string { return v.DbaasParentInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
-// The deployment type of cloud dbsystem.
+// The deployment type of cloud DB system.
 func (o GetCloudDbSystemsResultOutput) DeploymentType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCloudDbSystemsResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }

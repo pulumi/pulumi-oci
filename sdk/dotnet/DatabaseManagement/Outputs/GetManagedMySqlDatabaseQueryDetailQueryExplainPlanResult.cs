@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseQueryDetailQueryExplainPlanResult
     {
         /// <summary>
-        /// The json format of the explain plan.
+        /// The JSON format of the explain plan.
         /// </summary>
         public readonly string JsonExplain;
         /// <summary>
-        /// The version of the Json format of MySQL Explain.
+        /// The version of the JSON format of the MySQL explain plan.
         /// </summary>
         public readonly string JsonExplainVersion;
 

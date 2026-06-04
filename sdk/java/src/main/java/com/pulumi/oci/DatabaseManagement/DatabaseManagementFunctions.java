@@ -17897,6 +17897,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the external MySQL database information.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -17939,6 +17940,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the external MySQL database information.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -17981,6 +17983,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the external MySQL database information.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18023,6 +18026,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the external MySQL database information.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18065,6 +18069,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the external MySQL database information.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18107,6 +18112,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the MySQL database connector.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18149,6 +18155,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the MySQL database connector.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18191,6 +18198,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the MySQL database connector.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18233,6 +18241,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the MySQL database connector.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18275,6 +18284,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves the MySQL database connector.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18317,6 +18327,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of External MySQL Database connectors.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18361,6 +18373,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Gets the list of External MySQL Database connectors.
      * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -18403,6 +18417,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of External MySQL Database connectors.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18447,6 +18463,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Gets the list of External MySQL Database connectors.
      * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -18489,6 +18507,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of External MySQL Database connectors.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18533,6 +18553,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Gets the list of External MySQL Databases.
      * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -18575,6 +18597,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of External MySQL Databases.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -18619,6 +18643,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Gets the list of External MySQL Databases.
      * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -18662,6 +18688,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Gets the list of External MySQL Databases.
      * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+     * 
      * ## Example Usage
      * 
      * <pre>
@@ -18704,6 +18732,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of External My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of External MySQL Databases.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31161,7 +31191,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves General Information for given MySQL Instance.
+     * Retrieves the general information for a specific MySQL Database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31203,7 +31235,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves General Information for given MySQL Instance.
+     * Retrieves the general information for a specific MySQL Database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31245,7 +31279,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves General Information for given MySQL Instance.
+     * Retrieves the general information for a specific MySQL Database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31287,7 +31323,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves General Information for given MySQL Instance.
+     * Retrieves the general information for a specific MySQL Database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31329,7 +31367,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves General Information for given MySQL Instance.
+     * Retrieves the general information for a specific MySQL Database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31372,6 +31412,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31414,6 +31455,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31456,6 +31498,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31498,6 +31541,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31540,6 +31584,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the binary log of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31581,7 +31626,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves Configuration Data for given MySQL Instance.
+     * Retrieves configuration data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31623,7 +31670,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves Configuration Data for given MySQL Instance.
+     * Retrieves configuration data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31665,7 +31714,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves Configuration Data for given MySQL Instance.
+     * Retrieves configuration data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31707,7 +31758,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves Configuration Data for given MySQL Instance.
+     * Retrieves configuration data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31749,7 +31802,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves Configuration Data for given MySQL Instance.
+     * Retrieves configuration data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31792,6 +31847,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves any potential errors for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31835,6 +31891,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves any potential errors for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31878,6 +31935,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves any potential errors for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31921,6 +31979,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves any potential errors for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -31964,6 +32023,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves any potential errors for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32007,6 +32067,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32049,6 +32110,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32091,6 +32153,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32133,6 +32196,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32175,6 +32239,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves general information regarding the replication of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32217,6 +32282,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32259,6 +32325,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32301,6 +32368,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32343,6 +32411,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32385,6 +32454,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32427,6 +32497,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32469,6 +32540,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32511,6 +32583,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32553,6 +32626,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32595,6 +32669,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information about the inbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32637,6 +32712,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32679,6 +32755,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32721,6 +32798,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32763,6 +32841,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32805,6 +32884,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves information pertaining to the outbound replications of a specific MySQL server.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32846,7 +32926,8 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32889,7 +32970,8 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32932,7 +33014,8 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -32975,7 +33058,8 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33018,7 +33102,8 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33061,7 +33146,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves SQL performance data for given MySQL Instance.
+     * Retrieves the SQL performance data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33106,7 +33193,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves SQL performance data for given MySQL Instance.
+     * Retrieves the SQL performance data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33151,7 +33240,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves SQL performance data for given MySQL Instance.
+     * Retrieves the SQL performance data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33196,7 +33287,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves SQL performance data for given MySQL Instance.
+     * Retrieves the SQL performance data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33241,7 +33334,9 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves SQL performance data for given MySQL Instance.
+     * Retrieves the SQL performance data for a specific MySQL database.
+     * 
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33287,6 +33382,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33330,6 +33426,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33373,6 +33470,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33416,6 +33514,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 
@@ -33459,6 +33558,7 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
      * 
      * Gets the list of Managed MySQL Databases in a specific compartment.
+     * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      * ## Example Usage
      * 

@@ -40,7 +40,7 @@ public final class GetManagedMySqlDatabaseResult {
      */
     private String heatWaveClusterDisplayName;
     /**
-     * @return The customer&#39;s selected type for HeatWave management.
+     * @return The selected management type for a HeatWave MySQL DB system.
      * 
      */
     private String heatWaveManagementType;
@@ -148,7 +148,7 @@ public final class GetManagedMySqlDatabaseResult {
         return this.heatWaveClusterDisplayName;
     }
     /**
-     * @return The customer&#39;s selected type for HeatWave management.
+     * @return The selected management type for a HeatWave MySQL DB system.
      * 
      */
     public String heatWaveManagementType() {

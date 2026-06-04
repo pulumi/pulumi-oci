@@ -16042,7 +16042,7 @@ func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionArrayOutpu
 }
 
 type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItem struct {
-	// The MySQL error, warning or note raised when a query is run, if any.
+	// The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	Errors []GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError `pulumi:"errors"`
 	// The number of times a MySQL error is encountered.
 	OccurrenceCount int `pulumi:"occurrenceCount"`
@@ -16060,7 +16060,7 @@ type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemInput int
 }
 
 type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemArgs struct {
-	// The MySQL error, warning or note raised when a query is run, if any.
+	// The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	Errors GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArrayInput `pulumi:"errors"`
 	// The number of times a MySQL error is encountered.
 	OccurrenceCount pulumi.IntInput `pulumi:"occurrenceCount"`
@@ -16117,7 +16117,7 @@ func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemOutput
 	return o
 }
 
-// The MySQL error, warning or note raised when a query is run, if any.
+// The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemOutput) Errors() GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItem) []GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError {
 		return v.Errors
@@ -16152,11 +16152,11 @@ func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemArrayO
 }
 
 type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError struct {
-	// The MySQL code of the raised error, warning or note.
+	// The MySQL code of the raised error, warning, or note.
 	Code int `pulumi:"code"`
 	// The level of severity of the MySQL message.
 	Level string `pulumi:"level"`
-	// The MySQL message text of the raised error, warning or note.
+	// The MySQL message text of the raised error, warning, or note.
 	MessageText string `pulumi:"messageText"`
 }
 
@@ -16172,11 +16172,11 @@ type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorInpu
 }
 
 type GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorArgs struct {
-	// The MySQL code of the raised error, warning or note.
+	// The MySQL code of the raised error, warning, or note.
 	Code pulumi.IntInput `pulumi:"code"`
 	// The level of severity of the MySQL message.
 	Level pulumi.StringInput `pulumi:"level"`
-	// The MySQL message text of the raised error, warning or note.
+	// The MySQL message text of the raised error, warning, or note.
 	MessageText pulumi.StringInput `pulumi:"messageText"`
 }
 
@@ -16231,7 +16231,7 @@ func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorO
 	return o
 }
 
-// The MySQL code of the raised error, warning or note.
+// The MySQL code of the raised error, warning, or note.
 func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorOutput) Code() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError) int { return v.Code }).(pulumi.IntOutput)
 }
@@ -16241,7 +16241,7 @@ func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorO
 	return o.ApplyT(func(v GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError) string { return v.Level }).(pulumi.StringOutput)
 }
 
-// The MySQL message text of the raised error, warning or note.
+// The MySQL message text of the raised error, warning, or note.
 func (o GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorOutput) MessageText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemError) string {
 		return v.MessageText
@@ -16504,7 +16504,7 @@ type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvail
 	MemberState string `pulumi:"memberState"`
 	// Indicates if the replication group is running in single-primary mode.
 	SinglePrimaryMode string `pulumi:"singlePrimaryMode"`
-	// High availability status summary of a MySQL server.
+	// High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	StatusSummaries []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummary `pulumi:"statusSummaries"`
 	// The number of transactions that were replicated within the cluster.
 	TransactionsInGtidExecuted string `pulumi:"transactionsInGtidExecuted"`
@@ -16538,7 +16538,7 @@ type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvail
 	MemberState pulumi.StringInput `pulumi:"memberState"`
 	// Indicates if the replication group is running in single-primary mode.
 	SinglePrimaryMode pulumi.StringInput `pulumi:"singlePrimaryMode"`
-	// High availability status summary of a MySQL server.
+	// High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	StatusSummaries GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArrayInput `pulumi:"statusSummaries"`
 	// The number of transactions that were replicated within the cluster.
 	TransactionsInGtidExecuted pulumi.StringInput `pulumi:"transactionsInGtidExecuted"`
@@ -16646,7 +16646,7 @@ func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAv
 	}).(pulumi.StringOutput)
 }
 
-// High availability status summary of a MySQL server.
+// High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionOutput) StatusSummaries() GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollection) []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummary {
 		return v.StatusSummaries
@@ -16941,7 +16941,7 @@ func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAv
 }
 
 type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError struct {
-	// Error from the apply operation of a MySQL server replication channel.
+	// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ApplyErrors []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError `pulumi:"applyErrors"`
 	// The name of the replication channel.
 	ChannelName string `pulumi:"channelName"`
@@ -16959,7 +16959,7 @@ type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvail
 }
 
 type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorArgs struct {
-	// Error from the apply operation of a MySQL server replication channel.
+	// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ApplyErrors GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArrayInput `pulumi:"applyErrors"`
 	// The name of the replication channel.
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
@@ -17016,7 +17016,7 @@ func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAv
 	return o
 }
 
-// Error from the apply operation of a MySQL server replication channel.
+// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorOutput) ApplyErrors() GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError) []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError {
 		return v.ApplyErrors
@@ -17306,7 +17306,7 @@ func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAv
 type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchError struct {
 	// The name of the replication channel.
 	ChannelName string `pulumi:"channelName"`
-	// Error from the fetch operation of a MySQL server replication channel.
+	// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	FetchErrors []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError `pulumi:"fetchErrors"`
 }
 
@@ -17324,7 +17324,7 @@ type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvail
 type GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorArgs struct {
 	// The name of the replication channel.
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
-	// Error from the fetch operation of a MySQL server replication channel.
+	// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	FetchErrors GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArrayInput `pulumi:"fetchErrors"`
 }
 
@@ -17386,7 +17386,7 @@ func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAv
 	}).(pulumi.StringOutput)
 }
 
-// Error from the fetch operation of a MySQL server replication channel.
+// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorOutput) FetchErrors() GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchError) []GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError {
 		return v.FetchErrors
@@ -17799,7 +17799,7 @@ type GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplic
 	ApplierFilters []GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilter `pulumi:"applierFilters"`
 	// The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
 	ApplyDelay float64 `pulumi:"applyDelay"`
-	// Error from the apply operation of a MySQL server replication channel.
+	// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ApplyErrors []GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError `pulumi:"applyErrors"`
 	// The current status of apply operations.
 	ApplyStatus string `pulumi:"applyStatus"`
@@ -17809,7 +17809,7 @@ type GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplic
 	ChannelName string `pulumi:"channelName"`
 	// The desired number of seconds that the replica must lag the source.
 	DesiredDelaySeconds string `pulumi:"desiredDelaySeconds"`
-	// Error from the fetch operation of a MySQL server replication channel.
+	// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	FetchErrors []GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError `pulumi:"fetchErrors"`
 	// The current status of fetch operations.
 	FetchStatus string `pulumi:"fetchStatus"`
@@ -17851,7 +17851,7 @@ type GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplic
 	ApplierFilters GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterArrayInput `pulumi:"applierFilters"`
 	// The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
 	ApplyDelay pulumi.Float64Input `pulumi:"applyDelay"`
-	// Error from the apply operation of a MySQL server replication channel.
+	// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ApplyErrors GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArrayInput `pulumi:"applyErrors"`
 	// The current status of apply operations.
 	ApplyStatus pulumi.StringInput `pulumi:"applyStatus"`
@@ -17861,7 +17861,7 @@ type GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplic
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The desired number of seconds that the replica must lag the source.
 	DesiredDelaySeconds pulumi.StringInput `pulumi:"desiredDelaySeconds"`
-	// Error from the fetch operation of a MySQL server replication channel.
+	// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	FetchErrors GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArrayInput `pulumi:"fetchErrors"`
 	// The current status of fetch operations.
 	FetchStatus pulumi.StringInput `pulumi:"fetchStatus"`
@@ -17952,7 +17952,7 @@ func (o GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRep
 	}).(pulumi.Float64Output)
 }
 
-// Error from the apply operation of a MySQL server replication channel.
+// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemOutput) ApplyErrors() GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItem) []GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError {
 		return v.ApplyErrors
@@ -17987,7 +17987,7 @@ func (o GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRep
 	}).(pulumi.StringOutput)
 }
 
-// Error from the fetch operation of a MySQL server replication channel.
+// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemOutput) FetchErrors() GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItem) []GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError {
 		return v.FetchErrors
@@ -18924,9 +18924,9 @@ func (o GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundR
 }
 
 type GetManagedMySqlDatabaseQueryDetailQueryExplainPlan struct {
-	// The json format of the explain plan.
+	// The JSON format of the explain plan.
 	JsonExplain string `pulumi:"jsonExplain"`
-	// The version of the Json format of MySQL Explain.
+	// The version of the JSON format of the MySQL explain plan.
 	JsonExplainVersion string `pulumi:"jsonExplainVersion"`
 }
 
@@ -18942,9 +18942,9 @@ type GetManagedMySqlDatabaseQueryDetailQueryExplainPlanInput interface {
 }
 
 type GetManagedMySqlDatabaseQueryDetailQueryExplainPlanArgs struct {
-	// The json format of the explain plan.
+	// The JSON format of the explain plan.
 	JsonExplain pulumi.StringInput `pulumi:"jsonExplain"`
-	// The version of the Json format of MySQL Explain.
+	// The version of the JSON format of the MySQL explain plan.
 	JsonExplainVersion pulumi.StringInput `pulumi:"jsonExplainVersion"`
 }
 
@@ -18999,12 +18999,12 @@ func (o GetManagedMySqlDatabaseQueryDetailQueryExplainPlanOutput) ToGetManagedMy
 	return o
 }
 
-// The json format of the explain plan.
+// The JSON format of the explain plan.
 func (o GetManagedMySqlDatabaseQueryDetailQueryExplainPlanOutput) JsonExplain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQueryExplainPlan) string { return v.JsonExplain }).(pulumi.StringOutput)
 }
 
-// The version of the Json format of MySQL Explain.
+// The version of the JSON format of the MySQL explain plan.
 func (o GetManagedMySqlDatabaseQueryDetailQueryExplainPlanOutput) JsonExplainVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQueryExplainPlan) string { return v.JsonExplainVersion }).(pulumi.StringOutput)
 }
@@ -19030,11 +19030,11 @@ func (o GetManagedMySqlDatabaseQueryDetailQueryExplainPlanArrayOutput) Index(i p
 }
 
 type GetManagedMySqlDatabaseQueryDetailQueryMessage struct {
-	// The MySQL code of the raised error, warning or note.
+	// The MySQL code of the raised error, warning, or note.
 	Code int `pulumi:"code"`
 	// The level of severity of the MySQL message.
 	Level string `pulumi:"level"`
-	// The MySQL message text of the raised error, warning or note.
+	// The MySQL message text of the raised error, warning, or note.
 	MessageText string `pulumi:"messageText"`
 }
 
@@ -19050,11 +19050,11 @@ type GetManagedMySqlDatabaseQueryDetailQueryMessageInput interface {
 }
 
 type GetManagedMySqlDatabaseQueryDetailQueryMessageArgs struct {
-	// The MySQL code of the raised error, warning or note.
+	// The MySQL code of the raised error, warning, or note.
 	Code pulumi.IntInput `pulumi:"code"`
 	// The level of severity of the MySQL message.
 	Level pulumi.StringInput `pulumi:"level"`
-	// The MySQL message text of the raised error, warning or note.
+	// The MySQL message text of the raised error, warning, or note.
 	MessageText pulumi.StringInput `pulumi:"messageText"`
 }
 
@@ -19109,7 +19109,7 @@ func (o GetManagedMySqlDatabaseQueryDetailQueryMessageOutput) ToGetManagedMySqlD
 	return o
 }
 
-// The MySQL code of the raised error, warning or note.
+// The MySQL code of the raised error, warning, or note.
 func (o GetManagedMySqlDatabaseQueryDetailQueryMessageOutput) Code() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQueryMessage) int { return v.Code }).(pulumi.IntOutput)
 }
@@ -19119,7 +19119,7 @@ func (o GetManagedMySqlDatabaseQueryDetailQueryMessageOutput) Level() pulumi.Str
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQueryMessage) string { return v.Level }).(pulumi.StringOutput)
 }
 
-// The MySQL message text of the raised error, warning or note.
+// The MySQL message text of the raised error, warning, or note.
 func (o GetManagedMySqlDatabaseQueryDetailQueryMessageOutput) MessageText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQueryMessage) string { return v.MessageText }).(pulumi.StringOutput)
 }
@@ -19153,7 +19153,7 @@ type GetManagedMySqlDatabaseQueryDetailQuerySampleDetail struct {
 	MysqlInstance string `pulumi:"mysqlInstance"`
 	// The query sample mapped by MySQL to a given normalized query.
 	QuerySampleText string `pulumi:"querySampleText"`
-	// The thread id of the connection.
+	// The thread ID of the connection.
 	ThreadId int `pulumi:"threadId"`
 	// The date and time the query sample was last seen.
 	TimeQuerySampleSeen string `pulumi:"timeQuerySampleSeen"`
@@ -19181,7 +19181,7 @@ type GetManagedMySqlDatabaseQueryDetailQuerySampleDetailArgs struct {
 	MysqlInstance pulumi.StringInput `pulumi:"mysqlInstance"`
 	// The query sample mapped by MySQL to a given normalized query.
 	QuerySampleText pulumi.StringInput `pulumi:"querySampleText"`
-	// The thread id of the connection.
+	// The thread ID of the connection.
 	ThreadId pulumi.IntInput `pulumi:"threadId"`
 	// The date and time the query sample was last seen.
 	TimeQuerySampleSeen pulumi.StringInput `pulumi:"timeQuerySampleSeen"`
@@ -19260,7 +19260,7 @@ func (o GetManagedMySqlDatabaseQueryDetailQuerySampleDetailOutput) QuerySampleTe
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQuerySampleDetail) string { return v.QuerySampleText }).(pulumi.StringOutput)
 }
 
-// The thread id of the connection.
+// The thread ID of the connection.
 func (o GetManagedMySqlDatabaseQueryDetailQuerySampleDetailOutput) ThreadId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseQueryDetailQuerySampleDetail) int { return v.ThreadId }).(pulumi.IntOutput)
 }
@@ -20139,7 +20139,7 @@ type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// The name of the HeatWave cluster.
 	HeatWaveClusterDisplayName string `pulumi:"heatWaveClusterDisplayName"`
-	// The customer's selected type for HeatWave management.
+	// The selected management type for a HeatWave MySQL DB system.
 	HeatWaveManagementType string `pulumi:"heatWaveManagementType"`
 	// The total memory belonging to the HeatWave cluster in GBs.
 	HeatWaveMemorySize int `pulumi:"heatWaveMemorySize"`
@@ -20190,7 +20190,7 @@ type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs struct {
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// The name of the HeatWave cluster.
 	HeatWaveClusterDisplayName pulumi.StringInput `pulumi:"heatWaveClusterDisplayName"`
-	// The customer's selected type for HeatWave management.
+	// The selected management type for a HeatWave MySQL DB system.
 	HeatWaveManagementType pulumi.StringInput `pulumi:"heatWaveManagementType"`
 	// The total memory belonging to the HeatWave cluster in GBs.
 	HeatWaveMemorySize pulumi.IntInput `pulumi:"heatWaveMemorySize"`
@@ -20297,7 +20297,7 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWa
 	}).(pulumi.StringOutput)
 }
 
-// The customer's selected type for HeatWave management.
+// The selected management type for a HeatWave MySQL DB system.
 func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWaveManagementType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string {
 		return v.HeatWaveManagementType

@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves General Information for given MySQL Instance.
+ * Retrieves the general information for a specific MySQL Database.
+ *
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -64,7 +66,7 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly heatWaveClusterDisplayName: string;
     /**
-     * The customer's selected type for HeatWave management.
+     * The selected management type for a HeatWave MySQL DB system.
      */
     readonly heatWaveManagementType: string;
     /**
@@ -124,7 +126,9 @@ export interface GetManagedMySqlDatabaseResult {
 /**
  * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves General Information for given MySQL Instance.
+ * Retrieves the general information for a specific MySQL Database.
+ *
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

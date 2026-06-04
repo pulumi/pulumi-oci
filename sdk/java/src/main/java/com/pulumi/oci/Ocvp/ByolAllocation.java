@@ -194,6 +194,20 @@ public class ByolAllocation extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    @Export(name="siteId", refs={String.class}, tree="[0]")
+    private Output<String> siteId;
+
+    /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    public Output<String> siteId() {
+        return this.siteId;
+    }
+    /**
      * The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)

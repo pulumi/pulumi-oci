@@ -105,6 +105,8 @@ def get_external_my_sql_database_connectors(compartment_id: Optional[_builtins.s
 
     Gets the list of External MySQL Database connectors.
 
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+
     ## Example Usage
 
     ```python
@@ -140,6 +142,8 @@ def get_external_my_sql_database_connectors_output(compartment_id: pulumi.Input[
     This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
 
     Gets the list of External MySQL Database connectors.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseQueryDetailQueryExplainPlan {
     /**
-     * @return The json format of the explain plan.
+     * @return The JSON format of the explain plan.
      * 
      */
     private String jsonExplain;
     /**
-     * @return The version of the Json format of MySQL Explain.
+     * @return The version of the JSON format of the MySQL explain plan.
      * 
      */
     private String jsonExplainVersion;
 
     private GetManagedMySqlDatabaseQueryDetailQueryExplainPlan() {}
     /**
-     * @return The json format of the explain plan.
+     * @return The JSON format of the explain plan.
      * 
      */
     public String jsonExplain() {
         return this.jsonExplain;
     }
     /**
-     * @return The version of the Json format of MySQL Explain.
+     * @return The version of the JSON format of the MySQL explain plan.
      * 
      */
     public String jsonExplainVersion() {

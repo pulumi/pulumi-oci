@@ -113,6 +113,12 @@ namespace Pulumi.Oci.Ocvp
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The hyperscaler identifier in Broadcom systems.
+        /// </summary>
+        [Output("siteId")]
+        public Output<string> SiteId { get; private set; } = null!;
+
+        /// <summary>
         /// The type of VMware software the BYOL applies to.  Supported values:
         /// * VCF (VMware Cloud Foundation)
         /// * VSAN (VMware vSAN)
@@ -327,6 +333,12 @@ namespace Pulumi.Oci.Ocvp
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The hyperscaler identifier in Broadcom systems.
+        /// </summary>
+        [Input("siteId")]
+        public Input<string>? SiteId { get; set; }
 
         /// <summary>
         /// The type of VMware software the BYOL applies to.  Supported values:

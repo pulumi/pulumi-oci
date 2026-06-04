@@ -320,6 +320,7 @@ def get_external_my_sql_database_connector(external_my_sql_database_connector_id
     This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves the MySQL database connector.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -369,6 +370,7 @@ def get_external_my_sql_database_connector_output(external_my_sql_database_conne
     This data source provides details about a specific External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves the MySQL database connector.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

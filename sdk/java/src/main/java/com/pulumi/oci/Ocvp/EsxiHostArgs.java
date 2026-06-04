@@ -95,6 +95,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    @Import(name="currentCommitment")
+    private @Nullable Output<String> currentCommitment;
+
+    /**
+     * @return The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    public Optional<Output<String>> currentCommitment() {
+        return Optional.ofNullable(this.currentCommitment);
+    }
+
+    /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
      * @deprecated
@@ -261,6 +276,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    @Import(name="nextCommitment")
+    private @Nullable Output<String> nextCommitment;
+
+    /**
+     * @return (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    public Optional<Output<String>> nextCommitment() {
+        return Optional.ofNullable(this.nextCommitment);
+    }
+
+    /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      * 
      * @deprecated
@@ -373,6 +403,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.capacityReservationId = $.capacityReservationId;
         this.clusterId = $.clusterId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
+        this.currentCommitment = $.currentCommitment;
         this.currentSku = $.currentSku;
         this.definedTags = $.definedTags;
         this.detachDatastoreClusterIds = $.detachDatastoreClusterIds;
@@ -383,6 +414,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
         this.isVsanByolEnabled = $.isVsanByolEnabled;
+        this.nextCommitment = $.nextCommitment;
         this.nextSku = $.nextSku;
         this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.sddcId = $.sddcId;
@@ -511,6 +543,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
+        }
+
+        /**
+         * @param currentCommitment The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentCommitment(@Nullable Output<String> currentCommitment) {
+            $.currentCommitment = currentCommitment;
+            return this;
+        }
+
+        /**
+         * @param currentCommitment The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder currentCommitment(String currentCommitment) {
+            return currentCommitment(Output.of(currentCommitment));
         }
 
         /**
@@ -737,6 +790,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isVsanByolEnabled(Boolean isVsanByolEnabled) {
             return isVsanByolEnabled(Output.of(isVsanByolEnabled));
+        }
+
+        /**
+         * @param nextCommitment (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextCommitment(@Nullable Output<String> nextCommitment) {
+            $.nextCommitment = nextCommitment;
+            return this;
+        }
+
+        /**
+         * @param nextCommitment (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextCommitment(String nextCommitment) {
+            return nextCommitment(Output.of(nextCommitment));
         }
 
         /**

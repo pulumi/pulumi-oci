@@ -101,6 +101,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[_builtins.str] = None,
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
 
     Gets the list of Managed MySQL Databases in a specific compartment.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -137,6 +138,7 @@ def get_managed_my_sql_databases_output(compartment_id: pulumi.Input[Optional[_b
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
 
     Gets the list of Managed MySQL Databases in a specific compartment.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

@@ -164,7 +164,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Name of the domain.
+        /// The name of the domain.
         /// </summary>
         public readonly string DomainName;
         /// <summary>

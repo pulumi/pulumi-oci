@@ -33,6 +33,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     nsgIds: operationsInsightsPrivateEndpointNsgIds,
+ *     securityAttributes: operationsInsightsPrivateEndpointSecurityAttributes,
  * });
  * ```
  *
@@ -113,6 +114,10 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the private endpoint.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -160,6 +165,7 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["privateEndpointStatusDetails"] = state?.privateEndpointStatusDetails;
             resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -190,6 +196,7 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["isUsedForRacDbs"] = args?.isUsedForRacDbs;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["privateEndpointStatusDetails"] = args?.privateEndpointStatusDetails;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -247,6 +254,10 @@ export interface OperationsInsightsPrivateEndpointState {
      * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
      */
     privateIp?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the private endpoint.
      */
@@ -309,6 +320,10 @@ export interface OperationsInsightsPrivateEndpointArgs {
      * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
      */
     privateEndpointStatusDetails?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      */

@@ -117,7 +117,9 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[_builtins.str] = Non
     """
     This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves SQL performance data for given MySQL Instance.
+    Retrieves the SQL performance data for a specific MySQL database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -177,7 +179,9 @@ def get_managed_my_sql_database_sql_data_output(end_time: pulumi.Input[Optional[
     """
     This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves SQL performance data for given MySQL Instance.
+    Retrieves the SQL performance data for a specific MySQL database.
+
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

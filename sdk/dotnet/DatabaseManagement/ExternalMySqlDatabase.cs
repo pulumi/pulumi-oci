@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
     /// 
     /// Creates an external MySQL database.
+    /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
     /// 
     /// ## Example Usage
     /// 

@@ -30,7 +30,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponent {
      */
     private @Nullable String adrHomeDirectory;
     /**
-     * @return The list of asm instances for the cloud Asm.
+     * @return The list of ASM instances for the cloud Asm.
      * 
      */
     private @Nullable List<CloudDbSystemDiscoveryDiscoveredComponentAsmInstance> asmInstances;
@@ -140,7 +140,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponent {
      */
     private @Nullable String dbVersion;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     private @Nullable String dbaasId;
@@ -294,7 +294,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponent {
         return Optional.ofNullable(this.adrHomeDirectory);
     }
     /**
-     * @return The list of asm instances for the cloud Asm.
+     * @return The list of ASM instances for the cloud Asm.
      * 
      */
     public List<CloudDbSystemDiscoveryDiscoveredComponentAsmInstance> asmInstances() {
@@ -448,7 +448,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponent {
         return Optional.ofNullable(this.dbVersion);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     public Optional<String> dbaasId() {

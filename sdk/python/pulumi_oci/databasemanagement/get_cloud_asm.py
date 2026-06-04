@@ -141,7 +141,7 @@ class GetCloudAsmResult:
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 

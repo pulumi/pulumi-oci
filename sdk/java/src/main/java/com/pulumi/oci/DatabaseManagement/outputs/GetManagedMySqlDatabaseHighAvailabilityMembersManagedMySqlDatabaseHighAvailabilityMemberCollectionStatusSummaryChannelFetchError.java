@@ -18,7 +18,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
      */
     private String channelName;
     /**
-     * @return Error from the fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError> fetchErrors;
@@ -32,7 +32,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
         return this.channelName;
     }
     /**
-     * @return Error from the fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError> fetchErrors() {

@@ -48,6 +48,21 @@ public final class ExadataInfrastructureDefinedFileSystemConfigurationArgs exten
     }
 
     /**
+     * The maximum size of file system.
+     * 
+     */
+    @Import(name="maxSizeGb")
+    private @Nullable Output<Integer> maxSizeGb;
+
+    /**
+     * @return The maximum size of file system.
+     * 
+     */
+    public Optional<Output<Integer>> maxSizeGb() {
+        return Optional.ofNullable(this.maxSizeGb);
+    }
+
+    /**
      * The minimum size of file system.
      * 
      */
@@ -82,6 +97,7 @@ public final class ExadataInfrastructureDefinedFileSystemConfigurationArgs exten
     private ExadataInfrastructureDefinedFileSystemConfigurationArgs(ExadataInfrastructureDefinedFileSystemConfigurationArgs $) {
         this.isBackupPartition = $.isBackupPartition;
         this.isResizable = $.isResizable;
+        this.maxSizeGb = $.maxSizeGb;
         this.minSizeGb = $.minSizeGb;
         this.mountPoint = $.mountPoint;
     }
@@ -144,6 +160,27 @@ public final class ExadataInfrastructureDefinedFileSystemConfigurationArgs exten
          */
         public Builder isResizable(Boolean isResizable) {
             return isResizable(Output.of(isResizable));
+        }
+
+        /**
+         * @param maxSizeGb The maximum size of file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxSizeGb(@Nullable Output<Integer> maxSizeGb) {
+            $.maxSizeGb = maxSizeGb;
+            return this;
+        }
+
+        /**
+         * @param maxSizeGb The maximum size of file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxSizeGb(Integer maxSizeGb) {
+            return maxSizeGb(Output.of(maxSizeGb));
         }
 
         /**

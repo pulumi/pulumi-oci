@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsResizable;
         /// <summary>
+        /// The maximum size of file system.
+        /// </summary>
+        public readonly int MaxSizeGb;
+        /// <summary>
         /// The minimum size of file system.
         /// </summary>
         public readonly int MinSizeGb;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isResizable,
 
+            int maxSizeGb,
+
             int minSizeGb,
 
             string mountPoint)
         {
             IsBackupPartition = isBackupPartition;
             IsResizable = isResizable;
+            MaxSizeGb = maxSizeGb;
             MinSizeGb = minSizeGb;
             MountPoint = mountPoint;
         }

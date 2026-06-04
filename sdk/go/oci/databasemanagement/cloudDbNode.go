@@ -49,7 +49,7 @@ type CloudDbNode struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the cloud DB node. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Name of the domain.
+	// The name of the domain.
 	DomainName pulumi.StringOutput `pulumi:"domainName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
@@ -125,7 +125,7 @@ type cloudDbNodeState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the cloud DB node. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
-	// Name of the domain.
+	// The name of the domain.
 	DomainName *string `pulumi:"domainName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
@@ -169,7 +169,7 @@ type CloudDbNodeState struct {
 	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the cloud DB node. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
-	// Name of the domain.
+	// The name of the domain.
 	DomainName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
@@ -362,7 +362,7 @@ func (o CloudDbNodeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudDbNode) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Name of the domain.
+// The name of the domain.
 func (o CloudDbNodeOutput) DomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudDbNode) pulumi.StringOutput { return v.DomainName }).(pulumi.StringOutput)
 }

@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetManagedPreferredCredentialArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the preferred credential.
+        /// The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
         /// </summary>
         [Input("credentialName", required: true)]
         public string CredentialName { get; set; } = null!;
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetManagedPreferredCredentialInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the preferred credential.
+        /// The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
         /// </summary>
         [Input("credentialName", required: true)]
         public Input<string> CredentialName { get; set; } = null!;

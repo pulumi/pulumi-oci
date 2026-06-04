@@ -3547,6 +3547,8 @@ type GetByolAllocationsByolAllocationCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
 	Id string `pulumi:"id"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId string `pulumi:"siteId"`
 	// A filter to return only resources whose softwareType matches the given value.
 	SoftwareType string `pulumi:"softwareType"`
 	// A filter to return only resources whose lifecycle state matches the given value.
@@ -3593,6 +3595,8 @@ type GetByolAllocationsByolAllocationCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringInput `pulumi:"siteId"`
 	// A filter to return only resources whose softwareType matches the given value.
 	SoftwareType pulumi.StringInput `pulumi:"softwareType"`
 	// A filter to return only resources whose lifecycle state matches the given value.
@@ -3703,6 +3707,11 @@ func (o GetByolAllocationsByolAllocationCollectionItemOutput) FreeformTags() pul
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
 func (o GetByolAllocationsByolAllocationCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The hyperscaler identifier in Broadcom systems.
+func (o GetByolAllocationsByolAllocationCollectionItemOutput) SiteId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolAllocationsByolAllocationCollectionItem) string { return v.SiteId }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources whose softwareType matches the given value.
@@ -3977,6 +3986,8 @@ type GetByolsByolCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
 	Id string `pulumi:"id"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId string `pulumi:"siteId"`
 	// A filter to return only resources whose softwareType matches the given value.
 	SoftwareType string `pulumi:"softwareType"`
 	// A filter to return only resources whose lifecycle state matches the given value.
@@ -4026,6 +4037,8 @@ type GetByolsByolCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringInput `pulumi:"siteId"`
 	// A filter to return only resources whose softwareType matches the given value.
 	SoftwareType pulumi.StringInput `pulumi:"softwareType"`
 	// A filter to return only resources whose lifecycle state matches the given value.
@@ -4136,6 +4149,11 @@ func (o GetByolsByolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
 func (o GetByolsByolCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The hyperscaler identifier in Broadcom systems.
+func (o GetByolsByolCollectionItemOutput) SiteId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetByolsByolCollectionItem) string { return v.SiteId }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources whose softwareType matches the given value.

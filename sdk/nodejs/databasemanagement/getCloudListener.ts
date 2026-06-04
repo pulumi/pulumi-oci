@@ -77,7 +77,7 @@ export interface GetCloudListenerResult {
      */
     readonly componentName: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      */
     readonly dbaasId: string;
     /**

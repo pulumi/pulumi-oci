@@ -63,11 +63,11 @@ type LookupCloudDbSystemDiscoveryResult struct {
 	CloudDbSystemDiscoveryId string `pulumi:"cloudDbSystemDiscoveryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 	DbaasParentInfrastructureId string `pulumi:"dbaasParentInfrastructureId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The deployment type of cloud dbsystem.
+	// The deployment type of cloud DB system.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The list of DB system components that were found in the DB system discovery.
 	DiscoveredComponents []GetCloudDbSystemDiscoveryDiscoveredComponent `pulumi:"discoveredComponents"`
@@ -142,7 +142,7 @@ func (o LookupCloudDbSystemDiscoveryResultOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v LookupCloudDbSystemDiscoveryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 func (o LookupCloudDbSystemDiscoveryResultOutput) DbaasParentInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudDbSystemDiscoveryResult) string { return v.DbaasParentInfrastructureId }).(pulumi.StringOutput)
 }
@@ -152,7 +152,7 @@ func (o LookupCloudDbSystemDiscoveryResultOutput) DefinedTags() pulumi.StringMap
 	return o.ApplyT(func(v LookupCloudDbSystemDiscoveryResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// The deployment type of cloud dbsystem.
+// The deployment type of cloud DB system.
 func (o LookupCloudDbSystemDiscoveryResultOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudDbSystemDiscoveryResult) string { return v.DeploymentType }).(pulumi.StringOutput)
 }

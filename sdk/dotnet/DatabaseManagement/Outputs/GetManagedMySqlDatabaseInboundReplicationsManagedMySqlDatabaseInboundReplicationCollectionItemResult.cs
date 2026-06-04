@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly double ApplyDelay;
         /// <summary>
-        /// Error from the apply operation of a MySQL server replication channel.
+        /// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult> ApplyErrors;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DesiredDelaySeconds;
         /// <summary>
-        /// Error from the fetch operation of a MySQL server replication channel.
+        /// Error from the fetch operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult> FetchErrors;
         /// <summary>

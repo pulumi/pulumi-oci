@@ -120,14 +120,14 @@ public class CloudDbSystemDiscovery extends com.pulumi.resources.CustomResource 
         return this.compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     @Export(name="dbaasParentInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> dbaasParentInfrastructureId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     public Output<String> dbaasParentInfrastructureId() {
@@ -148,14 +148,14 @@ public class CloudDbSystemDiscovery extends com.pulumi.resources.CustomResource 
         return this.definedTags;
     }
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      * 
      */
     @Export(name="deploymentType", refs={String.class}, tree="[0]")
     private Output<String> deploymentType;
 
     /**
-     * @return The deployment type of cloud dbsystem.
+     * @return The deployment type of cloud DB system.
      * 
      */
     public Output<String> deploymentType() {

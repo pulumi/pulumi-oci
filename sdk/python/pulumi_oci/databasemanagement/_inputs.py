@@ -885,7 +885,7 @@ class CloudAsmServicedDatabaseArgsDict(TypedDict):
     """
     dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
     disk_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
@@ -921,7 +921,7 @@ class CloudAsmServicedDatabaseArgs:
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[_builtins.str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[_builtins.str] db_unique_name: The unique name of the cloud database.
-        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_groups: The list of ASM disk groups used by the database.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the database. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
@@ -998,7 +998,7 @@ class CloudAsmServicedDatabaseArgs:
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -1663,7 +1663,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]]
     """
-    The list of asm instances for the cloud Asm.
+    The list of ASM instances for the cloud Asm.
     """
     associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]]
     """
@@ -1751,7 +1751,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
     """
     dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
     display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1923,7 +1923,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
                  vip_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]] asm_instances: The list of asm instances for the cloud Asm.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]] asm_instances: The list of ASM instances for the cloud Asm.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]] associated_components: The list of associated components.
         :param pulumi.Input[_builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param pulumi.Input[_builtins.str] cluster_id: The unique identifier of the Oracle cluster.
@@ -1945,7 +1945,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
         :param pulumi.Input[_builtins.str] db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         :param pulumi.Input[_builtins.str] db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
         :param pulumi.Input[_builtins.str] db_version: The Oracle Database version.
-        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]] endpoints: The list of protocol addresses the listener is configured to listen on.
         :param pulumi.Input[_builtins.str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
@@ -2096,7 +2096,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
     @pulumi.getter(name="asmInstances")
     def asm_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
         """
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
         """
         return pulumi.get(self, "asm_instances")
 
@@ -2360,7 +2360,7 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
@@ -7258,7 +7258,7 @@ class CloudListenerServicedDatabaseArgsDict(TypedDict):
     """
     dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
     display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -7289,7 +7289,7 @@ class CloudListenerServicedDatabaseArgs:
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         :param pulumi.Input[_builtins.str] database_type: The type of Oracle Database installation.
         :param pulumi.Input[_builtins.str] db_unique_name: The unique name of the cloud database.
-        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the database. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         :param pulumi.Input[_builtins.bool] is_managed: Indicates whether the database is a Managed Database or not.
@@ -7363,7 +7363,7 @@ class CloudListenerServicedDatabaseArgs:
     @pulumi.getter(name="dbaasId")
     def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 

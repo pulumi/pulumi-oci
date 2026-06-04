@@ -385,6 +385,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? ComputeAvailabilityDomain { get; set; }
 
         /// <summary>
+        /// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// </summary>
+        [Input("currentCommitment")]
+        public Input<string>? CurrentCommitment { get; set; }
+
+        /// <summary>
         /// (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `CurrentCommitment` instead.
         /// </summary>
         [Input("currentSku")]
@@ -461,6 +467,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("isVsanByolEnabled")]
         public Input<bool>? IsVsanByolEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// </summary>
+        [Input("nextCommitment")]
+        public Input<string>? NextCommitment { get; set; }
 
         /// <summary>
         /// (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `NextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `NextCommitment` instead.

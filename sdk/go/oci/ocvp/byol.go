@@ -51,6 +51,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				SiteId: pulumi.Any(testSite.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -85,6 +86,8 @@ type Byol struct {
 	EntitlementKey pulumi.StringOutput `pulumi:"entitlementKey"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringOutput `pulumi:"siteId"`
 	// (Updatable) The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -178,6 +181,8 @@ type byolState struct {
 	EntitlementKey *string `pulumi:"entitlementKey"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The hyperscaler identifier in Broadcom systems.
+	SiteId *string `pulumi:"siteId"`
 	// (Updatable) The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -221,6 +226,8 @@ type ByolState struct {
 	EntitlementKey pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringPtrInput
 	// (Updatable) The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -266,6 +273,8 @@ type byolArgs struct {
 	EntitlementKey string `pulumi:"entitlementKey"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The hyperscaler identifier in Broadcom systems.
+	SiteId *string `pulumi:"siteId"`
 	// (Updatable) The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -300,6 +309,8 @@ type ByolArgs struct {
 	EntitlementKey pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The hyperscaler identifier in Broadcom systems.
+	SiteId pulumi.StringPtrInput
 	// (Updatable) The type of VMware software the BYOL applies to.  Supported values:
 	// * VCF (VMware Cloud Foundation)
 	// * VSAN (VMware vSAN)
@@ -440,6 +451,11 @@ func (o ByolOutput) EntitlementKey() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o ByolOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Byol) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The hyperscaler identifier in Broadcom systems.
+func (o ByolOutput) SiteId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Byol) pulumi.StringOutput { return v.SiteId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The type of VMware software the BYOL applies to.  Supported values:

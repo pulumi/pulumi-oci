@@ -10,6 +10,7 @@ import * as utilities from "../utilities";
  * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the list of Managed MySQL Databases in a specific compartment.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -70,6 +71,7 @@ export interface GetManagedMySqlDatabasesResult {
  * This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the list of Managed MySQL Databases in a specific compartment.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

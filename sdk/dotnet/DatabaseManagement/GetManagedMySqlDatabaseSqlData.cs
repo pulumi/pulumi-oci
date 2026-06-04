@@ -14,7 +14,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves SQL performance data for given MySQL Instance.
+        /// Retrieves the SQL performance data for a specific MySQL database.
+        /// 
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +46,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves SQL performance data for given MySQL Instance.
+        /// Retrieves the SQL performance data for a specific MySQL database.
+        /// 
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage
@@ -74,7 +78,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves SQL performance data for given MySQL Instance.
+        /// Retrieves the SQL performance data for a specific MySQL database.
+        /// 
+        /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
         /// 
         /// ## Example Usage

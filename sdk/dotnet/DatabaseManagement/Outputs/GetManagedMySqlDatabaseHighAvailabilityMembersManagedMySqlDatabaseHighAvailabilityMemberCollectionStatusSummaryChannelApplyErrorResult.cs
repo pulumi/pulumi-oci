@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult
     {
         /// <summary>
-        /// Error from the apply operation of a MySQL server replication channel.
+        /// Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult> ApplyErrors;
         /// <summary>

@@ -89,7 +89,7 @@ export class CloudDbNode extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
-     * Name of the domain.
+     * The name of the domain.
      */
     declare public /*out*/ readonly domainName: pulumi.Output<string>;
     /**
@@ -236,7 +236,7 @@ export interface CloudDbNodeState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Name of the domain.
+     * The name of the domain.
      */
     domainName?: pulumi.Input<string | undefined>;
     /**

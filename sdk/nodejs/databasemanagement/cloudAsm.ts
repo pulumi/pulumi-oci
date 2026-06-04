@@ -75,7 +75,7 @@ export class CloudAsm extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      */
     declare public /*out*/ readonly dbaasId: pulumi.Output<string>;
     /**
@@ -228,7 +228,7 @@ export interface CloudAsmState {
      */
     componentName?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      */
     dbaasId?: pulumi.Input<string | undefined>;
     /**

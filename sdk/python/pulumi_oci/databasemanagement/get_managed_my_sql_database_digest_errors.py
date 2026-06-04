@@ -98,6 +98,7 @@ def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = 
     This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves any potential errors for a given digest.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -134,6 +135,7 @@ def get_managed_my_sql_database_digest_errors_output(digest: pulumi.Input[Option
     This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves any potential errors for a given digest.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

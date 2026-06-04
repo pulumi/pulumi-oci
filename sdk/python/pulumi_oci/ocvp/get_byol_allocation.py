@@ -26,7 +26,7 @@ class GetByolAllocationResult:
     """
     A collection of values returned by getByolAllocation.
     """
-    def __init__(__self__, allocated_units=None, available_units=None, byol_allocation_id=None, byol_id=None, compartment_id=None, defined_tags=None, display_name=None, entitlement_key=None, freeform_tags=None, id=None, software_type=None, state=None, system_tags=None, time_created=None, time_term_end=None, time_term_start=None, time_updated=None):
+    def __init__(__self__, allocated_units=None, available_units=None, byol_allocation_id=None, byol_id=None, compartment_id=None, defined_tags=None, display_name=None, entitlement_key=None, freeform_tags=None, id=None, site_id=None, software_type=None, state=None, system_tags=None, time_created=None, time_term_end=None, time_term_start=None, time_updated=None):
         if allocated_units and not isinstance(allocated_units, int):
             raise TypeError("Expected argument 'allocated_units' to be a int")
         pulumi.set(__self__, "allocated_units", allocated_units)
@@ -57,6 +57,9 @@ class GetByolAllocationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if site_id and not isinstance(site_id, str):
+            raise TypeError("Expected argument 'site_id' to be a str")
+        pulumi.set(__self__, "site_id", site_id)
         if software_type and not isinstance(software_type, str):
             raise TypeError("Expected argument 'software_type' to be a str")
         pulumi.set(__self__, "software_type", software_type)
@@ -157,6 +160,14 @@ class GetByolAllocationResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> _builtins.str:
+        """
+        The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
+
+    @_builtins.property
     @pulumi.getter(name="softwareType")
     def software_type(self) -> _builtins.str:
         """
@@ -233,6 +244,7 @@ class AwaitableGetByolAllocationResult(GetByolAllocationResult):
             entitlement_key=self.entitlement_key,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            site_id=self.site_id,
             software_type=self.software_type,
             state=self.state,
             system_tags=self.system_tags,
@@ -277,6 +289,7 @@ def get_byol_allocation(byol_allocation_id: Optional[_builtins.str] = None,
         entitlement_key=pulumi.get(__ret__, 'entitlement_key'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        site_id=pulumi.get(__ret__, 'site_id'),
         software_type=pulumi.get(__ret__, 'software_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -318,6 +331,7 @@ def get_byol_allocation_output(byol_allocation_id: pulumi.Input[Optional[_builti
         entitlement_key=pulumi.get(__response__, 'entitlement_key'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        site_id=pulumi.get(__response__, 'site_id'),
         software_type=pulumi.get(__response__, 'software_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

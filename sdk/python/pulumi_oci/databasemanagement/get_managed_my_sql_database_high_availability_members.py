@@ -88,6 +88,7 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
     This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves information about the high availability members of a specific MySQL server's replication group.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -119,6 +120,7 @@ def get_managed_my_sql_database_high_availability_members_output(filters: pulumi
     This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves information about the high availability members of a specific MySQL server's replication group.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

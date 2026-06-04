@@ -77,7 +77,7 @@ type LookupCloudDbNodeResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the cloud DB node. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
-	// Name of the domain.
+	// The name of the domain.
 	DomainName string `pulumi:"domainName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -182,7 +182,7 @@ func (o LookupCloudDbNodeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudDbNodeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Name of the domain.
+// The name of the domain.
 func (o LookupCloudDbNodeResultOutput) DomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudDbNodeResult) string { return v.DomainName }).(pulumi.StringOutput)
 }

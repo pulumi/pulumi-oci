@@ -89,7 +89,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the domain.
+        /// The name of the domain.
         /// </summary>
         [Output("domainName")]
         public Output<string> DomainName { get; private set; } = null!;
@@ -313,7 +313,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Name of the domain.
+        /// The name of the domain.
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }

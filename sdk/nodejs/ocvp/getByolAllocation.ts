@@ -79,6 +79,10 @@ export interface GetByolAllocationResult {
      */
     readonly id: string;
     /**
+     * The hyperscaler identifier in Broadcom systems.
+     */
+    readonly siteId: string;
+    /**
      * The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)

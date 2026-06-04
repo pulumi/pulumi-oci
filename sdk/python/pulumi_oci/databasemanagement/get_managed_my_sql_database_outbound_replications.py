@@ -88,6 +88,7 @@ def get_managed_my_sql_database_outbound_replications(filters: Optional[Sequence
     This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves information pertaining to the outbound replications of a specific MySQL server.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 
@@ -119,6 +120,7 @@ def get_managed_my_sql_database_outbound_replications_output(filters: pulumi.Inp
     This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
 
     Retrieves information pertaining to the outbound replications of a specific MySQL server.
+    MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
     ## Example Usage
 

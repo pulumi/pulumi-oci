@@ -8,6 +8,7 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Retrieves information pertaining to the binary log of a specific MySQL server.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -75,6 +76,7 @@ export interface GetManagedMySqlDatabaseBinaryLogInformationResult {
  * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Retrieves information pertaining to the binary log of a specific MySQL server.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

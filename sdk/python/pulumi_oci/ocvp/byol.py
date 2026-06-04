@@ -28,7 +28,8 @@ class ByolArgs:
                  total_units: pulumi.Input[_builtins.int],
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 site_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Byol resource.
 
@@ -53,6 +54,7 @@ class ByolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the BYOL.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] site_id: (Updatable) The hyperscaler identifier in Broadcom systems.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -67,6 +69,8 @@ class ByolArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if site_id is not None:
+            pulumi.set(__self__, "site_id", site_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -199,6 +203,18 @@ class ByolArgs:
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
+
+    @site_id.setter
+    def site_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "site_id", value)
+
 
 @pulumi.input_type
 class _ByolState:
@@ -210,6 +226,7 @@ class _ByolState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 site_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -228,6 +245,7 @@ class _ByolState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the BYOL.
         :param pulumi.Input[_builtins.str] entitlement_key: (Updatable) The Broadcom-supplied identifier of a BYOL license.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] site_id: (Updatable) The hyperscaler identifier in Broadcom systems.
         :param pulumi.Input[_builtins.str] software_type: (Updatable) The type of VMware software the BYOL applies to.  Supported values:
                * VCF (VMware Cloud Foundation)
                * VSAN (VMware vSAN)
@@ -262,6 +280,8 @@ class _ByolState:
             pulumi.set(__self__, "entitlement_key", entitlement_key)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if site_id is not None:
+            pulumi.set(__self__, "site_id", site_id)
         if software_type is not None:
             pulumi.set(__self__, "software_type", software_type)
         if state is not None:
@@ -362,6 +382,18 @@ class _ByolState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
+
+    @site_id.setter
+    def site_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "site_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareType")
@@ -483,6 +515,7 @@ class Byol(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 site_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_term_end: pulumi.Input[Optional[_builtins.str]] = None,
                  time_term_start: pulumi.Input[Optional[_builtins.str]] = None,
@@ -519,7 +552,8 @@ class Byol(pulumi.CustomResource):
             description=byol_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            site_id=test_site["id"])
         ```
 
         ## Import
@@ -539,6 +573,7 @@ class Byol(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the BYOL.
         :param pulumi.Input[_builtins.str] entitlement_key: (Updatable) The Broadcom-supplied identifier of a BYOL license.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] site_id: (Updatable) The hyperscaler identifier in Broadcom systems.
         :param pulumi.Input[_builtins.str] software_type: (Updatable) The type of VMware software the BYOL applies to.  Supported values:
                * VCF (VMware Cloud Foundation)
                * VSAN (VMware vSAN)
@@ -592,7 +627,8 @@ class Byol(pulumi.CustomResource):
             description=byol_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            site_id=test_site["id"])
         ```
 
         ## Import
@@ -625,6 +661,7 @@ class Byol(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 site_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_term_end: pulumi.Input[Optional[_builtins.str]] = None,
                  time_term_start: pulumi.Input[Optional[_builtins.str]] = None,
@@ -650,6 +687,7 @@ class Byol(pulumi.CustomResource):
                 raise TypeError("Missing required property 'entitlement_key'")
             __props__.__dict__["entitlement_key"] = entitlement_key
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["site_id"] = site_id
             if software_type is None and not opts.urn:
                 raise TypeError("Missing required property 'software_type'")
             __props__.__dict__["software_type"] = software_type
@@ -684,6 +722,7 @@ class Byol(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            site_id: pulumi.Input[Optional[_builtins.str]] = None,
             software_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -706,6 +745,7 @@ class Byol(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the BYOL.
         :param pulumi.Input[_builtins.str] entitlement_key: (Updatable) The Broadcom-supplied identifier of a BYOL license.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] site_id: (Updatable) The hyperscaler identifier in Broadcom systems.
         :param pulumi.Input[_builtins.str] software_type: (Updatable) The type of VMware software the BYOL applies to.  Supported values:
                * VCF (VMware Cloud Foundation)
                * VSAN (VMware vSAN)
@@ -737,6 +777,7 @@ class Byol(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["entitlement_key"] = entitlement_key
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["site_id"] = site_id
         __props__.__dict__["software_type"] = software_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -802,6 +843,14 @@ class Byol(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
 
     @_builtins.property
     @pulumi.getter(name="softwareType")

@@ -1842,6 +1842,7 @@ class GetByolAllocationsByolAllocationCollectionItemResult(dict):
                  entitlement_key: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 site_id: _builtins.str,
                  software_type: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -1859,6 +1860,7 @@ class GetByolAllocationsByolAllocationCollectionItemResult(dict):
         :param _builtins.str entitlement_key: The Broadcom-supplied identifier of a BYOL license.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
+        :param _builtins.str site_id: The hyperscaler identifier in Broadcom systems.
         :param _builtins.str software_type: A filter to return only resources whose softwareType matches the given value.
         :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1876,6 +1878,7 @@ class GetByolAllocationsByolAllocationCollectionItemResult(dict):
         pulumi.set(__self__, "entitlement_key", entitlement_key)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "site_id", site_id)
         pulumi.set(__self__, "software_type", software_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1955,6 +1958,14 @@ class GetByolAllocationsByolAllocationCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> _builtins.str:
+        """
+        The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
 
     @_builtins.property
     @pulumi.getter(name="softwareType")
@@ -2063,6 +2074,7 @@ class GetByolsByolCollectionItemResult(dict):
                  entitlement_key: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 site_id: _builtins.str,
                  software_type: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -2080,6 +2092,7 @@ class GetByolsByolCollectionItemResult(dict):
         :param _builtins.str entitlement_key: The Broadcom-supplied identifier of a BYOL license.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
+        :param _builtins.str site_id: The hyperscaler identifier in Broadcom systems.
         :param _builtins.str software_type: A filter to return only resources whose softwareType matches the given value.
         :param _builtins.str state: A filter to return only resources whose lifecycle state matches the given value.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -2100,6 +2113,7 @@ class GetByolsByolCollectionItemResult(dict):
         pulumi.set(__self__, "entitlement_key", entitlement_key)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "site_id", site_id)
         pulumi.set(__self__, "software_type", software_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -2172,6 +2186,14 @@ class GetByolsByolCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="siteId")
+    def site_id(self) -> _builtins.str:
+        """
+        The hyperscaler identifier in Broadcom systems.
+        """
+        return pulumi.get(self, "site_id")
 
     @_builtins.property
     @pulumi.getter(name="softwareType")

@@ -8,6 +8,7 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Retrieves the external MySQL database information.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -60,6 +61,7 @@ export interface GetExternalMySqlDatabaseResult {
  * This data source provides details about a specific External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Retrieves the external MySQL database information.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

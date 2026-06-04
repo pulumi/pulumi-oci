@@ -16,14 +16,14 @@ public final class GetManagedPreferredCredentialPlainArgs extends com.pulumi.res
     public static final GetManagedPreferredCredentialPlainArgs Empty = new GetManagedPreferredCredentialPlainArgs();
 
     /**
-     * The name of the preferred credential.
+     * The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
      * 
      */
     @Import(name="credentialName", required=true)
     private String credentialName;
 
     /**
-     * @return The name of the preferred credential.
+     * @return The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
      * 
      */
     public String credentialName() {
@@ -87,7 +87,7 @@ public final class GetManagedPreferredCredentialPlainArgs extends com.pulumi.res
         }
 
         /**
-         * @param credentialName The name of the preferred credential.
+         * @param credentialName The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
          * 
          * @return builder
          * 

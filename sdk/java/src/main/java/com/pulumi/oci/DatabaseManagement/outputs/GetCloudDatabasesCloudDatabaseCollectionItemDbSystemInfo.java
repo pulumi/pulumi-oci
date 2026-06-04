@@ -21,7 +21,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfo {
      */
     private String displayName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      * 
      */
     private String id;
@@ -42,7 +42,7 @@ public final class GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfo {
         return this.displayName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      * 
      */
     public String id() {

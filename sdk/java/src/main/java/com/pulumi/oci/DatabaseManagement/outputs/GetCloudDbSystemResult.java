@@ -32,7 +32,7 @@ public final class GetCloudDbSystemResult {
      */
     private String dbSystemDiscoveryId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     private String dbaasParentInfrastructureId;
@@ -42,7 +42,7 @@ public final class GetCloudDbSystemResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return The deployment type of cloud dbsystem.
+     * @return The deployment type of cloud DB system.
      * 
      */
     private String deploymentType;
@@ -133,7 +133,7 @@ public final class GetCloudDbSystemResult {
         return this.dbSystemDiscoveryId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      * 
      */
     public String dbaasParentInfrastructureId() {
@@ -147,7 +147,7 @@ public final class GetCloudDbSystemResult {
         return this.definedTags;
     }
     /**
-     * @return The deployment type of cloud dbsystem.
+     * @return The deployment type of cloud DB system.
      * 
      */
     public String deploymentType() {

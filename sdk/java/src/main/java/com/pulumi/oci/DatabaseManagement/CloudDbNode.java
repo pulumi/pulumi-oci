@@ -175,14 +175,14 @@ public class CloudDbNode extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Name of the domain.
+     * The name of the domain.
      * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
-     * @return Name of the domain.
+     * @return The name of the domain.
      * 
      */
     public Output<String> domainName() {

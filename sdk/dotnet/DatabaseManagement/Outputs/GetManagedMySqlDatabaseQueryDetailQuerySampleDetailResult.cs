@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string QuerySampleText;
         /// <summary>
-        /// The thread id of the connection.
+        /// The thread ID of the connection.
         /// </summary>
         public readonly int ThreadId;
         /// <summary>

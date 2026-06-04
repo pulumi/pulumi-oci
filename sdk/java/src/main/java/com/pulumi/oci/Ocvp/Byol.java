@@ -61,6 +61,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(byolDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .siteId(testSite.id())
  *             .build());
  * 
  *     }
@@ -176,6 +177,20 @@ public class Byol extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    @Export(name="siteId", refs={String.class}, tree="[0]")
+    private Output<String> siteId;
+
+    /**
+     * @return (Updatable) The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    public Output<String> siteId() {
+        return this.siteId;
     }
     /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:

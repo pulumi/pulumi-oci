@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError {
     /**
-     * @return Error from the apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError> applyErrors;
@@ -25,7 +25,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
 
     private GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError() {}
     /**
-     * @return Error from the apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError> applyErrors() {

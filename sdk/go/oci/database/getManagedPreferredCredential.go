@@ -53,7 +53,7 @@ func GetManagedPreferredCredential(ctx *pulumi.Context, args *GetManagedPreferre
 
 // A collection of arguments for invoking getManagedPreferredCredential.
 type GetManagedPreferredCredentialArgs struct {
-	// The name of the preferred credential.
+	// The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
 	CredentialName string `pulumi:"credentialName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
@@ -95,7 +95,7 @@ func GetManagedPreferredCredentialOutput(ctx *pulumi.Context, args GetManagedPre
 
 // A collection of arguments for invoking getManagedPreferredCredential.
 type GetManagedPreferredCredentialOutputArgs struct {
-	// The name of the preferred credential.
+	// The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:   Basic Monitoring(MONITORING) Advanced diagnostics(PC_READ) Administrator(PC_WRITE)
 	CredentialName pulumi.StringInput `pulumi:"credentialName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`

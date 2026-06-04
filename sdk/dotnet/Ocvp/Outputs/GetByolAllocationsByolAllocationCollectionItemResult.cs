@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The hyperscaler identifier in Broadcom systems.
+        /// </summary>
+        public readonly string SiteId;
+        /// <summary>
         /// A filter to return only resources whose softwareType matches the given value.
         /// </summary>
         public readonly string SoftwareType;
@@ -98,6 +102,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string id,
 
+            string siteId,
+
             string softwareType,
 
             string state,
@@ -121,6 +127,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             EntitlementKey = entitlementKey;
             FreeformTags = freeformTags;
             Id = id;
+            SiteId = siteId;
             SoftwareType = softwareType;
             State = state;
             SystemTags = systemTags;

@@ -29,7 +29,7 @@ class ExternalMySqlDatabaseConnectorArgs:
         The set of arguments for constructing a ExternalMySqlDatabaseConnector resource.
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
-        :param pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'] connector_details: (Updatable) Create Details of external database connector.
+        :param pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'] connector_details: (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param pulumi.Input[_builtins.bool] is_test_connection_param: Parameter indicating whether database connection needs to be tested.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
                
@@ -59,7 +59,7 @@ class ExternalMySqlDatabaseConnectorArgs:
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']:
         """
-        (Updatable) Create Details of external database connector.
+        (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "connector_details")
 
@@ -132,7 +132,7 @@ class _ExternalMySqlDatabaseConnectorState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] connection_status: Connection Status
-        :param pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'] connector_details: (Updatable) Create Details of external database connector.
+        :param pulumi.Input['ExternalMySqlDatabaseConnectorConnectorDetailsArgs'] connector_details: (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param pulumi.Input[_builtins.str] connector_type: Connector Type.
         :param pulumi.Input[_builtins.str] credential_type: Credential type used to connect to database.
         :param pulumi.Input[_builtins.str] external_database_id: OCID of MySQL Database resource
@@ -252,7 +252,7 @@ class _ExternalMySqlDatabaseConnectorState:
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> pulumi.Input[Optional['ExternalMySqlDatabaseConnectorConnectorDetailsArgs']]:
         """
-        (Updatable) Create Details of external database connector.
+        (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "connector_details")
 
@@ -483,6 +483,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
 
         Creates an external MySQL connector resource.
+        MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
         ## Example Usage
 
@@ -522,7 +523,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
-        :param pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']] connector_details: (Updatable) Create Details of external database connector.
+        :param pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']] connector_details: (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param pulumi.Input[_builtins.bool] is_test_connection_param: Parameter indicating whether database connection needs to be tested.
         """
         ...
@@ -538,6 +539,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
 
         Creates an external MySQL connector resource.
+        MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 
         ## Example Usage
 
@@ -672,7 +674,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] connection_status: Connection Status
-        :param pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']] connector_details: (Updatable) Create Details of external database connector.
+        :param pulumi.Input[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict']] connector_details: (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         :param pulumi.Input[_builtins.str] connector_type: Connector Type.
         :param pulumi.Input[_builtins.str] credential_type: Credential type used to connect to database.
         :param pulumi.Input[_builtins.str] external_database_id: OCID of MySQL Database resource
@@ -759,7 +761,7 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
     @pulumi.getter(name="connectorDetails")
     def connector_details(self) -> pulumi.Output['outputs.ExternalMySqlDatabaseConnectorConnectorDetails']:
         """
-        (Updatable) Create Details of external database connector.
+        (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         """
         return pulumi.get(self, "connector_details")
 

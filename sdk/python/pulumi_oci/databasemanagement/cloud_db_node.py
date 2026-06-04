@@ -131,7 +131,7 @@ class _CloudDbNodeState:
         :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node in DBaas service.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the cloud DB node. The name does not have to be unique.
-        :param pulumi.Input[_builtins.str] domain_name: Name of the domain.
+        :param pulumi.Input[_builtins.str] domain_name: The name of the domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
                
                
@@ -308,7 +308,7 @@ class _CloudDbNodeState:
     @pulumi.getter(name="domainName")
     def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name of the domain.
+        The name of the domain.
         """
         return pulumi.get(self, "domain_name")
 
@@ -574,7 +574,7 @@ class CloudDbNode(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node in DBaas service.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the cloud DB node. The name does not have to be unique.
-        :param pulumi.Input[_builtins.str] domain_name: Name of the domain.
+        :param pulumi.Input[_builtins.str] domain_name: The name of the domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
                
                
@@ -697,7 +697,7 @@ class CloudDbNode(pulumi.CustomResource):
     @pulumi.getter(name="domainName")
     def domain_name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name of the domain.
+        The name of the domain.
         """
         return pulumi.get(self, "domain_name")
 

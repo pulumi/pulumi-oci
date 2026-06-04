@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Gets the list of External MySQL Database connectors.
  *
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -73,6 +75,8 @@ export interface GetExternalMySqlDatabaseConnectorsResult {
  * This data source provides the list of External My Sql Database Connectors in Oracle Cloud Infrastructure Database Management service.
  *
  * Gets the list of External MySQL Database connectors.
+ *
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

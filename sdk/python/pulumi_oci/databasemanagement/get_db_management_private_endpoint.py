@@ -26,7 +26,7 @@ class GetDbManagementPrivateEndpointResult:
     """
     A collection of values returned by getDbManagementPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, db_management_private_endpoint_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, is_cluster=None, is_dns_resolution_enabled=None, name=None, nsg_ids=None, private_ip=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, db_management_private_endpoint_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, is_cluster=None, is_dns_resolution_enabled=None, name=None, nsg_ids=None, private_ip=None, security_attributes=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -60,6 +60,9 @@ class GetDbManagementPrivateEndpointResult:
         if private_ip and not isinstance(private_ip, str):
             raise TypeError("Expected argument 'private_ip' to be a str")
         pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -162,6 +165,14 @@ class GetDbManagementPrivateEndpointResult:
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -219,6 +230,7 @@ class AwaitableGetDbManagementPrivateEndpointResult(GetDbManagementPrivateEndpoi
             name=self.name,
             nsg_ids=self.nsg_ids,
             private_ip=self.private_ip,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -262,6 +274,7 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
         name=pulumi.get(__ret__, 'name'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -302,6 +315,7 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
         name=pulumi.get(__response__, 'name'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_ip=pulumi.get(__response__, 'private_ip'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

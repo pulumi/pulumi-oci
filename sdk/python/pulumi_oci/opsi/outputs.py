@@ -7466,6 +7466,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
                  nsg_ids: Sequence[_builtins.str],
                  private_endpoint_status_details: _builtins.str,
                  private_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -7483,6 +7484,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
         :param Sequence[_builtins.str] nsg_ids: The OCIDs of the network security groups that the private endpoint belongs to.
         :param _builtins.str private_endpoint_status_details: A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
         :param _builtins.str private_ip: The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: Lifecycle states
         :param _builtins.str subnet_id: The OCID of the subnet.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7500,6 +7502,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoint_status_details", private_endpoint_status_details)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -7593,6 +7596,14 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
         The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
         """
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

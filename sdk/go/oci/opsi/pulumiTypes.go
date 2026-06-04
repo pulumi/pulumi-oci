@@ -14501,6 +14501,8 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	PrivateEndpointStatusDetails string `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp string `pulumi:"privateIp"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Lifecycle states
 	State string `pulumi:"state"`
 	// The OCID of the subnet.
@@ -14547,6 +14549,8 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	PrivateEndpointStatusDetails pulumi.StringInput `pulumi:"privateEndpointStatusDetails"`
 	// The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of the subnet.
@@ -14685,6 +14689,13 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) string {
 		return v.PrivateIp
 	}).(pulumi.StringOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // Lifecycle states

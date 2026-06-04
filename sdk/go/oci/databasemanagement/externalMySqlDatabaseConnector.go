@@ -18,6 +18,7 @@ import (
 // Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
 //
 // Creates an external MySQL connector resource.
+// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 //
 // ## Example Usage
 //
@@ -77,7 +78,7 @@ type ExternalMySqlDatabaseConnector struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Connection Status
 	ConnectionStatus pulumi.StringOutput `pulumi:"connectionStatus"`
-	// (Updatable) Create Details of external database connector.
+	// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ConnectorDetails ExternalMySqlDatabaseConnectorConnectorDetailsOutput `pulumi:"connectorDetails"`
 	// Connector Type.
 	ConnectorType pulumi.StringOutput `pulumi:"connectorType"`
@@ -165,7 +166,7 @@ type externalMySqlDatabaseConnectorState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Connection Status
 	ConnectionStatus *string `pulumi:"connectionStatus"`
-	// (Updatable) Create Details of external database connector.
+	// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ConnectorDetails *ExternalMySqlDatabaseConnectorConnectorDetails `pulumi:"connectorDetails"`
 	// Connector Type.
 	ConnectorType *string `pulumi:"connectorType"`
@@ -215,7 +216,7 @@ type ExternalMySqlDatabaseConnectorState struct {
 	CompartmentId pulumi.StringPtrInput
 	// Connection Status
 	ConnectionStatus pulumi.StringPtrInput
-	// (Updatable) Create Details of external database connector.
+	// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ConnectorDetails ExternalMySqlDatabaseConnectorConnectorDetailsPtrInput
 	// Connector Type.
 	ConnectorType pulumi.StringPtrInput
@@ -265,7 +266,7 @@ type externalMySqlDatabaseConnectorArgs struct {
 	CheckConnectionStatusTrigger *int `pulumi:"checkConnectionStatusTrigger"`
 	// (Updatable) OCID of compartment for the External MySQL Database.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Create Details of external database connector.
+	// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ConnectorDetails ExternalMySqlDatabaseConnectorConnectorDetails `pulumi:"connectorDetails"`
 	// Parameter indicating whether database connection needs to be tested.
 	IsTestConnectionParam bool `pulumi:"isTestConnectionParam"`
@@ -280,7 +281,7 @@ type ExternalMySqlDatabaseConnectorArgs struct {
 	CheckConnectionStatusTrigger pulumi.IntPtrInput
 	// (Updatable) OCID of compartment for the External MySQL Database.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Create Details of external database connector.
+	// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 	ConnectorDetails ExternalMySqlDatabaseConnectorConnectorDetailsInput
 	// Parameter indicating whether database connection needs to be tested.
 	IsTestConnectionParam pulumi.BoolInput
@@ -396,7 +397,7 @@ func (o ExternalMySqlDatabaseConnectorOutput) ConnectionStatus() pulumi.StringOu
 	return o.ApplyT(func(v *ExternalMySqlDatabaseConnector) pulumi.StringOutput { return v.ConnectionStatus }).(pulumi.StringOutput)
 }
 
-// (Updatable) Create Details of external database connector.
+// (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
 func (o ExternalMySqlDatabaseConnectorOutput) ConnectorDetails() ExternalMySqlDatabaseConnectorConnectorDetailsOutput {
 	return o.ApplyT(func(v *ExternalMySqlDatabaseConnector) ExternalMySqlDatabaseConnectorConnectorDetailsOutput {
 		return v.ConnectorDetails

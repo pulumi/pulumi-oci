@@ -89,7 +89,7 @@ export class CloudDbSystemDiscovery extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
     declare public readonly dbaasParentInfrastructureId: pulumi.Output<string>;
     /**
@@ -97,7 +97,7 @@ export class CloudDbSystemDiscovery extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      */
     declare public readonly deploymentType: pulumi.Output<string>;
     /**
@@ -226,7 +226,7 @@ export interface CloudDbSystemDiscoveryState {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
     dbaasParentInfrastructureId?: pulumi.Input<string | undefined>;
     /**
@@ -234,7 +234,7 @@ export interface CloudDbSystemDiscoveryState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      */
     deploymentType?: pulumi.Input<string | undefined>;
     /**
@@ -296,7 +296,7 @@ export interface CloudDbSystemDiscoveryArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems, it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
     dbaasParentInfrastructureId: pulumi.Input<string>;
     /**
@@ -304,7 +304,7 @@ export interface CloudDbSystemDiscoveryArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The deployment type of cloud dbsystem.
+     * The deployment type of cloud DB system.
      */
     deploymentType: pulumi.Input<string>;
     /**

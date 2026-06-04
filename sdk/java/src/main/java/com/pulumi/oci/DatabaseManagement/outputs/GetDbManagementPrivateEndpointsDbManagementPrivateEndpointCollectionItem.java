@@ -64,6 +64,11 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
      */
     private String privateIp;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The lifecycle state of a resource.
      * 
      */
@@ -161,6 +166,13 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         return this.privateIp;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The lifecycle state of a resource.
      * 
      */
@@ -215,6 +227,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
         private String name;
         private List<String> nsgIds;
         private String privateIp;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -233,6 +246,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
     	      this.name = defaults.name;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -324,6 +338,14 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem", "state");
@@ -375,6 +397,7 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             _resultValue.name = name;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

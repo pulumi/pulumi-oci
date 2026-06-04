@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     siteId: testSite.id,
  * });
  * ```
  *
@@ -104,6 +105,10 @@ export class Byol extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The hyperscaler identifier in Broadcom systems.
+     */
+    declare public readonly siteId: pulumi.Output<string>;
+    /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)
@@ -167,6 +172,7 @@ export class Byol extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["entitlementKey"] = state?.entitlementKey;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["siteId"] = state?.siteId;
             resourceInputs["softwareType"] = state?.softwareType;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -204,6 +210,7 @@ export class Byol extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["entitlementKey"] = args?.entitlementKey;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["siteId"] = args?.siteId;
             resourceInputs["softwareType"] = args?.softwareType;
             resourceInputs["timeTermEnd"] = args?.timeTermEnd;
             resourceInputs["timeTermStart"] = args?.timeTermStart;
@@ -251,6 +258,10 @@ export interface ByolState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The hyperscaler identifier in Broadcom systems.
+     */
+    siteId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
@@ -324,6 +335,10 @@ export interface ByolArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The hyperscaler identifier in Broadcom systems.
+     */
+    siteId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)

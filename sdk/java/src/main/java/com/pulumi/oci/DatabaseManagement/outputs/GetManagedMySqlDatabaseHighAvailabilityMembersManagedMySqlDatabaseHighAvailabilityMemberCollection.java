@@ -50,7 +50,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
      */
     private String singlePrimaryMode;
     /**
-     * @return High availability status summary of a MySQL server.
+     * @return High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummary> statusSummaries;
@@ -116,7 +116,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
         return this.singlePrimaryMode;
     }
     /**
-     * @return High availability status summary of a MySQL server.
+     * @return High availability status summary of a MySQL server. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummary> statusSummaries() {

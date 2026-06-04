@@ -25,6 +25,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool>? IsResizable { get; set; }
 
         /// <summary>
+        /// The maximum size of file system.
+        /// </summary>
+        [Input("maxSizeGb")]
+        public Input<int>? MaxSizeGb { get; set; }
+
+        /// <summary>
         /// The minimum size of file system.
         /// </summary>
         [Input("minSizeGb")]

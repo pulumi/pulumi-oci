@@ -59,6 +59,11 @@ public final class GetByolAllocationResult {
      */
     private String id;
     /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    private String siteId;
+    /**
      * @return The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)
@@ -166,6 +171,13 @@ public final class GetByolAllocationResult {
         return this.id;
     }
     /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    public String siteId() {
+        return this.siteId;
+    }
+    /**
      * @return The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)
@@ -238,6 +250,7 @@ public final class GetByolAllocationResult {
         private String entitlementKey;
         private Map<String,String> freeformTags;
         private String id;
+        private String siteId;
         private String softwareType;
         private String state;
         private Map<String,String> systemTags;
@@ -258,6 +271,7 @@ public final class GetByolAllocationResult {
     	      this.entitlementKey = defaults.entitlementKey;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.siteId = defaults.siteId;
     	      this.softwareType = defaults.softwareType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -348,6 +362,14 @@ public final class GetByolAllocationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder siteId(String siteId) {
+            if (siteId == null) {
+              throw new MissingRequiredPropertyException("GetByolAllocationResult", "siteId");
+            }
+            this.siteId = siteId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareType(String softwareType) {
             if (softwareType == null) {
               throw new MissingRequiredPropertyException("GetByolAllocationResult", "softwareType");
@@ -415,6 +437,7 @@ public final class GetByolAllocationResult {
             _resultValue.entitlementKey = entitlementKey;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.siteId = siteId;
             _resultValue.softwareType = softwareType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

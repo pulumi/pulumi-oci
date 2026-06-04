@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> ComponentName { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         /// </summary>
         [Output("dbaasId")]
         public Output<string> DbaasId { get; private set; } = null!;
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? ComponentName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         /// </summary>
         [Input("dbaasId")]
         public Input<string>? DbaasId { get; set; }

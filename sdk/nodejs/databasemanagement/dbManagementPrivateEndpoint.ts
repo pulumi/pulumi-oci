@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
  *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
  *     nsgIds: dbManagementPrivateEndpointNsgIds,
+ *     securityAttributes: dbManagementPrivateEndpointSecurityAttributes,
  * });
  * ```
  *
@@ -108,6 +109,10 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current lifecycle state of the Database Management private endpoint.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -154,6 +159,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["name"] = state?.name;
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -175,6 +181,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["isDnsResolutionEnabled"] = args?.isDnsResolutionEnabled;
             resourceInputs["name"] = args?.name;
             resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -227,6 +234,10 @@ export interface DbManagementPrivateEndpointState {
      * The IP addresses assigned to the Database Management private endpoint.
      */
     privateIp?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current lifecycle state of the Database Management private endpoint.
      */
@@ -289,6 +300,10 @@ export interface DbManagementPrivateEndpointArgs {
      * (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      *

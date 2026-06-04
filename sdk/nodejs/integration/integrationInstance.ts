@@ -254,7 +254,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
@@ -357,6 +357,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["state"] = args?.state;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["disasterRecoveryDetails"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
@@ -365,7 +366,6 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
-            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -643,4 +643,8 @@ export interface IntegrationInstanceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string | undefined>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

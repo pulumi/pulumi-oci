@@ -169,7 +169,7 @@ class GetCloudDbNodeResult:
     @pulumi.getter(name="domainName")
     def domain_name(self) -> _builtins.str:
         """
-        Name of the domain.
+        The name of the domain.
         """
         return pulumi.get(self, "domain_name")
 

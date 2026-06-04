@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DbSystemDiscoveryId { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
         /// </summary>
         [Output("dbaasParentInfrastructureId")]
         public Output<string> DbaasParentInfrastructureId { get; private set; } = null!;
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The deployment type of cloud dbsystem.
+        /// The deployment type of cloud DB system.
         /// </summary>
         [Output("deploymentType")]
         public Output<string> DeploymentType { get; private set; } = null!;
@@ -295,7 +295,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? DbSystemDiscoveryId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM DB systems , it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
         /// </summary>
         [Input("dbaasParentInfrastructureId")]
         public Input<string>? DbaasParentInfrastructureId { get; set; }
@@ -313,7 +313,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
 
         /// <summary>
-        /// The deployment type of cloud dbsystem.
+        /// The deployment type of cloud DB system.
         /// </summary>
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }

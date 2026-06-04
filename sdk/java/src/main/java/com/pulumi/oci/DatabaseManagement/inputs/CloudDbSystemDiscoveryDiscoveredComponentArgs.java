@@ -44,14 +44,14 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
     }
 
     /**
-     * The list of asm instances for the cloud Asm.
+     * The list of ASM instances for the cloud Asm.
      * 
      */
     @Import(name="asmInstances")
     private @Nullable Output<List<CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs>> asmInstances;
 
     /**
-     * @return The list of asm instances for the cloud Asm.
+     * @return The list of ASM instances for the cloud Asm.
      * 
      */
     public Optional<Output<List<CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs>>> asmInstances() {
@@ -374,14 +374,14 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     @Import(name="dbaasId")
     private @Nullable Output<String> dbaasId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      * 
      */
     public Optional<Output<String>> dbaasId() {
@@ -905,7 +905,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
         }
 
         /**
-         * @param asmInstances The list of asm instances for the cloud Asm.
+         * @param asmInstances The list of ASM instances for the cloud Asm.
          * 
          * @return builder
          * 
@@ -916,7 +916,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
         }
 
         /**
-         * @param asmInstances The list of asm instances for the cloud Asm.
+         * @param asmInstances The list of ASM instances for the cloud Asm.
          * 
          * @return builder
          * 
@@ -926,7 +926,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
         }
 
         /**
-         * @param asmInstances The list of asm instances for the cloud Asm.
+         * @param asmInstances The list of ASM instances for the cloud Asm.
          * 
          * @return builder
          * 
@@ -1417,7 +1417,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
         }
 
         /**
-         * @param dbaasId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+         * @param dbaasId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
          * 
          * @return builder
          * 
@@ -1428,7 +1428,7 @@ public final class CloudDbSystemDiscoveryDiscoveredComponentArgs extends com.pul
         }
 
         /**
-         * @param dbaasId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+         * @param dbaasId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing DBaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
          * 
          * @return builder
          * 

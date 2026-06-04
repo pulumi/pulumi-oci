@@ -144,6 +144,21 @@ public final class ByolAllocationState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    @Import(name="siteId")
+    private @Nullable Output<String> siteId;
+
+    /**
+     * @return The hyperscaler identifier in Broadcom systems.
+     * 
+     */
+    public Optional<Output<String>> siteId() {
+        return Optional.ofNullable(this.siteId);
+    }
+
+    /**
      * The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
      * * VSAN (VMware vSAN)
@@ -267,6 +282,7 @@ public final class ByolAllocationState extends com.pulumi.resources.ResourceArgs
         this.displayName = $.displayName;
         this.entitlementKey = $.entitlementKey;
         this.freeformTags = $.freeformTags;
+        this.siteId = $.siteId;
         this.softwareType = $.softwareType;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -466,6 +482,27 @@ public final class ByolAllocationState extends com.pulumi.resources.ResourceArgs
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param siteId The hyperscaler identifier in Broadcom systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder siteId(@Nullable Output<String> siteId) {
+            $.siteId = siteId;
+            return this;
+        }
+
+        /**
+         * @param siteId The hyperscaler identifier in Broadcom systems.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder siteId(String siteId) {
+            return siteId(Output.of(siteId));
         }
 
         /**

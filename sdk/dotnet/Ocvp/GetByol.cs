@@ -157,6 +157,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The hyperscaler identifier in Broadcom systems.
+        /// </summary>
+        public readonly string SiteId;
+        /// <summary>
         /// The type of VMware software the BYOL applies to.  Supported values:
         /// * VCF (VMware Cloud Foundation)
         /// * VSAN (VMware vSAN)
@@ -216,6 +220,8 @@ namespace Pulumi.Oci.Ocvp
 
             string id,
 
+            string siteId,
+
             string softwareType,
 
             string state,
@@ -241,6 +247,7 @@ namespace Pulumi.Oci.Ocvp
             EntitlementKey = entitlementKey;
             FreeformTags = freeformTags;
             Id = id;
+            SiteId = siteId;
             SoftwareType = softwareType;
             State = state;
             SystemTags = systemTags;

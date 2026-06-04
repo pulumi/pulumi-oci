@@ -54,6 +54,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The lifecycle state of a resource.
         /// </summary>
         public readonly string State;
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string privateIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -116,6 +122,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             Name = name;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

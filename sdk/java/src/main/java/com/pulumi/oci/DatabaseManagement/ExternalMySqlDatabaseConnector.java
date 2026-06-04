@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
  * 
  * Creates an external MySQL connector resource.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  * 
  * ## Example Usage
  * 
@@ -144,14 +145,14 @@ public class ExternalMySqlDatabaseConnector extends com.pulumi.resources.CustomR
         return this.connectionStatus;
     }
     /**
-     * (Updatable) Create Details of external database connector.
+     * (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     @Export(name="connectorDetails", refs={ExternalMySqlDatabaseConnectorConnectorDetails.class}, tree="[0]")
     private Output<ExternalMySqlDatabaseConnectorConnectorDetails> connectorDetails;
 
     /**
-     * @return (Updatable) Create Details of external database connector.
+     * @return (Updatable) Create Details of external database connector. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      * 
      */
     public Output<ExternalMySqlDatabaseConnectorConnectorDetails> connectorDetails() {

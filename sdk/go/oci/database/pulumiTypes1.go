@@ -911,6 +911,8 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemCo
 	IsBackupPartition bool `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable bool `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb int `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb int `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -933,6 +935,8 @@ type GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemCo
 	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb pulumi.IntInput `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -1002,6 +1006,13 @@ func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSyste
 	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) bool {
 		return v.IsResizable
 	}).(pulumi.BoolOutput)
+}
+
+// The maximum size of file system.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MaxSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration) int {
+		return v.MaxSizeGb
+	}).(pulumi.IntOutput)
 }
 
 // The minimum size of file system.
@@ -27530,6 +27541,8 @@ type GetExadataInfrastructureDefinedFileSystemConfiguration struct {
 	IsBackupPartition bool `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable bool `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb int `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb int `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -27552,6 +27565,8 @@ type GetExadataInfrastructureDefinedFileSystemConfigurationArgs struct {
 	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb pulumi.IntInput `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -27617,6 +27632,11 @@ func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) IsBackupPa
 // If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) IsResizable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) bool { return v.IsResizable }).(pulumi.BoolOutput)
+}
+
+// The maximum size of file system.
+func (o GetExadataInfrastructureDefinedFileSystemConfigurationOutput) MaxSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDefinedFileSystemConfiguration) int { return v.MaxSizeGb }).(pulumi.IntOutput)
 }
 
 // The minimum size of file system.
@@ -29216,6 +29236,8 @@ type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguratio
 	IsBackupPartition bool `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable bool `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb int `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb int `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -29238,6 +29260,8 @@ type GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguratio
 	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
 	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
 	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb pulumi.IntInput `pulumi:"maxSizeGb"`
 	// The minimum size of file system.
 	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
 	// The mount point of file system.
@@ -29307,6 +29331,13 @@ func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigura
 	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) bool {
 		return v.IsResizable
 	}).(pulumi.BoolOutput)
+}
+
+// The maximum size of file system.
+func (o GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationOutput) MaxSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfiguration) int {
+		return v.MaxSizeGb
+	}).(pulumi.IntOutput)
 }
 
 // The minimum size of file system.

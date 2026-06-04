@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemResult
     {
         /// <summary>
-        /// The MySQL error, warning or note raised when a query is run, if any.
+        /// The MySQL error, warning, or note raised when a query is run, if any. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseDigestErrorsMySqlDigestErrorsCollectionItemErrorResult> Errors;
         /// <summary>

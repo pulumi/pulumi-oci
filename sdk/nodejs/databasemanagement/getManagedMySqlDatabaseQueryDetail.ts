@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves query sample details, explain plan and potential warnings for a given digest.
+ * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *
@@ -56,22 +57,23 @@ export interface GetManagedMySqlDatabaseQueryDetailResult {
     readonly id: string;
     readonly managedMySqlDatabaseId: string;
     /**
-     * The explain plan for a given MySQL query.
+     * The explain plan for a given MySQL query. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      */
     readonly queryExplainPlans: outputs.DatabaseManagement.GetManagedMySqlDatabaseQueryDetailQueryExplainPlan[];
     /**
-     * The errors, warnings and notes that could be raised by the execution of the query.
+     * The errors, warnings, and notes that could be raised by the execution of the query.
      */
     readonly queryMessages: outputs.DatabaseManagement.GetManagedMySqlDatabaseQueryDetailQueryMessage[];
     /**
-     * The details of a query sample including the query text, execution time and other details.
+     * The details of a query sample including the query text, execution time, and other details. MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
      */
     readonly querySampleDetails: outputs.DatabaseManagement.GetManagedMySqlDatabaseQueryDetailQuerySampleDetail[];
 }
 /**
  * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves query sample details, explain plan and potential warnings for a given digest.
+ * Retrieves query sample details, explain plan, and potential warnings for a given digest.
+ * MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
  *
  * ## Example Usage
  *

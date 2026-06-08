@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs;
+ * import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

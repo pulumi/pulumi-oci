@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Analytics.AnalyticsInstanceArgs;
  * import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceCapacityArgs;
  * import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsArgs;
+ * import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

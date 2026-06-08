@@ -649,6 +649,9 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
      * import java.util.ArrayList;
      * import java.util.Arrays;
      * import java.util.Map;
@@ -703,6 +706,9 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
      * import java.util.ArrayList;
      * import java.util.Arrays;
      * import java.util.Map;
@@ -757,6 +763,9 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
      * import java.util.ArrayList;
      * import java.util.Arrays;
      * import java.util.Map;
@@ -811,6 +820,9 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
      * import java.util.ArrayList;
      * import java.util.Arrays;
      * import java.util.Map;
@@ -865,6 +877,9 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs;
      * import java.util.ArrayList;
      * import java.util.Arrays;
      * import java.util.Map;

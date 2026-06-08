@@ -66,6 +66,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsDataPumpParametersArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsExportDirectoryObjectArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsImportDirectoryObjectArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsMetadataRemapArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationInitialLoadSettingsTablespaceDetailsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

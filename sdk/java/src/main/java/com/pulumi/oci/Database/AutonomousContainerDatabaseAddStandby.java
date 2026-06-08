@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.AutonomousContainerDatabaseAddStandby;
  * import com.pulumi.oci.Database.AutonomousContainerDatabaseAddStandbyArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

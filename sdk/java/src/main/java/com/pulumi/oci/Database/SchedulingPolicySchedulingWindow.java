@@ -32,6 +32,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.SchedulingPolicySchedulingWindow;
  * import com.pulumi.oci.Database.SchedulingPolicySchedulingWindowArgs;
  * import com.pulumi.oci.Database.inputs.SchedulingPolicySchedulingWindowWindowPreferenceArgs;
+ * import com.pulumi.oci.Database.inputs.SchedulingPolicySchedulingWindowWindowPreferenceDaysOfWeekArgs;
+ * import com.pulumi.oci.Database.inputs.SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

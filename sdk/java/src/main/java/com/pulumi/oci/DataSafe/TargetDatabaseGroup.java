@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataSafe.TargetDatabaseGroupArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseGroupMatchingCriteriaArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseGroupMatchingCriteriaIncludeArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs;
  * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseGroupMatchingCriteriaExcludeArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

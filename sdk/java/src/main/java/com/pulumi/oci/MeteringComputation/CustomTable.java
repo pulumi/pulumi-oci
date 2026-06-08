@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MeteringComputation.CustomTable;
  * import com.pulumi.oci.MeteringComputation.CustomTableArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.CustomTableSavedCustomTableArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.CustomTableSavedCustomTableGroupByTagArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

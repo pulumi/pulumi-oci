@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.AgentDataSource;
  * import com.pulumi.oci.GenerativeAi.AgentDataSourceArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentDataSourceDataSourceConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentDataSourceDataSourceConfigObjectStoragePrefixArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.StackMonitoring.MetricExtensionArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionMetricListArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesInParamDetailArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesOutParamDetailsArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesScriptDetailsArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MetricExtensionQueryPropertiesSqlDetailsArgs;

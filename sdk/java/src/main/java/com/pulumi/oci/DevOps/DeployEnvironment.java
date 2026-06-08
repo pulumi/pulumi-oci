@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.DeployEnvironment;
  * import com.pulumi.oci.DevOps.DeployEnvironmentArgs;
  * import com.pulumi.oci.DevOps.inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs;
  * import com.pulumi.oci.DevOps.inputs.DeployEnvironmentNetworkChannelArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

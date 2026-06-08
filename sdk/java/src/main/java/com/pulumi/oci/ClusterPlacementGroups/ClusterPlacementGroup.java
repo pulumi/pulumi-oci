@@ -37,6 +37,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroup;
  * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupArgs;
  * import com.pulumi.oci.ClusterPlacementGroups.inputs.ClusterPlacementGroupCapabilitiesArgs;
+ * import com.pulumi.oci.ClusterPlacementGroups.inputs.ClusterPlacementGroupCapabilitiesItemArgs;
+ * import com.pulumi.oci.ClusterPlacementGroups.inputs.ClusterPlacementGroupCapabilitiesItemAdditionalDetailsArgs;
  * import com.pulumi.oci.ClusterPlacementGroups.inputs.ClusterPlacementGroupPlacementInstructionArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

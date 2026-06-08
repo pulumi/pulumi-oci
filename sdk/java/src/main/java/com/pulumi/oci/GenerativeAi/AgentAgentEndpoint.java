@@ -50,6 +50,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigOutputLocationArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointProvisionedCapacityConfigToolRuntimeConfigArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointSessionConfigArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

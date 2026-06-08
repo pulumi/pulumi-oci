@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LoadBalancer.LoadBalancerRoutingPolicy;
  * import com.pulumi.oci.LoadBalancer.LoadBalancerRoutingPolicyArgs;
  * import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerRoutingPolicyRuleArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerRoutingPolicyRuleActionArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

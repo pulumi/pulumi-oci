@@ -43,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.CloudMigrations.TargetAssetArgs;
  * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecArgs;
  * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecAgentConfigArgs;
+ * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecAgentConfigPluginsConfigArgs;
  * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecCreateVnicDetailsArgs;
  * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecInstanceOptionsArgs;
  * import com.pulumi.oci.CloudMigrations.inputs.TargetAssetUserSpecPreemptibleInstanceConfigArgs;

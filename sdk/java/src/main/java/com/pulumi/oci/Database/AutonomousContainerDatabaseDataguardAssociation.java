@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociation;
  * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.VnicAttachment;
  * import com.pulumi.oci.Core.VnicAttachmentArgs;
  * import com.pulumi.oci.Core.inputs.VnicAttachmentCreateVnicDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

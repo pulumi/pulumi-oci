@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskConfigProviderDelegateArgs;
+ * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskConfigProviderDelegateBindingArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesArgs;
  * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs;

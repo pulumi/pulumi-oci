@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataSafe.MaskingPoliciesMaskingColumn;
  * import com.pulumi.oci.DataSafe.MaskingPoliciesMaskingColumnArgs;
  * import com.pulumi.oci.DataSafe.inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs;
+ * import com.pulumi.oci.DataSafe.inputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

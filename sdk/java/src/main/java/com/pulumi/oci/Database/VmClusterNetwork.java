@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.VmClusterNetworkArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterNetworkScanArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkNodeArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterNetworkDrScanArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

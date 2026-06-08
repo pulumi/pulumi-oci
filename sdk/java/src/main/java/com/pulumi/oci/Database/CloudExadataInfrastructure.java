@@ -46,6 +46,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
  * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceVersionPreferencesArgs;
  * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
+ * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs;
+ * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

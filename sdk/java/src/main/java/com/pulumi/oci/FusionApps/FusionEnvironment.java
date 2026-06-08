@@ -45,6 +45,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentAdditionalEgressRuleArgs;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
  * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleArgs;
+ * import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleConditionArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

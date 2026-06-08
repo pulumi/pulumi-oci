@@ -44,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FleetSoftwareUpdate.FsuCycle;
  * import com.pulumi.oci.FleetSoftwareUpdate.FsuCycleArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsArgs;
+ * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsComponentArgs;
+ * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleApplyActionScheduleArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleBatchingStrategyArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleDiagnosticsCollectionArgs;

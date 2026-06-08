@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsArgs;
  * import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs;
  * import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs;
+ * import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

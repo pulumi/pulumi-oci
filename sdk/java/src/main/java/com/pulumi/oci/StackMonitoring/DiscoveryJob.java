@@ -39,6 +39,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsItemArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsTagsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

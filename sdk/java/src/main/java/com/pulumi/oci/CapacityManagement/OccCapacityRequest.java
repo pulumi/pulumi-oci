@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.CapacityManagement.OccCapacityRequest;
  * import com.pulumi.oci.CapacityManagement.OccCapacityRequestArgs;
  * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestDetailArgs;
+ * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs;
  * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestPatchOperationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Events.Rule;
  * import com.pulumi.oci.Events.RuleArgs;
  * import com.pulumi.oci.Events.inputs.RuleActionsArgs;
+ * import com.pulumi.oci.Events.inputs.RuleActionsActionArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

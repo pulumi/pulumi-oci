@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FleetAppsManagement.FleetCredential;
  * import com.pulumi.oci.FleetAppsManagement.FleetCredentialArgs;
  * import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialEntitySpecificsArgs;
+ * import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialEntitySpecificsVariableArgs;
  * import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialPasswordArgs;
  * import com.pulumi.oci.FleetAppsManagement.inputs.FleetCredentialUserArgs;
  * import java.util.ArrayList;

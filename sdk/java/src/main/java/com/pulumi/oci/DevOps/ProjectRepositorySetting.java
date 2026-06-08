@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.ProjectRepositorySetting;
  * import com.pulumi.oci.DevOps.ProjectRepositorySettingArgs;
  * import com.pulumi.oci.DevOps.inputs.ProjectRepositorySettingApprovalRulesArgs;
+ * import com.pulumi.oci.DevOps.inputs.ProjectRepositorySettingApprovalRulesItemArgs;
+ * import com.pulumi.oci.DevOps.inputs.ProjectRepositorySettingApprovalRulesItemReviewerArgs;
  * import com.pulumi.oci.DevOps.inputs.ProjectRepositorySettingMergeSettingsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

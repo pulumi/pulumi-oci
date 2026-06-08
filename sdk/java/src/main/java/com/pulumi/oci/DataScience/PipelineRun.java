@@ -56,6 +56,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStorageMountConfigurationOverrideDetailsListArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

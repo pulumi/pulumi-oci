@@ -48,6 +48,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceVersionPreferencesArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowMonthArgs;
  * import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

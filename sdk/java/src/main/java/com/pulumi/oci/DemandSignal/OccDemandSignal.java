@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DemandSignal.OccDemandSignal;
  * import com.pulumi.oci.DemandSignal.OccDemandSignalArgs;
  * import com.pulumi.oci.DemandSignal.inputs.OccDemandSignalOccDemandSignalArgs;
+ * import com.pulumi.oci.DemandSignal.inputs.OccDemandSignalOccDemandSignalValueArgs;
  * import com.pulumi.oci.DemandSignal.inputs.OccDemandSignalPatchOperationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

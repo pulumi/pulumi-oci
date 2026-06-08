@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .waasPolicyId(testWaasPolicy.id())
  *             .key(key)
  *             .action("DETECT")
- *             .exclusions(ProtectionRuleExclusionArgs.builder()
+ *             .exclusions(com.pulumi.oci.Waas.inputs.ProtectionRuleExclusionArgs.builder()
  *                 .exclusions("example.com")
  *                 .target("REQUEST_COOKIES")
  *                 .build())

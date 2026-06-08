@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Redis.RedisCluster;
  * import com.pulumi.oci.Redis.RedisClusterArgs;
  * import com.pulumi.oci.Redis.inputs.RedisClusterImportFromObjectStorageDetailsArgs;
+ * import com.pulumi.oci.Redis.inputs.RedisClusterImportFromObjectStorageDetailsObjectArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

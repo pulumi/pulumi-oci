@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.AiVision.StreamJob;
  * import com.pulumi.oci.AiVision.StreamJobArgs;
  * import com.pulumi.oci.AiVision.inputs.StreamJobFeatureArgs;
+ * import com.pulumi.oci.AiVision.inputs.StreamJobFeatureTrackingTypeArgs;
  * import com.pulumi.oci.AiVision.inputs.StreamJobStreamOutputLocationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

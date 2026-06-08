@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.StackMonitoring.ProcessSet;
  * import com.pulumi.oci.StackMonitoring.ProcessSetArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.ProcessSetSpecificationArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.ProcessSetSpecificationItemArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

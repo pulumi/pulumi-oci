@@ -42,13 +42,32 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupLogLocationArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupAssociationArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackendSetMappingArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupConfigArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupLocationArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsAttachmentArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsMountArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberCommonDestinationKeyArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberLoadBalancerMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberResourceModifierMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVaultMappingArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVnicMappingArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -63,7 +82,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         final var config = ctx.config();
- *         final var disassociateTrigger = config.get("disassociateTrigger").orElse(0);
+ *         final var disassociateTrigger = config.getDouble("disassociateTrigger").orElse(0);
  *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(drProtectionGroupDisplayName)

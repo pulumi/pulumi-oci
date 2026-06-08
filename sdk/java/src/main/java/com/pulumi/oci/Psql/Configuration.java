@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Psql.Configuration;
  * import com.pulumi.oci.Psql.ConfigurationArgs;
  * import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesArgs;
+ * import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesItemArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

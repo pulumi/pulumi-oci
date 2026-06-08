@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscription;
  * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscriptionArgs;
  * import com.pulumi.oci.AnnouncementsService.inputs.AnnouncementSubscriptionFilterGroupsArgs;
+ * import com.pulumi.oci.AnnouncementsService.inputs.AnnouncementSubscriptionFilterGroupsFilterArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

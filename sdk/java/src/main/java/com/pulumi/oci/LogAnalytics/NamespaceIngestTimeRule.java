@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LogAnalytics.NamespaceIngestTimeRuleArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleActionArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleConditionsArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

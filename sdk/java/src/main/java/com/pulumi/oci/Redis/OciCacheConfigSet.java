@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Redis.OciCacheConfigSet;
  * import com.pulumi.oci.Redis.OciCacheConfigSetArgs;
  * import com.pulumi.oci.Redis.inputs.OciCacheConfigSetConfigurationDetailsArgs;
+ * import com.pulumi.oci.Redis.inputs.OciCacheConfigSetConfigurationDetailsItemArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

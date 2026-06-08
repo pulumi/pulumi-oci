@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayIpv6addressConfigurationArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayLockArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsServerArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

@@ -36,6 +36,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LoadBalancer.RuleSet;
  * import com.pulumi.oci.LoadBalancer.RuleSetArgs;
  * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemConditionArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemIpMaxConnectionArgs;
  * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemRedirectUriArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.DeployPipeline;
  * import com.pulumi.oci.DevOps.DeployPipelineArgs;
  * import com.pulumi.oci.DevOps.inputs.DeployPipelineDeployPipelineParametersArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployPipelineDeployPipelineParametersItemArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

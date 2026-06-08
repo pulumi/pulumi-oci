@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionCostAnalysisUiArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryForecastArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryGroupByTagArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

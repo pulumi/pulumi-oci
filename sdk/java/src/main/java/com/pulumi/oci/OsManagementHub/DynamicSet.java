@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.OsManagementHub.DynamicSet;
  * import com.pulumi.oci.OsManagementHub.DynamicSetArgs;
  * import com.pulumi.oci.OsManagementHub.inputs.DynamicSetMatchingRuleArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.DynamicSetMatchingRuleTagArgs;
  * import com.pulumi.oci.OsManagementHub.inputs.DynamicSetTargetCompartmentArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

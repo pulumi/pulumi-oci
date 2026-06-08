@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MeteringComputation.inputs.ScheduleResultLocationArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesDateRangeArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesGroupByTagArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

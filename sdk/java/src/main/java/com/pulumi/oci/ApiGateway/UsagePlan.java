@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementArgs;
  * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementQuotaArgs;
  * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementRateLimitArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementTargetArgs;
  * import com.pulumi.oci.ApiGateway.inputs.UsagePlanLockArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

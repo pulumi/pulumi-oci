@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderJitUserProvGroupMappingArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderTagArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderJitProvAssignedGroupArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

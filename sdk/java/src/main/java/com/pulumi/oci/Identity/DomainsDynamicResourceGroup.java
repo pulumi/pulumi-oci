@@ -44,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Identity.DomainsDynamicResourceGroupArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupTagArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

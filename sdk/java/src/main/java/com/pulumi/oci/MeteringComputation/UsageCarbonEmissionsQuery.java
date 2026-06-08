@@ -36,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs;
  * import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

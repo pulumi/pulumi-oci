@@ -42,6 +42,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.CloudAutonomousVmCluster;
  * import com.pulumi.oci.Database.CloudAutonomousVmClusterArgs;
  * import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs;
+ * import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

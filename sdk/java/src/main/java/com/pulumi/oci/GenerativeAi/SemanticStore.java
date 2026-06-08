@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.SemanticStoreArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.SemanticStoreDataSourceArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.SemanticStoreSchemasArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.SemanticStoreSchemasSchemaArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.SemanticStoreRefreshScheduleArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

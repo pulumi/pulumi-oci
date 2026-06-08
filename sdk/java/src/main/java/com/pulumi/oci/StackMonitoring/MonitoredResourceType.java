@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.StackMonitoring.MonitoredResourceType;
  * import com.pulumi.oci.StackMonitoring.MonitoredResourceTypeArgs;
  * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataUniquePropertySetArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

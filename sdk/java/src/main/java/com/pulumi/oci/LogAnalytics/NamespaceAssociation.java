@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LogAnalytics.NamespaceAssociation;
  * import com.pulumi.oci.LogAnalytics.NamespaceAssociationArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.NamespaceAssociationAssociationPropertyArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceAssociationAssociationPropertyPatternArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Marketplace.Publication;
  * import com.pulumi.oci.Marketplace.PublicationArgs;
  * import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsArgs;
+ * import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsEulaArgs;
  * import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsOperatingSystemArgs;
  * import com.pulumi.oci.Marketplace.inputs.PublicationSupportContactArgs;
  * import java.util.ArrayList;

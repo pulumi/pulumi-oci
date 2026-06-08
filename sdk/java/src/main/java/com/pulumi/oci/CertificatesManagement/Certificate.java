@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.CertificatesManagement.CertificateArgs;
  * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigArgs;
  * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectAlternativeNameArgs;
  * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigValidityArgs;
  * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateRuleArgs;
  * import java.util.ArrayList;

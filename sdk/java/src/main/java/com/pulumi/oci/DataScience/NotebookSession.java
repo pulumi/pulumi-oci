@@ -44,6 +44,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs;
  * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

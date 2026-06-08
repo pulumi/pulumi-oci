@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetItemArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportFormatArgs;
  * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs;

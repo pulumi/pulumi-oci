@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Functions.Application;
  * import com.pulumi.oci.Functions.ApplicationArgs;
  * import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigArgs;
+ * import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigKeyDetailArgs;
  * import com.pulumi.oci.Functions.inputs.ApplicationLoggingArgs;
  * import com.pulumi.oci.Functions.inputs.ApplicationTraceConfigArgs;
  * import java.util.ArrayList;

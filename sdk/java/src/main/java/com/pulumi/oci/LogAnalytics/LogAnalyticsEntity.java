@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.LogAnalytics.LogAnalyticsEntity;
  * import com.pulumi.oci.LogAnalytics.LogAnalyticsEntityArgs;
  * import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsEntityMetadataItemArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

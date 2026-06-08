@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataFlow.SqlEndpoint;
  * import com.pulumi.oci.DataFlow.SqlEndpointArgs;
  * import com.pulumi.oci.DataFlow.inputs.SqlEndpointNetworkConfigurationArgs;
+ * import com.pulumi.oci.DataFlow.inputs.SqlEndpointNetworkConfigurationAccessControlRuleArgs;
  * import com.pulumi.oci.DataFlow.inputs.SqlEndpointDriverShapeConfigArgs;
  * import com.pulumi.oci.DataFlow.inputs.SqlEndpointExecutorShapeConfigArgs;
  * import java.util.ArrayList;

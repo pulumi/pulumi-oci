@@ -42,6 +42,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.ReplicaArgs;
  * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
  * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesTelemetryConfigurationArgs;
+ * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesTelemetryConfigurationLogArgs;
+ * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesTelemetryConfigurationLogDestinationConfigurationArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

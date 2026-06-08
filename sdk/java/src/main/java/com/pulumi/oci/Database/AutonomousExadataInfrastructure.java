@@ -39,6 +39,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.AutonomousExadataInfrastructure;
  * import com.pulumi.oci.Database.AutonomousExadataInfrastructureArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;

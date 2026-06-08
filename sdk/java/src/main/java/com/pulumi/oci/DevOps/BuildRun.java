@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DevOps.BuildRun;
  * import com.pulumi.oci.DevOps.BuildRunArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunArgumentsArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunArgumentsItemArgs;
  * import com.pulumi.oci.DevOps.inputs.BuildRunCommitInfoArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;

@@ -132,6 +132,11 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable String ipAddress;
     /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    private @Nullable String ipv6address;
+    /**
      * @return Specifies if the DB System is highly available.
      * 
      */
@@ -351,6 +356,13 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    public Optional<String> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
+    }
+    /**
      * @return Specifies if the DB System is highly available.
      * 
      */
@@ -479,6 +491,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String hostnameLabel;
         private @Nullable String id;
         private @Nullable String ipAddress;
+        private @Nullable String ipv6address;
         private @Nullable Boolean isHighlyAvailable;
         private @Nullable List<MysqlBackupDbSystemSnapshotMaintenance> maintenances;
         private @Nullable String mysqlVersion;
@@ -517,6 +530,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6address = defaults.ipv6address;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
@@ -678,6 +692,12 @@ public final class MysqlBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6address(@Nullable String ipv6address) {
+
+            this.ipv6address = ipv6address;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isHighlyAvailable(@Nullable Boolean isHighlyAvailable) {
 
             this.isHighlyAvailable = isHighlyAvailable;
@@ -799,6 +819,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6address = ipv6address;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;

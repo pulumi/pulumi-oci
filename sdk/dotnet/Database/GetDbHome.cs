@@ -159,6 +159,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Represents database home will be managed by oracle or customer
+        /// </summary>
+        public readonly string HomeType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         public readonly string Id;
@@ -222,6 +226,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableDictionary<string, string> freeformTags,
 
+            string homeType,
+
             string id,
 
             bool isDesupportedVersion,
@@ -257,6 +263,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             EnableDatabaseDelete = enableDatabaseDelete;
             FreeformTags = freeformTags;
+            HomeType = homeType;
             Id = id;
             IsDesupportedVersion = isDesupportedVersion;
             IsUnifiedAuditingEnabled = isUnifiedAuditingEnabled;

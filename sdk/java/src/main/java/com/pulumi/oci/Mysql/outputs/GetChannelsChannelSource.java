@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetChannelsChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetChannelsChannelSourceSslCaCertificate;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -24,6 +25,11 @@ public final class GetChannelsChannelSource {
      * 
      */
     private String hostname;
+    /**
+     * @return Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    private Boolean mustUseIpv6onDualStack;
     private String password;
     /**
      * @return The port the source MySQL instance listens on.
@@ -65,6 +71,13 @@ public final class GetChannelsChannelSource {
      */
     public String hostname() {
         return this.hostname;
+    }
+    /**
+     * @return Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    public Boolean mustUseIpv6onDualStack() {
+        return this.mustUseIpv6onDualStack;
     }
     public String password() {
         return this.password;
@@ -116,6 +129,7 @@ public final class GetChannelsChannelSource {
     public static final class Builder {
         private List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
         private String hostname;
+        private Boolean mustUseIpv6onDualStack;
         private String password;
         private Integer port;
         private String sourceType;
@@ -127,6 +141,7 @@ public final class GetChannelsChannelSource {
     	      Objects.requireNonNull(defaults);
     	      this.anonymousTransactionsHandlings = defaults.anonymousTransactionsHandlings;
     	      this.hostname = defaults.hostname;
+    	      this.mustUseIpv6onDualStack = defaults.mustUseIpv6onDualStack;
     	      this.password = defaults.password;
     	      this.port = defaults.port;
     	      this.sourceType = defaults.sourceType;
@@ -152,6 +167,14 @@ public final class GetChannelsChannelSource {
               throw new MissingRequiredPropertyException("GetChannelsChannelSource", "hostname");
             }
             this.hostname = hostname;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mustUseIpv6onDualStack(Boolean mustUseIpv6onDualStack) {
+            if (mustUseIpv6onDualStack == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "mustUseIpv6onDualStack");
+            }
+            this.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             return this;
         }
         @CustomType.Setter
@@ -209,6 +232,7 @@ public final class GetChannelsChannelSource {
             final var _resultValue = new GetChannelsChannelSource();
             _resultValue.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             _resultValue.hostname = hostname;
+            _resultValue.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             _resultValue.password = password;
             _resultValue.port = port;
             _resultValue.sourceType = sourceType;

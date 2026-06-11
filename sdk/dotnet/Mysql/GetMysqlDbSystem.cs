@@ -238,6 +238,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
+        /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         public readonly bool IsHeatWaveClusterAttached;
@@ -245,6 +249,10 @@ namespace Pulumi.Oci.Mysql
         /// Specifies if the DB System is highly available.
         /// </summary>
         public readonly bool IsHighlyAvailable;
+        /// <summary>
+        /// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+        /// </summary>
+        public readonly bool IsIpv6enabled;
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
@@ -383,9 +391,13 @@ namespace Pulumi.Oci.Mysql
 
             string ipAddress,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
+
             bool isHeatWaveClusterAttached,
 
             bool isHighlyAvailable,
+
+            bool isIpv6enabled,
 
             string lifecycleDetails,
 
@@ -456,8 +468,10 @@ namespace Pulumi.Oci.Mysql
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
+            Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
             IsHighlyAvailable = isHighlyAvailable;
+            IsIpv6enabled = isIpv6enabled;
             LifecycleDetails = lifecycleDetails;
             Maintenances = maintenances;
             MysqlVersion = mysqlVersion;

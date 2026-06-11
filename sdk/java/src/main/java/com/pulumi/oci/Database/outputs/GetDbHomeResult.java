@@ -58,6 +58,11 @@ public final class GetDbHomeResult {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return Represents database home will be managed by oracle or customer
+     * 
+     */
+    private String homeType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
@@ -173,6 +178,13 @@ public final class GetDbHomeResult {
         return this.freeformTags;
     }
     /**
+     * @return Represents database home will be managed by oracle or customer
+     * 
+     */
+    public String homeType() {
+        return this.homeType;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
@@ -265,6 +277,7 @@ public final class GetDbHomeResult {
         private String displayName;
         private Boolean enableDatabaseDelete;
         private Map<String,String> freeformTags;
+        private String homeType;
         private String id;
         private Boolean isDesupportedVersion;
         private Boolean isUnifiedAuditingEnabled;
@@ -291,6 +304,7 @@ public final class GetDbHomeResult {
     	      this.displayName = defaults.displayName;
     	      this.enableDatabaseDelete = defaults.enableDatabaseDelete;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.homeType = defaults.homeType;
     	      this.id = defaults.id;
     	      this.isDesupportedVersion = defaults.isDesupportedVersion;
     	      this.isUnifiedAuditingEnabled = defaults.isUnifiedAuditingEnabled;
@@ -394,6 +408,14 @@ public final class GetDbHomeResult {
               throw new MissingRequiredPropertyException("GetDbHomeResult", "freeformTags");
             }
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder homeType(String homeType) {
+            if (homeType == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeResult", "homeType");
+            }
+            this.homeType = homeType;
             return this;
         }
         @CustomType.Setter
@@ -505,6 +527,7 @@ public final class GetDbHomeResult {
             _resultValue.displayName = displayName;
             _resultValue.enableDatabaseDelete = enableDatabaseDelete;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.homeType = homeType;
             _resultValue.id = id;
             _resultValue.isDesupportedVersion = isDesupportedVersion;
             _resultValue.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;

@@ -37,6 +37,11 @@ namespace Pulumi.Oci.Identity
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust",
     ///         },
     ///         Type = identityPropagationTrustType,
+    ///         CaCertChain = new Oci.Identity.Inputs.DomainsIdentityPropagationTrustCaCertChainArgs
+    ///         {
+    ///             RootCas = identityPropagationTrustCaCertChainRootCas,
+    ///             IntermediateCas = identityPropagationTrustCaCertChainIntermediateCas,
+    ///         },
     ///         AccountId = "accountId",
     ///         Active = identityPropagationTrustActive,
     ///         AllowImpersonation = identityPropagationTrustAllowImpersonation,
@@ -46,6 +51,15 @@ namespace Pulumi.Oci.Identity
     ///         },
     ///         Attributes = "",
     ///         Authorization = identityPropagationTrustAuthorization,
+    ///         ClaimPropagations = identityPropagationTrustClaimPropagations,
+    ///         ClaimValidations = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsIdentityPropagationTrustClaimValidationArgs
+    ///             {
+    ///                 Name = identityPropagationTrustClaimValidationsName,
+    ///                 Value = identityPropagationTrustClaimValidationsValue,
+    ///             },
+    ///         },
     ///         ClientClaimName = identityPropagationTrustClientClaimName,
     ///         ClientClaimValues = new[]
     ///         {
@@ -53,6 +67,7 @@ namespace Pulumi.Oci.Identity
     ///         },
     ///         ClockSkewSeconds = identityPropagationTrustClockSkewSeconds,
     ///         Description = identityPropagationTrustDescription,
+    ///         ImpersonatingResource = identityPropagationTrustImpersonatingResource,
     ///         ImpersonationServiceUsers = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs
@@ -165,6 +180,58 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("authorization")]
         public Output<string?> Authorization { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+        /// 
+        /// **Added In:** 2508041610
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: complex
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// </summary>
+        [Output("caCertChain")]
+        public Output<Outputs.DomainsIdentityPropagationTrustCaCertChain> CaCertChain { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A list of claims to propagate in RPST
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Output("claimPropagations")]
+        public Output<ImmutableArray<string>> ClaimPropagations { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A list of claim validations
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [name]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        [Output("claimValidations")]
+        public Output<ImmutableArray<Outputs.DomainsIdentityPropagationTrustClaimValidation>> ClaimValidations { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
@@ -343,6 +410,24 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("idcsPreventedOperations")]
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Defines the external workload that acts as impersonating resource principal.
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * type: string
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// </summary>
+        [Output("impersonatingResource")]
+        public Output<string> ImpersonatingResource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Impersonating Principal.
@@ -723,6 +808,70 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Authorization { get; set; }
 
         /// <summary>
+        /// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+        /// 
+        /// **Added In:** 2508041610
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: complex
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// </summary>
+        [Input("caCertChain")]
+        public Input<Inputs.DomainsIdentityPropagationTrustCaCertChainArgs>? CaCertChain { get; set; }
+
+        [Input("claimPropagations")]
+        private InputList<string>? _claimPropagations;
+
+        /// <summary>
+        /// (Updatable) A list of claims to propagate in RPST
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<string> ClaimPropagations
+        {
+            get => _claimPropagations ?? (_claimPropagations = new InputList<string>());
+            set => _claimPropagations = value;
+        }
+
+        [Input("claimValidations")]
+        private InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationArgs>? _claimValidations;
+
+        /// <summary>
+        /// (Updatable) A list of claim validations
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [name]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationArgs> ClaimValidations
+        {
+            get => _claimValidations ?? (_claimValidations = new InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationArgs>());
+            set => _claimValidations = value;
+        }
+
+        /// <summary>
         /// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
         /// 
         /// **SCIM++ Properties:**
@@ -798,6 +947,24 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("idcsEndpoint", required: true)]
         public Input<string> IdcsEndpoint { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Defines the external workload that acts as impersonating resource principal.
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * type: string
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// </summary>
+        [Input("impersonatingResource")]
+        public Input<string>? ImpersonatingResource { get; set; }
 
         [Input("impersonationServiceUsers")]
         private InputList<Inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs>? _impersonationServiceUsers;
@@ -1132,6 +1299,70 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Authorization { get; set; }
 
         /// <summary>
+        /// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+        /// 
+        /// **Added In:** 2508041610
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * type: complex
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// </summary>
+        [Input("caCertChain")]
+        public Input<Inputs.DomainsIdentityPropagationTrustCaCertChainGetArgs>? CaCertChain { get; set; }
+
+        [Input("claimPropagations")]
+        private InputList<string>? _claimPropagations;
+
+        /// <summary>
+        /// (Updatable) A list of claims to propagate in RPST
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<string> ClaimPropagations
+        {
+            get => _claimPropagations ?? (_claimPropagations = new InputList<string>());
+            set => _claimPropagations = value;
+        }
+
+        [Input("claimValidations")]
+        private InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationGetArgs>? _claimValidations;
+
+        /// <summary>
+        /// (Updatable) A list of claim validations
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsCompositeKey: [name]
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationGetArgs> ClaimValidations
+        {
+            get => _claimValidations ?? (_claimValidations = new InputList<Inputs.DomainsIdentityPropagationTrustClaimValidationGetArgs>());
+            set => _claimValidations = value;
+        }
+
+        /// <summary>
         /// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
         /// 
         /// **SCIM++ Properties:**
@@ -1332,6 +1563,24 @@ namespace Pulumi.Oci.Identity
             get => _idcsPreventedOperations ?? (_idcsPreventedOperations = new InputList<string>());
             set => _idcsPreventedOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) Defines the external workload that acts as impersonating resource principal.
+        /// 
+        /// **Added In:** 2509172316
+        /// 
+        /// **SCIM++ Properties:**
+        /// * type: string
+        /// * multiValued: false
+        /// * required: false
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * uniqueness: none
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// </summary>
+        [Input("impersonatingResource")]
+        public Input<string>? ImpersonatingResource { get; set; }
 
         [Input("impersonationServiceUsers")]
         private InputList<Inputs.DomainsIdentityPropagationTrustImpersonationServiceUserGetArgs>? _impersonationServiceUsers;

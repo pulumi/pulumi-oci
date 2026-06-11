@@ -46,7 +46,9 @@ class MysqlDbSystemArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maintenance: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -105,9 +107,11 @@ class MysqlDbSystemArgs:
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param pulumi.Input['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs'] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
+        :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
@@ -171,8 +175,12 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_highly_available is not None:
             pulumi.set(__self__, "is_highly_available", is_highly_available)
+        if is_ipv6enabled is not None:
+            pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if maintenance is not None:
             pulumi.set(__self__, "maintenance", maintenance)
         if mysql_version is not None:
@@ -518,6 +526,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']]:
+        """
+        (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="isHighlyAvailable")
     def is_highly_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -530,6 +550,18 @@ class MysqlDbSystemArgs:
     @is_highly_available.setter
     def is_highly_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_highly_available", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIpv6enabled")
+    def is_ipv6enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_ipv6enabled")
+
+    @is_ipv6enabled.setter
+    def is_ipv6enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_ipv6enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -721,8 +753,10 @@ class _MysqlDbSystemState:
                  heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']] = None,
                  is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance: pulumi.Input[Optional['MysqlDbSystemMaintenanceArgs']] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -789,10 +823,12 @@ class _MysqlDbSystemState:
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param pulumi.Input['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs'] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
+        :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
@@ -872,10 +908,14 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "hostname_label", hostname_label)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_heat_wave_cluster_attached is not None:
             pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         if is_highly_available is not None:
             pulumi.set(__self__, "is_highly_available", is_highly_available)
+        if is_ipv6enabled is not None:
+            pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance is not None:
@@ -1258,6 +1298,18 @@ class _MysqlDbSystemState:
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']]:
+        """
+        (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @ipv6address_ipv6subnet_cidr_pair_details.setter
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: pulumi.Input[Optional['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs']]):
+        pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -1282,6 +1334,18 @@ class _MysqlDbSystemState:
     @is_highly_available.setter
     def is_highly_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_highly_available", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIpv6enabled")
+    def is_ipv6enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_ipv6enabled")
+
+    @is_ipv6enabled.setter
+    def is_ipv6enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_ipv6enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -1557,7 +1621,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1651,7 +1717,12 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
+            ipv6address_ipv6subnet_cidr_pair_details={
+                "ipv6address": mysql_db_system_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                "ipv6subnet_cidr": mysql_db_system_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+            },
             is_highly_available=mysql_db_system_is_highly_available == "true",
+            is_ipv6enabled=mysql_db_system_is_ipv6enabled == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1670,6 +1741,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+                "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details": {
+                    "ipv6address": mysql_db_system_read_endpoint_read_endpoint_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                    "ipv6subnet_cidr": mysql_db_system_read_endpoint_read_endpoint_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                },
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
@@ -1746,9 +1821,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
+        :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) Network Security Group OCIDs used for the VNIC attachment.
@@ -1852,7 +1929,12 @@ class MysqlDbSystem(pulumi.CustomResource):
             },
             hostname_label=mysql_db_system_hostname_label,
             ip_address=mysql_db_system_ip_address,
+            ipv6address_ipv6subnet_cidr_pair_details={
+                "ipv6address": mysql_db_system_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                "ipv6subnet_cidr": mysql_db_system_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+            },
             is_highly_available=mysql_db_system_is_highly_available == "true",
+            is_ipv6enabled=mysql_db_system_is_ipv6enabled == "true",
             maintenance={
                 "window_start_time": mysql_db_system_maintenance_window_start_time,
                 "maintenance_disabled_windows": [{
@@ -1871,6 +1953,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "is_enabled": mysql_db_system_read_endpoint_is_enabled == "true",
                 "read_endpoint_hostname_label": mysql_db_system_read_endpoint_read_endpoint_hostname_label,
                 "read_endpoint_ip_address": mysql_db_system_read_endpoint_read_endpoint_ip_address,
+                "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details": {
+                    "ipv6address": mysql_db_system_read_endpoint_read_endpoint_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
+                    "ipv6subnet_cidr": mysql_db_system_read_endpoint_read_endpoint_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+                },
             },
             rest={
                 "configuration": mysql_db_system_rest_configuration,
@@ -1944,7 +2030,9 @@ class MysqlDbSystem(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
                  is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1996,7 +2084,9 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
+            __props__.__dict__["ipv6address_ipv6subnet_cidr_pair_details"] = ipv6address_ipv6subnet_cidr_pair_details
             __props__.__dict__["is_highly_available"] = is_highly_available
+            __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
             __props__.__dict__["maintenance"] = maintenance
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["nsg_ids"] = nsg_ids
@@ -2065,8 +2155,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             heat_wave_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlDbSystemHeatWaveClusterArgs', 'MysqlDbSystemHeatWaveClusterArgsDict']]]]] = None,
             hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
             ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']]] = None,
             is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
             is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             maintenance: pulumi.Input[Optional[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']]] = None,
             mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2137,10 +2229,12 @@ class MysqlDbSystem(pulumi.CustomResource):
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param pulumi.Input[_builtins.str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param pulumi.Input[Union['MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs', 'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgsDict']] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param pulumi.Input[_builtins.bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[_builtins.bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
                
                When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
+        :param pulumi.Input[_builtins.bool] is_ipv6enabled: (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[Union['MysqlDbSystemMaintenanceArgs', 'MysqlDbSystemMaintenanceArgsDict']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         :param pulumi.Input[_builtins.str] mysql_version: The specific MySQL version identifier.
@@ -2197,8 +2291,10 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["heat_wave_clusters"] = heat_wave_clusters
         __props__.__dict__["hostname_label"] = hostname_label
         __props__.__dict__["ip_address"] = ip_address
+        __props__.__dict__["ipv6address_ipv6subnet_cidr_pair_details"] = ipv6address_ipv6subnet_cidr_pair_details
         __props__.__dict__["is_heat_wave_cluster_attached"] = is_heat_wave_cluster_attached
         __props__.__dict__["is_highly_available"] = is_highly_available
+        __props__.__dict__["is_ipv6enabled"] = is_ipv6enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance"] = maintenance
         __props__.__dict__["mysql_version"] = mysql_version
@@ -2454,6 +2550,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         return pulumi.get(self, "ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> pulumi.Output['outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails']:
+        """
+        (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -2470,6 +2574,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         """
         return pulumi.get(self, "is_highly_available")
+
+    @_builtins.property
+    @pulumi.getter(name="isIpv6enabled")
+    def is_ipv6enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        """
+        return pulumi.get(self, "is_ipv6enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

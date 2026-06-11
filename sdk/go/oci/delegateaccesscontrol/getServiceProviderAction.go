@@ -58,6 +58,8 @@ type GetServiceProviderActionArgs struct {
 
 // A collection of values returned by getServiceProviderAction.
 type GetServiceProviderActionResult struct {
+	// The OCID of the compartment that contains the Service Provider Action.
+	CompartmentId string `pulumi:"compartmentId"`
 	// Name of the infrastructure layer associated with the Service Provider Action.
 	Component string `pulumi:"component"`
 	// Display Name of the Service Provider Action.
@@ -66,6 +68,8 @@ type GetServiceProviderActionResult struct {
 	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates whether the service provider action allows SSH access.
+	IsSshAccessAllowed bool `pulumi:"isSshAccessAllowed"`
 	// Name of the property
 	Name string `pulumi:"name"`
 	// Fine grained properties associated with the Delegation Control.
@@ -113,6 +117,11 @@ func (o GetServiceProviderActionResultOutput) ToGetServiceProviderActionResultOu
 	return o
 }
 
+// The OCID of the compartment that contains the Service Provider Action.
+func (o GetServiceProviderActionResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceProviderActionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
 // Name of the infrastructure layer associated with the Service Provider Action.
 func (o GetServiceProviderActionResultOutput) Component() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderActionResult) string { return v.Component }).(pulumi.StringOutput)
@@ -131,6 +140,11 @@ func (o GetServiceProviderActionResultOutput) Description() pulumi.StringOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetServiceProviderActionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderActionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the service provider action allows SSH access.
+func (o GetServiceProviderActionResultOutput) IsSshAccessAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetServiceProviderActionResult) bool { return v.IsSshAccessAllowed }).(pulumi.BoolOutput)
 }
 
 // Name of the property

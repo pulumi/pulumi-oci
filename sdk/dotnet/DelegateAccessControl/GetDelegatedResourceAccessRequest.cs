@@ -140,7 +140,11 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        /// List of Database ID for which access is requested. This parameter is required when database access is needed.
+        /// </summary>
+        public readonly ImmutableArray<string> DatabaseIdLists;
+        /// <summary>
+        /// List of Database unique names for which access is requested. This parameter is required when database access in needed.
         /// </summary>
         public readonly ImmutableArray<string> DatabaseNameLists;
         /// <summary>
@@ -271,6 +275,8 @@ namespace Pulumi.Oci.DelegateAccessControl
 
             string compartmentId,
 
+            ImmutableArray<string> databaseIdLists,
+
             ImmutableArray<string> databaseNameLists,
 
             ImmutableDictionary<string, string> definedTags,
@@ -337,6 +343,7 @@ namespace Pulumi.Oci.DelegateAccessControl
             AuditTypes = auditTypes;
             ClosureComment = closureComment;
             CompartmentId = compartmentId;
+            DatabaseIdLists = databaseIdLists;
             DatabaseNameLists = databaseNameLists;
             DefinedTags = definedTags;
             DelegatedResourceAccessRequestId = delegatedResourceAccessRequestId;

@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     public partial class DelegationSubscription : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the Delegation Control.
+        /// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     public sealed class DelegationSubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the Delegation Control.
+        /// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     public sealed class DelegationSubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the Delegation Control.
+        /// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

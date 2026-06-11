@@ -40,21 +40,33 @@ import (
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"),
 //				},
-//				Type:               pulumi.Any(identityPropagationTrustType),
+//				Type: pulumi.Any(identityPropagationTrustType),
+//				CaCertChain: &identity.DomainsIdentityPropagationTrustCaCertChainArgs{
+//					RootCas:         pulumi.Any(identityPropagationTrustCaCertChainRootCas),
+//					IntermediateCas: pulumi.Any(identityPropagationTrustCaCertChainIntermediateCas),
+//				},
 //				AccountId:          pulumi.String("accountId"),
 //				Active:             pulumi.Any(identityPropagationTrustActive),
 //				AllowImpersonation: pulumi.Any(identityPropagationTrustAllowImpersonation),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
-//				Attributes:      pulumi.String(""),
-//				Authorization:   pulumi.Any(identityPropagationTrustAuthorization),
+//				Attributes:        pulumi.String(""),
+//				Authorization:     pulumi.Any(identityPropagationTrustAuthorization),
+//				ClaimPropagations: pulumi.Any(identityPropagationTrustClaimPropagations),
+//				ClaimValidations: identity.DomainsIdentityPropagationTrustClaimValidationArray{
+//					&identity.DomainsIdentityPropagationTrustClaimValidationArgs{
+//						Name:  pulumi.Any(identityPropagationTrustClaimValidationsName),
+//						Value: pulumi.Any(identityPropagationTrustClaimValidationsValue),
+//					},
+//				},
 //				ClientClaimName: pulumi.Any(identityPropagationTrustClientClaimName),
 //				ClientClaimValues: pulumi.StringArray{
 //					pulumi.String("clientClaimValues"),
 //				},
-//				ClockSkewSeconds: pulumi.Any(identityPropagationTrustClockSkewSeconds),
-//				Description:      pulumi.Any(identityPropagationTrustDescription),
+//				ClockSkewSeconds:      pulumi.Any(identityPropagationTrustClockSkewSeconds),
+//				Description:           pulumi.Any(identityPropagationTrustDescription),
+//				ImpersonatingResource: pulumi.Any(identityPropagationTrustImpersonatingResource),
 //				ImpersonationServiceUsers: identity.DomainsIdentityPropagationTrustImpersonationServiceUserArray{
 //					&identity.DomainsIdentityPropagationTrustImpersonationServiceUserArgs{
 //						Rule:  pulumi.Any(identityPropagationTrustImpersonationServiceUsersRule),
@@ -142,6 +154,46 @@ type DomainsIdentityPropagationTrust struct {
 	Attributes pulumi.StringPtrOutput `pulumi:"attributes"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
+	// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+	//
+	// **Added In:** 2508041610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: complex
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	CaCertChain DomainsIdentityPropagationTrustCaCertChainOutput `pulumi:"caCertChain"`
+	// (Updatable) A list of claims to propagate in RPST
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	ClaimPropagations pulumi.StringArrayOutput `pulumi:"claimPropagations"`
+	// (Updatable) A list of claim validations
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [name]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
+	ClaimValidations DomainsIdentityPropagationTrustClaimValidationArrayOutput `pulumi:"claimValidations"`
 	// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	//
 	// **SCIM++ Properties:**
@@ -272,6 +324,20 @@ type DomainsIdentityPropagationTrust struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
+	// (Updatable) Defines the external workload that acts as impersonating resource principal.
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * type: string
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	// * caseExact: true
+	// * idcsSearchable: false
+	ImpersonatingResource pulumi.StringOutput `pulumi:"impersonatingResource"`
 	// (Updatable) The Impersonating Principal.
 	//
 	// **SCIM++ Properties:**
@@ -549,6 +615,46 @@ type domainsIdentityPropagationTrustState struct {
 	Attributes *string `pulumi:"attributes"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
+	// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+	//
+	// **Added In:** 2508041610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: complex
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	CaCertChain *DomainsIdentityPropagationTrustCaCertChain `pulumi:"caCertChain"`
+	// (Updatable) A list of claims to propagate in RPST
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	ClaimPropagations []string `pulumi:"claimPropagations"`
+	// (Updatable) A list of claim validations
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [name]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
+	ClaimValidations []DomainsIdentityPropagationTrustClaimValidation `pulumi:"claimValidations"`
 	// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	//
 	// **SCIM++ Properties:**
@@ -679,6 +785,20 @@ type domainsIdentityPropagationTrustState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
+	// (Updatable) Defines the external workload that acts as impersonating resource principal.
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * type: string
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	// * caseExact: true
+	// * idcsSearchable: false
+	ImpersonatingResource *string `pulumi:"impersonatingResource"`
 	// (Updatable) The Impersonating Principal.
 	//
 	// **SCIM++ Properties:**
@@ -915,6 +1035,46 @@ type DomainsIdentityPropagationTrustState struct {
 	Attributes pulumi.StringPtrInput
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
+	// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+	//
+	// **Added In:** 2508041610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: complex
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	CaCertChain DomainsIdentityPropagationTrustCaCertChainPtrInput
+	// (Updatable) A list of claims to propagate in RPST
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	ClaimPropagations pulumi.StringArrayInput
+	// (Updatable) A list of claim validations
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [name]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
+	ClaimValidations DomainsIdentityPropagationTrustClaimValidationArrayInput
 	// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	//
 	// **SCIM++ Properties:**
@@ -1045,6 +1205,20 @@ type DomainsIdentityPropagationTrustState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
+	// (Updatable) Defines the external workload that acts as impersonating resource principal.
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * type: string
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	// * caseExact: true
+	// * idcsSearchable: false
+	ImpersonatingResource pulumi.StringPtrInput
 	// (Updatable) The Impersonating Principal.
 	//
 	// **SCIM++ Properties:**
@@ -1285,6 +1459,46 @@ type domainsIdentityPropagationTrustArgs struct {
 	Attributes *string `pulumi:"attributes"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`
+	// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+	//
+	// **Added In:** 2508041610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: complex
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	CaCertChain *DomainsIdentityPropagationTrustCaCertChain `pulumi:"caCertChain"`
+	// (Updatable) A list of claims to propagate in RPST
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	ClaimPropagations []string `pulumi:"claimPropagations"`
+	// (Updatable) A list of claim validations
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [name]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
+	ClaimValidations []DomainsIdentityPropagationTrustClaimValidation `pulumi:"claimValidations"`
 	// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	//
 	// **SCIM++ Properties:**
@@ -1336,6 +1550,20 @@ type domainsIdentityPropagationTrustArgs struct {
 	Description *string `pulumi:"description"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
+	// (Updatable) Defines the external workload that acts as impersonating resource principal.
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * type: string
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	// * caseExact: true
+	// * idcsSearchable: false
+	ImpersonatingResource *string `pulumi:"impersonatingResource"`
 	// (Updatable) The Impersonating Principal.
 	//
 	// **SCIM++ Properties:**
@@ -1549,6 +1777,46 @@ type DomainsIdentityPropagationTrustArgs struct {
 	Attributes pulumi.StringPtrInput
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrInput
+	// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+	//
+	// **Added In:** 2508041610
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * type: complex
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	CaCertChain DomainsIdentityPropagationTrustCaCertChainPtrInput
+	// (Updatable) A list of claims to propagate in RPST
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	ClaimPropagations pulumi.StringArrayInput
+	// (Updatable) A list of claim validations
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * idcsCompositeKey: [name]
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: complex
+	// * uniqueness: none
+	ClaimValidations DomainsIdentityPropagationTrustClaimValidationArrayInput
 	// (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	//
 	// **SCIM++ Properties:**
@@ -1600,6 +1868,20 @@ type DomainsIdentityPropagationTrustArgs struct {
 	Description pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
+	// (Updatable) Defines the external workload that acts as impersonating resource principal.
+	//
+	// **Added In:** 2509172316
+	//
+	// **SCIM++ Properties:**
+	// * type: string
+	// * multiValued: false
+	// * required: false
+	// * mutability: readWrite
+	// * returned: default
+	// * uniqueness: none
+	// * caseExact: true
+	// * idcsSearchable: false
+	ImpersonatingResource pulumi.StringPtrInput
 	// (Updatable) The Impersonating Principal.
 	//
 	// **SCIM++ Properties:**
@@ -1916,6 +2198,59 @@ func (o DomainsIdentityPropagationTrustOutput) Authorization() pulumi.StringPtrO
 	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) pulumi.StringPtrOutput { return v.Authorization }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+//
+// **Added In:** 2508041610
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * type: complex
+// * multiValued: false
+// * required: false
+// * mutability: readWrite
+// * returned: default
+// * uniqueness: none
+func (o DomainsIdentityPropagationTrustOutput) CaCertChain() DomainsIdentityPropagationTrustCaCertChainOutput {
+	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) DomainsIdentityPropagationTrustCaCertChainOutput {
+		return v.CaCertChain
+	}).(DomainsIdentityPropagationTrustCaCertChainOutput)
+}
+
+// (Updatable) A list of claims to propagate in RPST
+//
+// **Added In:** 2509172316
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+func (o DomainsIdentityPropagationTrustOutput) ClaimPropagations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) pulumi.StringArrayOutput { return v.ClaimPropagations }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A list of claim validations
+//
+// **Added In:** 2509172316
+//
+// **SCIM++ Properties:**
+// * idcsCompositeKey: [name]
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: complex
+// * uniqueness: none
+func (o DomainsIdentityPropagationTrustOutput) ClaimValidations() DomainsIdentityPropagationTrustClaimValidationArrayOutput {
+	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) DomainsIdentityPropagationTrustClaimValidationArrayOutput {
+		return v.ClaimValidations
+	}).(DomainsIdentityPropagationTrustClaimValidationArrayOutput)
+}
+
 // (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 //
 // **SCIM++ Properties:**
@@ -2084,6 +2419,23 @@ func (o DomainsIdentityPropagationTrustOutput) IdcsLastUpgradedInRelease() pulum
 // * uniqueness: none
 func (o DomainsIdentityPropagationTrustOutput) IdcsPreventedOperations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Defines the external workload that acts as impersonating resource principal.
+//
+// **Added In:** 2509172316
+//
+// **SCIM++ Properties:**
+// * type: string
+// * multiValued: false
+// * required: false
+// * mutability: readWrite
+// * returned: default
+// * uniqueness: none
+// * caseExact: true
+// * idcsSearchable: false
+func (o DomainsIdentityPropagationTrustOutput) ImpersonatingResource() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsIdentityPropagationTrust) pulumi.StringOutput { return v.ImpersonatingResource }).(pulumi.StringOutput)
 }
 
 // (Updatable) The Impersonating Principal.

@@ -18,12 +18,6 @@ import (
 //
 // Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
 //
-// **Important:** Unless `enableDatabaseDelete` is explicitly set to true:
-// * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
-// * This leads to dangling resources which are not managed via Terraform unless explicitly imported
-//
-// **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
-//
 // ## Example Usage
 //
 // ## Import
@@ -71,8 +65,10 @@ type DbHome struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringOutput  `pulumi:"displayName"`
 	EnableDatabaseDelete pulumi.BoolPtrOutput `pulumi:"enableDatabaseDelete"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType pulumi.StringOutput `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -151,8 +147,10 @@ type dbHomeState struct {
 	// The user-provided name of the Database Home.
 	DisplayName          *string `pulumi:"displayName"`
 	EnableDatabaseDelete *bool   `pulumi:"enableDatabaseDelete"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType *string `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -202,8 +200,10 @@ type DbHomeState struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringPtrInput
 	EnableDatabaseDelete pulumi.BoolPtrInput
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// Represents database home will be managed by oracle or customer
+	HomeType pulumi.StringPtrInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -253,8 +253,10 @@ type dbHomeArgs struct {
 	// The user-provided name of the Database Home.
 	DisplayName          *string `pulumi:"displayName"`
 	EnableDatabaseDelete *bool   `pulumi:"enableDatabaseDelete"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType *string `pulumi:"homeType"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -291,8 +293,10 @@ type DbHomeArgs struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringPtrInput
 	EnableDatabaseDelete pulumi.BoolPtrInput
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// Represents database home will be managed by oracle or customer
+	HomeType pulumi.StringPtrInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
 	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -445,9 +449,14 @@ func (o DbHomeOutput) EnableDatabaseDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.BoolPtrOutput { return v.EnableDatabaseDelete }).(pulumi.BoolPtrOutput)
 }
 
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o DbHomeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Represents database home will be managed by oracle or customer
+func (o DbHomeOutput) HomeType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.HomeType }).(pulumi.StringOutput)
 }
 
 // If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.

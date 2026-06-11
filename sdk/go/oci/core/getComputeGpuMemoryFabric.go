@@ -63,8 +63,10 @@ type LookupComputeGpuMemoryFabricResult struct {
 	// The total number of available bare metal hosts located in this compute GPU memory fabric.
 	AvailableHostCount string `pulumi:"availableHostCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-	CompartmentId            string `pulumi:"compartmentId"`
-	ComputeGpuMemoryFabricId string `pulumi:"computeGpuMemoryFabricId"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of GPU memory cluster OCIDs within this GPU memory fabric.
+	ComputeGpuMemoryClusters []string `pulumi:"computeGpuMemoryClusters"`
+	ComputeGpuMemoryFabricId string   `pulumi:"computeGpuMemoryFabricId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
 	ComputeHpcIslandId string `pulumi:"computeHpcIslandId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
@@ -154,6 +156,11 @@ func (o LookupComputeGpuMemoryFabricResultOutput) AvailableHostCount() pulumi.St
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 func (o LookupComputeGpuMemoryFabricResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryFabricResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of GPU memory cluster OCIDs within this GPU memory fabric.
+func (o LookupComputeGpuMemoryFabricResultOutput) ComputeGpuMemoryClusters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupComputeGpuMemoryFabricResult) []string { return v.ComputeGpuMemoryClusters }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupComputeGpuMemoryFabricResultOutput) ComputeGpuMemoryFabricId() pulumi.StringOutput {

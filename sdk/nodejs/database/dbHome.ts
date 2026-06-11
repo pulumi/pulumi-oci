@@ -14,12 +14,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
  *
- * **Important:** Unless `enableDatabaseDelete` is explicitly set to true:
- * * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
- * * This leads to dangling resources which are not managed via Terraform unless explicitly imported
- *
- * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
- *
  * ## Example Usage
  *
  * ## Import
@@ -108,9 +102,13 @@ export class DbHome extends pulumi.CustomResource {
     declare public readonly displayName: pulumi.Output<string>;
     declare public readonly enableDatabaseDelete: pulumi.Output<boolean | undefined>;
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Represents database home will be managed by oracle or customer
+     */
+    declare public readonly homeType: pulumi.Output<string>;
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
@@ -183,6 +181,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["enableDatabaseDelete"] = state?.enableDatabaseDelete;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["homeType"] = state?.homeType;
             resourceInputs["isDesupportedVersion"] = state?.isDesupportedVersion;
             resourceInputs["isUnifiedAuditingEnabled"] = state?.isUnifiedAuditingEnabled;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
@@ -204,6 +203,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["enableDatabaseDelete"] = args?.enableDatabaseDelete;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["homeType"] = args?.homeType;
             resourceInputs["isDesupportedVersion"] = args?.isDesupportedVersion;
             resourceInputs["isUnifiedAuditingEnabled"] = args?.isUnifiedAuditingEnabled;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
@@ -265,9 +265,13 @@ export interface DbHomeState {
     displayName?: pulumi.Input<string | undefined>;
     enableDatabaseDelete?: pulumi.Input<boolean | undefined>;
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Represents database home will be managed by oracle or customer
+     */
+    homeType?: pulumi.Input<string | undefined>;
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
@@ -352,9 +356,13 @@ export interface DbHomeArgs {
     displayName?: pulumi.Input<string | undefined>;
     enableDatabaseDelete?: pulumi.Input<boolean | undefined>;
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Represents database home will be managed by oracle or customer
+     */
+    homeType?: pulumi.Input<string | undefined>;
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */

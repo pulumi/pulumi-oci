@@ -93,6 +93,21 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     * 
+     */
+    @Import(name="hostname")
+    private @Nullable Output<String> hostname;
+
+    /**
+     * @return (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     * 
+     */
+    public Optional<Output<String>> hostname() {
+        return Optional.ofNullable(this.hostname);
+    }
+
+    /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
      * 
      */
@@ -245,6 +260,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.hostname = $.hostname;
         this.ipAddress = $.ipAddress;
         this.ipState = $.ipState;
         this.ipv6subnetCidr = $.ipv6subnetCidr;
@@ -377,6 +393,27 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param hostname (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostname(@Nullable Output<String> hostname) {
+            $.hostname = hostname;
+            return this;
+        }
+
+        /**
+         * @param hostname (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostname(String hostname) {
+            return hostname(Output.of(hostname));
         }
 
         /**

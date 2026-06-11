@@ -192,6 +192,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        [Output("managedSoftwareUpdateDetails")]
+        public Output<ImmutableArray<Outputs.DatabaseManagedSoftwareUpdateDetail>> ManagedSoftwareUpdateDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         [Output("ncharacterSet")]
@@ -323,8 +329,8 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
-        [Input("dbHomeId", required: true)]
-        public Input<string> DbHomeId { get; set; } = null!;
+        [Input("dbHomeId")]
+        public Input<string>? DbHomeId { get; set; }
 
         /// <summary>
         /// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
@@ -358,6 +364,18 @@ namespace Pulumi.Oci.Database
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
 
+        [Input("managedSoftwareUpdateDetails")]
+        private InputList<Inputs.DatabaseManagedSoftwareUpdateDetailArgs>? _managedSoftwareUpdateDetails;
+
+        /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        public InputList<Inputs.DatabaseManagedSoftwareUpdateDetailArgs> ManagedSoftwareUpdateDetails
+        {
+            get => _managedSoftwareUpdateDetails ?? (_managedSoftwareUpdateDetails = new InputList<Inputs.DatabaseManagedSoftwareUpdateDetailArgs>());
+            set => _managedSoftwareUpdateDetails = value;
+        }
+
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         /// </summary>
@@ -369,6 +387,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// </summary>
+        [Input("vmClusterId")]
+        public Input<string>? VmClusterId { get; set; }
 
         public DatabaseArgs()
         {
@@ -579,6 +603,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("managedSoftwareUpdateDetails")]
+        private InputList<Inputs.DatabaseManagedSoftwareUpdateDetailGetArgs>? _managedSoftwareUpdateDetails;
+
+        /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        public InputList<Inputs.DatabaseManagedSoftwareUpdateDetailGetArgs> ManagedSoftwareUpdateDetails
+        {
+            get => _managedSoftwareUpdateDetails ?? (_managedSoftwareUpdateDetails = new InputList<Inputs.DatabaseManagedSoftwareUpdateDetailGetArgs>());
+            set => _managedSoftwareUpdateDetails = value;
+        }
 
         /// <summary>
         /// The national character set for the database.

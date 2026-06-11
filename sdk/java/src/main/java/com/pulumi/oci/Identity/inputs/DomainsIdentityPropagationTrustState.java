@@ -5,6 +5,8 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustCaCertChainArgs;
+import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustClaimValidationArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustIdcsCreatedByArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustIdcsLastModifiedByArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs;
@@ -168,6 +170,119 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
      */
     public Optional<Output<String>> authorization() {
         return Optional.ofNullable(this.authorization);
+    }
+
+    /**
+     * (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     * **Added In:** 2508041610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: complex
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="caCertChain")
+    private @Nullable Output<DomainsIdentityPropagationTrustCaCertChainArgs> caCertChain;
+
+    /**
+     * @return (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     * **Added In:** 2508041610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: complex
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<DomainsIdentityPropagationTrustCaCertChainArgs>> caCertChain() {
+        return Optional.ofNullable(this.caCertChain);
+    }
+
+    /**
+     * (Updatable) A list of claims to propagate in RPST
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="claimPropagations")
+    private @Nullable Output<List<String>> claimPropagations;
+
+    /**
+     * @return (Updatable) A list of claims to propagate in RPST
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<String>>> claimPropagations() {
+        return Optional.ofNullable(this.claimPropagations);
+    }
+
+    /**
+     * (Updatable) A list of claim validations
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="claimValidations")
+    private @Nullable Output<List<DomainsIdentityPropagationTrustClaimValidationArgs>> claimValidations;
+
+    /**
+     * @return (Updatable) A list of claim validations
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<DomainsIdentityPropagationTrustClaimValidationArgs>>> claimValidations() {
+        return Optional.ofNullable(this.claimValidations);
     }
 
     /**
@@ -560,6 +675,45 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
      */
     public Optional<Output<List<String>>> idcsPreventedOperations() {
         return Optional.ofNullable(this.idcsPreventedOperations);
+    }
+
+    /**
+     * (Updatable) Defines the external workload that acts as impersonating resource principal.
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * * caseExact: true
+     * * idcsSearchable: false
+     * 
+     */
+    @Import(name="impersonatingResource")
+    private @Nullable Output<String> impersonatingResource;
+
+    /**
+     * @return (Updatable) Defines the external workload that acts as impersonating resource principal.
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * * caseExact: true
+     * * idcsSearchable: false
+     * 
+     */
+    public Optional<Output<String>> impersonatingResource() {
+        return Optional.ofNullable(this.impersonatingResource);
     }
 
     /**
@@ -1144,6 +1298,9 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
         this.attributeSets = $.attributeSets;
         this.attributes = $.attributes;
         this.authorization = $.authorization;
+        this.caCertChain = $.caCertChain;
+        this.claimPropagations = $.claimPropagations;
+        this.claimValidations = $.claimValidations;
         this.clientClaimName = $.clientClaimName;
         this.clientClaimValues = $.clientClaimValues;
         this.clockSkewSeconds = $.clockSkewSeconds;
@@ -1156,6 +1313,7 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
         this.idcsLastModifiedBies = $.idcsLastModifiedBies;
         this.idcsLastUpgradedInRelease = $.idcsLastUpgradedInRelease;
         this.idcsPreventedOperations = $.idcsPreventedOperations;
+        this.impersonatingResource = $.impersonatingResource;
         this.impersonationServiceUsers = $.impersonationServiceUsers;
         this.issuer = $.issuer;
         this.keytab = $.keytab;
@@ -1383,6 +1541,180 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
          */
         public Builder authorization(String authorization) {
             return authorization(Output.of(authorization));
+        }
+
+        /**
+         * @param caCertChain (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+         * 
+         * **Added In:** 2508041610
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: complex
+         * * multiValued: false
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caCertChain(@Nullable Output<DomainsIdentityPropagationTrustCaCertChainArgs> caCertChain) {
+            $.caCertChain = caCertChain;
+            return this;
+        }
+
+        /**
+         * @param caCertChain (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+         * 
+         * **Added In:** 2508041610
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * type: complex
+         * * multiValued: false
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caCertChain(DomainsIdentityPropagationTrustCaCertChainArgs caCertChain) {
+            return caCertChain(Output.of(caCertChain));
+        }
+
+        /**
+         * @param claimPropagations (Updatable) A list of claims to propagate in RPST
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimPropagations(@Nullable Output<List<String>> claimPropagations) {
+            $.claimPropagations = claimPropagations;
+            return this;
+        }
+
+        /**
+         * @param claimPropagations (Updatable) A list of claims to propagate in RPST
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimPropagations(List<String> claimPropagations) {
+            return claimPropagations(Output.of(claimPropagations));
+        }
+
+        /**
+         * @param claimPropagations (Updatable) A list of claims to propagate in RPST
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimPropagations(String... claimPropagations) {
+            return claimPropagations(List.of(claimPropagations));
+        }
+
+        /**
+         * @param claimValidations (Updatable) A list of claim validations
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimValidations(@Nullable Output<List<DomainsIdentityPropagationTrustClaimValidationArgs>> claimValidations) {
+            $.claimValidations = claimValidations;
+            return this;
+        }
+
+        /**
+         * @param claimValidations (Updatable) A list of claim validations
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimValidations(List<DomainsIdentityPropagationTrustClaimValidationArgs> claimValidations) {
+            return claimValidations(Output.of(claimValidations));
+        }
+
+        /**
+         * @param claimValidations (Updatable) A list of claim validations
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * idcsCompositeKey: [name]
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder claimValidations(DomainsIdentityPropagationTrustClaimValidationArgs... claimValidations) {
+            return claimValidations(List.of(claimValidations));
         }
 
         /**
@@ -1922,6 +2254,51 @@ public final class DomainsIdentityPropagationTrustState extends com.pulumi.resou
          */
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
+        }
+
+        /**
+         * @param impersonatingResource (Updatable) Defines the external workload that acts as impersonating resource principal.
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * type: string
+         * * multiValued: false
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * uniqueness: none
+         * * caseExact: true
+         * * idcsSearchable: false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder impersonatingResource(@Nullable Output<String> impersonatingResource) {
+            $.impersonatingResource = impersonatingResource;
+            return this;
+        }
+
+        /**
+         * @param impersonatingResource (Updatable) Defines the external workload that acts as impersonating resource principal.
+         * 
+         * **Added In:** 2509172316
+         * 
+         * **SCIM++ Properties:**
+         * * type: string
+         * * multiValued: false
+         * * required: false
+         * * mutability: readWrite
+         * * returned: default
+         * * uniqueness: none
+         * * caseExact: true
+         * * idcsSearchable: false
+         * 
+         * @return builder
+         * 
+         */
+        public Builder impersonatingResource(String impersonatingResource) {
+            return impersonatingResource(Output.of(impersonatingResource));
         }
 
         /**

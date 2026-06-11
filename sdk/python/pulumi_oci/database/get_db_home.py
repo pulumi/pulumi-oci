@@ -27,7 +27,7 @@ class GetDbHomeResult:
     """
     A collection of values returned by getDbHome.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, system_tags=None, time_created=None, vm_cluster_id=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, home_type=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, system_tags=None, time_created=None, vm_cluster_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +61,9 @@ class GetDbHomeResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if home_type and not isinstance(home_type, str):
+            raise TypeError("Expected argument 'home_type' to be a str")
+        pulumi.set(__self__, "home_type", home_type)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -178,6 +181,14 @@ class GetDbHomeResult:
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="homeType")
+    def home_type(self) -> _builtins.str:
+        """
+        Represents database home will be managed by oracle or customer
+        """
+        return pulumi.get(self, "home_type")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -282,6 +293,7 @@ class AwaitableGetDbHomeResult(GetDbHomeResult):
             display_name=self.display_name,
             enable_database_delete=self.enable_database_delete,
             freeform_tags=self.freeform_tags,
+            home_type=self.home_type,
             id=self.id,
             is_desupported_version=self.is_desupported_version,
             is_unified_auditing_enabled=self.is_unified_auditing_enabled,
@@ -332,6 +344,7 @@ def get_db_home(db_home_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         enable_database_delete=pulumi.get(__ret__, 'enable_database_delete'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        home_type=pulumi.get(__ret__, 'home_type'),
         id=pulumi.get(__ret__, 'id'),
         is_desupported_version=pulumi.get(__ret__, 'is_desupported_version'),
         is_unified_auditing_enabled=pulumi.get(__ret__, 'is_unified_auditing_enabled'),
@@ -379,6 +392,7 @@ def get_db_home_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         enable_database_delete=pulumi.get(__response__, 'enable_database_delete'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        home_type=pulumi.get(__response__, 'home_type'),
         id=pulumi.get(__response__, 'id'),
         is_desupported_version=pulumi.get(__response__, 'is_desupported_version'),
         is_unified_auditing_enabled=pulumi.get(__response__, 'is_unified_auditing_enabled'),

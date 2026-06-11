@@ -28,7 +28,7 @@ class GetComputeGpuMemoryClustersResult:
     """
     A collection of values returned by getComputeGpuMemoryClusters.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_collections=None, compute_gpu_memory_cluster_id=None, display_name=None, filters=None, id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, compute_gpu_memory_cluster_collections=None, compute_gpu_memory_cluster_id=None, compute_gpu_memory_fabric_id=None, display_name=None, filters=None, id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetComputeGpuMemoryClustersResult:
         if compute_gpu_memory_cluster_id and not isinstance(compute_gpu_memory_cluster_id, str):
             raise TypeError("Expected argument 'compute_gpu_memory_cluster_id' to be a str")
         pulumi.set(__self__, "compute_gpu_memory_cluster_id", compute_gpu_memory_cluster_id)
+        if compute_gpu_memory_fabric_id and not isinstance(compute_gpu_memory_fabric_id, str):
+            raise TypeError("Expected argument 'compute_gpu_memory_fabric_id' to be a str")
+        pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -92,6 +95,11 @@ class GetComputeGpuMemoryClustersResult:
         return pulumi.get(self, "compute_gpu_memory_cluster_id")
 
     @_builtins.property
+    @pulumi.getter(name="computeGpuMemoryFabricId")
+    def compute_gpu_memory_fabric_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "compute_gpu_memory_fabric_id")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
@@ -124,6 +132,7 @@ class AwaitableGetComputeGpuMemoryClustersResult(GetComputeGpuMemoryClustersResu
             compute_cluster_id=self.compute_cluster_id,
             compute_gpu_memory_cluster_collections=self.compute_gpu_memory_cluster_collections,
             compute_gpu_memory_cluster_id=self.compute_gpu_memory_cluster_id,
+            compute_gpu_memory_fabric_id=self.compute_gpu_memory_fabric_id,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id)
@@ -133,6 +142,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
                                     compartment_id: Optional[_builtins.str] = None,
                                     compute_cluster_id: Optional[_builtins.str] = None,
                                     compute_gpu_memory_cluster_id: Optional[_builtins.str] = None,
+                                    compute_gpu_memory_fabric_id: Optional[_builtins.str] = None,
                                     display_name: Optional[_builtins.str] = None,
                                     filters: Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeGpuMemoryClustersResult:
@@ -151,6 +161,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
         availability_domain=compute_gpu_memory_cluster_availability_domain,
         compute_cluster_id=test_compute_cluster["id"],
         compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"],
+        compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],
         display_name=compute_gpu_memory_cluster_display_name)
     ```
 
@@ -159,6 +170,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     :param _builtins.str compute_gpu_memory_cluster_id: A filter to return only the listings that matches the given GPU memory cluster id.
+    :param _builtins.str compute_gpu_memory_fabric_id: A filter to return only the listings that matches the given GPU memory fabric id.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     """
     __args__ = dict()
@@ -166,6 +178,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
     __args__['compartmentId'] = compartment_id
     __args__['computeClusterId'] = compute_cluster_id
     __args__['computeGpuMemoryClusterId'] = compute_gpu_memory_cluster_id
+    __args__['computeGpuMemoryFabricId'] = compute_gpu_memory_fabric_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -177,6 +190,7 @@ def get_compute_gpu_memory_clusters(availability_domain: Optional[_builtins.str]
         compute_cluster_id=pulumi.get(__ret__, 'compute_cluster_id'),
         compute_gpu_memory_cluster_collections=pulumi.get(__ret__, 'compute_gpu_memory_cluster_collections'),
         compute_gpu_memory_cluster_id=pulumi.get(__ret__, 'compute_gpu_memory_cluster_id'),
+        compute_gpu_memory_fabric_id=pulumi.get(__ret__, 'compute_gpu_memory_fabric_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
@@ -184,6 +198,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            compute_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            compute_gpu_memory_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           compute_gpu_memory_fabric_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryClustersFilterArgs', 'GetComputeGpuMemoryClustersFilterArgsDict']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryClustersResult]:
@@ -202,6 +217,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
         availability_domain=compute_gpu_memory_cluster_availability_domain,
         compute_cluster_id=test_compute_cluster["id"],
         compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"],
+        compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric["id"],
         display_name=compute_gpu_memory_cluster_display_name)
     ```
 
@@ -210,6 +226,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
     :param _builtins.str compute_gpu_memory_cluster_id: A filter to return only the listings that matches the given GPU memory cluster id.
+    :param _builtins.str compute_gpu_memory_fabric_id: A filter to return only the listings that matches the given GPU memory fabric id.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     """
     __args__ = dict()
@@ -217,6 +234,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
     __args__['compartmentId'] = compartment_id
     __args__['computeClusterId'] = compute_cluster_id
     __args__['computeGpuMemoryClusterId'] = compute_gpu_memory_cluster_id
+    __args__['computeGpuMemoryFabricId'] = compute_gpu_memory_fabric_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -227,6 +245,7 @@ def get_compute_gpu_memory_clusters_output(availability_domain: pulumi.Input[Opt
         compute_cluster_id=pulumi.get(__response__, 'compute_cluster_id'),
         compute_gpu_memory_cluster_collections=pulumi.get(__response__, 'compute_gpu_memory_cluster_collections'),
         compute_gpu_memory_cluster_id=pulumi.get(__response__, 'compute_gpu_memory_cluster_id'),
+        compute_gpu_memory_fabric_id=pulumi.get(__response__, 'compute_gpu_memory_fabric_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id')))

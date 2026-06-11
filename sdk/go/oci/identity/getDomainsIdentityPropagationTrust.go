@@ -84,6 +84,12 @@ type LookupDomainsIdentityPropagationTrustResult struct {
 	AttributeSets      []string `pulumi:"attributeSets"`
 	Attributes         *string  `pulumi:"attributes"`
 	Authorization      *string  `pulumi:"authorization"`
+	// Certificate trust store. This is required if identity propagation type is X509.
+	CaCertChains []GetDomainsIdentityPropagationTrustCaCertChain `pulumi:"caCertChains"`
+	// A list of claims to propagate in RPST
+	ClaimPropagations []string `pulumi:"claimPropagations"`
+	// A list of claim validations
+	ClaimValidations []GetDomainsIdentityPropagationTrustClaimValidation `pulumi:"claimValidations"`
 	// The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 	ClientClaimName string `pulumi:"clientClaimName"`
 	// The value that corresponds to the client claim name used to identify to whom the token is issued.
@@ -110,6 +116,8 @@ type LookupDomainsIdentityPropagationTrustResult struct {
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations    []string `pulumi:"idcsPreventedOperations"`
 	IdentityPropagationTrustId string   `pulumi:"identityPropagationTrustId"`
+	// Defines the external workload that acts as impersonating resource principal.
+	ImpersonatingResource string `pulumi:"impersonatingResource"`
 	// The Impersonating Principal.
 	ImpersonationServiceUsers []GetDomainsIdentityPropagationTrustImpersonationServiceUser `pulumi:"impersonationServiceUsers"`
 	// The issuer claim of the Identity provider.
@@ -216,6 +224,25 @@ func (o LookupDomainsIdentityPropagationTrustResultOutput) Authorization() pulum
 	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
 
+// Certificate trust store. This is required if identity propagation type is X509.
+func (o LookupDomainsIdentityPropagationTrustResultOutput) CaCertChains() GetDomainsIdentityPropagationTrustCaCertChainArrayOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) []GetDomainsIdentityPropagationTrustCaCertChain {
+		return v.CaCertChains
+	}).(GetDomainsIdentityPropagationTrustCaCertChainArrayOutput)
+}
+
+// A list of claims to propagate in RPST
+func (o LookupDomainsIdentityPropagationTrustResultOutput) ClaimPropagations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) []string { return v.ClaimPropagations }).(pulumi.StringArrayOutput)
+}
+
+// A list of claim validations
+func (o LookupDomainsIdentityPropagationTrustResultOutput) ClaimValidations() GetDomainsIdentityPropagationTrustClaimValidationArrayOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) []GetDomainsIdentityPropagationTrustClaimValidation {
+		return v.ClaimValidations
+	}).(GetDomainsIdentityPropagationTrustClaimValidationArrayOutput)
+}
+
 // The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
 func (o LookupDomainsIdentityPropagationTrustResultOutput) ClientClaimName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) string { return v.ClientClaimName }).(pulumi.StringOutput)
@@ -286,6 +313,11 @@ func (o LookupDomainsIdentityPropagationTrustResultOutput) IdcsPreventedOperatio
 
 func (o LookupDomainsIdentityPropagationTrustResultOutput) IdentityPropagationTrustId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) string { return v.IdentityPropagationTrustId }).(pulumi.StringOutput)
+}
+
+// Defines the external workload that acts as impersonating resource principal.
+func (o LookupDomainsIdentityPropagationTrustResultOutput) ImpersonatingResource() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityPropagationTrustResult) string { return v.ImpersonatingResource }).(pulumi.StringOutput)
 }
 
 // The Impersonating Principal.

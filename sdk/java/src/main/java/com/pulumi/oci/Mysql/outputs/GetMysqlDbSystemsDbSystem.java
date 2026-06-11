@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemHeatWaveCluster;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemReadEndpoint;
@@ -168,6 +169,11 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     private String ipAddress;
     /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    /**
      * @return If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      * 
      */
@@ -177,6 +183,11 @@ public final class GetMysqlDbSystemsDbSystem {
      * 
      */
     private Boolean isHighlyAvailable;
+    /**
+     * @return Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+     * 
+     */
+    private Boolean isIpv6enabled;
     /**
      * @return Additional information about the current lifecycleState.
      * 
@@ -468,6 +479,13 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.ipAddress;
     }
     /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails;
+    }
+    /**
      * @return If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
      * 
      */
@@ -480,6 +498,13 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     public Boolean isHighlyAvailable() {
         return this.isHighlyAvailable;
+    }
+    /**
+     * @return Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+     * 
+     */
+    public Boolean isIpv6enabled() {
+        return this.isIpv6enabled;
     }
     /**
      * @return Additional information about the current lifecycleState.
@@ -655,8 +680,10 @@ public final class GetMysqlDbSystemsDbSystem {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
+        private List<GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
+        private Boolean isIpv6enabled;
         private String lifecycleDetails;
         private List<GetMysqlDbSystemsDbSystemMaintenance> maintenances;
         private String mysqlVersion;
@@ -708,8 +735,10 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
+    	      this.isIpv6enabled = defaults.isIpv6enabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
@@ -987,6 +1016,17 @@ public final class GetMysqlDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            if (ipv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "ipv6addressIpv6subnetCidrPairDetails");
+            }
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+        public Builder ipv6addressIpv6subnetCidrPairDetails(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             if (isHeatWaveClusterAttached == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "isHeatWaveClusterAttached");
@@ -1000,6 +1040,14 @@ public final class GetMysqlDbSystemsDbSystem {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "isHighlyAvailable");
             }
             this.isHighlyAvailable = isHighlyAvailable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIpv6enabled(Boolean isIpv6enabled) {
+            if (isIpv6enabled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "isIpv6enabled");
+            }
+            this.isIpv6enabled = isIpv6enabled;
             return this;
         }
         @CustomType.Setter
@@ -1216,8 +1264,10 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
+            _resultValue.isIpv6enabled = isIpv6enabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;

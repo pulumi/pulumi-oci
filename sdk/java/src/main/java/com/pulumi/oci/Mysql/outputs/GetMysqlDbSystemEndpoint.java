@@ -23,6 +23,11 @@ public final class GetMysqlDbSystemEndpoint {
      */
     private String ipAddress;
     /**
+     * @return The internet protocol (IP) version of the IP address.
+     * 
+     */
+    private String ipAddressVersion;
+    /**
      * @return The access modes from the client that this endpoint supports.
      * 
      */
@@ -72,6 +77,13 @@ public final class GetMysqlDbSystemEndpoint {
      */
     public String ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * @return The internet protocol (IP) version of the IP address.
+     * 
+     */
+    public String ipAddressVersion() {
+        return this.ipAddressVersion;
     }
     /**
      * @return The access modes from the client that this endpoint supports.
@@ -134,6 +146,7 @@ public final class GetMysqlDbSystemEndpoint {
     public static final class Builder {
         private String hostname;
         private String ipAddress;
+        private String ipAddressVersion;
         private List<String> modes;
         private Integer port;
         private Integer portX;
@@ -146,6 +159,7 @@ public final class GetMysqlDbSystemEndpoint {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipAddressVersion = defaults.ipAddressVersion;
     	      this.modes = defaults.modes;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
@@ -169,6 +183,14 @@ public final class GetMysqlDbSystemEndpoint {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemEndpoint", "ipAddress");
             }
             this.ipAddress = ipAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipAddressVersion(String ipAddressVersion) {
+            if (ipAddressVersion == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemEndpoint", "ipAddressVersion");
+            }
+            this.ipAddressVersion = ipAddressVersion;
             return this;
         }
         @CustomType.Setter
@@ -234,6 +256,7 @@ public final class GetMysqlDbSystemEndpoint {
             final var _resultValue = new GetMysqlDbSystemEndpoint();
             _resultValue.hostname = hostname;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipAddressVersion = ipAddressVersion;
             _resultValue.modes = modes;
             _resultValue.port = port;
             _resultValue.portX = portX;

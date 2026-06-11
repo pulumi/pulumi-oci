@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
     public sealed class GetServiceProviderActionsServiceProviderActionSummaryCollectionItemResult
     {
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// Name of the infrastructure layer associated with the Service Provider Action.
         /// </summary>
         public readonly string Component;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
         /// Unique Oracle assigned identifier for the Service Provider Action.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates whether the service provider action allows SSH access.
+        /// </summary>
+        public readonly bool IsSshAccessAllowed;
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
@@ -52,6 +60,8 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
 
         [OutputConstructor]
         private GetServiceProviderActionsServiceProviderActionSummaryCollectionItemResult(
+            string compartmentId,
+
             string component,
 
             string customerDisplayName,
@@ -59,6 +69,8 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
             string description,
 
             string id,
+
+            bool isSshAccessAllowed,
 
             string name,
 
@@ -70,10 +82,12 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
 
             string state)
         {
+            CompartmentId = compartmentId;
             Component = component;
             CustomerDisplayName = customerDisplayName;
             Description = description;
             Id = id;
+            IsSshAccessAllowed = isSshAccessAllowed;
             Name = name;
             Properties = properties;
             ResourceType = resourceType;

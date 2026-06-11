@@ -124,6 +124,10 @@ namespace Pulumi.Oci.DelegateAccessControl
     public sealed class GetServiceProviderActionResult
     {
         /// <summary>
+        /// The OCID of the compartment that contains the Service Provider Action.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// Name of the infrastructure layer associated with the Service Provider Action.
         /// </summary>
         public readonly string Component;
@@ -139,6 +143,10 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates whether the service provider action allows SSH access.
+        /// </summary>
+        public readonly bool IsSshAccessAllowed;
         /// <summary>
         /// Name of the property
         /// </summary>
@@ -163,6 +171,8 @@ namespace Pulumi.Oci.DelegateAccessControl
 
         [OutputConstructor]
         private GetServiceProviderActionResult(
+            string compartmentId,
+
             string component,
 
             string customerDisplayName,
@@ -170,6 +180,8 @@ namespace Pulumi.Oci.DelegateAccessControl
             string description,
 
             string id,
+
+            bool isSshAccessAllowed,
 
             string name,
 
@@ -183,10 +195,12 @@ namespace Pulumi.Oci.DelegateAccessControl
 
             string state)
         {
+            CompartmentId = compartmentId;
             Component = component;
             CustomerDisplayName = customerDisplayName;
             Description = description;
             Id = id;
+            IsSshAccessAllowed = isSshAccessAllowed;
             Name = name;
             Properties = properties;
             ResourceType = resourceType;

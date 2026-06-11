@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        /// </summary>
+        [Input("mustUseIpv6onDualStack")]
+        public Input<bool>? MustUseIpv6onDualStack { get; set; }
+
         [Input("password", required: true)]
         private Input<string>? _password;
 

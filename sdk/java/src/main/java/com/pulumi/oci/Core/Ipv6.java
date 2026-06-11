@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(ipv6DisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .hostname(ipv6Hostname)
  *             .ipAddress(ipv6IpAddress)
  *             .ipv6subnetCidr(ipv6Ipv6subnetCidr)
  *             .lifetime(ipv6Lifetime)
@@ -146,6 +147,20 @@ public class Ipv6 extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     * 
+     */
+    @Export(name="hostname", refs={String.class}, tree="[0]")
+    private Output<String> hostname;
+
+    /**
+     * @return (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     * 
+     */
+    public Output<String> hostname() {
+        return this.hostname;
     }
     /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`

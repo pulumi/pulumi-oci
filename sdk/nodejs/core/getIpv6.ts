@@ -65,6 +65,10 @@ export interface GetIpv6Result {
      */
     readonly freeformTags: {[key: string]: string};
     /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     */
+    readonly hostname: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
      */
     readonly id: string;

@@ -31,10 +31,14 @@ class DomainsIdentityPropagationTrustArgs:
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_cert_chain: pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']] = None,
+                 claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
                  keytab: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -122,6 +126,43 @@ class DomainsIdentityPropagationTrustArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+        :param pulumi.Input['DomainsIdentityPropagationTrustCaCertChainArgs'] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: complex
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] claim_propagations: (Updatable) A list of claims to propagate in RPST
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]] claim_validations: (Updatable) A list of claim validations
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[_builtins.str] client_claim_name: (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
                
                **SCIM++ Properties:**
@@ -166,6 +207,19 @@ class DomainsIdentityPropagationTrustArgs:
                * returned: default
                * uniqueness: none
                * caseExact: false
+               * idcsSearchable: false
+        :param pulumi.Input[_builtins.str] impersonating_resource: (Updatable) Defines the external workload that acts as impersonating resource principal.
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * type: string
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+               * caseExact: true
                * idcsSearchable: false
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
@@ -302,6 +356,12 @@ class DomainsIdentityPropagationTrustArgs:
             pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
             pulumi.set(__self__, "authorization", authorization)
+        if ca_cert_chain is not None:
+            pulumi.set(__self__, "ca_cert_chain", ca_cert_chain)
+        if claim_propagations is not None:
+            pulumi.set(__self__, "claim_propagations", claim_propagations)
+        if claim_validations is not None:
+            pulumi.set(__self__, "claim_validations", claim_validations)
         if client_claim_name is not None:
             pulumi.set(__self__, "client_claim_name", client_claim_name)
         if client_claim_values is not None:
@@ -310,6 +370,8 @@ class DomainsIdentityPropagationTrustArgs:
             pulumi.set(__self__, "clock_skew_seconds", clock_skew_seconds)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if impersonating_resource is not None:
+            pulumi.set(__self__, "impersonating_resource", impersonating_resource)
         if impersonation_service_users is not None:
             pulumi.set(__self__, "impersonation_service_users", impersonation_service_users)
         if keytab is not None:
@@ -518,6 +580,76 @@ class DomainsIdentityPropagationTrustArgs:
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
+    @pulumi.getter(name="caCertChain")
+    def ca_cert_chain(self) -> pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']]:
+        """
+        (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+
+        **Added In:** 2508041610
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: complex
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ca_cert_chain")
+
+    @ca_cert_chain.setter
+    def ca_cert_chain(self, value: pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']]):
+        pulumi.set(self, "ca_cert_chain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="claimPropagations")
+    def claim_propagations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of claims to propagate in RPST
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_propagations")
+
+    @claim_propagations.setter
+    def claim_propagations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "claim_propagations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidations")
+    def claim_validations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]]:
+        """
+        (Updatable) A list of claim validations
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_validations")
+
+    @claim_validations.setter
+    def claim_validations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]]):
+        pulumi.set(self, "claim_validations", value)
+
+    @_builtins.property
     @pulumi.getter(name="clientClaimName")
     def client_claim_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -605,6 +737,30 @@ class DomainsIdentityPropagationTrustArgs:
     @description.setter
     def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="impersonatingResource")
+    def impersonating_resource(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Defines the external workload that acts as impersonating resource principal.
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * type: string
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        * caseExact: true
+        * idcsSearchable: false
+        """
+        return pulumi.get(self, "impersonating_resource")
+
+    @impersonating_resource.setter
+    def impersonating_resource(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "impersonating_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")
@@ -866,6 +1022,9 @@ class _DomainsIdentityPropagationTrustState:
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_cert_chain: pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']] = None,
+                 claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
@@ -878,6 +1037,7 @@ class _DomainsIdentityPropagationTrustState:
                  idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs']]]] = None,
                  idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  keytab: pulumi.Input[Optional['DomainsIdentityPropagationTrustKeytabArgs']] = None,
@@ -932,6 +1092,43 @@ class _DomainsIdentityPropagationTrustState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+        :param pulumi.Input['DomainsIdentityPropagationTrustCaCertChainArgs'] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: complex
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] claim_propagations: (Updatable) A list of claims to propagate in RPST
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]] claim_validations: (Updatable) A list of claim validations
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[_builtins.str] client_claim_name: (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
                
                **SCIM++ Properties:**
@@ -1050,6 +1247,19 @@ class _DomainsIdentityPropagationTrustState:
                * returned: request
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.str] impersonating_resource: (Updatable) Defines the external workload that acts as impersonating resource principal.
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * type: string
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+               * caseExact: true
+               * idcsSearchable: false
         :param pulumi.Input[Sequence[pulumi.Input['DomainsIdentityPropagationTrustImpersonationServiceUserArgs']]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
                **SCIM++ Properties:**
@@ -1240,6 +1450,12 @@ class _DomainsIdentityPropagationTrustState:
             pulumi.set(__self__, "attributes", attributes)
         if authorization is not None:
             pulumi.set(__self__, "authorization", authorization)
+        if ca_cert_chain is not None:
+            pulumi.set(__self__, "ca_cert_chain", ca_cert_chain)
+        if claim_propagations is not None:
+            pulumi.set(__self__, "claim_propagations", claim_propagations)
+        if claim_validations is not None:
+            pulumi.set(__self__, "claim_validations", claim_validations)
         if client_claim_name is not None:
             pulumi.set(__self__, "client_claim_name", client_claim_name)
         if client_claim_values is not None:
@@ -1264,6 +1480,8 @@ class _DomainsIdentityPropagationTrustState:
             pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
             pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+        if impersonating_resource is not None:
+            pulumi.set(__self__, "impersonating_resource", impersonating_resource)
         if impersonation_service_users is not None:
             pulumi.set(__self__, "impersonation_service_users", impersonation_service_users)
         if issuer is not None:
@@ -1398,6 +1616,76 @@ class _DomainsIdentityPropagationTrustState:
     @authorization.setter
     def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="caCertChain")
+    def ca_cert_chain(self) -> pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']]:
+        """
+        (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+
+        **Added In:** 2508041610
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: complex
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ca_cert_chain")
+
+    @ca_cert_chain.setter
+    def ca_cert_chain(self, value: pulumi.Input[Optional['DomainsIdentityPropagationTrustCaCertChainArgs']]):
+        pulumi.set(self, "ca_cert_chain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="claimPropagations")
+    def claim_propagations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of claims to propagate in RPST
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_propagations")
+
+    @claim_propagations.setter
+    def claim_propagations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "claim_propagations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidations")
+    def claim_validations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]]:
+        """
+        (Updatable) A list of claim validations
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_validations")
+
+    @claim_validations.setter
+    def claim_validations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityPropagationTrustClaimValidationArgs']]]]):
+        pulumi.set(self, "claim_validations", value)
 
     @_builtins.property
     @pulumi.getter(name="clientClaimName")
@@ -1648,6 +1936,30 @@ class _DomainsIdentityPropagationTrustState:
     @idcs_prevented_operations.setter
     def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="impersonatingResource")
+    def impersonating_resource(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Defines the external workload that acts as impersonating resource principal.
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * type: string
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        * caseExact: true
+        * idcsSearchable: false
+        """
+        return pulumi.get(self, "impersonating_resource")
+
+    @impersonating_resource.setter
+    def impersonating_resource(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "impersonating_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")
@@ -2026,11 +2338,15 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+                 claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
@@ -2067,16 +2383,26 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             name=identity_propagation_trust_name,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"],
             type=identity_propagation_trust_type,
+            ca_cert_chain={
+                "root_cas": identity_propagation_trust_ca_cert_chain_root_cas,
+                "intermediate_cas": identity_propagation_trust_ca_cert_chain_intermediate_cas,
+            },
             account_id="accountId",
             active=identity_propagation_trust_active == "true",
             allow_impersonation=identity_propagation_trust_allow_impersonation == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=identity_propagation_trust_authorization,
+            claim_propagations=identity_propagation_trust_claim_propagations,
+            claim_validations=[{
+                "name": identity_propagation_trust_claim_validations_name,
+                "value": identity_propagation_trust_claim_validations_value,
+            }],
             client_claim_name=identity_propagation_trust_client_claim_name,
             client_claim_values=["clientClaimValues"],
             clock_skew_seconds=int(identity_propagation_trust_clock_skew_seconds),
             description=identity_propagation_trust_description,
+            impersonating_resource=identity_propagation_trust_impersonating_resource,
             impersonation_service_users=[{
                 "rule": identity_propagation_trust_impersonation_service_users_rule,
                 "value": test_identity_propagation_trust_user["id"],
@@ -2145,6 +2471,43 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: complex
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] claim_propagations: (Updatable) A list of claims to propagate in RPST
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]] claim_validations: (Updatable) A list of claim validations
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[_builtins.str] client_claim_name: (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
                
                **SCIM++ Properties:**
@@ -2191,6 +2554,19 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * caseExact: false
                * idcsSearchable: false
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
+        :param pulumi.Input[_builtins.str] impersonating_resource: (Updatable) Defines the external workload that acts as impersonating resource principal.
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * type: string
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+               * caseExact: true
+               * idcsSearchable: false
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
                **SCIM++ Properties:**
@@ -2373,16 +2749,26 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             name=identity_propagation_trust_name,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"],
             type=identity_propagation_trust_type,
+            ca_cert_chain={
+                "root_cas": identity_propagation_trust_ca_cert_chain_root_cas,
+                "intermediate_cas": identity_propagation_trust_ca_cert_chain_intermediate_cas,
+            },
             account_id="accountId",
             active=identity_propagation_trust_active == "true",
             allow_impersonation=identity_propagation_trust_allow_impersonation == "true",
             attribute_sets=["all"],
             attributes="",
             authorization=identity_propagation_trust_authorization,
+            claim_propagations=identity_propagation_trust_claim_propagations,
+            claim_validations=[{
+                "name": identity_propagation_trust_claim_validations_name,
+                "value": identity_propagation_trust_claim_validations_value,
+            }],
             client_claim_name=identity_propagation_trust_client_claim_name,
             client_claim_values=["clientClaimValues"],
             clock_skew_seconds=int(identity_propagation_trust_clock_skew_seconds),
             description=identity_propagation_trust_description,
+            impersonating_resource=identity_propagation_trust_impersonating_resource,
             impersonation_service_users=[{
                 "rule": identity_propagation_trust_impersonation_service_users_rule,
                 "value": test_identity_propagation_trust_user["id"],
@@ -2436,11 +2822,15 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  attributes: pulumi.Input[Optional[_builtins.str]] = None,
                  authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+                 claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
                  client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
                  client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
                  issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
@@ -2471,6 +2861,9 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authorization"] = authorization
+            __props__.__dict__["ca_cert_chain"] = ca_cert_chain
+            __props__.__dict__["claim_propagations"] = claim_propagations
+            __props__.__dict__["claim_validations"] = claim_validations
             __props__.__dict__["client_claim_name"] = client_claim_name
             __props__.__dict__["client_claim_values"] = client_claim_values
             __props__.__dict__["clock_skew_seconds"] = clock_skew_seconds
@@ -2478,6 +2871,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
+            __props__.__dict__["impersonating_resource"] = impersonating_resource
             __props__.__dict__["impersonation_service_users"] = impersonation_service_users
             if issuer is None and not opts.urn:
                 raise TypeError("Missing required property 'issuer'")
@@ -2524,6 +2918,9 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             attributes: pulumi.Input[Optional[_builtins.str]] = None,
             authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']]] = None,
+            claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]]] = None,
             client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
             client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2536,6 +2933,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
             idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict']]]]] = None,
             idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
             idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
             impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]]] = None,
             issuer: pulumi.Input[Optional[_builtins.str]] = None,
             keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict']]] = None,
@@ -2594,6 +2992,43 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[_builtins.str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[_builtins.str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+        :param pulumi.Input[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict']] ca_cert_chain: (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: complex
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] claim_propagations: (Updatable) A list of claims to propagate in RPST
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict']]]] claim_validations: (Updatable) A list of claim validations
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * idcsCompositeKey: [name]
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[_builtins.str] client_claim_name: (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \\"aud\\" or \\"client_id\\". If Azure, then \\"appid\\". If GCP, then \\"aud\\".
                
                **SCIM++ Properties:**
@@ -2712,6 +3147,19 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.str] impersonating_resource: (Updatable) Defines the external workload that acts as impersonating resource principal.
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * type: string
+               * multiValued: false
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+               * caseExact: true
+               * idcsSearchable: false
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict']]]] impersonation_service_users: (Updatable) The Impersonating Principal.
                
                **SCIM++ Properties:**
@@ -2900,6 +3348,9 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         __props__.__dict__["attribute_sets"] = attribute_sets
         __props__.__dict__["attributes"] = attributes
         __props__.__dict__["authorization"] = authorization
+        __props__.__dict__["ca_cert_chain"] = ca_cert_chain
+        __props__.__dict__["claim_propagations"] = claim_propagations
+        __props__.__dict__["claim_validations"] = claim_validations
         __props__.__dict__["client_claim_name"] = client_claim_name
         __props__.__dict__["client_claim_values"] = client_claim_values
         __props__.__dict__["clock_skew_seconds"] = clock_skew_seconds
@@ -2912,6 +3363,7 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         __props__.__dict__["idcs_last_modified_bies"] = idcs_last_modified_bies
         __props__.__dict__["idcs_last_upgraded_in_release"] = idcs_last_upgraded_in_release
         __props__.__dict__["idcs_prevented_operations"] = idcs_prevented_operations
+        __props__.__dict__["impersonating_resource"] = impersonating_resource
         __props__.__dict__["impersonation_service_users"] = impersonation_service_users
         __props__.__dict__["issuer"] = issuer
         __props__.__dict__["keytab"] = keytab
@@ -3006,6 +3458,64 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
+
+    @_builtins.property
+    @pulumi.getter(name="caCertChain")
+    def ca_cert_chain(self) -> pulumi.Output['outputs.DomainsIdentityPropagationTrustCaCertChain']:
+        """
+        (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+
+        **Added In:** 2508041610
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: complex
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ca_cert_chain")
+
+    @_builtins.property
+    @pulumi.getter(name="claimPropagations")
+    def claim_propagations(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of claims to propagate in RPST
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_propagations")
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidations")
+    def claim_validations(self) -> pulumi.Output[Sequence['outputs.DomainsIdentityPropagationTrustClaimValidation']]:
+        """
+        (Updatable) A list of claim validations
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * idcsCompositeKey: [name]
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "claim_validations")
 
     @_builtins.property
     @pulumi.getter(name="clientClaimName")
@@ -3208,6 +3718,26 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "idcs_prevented_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="impersonatingResource")
+    def impersonating_resource(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Defines the external workload that acts as impersonating resource principal.
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * type: string
+        * multiValued: false
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        * caseExact: true
+        * idcsSearchable: false
+        """
+        return pulumi.get(self, "impersonating_resource")
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")

@@ -22,40 +22,45 @@ __all__ = ['DatabaseArgs', 'Database']
 class DatabaseArgs:
     def __init__(__self__, *,
                  database: pulumi.Input['DatabaseDatabaseArgs'],
-                 db_home_id: pulumi.Input[_builtins.str],
                  source: pulumi.Input[_builtins.str],
                  action_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  data_guard_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_version: pulumi.Input[Optional[_builtins.str]] = None,
                  key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 vault_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Database resource.
 
         :param pulumi.Input['DatabaseDatabaseArgs'] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
+        :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[_builtins.str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "database", database)
-        pulumi.set(__self__, "db_home_id", db_home_id)
         pulumi.set(__self__, "source", source)
         if action_trigger is not None:
             pulumi.set(__self__, "action_trigger", action_trigger)
         if data_guard_action is not None:
             pulumi.set(__self__, "data_guard_action", data_guard_action)
+        if db_home_id is not None:
+            pulumi.set(__self__, "db_home_id", db_home_id)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if key_store_id is not None:
@@ -68,8 +73,12 @@ class DatabaseArgs:
             pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
         if kms_key_version_id is not None:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if managed_software_update_details is not None:
+            pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter
@@ -84,18 +93,6 @@ class DatabaseArgs:
     @database.setter
     def database(self, value: pulumi.Input['DatabaseDatabaseArgs']):
         pulumi.set(self, "database", value)
-
-    @_builtins.property
-    @pulumi.getter(name="dbHomeId")
-    def db_home_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        """
-        return pulumi.get(self, "db_home_id")
-
-    @db_home_id.setter
-    def db_home_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "db_home_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -126,6 +123,18 @@ class DatabaseArgs:
     @data_guard_action.setter
     def data_guard_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_guard_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbHomeId")
+    def db_home_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        """
+        return pulumi.get(self, "db_home_id")
+
+    @db_home_id.setter
+    def db_home_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "db_home_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
@@ -196,6 +205,18 @@ class DatabaseArgs:
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]]:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]]):
+        pulumi.set(self, "managed_software_update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -206,6 +227,18 @@ class DatabaseArgs:
     @vault_id.setter
     def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
 
 
 @pulumi.input_type
@@ -240,6 +273,7 @@ class _DatabaseState:
                  last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]] = None,
                  ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
                  patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                  pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -284,6 +318,7 @@ class _DatabaseState:
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -354,6 +389,8 @@ class _DatabaseState:
             pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if managed_software_update_details is not None:
+            pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if patch_version is not None:
@@ -720,6 +757,18 @@ class _DatabaseState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]]:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseManagedSoftwareUpdateDetailArgs']]]]):
+        pulumi.set(self, "managed_software_update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -877,8 +926,10 @@ class Database(pulumi.CustomResource):
                  kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
@@ -906,8 +957,10 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         ...
     @overload
@@ -954,8 +1007,10 @@ class Database(pulumi.CustomResource):
                  kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
                  kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -970,8 +1025,6 @@ class Database(pulumi.CustomResource):
             if database is None and not opts.urn:
                 raise TypeError("Missing required property 'database'")
             __props__.__dict__["database"] = database
-            if db_home_id is None and not opts.urn:
-                raise TypeError("Missing required property 'db_home_id'")
             __props__.__dict__["db_home_id"] = db_home_id
             __props__.__dict__["db_version"] = db_version
             __props__.__dict__["key_store_id"] = key_store_id
@@ -979,10 +1032,12 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["kms_key_migration"] = kms_key_migration
             __props__.__dict__["kms_key_rotation"] = kms_key_rotation
             __props__.__dict__["kms_key_version_id"] = kms_key_version_id
+            __props__.__dict__["managed_software_update_details"] = managed_software_update_details
             if source is None and not opts.urn:
                 raise TypeError("Missing required property 'source'")
             __props__.__dict__["source"] = source
             __props__.__dict__["vault_id"] = vault_id
+            __props__.__dict__["vm_cluster_id"] = vm_cluster_id
             __props__.__dict__["character_set"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["connection_strings"] = None
@@ -1011,7 +1066,6 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["storage_size_details"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
-            __props__.__dict__["vm_cluster_id"] = None
         super(Database, __self__).__init__(
             'oci:Database/database:Database',
             resource_name,
@@ -1051,6 +1105,7 @@ class Database(pulumi.CustomResource):
             last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]]] = None,
             ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
             patch_version: pulumi.Input[Optional[_builtins.str]] = None,
             pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1099,6 +1154,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict']]]] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -1144,6 +1200,7 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["last_backup_timestamp"] = last_backup_timestamp
         __props__.__dict__["last_failed_backup_timestamp"] = last_failed_backup_timestamp
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["managed_software_update_details"] = managed_software_update_details
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["patch_version"] = patch_version
         __props__.__dict__["pdb_name"] = pdb_name
@@ -1381,6 +1438,14 @@ class Database(pulumi.CustomResource):
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> pulumi.Output[Sequence['outputs.DatabaseManagedSoftwareUpdateDetail']]:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")

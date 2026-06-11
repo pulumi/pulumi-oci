@@ -27,7 +27,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, security_attributes=None, shape_name=None, state=None, telemetry_configurations=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, ipv6address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, security_attributes=None, shape_name=None, state=None, telemetry_configurations=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -64,6 +64,9 @@ class GetReplicaResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address and not isinstance(ipv6address, str):
+            raise TypeError("Expected argument 'ipv6address' to be a str")
+        pulumi.set(__self__, "ipv6address", ipv6address)
         if is_delete_protected and not isinstance(is_delete_protected, bool):
             raise TypeError("Expected argument 'is_delete_protected' to be a bool")
         pulumi.set(__self__, "is_delete_protected", is_delete_protected)
@@ -207,6 +210,14 @@ class GetReplicaResult:
         return pulumi.get(self, "ip_address")
 
     @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        The IPv6 address the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
     @pulumi.getter(name="isDeleteProtected")
     def is_delete_protected(self) -> _builtins.bool:
         """
@@ -342,6 +353,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             ip_address=self.ip_address,
+            ipv6address=self.ipv6address,
             is_delete_protected=self.is_delete_protected,
             lifecycle_details=self.lifecycle_details,
             mysql_version=self.mysql_version,
@@ -396,6 +408,7 @@ def get_replica(replica_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ipv6address=pulumi.get(__ret__, 'ipv6address'),
         is_delete_protected=pulumi.get(__ret__, 'is_delete_protected'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         mysql_version=pulumi.get(__ret__, 'mysql_version'),
@@ -447,6 +460,7 @@ def get_replica_output(replica_id: pulumi.Input[Optional[_builtins.str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ipv6address=pulumi.get(__response__, 'ipv6address'),
         is_delete_protected=pulumi.get(__response__, 'is_delete_protected'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         mysql_version=pulumi.get(__response__, 'mysql_version'),

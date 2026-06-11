@@ -66,7 +66,7 @@ export class DelegationSubscription extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -177,7 +177,7 @@ export class DelegationSubscription extends pulumi.CustomResource {
  */
 export interface DelegationSubscriptionState {
     /**
-     * (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
@@ -235,7 +235,7 @@ export interface DelegationSubscriptionState {
  */
 export interface DelegationSubscriptionArgs {
     /**
-     * (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      */
     compartmentId: pulumi.Input<string>;
     /**

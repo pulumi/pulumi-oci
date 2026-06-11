@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string Hostname;
         /// <summary>
+        /// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        /// </summary>
+        public readonly bool? MustUseIpv6onDualStack;
+        /// <summary>
         /// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         /// </summary>
         public readonly string Password;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string hostname,
 
+            bool? mustUseIpv6onDualStack,
+
             string password,
 
             int? port,
@@ -66,6 +72,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         {
             AnonymousTransactionsHandling = anonymousTransactionsHandling;
             Hostname = hostname;
+            MustUseIpv6onDualStack = mustUseIpv6onDualStack;
             Password = password;
             Port = port;
             SourceType = sourceType;

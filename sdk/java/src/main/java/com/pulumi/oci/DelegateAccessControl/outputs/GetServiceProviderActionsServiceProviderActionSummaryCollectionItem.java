@@ -6,12 +6,18 @@ package com.pulumi.oci.DelegateAccessControl.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DelegateAccessControl.outputs.GetServiceProviderActionsServiceProviderActionSummaryCollectionItemProperty;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetServiceProviderActionsServiceProviderActionSummaryCollectionItem {
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    private String compartmentId;
     /**
      * @return Name of the infrastructure layer associated with the Service Provider Action.
      * 
@@ -32,6 +38,11 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether the service provider action allows SSH access.
+     * 
+     */
+    private Boolean isSshAccessAllowed;
     /**
      * @return A filter to return only resources that match the entire name given.
      * 
@@ -60,6 +71,13 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
 
     private GetServiceProviderActionsServiceProviderActionSummaryCollectionItem() {}
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
+    /**
      * @return Name of the infrastructure layer associated with the Service Provider Action.
      * 
      */
@@ -86,6 +104,13 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates whether the service provider action allows SSH access.
+     * 
+     */
+    public Boolean isSshAccessAllowed() {
+        return this.isSshAccessAllowed;
     }
     /**
      * @return A filter to return only resources that match the entire name given.
@@ -132,10 +157,12 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
     }
     @CustomType.Builder
     public static final class Builder {
+        private String compartmentId;
         private String component;
         private String customerDisplayName;
         private String description;
         private String id;
+        private Boolean isSshAccessAllowed;
         private String name;
         private List<GetServiceProviderActionsServiceProviderActionSummaryCollectionItemProperty> properties;
         private String resourceType;
@@ -144,10 +171,12 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
         public Builder() {}
         public Builder(GetServiceProviderActionsServiceProviderActionSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.component = defaults.component;
     	      this.customerDisplayName = defaults.customerDisplayName;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
+    	      this.isSshAccessAllowed = defaults.isSshAccessAllowed;
     	      this.name = defaults.name;
     	      this.properties = defaults.properties;
     	      this.resourceType = defaults.resourceType;
@@ -155,6 +184,14 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceProviderActionsServiceProviderActionSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder component(String component) {
             if (component == null) {
@@ -185,6 +222,14 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
               throw new MissingRequiredPropertyException("GetServiceProviderActionsServiceProviderActionSummaryCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSshAccessAllowed(Boolean isSshAccessAllowed) {
+            if (isSshAccessAllowed == null) {
+              throw new MissingRequiredPropertyException("GetServiceProviderActionsServiceProviderActionSummaryCollectionItem", "isSshAccessAllowed");
+            }
+            this.isSshAccessAllowed = isSshAccessAllowed;
             return this;
         }
         @CustomType.Setter
@@ -235,10 +280,12 @@ public final class GetServiceProviderActionsServiceProviderActionSummaryCollecti
         }
         public GetServiceProviderActionsServiceProviderActionSummaryCollectionItem build() {
             final var _resultValue = new GetServiceProviderActionsServiceProviderActionSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
             _resultValue.component = component;
             _resultValue.customerDisplayName = customerDisplayName;
             _resultValue.description = description;
             _resultValue.id = id;
+            _resultValue.isSshAccessAllowed = isSshAccessAllowed;
             _resultValue.name = name;
             _resultValue.properties = properties;
             _resultValue.resourceType = resourceType;

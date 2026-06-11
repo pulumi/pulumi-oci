@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.ComputeGpuMemoryFabricMemoryFabricPreferencesArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -60,6 +61,21 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * List of GPU memory cluster OCIDs within this GPU memory fabric.
+     * 
+     */
+    @Import(name="computeGpuMemoryClusters")
+    private @Nullable Output<List<String>> computeGpuMemoryClusters;
+
+    /**
+     * @return List of GPU memory cluster OCIDs within this GPU memory fabric.
+     * 
+     */
+    public Optional<Output<List<String>>> computeGpuMemoryClusters() {
+        return Optional.ofNullable(this.computeGpuMemoryClusters);
     }
 
     /**
@@ -368,6 +384,7 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
         this.additionalData = $.additionalData;
         this.availableHostCount = $.availableHostCount;
         this.compartmentId = $.compartmentId;
+        this.computeGpuMemoryClusters = $.computeGpuMemoryClusters;
         this.computeGpuMemoryFabricId = $.computeGpuMemoryFabricId;
         this.computeHpcIslandId = $.computeHpcIslandId;
         this.computeLocalBlockId = $.computeLocalBlockId;
@@ -469,6 +486,37 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeGpuMemoryClusters List of GPU memory cluster OCIDs within this GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryClusters(@Nullable Output<List<String>> computeGpuMemoryClusters) {
+            $.computeGpuMemoryClusters = computeGpuMemoryClusters;
+            return this;
+        }
+
+        /**
+         * @param computeGpuMemoryClusters List of GPU memory cluster OCIDs within this GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryClusters(List<String> computeGpuMemoryClusters) {
+            return computeGpuMemoryClusters(Output.of(computeGpuMemoryClusters));
+        }
+
+        /**
+         * @param computeGpuMemoryClusters List of GPU memory cluster OCIDs within this GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryClusters(String... computeGpuMemoryClusters) {
+            return computeGpuMemoryClusters(List.of(computeGpuMemoryClusters));
         }
 
         /**

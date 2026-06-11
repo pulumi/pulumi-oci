@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,
  *     computeGpuMemoryClusterId: testComputeGpuMemoryCluster.id,
+ *     computeGpuMemoryFabricId: testComputeGpuMemoryFabric.id,
  *     displayName: computeGpuMemoryClusterDisplayName,
  * });
  * ```
@@ -33,6 +34,7 @@ export function getComputeGpuMemoryClusters(args: GetComputeGpuMemoryClustersArg
         "compartmentId": args.compartmentId,
         "computeClusterId": args.computeClusterId,
         "computeGpuMemoryClusterId": args.computeGpuMemoryClusterId,
+        "computeGpuMemoryFabricId": args.computeGpuMemoryFabricId,
         "displayName": args.displayName,
         "filters": args.filters,
     }, opts);
@@ -58,6 +60,10 @@ export interface GetComputeGpuMemoryClustersArgs {
      * A filter to return only the listings that matches the given GPU memory cluster id.
      */
     computeGpuMemoryClusterId?: string;
+    /**
+     * A filter to return only the listings that matches the given GPU memory fabric id.
+     */
+    computeGpuMemoryFabricId?: string;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
@@ -86,6 +92,7 @@ export interface GetComputeGpuMemoryClustersResult {
      */
     readonly computeGpuMemoryClusterCollections: outputs.Core.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollection[];
     readonly computeGpuMemoryClusterId?: string;
+    readonly computeGpuMemoryFabricId?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -112,6 +119,7 @@ export interface GetComputeGpuMemoryClustersResult {
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,
  *     computeGpuMemoryClusterId: testComputeGpuMemoryCluster.id,
+ *     computeGpuMemoryFabricId: testComputeGpuMemoryFabric.id,
  *     displayName: computeGpuMemoryClusterDisplayName,
  * });
  * ```
@@ -123,6 +131,7 @@ export function getComputeGpuMemoryClustersOutput(args: GetComputeGpuMemoryClust
         "compartmentId": args.compartmentId,
         "computeClusterId": args.computeClusterId,
         "computeGpuMemoryClusterId": args.computeGpuMemoryClusterId,
+        "computeGpuMemoryFabricId": args.computeGpuMemoryFabricId,
         "displayName": args.displayName,
         "filters": args.filters,
     }, opts);
@@ -148,6 +157,10 @@ export interface GetComputeGpuMemoryClustersOutputArgs {
      * A filter to return only the listings that matches the given GPU memory cluster id.
      */
     computeGpuMemoryClusterId?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only the listings that matches the given GPU memory fabric id.
+     */
+    computeGpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */

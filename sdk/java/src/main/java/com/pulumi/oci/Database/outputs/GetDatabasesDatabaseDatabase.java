@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabasePatchOption;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseStorageSizeDetail;
@@ -87,6 +88,11 @@ public final class GetDatabasesDatabaseDatabase {
      * 
      */
     private String kmsKeyVersionId;
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    private List<GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
     /**
      * @return The national character set for the database.
      * 
@@ -243,6 +249,13 @@ public final class GetDatabasesDatabaseDatabase {
         return this.kmsKeyVersionId;
     }
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public List<GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails;
+    }
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -349,6 +362,7 @@ public final class GetDatabasesDatabaseDatabase {
         private Boolean isActiveDataGuardEnabled;
         private String kmsKeyId;
         private String kmsKeyVersionId;
+        private List<GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
         private String ncharacterSet;
         private List<GetDatabasesDatabaseDatabasePatchOption> patchOptions;
         private String pdbName;
@@ -384,6 +398,7 @@ public final class GetDatabasesDatabaseDatabase {
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
+    	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.patchOptions = defaults.patchOptions;
     	      this.pdbName = defaults.pdbName;
@@ -544,6 +559,17 @@ public final class GetDatabasesDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder managedSoftwareUpdateDetails(List<GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails) {
+            if (managedSoftwareUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "managedSoftwareUpdateDetails");
+            }
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+        public Builder managedSoftwareUpdateDetails(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "ncharacterSet");
@@ -694,6 +720,7 @@ public final class GetDatabasesDatabaseDatabase {
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.patchOptions = patchOptions;
             _resultValue.pdbName = pdbName;

@@ -33,6 +33,7 @@ public final class GetIpv6sIpv6 {
      * 
      */
     private Map<String,String> freeformTags;
+    private String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
      * 
@@ -99,6 +100,9 @@ public final class GetIpv6sIpv6 {
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
+    }
+    public String hostname() {
+        return this.hostname;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
@@ -169,6 +173,7 @@ public final class GetIpv6sIpv6 {
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
+        private String hostname;
         private String id;
         private String ipAddress;
         private String ipState;
@@ -187,6 +192,7 @@ public final class GetIpv6sIpv6 {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
     	      this.ipState = defaults.ipState;
@@ -237,6 +243,14 @@ public final class GetIpv6sIpv6 {
               throw new MissingRequiredPropertyException("GetIpv6sIpv6", "freeformTags");
             }
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hostname(String hostname) {
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sIpv6", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
@@ -326,6 +340,7 @@ public final class GetIpv6sIpv6 {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
             _resultValue.ipState = ipState;

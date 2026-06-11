@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -32,6 +33,11 @@ public final class GetMysqlDbSystemsDbSystemReadEndpoint {
      * 
      */
     private String readEndpointIpAddress;
+    /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail> readEndpointIpv6addressIpv6subnetCidrPairDetails;
 
     private GetMysqlDbSystemsDbSystemReadEndpoint() {}
     /**
@@ -62,6 +68,13 @@ public final class GetMysqlDbSystemsDbSystemReadEndpoint {
     public String readEndpointIpAddress() {
         return this.readEndpointIpAddress;
     }
+    /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail> readEndpointIpv6addressIpv6subnetCidrPairDetails() {
+        return this.readEndpointIpv6addressIpv6subnetCidrPairDetails;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -76,6 +89,7 @@ public final class GetMysqlDbSystemsDbSystemReadEndpoint {
         private Boolean isEnabled;
         private String readEndpointHostnameLabel;
         private String readEndpointIpAddress;
+        private List<GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail> readEndpointIpv6addressIpv6subnetCidrPairDetails;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemReadEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,6 +97,7 @@ public final class GetMysqlDbSystemsDbSystemReadEndpoint {
     	      this.isEnabled = defaults.isEnabled;
     	      this.readEndpointHostnameLabel = defaults.readEndpointHostnameLabel;
     	      this.readEndpointIpAddress = defaults.readEndpointIpAddress;
+    	      this.readEndpointIpv6addressIpv6subnetCidrPairDetails = defaults.readEndpointIpv6addressIpv6subnetCidrPairDetails;
         }
 
         @CustomType.Setter
@@ -120,12 +135,24 @@ public final class GetMysqlDbSystemsDbSystemReadEndpoint {
             this.readEndpointIpAddress = readEndpointIpAddress;
             return this;
         }
+        @CustomType.Setter
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(List<GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail> readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+            if (readEndpointIpv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemReadEndpoint", "readEndpointIpv6addressIpv6subnetCidrPairDetails");
+            }
+            this.readEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail... readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+            return readEndpointIpv6addressIpv6subnetCidrPairDetails(List.of(readEndpointIpv6addressIpv6subnetCidrPairDetails));
+        }
         public GetMysqlDbSystemsDbSystemReadEndpoint build() {
             final var _resultValue = new GetMysqlDbSystemsDbSystemReadEndpoint();
             _resultValue.excludeIps = excludeIps;
             _resultValue.isEnabled = isEnabled;
             _resultValue.readEndpointHostnameLabel = readEndpointHostnameLabel;
             _resultValue.readEndpointIpAddress = readEndpointIpAddress;
+            _resultValue.readEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
             return _resultValue;
         }
     }

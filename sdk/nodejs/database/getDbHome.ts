@@ -79,6 +79,10 @@ export interface GetDbHomeResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
+     * Represents database home will be managed by oracle or customer
+     */
+    readonly homeType: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
     readonly id: string;

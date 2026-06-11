@@ -34,6 +34,7 @@ import (
 //				AvailabilityDomain:        pulumi.StringRef(computeGpuMemoryClusterAvailabilityDomain),
 //				ComputeClusterId:          pulumi.StringRef(testComputeCluster.Id),
 //				ComputeGpuMemoryClusterId: pulumi.StringRef(testComputeGpuMemoryCluster.Id),
+//				ComputeGpuMemoryFabricId:  pulumi.StringRef(testComputeGpuMemoryFabric.Id),
 //				DisplayName:               pulumi.StringRef(computeGpuMemoryClusterDisplayName),
 //			}, nil)
 //			if err != nil {
@@ -64,6 +65,8 @@ type GetComputeGpuMemoryClustersArgs struct {
 	ComputeClusterId *string `pulumi:"computeClusterId"`
 	// A filter to return only the listings that matches the given GPU memory cluster id.
 	ComputeGpuMemoryClusterId *string `pulumi:"computeGpuMemoryClusterId"`
+	// A filter to return only the listings that matches the given GPU memory fabric id.
+	ComputeGpuMemoryFabricId *string `pulumi:"computeGpuMemoryFabricId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetComputeGpuMemoryClustersFilter `pulumi:"filters"`
@@ -80,6 +83,7 @@ type GetComputeGpuMemoryClustersResult struct {
 	// The list of compute_gpu_memory_cluster_collection.
 	ComputeGpuMemoryClusterCollections []GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollection `pulumi:"computeGpuMemoryClusterCollections"`
 	ComputeGpuMemoryClusterId          *string                                                        `pulumi:"computeGpuMemoryClusterId"`
+	ComputeGpuMemoryFabricId           *string                                                        `pulumi:"computeGpuMemoryFabricId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetComputeGpuMemoryClustersFilter `pulumi:"filters"`
@@ -106,6 +110,8 @@ type GetComputeGpuMemoryClustersOutputArgs struct {
 	ComputeClusterId pulumi.StringPtrInput `pulumi:"computeClusterId"`
 	// A filter to return only the listings that matches the given GPU memory cluster id.
 	ComputeGpuMemoryClusterId pulumi.StringPtrInput `pulumi:"computeGpuMemoryClusterId"`
+	// A filter to return only the listings that matches the given GPU memory fabric id.
+	ComputeGpuMemoryFabricId pulumi.StringPtrInput `pulumi:"computeGpuMemoryFabricId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput                       `pulumi:"displayName"`
 	Filters     GetComputeGpuMemoryClustersFilterArrayInput `pulumi:"filters"`
@@ -154,6 +160,10 @@ func (o GetComputeGpuMemoryClustersResultOutput) ComputeGpuMemoryClusterCollecti
 
 func (o GetComputeGpuMemoryClustersResultOutput) ComputeGpuMemoryClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeGpuMemoryClustersResult) *string { return v.ComputeGpuMemoryClusterId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetComputeGpuMemoryClustersResultOutput) ComputeGpuMemoryFabricId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGpuMemoryClustersResult) *string { return v.ComputeGpuMemoryFabricId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

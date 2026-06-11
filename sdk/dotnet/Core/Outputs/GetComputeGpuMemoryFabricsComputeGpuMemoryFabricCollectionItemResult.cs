@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// List of GPU memory clusters within this GPU memory fabric.
+        /// </summary>
+        public readonly ImmutableArray<string> ComputeGpuMemoryClusters;
+        /// <summary>
         /// A filter to return only the listings that matches the given GPU memory fabric id.
         /// </summary>
         public readonly string ComputeGpuMemoryFabricId;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string compartmentId,
 
+            ImmutableArray<string> computeGpuMemoryClusters,
+
             string computeGpuMemoryFabricId,
 
             string computeHpcIslandId,
@@ -163,6 +169,7 @@ namespace Pulumi.Oci.Core.Outputs
             AdditionalData = additionalData;
             AvailableHostCount = availableHostCount;
             CompartmentId = compartmentId;
+            ComputeGpuMemoryClusters = computeGpuMemoryClusters;
             ComputeGpuMemoryFabricId = computeGpuMemoryFabricId;
             ComputeHpcIslandId = computeHpcIslandId;
             ComputeLocalBlockId = computeLocalBlockId;

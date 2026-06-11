@@ -26,7 +26,7 @@ class GetIpv6Result:
     """
     A collection of values returned by getIpv6.
     """
-    def __init__(__self__, cidr_prefix_length=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address=None, ip_state=None, ipv6id=None, ipv6subnet_cidr=None, lifetime=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
+    def __init__(__self__, cidr_prefix_length=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hostname=None, id=None, ip_address=None, ip_state=None, ipv6id=None, ipv6subnet_cidr=None, lifetime=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
         if cidr_prefix_length and not isinstance(cidr_prefix_length, int):
             raise TypeError("Expected argument 'cidr_prefix_length' to be a int")
         pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
@@ -42,6 +42,9 @@ class GetIpv6Result:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname and not isinstance(hostname, str):
+            raise TypeError("Expected argument 'hostname' to be a str")
+        pulumi.set(__self__, "hostname", hostname)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -115,6 +118,14 @@ class GetIpv6Result:
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+        """
+        return pulumi.get(self, "hostname")
 
     @_builtins.property
     @pulumi.getter
@@ -212,6 +223,7 @@ class AwaitableGetIpv6Result(GetIpv6Result):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            hostname=self.hostname,
             id=self.id,
             ip_address=self.ip_address,
             ip_state=self.ip_state,
@@ -258,6 +270,7 @@ def get_ipv6(ipv6id: Optional[_builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
         ip_state=pulumi.get(__ret__, 'ip_state'),
@@ -301,6 +314,7 @@ def get_ipv6_output(ipv6id: pulumi.Input[Optional[_builtins.str]] = None,
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
         ip_state=pulumi.get(__response__, 'ip_state'),

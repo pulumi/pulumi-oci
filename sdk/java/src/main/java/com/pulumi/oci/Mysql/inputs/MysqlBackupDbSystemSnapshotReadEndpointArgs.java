@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -77,6 +78,21 @@ public final class MysqlBackupDbSystemSnapshotReadEndpointArgs extends com.pulum
         return Optional.ofNullable(this.readEndpointIpAddress);
     }
 
+    /**
+     * Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    @Import(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs>> readEndpointIpv6addressIpv6subnetCidrPairDetails;
+
+    /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs>>> readEndpointIpv6addressIpv6subnetCidrPairDetails() {
+        return Optional.ofNullable(this.readEndpointIpv6addressIpv6subnetCidrPairDetails);
+    }
+
     private MysqlBackupDbSystemSnapshotReadEndpointArgs() {}
 
     private MysqlBackupDbSystemSnapshotReadEndpointArgs(MysqlBackupDbSystemSnapshotReadEndpointArgs $) {
@@ -84,6 +100,7 @@ public final class MysqlBackupDbSystemSnapshotReadEndpointArgs extends com.pulum
         this.isEnabled = $.isEnabled;
         this.readEndpointHostnameLabel = $.readEndpointHostnameLabel;
         this.readEndpointIpAddress = $.readEndpointIpAddress;
+        this.readEndpointIpv6addressIpv6subnetCidrPairDetails = $.readEndpointIpv6addressIpv6subnetCidrPairDetails;
     }
 
     public static Builder builder() {
@@ -196,6 +213,37 @@ public final class MysqlBackupDbSystemSnapshotReadEndpointArgs extends com.pulum
          */
         public Builder readEndpointIpAddress(String readEndpointIpAddress) {
             return readEndpointIpAddress(Output.of(readEndpointIpAddress));
+        }
+
+        /**
+         * @param readEndpointIpv6addressIpv6subnetCidrPairDetails Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(@Nullable Output<List<MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs>> readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+            $.readEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+
+        /**
+         * @param readEndpointIpv6addressIpv6subnetCidrPairDetails Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(List<MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs> readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+            return readEndpointIpv6addressIpv6subnetCidrPairDetails(Output.of(readEndpointIpv6addressIpv6subnetCidrPairDetails));
+        }
+
+        /**
+         * @param readEndpointIpv6addressIpv6subnetCidrPairDetails Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs... readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+            return readEndpointIpv6addressIpv6subnetCidrPairDetails(List.of(readEndpointIpv6addressIpv6subnetCidrPairDetails));
         }
 
         public MysqlBackupDbSystemSnapshotReadEndpointArgs build() {

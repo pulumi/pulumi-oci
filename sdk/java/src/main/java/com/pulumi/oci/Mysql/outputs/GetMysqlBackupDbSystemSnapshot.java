@@ -131,6 +131,11 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     private String ipAddress;
     /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    private String ipv6address;
+    /**
      * @return Specifies if the DB System is highly available.
      * 
      */
@@ -350,6 +355,13 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.ipAddress;
     }
     /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    public String ipv6address() {
+        return this.ipv6address;
+    }
+    /**
      * @return Specifies if the DB System is highly available.
      * 
      */
@@ -478,6 +490,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
+        private String ipv6address;
         private Boolean isHighlyAvailable;
         private List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances;
         private String mysqlVersion;
@@ -516,6 +529,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6address = defaults.ipv6address;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
@@ -719,6 +733,14 @@ public final class GetMysqlBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6address(String ipv6address) {
+            if (ipv6address == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "ipv6address");
+            }
+            this.ipv6address = ipv6address;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             if (isHighlyAvailable == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "isHighlyAvailable");
@@ -871,6 +893,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6address = ipv6address;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;

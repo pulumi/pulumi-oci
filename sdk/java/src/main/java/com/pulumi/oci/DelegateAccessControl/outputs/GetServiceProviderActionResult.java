@@ -6,12 +6,18 @@ package com.pulumi.oci.DelegateAccessControl.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DelegateAccessControl.outputs.GetServiceProviderActionProperty;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetServiceProviderActionResult {
+    /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
+    private String compartmentId;
     /**
      * @return Name of the infrastructure layer associated with the Service Provider Action.
      * 
@@ -32,6 +38,11 @@ public final class GetServiceProviderActionResult {
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether the service provider action allows SSH access.
+     * 
+     */
+    private Boolean isSshAccessAllowed;
     /**
      * @return Name of the property
      * 
@@ -61,6 +72,13 @@ public final class GetServiceProviderActionResult {
 
     private GetServiceProviderActionResult() {}
     /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
+    /**
      * @return Name of the infrastructure layer associated with the Service Provider Action.
      * 
      */
@@ -87,6 +105,13 @@ public final class GetServiceProviderActionResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates whether the service provider action allows SSH access.
+     * 
+     */
+    public Boolean isSshAccessAllowed() {
+        return this.isSshAccessAllowed;
     }
     /**
      * @return Name of the property
@@ -136,10 +161,12 @@ public final class GetServiceProviderActionResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String compartmentId;
         private String component;
         private String customerDisplayName;
         private String description;
         private String id;
+        private Boolean isSshAccessAllowed;
         private String name;
         private List<GetServiceProviderActionProperty> properties;
         private String resourceType;
@@ -149,10 +176,12 @@ public final class GetServiceProviderActionResult {
         public Builder() {}
         public Builder(GetServiceProviderActionResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.component = defaults.component;
     	      this.customerDisplayName = defaults.customerDisplayName;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
+    	      this.isSshAccessAllowed = defaults.isSshAccessAllowed;
     	      this.name = defaults.name;
     	      this.properties = defaults.properties;
     	      this.resourceType = defaults.resourceType;
@@ -161,6 +190,14 @@ public final class GetServiceProviderActionResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceProviderActionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder component(String component) {
             if (component == null) {
@@ -191,6 +228,14 @@ public final class GetServiceProviderActionResult {
               throw new MissingRequiredPropertyException("GetServiceProviderActionResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSshAccessAllowed(Boolean isSshAccessAllowed) {
+            if (isSshAccessAllowed == null) {
+              throw new MissingRequiredPropertyException("GetServiceProviderActionResult", "isSshAccessAllowed");
+            }
+            this.isSshAccessAllowed = isSshAccessAllowed;
             return this;
         }
         @CustomType.Setter
@@ -249,10 +294,12 @@ public final class GetServiceProviderActionResult {
         }
         public GetServiceProviderActionResult build() {
             final var _resultValue = new GetServiceProviderActionResult();
+            _resultValue.compartmentId = compartmentId;
             _resultValue.component = component;
             _resultValue.customerDisplayName = customerDisplayName;
             _resultValue.description = description;
             _resultValue.id = id;
+            _resultValue.isSshAccessAllowed = isSshAccessAllowed;
             _resultValue.name = name;
             _resultValue.properties = properties;
             _resultValue.resourceType = resourceType;

@@ -50,8 +50,8 @@ class DelegationControlArgs:
         :param pulumi.Input[_builtins.bool] is_auto_approve_during_maintenance: (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
         :param pulumi.Input[_builtins.int] num_approvals_required: (Updatable) number of approvals required.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_service_provider_action_names: (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
-        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
-        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
                
                
                ** IMPORTANT **
@@ -241,7 +241,7 @@ class DelegationControlArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         return pulumi.get(self, "vault_id")
 
@@ -253,7 +253,7 @@ class DelegationControlArgs:
     @pulumi.getter(name="vaultKeyId")
     def vault_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         ** IMPORTANT **
@@ -312,8 +312,8 @@ class _DelegationControlState:
         :param pulumi.Input[_builtins.str] time_created: Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_deleted: Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
         :param pulumi.Input[_builtins.str] time_updated: Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
-        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
                
                
                ** IMPORTANT **
@@ -594,7 +594,7 @@ class _DelegationControlState:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         return pulumi.get(self, "vault_id")
 
@@ -606,7 +606,7 @@ class _DelegationControlState:
     @pulumi.getter(name="vaultKeyId")
     def vault_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         ** IMPORTANT **
@@ -698,8 +698,8 @@ class DelegationControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_service_provider_action_names: (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_ids: (Updatable) The OCID of the selected resources that this Delegation Control is applicable to.
         :param pulumi.Input[_builtins.str] resource_type: Resource type for which the Delegation Control is applicable to.
-        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
-        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
                
                
                ** IMPORTANT **
@@ -884,8 +884,8 @@ class DelegationControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_deleted: Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
         :param pulumi.Input[_builtins.str] time_updated: Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
-        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
+        :param pulumi.Input[_builtins.str] vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
                
                
                ** IMPORTANT **
@@ -1074,7 +1074,7 @@ class DelegationControl(pulumi.CustomResource):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1082,7 +1082,7 @@ class DelegationControl(pulumi.CustomResource):
     @pulumi.getter(name="vaultKeyId")
     def vault_key_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         ** IMPORTANT **

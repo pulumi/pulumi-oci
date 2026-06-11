@@ -13,6 +13,906 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetMulticloudMulticloudalertsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudMulticloudalertsFilterInput is an input type that accepts GetMulticloudMulticloudalertsFilterArgs and GetMulticloudMulticloudalertsFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsFilterInput` via:
+//
+//	GetMulticloudMulticloudalertsFilterArgs{...}
+type GetMulticloudMulticloudalertsFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsFilterOutput() GetMulticloudMulticloudalertsFilterOutput
+	ToGetMulticloudMulticloudalertsFilterOutputWithContext(context.Context) GetMulticloudMulticloudalertsFilterOutput
+}
+
+type GetMulticloudMulticloudalertsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudMulticloudalertsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsFilterArgs) ToGetMulticloudMulticloudalertsFilterOutput() GetMulticloudMulticloudalertsFilterOutput {
+	return i.ToGetMulticloudMulticloudalertsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsFilterArgs) ToGetMulticloudMulticloudalertsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsFilterOutput)
+}
+
+// GetMulticloudMulticloudalertsFilterArrayInput is an input type that accepts GetMulticloudMulticloudalertsFilterArray and GetMulticloudMulticloudalertsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsFilterArrayInput` via:
+//
+//	GetMulticloudMulticloudalertsFilterArray{ GetMulticloudMulticloudalertsFilterArgs{...} }
+type GetMulticloudMulticloudalertsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsFilterArrayOutput() GetMulticloudMulticloudalertsFilterArrayOutput
+	ToGetMulticloudMulticloudalertsFilterArrayOutputWithContext(context.Context) GetMulticloudMulticloudalertsFilterArrayOutput
+}
+
+type GetMulticloudMulticloudalertsFilterArray []GetMulticloudMulticloudalertsFilterInput
+
+func (GetMulticloudMulticloudalertsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsFilterArray) ToGetMulticloudMulticloudalertsFilterArrayOutput() GetMulticloudMulticloudalertsFilterArrayOutput {
+	return i.ToGetMulticloudMulticloudalertsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsFilterArray) ToGetMulticloudMulticloudalertsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsFilterArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsFilterOutput) ToGetMulticloudMulticloudalertsFilterOutput() GetMulticloudMulticloudalertsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsFilterOutput) ToGetMulticloudMulticloudalertsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudMulticloudalertsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudMulticloudalertsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsFilterArrayOutput) ToGetMulticloudMulticloudalertsFilterArrayOutput() GetMulticloudMulticloudalertsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsFilterArrayOutput) ToGetMulticloudMulticloudalertsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudalertsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudalertsFilter {
+		return vs[0].([]GetMulticloudMulticloudalertsFilter)[vs[1].(int)]
+	}).(GetMulticloudMulticloudalertsFilterOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollection struct {
+	// List of MulticloudAlertSummary.
+	Items []GetMulticloudMulticloudalertsMulticloudAlertCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs and GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs{...}
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs struct {
+	// List of MulticloudAlertSummary.
+	Items GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput)
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionArray and GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionArray{ GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs{...} }
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionArray []GetMulticloudMulticloudalertsMulticloudAlertCollectionInput
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput {
+	return o
+}
+
+// List of MulticloudAlertSummary.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput) Items() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollection) []GetMulticloudMulticloudalertsMulticloudAlertCollectionItem {
+		return v.Items
+	}).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudalertsMulticloudAlertCollection {
+		return vs[0].([]GetMulticloudMulticloudalertsMulticloudAlertCollection)[vs[1].(int)]
+	}).(GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// List of Multicloud Alerts.
+	MulticloudAlerts []GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert `pulumi:"multicloudAlerts"`
+	// Total number of alerts
+	MulticloudalertCount int `pulumi:"multicloudalertCount"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionItemInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs and GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionItemInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs{...}
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// List of Multicloud Alerts.
+	MulticloudAlerts GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayInput `pulumi:"multicloudAlerts"`
+	// Total number of alerts
+	MulticloudalertCount pulumi.IntInput `pulumi:"multicloudalertCount"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput)
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray and GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray{ GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs{...} }
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray []GetMulticloudMulticloudalertsMulticloudAlertCollectionItemInput
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the Multicloud Network Alert.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
+}
+
+// List of Multicloud Alerts.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) MulticloudAlerts() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) []GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert {
+		return v.MulticloudAlerts
+	}).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput)
+}
+
+// Total number of alerts
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) MulticloudalertCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) int { return v.MulticloudalertCount }).(pulumi.IntOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudalertsMulticloudAlertCollectionItem {
+		return vs[0].([]GetMulticloudMulticloudalertsMulticloudAlertCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert struct {
+	// Alert-specific contextual parameters.
+	AdditionalParameters map[string]string `pulumi:"additionalParameters"`
+	// External or human-friendly alert identifier.
+	AlertId string `pulumi:"alertId"`
+	// Filter alerts by alert status. User interaction: ACKNOWLEDGED, UNACKNOWLEDGED System lifecycle: RESOLVED
+	AlertStatus string `pulumi:"alertStatus"`
+	// Filter alerts by alert type (e.g. IAM_POLICY_GAP).
+	AlertType string `pulumi:"alertType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the alert and its purpose.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Internal service or function type generating the alert (e.g. ORP, ODBG_NETWORK, BILLING, OBSERVABILITY).
+	FunctionType string `pulumi:"functionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the multicloud alert.
+	Id string `pulumi:"id"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// Filter alerts associated with a specific resource OCID.
+	ResourceId string `pulumi:"resourceId"`
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
+	ResourceType string `pulumi:"resourceType"`
+	// Filter alerts by severity.
+	Severity string `pulumi:"severity"`
+	// Source subsystem that generated the alert. (Azure Tag Validation)
+	Source string `pulumi:"source"`
+	// Oracle Cloud Infrastructure region where the alert originated (e.g. us-phoenix-1)
+	SourceRegion string `pulumi:"sourceRegion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType string `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Timestamp when the alert was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Timestamp when the alert was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs and GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs{...}
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs struct {
+	// Alert-specific contextual parameters.
+	AdditionalParameters pulumi.StringMapInput `pulumi:"additionalParameters"`
+	// External or human-friendly alert identifier.
+	AlertId pulumi.StringInput `pulumi:"alertId"`
+	// Filter alerts by alert status. User interaction: ACKNOWLEDGED, UNACKNOWLEDGED System lifecycle: RESOLVED
+	AlertStatus pulumi.StringInput `pulumi:"alertStatus"`
+	// Filter alerts by alert type (e.g. IAM_POLICY_GAP).
+	AlertType pulumi.StringInput `pulumi:"alertType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the alert and its purpose.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Internal service or function type generating the alert (e.g. ORP, ODBG_NETWORK, BILLING, OBSERVABILITY).
+	FunctionType pulumi.StringInput `pulumi:"functionType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the multicloud alert.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current state of the Multicloud Network Alert.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// Filter alerts associated with a specific resource OCID.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Filter alerts by resource type (e.g. ADBD, VMCluster).
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Filter alerts by severity.
+	Severity pulumi.StringInput `pulumi:"severity"`
+	// Source subsystem that generated the alert. (Azure Tag Validation)
+	Source pulumi.StringInput `pulumi:"source"`
+	// Oracle Cloud Infrastructure region where the alert originated (e.g. us-phoenix-1)
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Timestamp when the alert was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Timestamp when the alert was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput)
+}
+
+// GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayInput is an input type that accepts GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray and GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayInput` via:
+//
+//	GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray{ GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs{...} }
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput
+	ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutputWithContext(context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray []GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertInput
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput {
+	return i.ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput {
+	return o
+}
+
+// Alert-specific contextual parameters.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) AdditionalParameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) map[string]string {
+		return v.AdditionalParameters
+	}).(pulumi.StringMapOutput)
+}
+
+// External or human-friendly alert identifier.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) AlertId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.AlertId
+	}).(pulumi.StringOutput)
+}
+
+// Filter alerts by alert status. User interaction: ACKNOWLEDGED, UNACKNOWLEDGED System lifecycle: RESOLVED
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) AlertStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.AlertStatus
+	}).(pulumi.StringOutput)
+}
+
+// Filter alerts by alert type (e.g. IAM_POLICY_GAP).
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) AlertType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.AlertType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Description of the alert and its purpose.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Internal service or function type generating the alert (e.g. ORP, ODBG_NETWORK, BILLING, OBSERVABILITY).
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) FunctionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.FunctionType
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the multicloud alert.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current state of the Multicloud Network Alert.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// Filter alerts associated with a specific resource OCID.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.ResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Filter alerts by resource type (e.g. ADBD, VMCluster).
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// Filter alerts by severity.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.Severity
+	}).(pulumi.StringOutput)
+}
+
+// Source subsystem that generated the alert. (Azure Tag Validation)
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure region where the alert originated (e.g. us-phoenix-1)
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.SourceRegion
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Subscription Type.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.SubscriptionType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Timestamp when the alert was created.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Timestamp when the alert was last updated.
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput() GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput) ToGetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert {
+		return vs[0].([]GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlert)[vs[1].(int)]
+	}).(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput)
+}
+
+type GetMulticloudMulticloudpoliciesFilter struct {
+	// Name of the missing policy.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudMulticloudpoliciesFilterInput is an input type that accepts GetMulticloudMulticloudpoliciesFilterArgs and GetMulticloudMulticloudpoliciesFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesFilterInput` via:
+//
+//	GetMulticloudMulticloudpoliciesFilterArgs{...}
+type GetMulticloudMulticloudpoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesFilterOutput() GetMulticloudMulticloudpoliciesFilterOutput
+	ToGetMulticloudMulticloudpoliciesFilterOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesFilterOutput
+}
+
+type GetMulticloudMulticloudpoliciesFilterArgs struct {
+	// Name of the missing policy.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudMulticloudpoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesFilterArgs) ToGetMulticloudMulticloudpoliciesFilterOutput() GetMulticloudMulticloudpoliciesFilterOutput {
+	return i.ToGetMulticloudMulticloudpoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesFilterArgs) ToGetMulticloudMulticloudpoliciesFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesFilterOutput)
+}
+
+// GetMulticloudMulticloudpoliciesFilterArrayInput is an input type that accepts GetMulticloudMulticloudpoliciesFilterArray and GetMulticloudMulticloudpoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesFilterArrayInput` via:
+//
+//	GetMulticloudMulticloudpoliciesFilterArray{ GetMulticloudMulticloudpoliciesFilterArgs{...} }
+type GetMulticloudMulticloudpoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesFilterArrayOutput() GetMulticloudMulticloudpoliciesFilterArrayOutput
+	ToGetMulticloudMulticloudpoliciesFilterArrayOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesFilterArrayOutput
+}
+
+type GetMulticloudMulticloudpoliciesFilterArray []GetMulticloudMulticloudpoliciesFilterInput
+
+func (GetMulticloudMulticloudpoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesFilterArray) ToGetMulticloudMulticloudpoliciesFilterArrayOutput() GetMulticloudMulticloudpoliciesFilterArrayOutput {
+	return i.ToGetMulticloudMulticloudpoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesFilterArray) ToGetMulticloudMulticloudpoliciesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesFilterArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterOutput) ToGetMulticloudMulticloudpoliciesFilterOutput() GetMulticloudMulticloudpoliciesFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterOutput) ToGetMulticloudMulticloudpoliciesFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesFilterOutput {
+	return o
+}
+
+// Name of the missing policy.
+func (o GetMulticloudMulticloudpoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterArrayOutput) ToGetMulticloudMulticloudpoliciesFilterArrayOutput() GetMulticloudMulticloudpoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterArrayOutput) ToGetMulticloudMulticloudpoliciesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudpoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudpoliciesFilter {
+		return vs[0].([]GetMulticloudMulticloudpoliciesFilter)[vs[1].(int)]
+	}).(GetMulticloudMulticloudpoliciesFilterOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of MulticloudPolicySummary.
+	Items []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs{...}
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of MulticloudPolicySummary.
+	Items GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput)
+}
+
+// GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayInput is an input type that accepts GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray and GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayInput` via:
+//
+//	GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray{ GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs{...} }
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput
+	ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutputWithContext(context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionInput
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput {
+	return i.ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of MulticloudPolicySummary.
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput) Items() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudpoliciesMulticloudPolicyCollection) []GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem {
+		return v.Items
+	}).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudpoliciesMulticloudPolicyCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput() GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput) ToGetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudpoliciesMulticloudPolicyCollection {
+		return vs[0].([]GetMulticloudMulticloudpoliciesMulticloudPolicyCollection)[vs[1].(int)]
+	}).(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput)
+}
+
 type GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -14823,6 +15723,18 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsFilterInput)(nil)).Elem(), GetMulticloudMulticloudalertsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsFilterArrayInput)(nil)).Elem(), GetMulticloudMulticloudalertsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesFilterInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesFilterArrayInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyInput)(nil)).Elem(), GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyArgs{})
@@ -15045,6 +15957,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionItemMulticloudAlertArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudpoliciesMulticloudPolicyCollectionItemPolicyOutput{})

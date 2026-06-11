@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeGpuMemoryClusterAvailabilityDomain,
         ///         ComputeClusterId = testComputeCluster.Id,
         ///         ComputeGpuMemoryClusterId = testComputeGpuMemoryCluster.Id,
+        ///         ComputeGpuMemoryFabricId = testComputeGpuMemoryFabric.Id,
         ///         DisplayName = computeGpuMemoryClusterDisplayName,
         ///     });
         /// 
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeGpuMemoryClusterAvailabilityDomain,
         ///         ComputeClusterId = testComputeCluster.Id,
         ///         ComputeGpuMemoryClusterId = testComputeGpuMemoryCluster.Id,
+        ///         ComputeGpuMemoryFabricId = testComputeGpuMemoryFabric.Id,
         ///         DisplayName = computeGpuMemoryClusterDisplayName,
         ///     });
         /// 
@@ -95,6 +97,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeGpuMemoryClusterAvailabilityDomain,
         ///         ComputeClusterId = testComputeCluster.Id,
         ///         ComputeGpuMemoryClusterId = testComputeGpuMemoryCluster.Id,
+        ///         ComputeGpuMemoryFabricId = testComputeGpuMemoryFabric.Id,
         ///         DisplayName = computeGpuMemoryClusterDisplayName,
         ///     });
         /// 
@@ -131,6 +134,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("computeGpuMemoryClusterId")]
         public string? ComputeGpuMemoryClusterId { get; set; }
+
+        /// <summary>
+        /// A filter to return only the listings that matches the given GPU memory fabric id.
+        /// </summary>
+        [Input("computeGpuMemoryFabricId")]
+        public string? ComputeGpuMemoryFabricId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -179,6 +188,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? ComputeGpuMemoryClusterId { get; set; }
 
         /// <summary>
+        /// A filter to return only the listings that matches the given GPU memory fabric id.
+        /// </summary>
+        [Input("computeGpuMemoryFabricId")]
+        public Input<string>? ComputeGpuMemoryFabricId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         [Input("displayName")]
@@ -219,6 +234,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableArray<Outputs.GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollectionResult> ComputeGpuMemoryClusterCollections;
         public readonly string? ComputeGpuMemoryClusterId;
+        public readonly string? ComputeGpuMemoryFabricId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -241,6 +257,8 @@ namespace Pulumi.Oci.Core
 
             string? computeGpuMemoryClusterId,
 
+            string? computeGpuMemoryFabricId,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetComputeGpuMemoryClustersFilterResult> filters,
@@ -252,6 +270,7 @@ namespace Pulumi.Oci.Core
             ComputeClusterId = computeClusterId;
             ComputeGpuMemoryClusterCollections = computeGpuMemoryClusterCollections;
             ComputeGpuMemoryClusterId = computeGpuMemoryClusterId;
+            ComputeGpuMemoryFabricId = computeGpuMemoryFabricId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;

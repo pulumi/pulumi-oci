@@ -71,6 +71,7 @@ type GetServiceProviderActionsArgs struct {
 
 // A collection of values returned by getServiceProviderActions.
 type GetServiceProviderActionsResult struct {
+	// The OCID of the compartment that contains the Service Provider Action.
 	CompartmentId string                            `pulumi:"compartmentId"`
 	Filters       []GetServiceProviderActionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -129,6 +130,7 @@ func (o GetServiceProviderActionsResultOutput) ToGetServiceProviderActionsResult
 	return o
 }
 
+// The OCID of the compartment that contains the Service Provider Action.
 func (o GetServiceProviderActionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderActionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

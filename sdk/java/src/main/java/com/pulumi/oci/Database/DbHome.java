@@ -25,12 +25,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
  * 
- * **Important:** Unless `enableDatabaseDelete` is explicitly set to true:
- * * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
- * * This leads to dangling resources which are not managed via Terraform unless explicitly imported
- * 
- * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
- * 
  * ## Example Usage
  * 
  * ## Import
@@ -183,18 +177,32 @@ public class DbHome extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.enableDatabaseDelete);
     }
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Represents database home will be managed by oracle or customer
+     * 
+     */
+    @Export(name="homeType", refs={String.class}, tree="[0]")
+    private Output<String> homeType;
+
+    /**
+     * @return Represents database home will be managed by oracle or customer
+     * 
+     */
+    public Output<String> homeType() {
+        return this.homeType;
     }
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.

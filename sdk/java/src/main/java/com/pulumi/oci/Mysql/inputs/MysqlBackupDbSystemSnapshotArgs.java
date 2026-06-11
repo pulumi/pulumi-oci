@@ -346,6 +346,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
     }
 
     /**
+     * An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    @Import(name="ipv6address")
+    private @Nullable Output<String> ipv6address;
+
+    /**
+     * @return An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+     * 
+     */
+    public Optional<Output<String>> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
+    }
+
+    /**
      * Specifies if the DB System is highly available.
      * 
      */
@@ -579,6 +594,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.hostnameLabel = $.hostnameLabel;
         this.id = $.id;
         this.ipAddress = $.ipAddress;
+        this.ipv6address = $.ipv6address;
         this.isHighlyAvailable = $.isHighlyAvailable;
         this.maintenances = $.maintenances;
         this.mysqlVersion = $.mysqlVersion;
@@ -1112,6 +1128,27 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param ipv6address An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(@Nullable Output<String> ipv6address) {
+            $.ipv6address = ipv6address;
+            return this;
+        }
+
+        /**
+         * @param ipv6address An IPv6 address of your choice. Must be an available IPv6 address within the subnet&#39;s prefix.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(String ipv6address) {
+            return ipv6address(Output.of(ipv6address));
         }
 
         /**

@@ -55,6 +55,10 @@ export interface GetComputeGpuMemoryFabricResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
     readonly compartmentId: string;
+    /**
+     * List of GPU memory cluster OCIDs within this GPU memory fabric.
+     */
+    readonly computeGpuMemoryClusters: string[];
     readonly computeGpuMemoryFabricId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island

@@ -525,10 +525,25 @@ export const getIotIotDomains: typeof import("./getIotIotDomains").getIotIotDoma
 export const getIotIotDomainsOutput: typeof import("./getIotIotDomains").getIotIotDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getIotIotDomains","getIotIotDomainsOutput"], () => require("./getIotIotDomains"));
 
+export { GetManagedKafkaAddonOptionsArgs, GetManagedKafkaAddonOptionsResult, GetManagedKafkaAddonOptionsOutputArgs } from "./getManagedKafkaAddonOptions";
+export const getManagedKafkaAddonOptions: typeof import("./getManagedKafkaAddonOptions").getManagedKafkaAddonOptions = null as any;
+export const getManagedKafkaAddonOptionsOutput: typeof import("./getManagedKafkaAddonOptions").getManagedKafkaAddonOptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaAddonOptions","getManagedKafkaAddonOptionsOutput"], () => require("./getManagedKafkaAddonOptions"));
+
 export { GetManagedKafkaKafkaClusterArgs, GetManagedKafkaKafkaClusterResult, GetManagedKafkaKafkaClusterOutputArgs } from "./getManagedKafkaKafkaCluster";
 export const getManagedKafkaKafkaCluster: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaCluster = null as any;
 export const getManagedKafkaKafkaClusterOutput: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedKafkaKafkaCluster","getManagedKafkaKafkaClusterOutput"], () => require("./getManagedKafkaKafkaCluster"));
+
+export { GetManagedKafkaKafkaClusterAddonArgs, GetManagedKafkaKafkaClusterAddonResult, GetManagedKafkaKafkaClusterAddonOutputArgs } from "./getManagedKafkaKafkaClusterAddon";
+export const getManagedKafkaKafkaClusterAddon: typeof import("./getManagedKafkaKafkaClusterAddon").getManagedKafkaKafkaClusterAddon = null as any;
+export const getManagedKafkaKafkaClusterAddonOutput: typeof import("./getManagedKafkaKafkaClusterAddon").getManagedKafkaKafkaClusterAddonOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterAddon","getManagedKafkaKafkaClusterAddonOutput"], () => require("./getManagedKafkaKafkaClusterAddon"));
+
+export { GetManagedKafkaKafkaClusterAddonsArgs, GetManagedKafkaKafkaClusterAddonsResult, GetManagedKafkaKafkaClusterAddonsOutputArgs } from "./getManagedKafkaKafkaClusterAddons";
+export const getManagedKafkaKafkaClusterAddons: typeof import("./getManagedKafkaKafkaClusterAddons").getManagedKafkaKafkaClusterAddons = null as any;
+export const getManagedKafkaKafkaClusterAddonsOutput: typeof import("./getManagedKafkaKafkaClusterAddons").getManagedKafkaKafkaClusterAddonsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterAddons","getManagedKafkaKafkaClusterAddonsOutput"], () => require("./getManagedKafkaKafkaClusterAddons"));
 
 export { GetManagedKafkaKafkaClusterConfigArgs, GetManagedKafkaKafkaClusterConfigResult, GetManagedKafkaKafkaClusterConfigOutputArgs } from "./getManagedKafkaKafkaClusterConfig";
 export const getManagedKafkaKafkaClusterConfig: typeof import("./getManagedKafkaKafkaClusterConfig").getManagedKafkaKafkaClusterConfig = null as any;
@@ -855,6 +870,11 @@ export type ManagedKafkaKafkaCluster = import("./managedKafkaKafkaCluster").Mana
 export const ManagedKafkaKafkaCluster: typeof import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster = null as any;
 utilities.lazyLoad(exports, ["ManagedKafkaKafkaCluster"], () => require("./managedKafkaKafkaCluster"));
 
+export { ManagedKafkaKafkaClusterAddonArgs, ManagedKafkaKafkaClusterAddonState } from "./managedKafkaKafkaClusterAddon";
+export type ManagedKafkaKafkaClusterAddon = import("./managedKafkaKafkaClusterAddon").ManagedKafkaKafkaClusterAddon;
+export const ManagedKafkaKafkaClusterAddon: typeof import("./managedKafkaKafkaClusterAddon").ManagedKafkaKafkaClusterAddon = null as any;
+utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterAddon"], () => require("./managedKafkaKafkaClusterAddon"));
+
 export { ManagedKafkaKafkaClusterConfigArgs, ManagedKafkaKafkaClusterConfigState } from "./managedKafkaKafkaClusterConfig";
 export type ManagedKafkaKafkaClusterConfig = import("./managedKafkaKafkaClusterConfig").ManagedKafkaKafkaClusterConfig;
 export const ManagedKafkaKafkaClusterConfig: typeof import("./managedKafkaKafkaClusterConfig").ManagedKafkaKafkaClusterConfig = null as any;
@@ -976,6 +996,8 @@ const _module = {
                 return new IotIotDomainGroupConfigureDataAccess(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
                 return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
+            case "oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon":
+                return new ManagedKafkaKafkaClusterAddon(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
                 return new ManagedKafkaKafkaClusterConfig(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
@@ -1035,6 +1057,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainConfigureDataAcces
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroupConfigureDataAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterAddon", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/psaPrivateServiceAccess", _module)

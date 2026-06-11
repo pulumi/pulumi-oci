@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.DatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.DatabaseDatabase;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.DatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.DatabaseStorageSizeDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -421,6 +422,20 @@ public class Database extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    @Export(name="managedSoftwareUpdateDetails", refs={List.class,DatabaseManagedSoftwareUpdateDetail.class}, tree="[0,1]")
+    private Output<List<DatabaseManagedSoftwareUpdateDetail>> managedSoftwareUpdateDetails;
+
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public Output<List<DatabaseManagedSoftwareUpdateDetail>> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails;
     }
     /**
      * The national character set for the database.

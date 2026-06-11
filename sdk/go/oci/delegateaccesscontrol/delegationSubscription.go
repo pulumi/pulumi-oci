@@ -61,7 +61,7 @@ import (
 type DelegationSubscription struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment that contains the Delegation Control.
+	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -129,7 +129,7 @@ func GetDelegationSubscription(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DelegationSubscription resources.
 type delegationSubscriptionState struct {
-	// (Updatable) The OCID of the compartment that contains the Delegation Control.
+	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -159,7 +159,7 @@ type delegationSubscriptionState struct {
 }
 
 type DelegationSubscriptionState struct {
-	// (Updatable) The OCID of the compartment that contains the Delegation Control.
+	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -193,7 +193,7 @@ func (DelegationSubscriptionState) ElementType() reflect.Type {
 }
 
 type delegationSubscriptionArgs struct {
-	// (Updatable) The OCID of the compartment that contains the Delegation Control.
+	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -212,7 +212,7 @@ type delegationSubscriptionArgs struct {
 
 // The set of arguments for constructing a DelegationSubscription resource.
 type DelegationSubscriptionArgs struct {
-	// (Updatable) The OCID of the compartment that contains the Delegation Control.
+	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -316,7 +316,7 @@ func (o DelegationSubscriptionOutput) ToDelegationSubscriptionOutputWithContext(
 	return o
 }
 
-// (Updatable) The OCID of the compartment that contains the Delegation Control.
+// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 func (o DelegationSubscriptionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DelegationSubscription) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

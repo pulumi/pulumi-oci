@@ -17,12 +17,6 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
     /// 
-    /// **Important:** Unless `EnableDatabaseDelete` is explicitly set to true:
-    /// * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
-    /// * This leads to dangling resources which are not managed via Terraform unless explicitly imported
-    /// 
-    /// **Important:** When `AutoBackupEnabled` is not present in the configuration or set to true, the `AutoBackupWindow` and `AutoFullBackupWindow` will be ignored
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import
@@ -104,10 +98,16 @@ namespace Pulumi.Oci.Database
         public Output<bool?> EnableDatabaseDelete { get; private set; } = null!;
 
         /// <summary>
-        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Represents database home will be managed by oracle or customer
+        /// </summary>
+        [Output("homeType")]
+        public Output<string> HomeType { get; private set; } = null!;
 
         /// <summary>
         /// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -278,13 +278,19 @@ namespace Pulumi.Oci.Database
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Represents database home will be managed by oracle or customer
+        /// </summary>
+        [Input("homeType")]
+        public Input<string>? HomeType { get; set; }
 
         /// <summary>
         /// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
@@ -399,13 +405,19 @@ namespace Pulumi.Oci.Database
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Represents database home will be managed by oracle or customer
+        /// </summary>
+        [Input("homeType")]
+        public Input<string>? HomeType { get; set; }
 
         /// <summary>
         /// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.

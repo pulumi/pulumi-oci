@@ -37,6 +37,10 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
         /// Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         /// </summary>
         public readonly string TimeApprovedForAccess;
+        /// <summary>
+        /// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        /// </summary>
+        public readonly string TimeOfAction;
 
         [OutputConstructor]
         private GetDelegatedResourceAccessRequestApprovalInfoResult(
@@ -50,7 +54,9 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
 
             string approverId,
 
-            string timeApprovedForAccess)
+            string timeApprovedForAccess,
+
+            string timeOfAction)
         {
             ApprovalAction = approvalAction;
             ApprovalType = approvalType;
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.DelegateAccessControl.Outputs
             ApproverComment = approverComment;
             ApproverId = approverId;
             TimeApprovedForAccess = timeApprovedForAccess;
+            TimeOfAction = timeOfAction;
         }
     }
 }

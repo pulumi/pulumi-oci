@@ -42,6 +42,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("readEndpointIpAddress")]
         public Input<string>? ReadEndpointIpAddress { get; set; }
 
+        [Input("readEndpointIpv6addressIpv6subnetCidrPairDetails")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailGetArgs>? _readEndpointIpv6addressIpv6subnetCidrPairDetails;
+
+        /// <summary>
+        /// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailGetArgs> ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+        {
+            get => _readEndpointIpv6addressIpv6subnetCidrPairDetails ?? (_readEndpointIpv6addressIpv6subnetCidrPairDetails = new InputList<Inputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailGetArgs>());
+            set => _readEndpointIpv6addressIpv6subnetCidrPairDetails = value;
+        }
+
         public MysqlBackupDbSystemSnapshotReadEndpointGetArgs()
         {
         }

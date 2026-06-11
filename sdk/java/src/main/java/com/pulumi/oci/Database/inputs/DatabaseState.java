@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.inputs.DatabaseDataGuardGroupArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseManagementConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDbBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.DatabaseManagedSoftwareUpdateDetailArgs;
 import com.pulumi.oci.Database.inputs.DatabaseStorageSizeDetailArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -437,6 +438,21 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    @Import(name="managedSoftwareUpdateDetails")
+    private @Nullable Output<List<DatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails;
+
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public Optional<Output<List<DatabaseManagedSoftwareUpdateDetailArgs>>> managedSoftwareUpdateDetails() {
+        return Optional.ofNullable(this.managedSoftwareUpdateDetails);
+    }
+
+    /**
      * The national character set for the database.
      * 
      */
@@ -640,6 +656,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         this.lastBackupTimestamp = $.lastBackupTimestamp;
         this.lastFailedBackupTimestamp = $.lastFailedBackupTimestamp;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.managedSoftwareUpdateDetails = $.managedSoftwareUpdateDetails;
         this.ncharacterSet = $.ncharacterSet;
         this.patchVersion = $.patchVersion;
         this.pdbName = $.pdbName;
@@ -1279,6 +1296,37 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(@Nullable Output<List<DatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails) {
+            $.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(List<DatabaseManagedSoftwareUpdateDetailArgs> managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(Output.of(managedSoftwareUpdateDetails));
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(DatabaseManagedSoftwareUpdateDetailArgs... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
         }
 
         /**

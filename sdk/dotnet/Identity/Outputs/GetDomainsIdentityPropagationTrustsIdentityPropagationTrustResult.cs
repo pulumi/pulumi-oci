@@ -38,6 +38,18 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Authorization;
         /// <summary>
+        /// Certificate trust store. This is required if identity propagation type is X509.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChainResult> CaCertChains;
+        /// <summary>
+        /// A list of claims to propagate in RPST
+        /// </summary>
+        public readonly ImmutableArray<string> ClaimPropagations;
+        /// <summary>
+        /// A list of claim validations
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidationResult> ClaimValidations;
+        /// <summary>
         /// The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
         /// </summary>
         public readonly string ClientClaimName;
@@ -89,6 +101,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
         public readonly ImmutableArray<string> IdcsPreventedOperations;
+        /// <summary>
+        /// Defines the external workload that acts as impersonating resource principal.
+        /// </summary>
+        public readonly string ImpersonatingResource;
         /// <summary>
         /// The Impersonating Principal.
         /// </summary>
@@ -172,6 +188,12 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string authorization,
 
+            ImmutableArray<Outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChainResult> caCertChains,
+
+            ImmutableArray<string> claimPropagations,
+
+            ImmutableArray<Outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidationResult> claimValidations,
+
             string clientClaimName,
 
             ImmutableArray<string> clientClaimValues,
@@ -197,6 +219,8 @@ namespace Pulumi.Oci.Identity.Outputs
             string idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
+
+            string impersonatingResource,
 
             ImmutableArray<Outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUserResult> impersonationServiceUsers,
 
@@ -238,6 +262,9 @@ namespace Pulumi.Oci.Identity.Outputs
             AttributeSets = attributeSets;
             Attributes = attributes;
             Authorization = authorization;
+            CaCertChains = caCertChains;
+            ClaimPropagations = claimPropagations;
+            ClaimValidations = claimValidations;
             ClientClaimName = clientClaimName;
             ClientClaimValues = clientClaimValues;
             ClockSkewSeconds = clockSkewSeconds;
@@ -251,6 +278,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IdcsLastModifiedBies = idcsLastModifiedBies;
             IdcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             IdcsPreventedOperations = idcsPreventedOperations;
+            ImpersonatingResource = impersonatingResource;
             ImpersonationServiceUsers = impersonationServiceUsers;
             Issuer = issuer;
             Keytabs = keytabs;

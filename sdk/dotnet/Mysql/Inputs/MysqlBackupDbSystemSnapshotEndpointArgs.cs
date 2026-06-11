@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }
 
+        /// <summary>
+        /// The internet protocol (IP) version of the IP address.
+        /// </summary>
+        [Input("ipAddressVersion")]
+        public Input<string>? IpAddressVersion { get; set; }
+
         [Input("modes")]
         private InputList<string>? _modes;
 

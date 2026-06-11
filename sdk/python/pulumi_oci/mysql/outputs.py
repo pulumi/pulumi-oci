@@ -36,6 +36,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotMaintenance',
     'MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindow',
     'MysqlBackupDbSystemSnapshotReadEndpoint',
+    'MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail',
     'MysqlBackupDbSystemSnapshotRest',
     'MysqlBackupDbSystemSnapshotSecureConnection',
     'MysqlBackupDbSystemSnapshotSummary',
@@ -65,10 +66,12 @@ __all__ = [
     'MysqlDbSystemEncryptData',
     'MysqlDbSystemEndpoint',
     'MysqlDbSystemHeatWaveCluster',
+    'MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails',
     'MysqlDbSystemMaintenance',
     'MysqlDbSystemMaintenanceMaintenanceDisabledWindow',
     'MysqlDbSystemPointInTimeRecoveryDetail',
     'MysqlDbSystemReadEndpoint',
+    'MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails',
     'MysqlDbSystemRest',
     'MysqlDbSystemSecureConnections',
     'MysqlDbSystemSource',
@@ -115,6 +118,7 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotMaintenanceResult',
     'GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlBackupDbSystemSnapshotReadEndpointResult',
+    'GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult',
     'GetMysqlBackupDbSystemSnapshotRestResult',
     'GetMysqlBackupDbSystemSnapshotSecureConnectionResult',
     'GetMysqlBackupDbSystemSnapshotSummaryResult',
@@ -153,10 +157,12 @@ __all__ = [
     'GetMysqlDbSystemEncryptDataResult',
     'GetMysqlDbSystemEndpointResult',
     'GetMysqlDbSystemHeatWaveClusterResult',
+    'GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailResult',
     'GetMysqlDbSystemMaintenanceResult',
     'GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlDbSystemPointInTimeRecoveryDetailResult',
     'GetMysqlDbSystemReadEndpointResult',
+    'GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult',
     'GetMysqlDbSystemRestResult',
     'GetMysqlDbSystemSecureConnectionResult',
     'GetMysqlDbSystemSourceResult',
@@ -183,10 +189,12 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemEncryptDataResult',
     'GetMysqlDbSystemsDbSystemEndpointResult',
     'GetMysqlDbSystemsDbSystemHeatWaveClusterResult',
+    'GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailResult',
     'GetMysqlDbSystemsDbSystemMaintenanceResult',
     'GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowResult',
     'GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult',
     'GetMysqlDbSystemsDbSystemReadEndpointResult',
+    'GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult',
     'GetMysqlDbSystemsDbSystemRestResult',
     'GetMysqlDbSystemsDbSystemSecureConnectionResult',
     'GetMysqlDbSystemsDbSystemSourceResult',
@@ -234,6 +242,8 @@ class ChannelSource(dict):
             suggest = "ssl_mode"
         elif key == "anonymousTransactionsHandling":
             suggest = "anonymous_transactions_handling"
+        elif key == "mustUseIpv6onDualStack":
+            suggest = "must_use_ipv6on_dual_stack"
         elif key == "sslCaCertificate":
             suggest = "ssl_ca_certificate"
 
@@ -255,6 +265,7 @@ class ChannelSource(dict):
                  ssl_mode: _builtins.str,
                  username: _builtins.str,
                  anonymous_transactions_handling: Optional['outputs.ChannelSourceAnonymousTransactionsHandling'] = None,
+                 must_use_ipv6on_dual_stack: Optional[_builtins.bool] = None,
                  port: Optional[_builtins.int] = None,
                  ssl_ca_certificate: Optional['outputs.ChannelSourceSslCaCertificate'] = None):
         """
@@ -264,6 +275,7 @@ class ChannelSource(dict):
         :param _builtins.str ssl_mode: (Updatable) The SSL mode of the Channel.
         :param _builtins.str username: (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         :param 'ChannelSourceAnonymousTransactionsHandlingArgs' anonymous_transactions_handling: (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        :param _builtins.bool must_use_ipv6on_dual_stack: (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: (Updatable) The port the source MySQL instance listens on.
         :param 'ChannelSourceSslCaCertificateArgs' ssl_ca_certificate: (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         """
@@ -274,6 +286,8 @@ class ChannelSource(dict):
         pulumi.set(__self__, "username", username)
         if anonymous_transactions_handling is not None:
             pulumi.set(__self__, "anonymous_transactions_handling", anonymous_transactions_handling)
+        if must_use_ipv6on_dual_stack is not None:
+            pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if ssl_ca_certificate is not None:
@@ -326,6 +340,14 @@ class ChannelSource(dict):
         (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         """
         return pulumi.get(self, "anonymous_transactions_handling")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -953,6 +975,7 @@ class MysqlBackupDbSystemSnapshot(dict):
                  hostname_label: Optional[_builtins.str] = None,
                  id: Optional[_builtins.str] = None,
                  ip_address: Optional[_builtins.str] = None,
+                 ipv6address: Optional[_builtins.str] = None,
                  is_highly_available: Optional[_builtins.bool] = None,
                  maintenances: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenance']] = None,
                  mysql_version: Optional[_builtins.str] = None,
@@ -989,6 +1012,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param _builtins.str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param _builtins.str id: OCID of the backup itself
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
         :param _builtins.bool is_highly_available: Specifies if the DB System is highly available.
         :param Sequence['MysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param _builtins.str mysql_version: The MySQL server version of the DB System used for backup.
@@ -1046,6 +1070,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "id", id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if is_highly_available is not None:
             pulumi.set(__self__, "is_highly_available", is_highly_available)
         if maintenances is not None:
@@ -1242,6 +1268,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
     @pulumi.getter(name="isHighlyAvailable")
@@ -1820,6 +1854,8 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         suggest = None
         if key == "ipAddress":
             suggest = "ip_address"
+        elif key == "ipAddressVersion":
+            suggest = "ip_address_version"
         elif key == "portX":
             suggest = "port_x"
         elif key == "resourceId":
@@ -1843,6 +1879,7 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
     def __init__(__self__, *,
                  hostname: Optional[_builtins.str] = None,
                  ip_address: Optional[_builtins.str] = None,
+                 ip_address_version: Optional[_builtins.str] = None,
                  modes: Optional[Sequence[_builtins.str]] = None,
                  port: Optional[_builtins.int] = None,
                  port_x: Optional[_builtins.int] = None,
@@ -1853,6 +1890,7 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         """
         :param _builtins.str hostname: The network address of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ip_address_version: The internet protocol (IP) version of the IP address.
         :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -1865,6 +1903,8 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
             pulumi.set(__self__, "hostname", hostname)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ip_address_version is not None:
+            pulumi.set(__self__, "ip_address_version", ip_address_version)
         if modes is not None:
             pulumi.set(__self__, "modes", modes)
         if port is not None:
@@ -1895,6 +1935,14 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddressVersion")
+    def ip_address_version(self) -> Optional[_builtins.str]:
+        """
+        The internet protocol (IP) version of the IP address.
+        """
+        return pulumi.get(self, "ip_address_version")
 
     @_builtins.property
     @pulumi.getter
@@ -2136,6 +2184,8 @@ class MysqlBackupDbSystemSnapshotReadEndpoint(dict):
             suggest = "read_endpoint_hostname_label"
         elif key == "readEndpointIpAddress":
             suggest = "read_endpoint_ip_address"
+        elif key == "readEndpointIpv6addressIpv6subnetCidrPairDetails":
+            suggest = "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotReadEndpoint. Access the value via the '{suggest}' property getter instead.")
@@ -2152,12 +2202,14 @@ class MysqlBackupDbSystemSnapshotReadEndpoint(dict):
                  exclude_ips: Optional[Sequence[_builtins.str]] = None,
                  is_enabled: Optional[_builtins.bool] = None,
                  read_endpoint_hostname_label: Optional[_builtins.str] = None,
-                 read_endpoint_ip_address: Optional[_builtins.str] = None):
+                 read_endpoint_ip_address: Optional[_builtins.str] = None,
+                 read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail']] = None):
         """
         :param Sequence[_builtins.str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
         :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param _builtins.str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
         :param _builtins.str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param Sequence['MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs'] read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         """
         if exclude_ips is not None:
             pulumi.set(__self__, "exclude_ips", exclude_ips)
@@ -2167,6 +2219,8 @@ class MysqlBackupDbSystemSnapshotReadEndpoint(dict):
             pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
         if read_endpoint_ip_address is not None:
             pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+        if read_endpoint_ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details", read_endpoint_ipv6address_ipv6subnet_cidr_pair_details)
 
     @_builtins.property
     @pulumi.getter(name="excludeIps")
@@ -2199,6 +2253,62 @@ class MysqlBackupDbSystemSnapshotReadEndpoint(dict):
         The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "read_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    def read_endpoint_ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail']]:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipv6subnetCidr":
+            suggest = "ipv6subnet_cidr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ipv6address: Optional[_builtins.str] = None,
+                 ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -5167,6 +5277,8 @@ class MysqlDbSystemChannelSource(dict):
         suggest = None
         if key == "anonymousTransactionsHandlings":
             suggest = "anonymous_transactions_handlings"
+        elif key == "mustUseIpv6onDualStack":
+            suggest = "must_use_ipv6on_dual_stack"
         elif key == "sourceType":
             suggest = "source_type"
         elif key == "sslCaCertificates":
@@ -5188,6 +5300,7 @@ class MysqlDbSystemChannelSource(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Optional[Sequence['outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling']] = None,
                  hostname: Optional[_builtins.str] = None,
+                 must_use_ipv6on_dual_stack: Optional[_builtins.bool] = None,
                  port: Optional[_builtins.int] = None,
                  source_type: Optional[_builtins.str] = None,
                  ssl_ca_certificates: Optional[Sequence['outputs.MysqlDbSystemChannelSourceSslCaCertificate']] = None,
@@ -5196,6 +5309,7 @@ class MysqlDbSystemChannelSource(dict):
         """
         :param Sequence['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param _builtins.str hostname: The network address of the DB System.
+        :param _builtins.bool must_use_ipv6on_dual_stack: Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: The port for primary endpoint of the DB System to listen on.
         :param _builtins.str source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         :param Sequence['MysqlDbSystemChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -5206,6 +5320,8 @@ class MysqlDbSystemChannelSource(dict):
             pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
+        if must_use_ipv6on_dual_stack is not None:
+            pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if source_type is not None:
@@ -5232,6 +5348,14 @@ class MysqlDbSystemChannelSource(dict):
         The network address of the DB System.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> Optional[_builtins.bool]:
+        """
+        Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -5879,6 +6003,8 @@ class MysqlDbSystemEndpoint(dict):
         suggest = None
         if key == "ipAddress":
             suggest = "ip_address"
+        elif key == "ipAddressVersion":
+            suggest = "ip_address_version"
         elif key == "portX":
             suggest = "port_x"
         elif key == "resourceId":
@@ -5902,6 +6028,7 @@ class MysqlDbSystemEndpoint(dict):
     def __init__(__self__, *,
                  hostname: Optional[_builtins.str] = None,
                  ip_address: Optional[_builtins.str] = None,
+                 ip_address_version: Optional[_builtins.str] = None,
                  modes: Optional[Sequence[_builtins.str]] = None,
                  port: Optional[_builtins.int] = None,
                  port_x: Optional[_builtins.int] = None,
@@ -5912,6 +6039,7 @@ class MysqlDbSystemEndpoint(dict):
         """
         :param _builtins.str hostname: The network address of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ip_address_version: The internet protocol (IP) version of the IP address.
         :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
         :param _builtins.int port: The port for primary endpoint of the DB System to listen on.
         :param _builtins.int port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
@@ -5924,6 +6052,8 @@ class MysqlDbSystemEndpoint(dict):
             pulumi.set(__self__, "hostname", hostname)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ip_address_version is not None:
+            pulumi.set(__self__, "ip_address_version", ip_address_version)
         if modes is not None:
             pulumi.set(__self__, "modes", modes)
         if port is not None:
@@ -5954,6 +6084,14 @@ class MysqlDbSystemEndpoint(dict):
         The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddressVersion")
+    def ip_address_version(self) -> Optional[_builtins.str]:
+        """
+        The internet protocol (IP) version of the IP address.
+        """
+        return pulumi.get(self, "ip_address_version")
 
     @_builtins.property
     @pulumi.getter
@@ -6116,6 +6254,54 @@ class MysqlDbSystemHeatWaveCluster(dict):
         The time the DB System was last updated.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipv6subnetCidr":
+            suggest = "ipv6subnet_cidr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ipv6address: Optional[_builtins.str] = None,
+                 ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: (Updatable) The IPv6 prefix allocated to the subnet.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -6368,6 +6554,8 @@ class MysqlDbSystemReadEndpoint(dict):
             suggest = "read_endpoint_hostname_label"
         elif key == "readEndpointIpAddress":
             suggest = "read_endpoint_ip_address"
+        elif key == "readEndpointIpv6addressIpv6subnetCidrPairDetails":
+            suggest = "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemReadEndpoint. Access the value via the '{suggest}' property getter instead.")
@@ -6384,7 +6572,8 @@ class MysqlDbSystemReadEndpoint(dict):
                  exclude_ips: Optional[Sequence[_builtins.str]] = None,
                  is_enabled: Optional[_builtins.bool] = None,
                  read_endpoint_hostname_label: Optional[_builtins.str] = None,
-                 read_endpoint_ip_address: Optional[_builtins.str] = None):
+                 read_endpoint_ip_address: Optional[_builtins.str] = None,
+                 read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Optional['outputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails'] = None):
         """
         :param Sequence[_builtins.str] exclude_ips: (Updatable) A list of IP addresses of read replicas that are excluded from serving read requests.
         :param _builtins.bool is_enabled: (Updatable) Specifies if the DB System read endpoint is enabled or not.
@@ -6394,6 +6583,7 @@ class MysqlDbSystemReadEndpoint(dict):
                
                Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param _builtins.str read_endpoint_ip_address: (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param 'MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs' read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         """
         if exclude_ips is not None:
             pulumi.set(__self__, "exclude_ips", exclude_ips)
@@ -6403,6 +6593,8 @@ class MysqlDbSystemReadEndpoint(dict):
             pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
         if read_endpoint_ip_address is not None:
             pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+        if read_endpoint_ipv6address_ipv6subnet_cidr_pair_details is not None:
+            pulumi.set(__self__, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details", read_endpoint_ipv6address_ipv6subnet_cidr_pair_details)
 
     @_builtins.property
     @pulumi.getter(name="excludeIps")
@@ -6439,6 +6631,62 @@ class MysqlDbSystemReadEndpoint(dict):
         (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "read_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    def read_endpoint_ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional['outputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails']:
+        """
+        (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details")
+
+
+@pulumi.output_type
+class MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipv6subnetCidr":
+            suggest = "ipv6subnet_cidr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ipv6address: Optional[_builtins.str] = None,
+                 ipv6subnet_cidr: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ipv6address: (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: (Updatable) The IPv6 prefix allocated to the subnet.
+        """
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -7310,6 +7558,7 @@ class GetChannelSourceResult(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: _builtins.str,
+                 must_use_ipv6on_dual_stack: _builtins.bool,
                  password: _builtins.str,
                  port: _builtins.int,
                  source_type: _builtins.str,
@@ -7319,6 +7568,7 @@ class GetChannelSourceResult(dict):
         """
         :param Sequence['GetChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param _builtins.str hostname: The network address of the MySQL instance.
+        :param _builtins.bool must_use_ipv6on_dual_stack: Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: The port the source MySQL instance listens on.
         :param _builtins.str source_type: The specific source identifier.
         :param Sequence['GetChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -7327,6 +7577,7 @@ class GetChannelSourceResult(dict):
         """
         pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
@@ -7349,6 +7600,14 @@ class GetChannelSourceResult(dict):
         The network address of the MySQL instance.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> _builtins.bool:
+        """
+        Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -7755,6 +8014,7 @@ class GetChannelsChannelSourceResult(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: _builtins.str,
+                 must_use_ipv6on_dual_stack: _builtins.bool,
                  password: _builtins.str,
                  port: _builtins.int,
                  source_type: _builtins.str,
@@ -7764,6 +8024,7 @@ class GetChannelsChannelSourceResult(dict):
         """
         :param Sequence['GetChannelsChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param _builtins.str hostname: The network address of the MySQL instance.
+        :param _builtins.bool must_use_ipv6on_dual_stack: Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: The port the source MySQL instance listens on.
         :param _builtins.str source_type: The specific source identifier.
         :param Sequence['GetChannelsChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -7772,6 +8033,7 @@ class GetChannelsChannelSourceResult(dict):
         """
         pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
@@ -7794,6 +8056,14 @@ class GetChannelsChannelSourceResult(dict):
         The network address of the MySQL instance.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> _builtins.bool:
+        """
+        Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -8422,6 +8692,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  hostname_label: _builtins.str,
                  id: _builtins.str,
                  ip_address: _builtins.str,
+                 ipv6address: _builtins.str,
                  is_highly_available: _builtins.bool,
                  maintenances: Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult'],
                  mysql_version: _builtins.str,
@@ -8458,6 +8729,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param _builtins.str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param _builtins.str id: OCID of the backup itself
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
         :param _builtins.bool is_highly_available: Specifies if the DB System is highly available.
         :param Sequence['GetMysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param _builtins.str mysql_version: The MySQL server version of the DB System used for backup.
@@ -8494,6 +8766,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "hostname_label", hostname_label)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address", ipv6address)
         pulumi.set(__self__, "is_highly_available", is_highly_available)
         pulumi.set(__self__, "maintenances", maintenances)
         pulumi.set(__self__, "mysql_version", mysql_version)
@@ -8676,6 +8949,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
     @pulumi.getter(name="isHighlyAvailable")
@@ -9097,6 +9378,7 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str,
                  ip_address: _builtins.str,
+                 ip_address_version: _builtins.str,
                  modes: Sequence[_builtins.str],
                  port: _builtins.int,
                  port_x: _builtins.int,
@@ -9107,6 +9389,7 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         """
         :param _builtins.str hostname: The network address of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ip_address_version: The internet protocol (IP) version of the IP address.
         :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -9117,6 +9400,7 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ip_address_version", ip_address_version)
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
@@ -9140,6 +9424,14 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddressVersion")
+    def ip_address_version(self) -> _builtins.str:
+        """
+        The internet protocol (IP) version of the IP address.
+        """
+        return pulumi.get(self, "ip_address_version")
 
     @_builtins.property
     @pulumi.getter
@@ -9317,17 +9609,20 @@ class GetMysqlBackupDbSystemSnapshotReadEndpointResult(dict):
                  exclude_ips: Sequence[_builtins.str],
                  is_enabled: _builtins.bool,
                  read_endpoint_hostname_label: _builtins.str,
-                 read_endpoint_ip_address: _builtins.str):
+                 read_endpoint_ip_address: _builtins.str,
+                 read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']):
         """
         :param Sequence[_builtins.str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
         :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param _builtins.str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
         :param _builtins.str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs'] read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         """
         pulumi.set(__self__, "exclude_ips", exclude_ips)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
         pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+        pulumi.set(__self__, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details", read_endpoint_ipv6address_ipv6subnet_cidr_pair_details)
 
     @_builtins.property
     @pulumi.getter(name="excludeIps")
@@ -9360,6 +9655,43 @@ class GetMysqlBackupDbSystemSnapshotReadEndpointResult(dict):
         The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "read_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    def read_endpoint_ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -13270,6 +13602,7 @@ class GetMysqlDbSystemChannelSourceResult(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: _builtins.str,
+                 must_use_ipv6on_dual_stack: _builtins.bool,
                  port: _builtins.int,
                  source_type: _builtins.str,
                  ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemChannelSourceSslCaCertificateResult'],
@@ -13278,6 +13611,7 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         """
         :param Sequence['GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param _builtins.str hostname: The network address of the DB System.
+        :param _builtins.bool must_use_ipv6on_dual_stack: Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.str source_type: The specific source identifier.
         :param Sequence['GetMysqlDbSystemChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -13286,6 +13620,7 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         """
         pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
@@ -13307,6 +13642,14 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         The network address of the DB System.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> _builtins.bool:
+        """
+        Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -13754,6 +14097,7 @@ class GetMysqlDbSystemEndpointResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str,
                  ip_address: _builtins.str,
+                 ip_address_version: _builtins.str,
                  modes: Sequence[_builtins.str],
                  port: _builtins.int,
                  port_x: _builtins.int,
@@ -13764,6 +14108,7 @@ class GetMysqlDbSystemEndpointResult(dict):
         """
         :param _builtins.str hostname: The network address of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ip_address_version: The internet protocol (IP) version of the IP address.
         :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -13774,6 +14119,7 @@ class GetMysqlDbSystemEndpointResult(dict):
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ip_address_version", ip_address_version)
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
@@ -13797,6 +14143,14 @@ class GetMysqlDbSystemEndpointResult(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddressVersion")
+    def ip_address_version(self) -> _builtins.str:
+        """
+        The internet protocol (IP) version of the IP address.
+        """
+        return pulumi.get(self, "ip_address_version")
 
     @_builtins.property
     @pulumi.getter
@@ -13926,6 +14280,35 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
         The time the DB System was last updated.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -14076,17 +14459,20 @@ class GetMysqlDbSystemReadEndpointResult(dict):
                  exclude_ips: Sequence[_builtins.str],
                  is_enabled: _builtins.bool,
                  read_endpoint_hostname_label: _builtins.str,
-                 read_endpoint_ip_address: _builtins.str):
+                 read_endpoint_ip_address: _builtins.str,
+                 read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']):
         """
         :param Sequence[_builtins.str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
         :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param _builtins.str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
         :param _builtins.str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param Sequence['GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs'] read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         """
         pulumi.set(__self__, "exclude_ips", exclude_ips)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
         pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+        pulumi.set(__self__, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details", read_endpoint_ipv6address_ipv6subnet_cidr_pair_details)
 
     @_builtins.property
     @pulumi.getter(name="excludeIps")
@@ -14119,6 +14505,43 @@ class GetMysqlDbSystemReadEndpointResult(dict):
         The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "read_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    def read_endpoint_ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -14452,8 +14875,10 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  hostname_label: _builtins.str,
                  id: _builtins.str,
                  ip_address: _builtins.str,
+                 ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailResult'],
                  is_heat_wave_cluster_attached: _builtins.bool,
                  is_highly_available: _builtins.bool,
+                 is_ipv6enabled: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  maintenances: Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult'],
                  mysql_version: _builtins.str,
@@ -14505,8 +14930,10 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param _builtins.str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param _builtins.str id: The OCID of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param Sequence['GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         :param _builtins.bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
         :param _builtins.bool is_highly_available: Specifies if the DB System is highly available.
+        :param _builtins.bool is_ipv6enabled: Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycleState.
         :param Sequence['GetMysqlDbSystemsDbSystemMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param _builtins.str mysql_version: Name of the MySQL Version in use for the DB System.
@@ -14555,8 +14982,10 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "hostname_label", hostname_label)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         pulumi.set(__self__, "is_highly_available", is_highly_available)
+        pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenances", maintenances)
         pulumi.set(__self__, "mysql_version", mysql_version)
@@ -14801,6 +15230,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         return pulumi.get(self, "ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> _builtins.bool:
         """
@@ -14815,6 +15252,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         Specifies if the DB System is highly available.
         """
         return pulumi.get(self, "is_highly_available")
+
+    @_builtins.property
+    @pulumi.getter(name="isIpv6enabled")
+    def is_ipv6enabled(self) -> _builtins.bool:
+        """
+        Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+        """
+        return pulumi.get(self, "is_ipv6enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -15271,6 +15716,7 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: _builtins.str,
+                 must_use_ipv6on_dual_stack: _builtins.bool,
                  port: _builtins.int,
                  source_type: _builtins.str,
                  ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult'],
@@ -15279,6 +15725,7 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         """
         :param Sequence['GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param _builtins.str hostname: The network address of the DB System.
+        :param _builtins.bool must_use_ipv6on_dual_stack: Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.str source_type: The specific source identifier.
         :param Sequence['GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
@@ -15287,6 +15734,7 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         """
         pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "must_use_ipv6on_dual_stack", must_use_ipv6on_dual_stack)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
@@ -15308,6 +15756,14 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         The network address of the DB System.
         """
         return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="mustUseIpv6onDualStack")
+    def must_use_ipv6on_dual_stack(self) -> _builtins.bool:
+        """
+        Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        """
+        return pulumi.get(self, "must_use_ipv6on_dual_stack")
 
     @_builtins.property
     @pulumi.getter
@@ -15755,6 +16211,7 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str,
                  ip_address: _builtins.str,
+                 ip_address_version: _builtins.str,
                  modes: Sequence[_builtins.str],
                  port: _builtins.int,
                  port_x: _builtins.int,
@@ -15765,6 +16222,7 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         """
         :param _builtins.str hostname: The network address of the DB System.
         :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
+        :param _builtins.str ip_address_version: The internet protocol (IP) version of the IP address.
         :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
         :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -15775,6 +16233,7 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ip_address_version", ip_address_version)
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
@@ -15798,6 +16257,14 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddressVersion")
+    def ip_address_version(self) -> _builtins.str:
+        """
+        The internet protocol (IP) version of the IP address.
+        """
+        return pulumi.get(self, "ip_address_version")
 
     @_builtins.property
     @pulumi.getter
@@ -15927,6 +16394,35 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
         The time the DB System was last updated.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -16077,17 +16573,20 @@ class GetMysqlDbSystemsDbSystemReadEndpointResult(dict):
                  exclude_ips: Sequence[_builtins.str],
                  is_enabled: _builtins.bool,
                  read_endpoint_hostname_label: _builtins.str,
-                 read_endpoint_ip_address: _builtins.str):
+                 read_endpoint_ip_address: _builtins.str,
+                 read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']):
         """
         :param Sequence[_builtins.str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
         :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param _builtins.str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
         :param _builtins.str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+        :param Sequence['GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs'] read_endpoint_ipv6address_ipv6subnet_cidr_pair_details: Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
         """
         pulumi.set(__self__, "exclude_ips", exclude_ips)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
         pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
+        pulumi.set(__self__, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details", read_endpoint_ipv6address_ipv6subnet_cidr_pair_details)
 
     @_builtins.property
     @pulumi.getter(name="excludeIps")
@@ -16120,6 +16619,43 @@ class GetMysqlDbSystemsDbSystemReadEndpointResult(dict):
         The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         """
         return pulumi.get(self, "read_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="readEndpointIpv6addressIpv6subnetCidrPairDetails")
+    def read_endpoint_ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "read_endpoint_ipv6address_ipv6subnet_cidr_pair_details")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailResult(dict):
+    def __init__(__self__, *,
+                 ipv6address: _builtins.str,
+                 ipv6subnet_cidr: _builtins.str):
+        """
+        :param _builtins.str ipv6address: An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        :param _builtins.str ipv6subnet_cidr: The IPv6 prefix allocated to the subnet.
+        """
+        pulumi.set(__self__, "ipv6address", ipv6address)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> _builtins.str:
+        """
+        The IPv6 prefix allocated to the subnet.
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
 
 @pulumi.output_type
@@ -16881,6 +17417,7 @@ class GetReplicasReplicaResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  ip_address: _builtins.str,
+                 ipv6address: _builtins.str,
                  is_delete_protected: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  mysql_version: _builtins.str,
@@ -16908,6 +17445,7 @@ class GetReplicasReplicaResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The OCID of the read replica.
         :param _builtins.str ip_address: The IP address the read replica is configured to listen on.
+        :param _builtins.str ipv6address: The IPv6 address the read replica is configured to listen on.
         :param _builtins.bool is_delete_protected: Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param _builtins.str lifecycle_details: A message describing the state of the read replica.
         :param _builtins.str mysql_version: The MySQL version to be used by the read replica.
@@ -16935,6 +17473,7 @@ class GetReplicasReplicaResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ipv6address", ipv6address)
         pulumi.set(__self__, "is_delete_protected", is_delete_protected)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "mysql_version", mysql_version)
@@ -17045,6 +17584,14 @@ class GetReplicasReplicaResult(dict):
         The IP address the read replica is configured to listen on.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> _builtins.str:
+        """
+        The IPv6 address the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
     @pulumi.getter(name="isDeleteProtected")

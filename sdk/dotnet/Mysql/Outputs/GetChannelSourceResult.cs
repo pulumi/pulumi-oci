@@ -21,6 +21,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The network address of the MySQL instance.
         /// </summary>
         public readonly string Hostname;
+        /// <summary>
+        /// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        /// </summary>
+        public readonly bool MustUseIpv6onDualStack;
         public readonly string Password;
         /// <summary>
         /// The port the source MySQL instance listens on.
@@ -49,6 +53,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string hostname,
 
+            bool mustUseIpv6onDualStack,
+
             string password,
 
             int port,
@@ -63,6 +69,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         {
             AnonymousTransactionsHandlings = anonymousTransactionsHandlings;
             Hostname = hostname;
+            MustUseIpv6onDualStack = mustUseIpv6onDualStack;
             Password = password;
             Port = port;
             SourceType = sourceType;

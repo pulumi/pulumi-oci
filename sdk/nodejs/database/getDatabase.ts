@@ -150,6 +150,10 @@ export interface GetDatabaseResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     */
+    readonly managedSoftwareUpdateDetails: outputs.Database.GetDatabaseManagedSoftwareUpdateDetail[];
+    /**
      * The national character set for the database.
      */
     readonly ncharacterSet: string;
@@ -165,6 +169,9 @@ export interface GetDatabaseResult {
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
     readonly sidPrefix: string;
+    /**
+     * The update should be applied on the database for the selected version scheme.
+     */
     readonly source: string;
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)

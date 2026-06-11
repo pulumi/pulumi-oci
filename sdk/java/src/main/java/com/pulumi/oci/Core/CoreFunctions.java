@@ -9984,6 +9984,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
      *             .computeClusterId(testComputeCluster.id())
      *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10030,6 +10031,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
      *             .computeClusterId(testComputeCluster.id())
      *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10076,6 +10078,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
      *             .computeClusterId(testComputeCluster.id())
      *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10122,6 +10125,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
      *             .computeClusterId(testComputeCluster.id())
      *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 
@@ -10168,6 +10172,7 @@ public final class CoreFunctions {
      *             .availabilityDomain(computeGpuMemoryClusterAvailabilityDomain)
      *             .computeClusterId(testComputeCluster.id())
      *             .computeGpuMemoryClusterId(testComputeGpuMemoryCluster.id())
+     *             .computeGpuMemoryFabricId(testComputeGpuMemoryFabric.id())
      *             .displayName(computeGpuMemoryClusterDisplayName)
      *             .build());
      * 

@@ -112,7 +112,13 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         HostnameLabel = mysqlDbSystemHostnameLabel,
     ///         IpAddress = mysqlDbSystemIpAddress,
+    ///         Ipv6addressIpv6subnetCidrPairDetails = new Oci.Mysql.Inputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs
+    ///         {
+    ///             Ipv6address = mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///             Ipv6subnetCidr = mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///         },
     ///         IsHighlyAvailable = mysqlDbSystemIsHighlyAvailable,
+    ///         IsIpv6enabled = mysqlDbSystemIsIpv6enabled,
     ///         Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
     ///         {
     ///             WindowStartTime = mysqlDbSystemMaintenanceWindowStartTime,
@@ -137,6 +143,11 @@ namespace Pulumi.Oci.Mysql
     ///             IsEnabled = mysqlDbSystemReadEndpointIsEnabled,
     ///             ReadEndpointHostnameLabel = mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
     ///             ReadEndpointIpAddress = mysqlDbSystemReadEndpointReadEndpointIpAddress,
+    ///             ReadEndpointIpv6addressIpv6subnetCidrPairDetails = new Oci.Mysql.Inputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs
+    ///             {
+    ///                 Ipv6address = mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                 Ipv6subnetCidr = mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+    ///             },
     ///         },
     ///         Rest = new Oci.Mysql.Inputs.MysqlDbSystemRestArgs
     ///         {
@@ -368,6 +379,12 @@ namespace Pulumi.Oci.Mysql
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        [Output("ipv6addressIpv6subnetCidrPairDetails")]
+        public Output<Outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails> Ipv6addressIpv6subnetCidrPairDetails { get; private set; } = null!;
+
+        /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         [Output("isHeatWaveClusterAttached")]
@@ -380,6 +397,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("isHighlyAvailable")]
         public Output<bool> IsHighlyAvailable { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        [Output("isIpv6enabled")]
+        public Output<bool> IsIpv6enabled { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycleState.
@@ -744,12 +767,24 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        [Input("ipv6addressIpv6subnetCidrPairDetails")]
+        public Input<Inputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs>? Ipv6addressIpv6subnetCidrPairDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies if the DB System is highly available.
         /// 
         /// When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
         /// </summary>
         [Input("isHighlyAvailable")]
         public Input<bool>? IsHighlyAvailable { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        [Input("isIpv6enabled")]
+        public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
         /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `Maintenance` and `BackupPolicy` cannot be updated in the same request.
@@ -1102,6 +1137,12 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        [Input("ipv6addressIpv6subnetCidrPairDetails")]
+        public Input<Inputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsGetArgs>? Ipv6addressIpv6subnetCidrPairDetails { get; set; }
+
+        /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
         [Input("isHeatWaveClusterAttached")]
@@ -1114,6 +1155,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("isHighlyAvailable")]
         public Input<bool>? IsHighlyAvailable { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+        /// </summary>
+        [Input("isIpv6enabled")]
+        public Input<bool>? IsIpv6enabled { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycleState.

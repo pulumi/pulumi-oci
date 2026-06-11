@@ -203,7 +203,7 @@ namespace Pulumi.Oci.DelegateAccessControl
     public sealed class GetServiceProvidersResult
     {
         /// <summary>
-        /// The OCID of the compartment that contains the Delegation Control.
+        /// The OCID of the compartment that contains the Service Provider.
         /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetServiceProvidersFilterResult> Filters;

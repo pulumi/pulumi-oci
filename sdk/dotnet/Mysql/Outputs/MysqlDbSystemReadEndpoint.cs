@@ -33,6 +33,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         /// </summary>
         public readonly string? ReadEndpointIpAddress;
+        /// <summary>
+        /// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        /// </summary>
+        public readonly Outputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails? ReadEndpointIpv6addressIpv6subnetCidrPairDetails;
 
         [OutputConstructor]
         private MysqlDbSystemReadEndpoint(
@@ -42,12 +46,15 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? readEndpointHostnameLabel,
 
-            string? readEndpointIpAddress)
+            string? readEndpointIpAddress,
+
+            Outputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails? readEndpointIpv6addressIpv6subnetCidrPairDetails)
         {
             ExcludeIps = excludeIps;
             IsEnabled = isEnabled;
             ReadEndpointHostnameLabel = readEndpointHostnameLabel;
             ReadEndpointIpAddress = readEndpointIpAddress;
+            ReadEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
         }
     }
 }

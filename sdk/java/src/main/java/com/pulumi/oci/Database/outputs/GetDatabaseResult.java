@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetDatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.GetDatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseStorageSizeDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -152,6 +153,11 @@ public final class GetDatabaseResult {
      */
     private String lifecycleDetails;
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    private List<GetDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -171,6 +177,10 @@ public final class GetDatabaseResult {
      * 
      */
     private String sidPrefix;
+    /**
+     * @return The update should be applied on the database for the selected version scheme.
+     * 
+     */
     private String source;
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
@@ -403,6 +413,13 @@ public final class GetDatabaseResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public List<GetDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails;
+    }
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -430,6 +447,10 @@ public final class GetDatabaseResult {
     public String sidPrefix() {
         return this.sidPrefix;
     }
+    /**
+     * @return The update should be applied on the database for the selected version scheme.
+     * 
+     */
     public String source() {
         return this.source;
     }
@@ -523,6 +544,7 @@ public final class GetDatabaseResult {
         private String lastBackupTimestamp;
         private String lastFailedBackupTimestamp;
         private String lifecycleDetails;
+        private List<GetDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
         private String ncharacterSet;
         private String patchVersion;
         private String pdbName;
@@ -569,6 +591,7 @@ public final class GetDatabaseResult {
     	      this.lastBackupTimestamp = defaults.lastBackupTimestamp;
     	      this.lastFailedBackupTimestamp = defaults.lastFailedBackupTimestamp;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.patchVersion = defaults.patchVersion;
     	      this.pdbName = defaults.pdbName;
@@ -847,6 +870,17 @@ public final class GetDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder managedSoftwareUpdateDetails(List<GetDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails) {
+            if (managedSoftwareUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseResult", "managedSoftwareUpdateDetails");
+            }
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+        public Builder managedSoftwareUpdateDetails(GetDatabaseManagedSoftwareUpdateDetail... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDatabaseResult", "ncharacterSet");
@@ -978,6 +1012,7 @@ public final class GetDatabaseResult {
             _resultValue.lastBackupTimestamp = lastBackupTimestamp;
             _resultValue.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.patchVersion = patchVersion;
             _resultValue.pdbName = pdbName;

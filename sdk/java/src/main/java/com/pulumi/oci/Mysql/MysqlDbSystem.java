@@ -19,6 +19,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemReadEndpoint;
@@ -62,9 +63,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDatabaseConsoleArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSecureConnectionsArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
@@ -139,7 +142,12 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .hostnameLabel(mysqlDbSystemHostnameLabel)
  *             .ipAddress(mysqlDbSystemIpAddress)
+ *             .ipv6addressIpv6subnetCidrPairDetails(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs.builder()
+ *                 .ipv6address(mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6address)
+ *                 .ipv6subnetCidr(mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr)
+ *                 .build())
  *             .isHighlyAvailable(mysqlDbSystemIsHighlyAvailable)
+ *             .isIpv6enabled(mysqlDbSystemIsIpv6enabled)
  *             .maintenance(MysqlDbSystemMaintenanceArgs.builder()
  *                 .windowStartTime(mysqlDbSystemMaintenanceWindowStartTime)
  *                 .maintenanceDisabledWindows(MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs.builder()
@@ -158,6 +166,10 @@ import javax.annotation.Nullable;
  *                 .isEnabled(mysqlDbSystemReadEndpointIsEnabled)
  *                 .readEndpointHostnameLabel(mysqlDbSystemReadEndpointReadEndpointHostnameLabel)
  *                 .readEndpointIpAddress(mysqlDbSystemReadEndpointReadEndpointIpAddress)
+ *                 .readEndpointIpv6addressIpv6subnetCidrPairDetails(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs.builder()
+ *                     .ipv6address(mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6address)
+ *                     .ipv6subnetCidr(mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr)
+ *                     .build())
  *                 .build())
  *             .rest(MysqlDbSystemRestArgs.builder()
  *                 .configuration(mysqlDbSystemRestConfiguration)
@@ -611,6 +623,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.ipAddress;
     }
     /**
+     * (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    @Export(name="ipv6addressIpv6subnetCidrPairDetails", refs={MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails.class}, tree="[0]")
+    private Output<MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails> ipv6addressIpv6subnetCidrPairDetails;
+
+    /**
+     * @return (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public Output<MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails;
+    }
+    /**
      * If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -641,6 +667,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isHighlyAvailable() {
         return this.isHighlyAvailable;
+    }
+    /**
+     * (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    @Export(name="isIpv6enabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isIpv6enabled;
+
+    /**
+     * @return (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    public Output<Boolean> isIpv6enabled() {
+        return this.isIpv6enabled;
     }
     /**
      * Additional information about the current lifecycleState.

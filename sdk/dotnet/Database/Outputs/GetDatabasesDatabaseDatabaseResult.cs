@@ -70,6 +70,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult> ManagedSoftwareUpdateDetails;
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         public readonly string NcharacterSet;
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string kmsKeyVersionId,
 
+            ImmutableArray<Outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult> managedSoftwareUpdateDetails,
+
             string ncharacterSet,
 
             ImmutableArray<Outputs.GetDatabasesDatabaseDatabasePatchOptionResult> patchOptions,
@@ -195,6 +201,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
+            ManagedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             NcharacterSet = ncharacterSet;
             PatchOptions = patchOptions;
             PdbName = pdbName;

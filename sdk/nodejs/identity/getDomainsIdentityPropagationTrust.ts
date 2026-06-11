@@ -89,6 +89,18 @@ export interface GetDomainsIdentityPropagationTrustResult {
     readonly attributes?: string;
     readonly authorization?: string;
     /**
+     * Certificate trust store. This is required if identity propagation type is X509.
+     */
+    readonly caCertChains: outputs.Identity.GetDomainsIdentityPropagationTrustCaCertChain[];
+    /**
+     * A list of claims to propagate in RPST
+     */
+    readonly claimPropagations: string[];
+    /**
+     * A list of claim validations
+     */
+    readonly claimValidations: outputs.Identity.GetDomainsIdentityPropagationTrustClaimValidation[];
+    /**
      * The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
      */
     readonly clientClaimName: string;
@@ -138,6 +150,10 @@ export interface GetDomainsIdentityPropagationTrustResult {
      */
     readonly idcsPreventedOperations: string[];
     readonly identityPropagationTrustId: string;
+    /**
+     * Defines the external workload that acts as impersonating resource principal.
+     */
+    readonly impersonatingResource: string;
     /**
      * The Impersonating Principal.
      */

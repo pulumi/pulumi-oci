@@ -128,6 +128,7 @@ class _ComputeGpuMemoryFabricState:
                  additional_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  available_host_count: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_gpu_memory_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  compute_gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -154,6 +155,7 @@ class _ComputeGpuMemoryFabricState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         :param pulumi.Input[_builtins.str] available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compute_gpu_memory_clusters: List of GPU memory cluster OCIDs within this GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param pulumi.Input[_builtins.str] compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
@@ -181,6 +183,8 @@ class _ComputeGpuMemoryFabricState:
             pulumi.set(__self__, "available_host_count", available_host_count)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_gpu_memory_clusters is not None:
+            pulumi.set(__self__, "compute_gpu_memory_clusters", compute_gpu_memory_clusters)
         if compute_gpu_memory_fabric_id is not None:
             pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
         if compute_hpc_island_id is not None:
@@ -257,6 +261,18 @@ class _ComputeGpuMemoryFabricState:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeGpuMemoryClusters")
+    def compute_gpu_memory_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of GPU memory cluster OCIDs within this GPU memory fabric.
+        """
+        return pulumi.get(self, "compute_gpu_memory_clusters")
+
+    @compute_gpu_memory_clusters.setter
+    def compute_gpu_memory_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "compute_gpu_memory_clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="computeGpuMemoryFabricId")
@@ -603,6 +619,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             __props__.__dict__["memory_fabric_preferences"] = memory_fabric_preferences
             __props__.__dict__["additional_data"] = None
             __props__.__dict__["available_host_count"] = None
+            __props__.__dict__["compute_gpu_memory_clusters"] = None
             __props__.__dict__["compute_hpc_island_id"] = None
             __props__.__dict__["compute_local_block_id"] = None
             __props__.__dict__["compute_network_block_id"] = None
@@ -631,6 +648,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             additional_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             available_host_count: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_gpu_memory_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             compute_gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -661,6 +679,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         :param pulumi.Input[_builtins.str] available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compute_gpu_memory_clusters: List of GPU memory cluster OCIDs within this GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param pulumi.Input[_builtins.str] compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
@@ -689,6 +708,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         __props__.__dict__["additional_data"] = additional_data
         __props__.__dict__["available_host_count"] = available_host_count
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_gpu_memory_clusters"] = compute_gpu_memory_clusters
         __props__.__dict__["compute_gpu_memory_fabric_id"] = compute_gpu_memory_fabric_id
         __props__.__dict__["compute_hpc_island_id"] = compute_hpc_island_id
         __props__.__dict__["compute_local_block_id"] = compute_local_block_id
@@ -734,6 +754,14 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeGpuMemoryClusters")
+    def compute_gpu_memory_clusters(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of GPU memory cluster OCIDs within this GPU memory fabric.
+        """
+        return pulumi.get(self, "compute_gpu_memory_clusters")
 
     @_builtins.property
     @pulumi.getter(name="computeGpuMemoryFabricId")

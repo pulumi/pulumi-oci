@@ -27,7 +27,7 @@ class GetDomainsIdentityPropagationTrustResult:
     """
     A collection of values returned by getDomainsIdentityPropagationTrust.
     """
-    def __init__(__self__, account_id=None, active=None, allow_impersonation=None, attribute_sets=None, attributes=None, authorization=None, client_claim_name=None, client_claim_values=None, clock_skew_seconds=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_propagation_trust_id=None, impersonation_service_users=None, issuer=None, keytabs=None, metas=None, name=None, oauth_clients=None, ocid=None, public_certificate=None, public_key_endpoint=None, resource_type_schema_version=None, schemas=None, subject_claim_name=None, subject_mapping_attribute=None, subject_type=None, tags=None, tenancy_ocid=None, type=None):
+    def __init__(__self__, account_id=None, active=None, allow_impersonation=None, attribute_sets=None, attributes=None, authorization=None, ca_cert_chains=None, claim_propagations=None, claim_validations=None, client_claim_name=None, client_claim_values=None, clock_skew_seconds=None, compartment_ocid=None, delete_in_progress=None, description=None, domain_ocid=None, id=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, identity_propagation_trust_id=None, impersonating_resource=None, impersonation_service_users=None, issuer=None, keytabs=None, metas=None, name=None, oauth_clients=None, ocid=None, public_certificate=None, public_key_endpoint=None, resource_type_schema_version=None, schemas=None, subject_claim_name=None, subject_mapping_attribute=None, subject_type=None, tags=None, tenancy_ocid=None, type=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -46,6 +46,15 @@ class GetDomainsIdentityPropagationTrustResult:
         if authorization and not isinstance(authorization, str):
             raise TypeError("Expected argument 'authorization' to be a str")
         pulumi.set(__self__, "authorization", authorization)
+        if ca_cert_chains and not isinstance(ca_cert_chains, list):
+            raise TypeError("Expected argument 'ca_cert_chains' to be a list")
+        pulumi.set(__self__, "ca_cert_chains", ca_cert_chains)
+        if claim_propagations and not isinstance(claim_propagations, list):
+            raise TypeError("Expected argument 'claim_propagations' to be a list")
+        pulumi.set(__self__, "claim_propagations", claim_propagations)
+        if claim_validations and not isinstance(claim_validations, list):
+            raise TypeError("Expected argument 'claim_validations' to be a list")
+        pulumi.set(__self__, "claim_validations", claim_validations)
         if client_claim_name and not isinstance(client_claim_name, str):
             raise TypeError("Expected argument 'client_claim_name' to be a str")
         pulumi.set(__self__, "client_claim_name", client_claim_name)
@@ -88,6 +97,9 @@ class GetDomainsIdentityPropagationTrustResult:
         if identity_propagation_trust_id and not isinstance(identity_propagation_trust_id, str):
             raise TypeError("Expected argument 'identity_propagation_trust_id' to be a str")
         pulumi.set(__self__, "identity_propagation_trust_id", identity_propagation_trust_id)
+        if impersonating_resource and not isinstance(impersonating_resource, str):
+            raise TypeError("Expected argument 'impersonating_resource' to be a str")
+        pulumi.set(__self__, "impersonating_resource", impersonating_resource)
         if impersonation_service_users and not isinstance(impersonation_service_users, list):
             raise TypeError("Expected argument 'impersonation_service_users' to be a list")
         pulumi.set(__self__, "impersonation_service_users", impersonation_service_users)
@@ -178,6 +190,30 @@ class GetDomainsIdentityPropagationTrustResult:
     @pulumi.getter
     def authorization(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "authorization")
+
+    @_builtins.property
+    @pulumi.getter(name="caCertChains")
+    def ca_cert_chains(self) -> Sequence['outputs.GetDomainsIdentityPropagationTrustCaCertChainResult']:
+        """
+        Certificate trust store. This is required if identity propagation type is X509.
+        """
+        return pulumi.get(self, "ca_cert_chains")
+
+    @_builtins.property
+    @pulumi.getter(name="claimPropagations")
+    def claim_propagations(self) -> Sequence[_builtins.str]:
+        """
+        A list of claims to propagate in RPST
+        """
+        return pulumi.get(self, "claim_propagations")
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidations")
+    def claim_validations(self) -> Sequence['outputs.GetDomainsIdentityPropagationTrustClaimValidationResult']:
+        """
+        A list of claim validations
+        """
+        return pulumi.get(self, "claim_validations")
 
     @_builtins.property
     @pulumi.getter(name="clientClaimName")
@@ -284,6 +320,14 @@ class GetDomainsIdentityPropagationTrustResult:
     @pulumi.getter(name="identityPropagationTrustId")
     def identity_propagation_trust_id(self) -> _builtins.str:
         return pulumi.get(self, "identity_propagation_trust_id")
+
+    @_builtins.property
+    @pulumi.getter(name="impersonatingResource")
+    def impersonating_resource(self) -> _builtins.str:
+        """
+        Defines the external workload that acts as impersonating resource principal.
+        """
+        return pulumi.get(self, "impersonating_resource")
 
     @_builtins.property
     @pulumi.getter(name="impersonationServiceUsers")
@@ -431,6 +475,9 @@ class AwaitableGetDomainsIdentityPropagationTrustResult(GetDomainsIdentityPropag
             attribute_sets=self.attribute_sets,
             attributes=self.attributes,
             authorization=self.authorization,
+            ca_cert_chains=self.ca_cert_chains,
+            claim_propagations=self.claim_propagations,
+            claim_validations=self.claim_validations,
             client_claim_name=self.client_claim_name,
             client_claim_values=self.client_claim_values,
             clock_skew_seconds=self.clock_skew_seconds,
@@ -445,6 +492,7 @@ class AwaitableGetDomainsIdentityPropagationTrustResult(GetDomainsIdentityPropag
             idcs_last_upgraded_in_release=self.idcs_last_upgraded_in_release,
             idcs_prevented_operations=self.idcs_prevented_operations,
             identity_propagation_trust_id=self.identity_propagation_trust_id,
+            impersonating_resource=self.impersonating_resource,
             impersonation_service_users=self.impersonation_service_users,
             issuer=self.issuer,
             keytabs=self.keytabs,
@@ -515,6 +563,9 @@ def get_domains_identity_propagation_trust(attribute_sets: Optional[Sequence[_bu
         attribute_sets=pulumi.get(__ret__, 'attribute_sets'),
         attributes=pulumi.get(__ret__, 'attributes'),
         authorization=pulumi.get(__ret__, 'authorization'),
+        ca_cert_chains=pulumi.get(__ret__, 'ca_cert_chains'),
+        claim_propagations=pulumi.get(__ret__, 'claim_propagations'),
+        claim_validations=pulumi.get(__ret__, 'claim_validations'),
         client_claim_name=pulumi.get(__ret__, 'client_claim_name'),
         client_claim_values=pulumi.get(__ret__, 'client_claim_values'),
         clock_skew_seconds=pulumi.get(__ret__, 'clock_skew_seconds'),
@@ -529,6 +580,7 @@ def get_domains_identity_propagation_trust(attribute_sets: Optional[Sequence[_bu
         idcs_last_upgraded_in_release=pulumi.get(__ret__, 'idcs_last_upgraded_in_release'),
         idcs_prevented_operations=pulumi.get(__ret__, 'idcs_prevented_operations'),
         identity_propagation_trust_id=pulumi.get(__ret__, 'identity_propagation_trust_id'),
+        impersonating_resource=pulumi.get(__ret__, 'impersonating_resource'),
         impersonation_service_users=pulumi.get(__ret__, 'impersonation_service_users'),
         issuer=pulumi.get(__ret__, 'issuer'),
         keytabs=pulumi.get(__ret__, 'keytabs'),
@@ -596,6 +648,9 @@ def get_domains_identity_propagation_trust_output(attribute_sets: pulumi.Input[O
         attribute_sets=pulumi.get(__response__, 'attribute_sets'),
         attributes=pulumi.get(__response__, 'attributes'),
         authorization=pulumi.get(__response__, 'authorization'),
+        ca_cert_chains=pulumi.get(__response__, 'ca_cert_chains'),
+        claim_propagations=pulumi.get(__response__, 'claim_propagations'),
+        claim_validations=pulumi.get(__response__, 'claim_validations'),
         client_claim_name=pulumi.get(__response__, 'client_claim_name'),
         client_claim_values=pulumi.get(__response__, 'client_claim_values'),
         clock_skew_seconds=pulumi.get(__response__, 'clock_skew_seconds'),
@@ -610,6 +665,7 @@ def get_domains_identity_propagation_trust_output(attribute_sets: pulumi.Input[O
         idcs_last_upgraded_in_release=pulumi.get(__response__, 'idcs_last_upgraded_in_release'),
         idcs_prevented_operations=pulumi.get(__response__, 'idcs_prevented_operations'),
         identity_propagation_trust_id=pulumi.get(__response__, 'identity_propagation_trust_id'),
+        impersonating_resource=pulumi.get(__response__, 'impersonating_resource'),
         impersonation_service_users=pulumi.get(__response__, 'impersonation_service_users'),
         issuer=pulumi.get(__response__, 'issuer'),
         keytabs=pulumi.get(__response__, 'keytabs'),

@@ -110,7 +110,10 @@ from .get_iot_iot_domain import *
 from .get_iot_iot_domain_group import *
 from .get_iot_iot_domain_groups import *
 from .get_iot_iot_domains import *
+from .get_managed_kafka_addon_options import *
 from .get_managed_kafka_kafka_cluster import *
+from .get_managed_kafka_kafka_cluster_addon import *
+from .get_managed_kafka_kafka_cluster_addons import *
 from .get_managed_kafka_kafka_cluster_config import *
 from .get_managed_kafka_kafka_cluster_config_version import *
 from .get_managed_kafka_kafka_cluster_config_versions import *
@@ -176,6 +179,7 @@ from .iot_iot_domain_configure_data_access import *
 from .iot_iot_domain_group import *
 from .iot_iot_domain_group_configure_data_access import *
 from .managed_kafka_kafka_cluster import *
+from .managed_kafka_kafka_cluster_addon import *
 from .managed_kafka_kafka_cluster_config import *
 from .managed_kafka_kafka_cluster_superusers_management import *
 from .psa_private_service_access import *

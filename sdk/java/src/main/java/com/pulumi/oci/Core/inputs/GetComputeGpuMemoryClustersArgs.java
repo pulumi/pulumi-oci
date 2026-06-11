@@ -79,6 +79,21 @@ public final class GetComputeGpuMemoryClustersArgs extends com.pulumi.resources.
     }
 
     /**
+     * A filter to return only the listings that matches the given GPU memory fabric id.
+     * 
+     */
+    @Import(name="computeGpuMemoryFabricId")
+    private @Nullable Output<String> computeGpuMemoryFabricId;
+
+    /**
+     * @return A filter to return only the listings that matches the given GPU memory fabric id.
+     * 
+     */
+    public Optional<Output<String>> computeGpuMemoryFabricId() {
+        return Optional.ofNullable(this.computeGpuMemoryFabricId);
+    }
+
+    /**
      * A filter to return only resources that match the given display name exactly.
      * 
      */
@@ -107,6 +122,7 @@ public final class GetComputeGpuMemoryClustersArgs extends com.pulumi.resources.
         this.compartmentId = $.compartmentId;
         this.computeClusterId = $.computeClusterId;
         this.computeGpuMemoryClusterId = $.computeGpuMemoryClusterId;
+        this.computeGpuMemoryFabricId = $.computeGpuMemoryFabricId;
         this.displayName = $.displayName;
         this.filters = $.filters;
     }
@@ -211,6 +227,27 @@ public final class GetComputeGpuMemoryClustersArgs extends com.pulumi.resources.
          */
         public Builder computeGpuMemoryClusterId(String computeGpuMemoryClusterId) {
             return computeGpuMemoryClusterId(Output.of(computeGpuMemoryClusterId));
+        }
+
+        /**
+         * @param computeGpuMemoryFabricId A filter to return only the listings that matches the given GPU memory fabric id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryFabricId(@Nullable Output<String> computeGpuMemoryFabricId) {
+            $.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
+            return this;
+        }
+
+        /**
+         * @param computeGpuMemoryFabricId A filter to return only the listings that matches the given GPU memory fabric id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryFabricId(String computeGpuMemoryFabricId) {
+            return computeGpuMemoryFabricId(Output.of(computeGpuMemoryFabricId));
         }
 
         /**

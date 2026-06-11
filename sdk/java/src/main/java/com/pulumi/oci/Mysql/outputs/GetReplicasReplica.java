@@ -79,6 +79,11 @@ public final class GetReplicasReplica {
      */
     private String ipAddress;
     /**
+     * @return The IPv6 address the read replica is configured to listen on.
+     * 
+     */
+    private String ipv6address;
+    /**
      * @return Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
      */
@@ -235,6 +240,13 @@ public final class GetReplicasReplica {
         return this.ipAddress;
     }
     /**
+     * @return The IPv6 address the read replica is configured to listen on.
+     * 
+     */
+    public String ipv6address() {
+        return this.ipv6address;
+    }
+    /**
      * @return Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
      */
@@ -354,6 +366,7 @@ public final class GetReplicasReplica {
         private Map<String,String> freeformTags;
         private String id;
         private String ipAddress;
+        private String ipv6address;
         private Boolean isDeleteProtected;
         private String lifecycleDetails;
         private String mysqlVersion;
@@ -383,6 +396,7 @@ public final class GetReplicasReplica {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6address = defaults.ipv6address;
     	      this.isDeleteProtected = defaults.isDeleteProtected;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.mysqlVersion = defaults.mysqlVersion;
@@ -496,6 +510,14 @@ public final class GetReplicasReplica {
               throw new MissingRequiredPropertyException("GetReplicasReplica", "ipAddress");
             }
             this.ipAddress = ipAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv6address(String ipv6address) {
+            if (ipv6address == null) {
+              throw new MissingRequiredPropertyException("GetReplicasReplica", "ipv6address");
+            }
+            this.ipv6address = ipv6address;
             return this;
         }
         @CustomType.Setter
@@ -636,6 +658,7 @@ public final class GetReplicasReplica {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6address = ipv6address;
             _resultValue.isDeleteProtected = isDeleteProtected;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.mysqlVersion = mysqlVersion;

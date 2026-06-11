@@ -91,6 +91,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseSnapshotStandby{}
 	case "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage":
 		r = &DatabaseSoftwareImage{}
+	case "oci:Database/databaseSoftwareScheduleManagement:DatabaseSoftwareScheduleManagement":
+		r = &DatabaseSoftwareScheduleManagement{}
 	case "oci:Database/databaseUpgrade:DatabaseUpgrade":
 		r = &DatabaseUpgrade{}
 	case "oci:Database/dbHome:DbHome":
@@ -369,6 +371,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/databaseSoftwareImage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/databaseSoftwareScheduleManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

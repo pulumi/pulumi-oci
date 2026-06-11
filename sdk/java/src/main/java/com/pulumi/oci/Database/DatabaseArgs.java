@@ -7,9 +7,11 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseArgs;
+import com.pulumi.oci.Database.inputs.DatabaseManagedSoftwareUpdateDetailArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -56,15 +58,15 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    @Import(name="dbHomeId", required=true)
-    private Output<String> dbHomeId;
+    @Import(name="dbHomeId")
+    private @Nullable Output<String> dbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public Output<String> dbHomeId() {
-        return this.dbHomeId;
+    public Optional<Output<String>> dbHomeId() {
+        return Optional.ofNullable(this.dbHomeId);
     }
 
     /**
@@ -146,6 +148,21 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    @Import(name="managedSoftwareUpdateDetails")
+    private @Nullable Output<List<DatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails;
+
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public Optional<Output<List<DatabaseManagedSoftwareUpdateDetailArgs>>> managedSoftwareUpdateDetails() {
+        return Optional.ofNullable(this.managedSoftwareUpdateDetails);
+    }
+
+    /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
@@ -175,6 +192,21 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.vaultId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    @Import(name="vmClusterId")
+    private @Nullable Output<String> vmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    public Optional<Output<String>> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
+    }
+
     private DatabaseArgs() {}
 
     private DatabaseArgs(DatabaseArgs $) {
@@ -188,8 +220,10 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         this.kmsKeyMigration = $.kmsKeyMigration;
         this.kmsKeyRotation = $.kmsKeyRotation;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
+        this.managedSoftwareUpdateDetails = $.managedSoftwareUpdateDetails;
         this.source = $.source;
         this.vaultId = $.vaultId;
+        this.vmClusterId = $.vmClusterId;
     }
 
     public static Builder builder() {
@@ -259,7 +293,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder dbHomeId(Output<String> dbHomeId) {
+        public Builder dbHomeId(@Nullable Output<String> dbHomeId) {
             $.dbHomeId = dbHomeId;
             return this;
         }
@@ -381,6 +415,37 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(@Nullable Output<List<DatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails) {
+            $.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(List<DatabaseManagedSoftwareUpdateDetailArgs> managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(Output.of(managedSoftwareUpdateDetails));
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(DatabaseManagedSoftwareUpdateDetailArgs... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+
+        /**
          * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          * 
          * @return builder
@@ -422,12 +487,30 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
             return vaultId(Output.of(vaultId));
         }
 
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(@Nullable Output<String> vmClusterId) {
+            $.vmClusterId = vmClusterId;
+            return this;
+        }
+
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(String vmClusterId) {
+            return vmClusterId(Output.of(vmClusterId));
+        }
+
         public DatabaseArgs build() {
             if ($.database == null) {
                 throw new MissingRequiredPropertyException("DatabaseArgs", "database");
-            }
-            if ($.dbHomeId == null) {
-                throw new MissingRequiredPropertyException("DatabaseArgs", "dbHomeId");
             }
             if ($.source == null) {
                 throw new MissingRequiredPropertyException("DatabaseArgs", "source");

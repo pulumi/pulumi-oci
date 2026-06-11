@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemChannelSourceSslCaCertificate;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -24,6 +25,11 @@ public final class GetMysqlDbSystemChannelSource {
      * 
      */
     private String hostname;
+    /**
+     * @return Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    private Boolean mustUseIpv6onDualStack;
     /**
      * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
      * 
@@ -64,6 +70,13 @@ public final class GetMysqlDbSystemChannelSource {
      */
     public String hostname() {
         return this.hostname;
+    }
+    /**
+     * @return Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    public Boolean mustUseIpv6onDualStack() {
+        return this.mustUseIpv6onDualStack;
     }
     /**
      * @return The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -112,6 +125,7 @@ public final class GetMysqlDbSystemChannelSource {
     public static final class Builder {
         private List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
         private String hostname;
+        private Boolean mustUseIpv6onDualStack;
         private Integer port;
         private String sourceType;
         private List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
@@ -122,6 +136,7 @@ public final class GetMysqlDbSystemChannelSource {
     	      Objects.requireNonNull(defaults);
     	      this.anonymousTransactionsHandlings = defaults.anonymousTransactionsHandlings;
     	      this.hostname = defaults.hostname;
+    	      this.mustUseIpv6onDualStack = defaults.mustUseIpv6onDualStack;
     	      this.port = defaults.port;
     	      this.sourceType = defaults.sourceType;
     	      this.sslCaCertificates = defaults.sslCaCertificates;
@@ -146,6 +161,14 @@ public final class GetMysqlDbSystemChannelSource {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "hostname");
             }
             this.hostname = hostname;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mustUseIpv6onDualStack(Boolean mustUseIpv6onDualStack) {
+            if (mustUseIpv6onDualStack == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemChannelSource", "mustUseIpv6onDualStack");
+            }
+            this.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             return this;
         }
         @CustomType.Setter
@@ -195,6 +218,7 @@ public final class GetMysqlDbSystemChannelSource {
             final var _resultValue = new GetMysqlDbSystemChannelSource();
             _resultValue.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             _resultValue.hostname = hostname;
+            _resultValue.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             _resultValue.port = port;
             _resultValue.sourceType = sourceType;
             _resultValue.sslCaCertificates = sslCaCertificates;

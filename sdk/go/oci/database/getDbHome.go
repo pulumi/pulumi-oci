@@ -77,6 +77,8 @@ type LookupDbHomeResult struct {
 	EnableDatabaseDelete bool   `pulumi:"enableDatabaseDelete"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType string `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	Id                   string `pulumi:"id"`
 	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
@@ -184,6 +186,11 @@ func (o LookupDbHomeResultOutput) EnableDatabaseDelete() pulumi.BoolOutput {
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupDbHomeResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Represents database home will be managed by oracle or customer
+func (o LookupDbHomeResultOutput) HomeType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) string { return v.HomeType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.

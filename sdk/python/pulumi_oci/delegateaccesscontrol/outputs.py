@@ -51,7 +51,8 @@ class GetDelegatedResourceAccessRequestApprovalInfoResult(dict):
                  approver_additional_message: _builtins.str,
                  approver_comment: _builtins.str,
                  approver_id: _builtins.str,
-                 time_approved_for_access: _builtins.str):
+                 time_approved_for_access: _builtins.str,
+                 time_of_action: _builtins.str):
         """
         :param _builtins.str approval_action: Indicated whether the request is approved or rejected.
         :param _builtins.str approval_type: approval type, initial or extension
@@ -59,6 +60,7 @@ class GetDelegatedResourceAccessRequestApprovalInfoResult(dict):
         :param _builtins.str approver_comment: Comment specified by the approver of the request.
         :param _builtins.str approver_id: User ID of the approver.
         :param _builtins.str time_approved_for_access: Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        :param _builtins.str time_of_action: Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         """
         pulumi.set(__self__, "approval_action", approval_action)
         pulumi.set(__self__, "approval_type", approval_type)
@@ -66,6 +68,7 @@ class GetDelegatedResourceAccessRequestApprovalInfoResult(dict):
         pulumi.set(__self__, "approver_comment", approver_comment)
         pulumi.set(__self__, "approver_id", approver_id)
         pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_action", time_of_action)
 
     @_builtins.property
     @pulumi.getter(name="approvalAction")
@@ -114,6 +117,14 @@ class GetDelegatedResourceAccessRequestApprovalInfoResult(dict):
         Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         """
         return pulumi.get(self, "time_approved_for_access")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfAction")
+    def time_of_action(self) -> _builtins.str:
+        """
+        Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_of_action")
 
 
 @pulumi.output_type
@@ -242,6 +253,7 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
                  audit_types: Sequence[_builtins.str],
                  closure_comment: _builtins.str,
                  compartment_id: _builtins.str,
+                 database_id_lists: Sequence[_builtins.str],
                  database_name_lists: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
                  delegation_control_id: _builtins.str,
@@ -277,7 +289,8 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         :param Sequence[_builtins.str] audit_types: Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, both command-level and keystroke-level auditing are enabled, i.e. commands and key strokes issued by the support operator are logged.
         :param _builtins.str closure_comment: The comment entered by the support operator while closing the request.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence[_builtins.str] database_name_lists: List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        :param Sequence[_builtins.str] database_id_lists: List of Database ID for which access is requested. This parameter is required when database access is needed.
+        :param Sequence[_builtins.str] database_name_lists: List of Database unique names for which access is requested. This parameter is required when database access in needed.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str delegation_control_id: unique Delegation Control identifier
         :param Sequence[_builtins.str] delegation_subscription_ids: List of Delegation Subscription OCID that are associated with this Delegated Resource Access Request based on the service types being requested.
@@ -312,6 +325,7 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         pulumi.set(__self__, "audit_types", audit_types)
         pulumi.set(__self__, "closure_comment", closure_comment)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_id_lists", database_id_lists)
         pulumi.set(__self__, "database_name_lists", database_name_lists)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "delegation_control_id", delegation_control_id)
@@ -376,10 +390,18 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="databaseIdLists")
+    def database_id_lists(self) -> Sequence[_builtins.str]:
+        """
+        List of Database ID for which access is requested. This parameter is required when database access is needed.
+        """
+        return pulumi.get(self, "database_id_lists")
+
+    @_builtins.property
     @pulumi.getter(name="databaseNameLists")
     def database_name_lists(self) -> Sequence[_builtins.str]:
         """
-        List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        List of Database unique names for which access is requested. This parameter is required when database access in needed.
         """
         return pulumi.get(self, "database_name_lists")
 
@@ -624,7 +646,8 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
                  approver_additional_message: _builtins.str,
                  approver_comment: _builtins.str,
                  approver_id: _builtins.str,
-                 time_approved_for_access: _builtins.str):
+                 time_approved_for_access: _builtins.str,
+                 time_of_action: _builtins.str):
         """
         :param _builtins.str approval_action: Indicated whether the request is approved or rejected.
         :param _builtins.str approval_type: approval type, initial or extension
@@ -632,6 +655,7 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         :param _builtins.str approver_comment: Comment specified by the approver of the request.
         :param _builtins.str approver_id: User ID of the approver.
         :param _builtins.str time_approved_for_access: Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        :param _builtins.str time_of_action: Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         """
         pulumi.set(__self__, "approval_action", approval_action)
         pulumi.set(__self__, "approval_type", approval_type)
@@ -639,6 +663,7 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         pulumi.set(__self__, "approver_comment", approver_comment)
         pulumi.set(__self__, "approver_id", approver_id)
         pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
+        pulumi.set(__self__, "time_of_action", time_of_action)
 
     @_builtins.property
     @pulumi.getter(name="approvalAction")
@@ -687,6 +712,14 @@ class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCol
         Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         """
         return pulumi.get(self, "time_approved_for_access")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfAction")
+    def time_of_action(self) -> _builtins.str:
+        """
+        Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_of_action")
 
 
 @pulumi.output_type
@@ -848,8 +881,8 @@ class GetDelegationControlsDelegationControlSummaryCollectionItemResult(dict):
         :param _builtins.str time_created: Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param _builtins.str time_deleted: Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
         :param _builtins.str time_updated: Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param _builtins.str vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
-        :param _builtins.str vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        :param _builtins.str vault_id: The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
+        :param _builtins.str vault_key_id: The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1038,7 +1071,7 @@ class GetDelegationControlsDelegationControlSummaryCollectionItemResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+        The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         return pulumi.get(self, "vault_id")
 
@@ -1046,7 +1079,7 @@ class GetDelegationControlsDelegationControlSummaryCollectionItemResult(dict):
     @pulumi.getter(name="vaultKeyId")
     def vault_key_id(self) -> _builtins.str:
         """
-        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
         """
         return pulumi.get(self, "vault_key_id")
 
@@ -1344,35 +1377,49 @@ class GetServiceProviderActionsServiceProviderActionSummaryCollectionResult(dict
 @pulumi.output_type
 class GetServiceProviderActionsServiceProviderActionSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
+                 compartment_id: _builtins.str,
                  component: _builtins.str,
                  customer_display_name: _builtins.str,
                  description: _builtins.str,
                  id: _builtins.str,
+                 is_ssh_access_allowed: _builtins.bool,
                  name: _builtins.str,
                  properties: Sequence['outputs.GetServiceProviderActionsServiceProviderActionSummaryCollectionItemPropertyResult'],
                  resource_type: _builtins.str,
                  service_provider_service_types: Sequence[_builtins.str],
                  state: _builtins.str):
         """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str component: Name of the infrastructure layer associated with the Service Provider Action.
         :param _builtins.str customer_display_name: Display Name of the Service Provider Action.
         :param _builtins.str description: Description of the Service Provider Action in terms of associated risk profile, and characteristics of the operating system commands made available to the support operator under this Service Provider Action.
         :param _builtins.str id: Unique Oracle assigned identifier for the Service Provider Action.
+        :param _builtins.bool is_ssh_access_allowed: Indicates whether the service provider action allows SSH access.
         :param _builtins.str name: A filter to return only resources that match the entire name given.
         :param Sequence['GetServiceProviderActionsServiceProviderActionSummaryCollectionItemPropertyArgs'] properties: Fine grained properties associated with the Delegation Control.
         :param _builtins.str resource_type: A filter to return only resources that match the given resource type.
         :param Sequence[_builtins.str] service_provider_service_types: List of Service Provider Service Types that this Service Provider Action is applicable to.
         :param _builtins.str state: A filter to return only resources whose lifecycleState matches the given Service Provider Action lifecycleState.
         """
+        pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "component", component)
         pulumi.set(__self__, "customer_display_name", customer_display_name)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_ssh_access_allowed", is_ssh_access_allowed)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "service_provider_service_types", service_provider_service_types)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter
@@ -1405,6 +1452,14 @@ class GetServiceProviderActionsServiceProviderActionSummaryCollectionItemResult(
         Unique Oracle assigned identifier for the Service Provider Action.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isSshAccessAllowed")
+    def is_ssh_access_allowed(self) -> _builtins.bool:
+        """
+        Indicates whether the service provider action allows SSH access.
+        """
+        return pulumi.get(self, "is_ssh_access_allowed")
 
     @_builtins.property
     @pulumi.getter

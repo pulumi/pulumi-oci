@@ -44,6 +44,10 @@ export interface GetServiceProviderActionArgs {
  */
 export interface GetServiceProviderActionResult {
     /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     */
+    readonly compartmentId: string;
+    /**
      * Name of the infrastructure layer associated with the Service Provider Action.
      */
     readonly component: string;
@@ -59,6 +63,10 @@ export interface GetServiceProviderActionResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Indicates whether the service provider action allows SSH access.
+     */
+    readonly isSshAccessAllowed: boolean;
     /**
      * Name of the property
      */

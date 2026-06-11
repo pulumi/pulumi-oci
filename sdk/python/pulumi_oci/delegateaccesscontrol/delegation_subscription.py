@@ -28,7 +28,7 @@ class DelegationSubscriptionArgs:
         """
         The set of arguments for constructing a DelegationSubscription resource.
 
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         :param pulumi.Input[_builtins.str] service_provider_id: Unique identifier of the Service Provider.
         :param pulumi.Input[_builtins.str] subscribed_service_type: Subscribed Service Provider Service Type.
                
@@ -53,7 +53,7 @@ class DelegationSubscriptionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains the Delegation Control.
+        (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -144,7 +144,7 @@ class _DelegationSubscriptionState:
         """
         Input properties used for looking up and filtering DelegationSubscription resources.
 
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the Delegation Subscription.
         :param pulumi.Input[_builtins.str] display_name: Display name
@@ -190,7 +190,7 @@ class _DelegationSubscriptionState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment that contains the Delegation Control.
+        (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -383,7 +383,7 @@ class DelegationSubscription(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the Delegation Subscription.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -510,7 +510,7 @@ class DelegationSubscription(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Control.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the Delegation Subscription.
         :param pulumi.Input[_builtins.str] display_name: Display name
@@ -549,7 +549,7 @@ class DelegationSubscription(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains the Delegation Control.
+        (Updatable) The OCID of the compartment that contains the Delegation Subscription.
         """
         return pulumi.get(self, "compartment_id")
 

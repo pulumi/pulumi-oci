@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemHeatWaveCluster;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemMaintenance;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemPointInTimeRecoveryDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemReadEndpoint;
@@ -173,6 +174,11 @@ public final class GetMysqlDbSystemResult {
      */
     private String ipAddress;
     /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    private List<GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -182,6 +188,11 @@ public final class GetMysqlDbSystemResult {
      * 
      */
     private Boolean isHighlyAvailable;
+    /**
+     * @return Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+     * 
+     */
+    private Boolean isIpv6enabled;
     /**
      * @return Additional information about the current lifecycleState.
      * 
@@ -480,6 +491,13 @@ public final class GetMysqlDbSystemResult {
         return this.ipAddress;
     }
     /**
+     * @return Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public List<GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
+        return this.ipv6addressIpv6subnetCidrPairDetails;
+    }
+    /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -492,6 +510,13 @@ public final class GetMysqlDbSystemResult {
      */
     public Boolean isHighlyAvailable() {
         return this.isHighlyAvailable;
+    }
+    /**
+     * @return Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+     * 
+     */
+    public Boolean isIpv6enabled() {
+        return this.isIpv6enabled;
     }
     /**
      * @return Additional information about the current lifecycleState.
@@ -668,8 +693,10 @@ public final class GetMysqlDbSystemResult {
         private String hostnameLabel;
         private String id;
         private String ipAddress;
+        private List<GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
+        private Boolean isIpv6enabled;
         private String lifecycleDetails;
         private List<GetMysqlDbSystemMaintenance> maintenances;
         private String mysqlVersion;
@@ -722,8 +749,10 @@ public final class GetMysqlDbSystemResult {
     	      this.hostnameLabel = defaults.hostnameLabel;
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.ipv6addressIpv6subnetCidrPairDetails = defaults.ipv6addressIpv6subnetCidrPairDetails;
     	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
     	      this.isHighlyAvailable = defaults.isHighlyAvailable;
+    	      this.isIpv6enabled = defaults.isIpv6enabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenances = defaults.maintenances;
     	      this.mysqlVersion = defaults.mysqlVersion;
@@ -1009,6 +1038,17 @@ public final class GetMysqlDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            if (ipv6addressIpv6subnetCidrPairDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "ipv6addressIpv6subnetCidrPairDetails");
+            }
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+        public Builder ipv6addressIpv6subnetCidrPairDetails(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             if (isHeatWaveClusterAttached == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "isHeatWaveClusterAttached");
@@ -1022,6 +1062,14 @@ public final class GetMysqlDbSystemResult {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "isHighlyAvailable");
             }
             this.isHighlyAvailable = isHighlyAvailable;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIpv6enabled(Boolean isIpv6enabled) {
+            if (isIpv6enabled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "isIpv6enabled");
+            }
+            this.isIpv6enabled = isIpv6enabled;
             return this;
         }
         @CustomType.Setter
@@ -1239,8 +1287,10 @@ public final class GetMysqlDbSystemResult {
             _resultValue.hostnameLabel = hostnameLabel;
             _resultValue.id = id;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             _resultValue.isHighlyAvailable = isHighlyAvailable;
+            _resultValue.isIpv6enabled = isIpv6enabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenances = maintenances;
             _resultValue.mysqlVersion = mysqlVersion;

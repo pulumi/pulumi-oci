@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     hostname: ipv6Hostname,
  *     ipAddress: ipv6IpAddress,
  *     ipv6subnetCidr: ipv6Ipv6subnetCidr,
  *     lifetime: ipv6Lifetime,
@@ -93,6 +94,10 @@ export class Ipv6 extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     */
+    declare public readonly hostname: pulumi.Output<string>;
+    /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
      */
     declare public readonly ipAddress: pulumi.Output<string>;
@@ -153,6 +158,7 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostname"] = state?.hostname;
             resourceInputs["ipAddress"] = state?.ipAddress;
             resourceInputs["ipState"] = state?.ipState;
             resourceInputs["ipv6subnetCidr"] = state?.ipv6subnetCidr;
@@ -168,6 +174,7 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostname"] = args?.hostname;
             resourceInputs["ipAddress"] = args?.ipAddress;
             resourceInputs["ipv6subnetCidr"] = args?.ipv6subnetCidr;
             resourceInputs["lifetime"] = args?.lifetime;
@@ -208,6 +215,10 @@ export interface Ipv6State {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     */
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
      */
@@ -272,6 +283,10 @@ export interface Ipv6Args {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     */
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
      */

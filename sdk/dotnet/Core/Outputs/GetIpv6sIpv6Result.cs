@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
+        public readonly string Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
         /// </summary>
@@ -71,6 +72,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            string hostname,
+
             string id,
 
             string ipAddress,
@@ -96,6 +99,7 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            Hostname = hostname;
             Id = id;
             IpAddress = ipAddress;
             IpState = ipState;

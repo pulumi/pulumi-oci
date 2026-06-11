@@ -22564,6 +22564,7 @@ type GetIpv6sIpv6 struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Hostname     string            `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
 	Id string `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
@@ -22603,6 +22604,7 @@ type GetIpv6sIpv6Args struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	Hostname     pulumi.StringInput    `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
@@ -22694,6 +22696,10 @@ func (o GetIpv6sIpv6Output) DisplayName() pulumi.StringOutput {
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o GetIpv6sIpv6Output) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetIpv6sIpv6) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetIpv6sIpv6Output) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.

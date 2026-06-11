@@ -48,6 +48,21 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
     }
 
     /**
+     * The internet protocol (IP) version of the IP address.
+     * 
+     */
+    @Import(name="ipAddressVersion")
+    private @Nullable Output<String> ipAddressVersion;
+
+    /**
+     * @return The internet protocol (IP) version of the IP address.
+     * 
+     */
+    public Optional<Output<String>> ipAddressVersion() {
+        return Optional.ofNullable(this.ipAddressVersion);
+    }
+
+    /**
      * The access modes from the client that this endpoint supports.
      * 
      */
@@ -157,6 +172,7 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
     private MysqlBackupDbSystemSnapshotEndpointArgs(MysqlBackupDbSystemSnapshotEndpointArgs $) {
         this.hostname = $.hostname;
         this.ipAddress = $.ipAddress;
+        this.ipAddressVersion = $.ipAddressVersion;
         this.modes = $.modes;
         this.port = $.port;
         this.portX = $.portX;
@@ -224,6 +240,27 @@ public final class MysqlBackupDbSystemSnapshotEndpointArgs extends com.pulumi.re
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param ipAddressVersion The internet protocol (IP) version of the IP address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipAddressVersion(@Nullable Output<String> ipAddressVersion) {
+            $.ipAddressVersion = ipAddressVersion;
+            return this;
+        }
+
+        /**
+         * @param ipAddressVersion The internet protocol (IP) version of the IP address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipAddressVersion(String ipAddressVersion) {
+            return ipAddressVersion(Output.of(ipAddressVersion));
         }
 
         /**

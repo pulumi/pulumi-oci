@@ -421,6 +421,10 @@ __all__ = [
     'DomainsIdentityProofingProviderTemplateIdcsLockedByArgsDict',
     'DomainsIdentityProofingProviderTemplateMetaArgs',
     'DomainsIdentityProofingProviderTemplateMetaArgsDict',
+    'DomainsIdentityPropagationTrustCaCertChainArgs',
+    'DomainsIdentityPropagationTrustCaCertChainArgsDict',
+    'DomainsIdentityPropagationTrustClaimValidationArgs',
+    'DomainsIdentityPropagationTrustClaimValidationArgsDict',
     'DomainsIdentityPropagationTrustIdcsCreatedByArgs',
     'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict',
     'DomainsIdentityPropagationTrustIdcsLastModifiedByArgs',
@@ -46630,6 +46634,239 @@ class DomainsIdentityProofingProviderTemplateMetaArgs:
     @version.setter
     def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
+
+
+class DomainsIdentityPropagationTrustCaCertChainArgsDict(TypedDict):
+    root_cas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) A list of PEM-encoded root CA certificates.
+
+    **Added In:** 2508041610
+
+    **SCIM++ Properties:**
+    * caseExact: true
+    * type: string
+    * multiValued: true
+    * required: true
+    * mutability: readWrite
+    * returned: default
+    * uniqueness: none
+    """
+    intermediate_cas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) A list of PEM-encoded intermediate CA certificates.
+
+    **Added In:** 2508041610
+
+    **SCIM++ Properties:**
+    * caseExact: true
+    * type: string
+    * multiValued: true
+    * required: false
+    * mutability: readWrite
+    * returned: default
+    * uniqueness: none
+    """
+
+@pulumi.input_type
+class DomainsIdentityPropagationTrustCaCertChainArgs:
+    def __init__(__self__, *,
+                 root_cas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 intermediate_cas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] root_cas: (Updatable) A list of PEM-encoded root CA certificates.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * multiValued: true
+               * required: true
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] intermediate_cas: (Updatable) A list of PEM-encoded intermediate CA certificates.
+               
+               **Added In:** 2508041610
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * type: string
+               * multiValued: true
+               * required: false
+               * mutability: readWrite
+               * returned: default
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "root_cas", root_cas)
+        if intermediate_cas is not None:
+            pulumi.set(__self__, "intermediate_cas", intermediate_cas)
+
+    @_builtins.property
+    @pulumi.getter(name="rootCas")
+    def root_cas(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) A list of PEM-encoded root CA certificates.
+
+        **Added In:** 2508041610
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * multiValued: true
+        * required: true
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        """
+        return pulumi.get(self, "root_cas")
+
+    @root_cas.setter
+    def root_cas(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "root_cas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="intermediateCas")
+    def intermediate_cas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of PEM-encoded intermediate CA certificates.
+
+        **Added In:** 2508041610
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * type: string
+        * multiValued: true
+        * required: false
+        * mutability: readWrite
+        * returned: default
+        * uniqueness: none
+        """
+        return pulumi.get(self, "intermediate_cas")
+
+    @intermediate_cas.setter
+    def intermediate_cas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "intermediate_cas", value)
+
+
+class DomainsIdentityPropagationTrustClaimValidationArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    Claim Name
+
+    **Added In:** 2509172316
+
+    **SCIM++ Properties:**
+    * caseExact: true
+    * idcsSearchable: false
+    * multiValued: false
+    * mutability: readWrite
+    * required: true
+    * returned: default
+    * type: string
+    * uniqueness: none
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Claim Value
+
+    **Added In:** 2509172316
+
+    **SCIM++ Properties:**
+    * caseExact: true
+    * idcsSearchable: false
+    * multiValued: false
+    * mutability: readWrite
+    * required: true
+    * returned: default
+    * type: string
+    * uniqueness: none
+    """
+
+@pulumi.input_type
+class DomainsIdentityPropagationTrustClaimValidationArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: Claim Name
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] value: (Updatable) Claim Value
+               
+               **Added In:** 2509172316
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Claim Name
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Claim Value
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
 
 
 class DomainsIdentityPropagationTrustIdcsCreatedByArgsDict(TypedDict):

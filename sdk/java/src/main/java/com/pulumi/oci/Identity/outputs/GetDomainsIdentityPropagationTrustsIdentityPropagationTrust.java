@@ -5,6 +5,8 @@ package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser;
@@ -49,6 +51,21 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
      * 
      */
     private String authorization;
+    /**
+     * @return Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     */
+    private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain> caCertChains;
+    /**
+     * @return A list of claims to propagate in RPST
+     * 
+     */
+    private List<String> claimPropagations;
+    /**
+     * @return A list of claim validations
+     * 
+     */
+    private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation> claimValidations;
     /**
      * @return The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
      * 
@@ -114,6 +131,11 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
      * 
      */
     private List<String> idcsPreventedOperations;
+    /**
+     * @return Defines the external workload that acts as impersonating resource principal.
+     * 
+     */
+    private String impersonatingResource;
     /**
      * @return The Impersonating Principal.
      * 
@@ -244,6 +266,27 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         return this.authorization;
     }
     /**
+     * @return Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     */
+    public List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain> caCertChains() {
+        return this.caCertChains;
+    }
+    /**
+     * @return A list of claims to propagate in RPST
+     * 
+     */
+    public List<String> claimPropagations() {
+        return this.claimPropagations;
+    }
+    /**
+     * @return A list of claim validations
+     * 
+     */
+    public List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation> claimValidations() {
+        return this.claimValidations;
+    }
+    /**
      * @return The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
      * 
      */
@@ -333,6 +376,13 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
      */
     public List<String> idcsPreventedOperations() {
         return this.idcsPreventedOperations;
+    }
+    /**
+     * @return Defines the external workload that acts as impersonating resource principal.
+     * 
+     */
+    public String impersonatingResource() {
+        return this.impersonatingResource;
     }
     /**
      * @return The Impersonating Principal.
@@ -469,6 +519,9 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         private List<String> attributeSets;
         private String attributes;
         private String authorization;
+        private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain> caCertChains;
+        private List<String> claimPropagations;
+        private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation> claimValidations;
         private String clientClaimName;
         private List<String> clientClaimValues;
         private Integer clockSkewSeconds;
@@ -482,6 +535,7 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsLastModifiedBy> idcsLastModifiedBies;
         private String idcsLastUpgradedInRelease;
         private List<String> idcsPreventedOperations;
+        private String impersonatingResource;
         private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser> impersonationServiceUsers;
         private String issuer;
         private List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustKeytab> keytabs;
@@ -508,6 +562,9 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
     	      this.attributeSets = defaults.attributeSets;
     	      this.attributes = defaults.attributes;
     	      this.authorization = defaults.authorization;
+    	      this.caCertChains = defaults.caCertChains;
+    	      this.claimPropagations = defaults.claimPropagations;
+    	      this.claimValidations = defaults.claimValidations;
     	      this.clientClaimName = defaults.clientClaimName;
     	      this.clientClaimValues = defaults.clientClaimValues;
     	      this.clockSkewSeconds = defaults.clockSkewSeconds;
@@ -521,6 +578,7 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
     	      this.idcsLastModifiedBies = defaults.idcsLastModifiedBies;
     	      this.idcsLastUpgradedInRelease = defaults.idcsLastUpgradedInRelease;
     	      this.idcsPreventedOperations = defaults.idcsPreventedOperations;
+    	      this.impersonatingResource = defaults.impersonatingResource;
     	      this.impersonationServiceUsers = defaults.impersonationServiceUsers;
     	      this.issuer = defaults.issuer;
     	      this.keytabs = defaults.keytabs;
@@ -590,6 +648,39 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
             }
             this.authorization = authorization;
             return this;
+        }
+        @CustomType.Setter
+        public Builder caCertChains(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain> caCertChains) {
+            if (caCertChains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "caCertChains");
+            }
+            this.caCertChains = caCertChains;
+            return this;
+        }
+        public Builder caCertChains(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustCaCertChain... caCertChains) {
+            return caCertChains(List.of(caCertChains));
+        }
+        @CustomType.Setter
+        public Builder claimPropagations(List<String> claimPropagations) {
+            if (claimPropagations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "claimPropagations");
+            }
+            this.claimPropagations = claimPropagations;
+            return this;
+        }
+        public Builder claimPropagations(String... claimPropagations) {
+            return claimPropagations(List.of(claimPropagations));
+        }
+        @CustomType.Setter
+        public Builder claimValidations(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation> claimValidations) {
+            if (claimValidations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "claimValidations");
+            }
+            this.claimValidations = claimValidations;
+            return this;
+        }
+        public Builder claimValidations(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustClaimValidation... claimValidations) {
+            return claimValidations(List.of(claimValidations));
         }
         @CustomType.Setter
         public Builder clientClaimName(String clientClaimName) {
@@ -706,6 +797,14 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
+        }
+        @CustomType.Setter
+        public Builder impersonatingResource(String impersonatingResource) {
+            if (impersonatingResource == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "impersonatingResource");
+            }
+            this.impersonatingResource = impersonatingResource;
+            return this;
         }
         @CustomType.Setter
         public Builder impersonationServiceUsers(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser> impersonationServiceUsers) {
@@ -869,6 +968,9 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
             _resultValue.attributeSets = attributeSets;
             _resultValue.attributes = attributes;
             _resultValue.authorization = authorization;
+            _resultValue.caCertChains = caCertChains;
+            _resultValue.claimPropagations = claimPropagations;
+            _resultValue.claimValidations = claimValidations;
             _resultValue.clientClaimName = clientClaimName;
             _resultValue.clientClaimValues = clientClaimValues;
             _resultValue.clockSkewSeconds = clockSkewSeconds;
@@ -882,6 +984,7 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
             _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
             _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.impersonatingResource = impersonatingResource;
             _resultValue.impersonationServiceUsers = impersonationServiceUsers;
             _resultValue.issuer = issuer;
             _resultValue.keytabs = keytabs;

@@ -69,6 +69,9 @@ export interface GetServiceProviderActionsArgs {
  * A collection of values returned by getServiceProviderActions.
  */
 export interface GetServiceProviderActionsResult {
+    /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     */
     readonly compartmentId: string;
     readonly filters?: outputs.DelegateAccessControl.GetServiceProviderActionsFilter[];
     /**

@@ -13,6 +13,968 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig) string {
+		return v.CloudProvider
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+type GetCloudAutonomousVmClustersFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudAutonomousVmClustersFilterInput is an input type that accepts GetCloudAutonomousVmClustersFilterArgs and GetCloudAutonomousVmClustersFilterOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersFilterInput` via:
+//
+//	GetCloudAutonomousVmClustersFilterArgs{...}
+type GetCloudAutonomousVmClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersFilterOutput() GetCloudAutonomousVmClustersFilterOutput
+	ToGetCloudAutonomousVmClustersFilterOutputWithContext(context.Context) GetCloudAutonomousVmClustersFilterOutput
+}
+
+type GetCloudAutonomousVmClustersFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudAutonomousVmClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersFilterArgs) ToGetCloudAutonomousVmClustersFilterOutput() GetCloudAutonomousVmClustersFilterOutput {
+	return i.ToGetCloudAutonomousVmClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersFilterArgs) ToGetCloudAutonomousVmClustersFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersFilterOutput)
+}
+
+// GetCloudAutonomousVmClustersFilterArrayInput is an input type that accepts GetCloudAutonomousVmClustersFilterArray and GetCloudAutonomousVmClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersFilterArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersFilterArray{ GetCloudAutonomousVmClustersFilterArgs{...} }
+type GetCloudAutonomousVmClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersFilterArrayOutput() GetCloudAutonomousVmClustersFilterArrayOutput
+	ToGetCloudAutonomousVmClustersFilterArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersFilterArrayOutput
+}
+
+type GetCloudAutonomousVmClustersFilterArray []GetCloudAutonomousVmClustersFilterInput
+
+func (GetCloudAutonomousVmClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersFilterArray) ToGetCloudAutonomousVmClustersFilterArrayOutput() GetCloudAutonomousVmClustersFilterArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersFilterArray) ToGetCloudAutonomousVmClustersFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersFilterArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersFilterOutput) ToGetCloudAutonomousVmClustersFilterOutput() GetCloudAutonomousVmClustersFilterOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersFilterOutput) ToGetCloudAutonomousVmClustersFilterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCloudAutonomousVmClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCloudAutonomousVmClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersFilterArrayOutput) ToGetCloudAutonomousVmClustersFilterArrayOutput() GetCloudAutonomousVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersFilterArrayOutput) ToGetCloudAutonomousVmClustersFilterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersFilter {
+		return vs[0].([]GetCloudAutonomousVmClustersFilter)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersFilterOutput)
+}
+
+type GetCloudExadataInfrastructureCustomerContact struct {
+	// The email address used by Oracle to send notifications regarding databases and infrastructure.
+	Email string `pulumi:"email"`
+}
+
+// GetCloudExadataInfrastructureCustomerContactInput is an input type that accepts GetCloudExadataInfrastructureCustomerContactArgs and GetCloudExadataInfrastructureCustomerContactOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureCustomerContactInput` via:
+//
+//	GetCloudExadataInfrastructureCustomerContactArgs{...}
+type GetCloudExadataInfrastructureCustomerContactInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructureCustomerContactOutput
+	ToGetCloudExadataInfrastructureCustomerContactOutputWithContext(context.Context) GetCloudExadataInfrastructureCustomerContactOutput
+}
+
+type GetCloudExadataInfrastructureCustomerContactArgs struct {
+	// The email address used by Oracle to send notifications regarding databases and infrastructure.
+	Email pulumi.StringInput `pulumi:"email"`
+}
+
+func (GetCloudExadataInfrastructureCustomerContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureCustomerContactArgs) ToGetCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructureCustomerContactOutput {
+	return i.ToGetCloudExadataInfrastructureCustomerContactOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureCustomerContactArgs) ToGetCloudExadataInfrastructureCustomerContactOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureCustomerContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureCustomerContactOutput)
+}
+
+// GetCloudExadataInfrastructureCustomerContactArrayInput is an input type that accepts GetCloudExadataInfrastructureCustomerContactArray and GetCloudExadataInfrastructureCustomerContactArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureCustomerContactArrayInput` via:
+//
+//	GetCloudExadataInfrastructureCustomerContactArray{ GetCloudExadataInfrastructureCustomerContactArgs{...} }
+type GetCloudExadataInfrastructureCustomerContactArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructureCustomerContactArrayOutput
+	ToGetCloudExadataInfrastructureCustomerContactArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureCustomerContactArrayOutput
+}
+
+type GetCloudExadataInfrastructureCustomerContactArray []GetCloudExadataInfrastructureCustomerContactInput
+
+func (GetCloudExadataInfrastructureCustomerContactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureCustomerContactArray) ToGetCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructureCustomerContactArrayOutput {
+	return i.ToGetCloudExadataInfrastructureCustomerContactArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureCustomerContactArray) ToGetCloudExadataInfrastructureCustomerContactArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureCustomerContactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureCustomerContactArrayOutput)
+}
+
+type GetCloudExadataInfrastructureCustomerContactOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureCustomerContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureCustomerContactOutput) ToGetCloudExadataInfrastructureCustomerContactOutput() GetCloudExadataInfrastructureCustomerContactOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureCustomerContactOutput) ToGetCloudExadataInfrastructureCustomerContactOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureCustomerContactOutput {
+	return o
+}
+
+// The email address used by Oracle to send notifications regarding databases and infrastructure.
+func (o GetCloudExadataInfrastructureCustomerContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureCustomerContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructureCustomerContactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureCustomerContactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureCustomerContact)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureCustomerContactArrayOutput) ToGetCloudExadataInfrastructureCustomerContactArrayOutput() GetCloudExadataInfrastructureCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureCustomerContactArrayOutput) ToGetCloudExadataInfrastructureCustomerContactArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureCustomerContactArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureCustomerContactArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureCustomerContactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureCustomerContact {
+		return vs[0].([]GetCloudExadataInfrastructureCustomerContact)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureCustomerContactOutput)
+}
+
+type GetCloudExadataInfrastructureDefinedFileSystemConfiguration struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition bool `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable bool `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb int `pulumi:"maxSizeGb"`
+	// The minimum size of file system.
+	MinSizeGb int `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetCloudExadataInfrastructureDefinedFileSystemConfigurationInput is an input type that accepts GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs and GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureDefinedFileSystemConfigurationInput` via:
+//
+//	GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{...}
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput
+	ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput
+}
+
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs struct {
+	// If true, the file system is used to create a backup prior to Exadata VM OS update.
+	IsBackupPartition pulumi.BoolInput `pulumi:"isBackupPartition"`
+	// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+	IsResizable pulumi.BoolInput `pulumi:"isResizable"`
+	// The maximum size of file system.
+	MaxSizeGb pulumi.IntInput `pulumi:"maxSizeGb"`
+	// The minimum size of file system.
+	MinSizeGb pulumi.IntInput `pulumi:"minSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return i.ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+// GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput is an input type that accepts GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray and GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput` via:
+//
+//	GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray{ GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{...} }
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+	ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput
+}
+
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray []GetCloudExadataInfrastructureDefinedFileSystemConfigurationInput
+
+func (GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return i.ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
+}
+
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return o
+}
+
+// If true, the file system is used to create a backup prior to Exadata VM OS update.
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) IsBackupPartition() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureDefinedFileSystemConfiguration) bool { return v.IsBackupPartition }).(pulumi.BoolOutput)
+}
+
+// If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) IsResizable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureDefinedFileSystemConfiguration) bool { return v.IsResizable }).(pulumi.BoolOutput)
+}
+
+// The maximum size of file system.
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MaxSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureDefinedFileSystemConfiguration) int { return v.MaxSizeGb }).(pulumi.IntOutput)
+}
+
+// The minimum size of file system.
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MinSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureDefinedFileSystemConfiguration) int { return v.MinSizeGb }).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureDefinedFileSystemConfiguration) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureDefinedFileSystemConfiguration)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput() GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) ToGetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureDefinedFileSystemConfiguration {
+		return vs[0].([]GetCloudExadataInfrastructureDefinedFileSystemConfiguration)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput)
+}
+
+type GetCloudExadataInfrastructureExascaleConfig struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs int `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs int `pulumi:"availableVmStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs int `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs int `pulumi:"totalVmStorageInGbs"`
+}
+
+// GetCloudExadataInfrastructureExascaleConfigInput is an input type that accepts GetCloudExadataInfrastructureExascaleConfigArgs and GetCloudExadataInfrastructureExascaleConfigOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureExascaleConfigInput` via:
+//
+//	GetCloudExadataInfrastructureExascaleConfigArgs{...}
+type GetCloudExadataInfrastructureExascaleConfigInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructureExascaleConfigOutput
+	ToGetCloudExadataInfrastructureExascaleConfigOutputWithContext(context.Context) GetCloudExadataInfrastructureExascaleConfigOutput
+}
+
+type GetCloudExadataInfrastructureExascaleConfigArgs struct {
+	// Available storage size for Exascale in GBs.
+	AvailableStorageInGbs pulumi.IntInput `pulumi:"availableStorageInGbs"`
+	// Available storage size for VM storage on Exascale in GBs.
+	AvailableVmStorageInGbs pulumi.IntInput `pulumi:"availableVmStorageInGbs"`
+	// Storage size needed for Exascale in GBs.
+	TotalStorageInGbs pulumi.IntInput `pulumi:"totalStorageInGbs"`
+	// Storage size needed for VM storage on Exascale in GBs.
+	TotalVmStorageInGbs pulumi.IntInput `pulumi:"totalVmStorageInGbs"`
+}
+
+func (GetCloudExadataInfrastructureExascaleConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureExascaleConfigArgs) ToGetCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructureExascaleConfigOutput {
+	return i.ToGetCloudExadataInfrastructureExascaleConfigOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureExascaleConfigArgs) ToGetCloudExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureExascaleConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureExascaleConfigOutput)
+}
+
+// GetCloudExadataInfrastructureExascaleConfigArrayInput is an input type that accepts GetCloudExadataInfrastructureExascaleConfigArray and GetCloudExadataInfrastructureExascaleConfigArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureExascaleConfigArrayInput` via:
+//
+//	GetCloudExadataInfrastructureExascaleConfigArray{ GetCloudExadataInfrastructureExascaleConfigArgs{...} }
+type GetCloudExadataInfrastructureExascaleConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructureExascaleConfigArrayOutput
+	ToGetCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureExascaleConfigArrayOutput
+}
+
+type GetCloudExadataInfrastructureExascaleConfigArray []GetCloudExadataInfrastructureExascaleConfigInput
+
+func (GetCloudExadataInfrastructureExascaleConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureExascaleConfigArray) ToGetCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return i.ToGetCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureExascaleConfigArray) ToGetCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureExascaleConfigArrayOutput)
+}
+
+type GetCloudExadataInfrastructureExascaleConfigOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureExascaleConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) ToGetCloudExadataInfrastructureExascaleConfigOutput() GetCloudExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) ToGetCloudExadataInfrastructureExascaleConfigOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureExascaleConfigOutput {
+	return o
+}
+
+// Available storage size for Exascale in GBs.
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) AvailableStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureExascaleConfig) int { return v.AvailableStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Available storage size for VM storage on Exascale in GBs.
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) AvailableVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureExascaleConfig) int { return v.AvailableVmStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Storage size needed for Exascale in GBs.
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) TotalStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureExascaleConfig) int { return v.TotalStorageInGbs }).(pulumi.IntOutput)
+}
+
+// Storage size needed for VM storage on Exascale in GBs.
+func (o GetCloudExadataInfrastructureExascaleConfigOutput) TotalVmStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureExascaleConfig) int { return v.TotalVmStorageInGbs }).(pulumi.IntOutput)
+}
+
+type GetCloudExadataInfrastructureExascaleConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureExascaleConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureExascaleConfig)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureExascaleConfigArrayOutput) ToGetCloudExadataInfrastructureExascaleConfigArrayOutput() GetCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureExascaleConfigArrayOutput) ToGetCloudExadataInfrastructureExascaleConfigArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureExascaleConfigArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureExascaleConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureExascaleConfig {
+		return vs[0].([]GetCloudExadataInfrastructureExascaleConfig)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureExascaleConfigOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceVersionPreference struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates string `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+// GetCloudExadataInfrastructureMaintenanceVersionPreferenceInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs and GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceVersionPreferenceInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{...}
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput
+	ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+	ReferenceResourceIdForImageUpdates pulumi.StringInput `pulumi:"referenceResourceIdForImageUpdates"`
+}
+
+func (GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
+// GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray and GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray{ GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{...} }
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+	ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray []GetCloudExadataInfrastructureMaintenanceVersionPreferenceInput
+
+func (GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource the maintenance run will refer to when trying to fetch target versions.
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput) ReferenceResourceIdForImageUpdates() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceVersionPreference) string {
+		return v.ReferenceResourceIdForImageUpdates
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceVersionPreference)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput() GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) ToGetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureMaintenanceVersionPreference {
+		return vs[0].([]GetCloudExadataInfrastructureMaintenanceVersionPreference)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindow struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetCloudExadataInfrastructureMaintenanceWindowMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowArgs and GetCloudExadataInfrastructureMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowArgs{...}
+type GetCloudExadataInfrastructureMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructureMaintenanceWindowOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetCloudExadataInfrastructureMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetCloudExadataInfrastructureMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowArgs) ToGetCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructureMaintenanceWindowOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowArgs) ToGetCloudExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowOutput)
+}
+
+// GetCloudExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetCloudExadataInfrastructureMaintenanceWindowArray and GetCloudExadataInfrastructureMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructureMaintenanceWindowArrayInput` via:
+//
+//	GetCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructureMaintenanceWindowArgs{...} }
+type GetCloudExadataInfrastructureMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowArrayOutput
+	ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Context) GetCloudExadataInfrastructureMaintenanceWindowArrayOutput
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowArray []GetCloudExadataInfrastructureMaintenanceWindowInput
+
+func (GetCloudExadataInfrastructureMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowArray) ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return i.ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructureMaintenanceWindowArray) ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) ToGetCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) ToGetCloudExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) DaysOfWeeks() GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) []GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) []int { return v.HoursOfDays }).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) int { return v.LeadTimeInWeeks }).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) Months() GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) []GetCloudExadataInfrastructureMaintenanceWindowMonth {
+		return v.Months
+	}).(GetCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) string { return v.Preference }).(pulumi.StringOutput)
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetCloudExadataInfrastructureMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructureMaintenanceWindow) []int { return v.WeeksOfMonths }).(pulumi.IntArrayOutput)
+}
+
+type GetCloudExadataInfrastructureMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructureMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowArrayOutput) ToGetCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructureMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructureMaintenanceWindow {
+		return vs[0].([]GetCloudExadataInfrastructureMaintenanceWindow)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructureMaintenanceWindowOutput)
+}
+
 type GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
 	// Name of the month of the year.
 	Name string `pulumi:"name"`
@@ -5767,6 +6729,8 @@ type GetDatabaseDatabase struct {
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []GetDatabaseDatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// Options for DB Home and Database patching
@@ -5838,6 +6802,8 @@ type GetDatabaseDatabaseArgs struct {
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
 	// Options for DB Home and Database patching
@@ -5999,6 +6965,13 @@ func (o GetDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o GetDatabaseDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The database registered for Oracle Managed Database Software Updates.
+func (o GetDatabaseDatabaseOutput) ManagedSoftwareUpdateDetails() GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseManagedSoftwareUpdateDetail {
+		return v.ManagedSoftwareUpdateDetails
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput)
 }
 
 // The national character set for the database.
@@ -6567,6 +7540,531 @@ func (o GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseEncryptionKeyLocationDetail {
 		return vs[0].([]GetDatabaseDatabaseEncryptionKeyLocationDetail)[vs[1].(int)]
 	}).(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetail struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled bool `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails []GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail `pulumi:"preferenceDetails"`
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs and GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs{...}
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled pulumi.BoolInput `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput `pulumi:"preferenceDetails"`
+}
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailArray and GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailArray{ GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs{...} }
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailArray []GetDatabaseDatabaseManagedSoftwareUpdateDetailInput
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) IsEnrolled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetail) bool { return v.IsEnrolled }).(pulumi.BoolOutput)
+}
+
+// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) MaintenanceDetails() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetail) []GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput) PreferenceDetails() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetail) []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return v.PreferenceDetails
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseManagedSoftwareUpdateDetail {
+		return vs[0].([]GetDatabaseDatabaseManagedSoftwareUpdateDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck string `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate string `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus string `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails string `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version string `pulumi:"version"`
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs and GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...}
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck pulumi.StringInput `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate pulumi.StringInput `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus pulumi.StringInput `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails pulumi.StringInput `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray and GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{ GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...} }
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray []GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+// The date and time of the last readiness check.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfLastReadinessCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfLastReadinessCheck
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of when the status was updated.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfStatusUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfStatusUpdate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the database was scheduled for update.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The managed software update readiness status
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatus
+	}).(pulumi.StringOutput)
+}
+
+// This field will contain actual cause of update readiness state.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatusDetails
+	}).(pulumi.StringOutput)
+}
+
+// The version of the database was scheduled for update.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return vs[0].([]GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks []string `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail `pulumi:"versionSchemeDetails"`
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs and GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...}
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks pulumi.StringArrayInput `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput `pulumi:"versionSchemeDetails"`
+}
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray and GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{ GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...} }
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected days of the week.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) DaysOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []string { return v.DaysOfWeeks }).(pulumi.StringArrayOutput)
+}
+
+// The update should be applied on the database for the selected hour of the day.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) VersionSchemeDetails() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return v.VersionSchemeDetails
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return vs[0].([]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion string `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference string `pulumi:"versionPreference"`
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs and GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...}
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+}
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
+}
+
+// GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput is an input type that accepts GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray and GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput` via:
+//
+//	GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{ GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...} }
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+	ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray []GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return i.ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) MajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.MajorVersion
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.VersionPreference
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return vs[0].([]GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)[vs[1].(int)]
+	}).(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
 }
 
 type GetDatabaseDatabaseManagementConfig struct {
@@ -11260,6 +12758,527 @@ func (o GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptio
 	}).(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput)
 }
 
+type GetDatabaseManagedSoftwareUpdateDetail struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled bool `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails []GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail `pulumi:"preferenceDetails"`
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailArgs and GetDatabaseManagedSoftwareUpdateDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailArgs{...}
+type GetDatabaseManagedSoftwareUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseManagedSoftwareUpdateDetailOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailArgs struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled pulumi.BoolInput `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput `pulumi:"preferenceDetails"`
+}
+
+func (GetDatabaseManagedSoftwareUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseManagedSoftwareUpdateDetailOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailArrayInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailArray and GetDatabaseManagedSoftwareUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailArrayInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailArray{ GetDatabaseManagedSoftwareUpdateDetailArgs{...} }
+type GetDatabaseManagedSoftwareUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailArrayOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailArrayOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailArray []GetDatabaseManagedSoftwareUpdateDetailInput
+
+func (GetDatabaseManagedSoftwareUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailOutput() GetDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+func (o GetDatabaseManagedSoftwareUpdateDetailOutput) IsEnrolled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetail) bool { return v.IsEnrolled }).(pulumi.BoolOutput)
+}
+
+// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+func (o GetDatabaseManagedSoftwareUpdateDetailOutput) MaintenanceDetails() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetail) []GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+func (o GetDatabaseManagedSoftwareUpdateDetailOutput) PreferenceDetails() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetail) []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return v.PreferenceDetails
+	}).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseManagedSoftwareUpdateDetail {
+		return vs[0].([]GetDatabaseManagedSoftwareUpdateDetail)[vs[1].(int)]
+	}).(GetDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck string `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate string `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus string `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails string `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version string `pulumi:"version"`
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs and GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...}
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck pulumi.StringInput `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate pulumi.StringInput `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus pulumi.StringInput `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails pulumi.StringInput `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray and GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{ GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...} }
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray []GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput
+
+func (GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+// The date and time of the last readiness check.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfLastReadinessCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfLastReadinessCheck
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of when the status was updated.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfStatusUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.TimeOfStatusUpdate }).(pulumi.StringOutput)
+}
+
+// The date and time of the database was scheduled for update.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The managed software update readiness status
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.UpdateReadinessStatus }).(pulumi.StringOutput)
+}
+
+// This field will contain actual cause of update readiness state.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatusDetails
+	}).(pulumi.StringOutput)
+}
+
+// The version of the database was scheduled for update.
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return vs[0].([]GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)[vs[1].(int)]
+	}).(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks []string `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail `pulumi:"versionSchemeDetails"`
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs and GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...}
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks pulumi.StringArrayInput `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput `pulumi:"versionSchemeDetails"`
+}
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray and GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{ GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...} }
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected days of the week.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) DaysOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []string { return v.DaysOfWeeks }).(pulumi.StringArrayOutput)
+}
+
+// The update should be applied on the database for the selected hour of the day.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) VersionSchemeDetails() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return v.VersionSchemeDetails
+	}).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return vs[0].([]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetail)[vs[1].(int)]
+	}).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion string `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference string `pulumi:"versionPreference"`
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs and GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...}
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+}
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
+}
+
+// GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput is an input type that accepts GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray and GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput` via:
+//
+//	GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{ GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...} }
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+	ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray []GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return i.ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) MajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.MajorVersion
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.VersionPreference
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) Index(i pulumi.IntInput) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return vs[0].([]GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)[vs[1].(int)]
+	}).(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
+}
+
 type GetDatabasePdbConversionHistoryEntriesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -12422,6 +14441,8 @@ type GetDatabasesDatabase struct {
 	LastFailedBackupTimestamp string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []GetDatabasesDatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// The patch version of the database.
@@ -12430,7 +14451,8 @@ type GetDatabasesDatabase struct {
 	PdbName string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix string `pulumi:"sidPrefix"`
-	Source    string `pulumi:"source"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -12513,6 +14535,8 @@ type GetDatabasesDatabaseArgs struct {
 	LastFailedBackupTimestamp pulumi.StringInput `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayInput `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
 	// The patch version of the database.
@@ -12521,7 +14545,8 @@ type GetDatabasesDatabaseArgs struct {
 	PdbName pulumi.StringInput `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringInput `pulumi:"sidPrefix"`
-	Source    pulumi.StringInput `pulumi:"source"`
+	// The update should be applied on the database for the selected version scheme.
+	Source pulumi.StringInput `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringInput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -12735,6 +14760,13 @@ func (o GetDatabasesDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The database registered for Oracle Managed Database Software Updates.
+func (o GetDatabasesDatabaseOutput) ManagedSoftwareUpdateDetails() GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabase) []GetDatabasesDatabaseManagedSoftwareUpdateDetail {
+		return v.ManagedSoftwareUpdateDetails
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
 // The national character set for the database.
 func (o GetDatabasesDatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -12755,6 +14787,7 @@ func (o GetDatabasesDatabaseOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
+// The update should be applied on the database for the selected version scheme.
 func (o GetDatabasesDatabaseOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabase) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -13300,6 +15333,8 @@ type GetDatabasesDatabaseDatabase struct {
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet string                                    `pulumi:"ncharacterSet"`
 	PatchOptions  []GetDatabasesDatabaseDatabasePatchOption `pulumi:"patchOptions"`
@@ -13370,6 +15405,8 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringInput                                `pulumi:"ncharacterSet"`
 	PatchOptions  GetDatabasesDatabaseDatabasePatchOptionArrayInput `pulumi:"patchOptions"`
@@ -13532,6 +15569,13 @@ func (o GetDatabasesDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o GetDatabasesDatabaseDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The database registered for Oracle Managed Database Software Updates.
+func (o GetDatabasesDatabaseDatabaseOutput) ManagedSoftwareUpdateDetails() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail {
+		return v.ManagedSoftwareUpdateDetails
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput)
 }
 
 // The national character set for the database.
@@ -14106,6 +16150,543 @@ func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
 		return vs[0].([]GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail)[vs[1].(int)]
 	}).(GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled bool `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail `pulumi:"preferenceDetails"`
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs{...}
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled pulumi.BoolInput `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput `pulumi:"preferenceDetails"`
+}
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray{ GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs{...} }
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailInput
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) IsEnrolled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail) bool { return v.IsEnrolled }).(pulumi.BoolOutput)
+}
+
+// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) MaintenanceDetails() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail) []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput) PreferenceDetails() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail) []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return v.PreferenceDetails
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail {
+		return vs[0].([]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck string `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate string `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus string `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails string `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version string `pulumi:"version"`
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...}
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck pulumi.StringInput `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate pulumi.StringInput `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus pulumi.StringInput `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails pulumi.StringInput `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{ GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...} }
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+// The date and time of the last readiness check.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfLastReadinessCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfLastReadinessCheck
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of when the status was updated.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfStatusUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfStatusUpdate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the database was scheduled for update.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateMode
+	}).(pulumi.StringOutput)
+}
+
+// The managed software update readiness status
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatus
+	}).(pulumi.StringOutput)
+}
+
+// This field will contain actual cause of update readiness state.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatusDetails
+	}).(pulumi.StringOutput)
+}
+
+// The version of the database was scheduled for update.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return vs[0].([]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks []string `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail `pulumi:"versionSchemeDetails"`
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...}
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks pulumi.StringArrayInput `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput `pulumi:"versionSchemeDetails"`
+}
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{ GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...} }
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected days of the week.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) DaysOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []string {
+		return v.DaysOfWeeks
+	}).(pulumi.StringArrayOutput)
+}
+
+// The update should be applied on the database for the selected hour of the day.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) int {
+		return v.HourOfDay
+	}).(pulumi.IntOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) string {
+		return v.UpdateMode
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) VersionSchemeDetails() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return v.VersionSchemeDetails
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return vs[0].([]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion string `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference string `pulumi:"versionPreference"`
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...}
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+}
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
+}
+
+// GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray and GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{ GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...} }
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+	ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray []GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) MajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.MajorVersion
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.VersionPreference
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return vs[0].([]GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
 }
 
 type GetDatabasesDatabaseDatabaseManagementConfig struct {
@@ -14871,6 +17452,533 @@ func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
 		return vs[0].([]GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
 	}).(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetail struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled bool `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails []GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail `pulumi:"preferenceDetails"`
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs and GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs{...}
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs struct {
+	// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+	IsEnrolled pulumi.BoolInput `pulumi:"isEnrolled"`
+	// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+	MaintenanceDetails GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
+	// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+	PreferenceDetails GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput `pulumi:"preferenceDetails"`
+}
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailArray and GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailArray{ GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs{...} }
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailArray []GetDatabasesDatabaseManagedSoftwareUpdateDetailInput
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput {
+	return o
+}
+
+// If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) IsEnrolled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetail) bool { return v.IsEnrolled }).(pulumi.BoolOutput)
+}
+
+// Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) MaintenanceDetails() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetail) []GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return v.MaintenanceDetails
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+// Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput) PreferenceDetails() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetail) []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return v.PreferenceDetails
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseManagedSoftwareUpdateDetail {
+		return vs[0].([]GetDatabasesDatabaseManagedSoftwareUpdateDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck string `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate string `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus string `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails string `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version string `pulumi:"version"`
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs and GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...}
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs struct {
+	// The date and time of the last readiness check.
+	TimeOfLastReadinessCheck pulumi.StringInput `pulumi:"timeOfLastReadinessCheck"`
+	// The date and time of when the status was updated.
+	TimeOfStatusUpdate pulumi.StringInput `pulumi:"timeOfStatusUpdate"`
+	// The date and time of the database was scheduled for update.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The managed software update readiness status
+	UpdateReadinessStatus pulumi.StringInput `pulumi:"updateReadinessStatus"`
+	// This field will contain actual cause of update readiness state.
+	UpdateReadinessStatusDetails pulumi.StringInput `pulumi:"updateReadinessStatusDetails"`
+	// The version of the database was scheduled for update.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray and GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{ GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{...} }
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray []GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return o
+}
+
+// The date and time of the last readiness check.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfLastReadinessCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfLastReadinessCheck
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of when the status was updated.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeOfStatusUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeOfStatusUpdate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the database was scheduled for update.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.TimeScheduled
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The managed software update readiness status
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatus
+	}).(pulumi.StringOutput)
+}
+
+// This field will contain actual cause of update readiness state.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) UpdateReadinessStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string {
+		return v.UpdateReadinessStatusDetails
+	}).(pulumi.StringOutput)
+}
+
+// The version of the database was scheduled for update.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail {
+		return vs[0].([]GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks []string `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay int `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode string `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail `pulumi:"versionSchemeDetails"`
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs and GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...}
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs struct {
+	// The update should be applied on the database for the selected days of the week.
+	DaysOfWeeks pulumi.StringArrayInput `pulumi:"daysOfWeeks"`
+	// The update should be applied on the database for the selected hour of the day.
+	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// The update should be applied on the database for the selected version scheme.
+	VersionSchemeDetails GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput `pulumi:"versionSchemeDetails"`
+}
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray and GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{ GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{...} }
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected days of the week.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) DaysOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []string { return v.DaysOfWeeks }).(pulumi.StringArrayOutput)
+}
+
+// The update should be applied on the database for the selected hour of the day.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) HourOfDay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail) int { return v.HourOfDay }).(pulumi.IntOutput)
+}
+
+// Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput) VersionSchemeDetails() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail) []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return v.VersionSchemeDetails
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail {
+		return vs[0].([]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion string `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference string `pulumi:"versionPreference"`
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs and GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...}
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
+	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+	MajorVersion pulumi.StringInput `pulumi:"majorVersion"`
+	// The update should be applied on the database for the selected version scheme.
+	Source pulumi.StringInput `pulumi:"source"`
+	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+	VersionPreference pulumi.StringInput `pulumi:"versionPreference"`
+}
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
+}
+
+// GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput is an input type that accepts GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray and GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{ GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{...} }
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+	ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray []GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return o
+}
+
+// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) MajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.MajorVersion
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version scheme.
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.Source
+	}).(pulumi.StringOutput)
+}
+
+// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) VersionPreference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) string {
+		return v.VersionPreference
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput() GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) ToGetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
+		return vs[0].([]GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput)
 }
 
 type GetDatabasesDatabaseStorageSizeDetail struct {
@@ -17078,6 +20186,8 @@ type GetDbHomesDbHome struct {
 	EnableDatabaseDelete bool   `pulumi:"enableDatabaseDelete"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType string `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	Id                   string `pulumi:"id"`
 	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
@@ -17132,6 +20242,8 @@ type GetDbHomesDbHomeArgs struct {
 	EnableDatabaseDelete pulumi.BoolInput   `pulumi:"enableDatabaseDelete"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Represents database home will be managed by oracle or customer
+	HomeType pulumi.StringInput `pulumi:"homeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	Id                   pulumi.StringInput `pulumi:"id"`
 	IsDesupportedVersion pulumi.BoolInput   `pulumi:"isDesupportedVersion"`
@@ -17256,6 +20368,11 @@ func (o GetDbHomesDbHomeOutput) EnableDatabaseDelete() pulumi.BoolOutput {
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o GetDbHomesDbHomeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetDbHomesDbHome) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Represents database home will be managed by oracle or customer
+func (o GetDbHomesDbHomeOutput) HomeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHome) string { return v.HomeType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -52803,6 +55920,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersFilterInput)(nil)).Elem(), GetCloudAutonomousVmClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersFilterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureCustomerContactInput)(nil)).Elem(), GetCloudExadataInfrastructureCustomerContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureCustomerContactArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureCustomerContactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureDefinedFileSystemConfigurationInput)(nil)).Elem(), GetCloudExadataInfrastructureDefinedFileSystemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureDefinedFileSystemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureExascaleConfigInput)(nil)).Elem(), GetCloudExadataInfrastructureExascaleConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureExascaleConfigArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureExascaleConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceVersionPreferenceInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceVersionPreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceVersionPreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructureMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudExadataInfrastructureMaintenanceWindowMonthArgs{})
@@ -52887,6 +56020,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabaseDatabaseEncryptionKeyLocationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasePatchOptionInput)(nil)).Elem(), GetDatabaseDatabasePatchOptionArgs{})
@@ -52939,6 +56080,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayInput)(nil)).Elem(), GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailArrayInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput)(nil)).Elem(), GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{})
@@ -52969,6 +56118,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabasePatchOptionInput)(nil)).Elem(), GetDatabasesDatabaseDatabasePatchOptionArgs{})
@@ -52981,6 +56138,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseStorageSizeDetailInput)(nil)).Elem(), GetDatabasesDatabaseStorageSizeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseStorageSizeDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseStorageSizeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesFilterInput)(nil)).Elem(), GetDatabasesFilterArgs{})
@@ -53521,6 +56686,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureCustomerContactOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureCustomerContactArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureDefinedFileSystemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureExascaleConfigOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureExascaleConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceVersionPreferenceOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceVersionPreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudExadataInfrastructureMaintenanceWindowMonthOutput{})
@@ -53605,6 +56786,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseEncryptionKeyLocationDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabasePatchOptionOutput{})
@@ -53657,6 +56846,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionOutput{})
 	pulumi.RegisterOutputType(GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput{})
@@ -53687,6 +56884,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabasePatchOptionOutput{})
@@ -53699,6 +56904,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseStorageSizeDetailOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseStorageSizeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesFilterOutput{})

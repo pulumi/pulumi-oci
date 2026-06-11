@@ -84,6 +84,8 @@ type Database struct {
 	LastFailedBackupTimestamp pulumi.StringOutput `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails DatabaseManagedSoftwareUpdateDetailArrayOutput `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
 	PatchVersion  pulumi.StringOutput `pulumi:"patchVersion"`
@@ -118,9 +120,6 @@ func NewDatabase(ctx *pulumi.Context,
 
 	if args.Database == nil {
 		return nil, errors.New("invalid value for required argument 'Database'")
-	}
-	if args.DbHomeId == nil {
-		return nil, errors.New("invalid value for required argument 'DbHomeId'")
 	}
 	if args.Source == nil {
 		return nil, errors.New("invalid value for required argument 'Source'")
@@ -206,6 +205,8 @@ type databaseState struct {
 	LastFailedBackupTimestamp *string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []DatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
 	PatchVersion  *string `pulumi:"patchVersion"`
@@ -290,6 +291,8 @@ type DatabaseState struct {
 	LastFailedBackupTimestamp pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails DatabaseManagedSoftwareUpdateDetailArrayInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringPtrInput
 	PatchVersion  pulumi.StringPtrInput
@@ -327,7 +330,7 @@ type databaseArgs struct {
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabase `pulumi:"database"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	DbHomeId string `pulumi:"dbHomeId"`
+	DbHomeId *string `pulumi:"dbHomeId"`
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -340,10 +343,14 @@ type databaseArgs struct {
 	KmsKeyRotation  *int    `pulumi:"kmsKeyRotation"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []DatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId *string `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
 // The set of arguments for constructing a Database resource.
@@ -355,7 +362,7 @@ type DatabaseArgs struct {
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	Database DatabaseDatabaseInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	DbHomeId pulumi.StringInput
+	DbHomeId pulumi.StringPtrInput
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -368,10 +375,14 @@ type DatabaseArgs struct {
 	KmsKeyRotation  pulumi.IntPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails DatabaseManagedSoftwareUpdateDetailArrayInput
 	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringPtrInput
 }
 
 func (DatabaseArgs) ElementType() reflect.Type {
@@ -604,6 +615,13 @@ func (o DatabaseOutput) LastFailedBackupTimestamp() pulumi.StringOutput {
 // Additional information about the current lifecycle state.
 func (o DatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The database registered for Oracle Managed Database Software Updates.
+func (o DatabaseOutput) ManagedSoftwareUpdateDetails() DatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o.ApplyT(func(v *Database) DatabaseManagedSoftwareUpdateDetailArrayOutput {
+		return v.ManagedSoftwareUpdateDetails
+	}).(DatabaseManagedSoftwareUpdateDetailArrayOutput)
 }
 
 // The national character set for the database.

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemChannelSourceSslCaCertificateArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -47,6 +48,21 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
      */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
+    }
+
+    /**
+     * Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    @Import(name="mustUseIpv6onDualStack")
+    private @Nullable Output<Boolean> mustUseIpv6onDualStack;
+
+    /**
+     * @return Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    public Optional<Output<Boolean>> mustUseIpv6onDualStack() {
+        return Optional.ofNullable(this.mustUseIpv6onDualStack);
     }
 
     /**
@@ -129,6 +145,7 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
     private MysqlDbSystemChannelSourceArgs(MysqlDbSystemChannelSourceArgs $) {
         this.anonymousTransactionsHandlings = $.anonymousTransactionsHandlings;
         this.hostname = $.hostname;
+        this.mustUseIpv6onDualStack = $.mustUseIpv6onDualStack;
         this.port = $.port;
         this.sourceType = $.sourceType;
         this.sslCaCertificates = $.sslCaCertificates;
@@ -204,6 +221,27 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
+        }
+
+        /**
+         * @param mustUseIpv6onDualStack Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mustUseIpv6onDualStack(@Nullable Output<Boolean> mustUseIpv6onDualStack) {
+            $.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
+            return this;
+        }
+
+        /**
+         * @param mustUseIpv6onDualStack Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mustUseIpv6onDualStack(Boolean mustUseIpv6onDualStack) {
+            return mustUseIpv6onDualStack(Output.of(mustUseIpv6onDualStack));
         }
 
         /**

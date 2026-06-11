@@ -118,10 +118,14 @@ type LookupMysqlDbSystemResult struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	Ipv6addressIpv6subnetCidrPairDetails []GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// If the DB System has a HeatWave Cluster attached.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
+	// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+	IsIpv6enabled bool `pulumi:"isIpv6enabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -344,6 +348,13 @@ func (o LookupMysqlDbSystemResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o LookupMysqlDbSystemResultOutput) Ipv6addressIpv6subnetCidrPairDetails() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 // If the DB System has a HeatWave Cluster attached.
 func (o LookupMysqlDbSystemResultOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -352,6 +363,11 @@ func (o LookupMysqlDbSystemResultOutput) IsHeatWaveClusterAttached() pulumi.Bool
 // Specifies if the DB System is highly available.
 func (o LookupMysqlDbSystemResultOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+}
+
+// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+func (o LookupMysqlDbSystemResultOutput) IsIpv6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) bool { return v.IsIpv6enabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycleState.

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.DatabaseDatabasePatchOptions;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseStorageSizeDetails;
@@ -110,6 +111,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String kmsKeyVersionId;
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    private @Nullable List<DatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
     /**
      * @return The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
@@ -316,6 +322,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public List<DatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails == null ? List.of() : this.managedSoftwareUpdateDetails;
+    }
+    /**
      * @return The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
@@ -450,6 +463,7 @@ public final class DatabaseDatabase {
         private @Nullable Boolean isActiveDataGuardEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
+        private @Nullable List<DatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
         private @Nullable String ncharacterSet;
         private @Nullable DatabaseDatabasePatchOptions patchOptions;
         private @Nullable String pdbName;
@@ -485,6 +499,7 @@ public final class DatabaseDatabase {
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
+    	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.patchOptions = defaults.patchOptions;
     	      this.pdbName = defaults.pdbName;
@@ -605,6 +620,15 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder managedSoftwareUpdateDetails(@Nullable List<DatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails) {
+
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+        public Builder managedSoftwareUpdateDetails(DatabaseDatabaseManagedSoftwareUpdateDetail... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(@Nullable String ncharacterSet) {
 
             this.ncharacterSet = ncharacterSet;
@@ -716,6 +740,7 @@ public final class DatabaseDatabase {
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.patchOptions = patchOptions;
             _resultValue.pdbName = pdbName;

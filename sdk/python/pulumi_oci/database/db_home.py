@@ -29,6 +29,7 @@ class DbHomeArgs:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -48,7 +49,8 @@ class DbHomeArgs:
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] home_type: Represents database home will be managed by oracle or customer
         :param pulumi.Input[_builtins.bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[_builtins.bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -76,6 +78,8 @@ class DbHomeArgs:
             pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if home_type is not None:
+            pulumi.set(__self__, "home_type", home_type)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
         if is_unified_auditing_enabled is not None:
@@ -178,13 +182,25 @@ class DbHomeArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="homeType")
+    def home_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Represents database home will be managed by oracle or customer
+        """
+        return pulumi.get(self, "home_type")
+
+    @home_type.setter
+    def home_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "home_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isDesupportedVersion")
@@ -276,6 +292,7 @@ class _DbHomeState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -302,7 +319,8 @@ class _DbHomeState:
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] home_type: Represents database home will be managed by oracle or customer
         :param pulumi.Input[_builtins.bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[_builtins.bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -339,6 +357,8 @@ class _DbHomeState:
             pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if home_type is not None:
+            pulumi.set(__self__, "home_type", home_type)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
         if is_unified_auditing_enabled is not None:
@@ -475,13 +495,25 @@ class _DbHomeState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="homeType")
+    def home_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Represents database home will be managed by oracle or customer
+        """
+        return pulumi.get(self, "home_type")
+
+    @home_type.setter
+    def home_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "home_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isDesupportedVersion")
@@ -634,6 +666,7 @@ class DbHome(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -648,12 +681,6 @@ class DbHome(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
 
         Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-
-        **Important:** Unless `enable_database_delete` is explicitly set to true:
-        * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
-        * This leads to dangling resources which are not managed via Terraform unless explicitly imported
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
 
         ## Example Usage
 
@@ -690,7 +717,8 @@ class DbHome(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] home_type: Represents database home will be managed by oracle or customer
         :param pulumi.Input[_builtins.bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[_builtins.bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -715,12 +743,6 @@ class DbHome(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
 
         Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
-
-        **Important:** Unless `enable_database_delete` is explicitly set to true:
-        * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
-        * This leads to dangling resources which are not managed via Terraform unless explicitly imported
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
 
         ## Example Usage
 
@@ -768,6 +790,7 @@ class DbHome(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 home_type: pulumi.Input[Optional[_builtins.str]] = None,
                  is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -791,6 +814,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["enable_database_delete"] = enable_database_delete
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["home_type"] = home_type
             __props__.__dict__["is_desupported_version"] = is_desupported_version
             __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
@@ -824,6 +848,7 @@ class DbHome(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            home_type: pulumi.Input[Optional[_builtins.str]] = None,
             is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
             is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -854,7 +879,8 @@ class DbHome(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] home_type: Represents database home will be managed by oracle or customer
         :param pulumi.Input[_builtins.bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[_builtins.bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -885,6 +911,7 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["enable_database_delete"] = enable_database_delete
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["home_type"] = home_type
         __props__.__dict__["is_desupported_version"] = is_desupported_version
         __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
@@ -975,9 +1002,17 @@ class DbHome(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="homeType")
+    def home_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Represents database home will be managed by oracle or customer
+        """
+        return pulumi.get(self, "home_type")
 
     @_builtins.property
     @pulumi.getter(name="isDesupportedVersion")

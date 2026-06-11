@@ -60,7 +60,11 @@ export interface GetDelegatedResourceAccessRequestResult {
      */
     readonly compartmentId: string;
     /**
-     * List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+     * List of Database ID for which access is requested. This parameter is required when database access is needed.
+     */
+    readonly databaseIdLists: string[];
+    /**
+     * List of Database unique names for which access is requested. This parameter is required when database access in needed.
      */
     readonly databaseNameLists: string[];
     /**

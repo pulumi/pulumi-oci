@@ -230,6 +230,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseManagedSoftwareUpdateDetailResult> ManagedSoftwareUpdateDetails;
+        /// <summary>
         /// The national character set for the database.
         /// </summary>
         public readonly string NcharacterSet;
@@ -245,6 +249,9 @@ namespace Pulumi.Oci.Database
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string SidPrefix;
+        /// <summary>
+        /// The update should be applied on the database for the selected version scheme.
+        /// </summary>
         public readonly string Source;
         /// <summary>
         /// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
@@ -339,6 +346,8 @@ namespace Pulumi.Oci.Database
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetDatabaseManagedSoftwareUpdateDetailResult> managedSoftwareUpdateDetails,
+
             string ncharacterSet,
 
             string patchVersion,
@@ -394,6 +403,7 @@ namespace Pulumi.Oci.Database
             LastBackupTimestamp = lastBackupTimestamp;
             LastFailedBackupTimestamp = lastFailedBackupTimestamp;
             LifecycleDetails = lifecycleDetails;
+            ManagedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             NcharacterSet = ncharacterSet;
             PatchVersion = patchVersion;
             PdbName = pdbName;

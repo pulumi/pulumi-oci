@@ -114,6 +114,8 @@ type LookupDatabaseResult struct {
 	LastFailedBackupTimestamp string `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The database registered for Oracle Managed Database Software Updates.
+	ManagedSoftwareUpdateDetails []GetDatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
 	// The patch version of the  database.
@@ -122,7 +124,8 @@ type LookupDatabaseResult struct {
 	PdbName string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix string `pulumi:"sidPrefix"`
-	Source    string `pulumi:"source"`
+	// The update should be applied on the database for the selected version scheme.
+	Source string `pulumi:"source"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
 	SourceDatabasePointInTimeRecoveryTimestamp string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
@@ -322,6 +325,13 @@ func (o LookupDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// The database registered for Oracle Managed Database Software Updates.
+func (o LookupDatabaseResultOutput) ManagedSoftwareUpdateDetails() GetDatabaseManagedSoftwareUpdateDetailArrayOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) []GetDatabaseManagedSoftwareUpdateDetail {
+		return v.ManagedSoftwareUpdateDetails
+	}).(GetDatabaseManagedSoftwareUpdateDetailArrayOutput)
+}
+
 // The national character set for the database.
 func (o LookupDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
@@ -342,6 +352,7 @@ func (o LookupDatabaseResultOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
+// The update should be applied on the database for the selected version scheme.
 func (o LookupDatabaseResultOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.Source }).(pulumi.StringOutput)
 }

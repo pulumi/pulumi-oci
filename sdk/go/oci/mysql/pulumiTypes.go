@@ -18,6 +18,8 @@ type ChannelSource struct {
 	AnonymousTransactionsHandling *ChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandling"`
 	// (Updatable) The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
+	// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack *bool `pulumi:"mustUseIpv6onDualStack"`
 	// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	Password string `pulumi:"password"`
 	// (Updatable) The port the source MySQL instance listens on.
@@ -48,6 +50,8 @@ type ChannelSourceArgs struct {
 	AnonymousTransactionsHandling ChannelSourceAnonymousTransactionsHandlingPtrInput `pulumi:"anonymousTransactionsHandling"`
 	// (Updatable) The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolPtrInput `pulumi:"mustUseIpv6onDualStack"`
 	// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 	Password pulumi.StringInput `pulumi:"password"`
 	// (Updatable) The port the source MySQL instance listens on.
@@ -151,6 +155,11 @@ func (o ChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
+// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o ChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ChannelSource) *bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
 func (o ChannelSourceOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelSource) string { return v.Password }).(pulumi.StringOutput)
@@ -223,6 +232,16 @@ func (o ChannelSourcePtrOutput) Hostname() pulumi.StringPtrOutput {
 		}
 		return &v.Hostname
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o ChannelSourcePtrOutput) MustUseIpv6onDualStack() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ChannelSource) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MustUseIpv6onDualStack
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -1438,6 +1457,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	Id *string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address *string `pulumi:"ipv6address"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -1522,6 +1543,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -1710,6 +1733,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) Id() pulumi.StringPtrOutput {
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o MysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlBackupDbSystemSnapshotOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.Ipv6address }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the DB System is highly available.
@@ -2638,6 +2666,8 @@ type MysqlBackupDbSystemSnapshotEndpoint struct {
 	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion *string `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -2670,6 +2700,8 @@ type MysqlBackupDbSystemSnapshotEndpointArgs struct {
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion pulumi.StringPtrInput `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -2745,6 +2777,11 @@ func (o MysqlBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringPtrOu
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o MysqlBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The internet protocol (IP) version of the IP address.
+func (o MysqlBackupDbSystemSnapshotEndpointOutput) IpAddressVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *string { return v.IpAddressVersion }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -3070,6 +3107,8 @@ type MysqlBackupDbSystemSnapshotReadEndpoint struct {
 	ReadEndpointHostnameLabel *string `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress *string `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails []MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 // MysqlBackupDbSystemSnapshotReadEndpointInput is an input type that accepts MysqlBackupDbSystemSnapshotReadEndpointArgs and MysqlBackupDbSystemSnapshotReadEndpointOutput values.
@@ -3092,6 +3131,8 @@ type MysqlBackupDbSystemSnapshotReadEndpointArgs struct {
 	ReadEndpointHostnameLabel pulumi.StringPtrInput `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress pulumi.StringPtrInput `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 func (MysqlBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
@@ -3165,6 +3206,13 @@ func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress() p
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) *string { return v.ReadEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o MysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpoint) []MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 type MysqlBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
@@ -3183,6 +3231,116 @@ func (o MysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotReadEndpoint {
 		return vs[0].([]MysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address *string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+}
+
+// MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs and MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+	ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringPtrInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray and MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{ MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray []MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput
+
+func (MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) *string {
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) *string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type MysqlBackupDbSystemSnapshotRest struct {
@@ -8500,6 +8658,8 @@ type MysqlDbSystemChannelSource struct {
 	AnonymousTransactionsHandlings []MysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname *string `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack *bool `pulumi:"mustUseIpv6onDualStack"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
@@ -8528,6 +8688,8 @@ type MysqlDbSystemChannelSourceArgs struct {
 	AnonymousTransactionsHandlings MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolPtrInput `pulumi:"mustUseIpv6onDualStack"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
@@ -8601,6 +8763,11 @@ func (o MysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() Mysql
 // The network address of the DB System.
 func (o MysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o MysqlDbSystemChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSource) *bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolPtrOutput)
 }
 
 // The port for primary endpoint of the DB System to listen on.
@@ -10029,6 +10196,8 @@ type MysqlDbSystemEndpoint struct {
 	Hostname *string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress *string `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion *string `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -10061,6 +10230,8 @@ type MysqlDbSystemEndpointArgs struct {
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion pulumi.StringPtrInput `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -10136,6 +10307,11 @@ func (o MysqlDbSystemEndpointOutput) Hostname() pulumi.StringPtrOutput {
 // The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 func (o MysqlDbSystemEndpointOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemEndpoint) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// The internet protocol (IP) version of the IP address.
+func (o MysqlDbSystemEndpointOutput) IpAddressVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemEndpoint) *string { return v.IpAddressVersion }).(pulumi.StringPtrOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -10336,6 +10512,162 @@ func (o MysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) MysqlD
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemHeatWaveCluster {
 		return vs[0].([]MysqlDbSystemHeatWaveCluster)[vs[1].(int)]
 	}).(MysqlDbSystemHeatWaveClusterOutput)
+}
+
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address *string `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+}
+
+// MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsInput is an input type that accepts MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs and MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput values.
+// You can construct a concrete instance of `MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsInput` via:
+//
+//	MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs{...}
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput
+	ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput
+}
+
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringPtrInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (i MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return i.ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput)
+}
+
+func (i MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return i.ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput).ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrInput is an input type that accepts MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs, MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtr and MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrInput` via:
+//
+//	        MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput
+	ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput
+}
+
+type mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrType MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs
+
+func MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtr(v *MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrInput {
+	return (*mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrType)(v)
+}
+
+func (*mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrType) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return i.ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrType) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) *MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails {
+		return &v
+	}).(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
+// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) *string { return v.Ipv6address }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 prefix allocated to the subnet.
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) *string { return v.Ipv6subnetCidr }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ToMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Elem() MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o.ApplyT(func(v *MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails
+		return ret
+	}).(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput)
+}
+
+// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 prefix allocated to the subnet.
+func (o MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringPtrOutput)
 }
 
 type MysqlDbSystemMaintenance struct {
@@ -10856,6 +11188,8 @@ type MysqlDbSystemReadEndpoint struct {
 	ReadEndpointHostnameLabel *string `pulumi:"readEndpointHostnameLabel"`
 	// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress *string `pulumi:"readEndpointIpAddress"`
+	// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 // MysqlDbSystemReadEndpointInput is an input type that accepts MysqlDbSystemReadEndpointArgs and MysqlDbSystemReadEndpointOutput values.
@@ -10882,6 +11216,8 @@ type MysqlDbSystemReadEndpointArgs struct {
 	ReadEndpointHostnameLabel pulumi.StringPtrInput `pulumi:"readEndpointHostnameLabel"`
 	// (Updatable) The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress pulumi.StringPtrInput `pulumi:"readEndpointIpAddress"`
+	// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 func (MysqlDbSystemReadEndpointArgs) ElementType() reflect.Type {
@@ -10985,6 +11321,13 @@ func (o MysqlDbSystemReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringPt
 	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) *string { return v.ReadEndpointIpAddress }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o MysqlDbSystemReadEndpointOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpoint) *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails {
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
 type MysqlDbSystemReadEndpointPtrOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemReadEndpointPtrOutput) ElementType() reflect.Type {
@@ -11050,6 +11393,176 @@ func (o MysqlDbSystemReadEndpointPtrOutput) ReadEndpointIpAddress() pulumi.Strin
 			return nil
 		}
 		return v.ReadEndpointIpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o MysqlDbSystemReadEndpointPtrOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpoint) *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address *string `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
+}
+
+// MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsInput is an input type that accepts MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs and MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput values.
+// You can construct a concrete instance of `MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsInput` via:
+//
+//	MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs{...}
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput
+	ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput
+}
+
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs struct {
+	// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringPtrInput `pulumi:"ipv6address"`
+	// (Updatable) The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringPtrInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (i MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return i.ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput)
+}
+
+func (i MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return i.ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput).ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput is an input type that accepts MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs, MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtr and MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput` via:
+//
+//	        MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput
+	ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput
+}
+
+type mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrType MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs
+
+func MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtr(v *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput {
+	return (*mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrType)(v)
+}
+
+func (*mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrType) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return i.ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrType) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails {
+		return &v
+	}).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput)
+}
+
+// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) *string {
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 prefix allocated to the subnet.
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) *string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails)(nil)).Elem()
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) ToMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutputWithContext(ctx context.Context) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Elem() MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails
+		return ret
+	}).(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput)
+}
+
+// (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Ipv6address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6address
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The IPv6 prefix allocated to the subnet.
+func (o MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput) Ipv6subnetCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6subnetCidr
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -13482,7 +13995,9 @@ type GetChannelSource struct {
 	AnonymousTransactionsHandlings []GetChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
-	Password string `pulumi:"password"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack bool   `pulumi:"mustUseIpv6onDualStack"`
+	Password               string `pulumi:"password"`
 	// The port the source MySQL instance listens on.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
@@ -13511,7 +14026,9 @@ type GetChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	Password pulumi.StringInput `pulumi:"password"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolInput   `pulumi:"mustUseIpv6onDualStack"`
+	Password               pulumi.StringInput `pulumi:"password"`
 	// The port the source MySQL instance listens on.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
@@ -13585,6 +14102,11 @@ func (o GetChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelSourc
 // The network address of the MySQL instance.
 func (o GetChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o GetChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetChannelSource) bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolOutput)
 }
 
 func (o GetChannelSourceOutput) Password() pulumi.StringOutput {
@@ -14342,7 +14864,9 @@ type GetChannelsChannelSource struct {
 	AnonymousTransactionsHandlings []GetChannelsChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
-	Password string `pulumi:"password"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack bool   `pulumi:"mustUseIpv6onDualStack"`
+	Password               string `pulumi:"password"`
 	// The port the source MySQL instance listens on.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
@@ -14371,7 +14895,9 @@ type GetChannelsChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	Password pulumi.StringInput `pulumi:"password"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolInput   `pulumi:"mustUseIpv6onDualStack"`
+	Password               pulumi.StringInput `pulumi:"password"`
 	// The port the source MySQL instance listens on.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
@@ -14445,6 +14971,11 @@ func (o GetChannelsChannelSourceOutput) AnonymousTransactionsHandlings() GetChan
 // The network address of the MySQL instance.
 func (o GetChannelsChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o GetChannelsChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolOutput)
 }
 
 func (o GetChannelsChannelSourceOutput) Password() pulumi.StringOutput {
@@ -15829,6 +16360,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -15913,6 +16446,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -16107,6 +16642,11 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) Id() pulumi.StringOutput {
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o GetMysqlBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlBackupDbSystemSnapshotOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // Specifies if the DB System is highly available.
@@ -17039,6 +17579,8 @@ type GetMysqlBackupDbSystemSnapshotEndpoint struct {
 	Hostname string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion string `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -17071,6 +17613,8 @@ type GetMysqlBackupDbSystemSnapshotEndpointArgs struct {
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion pulumi.StringInput `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -17146,6 +17690,11 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringOu
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The internet protocol (IP) version of the IP address.
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) IpAddressVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.IpAddressVersion }).(pulumi.StringOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -17471,6 +18020,8 @@ type GetMysqlBackupDbSystemSnapshotReadEndpoint struct {
 	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails []GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 // GetMysqlBackupDbSystemSnapshotReadEndpointInput is an input type that accepts GetMysqlBackupDbSystemSnapshotReadEndpointArgs and GetMysqlBackupDbSystemSnapshotReadEndpointOutput values.
@@ -17493,6 +18044,8 @@ type GetMysqlBackupDbSystemSnapshotReadEndpointArgs struct {
 	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 func (GetMysqlBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
@@ -17566,6 +18119,13 @@ func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress(
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpoint) []GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 type GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
@@ -17584,6 +18144,116 @@ func (o GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotReadEndpoint {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotReadEndpointOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs and GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray and GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{ GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray []GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotRest struct {
@@ -22962,6 +23632,8 @@ type GetMysqlDbSystemChannelSource struct {
 	AnonymousTransactionsHandlings []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack bool `pulumi:"mustUseIpv6onDualStack"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
@@ -22990,6 +23662,8 @@ type GetMysqlDbSystemChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolInput `pulumi:"mustUseIpv6onDualStack"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
@@ -23063,6 +23737,11 @@ func (o GetMysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() Ge
 // The network address of the DB System.
 func (o GetMysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o GetMysqlDbSystemChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolOutput)
 }
 
 // The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -24271,6 +24950,8 @@ type GetMysqlDbSystemEndpoint struct {
 	Hostname string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion string `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -24303,6 +24984,8 @@ type GetMysqlDbSystemEndpointArgs struct {
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion pulumi.StringInput `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -24378,6 +25061,11 @@ func (o GetMysqlDbSystemEndpointOutput) Hostname() pulumi.StringOutput {
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o GetMysqlDbSystemEndpointOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The internet protocol (IP) version of the IP address.
+func (o GetMysqlDbSystemEndpointOutput) IpAddressVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.IpAddressVersion }).(pulumi.StringOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -24575,6 +25263,112 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemHeatWaveCluster)[vs[1].(int)]
 	}).(GetMysqlDbSystemHeatWaveClusterOutput)
+}
+
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs and GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray and GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray{ GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray []GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6address }).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetMysqlDbSystemMaintenance struct {
@@ -24951,6 +25745,8 @@ type GetMysqlDbSystemReadEndpoint struct {
 	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails []GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 // GetMysqlDbSystemReadEndpointInput is an input type that accepts GetMysqlDbSystemReadEndpointArgs and GetMysqlDbSystemReadEndpointOutput values.
@@ -24973,6 +25769,8 @@ type GetMysqlDbSystemReadEndpointArgs struct {
 	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 func (GetMysqlDbSystemReadEndpointArgs) ElementType() reflect.Type {
@@ -25046,6 +25844,13 @@ func (o GetMysqlDbSystemReadEndpointOutput) ReadEndpointIpAddress() pulumi.Strin
 	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o GetMysqlDbSystemReadEndpointOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpoint) []GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 type GetMysqlDbSystemReadEndpointArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemReadEndpointArrayOutput) ElementType() reflect.Type {
@@ -25064,6 +25869,116 @@ func (o GetMysqlDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMys
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemReadEndpoint {
 		return vs[0].([]GetMysqlDbSystemReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlDbSystemReadEndpointOutput)
+}
+
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs and GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray and GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{ GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray []GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetMysqlDbSystemRest struct {
@@ -26036,10 +26951,14 @@ type GetMysqlDbSystemsDbSystem struct {
 	Id string `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	Ipv6addressIpv6subnetCidrPairDetails []GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
+	// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+	IsIpv6enabled bool `pulumi:"isIpv6enabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -26151,10 +27070,14 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	Ipv6addressIpv6subnetCidrPairDetails GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
 	// If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
+	// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+	IsIpv6enabled pulumi.BoolInput `pulumi:"isIpv6enabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
@@ -26397,6 +27320,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o GetMysqlDbSystemsDbSystemOutput) Ipv6addressIpv6subnetCidrPairDetails() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 // If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
 func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
@@ -26405,6 +27335,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) IsHeatWaveClusterAttached() pulumi.Bool
 // Specifies if the DB System is highly available.
 func (o GetMysqlDbSystemsDbSystemOutput) IsHighlyAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+}
+
+// Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+func (o GetMysqlDbSystemsDbSystemOutput) IsIpv6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) bool { return v.IsIpv6enabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycleState.
@@ -27109,6 +28044,8 @@ type GetMysqlDbSystemsDbSystemChannelSource struct {
 	AnonymousTransactionsHandlings []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack bool `pulumi:"mustUseIpv6onDualStack"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port int `pulumi:"port"`
 	// The specific source identifier.
@@ -27137,6 +28074,8 @@ type GetMysqlDbSystemsDbSystemChannelSourceArgs struct {
 	AnonymousTransactionsHandlings GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+	MustUseIpv6onDualStack pulumi.BoolInput `pulumi:"mustUseIpv6onDualStack"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The specific source identifier.
@@ -27210,6 +28149,11 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) AnonymousTransactionsHandl
 // The network address of the DB System.
 func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) MustUseIpv6onDualStack() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) bool { return v.MustUseIpv6onDualStack }).(pulumi.BoolOutput)
 }
 
 // The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -28420,6 +29364,8 @@ type GetMysqlDbSystemsDbSystemEndpoint struct {
 	Hostname string `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress string `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion string `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes []string `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -28452,6 +29398,8 @@ type GetMysqlDbSystemsDbSystemEndpointArgs struct {
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The internet protocol (IP) version of the IP address.
+	IpAddressVersion pulumi.StringInput `pulumi:"ipAddressVersion"`
 	// The access modes from the client that this endpoint supports.
 	Modes pulumi.StringArrayInput `pulumi:"modes"`
 	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
@@ -28527,6 +29475,11 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) Hostname() pulumi.StringOutput 
 // The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
 func (o GetMysqlDbSystemsDbSystemEndpointOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The internet protocol (IP) version of the IP address.
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) IpAddressVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.IpAddressVersion }).(pulumi.StringOutput)
 }
 
 // The access modes from the client that this endpoint supports.
@@ -28724,6 +29677,112 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemsDbSystemHeatWaveCluster)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemHeatWaveClusterOutput)
+}
+
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs and GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray and GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray{ GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray []GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6address }).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetMysqlDbSystemsDbSystemMaintenance struct {
@@ -29100,6 +30159,8 @@ type GetMysqlDbSystemsDbSystemReadEndpoint struct {
 	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails []GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 // GetMysqlDbSystemsDbSystemReadEndpointInput is an input type that accepts GetMysqlDbSystemsDbSystemReadEndpointArgs and GetMysqlDbSystemsDbSystemReadEndpointOutput values.
@@ -29122,6 +30183,8 @@ type GetMysqlDbSystemsDbSystemReadEndpointArgs struct {
 	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
 	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
 	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
+	// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+	ReadEndpointIpv6addressIpv6subnetCidrPairDetails GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"readEndpointIpv6addressIpv6subnetCidrPairDetails"`
 }
 
 func (GetMysqlDbSystemsDbSystemReadEndpointArgs) ElementType() reflect.Type {
@@ -29195,6 +30258,13 @@ func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ReadEndpointIpAddress() pul
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
 }
 
+// Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+func (o GetMysqlDbSystemsDbSystemReadEndpointOutput) ReadEndpointIpv6addressIpv6subnetCidrPairDetails() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpoint) []GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return v.ReadEndpointIpv6addressIpv6subnetCidrPairDetails
+	}).(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
 type GetMysqlDbSystemsDbSystemReadEndpointArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) ElementType() reflect.Type {
@@ -29213,6 +30283,116 @@ func (o GetMysqlDbSystemsDbSystemReadEndpointArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemReadEndpoint {
 		return vs[0].([]GetMysqlDbSystemsDbSystemReadEndpoint)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemReadEndpointOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address string `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs and GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// The IPv6 prefix allocated to the subnet.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray and GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{ GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray []GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// The IPv6 prefix allocated to the subnet.
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
 type GetMysqlDbSystemsDbSystemRest struct {
@@ -31687,6 +32867,8 @@ type GetReplicasReplica struct {
 	Id string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress string `pulumi:"ipAddress"`
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address string `pulumi:"ipv6address"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
@@ -31753,6 +32935,8 @@ type GetReplicasReplicaArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
@@ -31892,6 +33076,11 @@ func (o GetReplicasReplicaOutput) Id() pulumi.StringOutput {
 // The IP address the read replica is configured to listen on.
 func (o GetReplicasReplicaOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The IPv6 address the read replica is configured to listen on.
+func (o GetReplicasReplicaOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
@@ -33264,6 +34453,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArgs{})
@@ -33322,6 +34513,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEndpointArrayInput)(nil)).Elem(), MysqlDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemHeatWaveClusterInput)(nil)).Elem(), MysqlDbSystemHeatWaveClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), MysqlDbSystemHeatWaveClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsInput)(nil)).Elem(), MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrInput)(nil)).Elem(), MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenancePtrInput)(nil)).Elem(), MysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), MysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
@@ -33330,6 +34523,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointPtrInput)(nil)).Elem(), MysqlDbSystemReadEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsInput)(nil)).Elem(), MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrInput)(nil)).Elem(), MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemRestInput)(nil)).Elem(), MysqlDbSystemRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemRestPtrInput)(nil)).Elem(), MysqlDbSystemRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
@@ -33422,6 +34617,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRestInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArgs{})
@@ -33498,6 +34695,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemHeatWaveClusterInput)(nil)).Elem(), GetMysqlDbSystemHeatWaveClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemHeatWaveClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
@@ -33506,6 +34705,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemRestInput)(nil)).Elem(), GetMysqlDbSystemRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemRestArrayInput)(nil)).Elem(), GetMysqlDbSystemRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemSecureConnectionArgs{})
@@ -33558,6 +34759,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemHeatWaveClusterInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemHeatWaveClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemHeatWaveClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowArgs{})
@@ -33566,6 +34769,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemRestInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemRestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemRestArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemRestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemSecureConnectionInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemSecureConnectionArgs{})
@@ -33674,6 +34879,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotRestOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotRestArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionOutput{})
@@ -33732,6 +34939,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemHeatWaveClusterOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemHeatWaveClusterArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenancePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
@@ -33740,6 +34949,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointPtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemRestOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemRestPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsOutput{})
@@ -33832,6 +35043,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceMaintenanceDisabledWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotRestOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionOutput{})
@@ -33908,6 +35121,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemHeatWaveClusterOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemHeatWaveClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
@@ -33916,6 +35131,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemRestOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemSecureConnectionOutput{})
@@ -33968,6 +35185,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemHeatWaveClusterOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemMaintenanceMaintenanceDisabledWindowOutput{})
@@ -33976,6 +35195,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemRestOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemRestArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemSecureConnectionOutput{})

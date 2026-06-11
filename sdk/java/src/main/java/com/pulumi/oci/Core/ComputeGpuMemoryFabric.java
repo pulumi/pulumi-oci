@@ -12,6 +12,7 @@ import com.pulumi.oci.Core.inputs.ComputeGpuMemoryFabricState;
 import com.pulumi.oci.Core.outputs.ComputeGpuMemoryFabricMemoryFabricPreferences;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -76,6 +77,20 @@ public class ComputeGpuMemoryFabric extends com.pulumi.resources.CustomResource 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * List of GPU memory cluster OCIDs within this GPU memory fabric.
+     * 
+     */
+    @Export(name="computeGpuMemoryClusters", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> computeGpuMemoryClusters;
+
+    /**
+     * @return List of GPU memory cluster OCIDs within this GPU memory fabric.
+     * 
+     */
+    public Output<List<String>> computeGpuMemoryClusters() {
+        return this.computeGpuMemoryClusters;
     }
     /**
      * The OCID of the compute GPU memory fabric.

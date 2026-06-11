@@ -146,6 +146,15 @@ type DedicatedAiCluster struct {
 	// * OAI_A100_80G_X2
 	// * OAI_A100_40G_X1
 	// * OAI_A100_40G_X4
+	// * B200_X1
+	// * B200_X2
+	// * B200_X4
+	// * B200_X8
+	// * OAI_B200_X1
+	// * OAI_B200_X2
+	// * OAI_B200_X4
+	// * OAI_B200_X8
+	// * SB_B200_X1
 	//
 	// The following shapes can only be used to deploy imported models:
 	// * A10_X1, A10_X2, A10_X4
@@ -281,6 +290,15 @@ type dedicatedAiClusterState struct {
 	// * OAI_A100_80G_X2
 	// * OAI_A100_40G_X1
 	// * OAI_A100_40G_X4
+	// * B200_X1
+	// * B200_X2
+	// * B200_X4
+	// * B200_X8
+	// * OAI_B200_X1
+	// * OAI_B200_X2
+	// * OAI_B200_X4
+	// * OAI_B200_X8
+	// * SB_B200_X1
 	//
 	// The following shapes can only be used to deploy imported models:
 	// * A10_X1, A10_X2, A10_X4
@@ -375,6 +393,15 @@ type DedicatedAiClusterState struct {
 	// * OAI_A100_80G_X2
 	// * OAI_A100_40G_X1
 	// * OAI_A100_40G_X4
+	// * B200_X1
+	// * B200_X2
+	// * B200_X4
+	// * B200_X8
+	// * OAI_B200_X1
+	// * OAI_B200_X2
+	// * OAI_B200_X4
+	// * OAI_B200_X8
+	// * SB_B200_X1
 	//
 	// The following shapes can only be used to deploy imported models:
 	// * A10_X1, A10_X2, A10_X4
@@ -461,6 +488,15 @@ type dedicatedAiClusterArgs struct {
 	// * OAI_A100_80G_X2
 	// * OAI_A100_40G_X1
 	// * OAI_A100_40G_X4
+	// * B200_X1
+	// * B200_X2
+	// * B200_X4
+	// * B200_X8
+	// * OAI_B200_X1
+	// * OAI_B200_X2
+	// * OAI_B200_X4
+	// * OAI_B200_X8
+	// * SB_B200_X1
 	//
 	// The following shapes can only be used to deploy imported models:
 	// * A10_X1, A10_X2, A10_X4
@@ -544,6 +580,15 @@ type DedicatedAiClusterArgs struct {
 	// * OAI_A100_80G_X2
 	// * OAI_A100_40G_X1
 	// * OAI_A100_40G_X4
+	// * B200_X1
+	// * B200_X2
+	// * B200_X4
+	// * B200_X8
+	// * OAI_B200_X1
+	// * OAI_B200_X2
+	// * OAI_B200_X4
+	// * OAI_B200_X8
+	// * SB_B200_X1
 	//
 	// The following shapes can only be used to deploy imported models:
 	// * A10_X1, A10_X2, A10_X4
@@ -763,6 +808,15 @@ func (o DedicatedAiClusterOutput) UnitCount() pulumi.IntOutput {
 // * OAI_A100_80G_X2
 // * OAI_A100_40G_X1
 // * OAI_A100_40G_X4
+// * B200_X1
+// * B200_X2
+// * B200_X4
+// * B200_X8
+// * OAI_B200_X1
+// * OAI_B200_X2
+// * OAI_B200_X4
+// * OAI_B200_X8
+// * SB_B200_X1
 //
 // The following shapes can only be used to deploy imported models:
 // * A10_X1, A10_X2, A10_X4

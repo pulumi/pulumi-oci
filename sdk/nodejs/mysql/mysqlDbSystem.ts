@@ -83,7 +83,12 @@ import * as utilities from "../utilities";
  *     },
  *     hostnameLabel: mysqlDbSystemHostnameLabel,
  *     ipAddress: mysqlDbSystemIpAddress,
+ *     ipv6addressIpv6subnetCidrPairDetails: {
+ *         ipv6address: mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+ *         ipv6subnetCidr: mysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+ *     },
  *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable === "true",
+ *     isIpv6enabled: mysqlDbSystemIsIpv6enabled === "true",
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *         maintenanceDisabledWindows: [{
@@ -102,6 +107,10 @@ import * as utilities from "../utilities";
  *         isEnabled: mysqlDbSystemReadEndpointIsEnabled === "true",
  *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
  *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
+ *         readEndpointIpv6addressIpv6subnetCidrPairDetails: {
+ *             ipv6address: mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+ *             ipv6subnetCidr: mysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
+ *         },
  *     },
  *     rest: {
  *         configuration: mysqlDbSystemRestConfiguration,
@@ -290,6 +299,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     declare public readonly ipAddress: pulumi.Output<string>;
     /**
+     * (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     */
+    declare public readonly ipv6addressIpv6subnetCidrPairDetails: pulumi.Output<outputs.Mysql.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails>;
+    /**
      * If the DB System has a HeatWave Cluster attached.
      */
     declare public /*out*/ readonly isHeatWaveClusterAttached: pulumi.Output<boolean>;
@@ -299,6 +312,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     declare public readonly isHighlyAvailable: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     */
+    declare public readonly isIpv6enabled: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycleState.
      */
@@ -424,8 +441,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["heatWaveClusters"] = state?.heatWaveClusters;
             resourceInputs["hostnameLabel"] = state?.hostnameLabel;
             resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["ipv6addressIpv6subnetCidrPairDetails"] = state?.ipv6addressIpv6subnetCidrPairDetails;
             resourceInputs["isHeatWaveClusterAttached"] = state?.isHeatWaveClusterAttached;
             resourceInputs["isHighlyAvailable"] = state?.isHighlyAvailable;
+            resourceInputs["isIpv6enabled"] = state?.isIpv6enabled;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["maintenance"] = state?.maintenance;
             resourceInputs["mysqlVersion"] = state?.mysqlVersion;
@@ -483,7 +502,9 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["hostnameLabel"] = args?.hostnameLabel;
             resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["ipv6addressIpv6subnetCidrPairDetails"] = args?.ipv6addressIpv6subnetCidrPairDetails;
             resourceInputs["isHighlyAvailable"] = args?.isHighlyAvailable;
+            resourceInputs["isIpv6enabled"] = args?.isIpv6enabled;
             resourceInputs["maintenance"] = args?.maintenance;
             resourceInputs["mysqlVersion"] = args?.mysqlVersion;
             resourceInputs["nsgIds"] = args?.nsgIds;
@@ -646,6 +667,10 @@ export interface MysqlDbSystemState {
      */
     ipAddress?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     */
+    ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<inputs.Mysql.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails | undefined>;
+    /**
      * If the DB System has a HeatWave Cluster attached.
      */
     isHeatWaveClusterAttached?: pulumi.Input<boolean | undefined>;
@@ -655,6 +680,10 @@ export interface MysqlDbSystemState {
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     isHighlyAvailable?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     */
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
@@ -854,11 +883,19 @@ export interface MysqlDbSystemArgs {
      */
     ipAddress?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     */
+    ipv6addressIpv6subnetCidrPairDetails?: pulumi.Input<inputs.Mysql.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetails | undefined>;
+    /**
      * (Updatable) Specifies if the DB System is highly available.
      *
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
     isHighlyAvailable?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     */
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */

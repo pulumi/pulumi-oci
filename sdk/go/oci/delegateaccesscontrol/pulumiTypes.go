@@ -26,6 +26,8 @@ type GetDelegatedResourceAccessRequestApprovalInfo struct {
 	ApproverId string `pulumi:"approverId"`
 	// Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
 	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeOfAction string `pulumi:"timeOfAction"`
 }
 
 // GetDelegatedResourceAccessRequestApprovalInfoInput is an input type that accepts GetDelegatedResourceAccessRequestApprovalInfoArgs and GetDelegatedResourceAccessRequestApprovalInfoOutput values.
@@ -52,6 +54,8 @@ type GetDelegatedResourceAccessRequestApprovalInfoArgs struct {
 	ApproverId pulumi.StringInput `pulumi:"approverId"`
 	// Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
 	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeOfAction pulumi.StringInput `pulumi:"timeOfAction"`
 }
 
 func (GetDelegatedResourceAccessRequestApprovalInfoArgs) ElementType() reflect.Type {
@@ -133,6 +137,11 @@ func (o GetDelegatedResourceAccessRequestApprovalInfoOutput) ApproverId() pulumi
 // Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
 func (o GetDelegatedResourceAccessRequestApprovalInfoOutput) TimeApprovedForAccess() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDelegatedResourceAccessRequestApprovalInfo) string { return v.TimeApprovedForAccess }).(pulumi.StringOutput)
+}
+
+// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDelegatedResourceAccessRequestApprovalInfoOutput) TimeOfAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDelegatedResourceAccessRequestApprovalInfo) string { return v.TimeOfAction }).(pulumi.StringOutput)
 }
 
 type GetDelegatedResourceAccessRequestApprovalInfoArrayOutput struct{ *pulumi.OutputState }
@@ -608,7 +617,9 @@ type GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryColl
 	ClosureComment string `pulumi:"closureComment"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+	// List of Database ID for which access is requested. This parameter is required when database access is needed.
+	DatabaseIdLists []string `pulumi:"databaseIdLists"`
+	// List of Database unique names for which access is requested. This parameter is required when database access in needed.
 	DatabaseNameLists []string `pulumi:"databaseNameLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -690,7 +701,9 @@ type GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryColl
 	ClosureComment pulumi.StringInput `pulumi:"closureComment"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+	// List of Database ID for which access is requested. This parameter is required when database access is needed.
+	DatabaseIdLists pulumi.StringArrayInput `pulumi:"databaseIdLists"`
+	// List of Database unique names for which access is requested. This parameter is required when database access in needed.
 	DatabaseNameLists pulumi.StringArrayInput `pulumi:"databaseNameLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -831,7 +844,14 @@ func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryC
 	}).(pulumi.StringOutput)
 }
 
-// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+// List of Database ID for which access is requested. This parameter is required when database access is needed.
+func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemOutput) DatabaseIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItem) []string {
+		return v.DatabaseIdLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// List of Database unique names for which access is requested. This parameter is required when database access in needed.
 func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemOutput) DatabaseNameLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItem) []string {
 		return v.DatabaseNameLists
@@ -1074,6 +1094,8 @@ type GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryColl
 	ApproverId string `pulumi:"approverId"`
 	// Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
 	TimeApprovedForAccess string `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeOfAction string `pulumi:"timeOfAction"`
 }
 
 // GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoInput is an input type that accepts GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoArgs and GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoOutput values.
@@ -1100,6 +1122,8 @@ type GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryColl
 	ApproverId pulumi.StringInput `pulumi:"approverId"`
 	// Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
 	TimeApprovedForAccess pulumi.StringInput `pulumi:"timeApprovedForAccess"`
+	// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeOfAction pulumi.StringInput `pulumi:"timeOfAction"`
 }
 
 func (GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoArgs) ElementType() reflect.Type {
@@ -1192,6 +1216,13 @@ func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryC
 func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoOutput) TimeApprovedForAccess() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo) string {
 		return v.TimeApprovedForAccess
+	}).(pulumi.StringOutput)
+}
+
+// Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfoOutput) TimeOfAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo) string {
+		return v.TimeOfAction
 	}).(pulumi.StringOutput)
 }
 
@@ -1771,9 +1802,9 @@ type GetDelegationControlsDelegationControlSummaryCollectionItem struct {
 	TimeDeleted string `pulumi:"timeDeleted"`
 	// Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+	// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 	VaultId string `pulumi:"vaultId"`
-	// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+	// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 	VaultKeyId string `pulumi:"vaultKeyId"`
 }
 
@@ -1829,9 +1860,9 @@ type GetDelegationControlsDelegationControlSummaryCollectionItemArgs struct {
 	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
 	// Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+	// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
-	// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+	// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 	VaultKeyId pulumi.StringInput `pulumi:"vaultKeyId"`
 }
 
@@ -2004,12 +2035,12 @@ func (o GetDelegationControlsDelegationControlSummaryCollectionItemOutput) TimeU
 	return o.ApplyT(func(v GetDelegationControlsDelegationControlSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
+// The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 func (o GetDelegationControlsDelegationControlSummaryCollectionItemOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDelegationControlsDelegationControlSummaryCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
 }
 
-// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+// The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 func (o GetDelegationControlsDelegationControlSummaryCollectionItemOutput) VaultKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDelegationControlsDelegationControlSummaryCollectionItem) string { return v.VaultKeyId }).(pulumi.StringOutput)
 }
@@ -2881,6 +2912,8 @@ func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionArrayOutp
 }
 
 type GetServiceProviderActionsServiceProviderActionSummaryCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
 	// Name of the infrastructure layer associated with the Service Provider Action.
 	Component string `pulumi:"component"`
 	// Display Name of the Service Provider Action.
@@ -2889,6 +2922,8 @@ type GetServiceProviderActionsServiceProviderActionSummaryCollectionItem struct 
 	Description string `pulumi:"description"`
 	// Unique Oracle assigned identifier for the Service Provider Action.
 	Id string `pulumi:"id"`
+	// Indicates whether the service provider action allows SSH access.
+	IsSshAccessAllowed bool `pulumi:"isSshAccessAllowed"`
 	// A filter to return only resources that match the entire name given.
 	Name string `pulumi:"name"`
 	// Fine grained properties associated with the Delegation Control.
@@ -2913,6 +2948,8 @@ type GetServiceProviderActionsServiceProviderActionSummaryCollectionItemInput in
 }
 
 type GetServiceProviderActionsServiceProviderActionSummaryCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Name of the infrastructure layer associated with the Service Provider Action.
 	Component pulumi.StringInput `pulumi:"component"`
 	// Display Name of the Service Provider Action.
@@ -2921,6 +2958,8 @@ type GetServiceProviderActionsServiceProviderActionSummaryCollectionItemArgs str
 	Description pulumi.StringInput `pulumi:"description"`
 	// Unique Oracle assigned identifier for the Service Provider Action.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the service provider action allows SSH access.
+	IsSshAccessAllowed pulumi.BoolInput `pulumi:"isSshAccessAllowed"`
 	// A filter to return only resources that match the entire name given.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Fine grained properties associated with the Delegation Control.
@@ -2984,6 +3023,13 @@ func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutpu
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceProviderActionsServiceProviderActionSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
 // Name of the infrastructure layer associated with the Service Provider Action.
 func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutput) Component() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderActionsServiceProviderActionSummaryCollectionItem) string { return v.Component }).(pulumi.StringOutput)
@@ -3006,6 +3052,13 @@ func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutpu
 // Unique Oracle assigned identifier for the Service Provider Action.
 func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderActionsServiceProviderActionSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the service provider action allows SSH access.
+func (o GetServiceProviderActionsServiceProviderActionSummaryCollectionItemOutput) IsSshAccessAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetServiceProviderActionsServiceProviderActionSummaryCollectionItem) bool {
+		return v.IsSshAccessAllowed
+	}).(pulumi.BoolOutput)
 }
 
 // A filter to return only resources that match the entire name given.

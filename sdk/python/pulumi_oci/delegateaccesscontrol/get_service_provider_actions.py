@@ -57,6 +57,9 @@ class GetServiceProviderActionsResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the Service Provider Action.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property

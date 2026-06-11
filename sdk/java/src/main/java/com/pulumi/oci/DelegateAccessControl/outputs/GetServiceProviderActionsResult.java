@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceProviderActionsResult {
+    /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
     private String compartmentId;
     private @Nullable List<GetServiceProviderActionsFilter> filters;
     /**
@@ -45,6 +49,10 @@ public final class GetServiceProviderActionsResult {
     private @Nullable String state;
 
     private GetServiceProviderActionsResult() {}
+    /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }

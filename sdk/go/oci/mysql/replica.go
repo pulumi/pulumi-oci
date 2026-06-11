@@ -107,6 +107,8 @@ type Replica struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address pulumi.StringOutput `pulumi:"ipv6address"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected pulumi.BoolOutput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
@@ -192,6 +194,8 @@ type replicaState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress *string `pulumi:"ipAddress"`
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address *string `pulumi:"ipv6address"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
@@ -245,6 +249,8 @@ type ReplicaState struct {
 	FreeformTags pulumi.StringMapInput
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringPtrInput
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address pulumi.StringPtrInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected pulumi.BoolPtrInput
 	// A message describing the state of the read replica.
@@ -454,6 +460,11 @@ func (o ReplicaOutput) FreeformTags() pulumi.StringMapOutput {
 // The IP address the read replica is configured to listen on.
 func (o ReplicaOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The IPv6 address the read replica is configured to listen on.
+func (o ReplicaOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.

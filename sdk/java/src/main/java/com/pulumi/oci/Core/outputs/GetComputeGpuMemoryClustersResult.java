@@ -36,6 +36,7 @@ public final class GetComputeGpuMemoryClustersResult {
      */
     private List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollection> computeGpuMemoryClusterCollections;
     private @Nullable String computeGpuMemoryClusterId;
+    private @Nullable String computeGpuMemoryFabricId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -80,6 +81,9 @@ public final class GetComputeGpuMemoryClustersResult {
     public Optional<String> computeGpuMemoryClusterId() {
         return Optional.ofNullable(this.computeGpuMemoryClusterId);
     }
+    public Optional<String> computeGpuMemoryFabricId() {
+        return Optional.ofNullable(this.computeGpuMemoryFabricId);
+    }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -112,6 +116,7 @@ public final class GetComputeGpuMemoryClustersResult {
         private @Nullable String computeClusterId;
         private List<GetComputeGpuMemoryClustersComputeGpuMemoryClusterCollection> computeGpuMemoryClusterCollections;
         private @Nullable String computeGpuMemoryClusterId;
+        private @Nullable String computeGpuMemoryFabricId;
         private @Nullable String displayName;
         private @Nullable List<GetComputeGpuMemoryClustersFilter> filters;
         private String id;
@@ -123,6 +128,7 @@ public final class GetComputeGpuMemoryClustersResult {
     	      this.computeClusterId = defaults.computeClusterId;
     	      this.computeGpuMemoryClusterCollections = defaults.computeGpuMemoryClusterCollections;
     	      this.computeGpuMemoryClusterId = defaults.computeGpuMemoryClusterId;
+    	      this.computeGpuMemoryFabricId = defaults.computeGpuMemoryFabricId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -166,6 +172,12 @@ public final class GetComputeGpuMemoryClustersResult {
             return this;
         }
         @CustomType.Setter
+        public Builder computeGpuMemoryFabricId(@Nullable String computeGpuMemoryFabricId) {
+
+            this.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
 
             this.displayName = displayName;
@@ -195,6 +207,7 @@ public final class GetComputeGpuMemoryClustersResult {
             _resultValue.computeClusterId = computeClusterId;
             _resultValue.computeGpuMemoryClusterCollections = computeGpuMemoryClusterCollections;
             _resultValue.computeGpuMemoryClusterId = computeGpuMemoryClusterId;
+            _resultValue.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;

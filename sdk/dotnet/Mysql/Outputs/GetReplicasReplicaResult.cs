@@ -62,6 +62,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// The IPv6 address the read replica is configured to listen on.
+        /// </summary>
+        public readonly string Ipv6address;
+        /// <summary>
         /// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         /// </summary>
         public readonly bool IsDeleteProtected;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string ipAddress,
 
+            string ipv6address,
+
             bool isDeleteProtected,
 
             string lifecycleDetails,
@@ -184,6 +190,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IpAddress = ipAddress;
+            Ipv6address = ipv6address;
             IsDeleteProtected = isDeleteProtected;
             LifecycleDetails = lifecycleDetails;
             MysqlVersion = mysqlVersion;

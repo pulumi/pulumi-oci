@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Hostname = ipv6Hostname,
     ///         IpAddress = ipv6IpAddress,
     ///         Ipv6subnetCidr = ipv6Ipv6subnetCidr,
     ///         Lifetime = ipv6Lifetime,
@@ -90,6 +91,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+        /// </summary>
+        [Output("hostname")]
+        public Output<string> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
@@ -234,6 +241,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+        /// </summary>
+        [Input("hostname")]
+        public Input<string>? Hostname { get; set; }
+
+        /// <summary>
         /// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
         /// </summary>
         [Input("ipAddress")]
@@ -324,6 +337,12 @@ namespace Pulumi.Oci.Core
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+        /// </summary>
+        [Input("hostname")]
+        public Input<string>? Hostname { get; set; }
 
         /// <summary>
         /// An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`

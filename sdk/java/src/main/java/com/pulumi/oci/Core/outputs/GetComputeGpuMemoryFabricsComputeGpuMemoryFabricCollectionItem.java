@@ -29,6 +29,11 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
      */
     private String compartmentId;
     /**
+     * @return List of GPU memory clusters within this GPU memory fabric.
+     * 
+     */
+    private List<String> computeGpuMemoryClusters;
+    /**
      * @return A filter to return only the listings that matches the given GPU memory fabric id.
      * 
      */
@@ -155,6 +160,13 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return List of GPU memory clusters within this GPU memory fabric.
+     * 
+     */
+    public List<String> computeGpuMemoryClusters() {
+        return this.computeGpuMemoryClusters;
     }
     /**
      * @return A filter to return only the listings that matches the given GPU memory fabric id.
@@ -316,6 +328,7 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
         private Map<String,String> additionalData;
         private String availableHostCount;
         private String compartmentId;
+        private List<String> computeGpuMemoryClusters;
         private String computeGpuMemoryFabricId;
         private String computeHpcIslandId;
         private String computeLocalBlockId;
@@ -343,6 +356,7 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
     	      this.additionalData = defaults.additionalData;
     	      this.availableHostCount = defaults.availableHostCount;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeGpuMemoryClusters = defaults.computeGpuMemoryClusters;
     	      this.computeGpuMemoryFabricId = defaults.computeGpuMemoryFabricId;
     	      this.computeHpcIslandId = defaults.computeHpcIslandId;
     	      this.computeLocalBlockId = defaults.computeLocalBlockId;
@@ -389,6 +403,17 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder computeGpuMemoryClusters(List<String> computeGpuMemoryClusters) {
+            if (computeGpuMemoryClusters == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItem", "computeGpuMemoryClusters");
+            }
+            this.computeGpuMemoryClusters = computeGpuMemoryClusters;
+            return this;
+        }
+        public Builder computeGpuMemoryClusters(String... computeGpuMemoryClusters) {
+            return computeGpuMemoryClusters(List.of(computeGpuMemoryClusters));
         }
         @CustomType.Setter
         public Builder computeGpuMemoryFabricId(String computeGpuMemoryFabricId) {
@@ -566,6 +591,7 @@ public final class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionIte
             _resultValue.additionalData = additionalData;
             _resultValue.availableHostCount = availableHostCount;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeGpuMemoryClusters = computeGpuMemoryClusters;
             _resultValue.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
             _resultValue.computeHpcIslandId = computeHpcIslandId;
             _resultValue.computeLocalBlockId = computeLocalBlockId;

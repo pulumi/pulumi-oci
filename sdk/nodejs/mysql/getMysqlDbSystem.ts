@@ -158,6 +158,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly ipAddress: string;
     /**
+     * Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     */
+    readonly ipv6addressIpv6subnetCidrPairDetails: outputs.Mysql.GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetail[];
+    /**
      * If the DB System has a HeatWave Cluster attached.
      */
     readonly isHeatWaveClusterAttached: boolean;
@@ -165,6 +169,10 @@ export interface GetMysqlDbSystemResult {
      * Specifies if the DB System is highly available.
      */
     readonly isHighlyAvailable: boolean;
+    /**
+     * Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+     */
+    readonly isIpv6enabled: boolean;
     /**
      * Additional information about the current lifecycleState.
      */

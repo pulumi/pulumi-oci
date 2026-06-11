@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string Hostname;
         /// <summary>
+        /// Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+        /// </summary>
+        public readonly bool MustUseIpv6onDualStack;
+        /// <summary>
         /// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
         /// </summary>
         public readonly int Port;
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string hostname,
 
+            bool mustUseIpv6onDualStack,
+
             int port,
 
             string sourceType,
@@ -60,6 +66,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         {
             AnonymousTransactionsHandlings = anonymousTransactionsHandlings;
             Hostname = hostname;
+            MustUseIpv6onDualStack = mustUseIpv6onDualStack;
             Port = port;
             SourceType = sourceType;
             SslCaCertificates = sslCaCertificates;

@@ -13,6 +13,795 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDomainsUsersUserIdcsLastModifiedBy struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// The OCID of the user's support account.
+	Ocid string `pulumi:"ocid"`
+	// User Token URI
+	Ref string `pulumi:"ref"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserIdcsLastModifiedByInput is an input type that accepts GetDomainsUsersUserIdcsLastModifiedByArgs and GetDomainsUsersUserIdcsLastModifiedByOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserIdcsLastModifiedByInput` via:
+//
+//	GetDomainsUsersUserIdcsLastModifiedByArgs{...}
+type GetDomainsUsersUserIdcsLastModifiedByInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserIdcsLastModifiedByOutput() GetDomainsUsersUserIdcsLastModifiedByOutput
+	ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(context.Context) GetDomainsUsersUserIdcsLastModifiedByOutput
+}
+
+type GetDomainsUsersUserIdcsLastModifiedByArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// The OCID of the user's support account.
+	Ocid pulumi.StringInput `pulumi:"ocid"`
+	// User Token URI
+	Ref pulumi.StringInput `pulumi:"ref"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserIdcsLastModifiedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserIdcsLastModifiedBy)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserIdcsLastModifiedByArgs) ToGetDomainsUsersUserIdcsLastModifiedByOutput() GetDomainsUsersUserIdcsLastModifiedByOutput {
+	return i.ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserIdcsLastModifiedByArgs) ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsLastModifiedByOutput)
+}
+
+// GetDomainsUsersUserIdcsLastModifiedByArrayInput is an input type that accepts GetDomainsUsersUserIdcsLastModifiedByArray and GetDomainsUsersUserIdcsLastModifiedByArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserIdcsLastModifiedByArrayInput` via:
+//
+//	GetDomainsUsersUserIdcsLastModifiedByArray{ GetDomainsUsersUserIdcsLastModifiedByArgs{...} }
+type GetDomainsUsersUserIdcsLastModifiedByArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserIdcsLastModifiedByArrayOutput() GetDomainsUsersUserIdcsLastModifiedByArrayOutput
+	ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(context.Context) GetDomainsUsersUserIdcsLastModifiedByArrayOutput
+}
+
+type GetDomainsUsersUserIdcsLastModifiedByArray []GetDomainsUsersUserIdcsLastModifiedByInput
+
+func (GetDomainsUsersUserIdcsLastModifiedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserIdcsLastModifiedBy)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserIdcsLastModifiedByArray) ToGetDomainsUsersUserIdcsLastModifiedByArrayOutput() GetDomainsUsersUserIdcsLastModifiedByArrayOutput {
+	return i.ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserIdcsLastModifiedByArray) ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsLastModifiedByArrayOutput)
+}
+
+type GetDomainsUsersUserIdcsLastModifiedByOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserIdcsLastModifiedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserIdcsLastModifiedBy)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) ToGetDomainsUsersUserIdcsLastModifiedByOutput() GetDomainsUsersUserIdcsLastModifiedByOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIdcsLastModifiedBy) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// The OCID of the user's support account.
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) Ocid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIdcsLastModifiedBy) string { return v.Ocid }).(pulumi.StringOutput)
+}
+
+// User Token URI
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) Ref() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIdcsLastModifiedBy) string { return v.Ref }).(pulumi.StringOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIdcsLastModifiedBy) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIdcsLastModifiedBy) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserIdcsLastModifiedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserIdcsLastModifiedBy)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ToGetDomainsUsersUserIdcsLastModifiedByArrayOutput() GetDomainsUsersUserIdcsLastModifiedByArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserIdcsLastModifiedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserIdcsLastModifiedBy {
+		return vs[0].([]GetDomainsUsersUserIdcsLastModifiedBy)[vs[1].(int)]
+	}).(GetDomainsUsersUserIdcsLastModifiedByOutput)
+}
+
+type GetDomainsUsersUserIm struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary bool `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserImInput is an input type that accepts GetDomainsUsersUserImArgs and GetDomainsUsersUserImOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserImInput` via:
+//
+//	GetDomainsUsersUserImArgs{...}
+type GetDomainsUsersUserImInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserImOutput() GetDomainsUsersUserImOutput
+	ToGetDomainsUsersUserImOutputWithContext(context.Context) GetDomainsUsersUserImOutput
+}
+
+type GetDomainsUsersUserImArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserImArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserIm)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserImArgs) ToGetDomainsUsersUserImOutput() GetDomainsUsersUserImOutput {
+	return i.ToGetDomainsUsersUserImOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserImArgs) ToGetDomainsUsersUserImOutputWithContext(ctx context.Context) GetDomainsUsersUserImOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserImOutput)
+}
+
+// GetDomainsUsersUserImArrayInput is an input type that accepts GetDomainsUsersUserImArray and GetDomainsUsersUserImArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserImArrayInput` via:
+//
+//	GetDomainsUsersUserImArray{ GetDomainsUsersUserImArgs{...} }
+type GetDomainsUsersUserImArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserImArrayOutput() GetDomainsUsersUserImArrayOutput
+	ToGetDomainsUsersUserImArrayOutputWithContext(context.Context) GetDomainsUsersUserImArrayOutput
+}
+
+type GetDomainsUsersUserImArray []GetDomainsUsersUserImInput
+
+func (GetDomainsUsersUserImArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserIm)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserImArray) ToGetDomainsUsersUserImArrayOutput() GetDomainsUsersUserImArrayOutput {
+	return i.ToGetDomainsUsersUserImArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserImArray) ToGetDomainsUsersUserImArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserImArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserImArrayOutput)
+}
+
+type GetDomainsUsersUserImOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserImOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserIm)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserImOutput) ToGetDomainsUsersUserImOutput() GetDomainsUsersUserImOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserImOutput) ToGetDomainsUsersUserImOutputWithContext(ctx context.Context) GetDomainsUsersUserImOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserImOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIm) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+func (o GetDomainsUsersUserImOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIm) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserImOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIm) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserImOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserIm) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserImArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserImArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserIm)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserImArrayOutput) ToGetDomainsUsersUserImArrayOutput() GetDomainsUsersUserImArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserImArrayOutput) ToGetDomainsUsersUserImArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserImArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserImArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserImOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserIm {
+		return vs[0].([]GetDomainsUsersUserIm)[vs[1].(int)]
+	}).(GetDomainsUsersUserImOutput)
+}
+
+type GetDomainsUsersUserMeta struct {
+	// The DateTime the Resource was added to the Service Provider
+	Created string `pulumi:"created"`
+	// The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+	LastModified string `pulumi:"lastModified"`
+	// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+	Location string `pulumi:"location"`
+	// Name of the resource type of the resource--for example, Users or Groups
+	ResourceType string `pulumi:"resourceType"`
+	// The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+	Version string `pulumi:"version"`
+}
+
+// GetDomainsUsersUserMetaInput is an input type that accepts GetDomainsUsersUserMetaArgs and GetDomainsUsersUserMetaOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserMetaInput` via:
+//
+//	GetDomainsUsersUserMetaArgs{...}
+type GetDomainsUsersUserMetaInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserMetaOutput() GetDomainsUsersUserMetaOutput
+	ToGetDomainsUsersUserMetaOutputWithContext(context.Context) GetDomainsUsersUserMetaOutput
+}
+
+type GetDomainsUsersUserMetaArgs struct {
+	// The DateTime the Resource was added to the Service Provider
+	Created pulumi.StringInput `pulumi:"created"`
+	// The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+	LastModified pulumi.StringInput `pulumi:"lastModified"`
+	// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+	Location pulumi.StringInput `pulumi:"location"`
+	// Name of the resource type of the resource--for example, Users or Groups
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDomainsUsersUserMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserMeta)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserMetaArgs) ToGetDomainsUsersUserMetaOutput() GetDomainsUsersUserMetaOutput {
+	return i.ToGetDomainsUsersUserMetaOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserMetaArgs) ToGetDomainsUsersUserMetaOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserMetaOutput)
+}
+
+// GetDomainsUsersUserMetaArrayInput is an input type that accepts GetDomainsUsersUserMetaArray and GetDomainsUsersUserMetaArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserMetaArrayInput` via:
+//
+//	GetDomainsUsersUserMetaArray{ GetDomainsUsersUserMetaArgs{...} }
+type GetDomainsUsersUserMetaArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserMetaArrayOutput() GetDomainsUsersUserMetaArrayOutput
+	ToGetDomainsUsersUserMetaArrayOutputWithContext(context.Context) GetDomainsUsersUserMetaArrayOutput
+}
+
+type GetDomainsUsersUserMetaArray []GetDomainsUsersUserMetaInput
+
+func (GetDomainsUsersUserMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserMeta)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserMetaArray) ToGetDomainsUsersUserMetaArrayOutput() GetDomainsUsersUserMetaArrayOutput {
+	return i.ToGetDomainsUsersUserMetaArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserMetaArray) ToGetDomainsUsersUserMetaArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserMetaArrayOutput)
+}
+
+type GetDomainsUsersUserMetaOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserMeta)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserMetaOutput) ToGetDomainsUsersUserMetaOutput() GetDomainsUsersUserMetaOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserMetaOutput) ToGetDomainsUsersUserMetaOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaOutput {
+	return o
+}
+
+// The DateTime the Resource was added to the Service Provider
+func (o GetDomainsUsersUserMetaOutput) Created() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserMeta) string { return v.Created }).(pulumi.StringOutput)
+}
+
+// The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+func (o GetDomainsUsersUserMetaOutput) LastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserMeta) string { return v.LastModified }).(pulumi.StringOutput)
+}
+
+// The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+func (o GetDomainsUsersUserMetaOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserMeta) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// Name of the resource type of the resource--for example, Users or Groups
+func (o GetDomainsUsersUserMetaOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserMeta) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+func (o GetDomainsUsersUserMetaOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserMeta) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserMeta)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserMetaArrayOutput) ToGetDomainsUsersUserMetaArrayOutput() GetDomainsUsersUserMetaArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserMetaArrayOutput) ToGetDomainsUsersUserMetaArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserMetaArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserMeta {
+		return vs[0].([]GetDomainsUsersUserMeta)[vs[1].(int)]
+	}).(GetDomainsUsersUserMetaOutput)
+}
+
+type GetDomainsUsersUserName struct {
+	// Last name
+	FamilyName string `pulumi:"familyName"`
+	// Full name
+	Formatted string `pulumi:"formatted"`
+	// First name
+	GivenName string `pulumi:"givenName"`
+	// Prefix
+	HonorificPrefix string `pulumi:"honorificPrefix"`
+	// Suffix
+	HonorificSuffix string `pulumi:"honorificSuffix"`
+	// Middle name
+	MiddleName string `pulumi:"middleName"`
+}
+
+// GetDomainsUsersUserNameInput is an input type that accepts GetDomainsUsersUserNameArgs and GetDomainsUsersUserNameOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserNameInput` via:
+//
+//	GetDomainsUsersUserNameArgs{...}
+type GetDomainsUsersUserNameInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserNameOutput() GetDomainsUsersUserNameOutput
+	ToGetDomainsUsersUserNameOutputWithContext(context.Context) GetDomainsUsersUserNameOutput
+}
+
+type GetDomainsUsersUserNameArgs struct {
+	// Last name
+	FamilyName pulumi.StringInput `pulumi:"familyName"`
+	// Full name
+	Formatted pulumi.StringInput `pulumi:"formatted"`
+	// First name
+	GivenName pulumi.StringInput `pulumi:"givenName"`
+	// Prefix
+	HonorificPrefix pulumi.StringInput `pulumi:"honorificPrefix"`
+	// Suffix
+	HonorificSuffix pulumi.StringInput `pulumi:"honorificSuffix"`
+	// Middle name
+	MiddleName pulumi.StringInput `pulumi:"middleName"`
+}
+
+func (GetDomainsUsersUserNameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserName)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserNameArgs) ToGetDomainsUsersUserNameOutput() GetDomainsUsersUserNameOutput {
+	return i.ToGetDomainsUsersUserNameOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserNameArgs) ToGetDomainsUsersUserNameOutputWithContext(ctx context.Context) GetDomainsUsersUserNameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserNameOutput)
+}
+
+// GetDomainsUsersUserNameArrayInput is an input type that accepts GetDomainsUsersUserNameArray and GetDomainsUsersUserNameArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserNameArrayInput` via:
+//
+//	GetDomainsUsersUserNameArray{ GetDomainsUsersUserNameArgs{...} }
+type GetDomainsUsersUserNameArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserNameArrayOutput() GetDomainsUsersUserNameArrayOutput
+	ToGetDomainsUsersUserNameArrayOutputWithContext(context.Context) GetDomainsUsersUserNameArrayOutput
+}
+
+type GetDomainsUsersUserNameArray []GetDomainsUsersUserNameInput
+
+func (GetDomainsUsersUserNameArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserName)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserNameArray) ToGetDomainsUsersUserNameArrayOutput() GetDomainsUsersUserNameArrayOutput {
+	return i.ToGetDomainsUsersUserNameArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserNameArray) ToGetDomainsUsersUserNameArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserNameArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserNameArrayOutput)
+}
+
+type GetDomainsUsersUserNameOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserNameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserName)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserNameOutput) ToGetDomainsUsersUserNameOutput() GetDomainsUsersUserNameOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserNameOutput) ToGetDomainsUsersUserNameOutputWithContext(ctx context.Context) GetDomainsUsersUserNameOutput {
+	return o
+}
+
+// Last name
+func (o GetDomainsUsersUserNameOutput) FamilyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.FamilyName }).(pulumi.StringOutput)
+}
+
+// Full name
+func (o GetDomainsUsersUserNameOutput) Formatted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.Formatted }).(pulumi.StringOutput)
+}
+
+// First name
+func (o GetDomainsUsersUserNameOutput) GivenName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.GivenName }).(pulumi.StringOutput)
+}
+
+// Prefix
+func (o GetDomainsUsersUserNameOutput) HonorificPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.HonorificPrefix }).(pulumi.StringOutput)
+}
+
+// Suffix
+func (o GetDomainsUsersUserNameOutput) HonorificSuffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.HonorificSuffix }).(pulumi.StringOutput)
+}
+
+// Middle name
+func (o GetDomainsUsersUserNameOutput) MiddleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserName) string { return v.MiddleName }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserNameArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserNameArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserName)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserNameArrayOutput) ToGetDomainsUsersUserNameArrayOutput() GetDomainsUsersUserNameArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserNameArrayOutput) ToGetDomainsUsersUserNameArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserNameArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserNameArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserNameOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserName {
+		return vs[0].([]GetDomainsUsersUserName)[vs[1].(int)]
+	}).(GetDomainsUsersUserNameOutput)
+}
+
+type GetDomainsUsersUserPhoneNumber struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary bool `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+	// A Boolean value that indicates if the phone number is verified.
+	Verified bool `pulumi:"verified"`
+}
+
+// GetDomainsUsersUserPhoneNumberInput is an input type that accepts GetDomainsUsersUserPhoneNumberArgs and GetDomainsUsersUserPhoneNumberOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserPhoneNumberInput` via:
+//
+//	GetDomainsUsersUserPhoneNumberArgs{...}
+type GetDomainsUsersUserPhoneNumberInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserPhoneNumberOutput() GetDomainsUsersUserPhoneNumberOutput
+	ToGetDomainsUsersUserPhoneNumberOutputWithContext(context.Context) GetDomainsUsersUserPhoneNumberOutput
+}
+
+type GetDomainsUsersUserPhoneNumberArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+	// A Boolean value that indicates if the phone number is verified.
+	Verified pulumi.BoolInput `pulumi:"verified"`
+}
+
+func (GetDomainsUsersUserPhoneNumberArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserPhoneNumber)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserPhoneNumberArgs) ToGetDomainsUsersUserPhoneNumberOutput() GetDomainsUsersUserPhoneNumberOutput {
+	return i.ToGetDomainsUsersUserPhoneNumberOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserPhoneNumberArgs) ToGetDomainsUsersUserPhoneNumberOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhoneNumberOutput)
+}
+
+// GetDomainsUsersUserPhoneNumberArrayInput is an input type that accepts GetDomainsUsersUserPhoneNumberArray and GetDomainsUsersUserPhoneNumberArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserPhoneNumberArrayInput` via:
+//
+//	GetDomainsUsersUserPhoneNumberArray{ GetDomainsUsersUserPhoneNumberArgs{...} }
+type GetDomainsUsersUserPhoneNumberArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserPhoneNumberArrayOutput() GetDomainsUsersUserPhoneNumberArrayOutput
+	ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(context.Context) GetDomainsUsersUserPhoneNumberArrayOutput
+}
+
+type GetDomainsUsersUserPhoneNumberArray []GetDomainsUsersUserPhoneNumberInput
+
+func (GetDomainsUsersUserPhoneNumberArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserPhoneNumber)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserPhoneNumberArray) ToGetDomainsUsersUserPhoneNumberArrayOutput() GetDomainsUsersUserPhoneNumberArrayOutput {
+	return i.ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserPhoneNumberArray) ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhoneNumberArrayOutput)
+}
+
+type GetDomainsUsersUserPhoneNumberOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserPhoneNumberOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserPhoneNumber)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserPhoneNumberOutput) ToGetDomainsUsersUserPhoneNumberOutput() GetDomainsUsersUserPhoneNumberOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhoneNumberOutput) ToGetDomainsUsersUserPhoneNumberOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserPhoneNumberOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoneNumber) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+func (o GetDomainsUsersUserPhoneNumberOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoneNumber) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserPhoneNumberOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoneNumber) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserPhoneNumberOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoneNumber) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// A Boolean value that indicates if the phone number is verified.
+func (o GetDomainsUsersUserPhoneNumberOutput) Verified() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoneNumber) bool { return v.Verified }).(pulumi.BoolOutput)
+}
+
+type GetDomainsUsersUserPhoneNumberArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserPhoneNumberArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserPhoneNumber)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserPhoneNumberArrayOutput) ToGetDomainsUsersUserPhoneNumberArrayOutput() GetDomainsUsersUserPhoneNumberArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhoneNumberArrayOutput) ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhoneNumberArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserPhoneNumberOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserPhoneNumber {
+		return vs[0].([]GetDomainsUsersUserPhoneNumber)[vs[1].(int)]
+	}).(GetDomainsUsersUserPhoneNumberOutput)
+}
+
+type GetDomainsUsersUserPhoto struct {
+	// A human readable name, primarily used for display purposes.
+	Display string `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary bool `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type string `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value string `pulumi:"value"`
+}
+
+// GetDomainsUsersUserPhotoInput is an input type that accepts GetDomainsUsersUserPhotoArgs and GetDomainsUsersUserPhotoOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserPhotoInput` via:
+//
+//	GetDomainsUsersUserPhotoArgs{...}
+type GetDomainsUsersUserPhotoInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserPhotoOutput() GetDomainsUsersUserPhotoOutput
+	ToGetDomainsUsersUserPhotoOutputWithContext(context.Context) GetDomainsUsersUserPhotoOutput
+}
+
+type GetDomainsUsersUserPhotoArgs struct {
+	// A human readable name, primarily used for display purposes.
+	Display pulumi.StringInput `pulumi:"display"`
+	// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+	// A label indicating the attribute's function.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The value of a X509 certificate.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDomainsUsersUserPhotoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserPhoto)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserPhotoArgs) ToGetDomainsUsersUserPhotoOutput() GetDomainsUsersUserPhotoOutput {
+	return i.ToGetDomainsUsersUserPhotoOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserPhotoArgs) ToGetDomainsUsersUserPhotoOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhotoOutput)
+}
+
+// GetDomainsUsersUserPhotoArrayInput is an input type that accepts GetDomainsUsersUserPhotoArray and GetDomainsUsersUserPhotoArrayOutput values.
+// You can construct a concrete instance of `GetDomainsUsersUserPhotoArrayInput` via:
+//
+//	GetDomainsUsersUserPhotoArray{ GetDomainsUsersUserPhotoArgs{...} }
+type GetDomainsUsersUserPhotoArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsUsersUserPhotoArrayOutput() GetDomainsUsersUserPhotoArrayOutput
+	ToGetDomainsUsersUserPhotoArrayOutputWithContext(context.Context) GetDomainsUsersUserPhotoArrayOutput
+}
+
+type GetDomainsUsersUserPhotoArray []GetDomainsUsersUserPhotoInput
+
+func (GetDomainsUsersUserPhotoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserPhoto)(nil)).Elem()
+}
+
+func (i GetDomainsUsersUserPhotoArray) ToGetDomainsUsersUserPhotoArrayOutput() GetDomainsUsersUserPhotoArrayOutput {
+	return i.ToGetDomainsUsersUserPhotoArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsUsersUserPhotoArray) ToGetDomainsUsersUserPhotoArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhotoArrayOutput)
+}
+
+type GetDomainsUsersUserPhotoOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserPhotoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsUsersUserPhoto)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserPhotoOutput) ToGetDomainsUsersUserPhotoOutput() GetDomainsUsersUserPhotoOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhotoOutput) ToGetDomainsUsersUserPhotoOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoOutput {
+	return o
+}
+
+// A human readable name, primarily used for display purposes.
+func (o GetDomainsUsersUserPhotoOutput) Display() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoto) string { return v.Display }).(pulumi.StringOutput)
+}
+
+// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+func (o GetDomainsUsersUserPhotoOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoto) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// A label indicating the attribute's function.
+func (o GetDomainsUsersUserPhotoOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoto) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The value of a X509 certificate.
+func (o GetDomainsUsersUserPhotoOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsUsersUserPhoto) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDomainsUsersUserPhotoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsUsersUserPhotoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsUsersUserPhoto)(nil)).Elem()
+}
+
+func (o GetDomainsUsersUserPhotoArrayOutput) ToGetDomainsUsersUserPhotoArrayOutput() GetDomainsUsersUserPhotoArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhotoArrayOutput) ToGetDomainsUsersUserPhotoArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoArrayOutput {
+	return o
+}
+
+func (o GetDomainsUsersUserPhotoArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserPhotoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserPhoto {
+		return vs[0].([]GetDomainsUsersUserPhoto)[vs[1].(int)]
+	}).(GetDomainsUsersUserPhotoOutput)
+}
+
 type GetDomainsUsersUserRole struct {
 	// A human readable name, primarily used for display purposes.
 	Display string `pulumi:"display"`
@@ -14059,6 +14848,18 @@ func (o GetUsersUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUsersUser
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserIdcsLastModifiedByInput)(nil)).Elem(), GetDomainsUsersUserIdcsLastModifiedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserIdcsLastModifiedByArrayInput)(nil)).Elem(), GetDomainsUsersUserIdcsLastModifiedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserImInput)(nil)).Elem(), GetDomainsUsersUserImArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserImArrayInput)(nil)).Elem(), GetDomainsUsersUserImArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserMetaInput)(nil)).Elem(), GetDomainsUsersUserMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserMetaArrayInput)(nil)).Elem(), GetDomainsUsersUserMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserNameInput)(nil)).Elem(), GetDomainsUsersUserNameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserNameArrayInput)(nil)).Elem(), GetDomainsUsersUserNameArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserPhoneNumberInput)(nil)).Elem(), GetDomainsUsersUserPhoneNumberArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserPhoneNumberArrayInput)(nil)).Elem(), GetDomainsUsersUserPhoneNumberArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserPhotoInput)(nil)).Elem(), GetDomainsUsersUserPhotoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserPhotoArrayInput)(nil)).Elem(), GetDomainsUsersUserPhotoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserRoleInput)(nil)).Elem(), GetDomainsUsersUserRoleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserRoleArrayInput)(nil)).Elem(), GetDomainsUsersUserRoleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsUsersUserTagInput)(nil)).Elem(), GetDomainsUsersUserTagArgs{})
@@ -14269,6 +15070,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserArrayInput)(nil)).Elem(), GetUsersUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityInput)(nil)).Elem(), GetUsersUserCapabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsersUserCapabilityArrayInput)(nil)).Elem(), GetUsersUserCapabilityArray{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserIdcsLastModifiedByOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserIdcsLastModifiedByArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserImOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserImArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserMetaOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserMetaArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserNameOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserNameArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserPhoneNumberOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserPhoneNumberArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserPhotoOutput{})
+	pulumi.RegisterOutputType(GetDomainsUsersUserPhotoArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserRoleOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserRoleArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainsUsersUserTagOutput{})

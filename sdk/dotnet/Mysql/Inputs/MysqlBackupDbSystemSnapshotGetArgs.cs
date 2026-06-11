@@ -187,6 +187,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        /// </summary>
+        [Input("ipv6address")]
+        public Input<string>? Ipv6address { get; set; }
+
+        /// <summary>
         /// Specifies if the DB System is highly available.
         /// </summary>
         [Input("isHighlyAvailable")]

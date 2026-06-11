@@ -58,7 +58,7 @@ type GetServiceProviderArgs struct {
 
 // A collection of values returned by getServiceProvider.
 type GetServiceProviderResult struct {
-	// The OCID of the compartment that contains the Delegation Control.
+	// The OCID of the compartment that contains the Service Provider.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -123,7 +123,7 @@ func (o GetServiceProviderResultOutput) ToGetServiceProviderResultOutputWithCont
 	return o
 }
 
-// The OCID of the compartment that contains the Delegation Control.
+// The OCID of the compartment that contains the Service Provider.
 func (o GetServiceProviderResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProviderResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

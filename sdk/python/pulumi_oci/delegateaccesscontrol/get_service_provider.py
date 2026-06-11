@@ -77,7 +77,7 @@ class GetServiceProviderResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID of the compartment that contains the Delegation Control.
+        The OCID of the compartment that contains the Service Provider.
         """
         return pulumi.get(self, "compartment_id")
 

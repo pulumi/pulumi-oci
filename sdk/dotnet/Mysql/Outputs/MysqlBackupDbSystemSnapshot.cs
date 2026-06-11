@@ -98,6 +98,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
+        /// An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix.
+        /// </summary>
+        public readonly string? Ipv6address;
+        /// <summary>
         /// Specifies if the DB System is highly available.
         /// </summary>
         public readonly bool? IsHighlyAvailable;
@@ -198,6 +202,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? ipAddress,
 
+            string? ipv6address,
+
             bool? isHighlyAvailable,
 
             ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotMaintenance> maintenances,
@@ -247,6 +253,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             HostnameLabel = hostnameLabel;
             Id = id;
             IpAddress = ipAddress;
+            Ipv6address = ipv6address;
             IsHighlyAvailable = isHighlyAvailable;
             Maintenances = maintenances;
             MysqlVersion = mysqlVersion;

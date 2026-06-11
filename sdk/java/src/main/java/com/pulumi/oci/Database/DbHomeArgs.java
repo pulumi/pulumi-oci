@@ -124,18 +124,33 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Represents database home will be managed by oracle or customer
+     * 
+     */
+    @Import(name="homeType")
+    private @Nullable Output<String> homeType;
+
+    /**
+     * @return Represents database home will be managed by oracle or customer
+     * 
+     */
+    public Optional<Output<String>> homeType() {
+        return Optional.ofNullable(this.homeType);
     }
 
     /**
@@ -245,6 +260,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.enableDatabaseDelete = $.enableDatabaseDelete;
         this.freeformTags = $.freeformTags;
+        this.homeType = $.homeType;
         this.isDesupportedVersion = $.isDesupportedVersion;
         this.isUnifiedAuditingEnabled = $.isUnifiedAuditingEnabled;
         this.kmsKeyId = $.kmsKeyId;
@@ -415,7 +431,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -426,13 +442,34 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param homeType Represents database home will be managed by oracle or customer
+         * 
+         * @return builder
+         * 
+         */
+        public Builder homeType(@Nullable Output<String> homeType) {
+            $.homeType = homeType;
+            return this;
+        }
+
+        /**
+         * @param homeType Represents database home will be managed by oracle or customer
+         * 
+         * @return builder
+         * 
+         */
+        public Builder homeType(String homeType) {
+            return homeType(Output.of(homeType));
         }
 
         /**

@@ -25174,6 +25174,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
                  additional_data: Mapping[str, _builtins.str],
                  available_host_count: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_gpu_memory_clusters: Sequence[_builtins.str],
                  compute_gpu_memory_fabric_id: _builtins.str,
                  compute_hpc_island_id: _builtins.str,
                  compute_local_block_id: _builtins.str,
@@ -25199,6 +25200,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         :param Mapping[str, _builtins.str] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         :param _builtins.str available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence[_builtins.str] compute_gpu_memory_clusters: List of GPU memory clusters within this GPU memory fabric.
         :param _builtins.str compute_gpu_memory_fabric_id: A filter to return only the listings that matches the given GPU memory fabric id.
         :param _builtins.str compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
         :param _builtins.str compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
@@ -25224,6 +25226,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         pulumi.set(__self__, "additional_data", additional_data)
         pulumi.set(__self__, "available_host_count", available_host_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_gpu_memory_clusters", compute_gpu_memory_clusters)
         pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
         pulumi.set(__self__, "compute_hpc_island_id", compute_hpc_island_id)
         pulumi.set(__self__, "compute_local_block_id", compute_local_block_id)
@@ -25269,6 +25272,14 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeGpuMemoryClusters")
+    def compute_gpu_memory_clusters(self) -> Sequence[_builtins.str]:
+        """
+        List of GPU memory clusters within this GPU memory fabric.
+        """
+        return pulumi.get(self, "compute_gpu_memory_clusters")
 
     @_builtins.property
     @pulumi.getter(name="computeGpuMemoryFabricId")
@@ -45912,6 +45923,7 @@ class GetIpv6sIpv6Result(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 hostname: _builtins.str,
                  id: _builtins.str,
                  ip_address: _builtins.str,
                  ip_state: _builtins.str,
@@ -45939,6 +45951,7 @@ class GetIpv6sIpv6Result(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "ip_state", ip_state)
@@ -45986,6 +45999,11 @@ class GetIpv6sIpv6Result(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        return pulumi.get(self, "hostname")
 
     @_builtins.property
     @pulumi.getter

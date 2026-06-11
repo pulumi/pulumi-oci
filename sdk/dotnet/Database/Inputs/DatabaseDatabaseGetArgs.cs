@@ -162,6 +162,18 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
 
+        [Input("managedSoftwareUpdateDetails")]
+        private InputList<Inputs.DatabaseDatabaseManagedSoftwareUpdateDetailGetArgs>? _managedSoftwareUpdateDetails;
+
+        /// <summary>
+        /// The database registered for Oracle Managed Database Software Updates.
+        /// </summary>
+        public InputList<Inputs.DatabaseDatabaseManagedSoftwareUpdateDetailGetArgs> ManagedSoftwareUpdateDetails
+        {
+            get => _managedSoftwareUpdateDetails ?? (_managedSoftwareUpdateDetails = new InputList<Inputs.DatabaseDatabaseManagedSoftwareUpdateDetailGetArgs>());
+            set => _managedSoftwareUpdateDetails = value;
+        }
+
         /// <summary>
         /// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         /// </summary>

@@ -214,6 +214,9 @@ namespace Pulumi.Oci.DelegateAccessControl
     [OutputType]
     public sealed class GetServiceProviderActionsResult
     {
+        /// <summary>
+        /// The OCID of the compartment that contains the Service Provider Action.
+        /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetServiceProviderActionsFilterResult> Filters;
         /// <summary>

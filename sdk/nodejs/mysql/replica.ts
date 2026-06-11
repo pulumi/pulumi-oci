@@ -132,6 +132,10 @@ export class Replica extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly ipAddress: pulumi.Output<string>;
     /**
+     * The IPv6 address the read replica is configured to listen on.
+     */
+    declare public /*out*/ readonly ipv6address: pulumi.Output<string>;
+    /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */
     declare public readonly isDeleteProtected: pulumi.Output<boolean>;
@@ -212,6 +216,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["faultDomain"] = state?.faultDomain;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["ipv6address"] = state?.ipv6address;
             resourceInputs["isDeleteProtected"] = state?.isDeleteProtected;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["mysqlVersion"] = state?.mysqlVersion;
@@ -244,6 +249,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["encryptDatas"] = undefined /*out*/;
             resourceInputs["faultDomain"] = undefined /*out*/;
             resourceInputs["ipAddress"] = undefined /*out*/;
+            resourceInputs["ipv6address"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["mysqlVersion"] = undefined /*out*/;
             resourceInputs["nsgIds"] = undefined /*out*/;
@@ -310,6 +316,10 @@ export interface ReplicaState {
      * The IP address the read replica is configured to listen on.
      */
     ipAddress?: pulumi.Input<string | undefined>;
+    /**
+     * The IPv6 address the read replica is configured to listen on.
+     */
+    ipv6address?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */

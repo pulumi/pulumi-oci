@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Identity.DomainsIdentityPropagationTrustArgs;
 import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustState;
+import com.pulumi.oci.Identity.outputs.DomainsIdentityPropagationTrustCaCertChain;
+import com.pulumi.oci.Identity.outputs.DomainsIdentityPropagationTrustClaimValidation;
 import com.pulumi.oci.Identity.outputs.DomainsIdentityPropagationTrustIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.DomainsIdentityPropagationTrustIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.DomainsIdentityPropagationTrustImpersonationServiceUser;
@@ -42,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Identity.DomainsIdentityPropagationTrust;
  * import com.pulumi.oci.Identity.DomainsIdentityPropagationTrustArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustCaCertChainArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustClaimValidationArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustKeytabArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsIdentityPropagationTrustTagArgs;
@@ -64,16 +68,26 @@ import javax.annotation.Nullable;
  *             .name(identityPropagationTrustName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust")
  *             .type(identityPropagationTrustType)
+ *             .caCertChain(DomainsIdentityPropagationTrustCaCertChainArgs.builder()
+ *                 .rootCas(identityPropagationTrustCaCertChainRootCas)
+ *                 .intermediateCas(identityPropagationTrustCaCertChainIntermediateCas)
+ *                 .build())
  *             .accountId("accountId")
  *             .active(identityPropagationTrustActive)
  *             .allowImpersonation(identityPropagationTrustAllowImpersonation)
  *             .attributeSets("all")
  *             .attributes("")
  *             .authorization(identityPropagationTrustAuthorization)
+ *             .claimPropagations(identityPropagationTrustClaimPropagations)
+ *             .claimValidations(DomainsIdentityPropagationTrustClaimValidationArgs.builder()
+ *                 .name(identityPropagationTrustClaimValidationsName)
+ *                 .value(identityPropagationTrustClaimValidationsValue)
+ *                 .build())
  *             .clientClaimName(identityPropagationTrustClientClaimName)
  *             .clientClaimValues("clientClaimValues")
  *             .clockSkewSeconds(identityPropagationTrustClockSkewSeconds)
  *             .description(identityPropagationTrustDescription)
+ *             .impersonatingResource(identityPropagationTrustImpersonatingResource)
  *             .impersonationServiceUsers(DomainsIdentityPropagationTrustImpersonationServiceUserArgs.builder()
  *                 .rule(identityPropagationTrustImpersonationServiceUsersRule)
  *                 .value(testIdentityPropagationTrustUser.id())
@@ -252,6 +266,116 @@ public class DomainsIdentityPropagationTrust extends com.pulumi.resources.Custom
      */
     public Output<Optional<String>> authorization() {
         return Codegen.optional(this.authorization);
+    }
+    /**
+     * (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     * **Added In:** 2508041610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: complex
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="caCertChain", refs={DomainsIdentityPropagationTrustCaCertChain.class}, tree="[0]")
+    private Output<DomainsIdentityPropagationTrustCaCertChain> caCertChain;
+
+    /**
+     * @return (Updatable) Certificate trust store. This is required if identity propagation type is X509.
+     * 
+     * **Added In:** 2508041610
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * type: complex
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * 
+     */
+    public Output<DomainsIdentityPropagationTrustCaCertChain> caCertChain() {
+        return this.caCertChain;
+    }
+    /**
+     * (Updatable) A list of claims to propagate in RPST
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="claimPropagations", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> claimPropagations;
+
+    /**
+     * @return (Updatable) A list of claims to propagate in RPST
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Output<List<String>> claimPropagations() {
+        return this.claimPropagations;
+    }
+    /**
+     * (Updatable) A list of claim validations
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="claimValidations", refs={List.class,DomainsIdentityPropagationTrustClaimValidation.class}, tree="[0,1]")
+    private Output<List<DomainsIdentityPropagationTrustClaimValidation>> claimValidations;
+
+    /**
+     * @return (Updatable) A list of claim validations
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * idcsCompositeKey: [name]
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Output<List<DomainsIdentityPropagationTrustClaimValidation>> claimValidations() {
+        return this.claimValidations;
     }
     /**
      * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
@@ -632,6 +756,44 @@ public class DomainsIdentityPropagationTrust extends com.pulumi.resources.Custom
      */
     public Output<List<String>> idcsPreventedOperations() {
         return this.idcsPreventedOperations;
+    }
+    /**
+     * (Updatable) Defines the external workload that acts as impersonating resource principal.
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * * caseExact: true
+     * * idcsSearchable: false
+     * 
+     */
+    @Export(name="impersonatingResource", refs={String.class}, tree="[0]")
+    private Output<String> impersonatingResource;
+
+    /**
+     * @return (Updatable) Defines the external workload that acts as impersonating resource principal.
+     * 
+     * **Added In:** 2509172316
+     * 
+     * **SCIM++ Properties:**
+     * * type: string
+     * * multiValued: false
+     * * required: false
+     * * mutability: readWrite
+     * * returned: default
+     * * uniqueness: none
+     * * caseExact: true
+     * * idcsSearchable: false
+     * 
+     */
+    public Output<String> impersonatingResource() {
+        return this.impersonatingResource;
     }
     /**
      * (Updatable) The Impersonating Principal.

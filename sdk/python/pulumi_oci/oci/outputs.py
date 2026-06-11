@@ -477,7 +477,13 @@ __all__ = [
     'GetIotIotDomainsIotDomainCollectionResult',
     'GetIotIotDomainsIotDomainCollectionItemResult',
     'GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult',
+    'GetManagedKafkaAddonOptionsAddonOptionCollectionResult',
+    'GetManagedKafkaAddonOptionsAddonOptionCollectionItemResult',
+    'GetManagedKafkaAddonOptionsFilterResult',
     'GetManagedKafkaKafkaClusterAccessSubnetResult',
+    'GetManagedKafkaKafkaClusterAddonsAddonCollectionResult',
+    'GetManagedKafkaKafkaClusterAddonsAddonCollectionItemResult',
+    'GetManagedKafkaKafkaClusterAddonsFilterResult',
     'GetManagedKafkaKafkaClusterBrokerShapeResult',
     'GetManagedKafkaKafkaClusterConfigLatestConfigResult',
     'GetManagedKafkaKafkaClusterConfigVersionsFilterResult',
@@ -33416,6 +33422,86 @@ class GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult(dic
 
 
 @pulumi.output_type
+class GetManagedKafkaAddonOptionsAddonOptionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedKafkaAddonOptionsAddonOptionCollectionItemResult']):
+        """
+        :param Sequence['GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs'] items: List of kafka Cluster AddonOptions.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedKafkaAddonOptionsAddonOptionCollectionItemResult']:
+        """
+        List of kafka Cluster AddonOptions.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedKafkaAddonOptionsAddonOptionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str name: The name to filter on.
+        :param _builtins.str state: The current state of the KafkaClusterAddon.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the KafkaClusterAddon.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetManagedKafkaAddonOptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name to filter on.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetManagedKafkaKafkaClusterAccessSubnetResult(dict):
     def __init__(__self__, *,
                  subnets: Sequence[_builtins.str]):
@@ -33431,6 +33517,168 @@ class GetManagedKafkaKafkaClusterAccessSubnetResult(dict):
         Subnets OCIDs
         """
         return pulumi.get(self, "subnets")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterAddonsAddonCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedKafkaKafkaClusterAddonsAddonCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedKafkaKafkaClusterAddonsAddonCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterAddonsAddonCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 addon_type: _builtins.str,
+                 authentication_mechanism: _builtins.str,
+                 bootstrap_url: _builtins.str,
+                 description: _builtins.str,
+                 kafka_cluster_id: _builtins.str,
+                 name: _builtins.str,
+                 network_cidrs: Sequence[_builtins.str],
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str addon_type: The type of addon
+        :param _builtins.str authentication_mechanism: Authentication mechanism.
+        :param _builtins.str bootstrap_url: The bootstrap url of the kafka cluster.
+        :param _builtins.str description: Description of the add on
+        :param _builtins.str kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+        :param _builtins.str name: The name to filter on.
+        :param Sequence[_builtins.str] network_cidrs: A list of CIDR ranges for ingress/egress traffic.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str time_created: The time the addon was created.
+        :param _builtins.str time_updated: The time the addon was updated.
+        """
+        pulumi.set(__self__, "addon_type", addon_type)
+        pulumi.set(__self__, "authentication_mechanism", authentication_mechanism)
+        pulumi.set(__self__, "bootstrap_url", bootstrap_url)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "kafka_cluster_id", kafka_cluster_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_cidrs", network_cidrs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="addonType")
+    def addon_type(self) -> _builtins.str:
+        """
+        The type of addon
+        """
+        return pulumi.get(self, "addon_type")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationMechanism")
+    def authentication_mechanism(self) -> _builtins.str:
+        """
+        Authentication mechanism.
+        """
+        return pulumi.get(self, "authentication_mechanism")
+
+    @_builtins.property
+    @pulumi.getter(name="bootstrapUrl")
+    def bootstrap_url(self) -> _builtins.str:
+        """
+        The bootstrap url of the kafka cluster.
+        """
+        return pulumi.get(self, "bootstrap_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the add on
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="kafkaClusterId")
+    def kafka_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+        """
+        return pulumi.get(self, "kafka_cluster_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="networkCidrs")
+    def network_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        A list of CIDR ranges for ingress/egress traffic.
+        """
+        return pulumi.get(self, "network_cidrs")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the addon was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the addon was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterAddonsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name to filter on.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name to filter on.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

@@ -97,6 +97,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IotIotDomainGroupConfigureDataAccess{}
 	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
 		r = &ManagedKafkaKafkaCluster{}
+	case "oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon":
+		r = &ManagedKafkaKafkaClusterAddon{}
 	case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
 		r = &ManagedKafkaKafkaClusterConfig{}
 	case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
@@ -314,6 +316,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/managedKafkaKafkaCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/managedKafkaKafkaClusterAddon",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

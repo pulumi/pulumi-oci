@@ -71,6 +71,8 @@ type LookupIpv6Result struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
 	Id string `pulumi:"id"`
 	// The IPv6 address of the `IPv6` object. The address is within the IPv6 prefix of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
@@ -152,6 +154,11 @@ func (o LookupIpv6ResultOutput) DisplayName() pulumi.StringOutput {
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupIpv6ResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupIpv6Result) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+func (o LookupIpv6ResultOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIpv6Result) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.

@@ -156,6 +156,10 @@ export class Database extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     */
+    declare public readonly managedSoftwareUpdateDetails: pulumi.Output<outputs.Database.DatabaseManagedSoftwareUpdateDetail[]>;
+    /**
      * The national character set for the database.
      */
     declare public /*out*/ readonly ncharacterSet: pulumi.Output<string>;
@@ -199,7 +203,7 @@ export class Database extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    declare public /*out*/ readonly vmClusterId: pulumi.Output<string>;
+    declare public readonly vmClusterId: pulumi.Output<string>;
 
     /**
      * Create a Database resource with the given unique name, arguments, and options.
@@ -243,6 +247,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["lastBackupTimestamp"] = state?.lastBackupTimestamp;
             resourceInputs["lastFailedBackupTimestamp"] = state?.lastFailedBackupTimestamp;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managedSoftwareUpdateDetails"] = state?.managedSoftwareUpdateDetails;
             resourceInputs["ncharacterSet"] = state?.ncharacterSet;
             resourceInputs["patchVersion"] = state?.patchVersion;
             resourceInputs["pdbName"] = state?.pdbName;
@@ -260,9 +265,6 @@ export class Database extends pulumi.CustomResource {
             if (args?.database === undefined && !opts.urn) {
                 throw new Error("Missing required property 'database'");
             }
-            if (args?.dbHomeId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'dbHomeId'");
-            }
             if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
@@ -276,8 +278,10 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["kmsKeyMigration"] = args?.kmsKeyMigration;
             resourceInputs["kmsKeyRotation"] = args?.kmsKeyRotation;
             resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
+            resourceInputs["managedSoftwareUpdateDetails"] = args?.managedSoftwareUpdateDetails;
             resourceInputs["source"] = args?.source;
             resourceInputs["vaultId"] = args?.vaultId;
+            resourceInputs["vmClusterId"] = args?.vmClusterId;
             resourceInputs["characterSet"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
@@ -306,7 +310,6 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["storageSizeDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
-            resourceInputs["vmClusterId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Database.__pulumiType, name, resourceInputs, opts);
@@ -426,6 +429,10 @@ export interface DatabaseState {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     */
+    managedSoftwareUpdateDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseManagedSoftwareUpdateDetail>[] | undefined>;
+    /**
      * The national character set for the database.
      */
     ncharacterSet?: pulumi.Input<string | undefined>;
@@ -487,7 +494,7 @@ export interface DatabaseArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    dbHomeId: pulumi.Input<string>;
+    dbHomeId?: pulumi.Input<string | undefined>;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      *
@@ -509,6 +516,10 @@ export interface DatabaseArgs {
      */
     kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     */
+    managedSoftwareUpdateDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseManagedSoftwareUpdateDetail>[] | undefined>;
+    /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
     source: pulumi.Input<string>;
@@ -516,4 +527,8 @@ export interface DatabaseArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
     vaultId?: pulumi.Input<string | undefined>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     */
+    vmClusterId?: pulumi.Input<string | undefined>;
 }

@@ -152,6 +152,7 @@ class _ReplicaState:
                  fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
                  is_delete_protected: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -180,6 +181,7 @@ class _ReplicaState:
         :param pulumi.Input[_builtins.str] fault_domain: The name of the Fault Domain the read replica is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] ip_address: The IP address the read replica is configured to listen on.
+        :param pulumi.Input[_builtins.str] ipv6address: The IPv6 address the read replica is configured to listen on.
         :param pulumi.Input[_builtins.bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the state of the read replica.
         :param pulumi.Input[_builtins.str] mysql_version: The MySQL version to be used by the read replica.
@@ -217,6 +219,8 @@ class _ReplicaState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address is not None:
+            pulumi.set(__self__, "ipv6address", ipv6address)
         if is_delete_protected is not None:
             pulumi.set(__self__, "is_delete_protected", is_delete_protected)
         if lifecycle_details is not None:
@@ -377,6 +381,18 @@ class _ReplicaState:
     @ip_address.setter
     def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IPv6 address the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "ipv6address")
+
+    @ipv6address.setter
+    def ipv6address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ipv6address", value)
 
     @_builtins.property
     @pulumi.getter(name="isDeleteProtected")
@@ -729,6 +745,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["encrypt_datas"] = None
             __props__.__dict__["fault_domain"] = None
             __props__.__dict__["ip_address"] = None
+            __props__.__dict__["ipv6address"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["mysql_version"] = None
             __props__.__dict__["nsg_ids"] = None
@@ -762,6 +779,7 @@ class Replica(pulumi.CustomResource):
             fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
             is_delete_protected: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
@@ -794,6 +812,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fault_domain: The name of the Fault Domain the read replica is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] ip_address: The IP address the read replica is configured to listen on.
+        :param pulumi.Input[_builtins.str] ipv6address: The IPv6 address the read replica is configured to listen on.
         :param pulumi.Input[_builtins.bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the state of the read replica.
         :param pulumi.Input[_builtins.str] mysql_version: The MySQL version to be used by the read replica.
@@ -824,6 +843,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ip_address"] = ip_address
+        __props__.__dict__["ipv6address"] = ipv6address
         __props__.__dict__["is_delete_protected"] = is_delete_protected
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["mysql_version"] = mysql_version
@@ -927,6 +947,14 @@ class Replica(pulumi.CustomResource):
         The IP address the read replica is configured to listen on.
         """
         return pulumi.get(self, "ip_address")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6address(self) -> pulumi.Output[_builtins.str]:
+        """
+        The IPv6 address the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "ipv6address")
 
     @_builtins.property
     @pulumi.getter(name="isDeleteProtected")

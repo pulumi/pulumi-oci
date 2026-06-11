@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -37,6 +38,11 @@ public final class MysqlDbSystemReadEndpoint {
      * 
      */
     private @Nullable String readEndpointIpAddress;
+    /**
+     * @return (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    private @Nullable MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails readEndpointIpv6addressIpv6subnetCidrPairDetails;
 
     private MysqlDbSystemReadEndpoint() {}
     /**
@@ -71,6 +77,13 @@ public final class MysqlDbSystemReadEndpoint {
     public Optional<String> readEndpointIpAddress() {
         return Optional.ofNullable(this.readEndpointIpAddress);
     }
+    /**
+     * @return (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public Optional<MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails> readEndpointIpv6addressIpv6subnetCidrPairDetails() {
+        return Optional.ofNullable(this.readEndpointIpv6addressIpv6subnetCidrPairDetails);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -85,6 +98,7 @@ public final class MysqlDbSystemReadEndpoint {
         private @Nullable Boolean isEnabled;
         private @Nullable String readEndpointHostnameLabel;
         private @Nullable String readEndpointIpAddress;
+        private @Nullable MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails readEndpointIpv6addressIpv6subnetCidrPairDetails;
         public Builder() {}
         public Builder(MysqlDbSystemReadEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,6 +106,7 @@ public final class MysqlDbSystemReadEndpoint {
     	      this.isEnabled = defaults.isEnabled;
     	      this.readEndpointHostnameLabel = defaults.readEndpointHostnameLabel;
     	      this.readEndpointIpAddress = defaults.readEndpointIpAddress;
+    	      this.readEndpointIpv6addressIpv6subnetCidrPairDetails = defaults.readEndpointIpv6addressIpv6subnetCidrPairDetails;
         }
 
         @CustomType.Setter
@@ -121,12 +136,19 @@ public final class MysqlDbSystemReadEndpoint {
             this.readEndpointIpAddress = readEndpointIpAddress;
             return this;
         }
+        @CustomType.Setter
+        public Builder readEndpointIpv6addressIpv6subnetCidrPairDetails(@Nullable MysqlDbSystemReadEndpointReadEndpointIpv6addressIpv6subnetCidrPairDetails readEndpointIpv6addressIpv6subnetCidrPairDetails) {
+
+            this.readEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
         public MysqlDbSystemReadEndpoint build() {
             final var _resultValue = new MysqlDbSystemReadEndpoint();
             _resultValue.excludeIps = excludeIps;
             _resultValue.isEnabled = isEnabled;
             _resultValue.readEndpointHostnameLabel = readEndpointHostnameLabel;
             _resultValue.readEndpointIpAddress = readEndpointIpAddress;
+            _resultValue.readEndpointIpv6addressIpv6subnetCidrPairDetails = readEndpointIpv6addressIpv6subnetCidrPairDetails;
             return _resultValue;
         }
     }

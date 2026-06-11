@@ -27,7 +27,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_consoles=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, encrypt_datas=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, security_attributes=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, telemetry_configurations=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_consoles=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, encrypt_datas=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, ipv6address_ipv6subnet_cidr_pair_details=None, is_heat_wave_cluster_attached=None, is_highly_available=None, is_ipv6enabled=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, security_attributes=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, telemetry_configurations=None, time_created=None, time_updated=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
@@ -115,12 +115,18 @@ class GetMysqlDbSystemResult:
         if ip_address and not isinstance(ip_address, str):
             raise TypeError("Expected argument 'ip_address' to be a str")
         pulumi.set(__self__, "ip_address", ip_address)
+        if ipv6address_ipv6subnet_cidr_pair_details and not isinstance(ipv6address_ipv6subnet_cidr_pair_details, list):
+            raise TypeError("Expected argument 'ipv6address_ipv6subnet_cidr_pair_details' to be a list")
+        pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
         if is_heat_wave_cluster_attached and not isinstance(is_heat_wave_cluster_attached, bool):
             raise TypeError("Expected argument 'is_heat_wave_cluster_attached' to be a bool")
         pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         if is_highly_available and not isinstance(is_highly_available, bool):
             raise TypeError("Expected argument 'is_highly_available' to be a bool")
         pulumi.set(__self__, "is_highly_available", is_highly_available)
+        if is_ipv6enabled and not isinstance(is_ipv6enabled, bool):
+            raise TypeError("Expected argument 'is_ipv6enabled' to be a bool")
+        pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -413,6 +419,14 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Sequence['outputs.GetMysqlDbSystemIpv6addressIpv6subnetCidrPairDetailResult']:
+        """
+        Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+        """
+        return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
+
+    @_builtins.property
     @pulumi.getter(name="isHeatWaveClusterAttached")
     def is_heat_wave_cluster_attached(self) -> _builtins.bool:
         """
@@ -427,6 +441,14 @@ class GetMysqlDbSystemResult:
         Specifies if the DB System is highly available.
         """
         return pulumi.get(self, "is_highly_available")
+
+    @_builtins.property
+    @pulumi.getter(name="isIpv6enabled")
+    def is_ipv6enabled(self) -> _builtins.bool:
+        """
+        Whether an IPv6 address has been allocated for the DB system when attached to an IPv6 enabled subnet. Default: False.
+        """
+        return pulumi.get(self, "is_ipv6enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -621,8 +643,10 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             hostname_label=self.hostname_label,
             id=self.id,
             ip_address=self.ip_address,
+            ipv6address_ipv6subnet_cidr_pair_details=self.ipv6address_ipv6subnet_cidr_pair_details,
             is_heat_wave_cluster_attached=self.is_heat_wave_cluster_attached,
             is_highly_available=self.is_highly_available,
+            is_ipv6enabled=self.is_ipv6enabled,
             lifecycle_details=self.lifecycle_details,
             maintenances=self.maintenances,
             mysql_version=self.mysql_version,
@@ -699,8 +723,10 @@ def get_mysql_db_system(db_system_id: Optional[_builtins.str] = None,
         hostname_label=pulumi.get(__ret__, 'hostname_label'),
         id=pulumi.get(__ret__, 'id'),
         ip_address=pulumi.get(__ret__, 'ip_address'),
+        ipv6address_ipv6subnet_cidr_pair_details=pulumi.get(__ret__, 'ipv6address_ipv6subnet_cidr_pair_details'),
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_highly_available=pulumi.get(__ret__, 'is_highly_available'),
+        is_ipv6enabled=pulumi.get(__ret__, 'is_ipv6enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenances=pulumi.get(__ret__, 'maintenances'),
         mysql_version=pulumi.get(__ret__, 'mysql_version'),
@@ -774,8 +800,10 @@ def get_mysql_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str
         hostname_label=pulumi.get(__response__, 'hostname_label'),
         id=pulumi.get(__response__, 'id'),
         ip_address=pulumi.get(__response__, 'ip_address'),
+        ipv6address_ipv6subnet_cidr_pair_details=pulumi.get(__response__, 'ipv6address_ipv6subnet_cidr_pair_details'),
         is_heat_wave_cluster_attached=pulumi.get(__response__, 'is_heat_wave_cluster_attached'),
         is_highly_available=pulumi.get(__response__, 'is_highly_available'),
+        is_ipv6enabled=pulumi.get(__response__, 'is_ipv6enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         maintenances=pulumi.get(__response__, 'maintenances'),
         mysql_version=pulumi.get(__response__, 'mysql_version'),

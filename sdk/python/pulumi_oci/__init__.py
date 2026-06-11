@@ -3127,6 +3127,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/databaseSoftwareScheduleManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/databaseSoftwareScheduleManagement:DatabaseSoftwareScheduleManagement": "DatabaseSoftwareScheduleManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/databaseUpgrade",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -8187,6 +8195,14 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster": "ManagedKafkaKafkaCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/managedKafkaKafkaClusterAddon",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon": "ManagedKafkaKafkaClusterAddon"
   }
  },
  {

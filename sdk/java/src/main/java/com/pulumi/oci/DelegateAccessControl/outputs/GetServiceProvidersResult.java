@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetServiceProvidersResult {
     /**
-     * @return The OCID of the compartment that contains the Delegation Control.
+     * @return The OCID of the compartment that contains the Service Provider.
      * 
      */
     private String compartmentId;
@@ -50,7 +50,7 @@ public final class GetServiceProvidersResult {
 
     private GetServiceProvidersResult() {}
     /**
-     * @return The OCID of the compartment that contains the Delegation Control.
+     * @return The OCID of the compartment that contains the Service Provider.
      * 
      */
     public String compartmentId() {

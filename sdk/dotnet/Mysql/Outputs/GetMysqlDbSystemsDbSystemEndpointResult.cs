@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
+        /// The internet protocol (IP) version of the IP address.
+        /// </summary>
+        public readonly string IpAddressVersion;
+        /// <summary>
         /// The access modes from the client that this endpoint supports.
         /// </summary>
         public readonly ImmutableArray<string> Modes;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string ipAddress,
 
+            string ipAddressVersion,
+
             ImmutableArray<string> modes,
 
             int port,
@@ -72,6 +78,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         {
             Hostname = hostname;
             IpAddress = ipAddress;
+            IpAddressVersion = ipAddressVersion;
             Modes = modes;
             Port = port;
             PortX = portX;

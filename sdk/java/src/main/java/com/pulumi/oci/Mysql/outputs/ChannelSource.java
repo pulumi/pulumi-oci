@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.ChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.ChannelSourceSslCaCertificate;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -25,6 +26,11 @@ public final class ChannelSource {
      * 
      */
     private String hostname;
+    /**
+     * @return (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    private @Nullable Boolean mustUseIpv6onDualStack;
     /**
      * @return (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      * 
@@ -70,6 +76,13 @@ public final class ChannelSource {
      */
     public String hostname() {
         return this.hostname;
+    }
+    /**
+     * @return (Updatable) Whether the connection of the channel will be requested using the IPv6 address of the dual stack DB system or not. Default: False.
+     * 
+     */
+    public Optional<Boolean> mustUseIpv6onDualStack() {
+        return Optional.ofNullable(this.mustUseIpv6onDualStack);
     }
     /**
      * @return (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -125,6 +138,7 @@ public final class ChannelSource {
     public static final class Builder {
         private @Nullable ChannelSourceAnonymousTransactionsHandling anonymousTransactionsHandling;
         private String hostname;
+        private @Nullable Boolean mustUseIpv6onDualStack;
         private String password;
         private @Nullable Integer port;
         private String sourceType;
@@ -136,6 +150,7 @@ public final class ChannelSource {
     	      Objects.requireNonNull(defaults);
     	      this.anonymousTransactionsHandling = defaults.anonymousTransactionsHandling;
     	      this.hostname = defaults.hostname;
+    	      this.mustUseIpv6onDualStack = defaults.mustUseIpv6onDualStack;
     	      this.password = defaults.password;
     	      this.port = defaults.port;
     	      this.sourceType = defaults.sourceType;
@@ -156,6 +171,12 @@ public final class ChannelSource {
               throw new MissingRequiredPropertyException("ChannelSource", "hostname");
             }
             this.hostname = hostname;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mustUseIpv6onDualStack(@Nullable Boolean mustUseIpv6onDualStack) {
+
+            this.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             return this;
         }
         @CustomType.Setter
@@ -206,6 +227,7 @@ public final class ChannelSource {
             final var _resultValue = new ChannelSource();
             _resultValue.anonymousTransactionsHandling = anonymousTransactionsHandling;
             _resultValue.hostname = hostname;
+            _resultValue.mustUseIpv6onDualStack = mustUseIpv6onDualStack;
             _resultValue.password = password;
             _resultValue.port = port;
             _resultValue.sourceType = sourceType;

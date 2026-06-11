@@ -138,6 +138,10 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// List of GPU memory cluster OCIDs within this GPU memory fabric.
+        /// </summary>
+        public readonly ImmutableArray<string> ComputeGpuMemoryClusters;
         public readonly string ComputeGpuMemoryFabricId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -228,6 +232,8 @@ namespace Pulumi.Oci.Core
 
             string compartmentId,
 
+            ImmutableArray<string> computeGpuMemoryClusters,
+
             string computeGpuMemoryFabricId,
 
             string computeHpcIslandId,
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.Core
             AdditionalData = additionalData;
             AvailableHostCount = availableHostCount;
             CompartmentId = compartmentId;
+            ComputeGpuMemoryClusters = computeGpuMemoryClusters;
             ComputeGpuMemoryFabricId = computeGpuMemoryFabricId;
             ComputeHpcIslandId = computeHpcIslandId;
             ComputeLocalBlockId = computeLocalBlockId;

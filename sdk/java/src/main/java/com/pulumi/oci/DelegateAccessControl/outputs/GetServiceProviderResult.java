@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetServiceProviderResult {
     /**
-     * @return The OCID of the compartment that contains the Delegation Control.
+     * @return The OCID of the compartment that contains the Service Provider.
      * 
      */
     private String compartmentId;
@@ -86,7 +86,7 @@ public final class GetServiceProviderResult {
 
     private GetServiceProviderResult() {}
     /**
-     * @return The OCID of the compartment that contains the Delegation Control.
+     * @return The OCID of the compartment that contains the Service Provider.
      * 
      */
     public String compartmentId() {

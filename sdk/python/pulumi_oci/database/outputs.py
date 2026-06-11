@@ -131,12 +131,20 @@ __all__ = [
     'DatabaseDatabaseDbBackupConfig',
     'DatabaseDatabaseDbBackupConfigBackupDestinationDetail',
     'DatabaseDatabaseEncryptionKeyLocationDetails',
+    'DatabaseDatabaseManagedSoftwareUpdateDetail',
+    'DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail',
+    'DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail',
+    'DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail',
     'DatabaseDatabaseManagementConfig',
     'DatabaseDatabasePatchOptions',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetails',
     'DatabaseDatabaseStorageSizeDetails',
     'DatabaseDbBackupConfig',
     'DatabaseDbBackupConfigBackupDestinationDetail',
+    'DatabaseManagedSoftwareUpdateDetail',
+    'DatabaseManagedSoftwareUpdateDetailMaintenanceDetail',
+    'DatabaseManagedSoftwareUpdateDetailPreferenceDetail',
+    'DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail',
     'DatabaseSnapshotStandbyConnectionString',
     'DatabaseSnapshotStandbyDataGuardGroup',
     'DatabaseSnapshotStandbyDataGuardGroupMember',
@@ -558,6 +566,10 @@ __all__ = [
     'GetDatabaseDatabaseDbBackupConfigResult',
     'GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDatabaseDatabaseEncryptionKeyLocationDetailResult',
+    'GetDatabaseDatabaseManagedSoftwareUpdateDetailResult',
+    'GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult',
+    'GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult',
+    'GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult',
     'GetDatabaseDatabaseManagementConfigResult',
     'GetDatabaseDatabasePatchOptionResult',
     'GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult',
@@ -584,6 +596,10 @@ __all__ = [
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult',
     'GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionResult',
+    'GetDatabaseManagedSoftwareUpdateDetailResult',
+    'GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult',
+    'GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult',
+    'GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult',
     'GetDatabasePdbConversionHistoryEntriesFilterResult',
     'GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult',
     'GetDatabaseSoftwareImagesDatabaseSoftwareImageResult',
@@ -599,12 +615,20 @@ __all__ = [
     'GetDatabasesDatabaseDatabaseDbBackupConfigResult',
     'GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult',
+    'GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult',
+    'GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult',
+    'GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult',
+    'GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult',
     'GetDatabasesDatabaseDatabaseManagementConfigResult',
     'GetDatabasesDatabaseDatabasePatchOptionResult',
     'GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult',
     'GetDatabasesDatabaseDatabaseStorageSizeDetailResult',
     'GetDatabasesDatabaseDbBackupConfigResult',
     'GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult',
+    'GetDatabasesDatabaseManagedSoftwareUpdateDetailResult',
+    'GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult',
+    'GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult',
+    'GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult',
     'GetDatabasesDatabaseStorageSizeDetailResult',
     'GetDatabasesFilterResult',
     'GetDbConnectionBundleAssociatedResourceDetailResult',
@@ -10296,6 +10320,8 @@ class DatabaseDatabase(dict):
             suggest = "kms_key_id"
         elif key == "kmsKeyVersionId":
             suggest = "kms_key_version_id"
+        elif key == "managedSoftwareUpdateDetails":
+            suggest = "managed_software_update_details"
         elif key == "ncharacterSet":
             suggest = "ncharacter_set"
         elif key == "patchOptions":
@@ -10356,6 +10382,7 @@ class DatabaseDatabase(dict):
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
                  kms_key_id: Optional[_builtins.str] = None,
                  kms_key_version_id: Optional[_builtins.str] = None,
+                 managed_software_update_details: Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetail']] = None,
                  ncharacter_set: Optional[_builtins.str] = None,
                  patch_options: Optional['outputs.DatabaseDatabasePatchOptions'] = None,
                  pdb_name: Optional[_builtins.str] = None,
@@ -10395,6 +10422,7 @@ class DatabaseDatabase(dict):
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param Sequence['DatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param 'DatabaseDatabasePatchOptionsArgs' patch_options: (Updatable) Options for DB Home and Database patching
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -10451,6 +10479,8 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        if managed_software_update_details is not None:
+            pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         if patch_options is not None:
@@ -10623,6 +10653,14 @@ class DatabaseDatabase(dict):
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
+
+    @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetail']]:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
@@ -11125,6 +11163,336 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
 
 
 @pulumi.output_type
+class DatabaseDatabaseManagedSoftwareUpdateDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnrolled":
+            suggest = "is_enrolled"
+        elif key == "maintenanceDetails":
+            suggest = "maintenance_details"
+        elif key == "preferenceDetails":
+            suggest = "preference_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseManagedSoftwareUpdateDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enrolled: Optional[_builtins.bool] = None,
+                 maintenance_details: Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail']] = None,
+                 preference_details: Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail']] = None):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        if is_enrolled is not None:
+            pulumi.set(__self__, "is_enrolled", is_enrolled)
+        if maintenance_details is not None:
+            pulumi.set(__self__, "maintenance_details", maintenance_details)
+        if preference_details is not None:
+            pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> Optional[_builtins.bool]:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail']]:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail']]:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeOfLastReadinessCheck":
+            suggest = "time_of_last_readiness_check"
+        elif key == "timeOfStatusUpdate":
+            suggest = "time_of_status_update"
+        elif key == "timeScheduled":
+            suggest = "time_scheduled"
+        elif key == "updateMode":
+            suggest = "update_mode"
+        elif key == "updateReadinessStatus":
+            suggest = "update_readiness_status"
+        elif key == "updateReadinessStatusDetails":
+            suggest = "update_readiness_status_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: Optional[_builtins.str] = None,
+                 time_of_status_update: Optional[_builtins.str] = None,
+                 time_scheduled: Optional[_builtins.str] = None,
+                 update_mode: Optional[_builtins.str] = None,
+                 update_readiness_status: Optional[_builtins.str] = None,
+                 update_readiness_status_details: Optional[_builtins.str] = None,
+                 version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        if time_of_last_readiness_check is not None:
+            pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        if time_of_status_update is not None:
+            pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        if time_scheduled is not None:
+            pulumi.set(__self__, "time_scheduled", time_scheduled)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if update_readiness_status is not None:
+            pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        if update_readiness_status_details is not None:
+            pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> Optional[_builtins.str]:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> Optional[_builtins.str]:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> Optional[_builtins.str]:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> Optional[_builtins.str]:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> Optional[_builtins.str]:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> Optional[_builtins.str]:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[_builtins.str]:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hourOfDay":
+            suggest = "hour_of_day"
+        elif key == "updateMode":
+            suggest = "update_mode"
+        elif key == "versionSchemeDetails":
+            suggest = "version_scheme_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 days_of_weeks: Optional[Sequence[_builtins.str]] = None,
+                 hour_of_day: Optional[_builtins.int] = None,
+                 update_mode: Optional[_builtins.str] = None,
+                 version_scheme_details: Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail']] = None):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if version_scheme_details is not None:
+            pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> Optional[_builtins.int]:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> Optional[_builtins.str]:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail']]:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "majorVersion":
+            suggest = "major_version"
+        elif key == "versionPreference":
+            suggest = "version_preference"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 major_version: Optional[_builtins.str] = None,
+                 source: Optional[_builtins.str] = None,
+                 version_preference: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+               
+               The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+               
+               For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
+        """
+        if major_version is not None:
+            pulumi.set(__self__, "major_version", major_version)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if version_preference is not None:
+            pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> Optional[_builtins.str]:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+
+        The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[_builtins.str]:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> Optional[_builtins.str]:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+
+        For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
+        """
+        return pulumi.get(self, "version_preference")
+
+
+@pulumi.output_type
 class DatabaseDatabaseManagementConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -11617,6 +11985,328 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class DatabaseManagedSoftwareUpdateDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnrolled":
+            suggest = "is_enrolled"
+        elif key == "maintenanceDetails":
+            suggest = "maintenance_details"
+        elif key == "preferenceDetails":
+            suggest = "preference_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseManagedSoftwareUpdateDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseManagedSoftwareUpdateDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseManagedSoftwareUpdateDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enrolled: Optional[_builtins.bool] = None,
+                 maintenance_details: Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailMaintenanceDetail']] = None,
+                 preference_details: Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailPreferenceDetail']] = None):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['DatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['DatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        if is_enrolled is not None:
+            pulumi.set(__self__, "is_enrolled", is_enrolled)
+        if maintenance_details is not None:
+            pulumi.set(__self__, "maintenance_details", maintenance_details)
+        if preference_details is not None:
+            pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> Optional[_builtins.bool]:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailMaintenanceDetail']]:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailPreferenceDetail']]:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class DatabaseManagedSoftwareUpdateDetailMaintenanceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeOfLastReadinessCheck":
+            suggest = "time_of_last_readiness_check"
+        elif key == "timeOfStatusUpdate":
+            suggest = "time_of_status_update"
+        elif key == "timeScheduled":
+            suggest = "time_scheduled"
+        elif key == "updateMode":
+            suggest = "update_mode"
+        elif key == "updateReadinessStatus":
+            suggest = "update_readiness_status"
+        elif key == "updateReadinessStatusDetails":
+            suggest = "update_readiness_status_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseManagedSoftwareUpdateDetailMaintenanceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseManagedSoftwareUpdateDetailMaintenanceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseManagedSoftwareUpdateDetailMaintenanceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: Optional[_builtins.str] = None,
+                 time_of_status_update: Optional[_builtins.str] = None,
+                 time_scheduled: Optional[_builtins.str] = None,
+                 update_mode: Optional[_builtins.str] = None,
+                 update_readiness_status: Optional[_builtins.str] = None,
+                 update_readiness_status_details: Optional[_builtins.str] = None,
+                 version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        if time_of_last_readiness_check is not None:
+            pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        if time_of_status_update is not None:
+            pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        if time_scheduled is not None:
+            pulumi.set(__self__, "time_scheduled", time_scheduled)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if update_readiness_status is not None:
+            pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        if update_readiness_status_details is not None:
+            pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> Optional[_builtins.str]:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> Optional[_builtins.str]:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> Optional[_builtins.str]:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> Optional[_builtins.str]:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> Optional[_builtins.str]:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> Optional[_builtins.str]:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[_builtins.str]:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class DatabaseManagedSoftwareUpdateDetailPreferenceDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hourOfDay":
+            suggest = "hour_of_day"
+        elif key == "updateMode":
+            suggest = "update_mode"
+        elif key == "versionSchemeDetails":
+            suggest = "version_scheme_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseManagedSoftwareUpdateDetailPreferenceDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseManagedSoftwareUpdateDetailPreferenceDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseManagedSoftwareUpdateDetailPreferenceDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 days_of_weeks: Optional[Sequence[_builtins.str]] = None,
+                 hour_of_day: Optional[_builtins.int] = None,
+                 update_mode: Optional[_builtins.str] = None,
+                 version_scheme_details: Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail']] = None):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hour_of_day is not None:
+            pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if version_scheme_details is not None:
+            pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> Optional[_builtins.int]:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> Optional[_builtins.str]:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Optional[Sequence['outputs.DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail']]:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "majorVersion":
+            suggest = "major_version"
+        elif key == "versionPreference":
+            suggest = "version_preference"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 major_version: Optional[_builtins.str] = None,
+                 source: Optional[_builtins.str] = None,
+                 version_preference: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        :param _builtins.str source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        if major_version is not None:
+            pulumi.set(__self__, "major_version", major_version)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if version_preference is not None:
+            pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> Optional[_builtins.str]:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[_builtins.str]:
+        """
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> Optional[_builtins.str]:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        return pulumi.get(self, "version_preference")
 
 
 @pulumi.output_type
@@ -13104,10 +13794,6 @@ class DbHomeDatabase(dict):
         :param _builtins.str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -13414,10 +14100,6 @@ class DbHomeDatabase(dict):
     def vm_cluster_id(self) -> Optional[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -45894,6 +46576,7 @@ class GetDatabaseDatabaseResult(dict):
                  is_active_data_guard_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
+                 managed_software_update_details: Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailResult'],
                  ncharacter_set: _builtins.str,
                  patch_options: Sequence['outputs.GetDatabaseDatabasePatchOptionResult'],
                  pdb_name: _builtins.str,
@@ -45923,6 +46606,7 @@ class GetDatabaseDatabaseResult(dict):
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param Sequence['GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param _builtins.str ncharacter_set: The national character set for the database.
         :param Sequence['GetDatabaseDatabasePatchOptionArgs'] patch_options: Options for DB Home and Database patching
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -45953,6 +46637,7 @@ class GetDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "patch_options", patch_options)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -46092,6 +46777,14 @@ class GetDatabaseDatabaseResult(dict):
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
+
+    @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailResult']:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
@@ -46467,6 +47160,221 @@ class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseManagedSoftwareUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 is_enrolled: _builtins.bool,
+                 maintenance_details: Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult'],
+                 preference_details: Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        pulumi.set(__self__, "is_enrolled", is_enrolled)
+        pulumi.set(__self__, "maintenance_details", maintenance_details)
+        pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> _builtins.bool:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult']:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: _builtins.str,
+                 time_of_status_update: _builtins.str,
+                 time_scheduled: _builtins.str,
+                 update_mode: _builtins.str,
+                 update_readiness_status: _builtins.str,
+                 update_readiness_status_details: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> _builtins.str:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> _builtins.str:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> _builtins.str:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> _builtins.str:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> _builtins.str:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence[_builtins.str],
+                 hour_of_day: _builtins.int,
+                 update_mode: _builtins.str,
+                 version_scheme_details: Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence[_builtins.str]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> _builtins.int:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult(dict):
+    def __init__(__self__, *,
+                 major_version: _builtins.str,
+                 source: _builtins.str,
+                 version_preference: _builtins.str):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        pulumi.set(__self__, "major_version", major_version)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        return pulumi.get(self, "version_preference")
 
 
 @pulumi.output_type
@@ -49160,6 +50068,221 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailWindowTypeDescriptionR
 
 
 @pulumi.output_type
+class GetDatabaseManagedSoftwareUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 is_enrolled: _builtins.bool,
+                 maintenance_details: Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult'],
+                 preference_details: Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        pulumi.set(__self__, "is_enrolled", is_enrolled)
+        pulumi.set(__self__, "maintenance_details", maintenance_details)
+        pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> _builtins.bool:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult']:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class GetDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: _builtins.str,
+                 time_of_status_update: _builtins.str,
+                 time_scheduled: _builtins.str,
+                 update_mode: _builtins.str,
+                 update_readiness_status: _builtins.str,
+                 update_readiness_status_details: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> _builtins.str:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> _builtins.str:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> _builtins.str:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> _builtins.str:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> _builtins.str:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence[_builtins.str],
+                 hour_of_day: _builtins.int,
+                 update_mode: _builtins.str,
+                 version_scheme_details: Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence[_builtins.str]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> _builtins.int:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Sequence['outputs.GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult(dict):
+    def __init__(__self__, *,
+                 major_version: _builtins.str,
+                 source: _builtins.str,
+                 version_preference: _builtins.str):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        pulumi.set(__self__, "major_version", major_version)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        return pulumi.get(self, "version_preference")
+
+
+@pulumi.output_type
 class GetDatabasePdbConversionHistoryEntriesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -49806,6 +50929,7 @@ class GetDatabasesDatabaseResult(dict):
                  last_backup_timestamp: _builtins.str,
                  last_failed_backup_timestamp: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 managed_software_update_details: Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailResult'],
                  ncharacter_set: _builtins.str,
                  patch_version: _builtins.str,
                  pdb_name: _builtins.str,
@@ -49843,10 +50967,12 @@ class GetDatabasesDatabaseResult(dict):
         :param _builtins.str last_backup_timestamp: The date and time when the latest database backup was created.
         :param _builtins.str last_failed_backup_timestamp: The date and time when the latest database backup failed.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetDatabasesDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param _builtins.str ncharacter_set: The national character set for the database.
         :param _builtins.str patch_version: The patch version of the database.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
         :param _builtins.str source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param Sequence['GetDatabasesDatabaseStorageSizeDetailArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -49885,6 +51011,7 @@ class GetDatabasesDatabaseResult(dict):
         pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
         pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "patch_version", patch_version)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -50121,6 +51248,14 @@ class GetDatabasesDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailResult']:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
+
+    @_builtins.property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> _builtins.str:
         """
@@ -50155,6 +51290,9 @@ class GetDatabasesDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter
     def source(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
         return pulumi.get(self, "source")
 
     @_builtins.property
@@ -50481,6 +51619,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  is_active_data_guard_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
+                 managed_software_update_details: Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult'],
                  ncharacter_set: _builtins.str,
                  patch_options: Sequence['outputs.GetDatabasesDatabaseDatabasePatchOptionResult'],
                  pdb_name: _builtins.str,
@@ -50510,6 +51649,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param Sequence['GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param _builtins.str ncharacter_set: The national character set for the database.
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -50539,6 +51679,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
         pulumi.set(__self__, "patch_options", patch_options)
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -50678,6 +51819,14 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
+
+    @_builtins.property
+    @pulumi.getter(name="managedSoftwareUpdateDetails")
+    def managed_software_update_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult']:
+        """
+        The database registered for Oracle Managed Database Software Updates.
+        """
+        return pulumi.get(self, "managed_software_update_details")
 
     @_builtins.property
     @pulumi.getter(name="ncharacterSet")
@@ -51049,6 +52198,221 @@ class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 is_enrolled: _builtins.bool,
+                 maintenance_details: Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult'],
+                 preference_details: Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        pulumi.set(__self__, "is_enrolled", is_enrolled)
+        pulumi.set(__self__, "maintenance_details", maintenance_details)
+        pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> _builtins.bool:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult']:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: _builtins.str,
+                 time_of_status_update: _builtins.str,
+                 time_scheduled: _builtins.str,
+                 update_mode: _builtins.str,
+                 update_readiness_status: _builtins.str,
+                 update_readiness_status_details: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> _builtins.str:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> _builtins.str:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> _builtins.str:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> _builtins.str:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> _builtins.str:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence[_builtins.str],
+                 hour_of_day: _builtins.int,
+                 update_mode: _builtins.str,
+                 version_scheme_details: Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence[_builtins.str]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> _builtins.int:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult(dict):
+    def __init__(__self__, *,
+                 major_version: _builtins.str,
+                 source: _builtins.str,
+                 version_preference: _builtins.str):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        pulumi.set(__self__, "major_version", major_version)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        return pulumi.get(self, "version_preference")
+
+
+@pulumi.output_type
 class GetDatabasesDatabaseDatabaseManagementConfigResult(dict):
     def __init__(__self__, *,
                  management_status: _builtins.str,
@@ -51367,6 +52731,221 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> _builtins.str:
         return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseManagedSoftwareUpdateDetailResult(dict):
+    def __init__(__self__, *,
+                 is_enrolled: _builtins.bool,
+                 maintenance_details: Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult'],
+                 preference_details: Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']):
+        """
+        :param _builtins.bool is_enrolled: If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        :param Sequence['GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailArgs'] maintenance_details: Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        :param Sequence['GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailArgs'] preference_details: Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        pulumi.set(__self__, "is_enrolled", is_enrolled)
+        pulumi.set(__self__, "maintenance_details", maintenance_details)
+        pulumi.set(__self__, "preference_details", preference_details)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnrolled")
+    def is_enrolled(self) -> _builtins.bool:
+        """
+        If true, database is registered for Oracle Managed Database Software Updates otherwise database is not registered for Oracle Managed Database Software Updates
+        """
+        return pulumi.get(self, "is_enrolled")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceDetails")
+    def maintenance_details(self) -> Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult']:
+        """
+        Provides details about actual Oracle Managed Database Software Updates scheduled time and version.
+        """
+        return pulumi.get(self, "maintenance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="preferenceDetails")
+    def preference_details(self) -> Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult']:
+        """
+        Oracle Managed Database Software Updates schedule will be created based on the provided update preferences
+        """
+        return pulumi.get(self, "preference_details")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseManagedSoftwareUpdateDetailMaintenanceDetailResult(dict):
+    def __init__(__self__, *,
+                 time_of_last_readiness_check: _builtins.str,
+                 time_of_status_update: _builtins.str,
+                 time_scheduled: _builtins.str,
+                 update_mode: _builtins.str,
+                 update_readiness_status: _builtins.str,
+                 update_readiness_status_details: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str time_of_last_readiness_check: The date and time of the last readiness check.
+        :param _builtins.str time_of_status_update: The date and time of when the status was updated.
+        :param _builtins.str time_scheduled: The date and time of the database was scheduled for update.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param _builtins.str update_readiness_status: The managed software update readiness status
+        :param _builtins.str update_readiness_status_details: This field will contain actual cause of update readiness state.
+        :param _builtins.str version: The version of the database was scheduled for update.
+        """
+        pulumi.set(__self__, "time_of_last_readiness_check", time_of_last_readiness_check)
+        pulumi.set(__self__, "time_of_status_update", time_of_status_update)
+        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "update_readiness_status", update_readiness_status)
+        pulumi.set(__self__, "update_readiness_status_details", update_readiness_status_details)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfLastReadinessCheck")
+    def time_of_last_readiness_check(self) -> _builtins.str:
+        """
+        The date and time of the last readiness check.
+        """
+        return pulumi.get(self, "time_of_last_readiness_check")
+
+    @_builtins.property
+    @pulumi.getter(name="timeOfStatusUpdate")
+    def time_of_status_update(self) -> _builtins.str:
+        """
+        The date and time of when the status was updated.
+        """
+        return pulumi.get(self, "time_of_status_update")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduled")
+    def time_scheduled(self) -> _builtins.str:
+        """
+        The date and time of the database was scheduled for update.
+        """
+        return pulumi.get(self, "time_scheduled")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatus")
+    def update_readiness_status(self) -> _builtins.str:
+        """
+        The managed software update readiness status
+        """
+        return pulumi.get(self, "update_readiness_status")
+
+    @_builtins.property
+    @pulumi.getter(name="updateReadinessStatusDetails")
+    def update_readiness_status_details(self) -> _builtins.str:
+        """
+        This field will contain actual cause of update readiness state.
+        """
+        return pulumi.get(self, "update_readiness_status_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of the database was scheduled for update.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailResult(dict):
+    def __init__(__self__, *,
+                 days_of_weeks: Sequence[_builtins.str],
+                 hour_of_day: _builtins.int,
+                 update_mode: _builtins.str,
+                 version_scheme_details: Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']):
+        """
+        :param Sequence[_builtins.str] days_of_weeks: The update should be applied on the database for the selected days of the week.
+        :param _builtins.int hour_of_day: The update should be applied on the database for the selected hour of the day.
+        :param _builtins.str update_mode: Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        :param Sequence['GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs'] version_scheme_details: The update should be applied on the database for the selected version scheme.
+        """
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "update_mode", update_mode)
+        pulumi.set(__self__, "version_scheme_details", version_scheme_details)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence[_builtins.str]:
+        """
+        The update should be applied on the database for the selected days of the week.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hourOfDay")
+    def hour_of_day(self) -> _builtins.int:
+        """
+        The update should be applied on the database for the selected hour of the day.
+        """
+        return pulumi.get(self, "hour_of_day")
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        Oracle Managed Database Software update method, either "ROLLING" or "NONROLLING". Default value is ROLLING. *IMPORTANT*: Non-rolling Database Software update update involves system down time.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="versionSchemeDetails")
+    def version_scheme_details(self) -> Sequence['outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult']:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "version_scheme_details")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult(dict):
+    def __init__(__self__, *,
+                 major_version: _builtins.str,
+                 source: _builtins.str,
+                 version_preference: _builtins.str):
+        """
+        :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        pulumi.set(__self__, "major_version", major_version)
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "version_preference", version_preference)
+
+    @_builtins.property
+    @pulumi.getter(name="majorVersion")
+    def major_version(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
+        """
+        return pulumi.get(self, "major_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version scheme.
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="versionPreference")
+    def version_preference(self) -> _builtins.str:
+        """
+        The update should be applied on the database for the selected version preference. *_N represents the LATEST version
+        """
+        return pulumi.get(self, "version_preference")
 
 
 @pulumi.output_type
@@ -52398,6 +53977,7 @@ class GetDbHomesDbHomeResult(dict):
                  display_name: _builtins.str,
                  enable_database_delete: _builtins.bool,
                  freeform_tags: Mapping[str, _builtins.str],
+                 home_type: _builtins.str,
                  id: _builtins.str,
                  is_desupported_version: _builtins.bool,
                  is_unified_auditing_enabled: _builtins.bool,
@@ -52419,6 +53999,7 @@ class GetDbHomesDbHomeResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str home_type: Represents database home will be managed by oracle or customer
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param _builtins.bool is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -52440,6 +54021,7 @@ class GetDbHomesDbHomeResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "enable_database_delete", enable_database_delete)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "home_type", home_type)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_desupported_version", is_desupported_version)
         pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
@@ -52531,6 +54113,14 @@ class GetDbHomesDbHomeResult(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="homeType")
+    def home_type(self) -> _builtins.str:
+        """
+        Represents database home will be managed by oracle or customer
+        """
+        return pulumi.get(self, "home_type")
 
     @_builtins.property
     @pulumi.getter

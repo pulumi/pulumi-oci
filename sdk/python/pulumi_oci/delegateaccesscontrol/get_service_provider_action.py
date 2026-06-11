@@ -27,7 +27,10 @@ class GetServiceProviderActionResult:
     """
     A collection of values returned by getServiceProviderAction.
     """
-    def __init__(__self__, component=None, customer_display_name=None, description=None, id=None, name=None, properties=None, resource_type=None, service_provider_action_id=None, service_provider_service_types=None, state=None):
+    def __init__(__self__, compartment_id=None, component=None, customer_display_name=None, description=None, id=None, is_ssh_access_allowed=None, name=None, properties=None, resource_type=None, service_provider_action_id=None, service_provider_service_types=None, state=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if component and not isinstance(component, str):
             raise TypeError("Expected argument 'component' to be a str")
         pulumi.set(__self__, "component", component)
@@ -40,6 +43,9 @@ class GetServiceProviderActionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_ssh_access_allowed and not isinstance(is_ssh_access_allowed, bool):
+            raise TypeError("Expected argument 'is_ssh_access_allowed' to be a bool")
+        pulumi.set(__self__, "is_ssh_access_allowed", is_ssh_access_allowed)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -58,6 +64,14 @@ class GetServiceProviderActionResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment that contains the Service Provider Action.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter
@@ -90,6 +104,14 @@ class GetServiceProviderActionResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isSshAccessAllowed")
+    def is_ssh_access_allowed(self) -> _builtins.bool:
+        """
+        Indicates whether the service provider action allows SSH access.
+        """
+        return pulumi.get(self, "is_ssh_access_allowed")
 
     @_builtins.property
     @pulumi.getter
@@ -143,10 +165,12 @@ class AwaitableGetServiceProviderActionResult(GetServiceProviderActionResult):
         if False:
             yield self
         return GetServiceProviderActionResult(
+            compartment_id=self.compartment_id,
             component=self.component,
             customer_display_name=self.customer_display_name,
             description=self.description,
             id=self.id,
+            is_ssh_access_allowed=self.is_ssh_access_allowed,
             name=self.name,
             properties=self.properties,
             resource_type=self.resource_type,
@@ -180,10 +204,12 @@ def get_service_provider_action(service_provider_action_id: Optional[_builtins.s
     __ret__ = pulumi.runtime.invoke('oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction', __args__, opts=opts, typ=GetServiceProviderActionResult).value
 
     return AwaitableGetServiceProviderActionResult(
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         component=pulumi.get(__ret__, 'component'),
         customer_display_name=pulumi.get(__ret__, 'customer_display_name'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
+        is_ssh_access_allowed=pulumi.get(__ret__, 'is_ssh_access_allowed'),
         name=pulumi.get(__ret__, 'name'),
         properties=pulumi.get(__ret__, 'properties'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
@@ -214,10 +240,12 @@ def get_service_provider_action_output(service_provider_action_id: pulumi.Input[
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DelegateAccessControl/getServiceProviderAction:getServiceProviderAction', __args__, opts=opts, typ=GetServiceProviderActionResult)
     return __ret__.apply(lambda __response__: GetServiceProviderActionResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         component=pulumi.get(__response__, 'component'),
         customer_display_name=pulumi.get(__response__, 'customer_display_name'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
+        is_ssh_access_allowed=pulumi.get(__response__, 'is_ssh_access_allowed'),
         name=pulumi.get(__response__, 'name'),
         properties=pulumi.get(__response__, 'properties'),
         resource_type=pulumi.get(__response__, 'resource_type'),

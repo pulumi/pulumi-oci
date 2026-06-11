@@ -64,6 +64,10 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
+     * List of GPU memory cluster OCIDs within this GPU memory fabric.
+     */
+    declare public /*out*/ readonly computeGpuMemoryClusters: pulumi.Output<string[]>;
+    /**
      * The OCID of the compute GPU memory fabric.
      */
     declare public readonly computeGpuMemoryFabricId: pulumi.Output<string>;
@@ -160,6 +164,7 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
             resourceInputs["additionalData"] = state?.additionalData;
             resourceInputs["availableHostCount"] = state?.availableHostCount;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeGpuMemoryClusters"] = state?.computeGpuMemoryClusters;
             resourceInputs["computeGpuMemoryFabricId"] = state?.computeGpuMemoryFabricId;
             resourceInputs["computeHpcIslandId"] = state?.computeHpcIslandId;
             resourceInputs["computeLocalBlockId"] = state?.computeLocalBlockId;
@@ -193,6 +198,7 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
             resourceInputs["memoryFabricPreferences"] = args?.memoryFabricPreferences;
             resourceInputs["additionalData"] = undefined /*out*/;
             resourceInputs["availableHostCount"] = undefined /*out*/;
+            resourceInputs["computeGpuMemoryClusters"] = undefined /*out*/;
             resourceInputs["computeHpcIslandId"] = undefined /*out*/;
             resourceInputs["computeLocalBlockId"] = undefined /*out*/;
             resourceInputs["computeNetworkBlockId"] = undefined /*out*/;
@@ -230,6 +236,10 @@ export interface ComputeGpuMemoryFabricState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
     compartmentId?: pulumi.Input<string | undefined>;
+    /**
+     * List of GPU memory cluster OCIDs within this GPU memory fabric.
+     */
+    computeGpuMemoryClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the compute GPU memory fabric.
      */

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseEncryptionKeyLocationDetailsArgs;
+import com.pulumi.oci.Database.inputs.DatabaseDatabaseManagedSoftwareUpdateDetailArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabasePatchOptionsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseStorageSizeDetailsArgs;
@@ -291,6 +292,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    @Import(name="managedSoftwareUpdateDetails")
+    private @Nullable Output<List<DatabaseDatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails;
+
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public Optional<Output<List<DatabaseDatabaseManagedSoftwareUpdateDetailArgs>>> managedSoftwareUpdateDetails() {
+        return Optional.ofNullable(this.managedSoftwareUpdateDetails);
+    }
+
+    /**
      * The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
@@ -541,6 +557,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
+        this.managedSoftwareUpdateDetails = $.managedSoftwareUpdateDetails;
         this.ncharacterSet = $.ncharacterSet;
         this.patchOptions = $.patchOptions;
         this.pdbName = $.pdbName;
@@ -943,6 +960,37 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             return kmsKeyVersionId(Output.of(kmsKeyVersionId));
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(@Nullable Output<List<DatabaseDatabaseManagedSoftwareUpdateDetailArgs>> managedSoftwareUpdateDetails) {
+            $.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(List<DatabaseDatabaseManagedSoftwareUpdateDetailArgs> managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(Output.of(managedSoftwareUpdateDetails));
+        }
+
+        /**
+         * @param managedSoftwareUpdateDetails The database registered for Oracle Managed Database Software Updates.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedSoftwareUpdateDetails(DatabaseDatabaseManagedSoftwareUpdateDetailArgs... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
         }
 
         /**

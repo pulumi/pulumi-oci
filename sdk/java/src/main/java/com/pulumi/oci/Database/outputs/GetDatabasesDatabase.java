@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseStorageSizeDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -147,6 +148,11 @@ public final class GetDatabasesDatabase {
      */
     private String lifecycleDetails;
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    private List<GetDatabasesDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -166,6 +172,10 @@ public final class GetDatabasesDatabase {
      * 
      */
     private String sidPrefix;
+    /**
+     * @return The update should be applied on the database for the selected version scheme.
+     * 
+     */
     private String source;
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
@@ -391,6 +401,13 @@ public final class GetDatabasesDatabase {
         return this.lifecycleDetails;
     }
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public List<GetDatabasesDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails;
+    }
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -418,6 +435,10 @@ public final class GetDatabasesDatabase {
     public String sidPrefix() {
         return this.sidPrefix;
     }
+    /**
+     * @return The update should be applied on the database for the selected version scheme.
+     * 
+     */
     public String source() {
         return this.source;
     }
@@ -510,6 +531,7 @@ public final class GetDatabasesDatabase {
         private String lastBackupTimestamp;
         private String lastFailedBackupTimestamp;
         private String lifecycleDetails;
+        private List<GetDatabasesDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
         private String ncharacterSet;
         private String patchVersion;
         private String pdbName;
@@ -555,6 +577,7 @@ public final class GetDatabasesDatabase {
     	      this.lastBackupTimestamp = defaults.lastBackupTimestamp;
     	      this.lastFailedBackupTimestamp = defaults.lastFailedBackupTimestamp;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.patchVersion = defaults.patchVersion;
     	      this.pdbName = defaults.pdbName;
@@ -825,6 +848,17 @@ public final class GetDatabasesDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder managedSoftwareUpdateDetails(List<GetDatabasesDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails) {
+            if (managedSoftwareUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "managedSoftwareUpdateDetails");
+            }
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+        public Builder managedSoftwareUpdateDetails(GetDatabasesDatabaseManagedSoftwareUpdateDetail... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabase", "ncharacterSet");
@@ -955,6 +989,7 @@ public final class GetDatabasesDatabase {
             _resultValue.lastBackupTimestamp = lastBackupTimestamp;
             _resultValue.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.patchVersion = patchVersion;
             _resultValue.pdbName = pdbName;

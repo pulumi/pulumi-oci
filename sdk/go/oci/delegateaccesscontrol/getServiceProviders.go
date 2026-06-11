@@ -71,7 +71,7 @@ type GetServiceProvidersArgs struct {
 
 // A collection of values returned by getServiceProviders.
 type GetServiceProvidersResult struct {
-	// The OCID of the compartment that contains the Delegation Control.
+	// The OCID of the compartment that contains the Service Provider.
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetServiceProvidersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -130,7 +130,7 @@ func (o GetServiceProvidersResultOutput) ToGetServiceProvidersResultOutputWithCo
 	return o
 }
 
-// The OCID of the compartment that contains the Delegation Control.
+// The OCID of the compartment that contains the Service Provider.
 func (o GetServiceProvidersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceProvidersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

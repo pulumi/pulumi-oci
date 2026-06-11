@@ -35,7 +35,7 @@ import (
 //			_, err := bigdataservice.NewBdsInstanceReplaceNodeAction(ctx, "test_bds_instance_replace_node_action", &bigdataservice.BdsInstanceReplaceNodeActionArgs{
 //				BdsInstanceId:        pulumi.Any(bdsInstanceId),
 //				NodeHostName:         pulumi.Any(nodeHostName),
-//				ClusterAdminPassword: pulumi.String("T3JhY2xlVGVhbVVTQSExMjM="),
+//				ClusterAdminPassword: pulumi.String("<admin-password>"),
 //				NodeBackupId:         pulumi.Any(nodeBackupId),
 //				Shape:                pulumi.Any(shape),
 //			})

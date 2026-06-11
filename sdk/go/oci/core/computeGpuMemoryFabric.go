@@ -36,6 +36,8 @@ type ComputeGpuMemoryFabric struct {
 	AvailableHostCount pulumi.StringOutput `pulumi:"availableHostCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// List of GPU memory cluster OCIDs within this GPU memory fabric.
+	ComputeGpuMemoryClusters pulumi.StringArrayOutput `pulumi:"computeGpuMemoryClusters"`
 	// The OCID of the compute GPU memory fabric.
 	ComputeGpuMemoryFabricId pulumi.StringOutput `pulumi:"computeGpuMemoryFabricId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -117,6 +119,8 @@ type computeGpuMemoryFabricState struct {
 	AvailableHostCount *string `pulumi:"availableHostCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// List of GPU memory cluster OCIDs within this GPU memory fabric.
+	ComputeGpuMemoryClusters []string `pulumi:"computeGpuMemoryClusters"`
 	// The OCID of the compute GPU memory fabric.
 	ComputeGpuMemoryFabricId *string `pulumi:"computeGpuMemoryFabricId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -166,6 +170,8 @@ type ComputeGpuMemoryFabricState struct {
 	AvailableHostCount pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId pulumi.StringPtrInput
+	// List of GPU memory cluster OCIDs within this GPU memory fabric.
+	ComputeGpuMemoryClusters pulumi.StringArrayInput
 	// The OCID of the compute GPU memory fabric.
 	ComputeGpuMemoryFabricId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -343,6 +349,11 @@ func (o ComputeGpuMemoryFabricOutput) AvailableHostCount() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 func (o ComputeGpuMemoryFabricOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeGpuMemoryFabric) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of GPU memory cluster OCIDs within this GPU memory fabric.
+func (o ComputeGpuMemoryFabricOutput) ComputeGpuMemoryClusters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ComputeGpuMemoryFabric) pulumi.StringArrayOutput { return v.ComputeGpuMemoryClusters }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the compute GPU memory fabric.

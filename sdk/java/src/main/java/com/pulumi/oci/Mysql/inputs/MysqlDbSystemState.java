@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemHeatWaveClusterArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemPointInTimeRecoveryDetailArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
@@ -474,6 +475,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    @Import(name="ipv6addressIpv6subnetCidrPairDetails")
+    private @Nullable Output<MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs> ipv6addressIpv6subnetCidrPairDetails;
+
+    /**
+     * @return (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs>> ipv6addressIpv6subnetCidrPairDetails() {
+        return Optional.ofNullable(this.ipv6addressIpv6subnetCidrPairDetails);
+    }
+
+    /**
      * If the DB System has a HeatWave Cluster attached.
      * 
      */
@@ -505,6 +521,21 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<Boolean>> isHighlyAvailable() {
         return Optional.ofNullable(this.isHighlyAvailable);
+    }
+
+    /**
+     * (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    @Import(name="isIpv6enabled")
+    private @Nullable Output<Boolean> isIpv6enabled;
+
+    /**
+     * @return (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+     * 
+     */
+    public Optional<Output<Boolean>> isIpv6enabled() {
+        return Optional.ofNullable(this.isIpv6enabled);
     }
 
     /**
@@ -845,8 +876,10 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         this.heatWaveClusters = $.heatWaveClusters;
         this.hostnameLabel = $.hostnameLabel;
         this.ipAddress = $.ipAddress;
+        this.ipv6addressIpv6subnetCidrPairDetails = $.ipv6addressIpv6subnetCidrPairDetails;
         this.isHeatWaveClusterAttached = $.isHeatWaveClusterAttached;
         this.isHighlyAvailable = $.isHighlyAvailable;
+        this.isIpv6enabled = $.isIpv6enabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenance = $.maintenance;
         this.mysqlVersion = $.mysqlVersion;
@@ -1547,6 +1580,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param ipv6addressIpv6subnetCidrPairDetails (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable Output<MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs> ipv6addressIpv6subnetCidrPairDetails) {
+            $.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            return this;
+        }
+
+        /**
+         * @param ipv6addressIpv6subnetCidrPairDetails (Updatable) Details to assign an IPv6 subnet prefix or IPv6 address to a resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressIpv6subnetCidrPairDetails(MysqlDbSystemIpv6addressIpv6subnetCidrPairDetailsArgs ipv6addressIpv6subnetCidrPairDetails) {
+            return ipv6addressIpv6subnetCidrPairDetails(Output.of(ipv6addressIpv6subnetCidrPairDetails));
+        }
+
+        /**
          * @param isHeatWaveClusterAttached If the DB System has a HeatWave Cluster attached.
          * 
          * @return builder
@@ -1590,6 +1644,27 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             return isHighlyAvailable(Output.of(isHighlyAvailable));
+        }
+
+        /**
+         * @param isIpv6enabled (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6enabled(@Nullable Output<Boolean> isIpv6enabled) {
+            $.isIpv6enabled = isIpv6enabled;
+            return this;
+        }
+
+        /**
+         * @param isIpv6enabled (Updatable) Whether to allocate an IPv6 address at DB system creation from an IPv6 enabled subnet. When provided you may optionally provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6 address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is chosen for you.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6enabled(Boolean isIpv6enabled) {
+            return isIpv6enabled(Output.of(isIpv6enabled));
         }
 
         /**

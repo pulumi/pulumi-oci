@@ -18,14 +18,14 @@ public final class DelegationSubscriptionArgs extends com.pulumi.resources.Resou
     public static final DelegationSubscriptionArgs Empty = new DelegationSubscriptionArgs();
 
     /**
-     * (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * @return (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      * 
      */
     public Output<String> compartmentId() {
@@ -143,7 +143,7 @@ public final class DelegationSubscriptionArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the Delegation Control.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the Delegation Subscription.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class DelegationSubscriptionArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the Delegation Control.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the Delegation Subscription.
          * 
          * @return builder
          * 

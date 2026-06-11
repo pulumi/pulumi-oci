@@ -78,6 +78,21 @@ public final class GetComputeGpuMemoryClustersPlainArgs extends com.pulumi.resou
     }
 
     /**
+     * A filter to return only the listings that matches the given GPU memory fabric id.
+     * 
+     */
+    @Import(name="computeGpuMemoryFabricId")
+    private @Nullable String computeGpuMemoryFabricId;
+
+    /**
+     * @return A filter to return only the listings that matches the given GPU memory fabric id.
+     * 
+     */
+    public Optional<String> computeGpuMemoryFabricId() {
+        return Optional.ofNullable(this.computeGpuMemoryFabricId);
+    }
+
+    /**
      * A filter to return only resources that match the given display name exactly.
      * 
      */
@@ -106,6 +121,7 @@ public final class GetComputeGpuMemoryClustersPlainArgs extends com.pulumi.resou
         this.compartmentId = $.compartmentId;
         this.computeClusterId = $.computeClusterId;
         this.computeGpuMemoryClusterId = $.computeGpuMemoryClusterId;
+        this.computeGpuMemoryFabricId = $.computeGpuMemoryFabricId;
         this.displayName = $.displayName;
         this.filters = $.filters;
     }
@@ -169,6 +185,17 @@ public final class GetComputeGpuMemoryClustersPlainArgs extends com.pulumi.resou
          */
         public Builder computeGpuMemoryClusterId(@Nullable String computeGpuMemoryClusterId) {
             $.computeGpuMemoryClusterId = computeGpuMemoryClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeGpuMemoryFabricId A filter to return only the listings that matches the given GPU memory fabric id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeGpuMemoryFabricId(@Nullable String computeGpuMemoryFabricId) {
+            $.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
             return this;
         }
 

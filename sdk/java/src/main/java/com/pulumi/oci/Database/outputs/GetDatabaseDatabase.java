@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabasePatchOption;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseStorageSizeDetail;
@@ -87,6 +88,11 @@ public final class GetDatabaseDatabase {
      * 
      */
     private String kmsKeyVersionId;
+    /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    private List<GetDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
     /**
      * @return The national character set for the database.
      * 
@@ -247,6 +253,13 @@ public final class GetDatabaseDatabase {
         return this.kmsKeyVersionId;
     }
     /**
+     * @return The database registered for Oracle Managed Database Software Updates.
+     * 
+     */
+    public List<GetDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails() {
+        return this.managedSoftwareUpdateDetails;
+    }
+    /**
      * @return The national character set for the database.
      * 
      */
@@ -357,6 +370,7 @@ public final class GetDatabaseDatabase {
         private Boolean isActiveDataGuardEnabled;
         private String kmsKeyId;
         private String kmsKeyVersionId;
+        private List<GetDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
         private String ncharacterSet;
         private List<GetDatabaseDatabasePatchOption> patchOptions;
         private String pdbName;
@@ -392,6 +406,7 @@ public final class GetDatabaseDatabase {
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
+    	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.patchOptions = defaults.patchOptions;
     	      this.pdbName = defaults.pdbName;
@@ -552,6 +567,17 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder managedSoftwareUpdateDetails(List<GetDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails) {
+            if (managedSoftwareUpdateDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "managedSoftwareUpdateDetails");
+            }
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            return this;
+        }
+        public Builder managedSoftwareUpdateDetails(GetDatabaseDatabaseManagedSoftwareUpdateDetail... managedSoftwareUpdateDetails) {
+            return managedSoftwareUpdateDetails(List.of(managedSoftwareUpdateDetails));
+        }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             if (ncharacterSet == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "ncharacterSet");
@@ -702,6 +728,7 @@ public final class GetDatabaseDatabase {
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.patchOptions = patchOptions;
             _resultValue.pdbName = pdbName;

@@ -41,6 +41,7 @@ from .data_patch import *
 from .database import *
 from .database_snapshot_standby import *
 from .database_software_image import *
+from .database_software_schedule_management import *
 from .database_upgrade import *
 from .db_home import *
 from .db_node import *

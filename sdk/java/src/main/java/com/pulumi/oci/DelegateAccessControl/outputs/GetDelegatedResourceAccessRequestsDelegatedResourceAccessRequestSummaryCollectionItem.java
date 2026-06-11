@@ -36,7 +36,12 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
      */
     private String compartmentId;
     /**
-     * @return List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+     * @return List of Database ID for which access is requested. This parameter is required when database access is needed.
+     * 
+     */
+    private List<String> databaseIdLists;
+    /**
+     * @return List of Database unique names for which access is requested. This parameter is required when database access in needed.
      * 
      */
     private List<String> databaseNameLists;
@@ -216,7 +221,14 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
         return this.compartmentId;
     }
     /**
-     * @return List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+     * @return List of Database ID for which access is requested. This parameter is required when database access is needed.
+     * 
+     */
+    public List<String> databaseIdLists() {
+        return this.databaseIdLists;
+    }
+    /**
+     * @return List of Database unique names for which access is requested. This parameter is required when database access in needed.
      * 
      */
     public List<String> databaseNameLists() {
@@ -439,6 +451,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
         private List<String> auditTypes;
         private String closureComment;
         private String compartmentId;
+        private List<String> databaseIdLists;
         private List<String> databaseNameLists;
         private Map<String,String> definedTags;
         private String delegationControlId;
@@ -476,6 +489,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
     	      this.auditTypes = defaults.auditTypes;
     	      this.closureComment = defaults.closureComment;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.databaseIdLists = defaults.databaseIdLists;
     	      this.databaseNameLists = defaults.databaseNameLists;
     	      this.definedTags = defaults.definedTags;
     	      this.delegationControlId = defaults.delegationControlId;
@@ -545,6 +559,17 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder databaseIdLists(List<String> databaseIdLists) {
+            if (databaseIdLists == null) {
+              throw new MissingRequiredPropertyException("GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItem", "databaseIdLists");
+            }
+            this.databaseIdLists = databaseIdLists;
+            return this;
+        }
+        public Builder databaseIdLists(String... databaseIdLists) {
+            return databaseIdLists(List.of(databaseIdLists));
         }
         @CustomType.Setter
         public Builder databaseNameLists(List<String> databaseNameLists) {
@@ -807,6 +832,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
             _resultValue.auditTypes = auditTypes;
             _resultValue.closureComment = closureComment;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseIdLists = databaseIdLists;
             _resultValue.databaseNameLists = databaseNameLists;
             _resultValue.definedTags = definedTags;
             _resultValue.delegationControlId = delegationControlId;

@@ -69,14 +69,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DelegateAccessControl/delegationSubscription:DelegationSubscription")
 public class DelegationSubscription extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains the Delegation Control.
+     * @return (Updatable) The OCID of the compartment that contains the Delegation Subscription.
      * 
      */
     public Output<String> compartmentId() {

@@ -40,6 +40,11 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
      * 
      */
     private String timeApprovedForAccess;
+    /**
+     * @return Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;.
+     * 
+     */
+    private String timeOfAction;
 
     private GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo() {}
     /**
@@ -84,6 +89,13 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
     public String timeApprovedForAccess() {
         return this.timeApprovedForAccess;
     }
+    /**
+     * @return Time when the access request was approved or rejected by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;.
+     * 
+     */
+    public String timeOfAction() {
+        return this.timeOfAction;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -100,6 +112,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
         private String approverComment;
         private String approverId;
         private String timeApprovedForAccess;
+        private String timeOfAction;
         public Builder() {}
         public Builder(GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,6 +122,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
     	      this.approverComment = defaults.approverComment;
     	      this.approverId = defaults.approverId;
     	      this.timeApprovedForAccess = defaults.timeApprovedForAccess;
+    	      this.timeOfAction = defaults.timeOfAction;
         }
 
         @CustomType.Setter
@@ -159,6 +173,14 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
             this.timeApprovedForAccess = timeApprovedForAccess;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeOfAction(String timeOfAction) {
+            if (timeOfAction == null) {
+              throw new MissingRequiredPropertyException("GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo", "timeOfAction");
+            }
+            this.timeOfAction = timeOfAction;
+            return this;
+        }
         public GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo build() {
             final var _resultValue = new GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequestSummaryCollectionItemApprovalInfo();
             _resultValue.approvalAction = approvalAction;
@@ -167,6 +189,7 @@ public final class GetDelegatedResourceAccessRequestsDelegatedResourceAccessRequ
             _resultValue.approverComment = approverComment;
             _resultValue.approverId = approverId;
             _resultValue.timeApprovedForAccess = timeApprovedForAccess;
+            _resultValue.timeOfAction = timeOfAction;
             return _resultValue;
         }
     }

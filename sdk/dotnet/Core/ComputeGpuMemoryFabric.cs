@@ -48,6 +48,12 @@ namespace Pulumi.Oci.Core
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// List of GPU memory cluster OCIDs within this GPU memory fabric.
+        /// </summary>
+        [Output("computeGpuMemoryClusters")]
+        public Output<ImmutableArray<string>> ComputeGpuMemoryClusters { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the compute GPU memory fabric.
         /// </summary>
         [Output("computeGpuMemoryFabricId")]
@@ -292,6 +298,18 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("computeGpuMemoryClusters")]
+        private InputList<string>? _computeGpuMemoryClusters;
+
+        /// <summary>
+        /// List of GPU memory cluster OCIDs within this GPU memory fabric.
+        /// </summary>
+        public InputList<string> ComputeGpuMemoryClusters
+        {
+            get => _computeGpuMemoryClusters ?? (_computeGpuMemoryClusters = new InputList<string>());
+            set => _computeGpuMemoryClusters = value;
+        }
 
         /// <summary>
         /// The OCID of the compute GPU memory fabric.

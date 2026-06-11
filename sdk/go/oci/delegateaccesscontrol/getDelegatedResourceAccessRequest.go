@@ -66,7 +66,9 @@ type GetDelegatedResourceAccessRequestResult struct {
 	ClosureComment string `pulumi:"closureComment"`
 	// The OCID of the compartment that contains the Delegated Resource Access Request.
 	CompartmentId string `pulumi:"compartmentId"`
-	// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+	// List of Database ID for which access is requested. This parameter is required when database access is needed.
+	DatabaseIdLists []string `pulumi:"databaseIdLists"`
+	// List of Database unique names for which access is requested. This parameter is required when database access in needed.
 	DatabaseNameLists []string `pulumi:"databaseNameLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags                      map[string]string `pulumi:"definedTags"`
@@ -185,7 +187,12 @@ func (o GetDelegatedResourceAccessRequestResultOutput) CompartmentId() pulumi.St
 	return o.ApplyT(func(v GetDelegatedResourceAccessRequestResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+// List of Database ID for which access is requested. This parameter is required when database access is needed.
+func (o GetDelegatedResourceAccessRequestResultOutput) DatabaseIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDelegatedResourceAccessRequestResult) []string { return v.DatabaseIdLists }).(pulumi.StringArrayOutput)
+}
+
+// List of Database unique names for which access is requested. This parameter is required when database access in needed.
 func (o GetDelegatedResourceAccessRequestResultOutput) DatabaseNameLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDelegatedResourceAccessRequestResult) []string { return v.DatabaseNameLists }).(pulumi.StringArrayOutput)
 }

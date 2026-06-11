@@ -82,6 +82,8 @@ type LookupReplicaResult struct {
 	Id string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress string `pulumi:"ipAddress"`
+	// The IPv6 address the read replica is configured to listen on.
+	Ipv6address string `pulumi:"ipv6address"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
@@ -205,6 +207,11 @@ func (o LookupReplicaResultOutput) Id() pulumi.StringOutput {
 // The IP address the read replica is configured to listen on.
 func (o LookupReplicaResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The IPv6 address the read replica is configured to listen on.
+func (o LookupReplicaResultOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReplicaResult) string { return v.Ipv6address }).(pulumi.StringOutput)
 }
 
 // Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.

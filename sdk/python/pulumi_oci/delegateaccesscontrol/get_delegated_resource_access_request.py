@@ -27,7 +27,7 @@ class GetDelegatedResourceAccessRequestResult:
     """
     A collection of values returned by getDelegatedResourceAccessRequest.
     """
-    def __init__(__self__, approval_infos=None, audit_types=None, closure_comment=None, compartment_id=None, database_name_lists=None, defined_tags=None, delegated_resource_access_request_id=None, delegation_control_id=None, delegation_subscription_ids=None, description=None, display_name=None, duration_in_hours=None, extend_duration_in_hours=None, freeform_tags=None, id=None, is_auto_approved=None, is_pending_more_info=None, lifecycle_state_details=None, num_extension_approvals=None, num_initial_approvals=None, provided_service_types=None, reason_for_request=None, request_status=None, requested_action_names=None, requester_type=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, system_tags=None, ticket_numbers=None, time_access_requested=None, time_created=None, time_updated=None):
+    def __init__(__self__, approval_infos=None, audit_types=None, closure_comment=None, compartment_id=None, database_id_lists=None, database_name_lists=None, defined_tags=None, delegated_resource_access_request_id=None, delegation_control_id=None, delegation_subscription_ids=None, description=None, display_name=None, duration_in_hours=None, extend_duration_in_hours=None, freeform_tags=None, id=None, is_auto_approved=None, is_pending_more_info=None, lifecycle_state_details=None, num_extension_approvals=None, num_initial_approvals=None, provided_service_types=None, reason_for_request=None, request_status=None, requested_action_names=None, requester_type=None, resource_id=None, resource_name=None, resource_type=None, severity=None, state=None, system_tags=None, ticket_numbers=None, time_access_requested=None, time_created=None, time_updated=None):
         if approval_infos and not isinstance(approval_infos, list):
             raise TypeError("Expected argument 'approval_infos' to be a list")
         pulumi.set(__self__, "approval_infos", approval_infos)
@@ -40,6 +40,9 @@ class GetDelegatedResourceAccessRequestResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_id_lists and not isinstance(database_id_lists, list):
+            raise TypeError("Expected argument 'database_id_lists' to be a list")
+        pulumi.set(__self__, "database_id_lists", database_id_lists)
         if database_name_lists and not isinstance(database_name_lists, list):
             raise TypeError("Expected argument 'database_name_lists' to be a list")
         pulumi.set(__self__, "database_name_lists", database_name_lists)
@@ -167,10 +170,18 @@ class GetDelegatedResourceAccessRequestResult:
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="databaseIdLists")
+    def database_id_lists(self) -> Sequence[_builtins.str]:
+        """
+        List of Database ID for which access is requested. This parameter is required when database access is needed.
+        """
+        return pulumi.get(self, "database_id_lists")
+
+    @_builtins.property
     @pulumi.getter(name="databaseNameLists")
     def database_name_lists(self) -> Sequence[_builtins.str]:
         """
-        List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        List of Database unique names for which access is requested. This parameter is required when database access in needed.
         """
         return pulumi.get(self, "database_name_lists")
 
@@ -422,6 +433,7 @@ class AwaitableGetDelegatedResourceAccessRequestResult(GetDelegatedResourceAcces
             audit_types=self.audit_types,
             closure_comment=self.closure_comment,
             compartment_id=self.compartment_id,
+            database_id_lists=self.database_id_lists,
             database_name_lists=self.database_name_lists,
             defined_tags=self.defined_tags,
             delegated_resource_access_request_id=self.delegated_resource_access_request_id,
@@ -484,6 +496,7 @@ def get_delegated_resource_access_request(delegated_resource_access_request_id: 
         audit_types=pulumi.get(__ret__, 'audit_types'),
         closure_comment=pulumi.get(__ret__, 'closure_comment'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        database_id_lists=pulumi.get(__ret__, 'database_id_lists'),
         database_name_lists=pulumi.get(__ret__, 'database_name_lists'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         delegated_resource_access_request_id=pulumi.get(__ret__, 'delegated_resource_access_request_id'),
@@ -543,6 +556,7 @@ def get_delegated_resource_access_request_output(delegated_resource_access_reque
         audit_types=pulumi.get(__response__, 'audit_types'),
         closure_comment=pulumi.get(__response__, 'closure_comment'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        database_id_lists=pulumi.get(__response__, 'database_id_lists'),
         database_name_lists=pulumi.get(__response__, 'database_name_lists'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         delegated_resource_access_request_id=pulumi.get(__response__, 'delegated_resource_access_request_id'),

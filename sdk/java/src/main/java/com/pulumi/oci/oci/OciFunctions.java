@@ -163,6 +163,12 @@ import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainPlainArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
 import com.pulumi.oci.oci.inputs.GetIotIotDomainsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigPlainArgs;
@@ -350,6 +356,9 @@ import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupsResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainResult;
 import com.pulumi.oci.oci.outputs.GetIotIotDomainsResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaAddonOptionsResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterAddonResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterAddonsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionsResult;
@@ -17794,6 +17803,307 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomains:getIotIotDomains", TypeShape.of(GetIotIotDomainsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptions() {
+        return getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptionsPlain() {
+        return getManagedKafkaAddonOptionsPlain(GetManagedKafkaAddonOptionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs args) {
+        return getManagedKafkaAddonOptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptionsPlain(GetManagedKafkaAddonOptionsPlainArgs args) {
+        return getManagedKafkaAddonOptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaAddonOptions:getManagedKafkaAddonOptions", TypeShape.of(GetManagedKafkaAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaAddonOptions:getManagedKafkaAddonOptions", TypeShape.of(GetManagedKafkaAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of supported KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaAddonOptionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddonOptions = OciFunctions.getManagedKafkaAddonOptions(GetManagedKafkaAddonOptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(addonOptionName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaAddonOptionsResult> getManagedKafkaAddonOptionsPlain(GetManagedKafkaAddonOptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaAddonOptions:getManagedKafkaAddonOptions", TypeShape.of(GetManagedKafkaAddonOptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
      * 
      * Gets information about a KafkaCluster.
@@ -18002,6 +18312,281 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaClusterPlain(GetManagedKafkaKafkaClusterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaCluster:getManagedKafkaKafkaCluster", TypeShape.of(GetManagedKafkaKafkaClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Addon resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterAddon.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args) {
+        return getManagedKafkaKafkaClusterAddon(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Addon resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterAddon.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddonPlain(GetManagedKafkaKafkaClusterAddonPlainArgs args) {
+        return getManagedKafkaKafkaClusterAddonPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Addon resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterAddon.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", TypeShape.of(GetManagedKafkaKafkaClusterAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Addon resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterAddon.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", TypeShape.of(GetManagedKafkaKafkaClusterAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Addon resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterAddon.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddonPlain(GetManagedKafkaKafkaClusterAddonPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", TypeShape.of(GetManagedKafkaKafkaClusterAddonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Addons in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
+     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .name(kafkaClusterAddonName)
+     *             .state(kafkaClusterAddonState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonsResult> getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs args) {
+        return getManagedKafkaKafkaClusterAddons(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Addons in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
+     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .name(kafkaClusterAddonName)
+     *             .state(kafkaClusterAddonState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterAddonsResult> getManagedKafkaKafkaClusterAddonsPlain(GetManagedKafkaKafkaClusterAddonsPlainArgs args) {
+        return getManagedKafkaKafkaClusterAddonsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Addons in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
+     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .name(kafkaClusterAddonName)
+     *             .state(kafkaClusterAddonState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonsResult> getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddons:getManagedKafkaKafkaClusterAddons", TypeShape.of(GetManagedKafkaKafkaClusterAddonsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Addons in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
+     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .name(kafkaClusterAddonName)
+     *             .state(kafkaClusterAddonState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterAddonsResult> getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddons:getManagedKafkaKafkaClusterAddons", TypeShape.of(GetManagedKafkaKafkaClusterAddonsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Addons in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterAddons.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
+     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .name(kafkaClusterAddonName)
+     *             .state(kafkaClusterAddonState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterAddonsResult> getManagedKafkaKafkaClusterAddonsPlain(GetManagedKafkaKafkaClusterAddonsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterAddons:getManagedKafkaKafkaClusterAddons", TypeShape.of(GetManagedKafkaKafkaClusterAddonsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.

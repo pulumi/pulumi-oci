@@ -189,6 +189,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The IPv6 address the read replica is configured to listen on.
+     * 
+     */
+    @Import(name="ipv6address")
+    private @Nullable Output<String> ipv6address;
+
+    /**
+     * @return The IPv6 address the read replica is configured to listen on.
+     * 
+     */
+    public Optional<Output<String>> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
+    }
+
+    /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
      */
@@ -412,6 +427,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
+        this.ipv6address = $.ipv6address;
         this.isDeleteProtected = $.isDeleteProtected;
         this.lifecycleDetails = $.lifecycleDetails;
         this.mysqlVersion = $.mysqlVersion;
@@ -685,6 +701,27 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param ipv6address The IPv6 address the read replica is configured to listen on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(@Nullable Output<String> ipv6address) {
+            $.ipv6address = ipv6address;
+            return this;
+        }
+
+        /**
+         * @param ipv6address The IPv6 address the read replica is configured to listen on.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6address(String ipv6address) {
+            return ipv6address(Output.of(ipv6address));
         }
 
         /**

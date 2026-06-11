@@ -180,6 +180,11 @@ export type DatabaseSoftwareImage = import("./databaseSoftwareImage").DatabaseSo
 export const DatabaseSoftwareImage: typeof import("./databaseSoftwareImage").DatabaseSoftwareImage = null as any;
 utilities.lazyLoad(exports, ["DatabaseSoftwareImage"], () => require("./databaseSoftwareImage"));
 
+export { DatabaseSoftwareScheduleManagementArgs, DatabaseSoftwareScheduleManagementState } from "./databaseSoftwareScheduleManagement";
+export type DatabaseSoftwareScheduleManagement = import("./databaseSoftwareScheduleManagement").DatabaseSoftwareScheduleManagement;
+export const DatabaseSoftwareScheduleManagement: typeof import("./databaseSoftwareScheduleManagement").DatabaseSoftwareScheduleManagement = null as any;
+utilities.lazyLoad(exports, ["DatabaseSoftwareScheduleManagement"], () => require("./databaseSoftwareScheduleManagement"));
+
 export { DatabaseUpgradeArgs, DatabaseUpgradeState } from "./databaseUpgrade";
 export type DatabaseUpgrade = import("./databaseUpgrade").DatabaseUpgrade;
 export const DatabaseUpgrade: typeof import("./databaseUpgrade").DatabaseUpgrade = null as any;
@@ -1295,6 +1300,8 @@ const _module = {
                 return new DatabaseSnapshotStandby(name, <any>undefined, { urn })
             case "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage":
                 return new DatabaseSoftwareImage(name, <any>undefined, { urn })
+            case "oci:Database/databaseSoftwareScheduleManagement:DatabaseSoftwareScheduleManagement":
+                return new DatabaseSoftwareScheduleManagement(name, <any>undefined, { urn })
             case "oci:Database/databaseUpgrade:DatabaseUpgrade":
                 return new DatabaseUpgrade(name, <any>undefined, { urn })
             case "oci:Database/dbHome:DbHome":
@@ -1427,6 +1434,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/dataPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/database", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSnapshotStandby", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareImage", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareScheduleManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNode", _module)

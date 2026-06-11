@@ -70,7 +70,7 @@ export interface GetServiceProvidersArgs {
  */
 export interface GetServiceProvidersResult {
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Service Provider.
      */
     readonly compartmentId: string;
     readonly filters?: outputs.DelegateAccessControl.GetServiceProvidersFilter[];

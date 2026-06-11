@@ -156,6 +156,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+        /// </summary>
+        public readonly string Hostname;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
         /// </summary>
         public readonly string Id;
@@ -208,6 +212,8 @@ namespace Pulumi.Oci.Core
 
             ImmutableDictionary<string, string> freeformTags,
 
+            string hostname,
+
             string id,
 
             string ipAddress,
@@ -235,6 +241,7 @@ namespace Pulumi.Oci.Core
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            Hostname = hostname;
             Id = id;
             IpAddress = ipAddress;
             IpState = ipState;

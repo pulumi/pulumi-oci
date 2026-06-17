@@ -32,6 +32,21 @@ public final class GetLinksArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.childTenancyId);
     }
 
+    /**
+     * The feature associated with this link.
+     * 
+     */
+    @Import(name="feature")
+    private @Nullable Output<String> feature;
+
+    /**
+     * @return The feature associated with this link.
+     * 
+     */
+    public Optional<Output<String>> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetLinksFilterArgs>> filters;
 
@@ -73,6 +88,7 @@ public final class GetLinksArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetLinksArgs(GetLinksArgs $) {
         this.childTenancyId = $.childTenancyId;
+        this.feature = $.feature;
         this.filters = $.filters;
         this.parentTenancyId = $.parentTenancyId;
         this.state = $.state;
@@ -115,6 +131,27 @@ public final class GetLinksArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder childTenancyId(String childTenancyId) {
             return childTenancyId(Output.of(childTenancyId));
+        }
+
+        /**
+         * @param feature The feature associated with this link.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder feature(@Nullable Output<String> feature) {
+            $.feature = feature;
+            return this;
+        }
+
+        /**
+         * @param feature The feature associated with this link.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder feature(String feature) {
+            return feature(Output.of(feature));
         }
 
         public Builder filters(@Nullable Output<List<GetLinksFilterArgs>> filters) {

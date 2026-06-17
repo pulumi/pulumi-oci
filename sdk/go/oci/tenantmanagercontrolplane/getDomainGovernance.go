@@ -58,6 +58,8 @@ type GetDomainGovernanceArgs struct {
 
 // A collection of values returned by getDomainGovernance.
 type GetDomainGovernanceResult struct {
+	// The OCID of the tenancy that owns this domain governance entity.
+	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags        map[string]string `pulumi:"definedTags"`
 	DomainGovernanceId string            `pulumi:"domainGovernanceId"`
@@ -119,6 +121,11 @@ func (o GetDomainGovernanceResultOutput) ToGetDomainGovernanceResultOutput() Get
 
 func (o GetDomainGovernanceResultOutput) ToGetDomainGovernanceResultOutputWithContext(ctx context.Context) GetDomainGovernanceResultOutput {
 	return o
+}
+
+// The OCID of the tenancy that owns this domain governance entity.
+func (o GetDomainGovernanceResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainGovernanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

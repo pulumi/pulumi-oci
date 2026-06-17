@@ -54,7 +54,7 @@ func GetDataKeys(ctx *pulumi.Context, args *GetDataKeysArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getDataKeys.
 type GetDataKeysArgs struct {
-	// The OCID of the APM domain
+	// The OCID of the APM domain.
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// Data key type.
 	DataKeyType *string             `pulumi:"dataKeyType"`
@@ -83,7 +83,7 @@ func GetDataKeysOutput(ctx *pulumi.Context, args GetDataKeysOutputArgs, opts ...
 
 // A collection of arguments for invoking getDataKeys.
 type GetDataKeysOutputArgs struct {
-	// The OCID of the APM domain
+	// The OCID of the APM domain.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// Data key type.
 	DataKeyType pulumi.StringPtrInput       `pulumi:"dataKeyType"`

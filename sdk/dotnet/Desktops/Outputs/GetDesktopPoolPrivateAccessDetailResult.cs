@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class GetDesktopPoolPrivateAccessDetailResult
     {
         /// <summary>
-        /// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        /// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         /// </summary>
         public readonly string EndpointFqdn;
         /// <summary>
@@ -26,7 +26,11 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             string privateIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string subnetId,
 
             string vcnId)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             EndpointFqdn = endpointFqdn;
             NsgIds = nsgIds;
             PrivateIp = privateIp;
+            SecurityAttributes = securityAttributes;
             SubnetId = subnetId;
             VcnId = vcnId;
         }

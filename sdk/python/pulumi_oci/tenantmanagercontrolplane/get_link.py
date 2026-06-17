@@ -26,10 +26,13 @@ class GetLinkResult:
     """
     A collection of values returned by getLink.
     """
-    def __init__(__self__, child_tenancy_id=None, id=None, link_id=None, parent_tenancy_id=None, state=None, time_created=None, time_terminated=None, time_updated=None):
+    def __init__(__self__, child_tenancy_id=None, feature=None, id=None, link_id=None, parent_tenancy_id=None, state=None, time_created=None, time_terminated=None, time_updated=None):
         if child_tenancy_id and not isinstance(child_tenancy_id, str):
             raise TypeError("Expected argument 'child_tenancy_id' to be a str")
         pulumi.set(__self__, "child_tenancy_id", child_tenancy_id)
+        if feature and not isinstance(feature, str):
+            raise TypeError("Expected argument 'feature' to be a str")
+        pulumi.set(__self__, "feature", feature)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -59,6 +62,14 @@ class GetLinkResult:
         OCID of the child tenancy.
         """
         return pulumi.get(self, "child_tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        The feature associated with this link. Default value is CORE.
+        """
+        return pulumi.get(self, "feature")
 
     @_builtins.property
     @pulumi.getter
@@ -121,6 +132,7 @@ class AwaitableGetLinkResult(GetLinkResult):
             yield self
         return GetLinkResult(
             child_tenancy_id=self.child_tenancy_id,
+            feature=self.feature,
             id=self.id,
             link_id=self.link_id,
             parent_tenancy_id=self.parent_tenancy_id,
@@ -156,6 +168,7 @@ def get_link(link_id: Optional[_builtins.str] = None,
 
     return AwaitableGetLinkResult(
         child_tenancy_id=pulumi.get(__ret__, 'child_tenancy_id'),
+        feature=pulumi.get(__ret__, 'feature'),
         id=pulumi.get(__ret__, 'id'),
         link_id=pulumi.get(__ret__, 'link_id'),
         parent_tenancy_id=pulumi.get(__ret__, 'parent_tenancy_id'),
@@ -188,6 +201,7 @@ def get_link_output(link_id: pulumi.Input[Optional[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:Tenantmanagercontrolplane/getLink:getLink', __args__, opts=opts, typ=GetLinkResult)
     return __ret__.apply(lambda __response__: GetLinkResult(
         child_tenancy_id=pulumi.get(__response__, 'child_tenancy_id'),
+        feature=pulumi.get(__response__, 'feature'),
         id=pulumi.get(__response__, 'id'),
         link_id=pulumi.get(__response__, 'link_id'),
         parent_tenancy_id=pulumi.get(__response__, 'parent_tenancy_id'),

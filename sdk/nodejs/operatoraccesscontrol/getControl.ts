@@ -90,6 +90,10 @@ export interface GetControlResult {
      */
     readonly lastModifiedInfo: string;
     /**
+     * The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     */
+    readonly notificationTopicId: string;
+    /**
      * Number of approvers required to approve an access request.
      */
     readonly numberOfApprovers: number;

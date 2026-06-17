@@ -22,9 +22,13 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly bool? IsHavingRestoreConfigOverrides;
         /// <summary>
-        /// The source descriminator. Example: `{"SourceType": "BACKUP"}`.
+        /// The [OCID] of the primary database system.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? PrimaryDbSystemId;
+        /// <summary>
+        /// The source descriminator.
+        /// </summary>
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private DbSystemSource(
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.Psql.Outputs
 
             bool? isHavingRestoreConfigOverrides,
 
-            string sourceType)
+            string? primaryDbSystemId,
+
+            string? sourceType)
         {
             BackupId = backupId;
             IsHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            PrimaryDbSystemId = primaryDbSystemId;
             SourceType = sourceType;
         }
     }

@@ -64,6 +64,21 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
     }
 
     /**
+     * (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    @Import(name="hostGroupId")
+    private @Nullable Output<String> hostGroupId;
+
+    /**
+     * @return (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    public Optional<Output<String>> hostGroupId() {
+        return Optional.ofNullable(this.hostGroupId);
+    }
+
+    /**
      * (Updatable) Configuration options for preemptible nodes.
      * 
      */
@@ -99,6 +114,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
         this.faultDomains = $.faultDomains;
+        this.hostGroupId = $.hostGroupId;
         this.preemptibleNodeConfig = $.preemptibleNodeConfig;
         this.subnetId = $.subnetId;
     }
@@ -192,6 +208,27 @@ public final class NodePoolNodeConfigDetailsPlacementConfigArgs extends com.pulu
          */
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
+        }
+
+        /**
+         * @param hostGroupId (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostGroupId(@Nullable Output<String> hostGroupId) {
+            $.hostGroupId = hostGroupId;
+            return this;
+        }
+
+        /**
+         * @param hostGroupId (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostGroupId(String hostGroupId) {
+            return hostGroupId(Output.of(hostGroupId));
         }
 
         /**

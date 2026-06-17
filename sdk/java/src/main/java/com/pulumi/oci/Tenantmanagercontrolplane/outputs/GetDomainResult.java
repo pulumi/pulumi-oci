@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainResult {
     /**
+     * @return The OCID of the tenancy that has started the registration process for this domain.
+     * 
+     */
+    private String compartmentId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -69,6 +74,13 @@ public final class GetDomainResult {
     private String txtRecord;
 
     private GetDomainResult() {}
+    /**
+     * @return The OCID of the tenancy that has started the registration process for this domain.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -159,6 +171,7 @@ public final class GetDomainResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String compartmentId;
         private Map<String,String> definedTags;
         private String domainId;
         private String domainName;
@@ -174,6 +187,7 @@ public final class GetDomainResult {
         public Builder() {}
         public Builder(GetDomainResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.domainId = defaults.domainId;
     	      this.domainName = defaults.domainName;
@@ -188,6 +202,14 @@ public final class GetDomainResult {
     	      this.txtRecord = defaults.txtRecord;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDomainResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
@@ -286,6 +308,7 @@ public final class GetDomainResult {
         }
         public GetDomainResult build() {
             final var _resultValue = new GetDomainResult();
+            _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.domainId = domainId;
             _resultValue.domainName = domainName;

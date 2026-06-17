@@ -2456,6 +2456,344 @@ func (o GetDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetDomainsFilterOu
 	}).(GetDomainsFilterOutput)
 }
 
+type GetLinkFeaturesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetLinkFeaturesFilterInput is an input type that accepts GetLinkFeaturesFilterArgs and GetLinkFeaturesFilterOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesFilterInput` via:
+//
+//	GetLinkFeaturesFilterArgs{...}
+type GetLinkFeaturesFilterInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesFilterOutput() GetLinkFeaturesFilterOutput
+	ToGetLinkFeaturesFilterOutputWithContext(context.Context) GetLinkFeaturesFilterOutput
+}
+
+type GetLinkFeaturesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetLinkFeaturesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesFilter)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesFilterArgs) ToGetLinkFeaturesFilterOutput() GetLinkFeaturesFilterOutput {
+	return i.ToGetLinkFeaturesFilterOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesFilterArgs) ToGetLinkFeaturesFilterOutputWithContext(ctx context.Context) GetLinkFeaturesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesFilterOutput)
+}
+
+// GetLinkFeaturesFilterArrayInput is an input type that accepts GetLinkFeaturesFilterArray and GetLinkFeaturesFilterArrayOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesFilterArrayInput` via:
+//
+//	GetLinkFeaturesFilterArray{ GetLinkFeaturesFilterArgs{...} }
+type GetLinkFeaturesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesFilterArrayOutput() GetLinkFeaturesFilterArrayOutput
+	ToGetLinkFeaturesFilterArrayOutputWithContext(context.Context) GetLinkFeaturesFilterArrayOutput
+}
+
+type GetLinkFeaturesFilterArray []GetLinkFeaturesFilterInput
+
+func (GetLinkFeaturesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesFilter)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesFilterArray) ToGetLinkFeaturesFilterArrayOutput() GetLinkFeaturesFilterArrayOutput {
+	return i.ToGetLinkFeaturesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesFilterArray) ToGetLinkFeaturesFilterArrayOutputWithContext(ctx context.Context) GetLinkFeaturesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesFilterArrayOutput)
+}
+
+type GetLinkFeaturesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesFilter)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesFilterOutput) ToGetLinkFeaturesFilterOutput() GetLinkFeaturesFilterOutput {
+	return o
+}
+
+func (o GetLinkFeaturesFilterOutput) ToGetLinkFeaturesFilterOutputWithContext(ctx context.Context) GetLinkFeaturesFilterOutput {
+	return o
+}
+
+func (o GetLinkFeaturesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetLinkFeaturesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLinkFeaturesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetLinkFeaturesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLinkFeaturesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetLinkFeaturesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesFilter)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesFilterArrayOutput) ToGetLinkFeaturesFilterArrayOutput() GetLinkFeaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesFilterArrayOutput) ToGetLinkFeaturesFilterArrayOutputWithContext(ctx context.Context) GetLinkFeaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesFilterArrayOutput) Index(i pulumi.IntInput) GetLinkFeaturesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLinkFeaturesFilter {
+		return vs[0].([]GetLinkFeaturesFilter)[vs[1].(int)]
+	}).(GetLinkFeaturesFilterOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollection struct {
+	// Array containing LinkFeature items.
+	Items []GetLinkFeaturesLinkFeaturesCollectionItem `pulumi:"items"`
+}
+
+// GetLinkFeaturesLinkFeaturesCollectionInput is an input type that accepts GetLinkFeaturesLinkFeaturesCollectionArgs and GetLinkFeaturesLinkFeaturesCollectionOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesLinkFeaturesCollectionInput` via:
+//
+//	GetLinkFeaturesLinkFeaturesCollectionArgs{...}
+type GetLinkFeaturesLinkFeaturesCollectionInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesLinkFeaturesCollectionOutput() GetLinkFeaturesLinkFeaturesCollectionOutput
+	ToGetLinkFeaturesLinkFeaturesCollectionOutputWithContext(context.Context) GetLinkFeaturesLinkFeaturesCollectionOutput
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionArgs struct {
+	// Array containing LinkFeature items.
+	Items GetLinkFeaturesLinkFeaturesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetLinkFeaturesLinkFeaturesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollection)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionArgs) ToGetLinkFeaturesLinkFeaturesCollectionOutput() GetLinkFeaturesLinkFeaturesCollectionOutput {
+	return i.ToGetLinkFeaturesLinkFeaturesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionArgs) ToGetLinkFeaturesLinkFeaturesCollectionOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesLinkFeaturesCollectionOutput)
+}
+
+// GetLinkFeaturesLinkFeaturesCollectionArrayInput is an input type that accepts GetLinkFeaturesLinkFeaturesCollectionArray and GetLinkFeaturesLinkFeaturesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesLinkFeaturesCollectionArrayInput` via:
+//
+//	GetLinkFeaturesLinkFeaturesCollectionArray{ GetLinkFeaturesLinkFeaturesCollectionArgs{...} }
+type GetLinkFeaturesLinkFeaturesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesLinkFeaturesCollectionArrayOutput() GetLinkFeaturesLinkFeaturesCollectionArrayOutput
+	ToGetLinkFeaturesLinkFeaturesCollectionArrayOutputWithContext(context.Context) GetLinkFeaturesLinkFeaturesCollectionArrayOutput
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionArray []GetLinkFeaturesLinkFeaturesCollectionInput
+
+func (GetLinkFeaturesLinkFeaturesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesLinkFeaturesCollection)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionArray) ToGetLinkFeaturesLinkFeaturesCollectionArrayOutput() GetLinkFeaturesLinkFeaturesCollectionArrayOutput {
+	return i.ToGetLinkFeaturesLinkFeaturesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionArray) ToGetLinkFeaturesLinkFeaturesCollectionArrayOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesLinkFeaturesCollectionArrayOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesLinkFeaturesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollection)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionOutput) ToGetLinkFeaturesLinkFeaturesCollectionOutput() GetLinkFeaturesLinkFeaturesCollectionOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionOutput) ToGetLinkFeaturesLinkFeaturesCollectionOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionOutput {
+	return o
+}
+
+// Array containing LinkFeature items.
+func (o GetLinkFeaturesLinkFeaturesCollectionOutput) Items() GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollection) []GetLinkFeaturesLinkFeaturesCollectionItem {
+		return v.Items
+	}).(GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesLinkFeaturesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesLinkFeaturesCollection)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionArrayOutput) ToGetLinkFeaturesLinkFeaturesCollectionArrayOutput() GetLinkFeaturesLinkFeaturesCollectionArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionArrayOutput) ToGetLinkFeaturesLinkFeaturesCollectionArrayOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionArrayOutput) Index(i pulumi.IntInput) GetLinkFeaturesLinkFeaturesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLinkFeaturesLinkFeaturesCollection {
+		return vs[0].([]GetLinkFeaturesLinkFeaturesCollection)[vs[1].(int)]
+	}).(GetLinkFeaturesLinkFeaturesCollectionOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionItem struct {
+	// Description of the feature.
+	Description string `pulumi:"description"`
+	// Display name of the feature.
+	DisplayName string `pulumi:"displayName"`
+	// The feature associated with this link. Default value is CORE.
+	Feature string `pulumi:"feature"`
+	// ConsoleUrl of the feature.
+	PartnerServiceConsoleUrl string `pulumi:"partnerServiceConsoleUrl"`
+	// UserGuideUrl of the feature.
+	UserGuideUrl string `pulumi:"userGuideUrl"`
+}
+
+// GetLinkFeaturesLinkFeaturesCollectionItemInput is an input type that accepts GetLinkFeaturesLinkFeaturesCollectionItemArgs and GetLinkFeaturesLinkFeaturesCollectionItemOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesLinkFeaturesCollectionItemInput` via:
+//
+//	GetLinkFeaturesLinkFeaturesCollectionItemArgs{...}
+type GetLinkFeaturesLinkFeaturesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesLinkFeaturesCollectionItemOutput() GetLinkFeaturesLinkFeaturesCollectionItemOutput
+	ToGetLinkFeaturesLinkFeaturesCollectionItemOutputWithContext(context.Context) GetLinkFeaturesLinkFeaturesCollectionItemOutput
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionItemArgs struct {
+	// Description of the feature.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Display name of the feature.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The feature associated with this link. Default value is CORE.
+	Feature pulumi.StringInput `pulumi:"feature"`
+	// ConsoleUrl of the feature.
+	PartnerServiceConsoleUrl pulumi.StringInput `pulumi:"partnerServiceConsoleUrl"`
+	// UserGuideUrl of the feature.
+	UserGuideUrl pulumi.StringInput `pulumi:"userGuideUrl"`
+}
+
+func (GetLinkFeaturesLinkFeaturesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionItem)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionItemArgs) ToGetLinkFeaturesLinkFeaturesCollectionItemOutput() GetLinkFeaturesLinkFeaturesCollectionItemOutput {
+	return i.ToGetLinkFeaturesLinkFeaturesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionItemArgs) ToGetLinkFeaturesLinkFeaturesCollectionItemOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesLinkFeaturesCollectionItemOutput)
+}
+
+// GetLinkFeaturesLinkFeaturesCollectionItemArrayInput is an input type that accepts GetLinkFeaturesLinkFeaturesCollectionItemArray and GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetLinkFeaturesLinkFeaturesCollectionItemArrayInput` via:
+//
+//	GetLinkFeaturesLinkFeaturesCollectionItemArray{ GetLinkFeaturesLinkFeaturesCollectionItemArgs{...} }
+type GetLinkFeaturesLinkFeaturesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutput() GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput
+	ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutputWithContext(context.Context) GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionItemArray []GetLinkFeaturesLinkFeaturesCollectionItemInput
+
+func (GetLinkFeaturesLinkFeaturesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesLinkFeaturesCollectionItem)(nil)).Elem()
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionItemArray) ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutput() GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput {
+	return i.ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetLinkFeaturesLinkFeaturesCollectionItemArray) ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesLinkFeaturesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionItem)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) ToGetLinkFeaturesLinkFeaturesCollectionItemOutput() GetLinkFeaturesLinkFeaturesCollectionItemOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) ToGetLinkFeaturesLinkFeaturesCollectionItemOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionItemOutput {
+	return o
+}
+
+// Description of the feature.
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Display name of the feature.
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The feature associated with this link. Default value is CORE.
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) Feature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollectionItem) string { return v.Feature }).(pulumi.StringOutput)
+}
+
+// ConsoleUrl of the feature.
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) PartnerServiceConsoleUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollectionItem) string { return v.PartnerServiceConsoleUrl }).(pulumi.StringOutput)
+}
+
+// UserGuideUrl of the feature.
+func (o GetLinkFeaturesLinkFeaturesCollectionItemOutput) UserGuideUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkFeaturesLinkFeaturesCollectionItem) string { return v.UserGuideUrl }).(pulumi.StringOutput)
+}
+
+type GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLinkFeaturesLinkFeaturesCollectionItem)(nil)).Elem()
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput) ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutput() GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput) ToGetLinkFeaturesLinkFeaturesCollectionItemArrayOutputWithContext(ctx context.Context) GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLinkFeaturesLinkFeaturesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLinkFeaturesLinkFeaturesCollectionItem {
+		return vs[0].([]GetLinkFeaturesLinkFeaturesCollectionItem)[vs[1].(int)]
+	}).(GetLinkFeaturesLinkFeaturesCollectionItemOutput)
+}
+
 type GetLinksFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -2659,6 +2997,8 @@ func (o GetLinksLinkCollectionArrayOutput) Index(i pulumi.IntInput) GetLinksLink
 type GetLinksLinkCollectionItem struct {
 	// The ID of the child tenancy this link is associated with.
 	ChildTenancyId string `pulumi:"childTenancyId"`
+	// The feature associated with this link.
+	Feature string `pulumi:"feature"`
 	// OCID of the link.
 	Id string `pulumi:"id"`
 	// The ID of the parent tenancy this link is associated with.
@@ -2687,6 +3027,8 @@ type GetLinksLinkCollectionItemInput interface {
 type GetLinksLinkCollectionItemArgs struct {
 	// The ID of the child tenancy this link is associated with.
 	ChildTenancyId pulumi.StringInput `pulumi:"childTenancyId"`
+	// The feature associated with this link.
+	Feature pulumi.StringInput `pulumi:"feature"`
 	// OCID of the link.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The ID of the parent tenancy this link is associated with.
@@ -2755,6 +3097,11 @@ func (o GetLinksLinkCollectionItemOutput) ToGetLinksLinkCollectionItemOutputWith
 // The ID of the child tenancy this link is associated with.
 func (o GetLinksLinkCollectionItemOutput) ChildTenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLinksLinkCollectionItem) string { return v.ChildTenancyId }).(pulumi.StringOutput)
+}
+
+// The feature associated with this link.
+func (o GetLinksLinkCollectionItemOutput) Feature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinksLinkCollectionItem) string { return v.Feature }).(pulumi.StringOutput)
 }
 
 // OCID of the link.
@@ -3743,6 +4090,8 @@ type GetRecipientInvitationsRecipientInvitationCollectionItem struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-created name to describe the invitation. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	Features []string `pulumi:"features"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the recipient invitation.
@@ -3785,6 +4134,8 @@ type GetRecipientInvitationsRecipientInvitationCollectionItemArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-created name to describe the invitation. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	Features pulumi.StringArrayInput `pulumi:"features"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the recipient invitation.
@@ -3877,6 +4228,11 @@ func (o GetRecipientInvitationsRecipientInvitationCollectionItemOutput) DisplayN
 	return o.ApplyT(func(v GetRecipientInvitationsRecipientInvitationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+func (o GetRecipientInvitationsRecipientInvitationCollectionItemOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecipientInvitationsRecipientInvitationCollectionItem) []string { return v.Features }).(pulumi.StringArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetRecipientInvitationsRecipientInvitationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetRecipientInvitationsRecipientInvitationCollectionItem) map[string]string {
@@ -3958,7 +4314,123 @@ func (o GetRecipientInvitationsRecipientInvitationCollectionItemArrayOutput) Ind
 	}).(GetRecipientInvitationsRecipientInvitationCollectionItemOutput)
 }
 
+type GetSenderInvitationInvitationFeature struct {
+	// Name of the feature.
+	Name string `pulumi:"name"`
+	// OCID of the corresponding recipient invitation.
+	RecipientInvitationId string `pulumi:"recipientInvitationId"`
+	// Status of the sender invitation.
+	Status string `pulumi:"status"`
+}
+
+// GetSenderInvitationInvitationFeatureInput is an input type that accepts GetSenderInvitationInvitationFeatureArgs and GetSenderInvitationInvitationFeatureOutput values.
+// You can construct a concrete instance of `GetSenderInvitationInvitationFeatureInput` via:
+//
+//	GetSenderInvitationInvitationFeatureArgs{...}
+type GetSenderInvitationInvitationFeatureInput interface {
+	pulumi.Input
+
+	ToGetSenderInvitationInvitationFeatureOutput() GetSenderInvitationInvitationFeatureOutput
+	ToGetSenderInvitationInvitationFeatureOutputWithContext(context.Context) GetSenderInvitationInvitationFeatureOutput
+}
+
+type GetSenderInvitationInvitationFeatureArgs struct {
+	// Name of the feature.
+	Name pulumi.StringInput `pulumi:"name"`
+	// OCID of the corresponding recipient invitation.
+	RecipientInvitationId pulumi.StringInput `pulumi:"recipientInvitationId"`
+	// Status of the sender invitation.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetSenderInvitationInvitationFeatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderInvitationInvitationFeature)(nil)).Elem()
+}
+
+func (i GetSenderInvitationInvitationFeatureArgs) ToGetSenderInvitationInvitationFeatureOutput() GetSenderInvitationInvitationFeatureOutput {
+	return i.ToGetSenderInvitationInvitationFeatureOutputWithContext(context.Background())
+}
+
+func (i GetSenderInvitationInvitationFeatureArgs) ToGetSenderInvitationInvitationFeatureOutputWithContext(ctx context.Context) GetSenderInvitationInvitationFeatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderInvitationInvitationFeatureOutput)
+}
+
+// GetSenderInvitationInvitationFeatureArrayInput is an input type that accepts GetSenderInvitationInvitationFeatureArray and GetSenderInvitationInvitationFeatureArrayOutput values.
+// You can construct a concrete instance of `GetSenderInvitationInvitationFeatureArrayInput` via:
+//
+//	GetSenderInvitationInvitationFeatureArray{ GetSenderInvitationInvitationFeatureArgs{...} }
+type GetSenderInvitationInvitationFeatureArrayInput interface {
+	pulumi.Input
+
+	ToGetSenderInvitationInvitationFeatureArrayOutput() GetSenderInvitationInvitationFeatureArrayOutput
+	ToGetSenderInvitationInvitationFeatureArrayOutputWithContext(context.Context) GetSenderInvitationInvitationFeatureArrayOutput
+}
+
+type GetSenderInvitationInvitationFeatureArray []GetSenderInvitationInvitationFeatureInput
+
+func (GetSenderInvitationInvitationFeatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderInvitationInvitationFeature)(nil)).Elem()
+}
+
+func (i GetSenderInvitationInvitationFeatureArray) ToGetSenderInvitationInvitationFeatureArrayOutput() GetSenderInvitationInvitationFeatureArrayOutput {
+	return i.ToGetSenderInvitationInvitationFeatureArrayOutputWithContext(context.Background())
+}
+
+func (i GetSenderInvitationInvitationFeatureArray) ToGetSenderInvitationInvitationFeatureArrayOutputWithContext(ctx context.Context) GetSenderInvitationInvitationFeatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderInvitationInvitationFeatureArrayOutput)
+}
+
+type GetSenderInvitationInvitationFeatureOutput struct{ *pulumi.OutputState }
+
+func (GetSenderInvitationInvitationFeatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderInvitationInvitationFeature)(nil)).Elem()
+}
+
+func (o GetSenderInvitationInvitationFeatureOutput) ToGetSenderInvitationInvitationFeatureOutput() GetSenderInvitationInvitationFeatureOutput {
+	return o
+}
+
+func (o GetSenderInvitationInvitationFeatureOutput) ToGetSenderInvitationInvitationFeatureOutputWithContext(ctx context.Context) GetSenderInvitationInvitationFeatureOutput {
+	return o
+}
+
+// Name of the feature.
+func (o GetSenderInvitationInvitationFeatureOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationInvitationFeature) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// OCID of the corresponding recipient invitation.
+func (o GetSenderInvitationInvitationFeatureOutput) RecipientInvitationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationInvitationFeature) string { return v.RecipientInvitationId }).(pulumi.StringOutput)
+}
+
+// Status of the sender invitation.
+func (o GetSenderInvitationInvitationFeatureOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationInvitationFeature) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetSenderInvitationInvitationFeatureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSenderInvitationInvitationFeatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderInvitationInvitationFeature)(nil)).Elem()
+}
+
+func (o GetSenderInvitationInvitationFeatureArrayOutput) ToGetSenderInvitationInvitationFeatureArrayOutput() GetSenderInvitationInvitationFeatureArrayOutput {
+	return o
+}
+
+func (o GetSenderInvitationInvitationFeatureArrayOutput) ToGetSenderInvitationInvitationFeatureArrayOutputWithContext(ctx context.Context) GetSenderInvitationInvitationFeatureArrayOutput {
+	return o
+}
+
+func (o GetSenderInvitationInvitationFeatureArrayOutput) Index(i pulumi.IntInput) GetSenderInvitationInvitationFeatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSenderInvitationInvitationFeature {
+		return vs[0].([]GetSenderInvitationInvitationFeature)[vs[1].(int)]
+	}).(GetSenderInvitationInvitationFeatureOutput)
+}
+
 type GetSenderInvitationsFilter struct {
+	// Name of the feature.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -3976,6 +4448,7 @@ type GetSenderInvitationsFilterInput interface {
 }
 
 type GetSenderInvitationsFilterArgs struct {
+	// Name of the feature.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -4032,6 +4505,7 @@ func (o GetSenderInvitationsFilterOutput) ToGetSenderInvitationsFilterOutputWith
 	return o
 }
 
+// Name of the feature.
 func (o GetSenderInvitationsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSenderInvitationsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4166,11 +4640,14 @@ type GetSenderInvitationsSenderInvitationCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string   `pulumi:"displayName"`
+	Features    []string `pulumi:"features"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the sender invitation.
 	Id string `pulumi:"id"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	InvitationFeatures []GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature `pulumi:"invitationFeatures"`
 	// Email address of the recipient.
 	RecipientEmailAddress string `pulumi:"recipientEmailAddress"`
 	// OCID of the corresponding recipient invitation.
@@ -4208,11 +4685,14 @@ type GetSenderInvitationsSenderInvitationCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringInput      `pulumi:"displayName"`
+	Features    pulumi.StringArrayInput `pulumi:"features"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the sender invitation.
 	Id pulumi.StringInput `pulumi:"id"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	InvitationFeatures GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayInput `pulumi:"invitationFeatures"`
 	// Email address of the recipient.
 	RecipientEmailAddress pulumi.StringInput `pulumi:"recipientEmailAddress"`
 	// OCID of the corresponding recipient invitation.
@@ -4299,6 +4779,10 @@ func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) DisplayName() 
 	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItem) []string { return v.Features }).(pulumi.StringArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -4307,6 +4791,13 @@ func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) FreeformTags()
 // OCID of the sender invitation.
 func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+func (o GetSenderInvitationsSenderInvitationCollectionItemOutput) InvitationFeatures() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput {
+	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItem) []GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature {
+		return v.InvitationFeatures
+	}).(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput)
 }
 
 // Email address of the recipient.
@@ -4372,6 +4863,123 @@ func (o GetSenderInvitationsSenderInvitationCollectionItemArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSenderInvitationsSenderInvitationCollectionItem {
 		return vs[0].([]GetSenderInvitationsSenderInvitationCollectionItem)[vs[1].(int)]
 	}).(GetSenderInvitationsSenderInvitationCollectionItemOutput)
+}
+
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature struct {
+	// Name of the feature.
+	Name string `pulumi:"name"`
+	// OCID of the corresponding recipient invitation.
+	RecipientInvitationId string `pulumi:"recipientInvitationId"`
+	// The status of the sender invitation.
+	Status string `pulumi:"status"`
+}
+
+// GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureInput is an input type that accepts GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs and GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput values.
+// You can construct a concrete instance of `GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureInput` via:
+//
+//	GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs{...}
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureInput interface {
+	pulumi.Input
+
+	ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput
+	ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutputWithContext(context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput
+}
+
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs struct {
+	// Name of the feature.
+	Name pulumi.StringInput `pulumi:"name"`
+	// OCID of the corresponding recipient invitation.
+	RecipientInvitationId pulumi.StringInput `pulumi:"recipientInvitationId"`
+	// The status of the sender invitation.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature)(nil)).Elem()
+}
+
+func (i GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput {
+	return i.ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutputWithContext(context.Background())
+}
+
+func (i GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutputWithContext(ctx context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput)
+}
+
+// GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayInput is an input type that accepts GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray and GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput values.
+// You can construct a concrete instance of `GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayInput` via:
+//
+//	GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray{ GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs{...} }
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayInput interface {
+	pulumi.Input
+
+	ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput
+	ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutputWithContext(context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput
+}
+
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray []GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureInput
+
+func (GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature)(nil)).Elem()
+}
+
+func (i GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput {
+	return i.ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutputWithContext(context.Background())
+}
+
+func (i GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutputWithContext(ctx context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput)
+}
+
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput struct{ *pulumi.OutputState }
+
+func (GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature)(nil)).Elem()
+}
+
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput {
+	return o
+}
+
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutputWithContext(ctx context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput {
+	return o
+}
+
+// Name of the feature.
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// OCID of the corresponding recipient invitation.
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) RecipientInvitationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature) string {
+		return v.RecipientInvitationId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the sender invitation.
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature)(nil)).Elem()
+}
+
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput() GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput {
+	return o
+}
+
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput) ToGetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutputWithContext(ctx context.Context) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput {
+	return o
+}
+
+func (o GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput) Index(i pulumi.IntInput) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature {
+		return vs[0].([]GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature)[vs[1].(int)]
+	}).(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput)
 }
 
 type GetSubscriptionAvailableRegionsAvailableRegionCollection struct {
@@ -6644,6 +7252,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsDomainCollectionItemArrayInput)(nil)).Elem(), GetDomainsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsFilterInput)(nil)).Elem(), GetDomainsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsFilterArrayInput)(nil)).Elem(), GetDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesFilterInput)(nil)).Elem(), GetLinkFeaturesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesFilterArrayInput)(nil)).Elem(), GetLinkFeaturesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionInput)(nil)).Elem(), GetLinkFeaturesLinkFeaturesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionArrayInput)(nil)).Elem(), GetLinkFeaturesLinkFeaturesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionItemInput)(nil)).Elem(), GetLinkFeaturesLinkFeaturesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLinkFeaturesLinkFeaturesCollectionItemArrayInput)(nil)).Elem(), GetLinkFeaturesLinkFeaturesCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLinksFilterInput)(nil)).Elem(), GetLinksFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLinksFilterArrayInput)(nil)).Elem(), GetLinksFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLinksLinkCollectionInput)(nil)).Elem(), GetLinksLinkCollectionArgs{})
@@ -6668,12 +7282,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipientInvitationsRecipientInvitationCollectionArrayInput)(nil)).Elem(), GetRecipientInvitationsRecipientInvitationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipientInvitationsRecipientInvitationCollectionItemInput)(nil)).Elem(), GetRecipientInvitationsRecipientInvitationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRecipientInvitationsRecipientInvitationCollectionItemArrayInput)(nil)).Elem(), GetRecipientInvitationsRecipientInvitationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationInvitationFeatureInput)(nil)).Elem(), GetSenderInvitationInvitationFeatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationInvitationFeatureArrayInput)(nil)).Elem(), GetSenderInvitationInvitationFeatureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsFilterInput)(nil)).Elem(), GetSenderInvitationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsFilterArrayInput)(nil)).Elem(), GetSenderInvitationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionArrayInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemArrayInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayInput)(nil)).Elem(), GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionAvailableRegionsAvailableRegionCollectionInput)(nil)).Elem(), GetSubscriptionAvailableRegionsAvailableRegionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionAvailableRegionsAvailableRegionCollectionArrayInput)(nil)).Elem(), GetSubscriptionAvailableRegionsAvailableRegionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionAvailableRegionsAvailableRegionCollectionItemInput)(nil)).Elem(), GetSubscriptionAvailableRegionsAvailableRegionCollectionItemArgs{})
@@ -6738,6 +7356,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDomainsDomainCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainsFilterOutput{})
 	pulumi.RegisterOutputType(GetDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesFilterOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesLinkFeaturesCollectionOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesLinkFeaturesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesLinkFeaturesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetLinkFeaturesLinkFeaturesCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetLinksFilterOutput{})
 	pulumi.RegisterOutputType(GetLinksFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetLinksLinkCollectionOutput{})
@@ -6762,12 +7386,16 @@ func init() {
 	pulumi.RegisterOutputType(GetRecipientInvitationsRecipientInvitationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRecipientInvitationsRecipientInvitationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetRecipientInvitationsRecipientInvitationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSenderInvitationInvitationFeatureOutput{})
+	pulumi.RegisterOutputType(GetSenderInvitationInvitationFeatureArrayOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsFilterOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureOutput{})
+	pulumi.RegisterOutputType(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionAvailableRegionsAvailableRegionCollectionOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionAvailableRegionsAvailableRegionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionAvailableRegionsAvailableRegionCollectionItemOutput{})

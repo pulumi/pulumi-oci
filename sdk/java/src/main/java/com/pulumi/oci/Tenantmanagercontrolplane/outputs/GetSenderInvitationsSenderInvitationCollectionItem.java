@@ -5,6 +5,7 @@ package com.pulumi.oci.Tenantmanagercontrolplane.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,7 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
      * 
      */
     private String displayName;
+    private List<String> features;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -37,6 +39,11 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
      * 
      */
     private String id;
+    /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    private List<GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature> invitationFeatures;
     /**
      * @return Email address of the recipient.
      * 
@@ -105,6 +112,9 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
     public String displayName() {
         return this.displayName;
     }
+    public List<String> features() {
+        return this.features;
+    }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -118,6 +128,13 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    public List<GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature> invitationFeatures() {
+        return this.invitationFeatures;
     }
     /**
      * @return Email address of the recipient.
@@ -195,8 +212,10 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
+        private List<String> features;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature> invitationFeatures;
         private String recipientEmailAddress;
         private String recipientInvitationId;
         private String recipientTenancyId;
@@ -212,8 +231,10 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.features = defaults.features;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.invitationFeatures = defaults.invitationFeatures;
     	      this.recipientEmailAddress = defaults.recipientEmailAddress;
     	      this.recipientInvitationId = defaults.recipientInvitationId;
     	      this.recipientTenancyId = defaults.recipientTenancyId;
@@ -250,6 +271,17 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder features(List<String> features) {
+            if (features == null) {
+              throw new MissingRequiredPropertyException("GetSenderInvitationsSenderInvitationCollectionItem", "features");
+            }
+            this.features = features;
+            return this;
+        }
+        public Builder features(String... features) {
+            return features(List.of(features));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetSenderInvitationsSenderInvitationCollectionItem", "freeformTags");
@@ -264,6 +296,17 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder invitationFeatures(List<GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature> invitationFeatures) {
+            if (invitationFeatures == null) {
+              throw new MissingRequiredPropertyException("GetSenderInvitationsSenderInvitationCollectionItem", "invitationFeatures");
+            }
+            this.invitationFeatures = invitationFeatures;
+            return this;
+        }
+        public Builder invitationFeatures(GetSenderInvitationsSenderInvitationCollectionItemInvitationFeature... invitationFeatures) {
+            return invitationFeatures(List.of(invitationFeatures));
         }
         @CustomType.Setter
         public Builder recipientEmailAddress(String recipientEmailAddress) {
@@ -345,8 +388,10 @@ public final class GetSenderInvitationsSenderInvitationCollectionItem {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.features = features;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.invitationFeatures = invitationFeatures;
             _resultValue.recipientEmailAddress = recipientEmailAddress;
             _resultValue.recipientInvitationId = recipientInvitationId;
             _resultValue.recipientTenancyId = recipientTenancyId;

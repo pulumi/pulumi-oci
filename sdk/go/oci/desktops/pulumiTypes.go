@@ -931,6 +931,8 @@ func (o DesktopPoolImagePtrOutput) OperatingSystem() pulumi.StringPtrOutput {
 }
 
 type DesktopPoolNetworkConfiguration struct {
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
@@ -949,6 +951,8 @@ type DesktopPoolNetworkConfigurationInput interface {
 }
 
 type DesktopPoolNetworkConfigurationArgs struct {
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
@@ -1032,6 +1036,11 @@ func (o DesktopPoolNetworkConfigurationOutput) ToDesktopPoolNetworkConfiguration
 	}).(DesktopPoolNetworkConfigurationPtrOutput)
 }
 
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DesktopPoolNetworkConfigurationOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DesktopPoolNetworkConfiguration) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -1066,6 +1075,16 @@ func (o DesktopPoolNetworkConfigurationPtrOutput) Elem() DesktopPoolNetworkConfi
 	}).(DesktopPoolNetworkConfigurationOutput)
 }
 
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DesktopPoolNetworkConfigurationPtrOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DesktopPoolNetworkConfiguration) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolNetworkConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolNetworkConfiguration) *string {
@@ -1093,7 +1112,9 @@ type DesktopPoolPrivateAccessDetails struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp *string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId *string `pulumi:"vcnId"`
@@ -1117,7 +1138,9 @@ type DesktopPoolPrivateAccessDetailsArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
@@ -1215,7 +1238,12 @@ func (o DesktopPoolPrivateAccessDetailsOutput) PrivateIp() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DesktopPoolPrivateAccessDetailsOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolPrivateAccessDetailsOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolPrivateAccessDetails) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -1279,7 +1307,17 @@ func (o DesktopPoolPrivateAccessDetailsPtrOutput) PrivateIp() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DesktopPoolPrivateAccessDetailsPtrOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o DesktopPoolPrivateAccessDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolPrivateAccessDetails) *string {
 		if v == nil {
@@ -1300,7 +1338,7 @@ func (o DesktopPoolPrivateAccessDetailsPtrOutput) VcnId() pulumi.StringPtrOutput
 }
 
 type DesktopPoolSessionLifecycleActions struct {
-	// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+	// (Updatable) Action and grace period for disconnect
 	Disconnect *DesktopPoolSessionLifecycleActionsDisconnect `pulumi:"disconnect"`
 	// (Updatable) Action and grace period for inactivity
 	Inactivity *DesktopPoolSessionLifecycleActionsInactivity `pulumi:"inactivity"`
@@ -1318,7 +1356,7 @@ type DesktopPoolSessionLifecycleActionsInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsArgs struct {
-	// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+	// (Updatable) Action and grace period for disconnect
 	Disconnect DesktopPoolSessionLifecycleActionsDisconnectPtrInput `pulumi:"disconnect"`
 	// (Updatable) Action and grace period for inactivity
 	Inactivity DesktopPoolSessionLifecycleActionsInactivityPtrInput `pulumi:"inactivity"`
@@ -1401,7 +1439,7 @@ func (o DesktopPoolSessionLifecycleActionsOutput) ToDesktopPoolSessionLifecycleA
 	}).(DesktopPoolSessionLifecycleActionsPtrOutput)
 }
 
-// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+// (Updatable) Action and grace period for disconnect
 func (o DesktopPoolSessionLifecycleActionsOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
 		return v.Disconnect
@@ -1439,7 +1477,7 @@ func (o DesktopPoolSessionLifecycleActionsPtrOutput) Elem() DesktopPoolSessionLi
 	}).(DesktopPoolSessionLifecycleActionsOutput)
 }
 
-// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+// (Updatable) Action and grace period for disconnect
 func (o DesktopPoolSessionLifecycleActionsPtrOutput) Disconnect() DesktopPoolSessionLifecycleActionsDisconnectPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActions) *DesktopPoolSessionLifecycleActionsDisconnect {
 		if v == nil {
@@ -1460,7 +1498,7 @@ func (o DesktopPoolSessionLifecycleActionsPtrOutput) Inactivity() DesktopPoolSes
 }
 
 type DesktopPoolSessionLifecycleActionsDisconnect struct {
-	// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+	// (Updatable) a disconnect action to be triggered
 	Action string `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
@@ -1478,7 +1516,7 @@ type DesktopPoolSessionLifecycleActionsDisconnectInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsDisconnectArgs struct {
-	// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+	// (Updatable) a disconnect action to be triggered
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
@@ -1561,7 +1599,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) ToDesktopPoolSession
 	}).(DesktopPoolSessionLifecycleActionsDisconnectPtrOutput)
 }
 
-// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+// (Updatable) a disconnect action to be triggered
 func (o DesktopPoolSessionLifecycleActionsDisconnectOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsDisconnect) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -1595,7 +1633,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Elem() DesktopPoo
 	}).(DesktopPoolSessionLifecycleActionsDisconnectOutput)
 }
 
-// (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+// (Updatable) a disconnect action to be triggered
 func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsDisconnect) *string {
 		if v == nil {
@@ -1616,7 +1654,7 @@ func (o DesktopPoolSessionLifecycleActionsDisconnectPtrOutput) GracePeriodInMinu
 }
 
 type DesktopPoolSessionLifecycleActionsInactivity struct {
-	// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+	// (Updatable) an inactivity action to be triggered
 	Action string `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes *int `pulumi:"gracePeriodInMinutes"`
@@ -1634,7 +1672,7 @@ type DesktopPoolSessionLifecycleActionsInactivityInput interface {
 }
 
 type DesktopPoolSessionLifecycleActionsInactivityArgs struct {
-	// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+	// (Updatable) an inactivity action to be triggered
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
 	GracePeriodInMinutes pulumi.IntPtrInput `pulumi:"gracePeriodInMinutes"`
@@ -1717,7 +1755,7 @@ func (o DesktopPoolSessionLifecycleActionsInactivityOutput) ToDesktopPoolSession
 	}).(DesktopPoolSessionLifecycleActionsInactivityPtrOutput)
 }
 
-// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+// (Updatable) an inactivity action to be triggered
 func (o DesktopPoolSessionLifecycleActionsInactivityOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v DesktopPoolSessionLifecycleActionsInactivity) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -1751,7 +1789,7 @@ func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Elem() DesktopPoo
 	}).(DesktopPoolSessionLifecycleActionsInactivityOutput)
 }
 
-// (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+// (Updatable) an inactivity action to be triggered
 func (o DesktopPoolSessionLifecycleActionsInactivityPtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DesktopPoolSessionLifecycleActionsInactivity) *string {
 		if v == nil {
@@ -4189,7 +4227,9 @@ func (o GetDesktopPoolImageArrayOutput) Index(i pulumi.IntInput) GetDesktopPoolI
 }
 
 type GetDesktopPoolNetworkConfiguration struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -4207,7 +4247,9 @@ type GetDesktopPoolNetworkConfigurationInput interface {
 }
 
 type GetDesktopPoolNetworkConfigurationArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -4264,7 +4306,12 @@ func (o GetDesktopPoolNetworkConfigurationOutput) ToGetDesktopPoolNetworkConfigu
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDesktopPoolNetworkConfigurationOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDesktopPoolNetworkConfiguration) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4295,13 +4342,15 @@ func (o GetDesktopPoolNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDesktopPoolPrivateAccessDetail struct {
-	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 	EndpointFqdn string `pulumi:"endpointFqdn"`
 	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -4319,13 +4368,15 @@ type GetDesktopPoolPrivateAccessDetailInput interface {
 }
 
 type GetDesktopPoolPrivateAccessDetailArgs struct {
-	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+	// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
 	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -4382,7 +4433,7 @@ func (o GetDesktopPoolPrivateAccessDetailOutput) ToGetDesktopPoolPrivateAccessDe
 	return o
 }
 
-// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+// The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
 func (o GetDesktopPoolPrivateAccessDetailOutput) EndpointFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.EndpointFqdn }).(pulumi.StringOutput)
 }
@@ -4397,7 +4448,12 @@ func (o GetDesktopPoolPrivateAccessDetailOutput) PrivateIp() pulumi.StringOutput
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDesktopPoolPrivateAccessDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -5377,6 +5433,8 @@ type GetDesktopPoolsDesktopPoolCollectionItem struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Action to be triggered on inactivity or disconnect
 	SessionLifecycleActions []GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
@@ -5452,6 +5510,8 @@ type GetDesktopPoolsDesktopPoolCollectionItemArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayInput `pulumi:"privateAccessDetails"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Action to be triggered on inactivity or disconnect
 	SessionLifecycleActions GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArrayInput `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
@@ -5634,6 +5694,11 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) PrivateAccessDetails() G
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) []GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail {
 		return v.PrivateAccessDetails
 	}).(GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDesktopPoolsDesktopPoolCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItem) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Action to be triggered on inactivity or disconnect
@@ -6321,7 +6386,9 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemImageArrayOutput) Index(i pulumi
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -6339,7 +6406,9 @@ type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationInput interface
 }
 
 type GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -6396,7 +6465,14 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) ToGe
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -6433,7 +6509,9 @@ type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp string `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId string `pulumi:"vcnId"`
@@ -6457,7 +6535,9 @@ type GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
@@ -6529,7 +6609,14 @@ func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) Priva
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
 func (o GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }

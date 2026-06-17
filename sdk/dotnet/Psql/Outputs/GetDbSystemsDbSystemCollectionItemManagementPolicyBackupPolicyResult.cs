@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DaysOfTheWeeks;
         /// <summary>
-        /// The kind of backup policy.
+        /// Specifies the management of Insight for the dbSystem.
         /// </summary>
         public readonly string Kind;
         /// <summary>

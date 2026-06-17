@@ -98,6 +98,8 @@ type LookupDesktopPoolResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The details of the desktop's private access network connectivity that were used to create the pool.
 	PrivateAccessDetails []GetDesktopPoolPrivateAccessDetail `pulumi:"privateAccessDetails"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Action to be triggered on inactivity or disconnect
 	SessionLifecycleActions []GetDesktopPoolSessionLifecycleAction `pulumi:"sessionLifecycleActions"`
 	// The shape configuration used for each desktop compute instance in the desktop pool.
@@ -258,6 +260,11 @@ func (o LookupDesktopPoolResultOutput) NsgIds() pulumi.StringArrayOutput {
 // The details of the desktop's private access network connectivity that were used to create the pool.
 func (o LookupDesktopPoolResultOutput) PrivateAccessDetails() GetDesktopPoolPrivateAccessDetailArrayOutput {
 	return o.ApplyT(func(v LookupDesktopPoolResult) []GetDesktopPoolPrivateAccessDetail { return v.PrivateAccessDetails }).(GetDesktopPoolPrivateAccessDetailArrayOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupDesktopPoolResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDesktopPoolResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Action to be triggered on inactivity or disconnect

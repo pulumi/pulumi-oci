@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSenderInvitationsFilter {
+    /**
+     * @return Name of the feature.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetSenderInvitationsFilter() {}
+    /**
+     * @return Name of the feature.
+     * 
+     */
     public String name() {
         return this.name;
     }

@@ -45,6 +45,16 @@ export const getLink: typeof import("./getLink").getLink = null as any;
 export const getLinkOutput: typeof import("./getLink").getLinkOutput = null as any;
 utilities.lazyLoad(exports, ["getLink","getLinkOutput"], () => require("./getLink"));
 
+export { GetLinkFeaturesArgs, GetLinkFeaturesResult, GetLinkFeaturesOutputArgs } from "./getLinkFeatures";
+export const getLinkFeatures: typeof import("./getLinkFeatures").getLinkFeatures = null as any;
+export const getLinkFeaturesOutput: typeof import("./getLinkFeatures").getLinkFeaturesOutput = null as any;
+utilities.lazyLoad(exports, ["getLinkFeatures","getLinkFeaturesOutput"], () => require("./getLinkFeatures"));
+
+export { GetLinkTenancyNameArgs, GetLinkTenancyNameResult, GetLinkTenancyNameOutputArgs } from "./getLinkTenancyName";
+export const getLinkTenancyName: typeof import("./getLinkTenancyName").getLinkTenancyName = null as any;
+export const getLinkTenancyNameOutput: typeof import("./getLinkTenancyName").getLinkTenancyNameOutput = null as any;
+utilities.lazyLoad(exports, ["getLinkTenancyName","getLinkTenancyNameOutput"], () => require("./getLinkTenancyName"));
+
 export { GetLinksArgs, GetLinksResult, GetLinksOutputArgs } from "./getLinks";
 export const getLinks: typeof import("./getLinks").getLinks = null as any;
 export const getLinksOutput: typeof import("./getLinks").getLinksOutput = null as any;

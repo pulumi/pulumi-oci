@@ -71,6 +71,7 @@ type GetDomainsArgs struct {
 
 // A collection of values returned by getDomains.
 type GetDomainsResult struct {
+	// The OCID of the tenancy that has started the registration process for this domain.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of domain_collection.
 	DomainCollections []GetDomainsDomainCollection `pulumi:"domainCollections"`
@@ -128,6 +129,7 @@ func (o GetDomainsResultOutput) ToGetDomainsResultOutputWithContext(ctx context.
 	return o
 }
 
+// The OCID of the tenancy that has started the registration process for this domain.
 func (o GetDomainsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

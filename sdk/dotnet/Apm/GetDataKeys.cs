@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Apm
     public sealed class GetDataKeysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the APM domain
+        /// The OCID of the APM domain.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Apm
     public sealed class GetDataKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the APM domain
+        /// The OCID of the APM domain.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;

@@ -25,6 +25,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
+        public readonly ImmutableArray<string> Features;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -33,6 +34,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
         /// OCID of the sender invitation.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult> InvitationFeatures;
         /// <summary>
         /// Email address of the recipient.
         /// </summary>
@@ -78,9 +83,13 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
 
             string displayName,
 
+            ImmutableArray<string> features,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            ImmutableArray<Outputs.GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult> invitationFeatures,
 
             string recipientEmailAddress,
 
@@ -103,8 +112,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            Features = features;
             FreeformTags = freeformTags;
             Id = id;
+            InvitationFeatures = invitationFeatures;
             RecipientEmailAddress = recipientEmailAddress;
             RecipientInvitationId = recipientInvitationId;
             RecipientTenancyId = recipientTenancyId;

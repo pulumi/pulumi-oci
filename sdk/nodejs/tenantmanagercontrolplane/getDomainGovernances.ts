@@ -69,6 +69,9 @@ export interface GetDomainGovernancesArgs {
  * A collection of values returned by getDomainGovernances.
  */
 export interface GetDomainGovernancesResult {
+    /**
+     * The OCID of the tenancy that owns this domain governance entity.
+     */
     readonly compartmentId: string;
     /**
      * The list of domain_governance_collection.

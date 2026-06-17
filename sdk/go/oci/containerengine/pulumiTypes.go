@@ -5341,6 +5341,8 @@ func (o NodePoolNodeArrayOutput) Index(i pulumi.IntInput) NodePoolNodeOutput {
 }
 
 type NodePoolNodeConfigDetails struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId *string `pulumi:"computeClusterId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5373,6 +5375,8 @@ type NodePoolNodeConfigDetailsInput interface {
 }
 
 type NodePoolNodeConfigDetailsArgs struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId pulumi.StringPtrInput `pulumi:"computeClusterId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5470,6 +5474,11 @@ func (o NodePoolNodeConfigDetailsOutput) ToNodePoolNodeConfigDetailsPtrOutputWit
 	}).(NodePoolNodeConfigDetailsPtrOutput)
 }
 
+// The OCID of the Compute Cluster to be associated with the worker node instance.
+func (o NodePoolNodeConfigDetailsOutput) ComputeClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetails) *string { return v.ComputeClusterId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o NodePoolNodeConfigDetailsOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -5538,6 +5547,16 @@ func (o NodePoolNodeConfigDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsOutp
 		var ret NodePoolNodeConfigDetails
 		return ret
 	}).(NodePoolNodeConfigDetailsOutput)
+}
+
+// The OCID of the Compute Cluster to be associated with the worker node instance.
+func (o NodePoolNodeConfigDetailsPtrOutput) ComputeClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ComputeClusterId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5823,6 +5842,8 @@ type NodePoolNodeConfigDetailsPlacementConfig struct {
 	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId *string `pulumi:"hostGroupId"`
 	// (Updatable) Configuration options for preemptible nodes.
 	PreemptibleNodeConfig *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfig"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
@@ -5847,6 +5868,8 @@ type NodePoolNodeConfigDetailsPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// (Updatable) A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId pulumi.StringPtrInput `pulumi:"hostGroupId"`
 	// (Updatable) Configuration options for preemptible nodes.
 	PreemptibleNodeConfig NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrInput `pulumi:"preemptibleNodeConfig"`
 	// (Updatable) The OCID of the subnet in which to place nodes.
@@ -5917,6 +5940,11 @@ func (o NodePoolNodeConfigDetailsPlacementConfigOutput) CapacityReservationId() 
 // (Updatable) A list of fault domains in which to place nodes.
 func (o NodePoolNodeConfigDetailsPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+func (o NodePoolNodeConfigDetailsPlacementConfigOutput) HostGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfig) *string { return v.HostGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Configuration options for preemptible nodes.
@@ -14529,6 +14557,8 @@ func (o GetNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeOutp
 }
 
 type GetNodePoolNodeConfigDetail struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId string `pulumi:"computeClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -14559,6 +14589,8 @@ type GetNodePoolNodeConfigDetailInput interface {
 }
 
 type GetNodePoolNodeConfigDetailArgs struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -14626,6 +14658,11 @@ func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutput()
 
 func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailOutput {
 	return o
+}
+
+// The OCID of the Compute Cluster to be associated with the worker node instance.
+func (o GetNodePoolNodeConfigDetailOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) string { return v.ComputeClusterId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -14823,6 +14860,8 @@ type GetNodePoolNodeConfigDetailPlacementConfig struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId string `pulumi:"hostGroupId"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// the ocid of the subnet to create the vnic in
@@ -14847,6 +14886,8 @@ type GetNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId pulumi.StringInput `pulumi:"hostGroupId"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// the ocid of the subnet to create the vnic in
@@ -14917,6 +14958,11 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId(
 // A list of fault domains in which to place nodes.
 func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the Host Group to be associated with the worker node instance.
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) HostGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.HostGroupId }).(pulumi.StringOutput)
 }
 
 // Configuration options for preemptible nodes.
@@ -17249,6 +17295,8 @@ func (o GetNodePoolsNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoo
 }
 
 type GetNodePoolsNodePoolNodeConfigDetail struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId string `pulumi:"computeClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -17279,6 +17327,8 @@ type GetNodePoolsNodePoolNodeConfigDetailInput interface {
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
+	// The OCID of the Compute Cluster to be associated with the worker node instance.
+	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -17346,6 +17396,11 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeCo
 
 func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailOutput {
 	return o
+}
+
+// The OCID of the Compute Cluster to be associated with the worker node instance.
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) string { return v.ComputeClusterId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -17549,6 +17604,8 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
+	// The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId string `pulumi:"hostGroupId"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// the ocid of the subnet to create the vnic in
@@ -17573,6 +17630,8 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The OCID of the Host Group to be associated with the worker node instance.
+	HostGroupId pulumi.StringInput `pulumi:"hostGroupId"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// the ocid of the subnet to create the vnic in
@@ -17643,6 +17702,11 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReser
 // A list of fault domains in which to place nodes.
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) FaultDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The OCID of the Host Group to be associated with the worker node instance.
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) HostGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.HostGroupId }).(pulumi.StringOutput)
 }
 
 // Configuration options for preemptible nodes.

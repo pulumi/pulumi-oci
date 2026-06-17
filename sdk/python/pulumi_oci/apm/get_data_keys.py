@@ -111,7 +111,7 @@ def get_data_keys(apm_domain_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str apm_domain_id: The OCID of the APM domain
+    :param _builtins.str apm_domain_id: The OCID of the APM domain.
     :param _builtins.str data_key_type: Data key type.
     """
     __args__ = dict()
@@ -148,7 +148,7 @@ def get_data_keys_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = 
     ```
 
 
-    :param _builtins.str apm_domain_id: The OCID of the APM domain
+    :param _builtins.str apm_domain_id: The OCID of the APM domain.
     :param _builtins.str data_key_type: Data key type.
     """
     __args__ = dict()

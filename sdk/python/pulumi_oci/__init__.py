@@ -631,6 +631,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ApmConfig/dataFile",
+  "fqn": "pulumi_oci.apmconfig",
+  "classes": {
+   "oci:ApmConfig/dataFile:DataFile": "DataFile"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ApmSynthetics/config",
   "fqn": "pulumi_oci.apmsynthetics",
   "classes": {

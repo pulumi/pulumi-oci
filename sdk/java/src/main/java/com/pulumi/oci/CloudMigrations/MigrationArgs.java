@@ -127,9 +127,6 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Replication schedule identifier
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="replicationScheduleId")
     private @Nullable Output<String> replicationScheduleId;
@@ -137,12 +134,30 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Replication schedule identifier
      * 
+     */
+    public Optional<Output<String>> replicationScheduleId() {
+        return Optional.ofNullable(this.replicationScheduleId);
+    }
+
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> replicationScheduleId() {
-        return Optional.ofNullable(this.replicationScheduleId);
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     private MigrationArgs() {}
@@ -156,6 +171,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         this.migrationConfig = $.migrationConfig;
         this.migrationType = $.migrationType;
         this.replicationScheduleId = $.replicationScheduleId;
+        this.securityAttributes = $.securityAttributes;
     }
 
     public static Builder builder() {
@@ -326,9 +342,6 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param replicationScheduleId (Updatable) Replication schedule identifier
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -340,14 +353,38 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param replicationScheduleId (Updatable) Replication schedule identifier
          * 
+         * @return builder
+         * 
+         */
+        public Builder replicationScheduleId(String replicationScheduleId) {
+            return replicationScheduleId(Output.of(replicationScheduleId));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder replicationScheduleId(String replicationScheduleId) {
-            return replicationScheduleId(Output.of(replicationScheduleId));
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         public MigrationArgs build() {

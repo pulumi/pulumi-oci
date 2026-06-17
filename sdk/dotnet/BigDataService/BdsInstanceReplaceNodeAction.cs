@@ -30,7 +30,7 @@ namespace Pulumi.Oci.BigDataService
     ///     {
     ///         BdsInstanceId = bdsInstanceId,
     ///         NodeHostName = nodeHostName,
-    ///         ClusterAdminPassword = "&lt;admin-password&gt;",
+    ///         ClusterAdminPassword = "&lt;your-value-in-base64&gt;",
     ///         NodeBackupId = nodeBackupId,
     ///         Shape = shape,
     ///     });

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testBdsInstanceReplaceNodeAction = new oci.bigdataservice.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action", {
  *     bdsInstanceId: bdsInstanceId,
  *     nodeHostName: nodeHostName,
- *     clusterAdminPassword: "<admin-password>",
+ *     clusterAdminPassword: "<your-value-in-base64>",
  *     nodeBackupId: nodeBackupId,
  *     shape: shape,
  * });

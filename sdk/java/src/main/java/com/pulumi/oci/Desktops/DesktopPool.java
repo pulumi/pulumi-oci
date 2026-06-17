@@ -33,118 +33,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a desktop pool with the given configuration parameters.
  * 
- * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Desktops.DesktopPool;
- * import com.pulumi.oci.Desktops.DesktopPoolArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyStartScheduleArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolAvailabilityPolicyStopScheduleArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolDevicePolicyArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolImageArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolNetworkConfigurationArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolShapeConfigArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolPrivateAccessDetailsArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsDisconnectArgs;
- * import com.pulumi.oci.Desktops.inputs.DesktopPoolSessionLifecycleActionsInactivityArgs;
- * import java.util.ArrayList;
- * import java.util.Arrays;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDesktopPool = new DesktopPool("testDesktopPool", DesktopPoolArgs.builder()
- *             .arePrivilegedUsers(desktopPoolArePrivilegedUsers)
- *             .availabilityDomain(desktopPoolAvailabilityDomain)
- *             .availabilityPolicy(DesktopPoolAvailabilityPolicyArgs.builder()
- *                 .startSchedule(DesktopPoolAvailabilityPolicyStartScheduleArgs.builder()
- *                     .cronExpression("0 10 8 ? * 2")
- *                     .timezone("America/Denver")
- *                     .build())
- *                 .stopSchedule(DesktopPoolAvailabilityPolicyStopScheduleArgs.builder()
- *                     .cronExpression("0 20 18 ? * 6")
- *                     .timezone("America/Denver")
- *                     .build())
- *                 .build())
- *             .compartmentId(compartmentId)
- *             .contactDetails(desktopPoolContactDetails)
- *             .devicePolicy(DesktopPoolDevicePolicyArgs.builder()
- *                 .audioMode(desktopPoolDevicePolicyAudioMode)
- *                 .cdmMode(desktopPoolDevicePolicyCdmMode)
- *                 .clipboardMode(desktopPoolDevicePolicyClipboardMode)
- *                 .isDisplayEnabled(desktopPoolDevicePolicyIsDisplayEnabled)
- *                 .isKeyboardEnabled(desktopPoolDevicePolicyIsKeyboardEnabled)
- *                 .isPointerEnabled(desktopPoolDevicePolicyIsPointerEnabled)
- *                 .isPrintingEnabled(desktopPoolDevicePolicyIsPrintingEnabled)
- *                 .isVideoInputEnabled(desktopPoolDevicePolicyIsVideoInputEnabled)
- *                 .build())
- *             .displayName(desktopPoolDisplayName)
- *             .image(DesktopPoolImageArgs.builder()
- *                 .imageId(testImage.id())
- *                 .imageName(desktopPoolImageImageName)
- *                 .operatingSystem(desktopPoolImageOperatingSystem)
- *                 .build())
- *             .isStorageEnabled(desktopPoolIsStorageEnabled)
- *             .maximumSize(desktopPoolMaximumSize)
- *             .networkConfiguration(DesktopPoolNetworkConfigurationArgs.builder()
- *                 .subnetId(testSubnet.id())
- *                 .vcnId(testVcn.id())
- *                 .build())
- *             .shapeName("VM.Standard.E4.Flex")
- *             .standbySize(desktopPoolStandbySize)
- *             .storageBackupPolicyId("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz")
- *             .storageSizeInGbs(desktopPoolStorageSizeInGbs)
- *             .bootVolumeSizeInGbs(desktopPoolBootVolumeSizeInGbs)
- *             .areVolumesPreserved(desktopPoolAreVolumesPreserved)
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(desktopPoolDescription)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .nsgIds(desktopPoolNsgIds)
- *             .shapeConfig(DesktopPoolShapeConfigArgs.builder()
- *                 .baselineOcpuUtilization(desktopPoolShapeConfigBaselineOcpuUtilization)
- *                 .memoryInGbs(desktopPoolShapeConfigMemoryInGbs)
- *                 .ocpus(desktopPoolShapeConfigOcpus)
- *                 .build())
- *             .privateAccessDetails(DesktopPoolPrivateAccessDetailsArgs.builder()
- *                 .subnetId(testSubnet.id())
- *                 .nsgIds(desktopPoolPrivateAccessDetailsNsgIds)
- *                 .privateIp(desktopPoolPrivateAccessDetailsPrivateIp)
- *                 .build())
- *             .sessionLifecycleActions(DesktopPoolSessionLifecycleActionsArgs.builder()
- *                 .disconnect(DesktopPoolSessionLifecycleActionsDisconnectArgs.builder()
- *                     .action("STOP")
- *                     .gracePeriodInMinutes(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes)
- *                     .build())
- *                 .inactivity(DesktopPoolSessionLifecycleActionsInactivityArgs.builder()
- *                     .action("DISCONNECT")
- *                     .gracePeriodInMinutes(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes)
- *                     .build())
- *                 .build())
- *             .timeStartScheduled(desktopPoolTimeStartScheduled)
- *             .timeStopScheduled(desktopPoolTimeStopScheduled)
- *             .useDedicatedVmHost(desktopPoolUseDedicatedVmHost)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * 
  * ## Import
  * 
  * DesktopPools can be imported using the `id`, e.g.
@@ -387,14 +275,14 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.maximumSize;
     }
     /**
-     * Provides information about the network configuration of the desktop pool.
+     * (Updatable) Provides information about the network configuration of the desktop pool.
      * 
      */
     @Export(name="networkConfiguration", refs={DesktopPoolNetworkConfiguration.class}, tree="[0]")
     private Output<DesktopPoolNetworkConfiguration> networkConfiguration;
 
     /**
-     * @return Provides information about the network configuration of the desktop pool.
+     * @return (Updatable) Provides information about the network configuration of the desktop pool.
      * 
      */
     public Output<DesktopPoolNetworkConfiguration> networkConfiguration() {
@@ -415,18 +303,32 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.nsgIds);
     }
     /**
-     * The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
      * 
      */
     @Export(name="privateAccessDetails", refs={DesktopPoolPrivateAccessDetails.class}, tree="[0]")
     private Output<DesktopPoolPrivateAccessDetails> privateAccessDetails;
 
     /**
-     * @return The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * @return (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
      * 
      */
     public Output<DesktopPoolPrivateAccessDetails> privateAccessDetails() {
         return this.privateAccessDetails;
+    }
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The details of action to be triggered in case of inactivity or disconnect

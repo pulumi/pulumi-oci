@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Inputs
 
     public sealed class GetSenderInvitationsFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of the feature.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

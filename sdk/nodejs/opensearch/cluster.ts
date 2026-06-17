@@ -76,6 +76,26 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly configureOutboundClusterTrigger: pulumi.Output<number | undefined>;
     /**
+     * (Updatable) The number of coordinator nodes configured for the cluster.
+     */
+    declare public readonly coordinatorNodeCount: pulumi.Output<number>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+     */
+    declare public readonly coordinatorNodeHostMemoryGb: pulumi.Output<number>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+     */
+    declare public readonly coordinatorNodeHostOcpuCount: pulumi.Output<number>;
+    /**
+     * (Updatable) The node shape for the cluster's coordinator nodes.
+     */
+    declare public readonly coordinatorNodeHostShape: pulumi.Output<string>;
+    /**
+     * The instance type for the cluster's coordinator nodes.
+     */
+    declare public readonly coordinatorNodeHostType: pulumi.Output<string>;
+    /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
     declare public readonly dataNodeCount: pulumi.Output<number>;
@@ -345,6 +365,11 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["certificateConfig"] = state?.certificateConfig;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["configureOutboundClusterTrigger"] = state?.configureOutboundClusterTrigger;
+            resourceInputs["coordinatorNodeCount"] = state?.coordinatorNodeCount;
+            resourceInputs["coordinatorNodeHostMemoryGb"] = state?.coordinatorNodeHostMemoryGb;
+            resourceInputs["coordinatorNodeHostOcpuCount"] = state?.coordinatorNodeHostOcpuCount;
+            resourceInputs["coordinatorNodeHostShape"] = state?.coordinatorNodeHostShape;
+            resourceInputs["coordinatorNodeHostType"] = state?.coordinatorNodeHostType;
             resourceInputs["dataNodeCount"] = state?.dataNodeCount;
             resourceInputs["dataNodeHostBareMetalShape"] = state?.dataNodeHostBareMetalShape;
             resourceInputs["dataNodeHostMemoryGb"] = state?.dataNodeHostMemoryGb;
@@ -469,6 +494,11 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["certificateConfig"] = args?.certificateConfig;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["configureOutboundClusterTrigger"] = args?.configureOutboundClusterTrigger;
+            resourceInputs["coordinatorNodeCount"] = args?.coordinatorNodeCount;
+            resourceInputs["coordinatorNodeHostMemoryGb"] = args?.coordinatorNodeHostMemoryGb;
+            resourceInputs["coordinatorNodeHostOcpuCount"] = args?.coordinatorNodeHostOcpuCount;
+            resourceInputs["coordinatorNodeHostShape"] = args?.coordinatorNodeHostShape;
+            resourceInputs["coordinatorNodeHostType"] = args?.coordinatorNodeHostType;
             resourceInputs["dataNodeCount"] = args?.dataNodeCount;
             resourceInputs["dataNodeHostBareMetalShape"] = args?.dataNodeHostBareMetalShape;
             resourceInputs["dataNodeHostMemoryGb"] = args?.dataNodeHostMemoryGb;
@@ -560,6 +590,26 @@ export interface ClusterState {
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      */
     configureOutboundClusterTrigger?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The number of coordinator nodes configured for the cluster.
+     */
+    coordinatorNodeCount?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostMemoryGb?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostOcpuCount?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The node shape for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostShape?: pulumi.Input<string | undefined>;
+    /**
+     * The instance type for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
@@ -830,6 +880,26 @@ export interface ClusterArgs {
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      */
     configureOutboundClusterTrigger?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The number of coordinator nodes configured for the cluster.
+     */
+    coordinatorNodeCount?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostMemoryGb?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostOcpuCount?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The node shape for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostShape?: pulumi.Input<string | undefined>;
+    /**
+     * The instance type for the cluster's coordinator nodes.
+     */
+    coordinatorNodeHostType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */

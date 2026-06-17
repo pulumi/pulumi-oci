@@ -46,6 +46,16 @@ type Cluster struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 	ConfigureOutboundClusterTrigger pulumi.IntPtrOutput `pulumi:"configureOutboundClusterTrigger"`
+	// (Updatable) The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount pulumi.IntOutput `pulumi:"coordinatorNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb pulumi.IntOutput `pulumi:"coordinatorNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount pulumi.IntOutput `pulumi:"coordinatorNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape pulumi.StringOutput `pulumi:"coordinatorNodeHostShape"`
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType pulumi.StringOutput `pulumi:"coordinatorNodeHostType"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntOutput `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -281,6 +291,16 @@ type clusterState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
+	// (Updatable) The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount *int `pulumi:"coordinatorNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb *int `pulumi:"coordinatorNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount *int `pulumi:"coordinatorNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape *string `pulumi:"coordinatorNodeHostShape"`
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType *string `pulumi:"coordinatorNodeHostType"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount *int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -419,6 +439,16 @@ type ClusterState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
+	// (Updatable) The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount pulumi.IntPtrInput
+	// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb pulumi.IntPtrInput
+	// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount pulumi.IntPtrInput
+	// (Updatable) The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape pulumi.StringPtrInput
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType pulumi.StringPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntPtrInput
 	// The bare metal shape for the cluster's data nodes.
@@ -559,6 +589,16 @@ type clusterArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 	ConfigureOutboundClusterTrigger *int `pulumi:"configureOutboundClusterTrigger"`
+	// (Updatable) The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount *int `pulumi:"coordinatorNodeCount"`
+	// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb *int `pulumi:"coordinatorNodeHostMemoryGb"`
+	// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount *int `pulumi:"coordinatorNodeHostOcpuCount"`
+	// (Updatable) The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape *string `pulumi:"coordinatorNodeHostShape"`
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType *string `pulumi:"coordinatorNodeHostType"`
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -672,6 +712,16 @@ type ClusterArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 	ConfigureOutboundClusterTrigger pulumi.IntPtrInput
+	// (Updatable) The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount pulumi.IntPtrInput
+	// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb pulumi.IntPtrInput
+	// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount pulumi.IntPtrInput
+	// (Updatable) The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape pulumi.StringPtrInput
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType pulumi.StringPtrInput
 	// (Updatable) The number of data nodes to configure for the cluster.
 	DataNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's data nodes.
@@ -882,6 +932,31 @@ func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
 func (o ClusterOutput) ConfigureOutboundClusterTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntPtrOutput { return v.ConfigureOutboundClusterTrigger }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The number of coordinator nodes configured for the cluster.
+func (o ClusterOutput) CoordinatorNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.CoordinatorNodeCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+func (o ClusterOutput) CoordinatorNodeHostMemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.CoordinatorNodeHostMemoryGb }).(pulumi.IntOutput)
+}
+
+// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+func (o ClusterOutput) CoordinatorNodeHostOcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.CoordinatorNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The node shape for the cluster's coordinator nodes.
+func (o ClusterOutput) CoordinatorNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CoordinatorNodeHostShape }).(pulumi.StringOutput)
+}
+
+// The instance type for the cluster's coordinator nodes.
+func (o ClusterOutput) CoordinatorNodeHostType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.CoordinatorNodeHostType }).(pulumi.StringOutput)
 }
 
 // (Updatable) The number of data nodes to configure for the cluster.

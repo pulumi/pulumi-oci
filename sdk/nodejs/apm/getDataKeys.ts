@@ -38,7 +38,7 @@ export function getDataKeys(args: GetDataKeysArgs, opts?: pulumi.InvokeOptions):
  */
 export interface GetDataKeysArgs {
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     apmDomainId: string;
     /**
@@ -96,7 +96,7 @@ export function getDataKeysOutput(args: GetDataKeysOutputArgs, opts?: pulumi.Inv
  */
 export interface GetDataKeysOutputArgs {
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     apmDomainId: pulumi.Input<string>;
     /**

@@ -3424,6 +3424,248 @@ func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOu
 	}).(GetConfigsFilterOutput)
 }
 
+type GetDataFilesFilter struct {
+	// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDataFilesFilterInput is an input type that accepts GetDataFilesFilterArgs and GetDataFilesFilterOutput values.
+// You can construct a concrete instance of `GetDataFilesFilterInput` via:
+//
+//	GetDataFilesFilterArgs{...}
+type GetDataFilesFilterInput interface {
+	pulumi.Input
+
+	ToGetDataFilesFilterOutput() GetDataFilesFilterOutput
+	ToGetDataFilesFilterOutputWithContext(context.Context) GetDataFilesFilterOutput
+}
+
+type GetDataFilesFilterArgs struct {
+	// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDataFilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFilesFilter)(nil)).Elem()
+}
+
+func (i GetDataFilesFilterArgs) ToGetDataFilesFilterOutput() GetDataFilesFilterOutput {
+	return i.ToGetDataFilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDataFilesFilterArgs) ToGetDataFilesFilterOutputWithContext(ctx context.Context) GetDataFilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFilesFilterOutput)
+}
+
+// GetDataFilesFilterArrayInput is an input type that accepts GetDataFilesFilterArray and GetDataFilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDataFilesFilterArrayInput` via:
+//
+//	GetDataFilesFilterArray{ GetDataFilesFilterArgs{...} }
+type GetDataFilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDataFilesFilterArrayOutput() GetDataFilesFilterArrayOutput
+	ToGetDataFilesFilterArrayOutputWithContext(context.Context) GetDataFilesFilterArrayOutput
+}
+
+type GetDataFilesFilterArray []GetDataFilesFilterInput
+
+func (GetDataFilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFilesFilter)(nil)).Elem()
+}
+
+func (i GetDataFilesFilterArray) ToGetDataFilesFilterArrayOutput() GetDataFilesFilterArrayOutput {
+	return i.ToGetDataFilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataFilesFilterArray) ToGetDataFilesFilterArrayOutputWithContext(ctx context.Context) GetDataFilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFilesFilterArrayOutput)
+}
+
+type GetDataFilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDataFilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFilesFilter)(nil)).Elem()
+}
+
+func (o GetDataFilesFilterOutput) ToGetDataFilesFilterOutput() GetDataFilesFilterOutput {
+	return o
+}
+
+func (o GetDataFilesFilterOutput) ToGetDataFilesFilterOutputWithContext(ctx context.Context) GetDataFilesFilterOutput {
+	return o
+}
+
+// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+func (o GetDataFilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDataFilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDataFilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDataFilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataFilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDataFilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataFilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFilesFilter)(nil)).Elem()
+}
+
+func (o GetDataFilesFilterArrayOutput) ToGetDataFilesFilterArrayOutput() GetDataFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetDataFilesFilterArrayOutput) ToGetDataFilesFilterArrayOutputWithContext(ctx context.Context) GetDataFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetDataFilesFilterArrayOutput) Index(i pulumi.IntInput) GetDataFilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataFilesFilter {
+		return vs[0].([]GetDataFilesFilter)[vs[1].(int)]
+	}).(GetDataFilesFilterOutput)
+}
+
+type GetDataFilesItem struct {
+	// The type of the data file.
+	ApmType string `pulumi:"apmType"`
+	Md5     string `pulumi:"md5"`
+	// Optional user-defined metadata key and value to search by.
+	Metadata map[string]string `pulumi:"metadata"`
+	// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+	Name             string `pulumi:"name"`
+	SizeInBytes      string `pulumi:"sizeInBytes"`
+	TimeLastModified string `pulumi:"timeLastModified"`
+}
+
+// GetDataFilesItemInput is an input type that accepts GetDataFilesItemArgs and GetDataFilesItemOutput values.
+// You can construct a concrete instance of `GetDataFilesItemInput` via:
+//
+//	GetDataFilesItemArgs{...}
+type GetDataFilesItemInput interface {
+	pulumi.Input
+
+	ToGetDataFilesItemOutput() GetDataFilesItemOutput
+	ToGetDataFilesItemOutputWithContext(context.Context) GetDataFilesItemOutput
+}
+
+type GetDataFilesItemArgs struct {
+	// The type of the data file.
+	ApmType pulumi.StringInput `pulumi:"apmType"`
+	Md5     pulumi.StringInput `pulumi:"md5"`
+	// Optional user-defined metadata key and value to search by.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+	Name             pulumi.StringInput `pulumi:"name"`
+	SizeInBytes      pulumi.StringInput `pulumi:"sizeInBytes"`
+	TimeLastModified pulumi.StringInput `pulumi:"timeLastModified"`
+}
+
+func (GetDataFilesItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFilesItem)(nil)).Elem()
+}
+
+func (i GetDataFilesItemArgs) ToGetDataFilesItemOutput() GetDataFilesItemOutput {
+	return i.ToGetDataFilesItemOutputWithContext(context.Background())
+}
+
+func (i GetDataFilesItemArgs) ToGetDataFilesItemOutputWithContext(ctx context.Context) GetDataFilesItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFilesItemOutput)
+}
+
+// GetDataFilesItemArrayInput is an input type that accepts GetDataFilesItemArray and GetDataFilesItemArrayOutput values.
+// You can construct a concrete instance of `GetDataFilesItemArrayInput` via:
+//
+//	GetDataFilesItemArray{ GetDataFilesItemArgs{...} }
+type GetDataFilesItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDataFilesItemArrayOutput() GetDataFilesItemArrayOutput
+	ToGetDataFilesItemArrayOutputWithContext(context.Context) GetDataFilesItemArrayOutput
+}
+
+type GetDataFilesItemArray []GetDataFilesItemInput
+
+func (GetDataFilesItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFilesItem)(nil)).Elem()
+}
+
+func (i GetDataFilesItemArray) ToGetDataFilesItemArrayOutput() GetDataFilesItemArrayOutput {
+	return i.ToGetDataFilesItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataFilesItemArray) ToGetDataFilesItemArrayOutputWithContext(ctx context.Context) GetDataFilesItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFilesItemArrayOutput)
+}
+
+type GetDataFilesItemOutput struct{ *pulumi.OutputState }
+
+func (GetDataFilesItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFilesItem)(nil)).Elem()
+}
+
+func (o GetDataFilesItemOutput) ToGetDataFilesItemOutput() GetDataFilesItemOutput {
+	return o
+}
+
+func (o GetDataFilesItemOutput) ToGetDataFilesItemOutputWithContext(ctx context.Context) GetDataFilesItemOutput {
+	return o
+}
+
+// The type of the data file.
+func (o GetDataFilesItemOutput) ApmType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesItem) string { return v.ApmType }).(pulumi.StringOutput)
+}
+
+func (o GetDataFilesItemOutput) Md5() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesItem) string { return v.Md5 }).(pulumi.StringOutput)
+}
+
+// Optional user-defined metadata key and value to search by.
+func (o GetDataFilesItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataFilesItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+func (o GetDataFilesItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDataFilesItemOutput) SizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesItem) string { return v.SizeInBytes }).(pulumi.StringOutput)
+}
+
+func (o GetDataFilesItemOutput) TimeLastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFilesItem) string { return v.TimeLastModified }).(pulumi.StringOutput)
+}
+
+type GetDataFilesItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataFilesItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFilesItem)(nil)).Elem()
+}
+
+func (o GetDataFilesItemArrayOutput) ToGetDataFilesItemArrayOutput() GetDataFilesItemArrayOutput {
+	return o
+}
+
+func (o GetDataFilesItemArrayOutput) ToGetDataFilesItemArrayOutputWithContext(ctx context.Context) GetDataFilesItemArrayOutput {
+	return o
+}
+
+func (o GetDataFilesItemArrayOutput) Index(i pulumi.IntInput) GetDataFilesItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataFilesItem {
+		return vs[0].([]GetDataFilesItem)[vs[1].(int)]
+	}).(GetDataFilesItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigInput)(nil)).Elem(), ConfigConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigPtrInput)(nil)).Elem(), ConfigConfigArgs{})
@@ -3479,6 +3721,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemRuleArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterInput)(nil)).Elem(), GetConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFilesFilterInput)(nil)).Elem(), GetDataFilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFilesFilterArrayInput)(nil)).Elem(), GetDataFilesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFilesItemInput)(nil)).Elem(), GetDataFilesItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFilesItemArrayInput)(nil)).Elem(), GetDataFilesItemArray{})
 	pulumi.RegisterOutputType(ConfigConfigOutput{})
 	pulumi.RegisterOutputType(ConfigConfigPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigConfigMapOutput{})
@@ -3533,4 +3779,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDataFilesFilterOutput{})
+	pulumi.RegisterOutputType(GetDataFilesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDataFilesItemOutput{})
+	pulumi.RegisterOutputType(GetDataFilesItemArrayOutput{})
 }

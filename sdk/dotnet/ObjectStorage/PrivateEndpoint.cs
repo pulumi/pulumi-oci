@@ -51,6 +51,9 @@ namespace Pulumi.Oci.ObjectStorage
         [Output("privateEndpointIp")]
         public Output<string> PrivateEndpointIp { get; private set; } = null!;
 
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -172,6 +175,14 @@ namespace Pulumi.Oci.ObjectStorage
         [Input("privateEndpointIp")]
         public Input<string>? PrivateEndpointIp { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         [Input("state")]
         public Input<string>? State { get; set; }
 
@@ -254,6 +265,14 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("privateEndpointIp")]
         public Input<string>? PrivateEndpointIp { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         [Input("state")]
         public Input<string>? State { get; set; }

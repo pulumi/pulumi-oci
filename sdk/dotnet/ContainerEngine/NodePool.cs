@@ -61,6 +61,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                     SubnetId = testSubnet.Id,
     ///                     CapacityReservationId = testCapacityReservation.Id,
     ///                     FaultDomains = nodePoolNodeConfigDetailsPlacementConfigsFaultDomains,
+    ///                     HostGroupId = testGroup.Id,
     ///                     PreemptibleNodeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs
     ///                     {
     ///                         PreemptionAction = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs
@@ -72,6 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 },
     ///             },
     ///             Size = nodePoolNodeConfigDetailsSize,
+    ///             ComputeClusterId = testComputeCluster.Id,
     ///             DefinedTags = 
     ///             {
     ///                 { "Operations.CostCenter", "42" },

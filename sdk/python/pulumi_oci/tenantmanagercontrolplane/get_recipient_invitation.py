@@ -26,7 +26,7 @@ class GetRecipientInvitationResult:
     """
     A collection of values returned by getRecipientInvitation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, recipient_email_address=None, recipient_invitation_id=None, sender_invitation_id=None, sender_tenancy_id=None, state=None, status=None, subjects=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, features=None, freeform_tags=None, id=None, recipient_email_address=None, recipient_invitation_id=None, sender_invitation_id=None, sender_tenancy_id=None, state=None, status=None, subjects=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -36,6 +36,9 @@ class GetRecipientInvitationResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if features and not isinstance(features, list):
+            raise TypeError("Expected argument 'features' to be a list")
+        pulumi.set(__self__, "features", features)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -96,6 +99,14 @@ class GetRecipientInvitationResult:
         A user-created name to describe the invitation. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        """
+        return pulumi.get(self, "features")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -200,6 +211,7 @@ class AwaitableGetRecipientInvitationResult(GetRecipientInvitationResult):
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            features=self.features,
             freeform_tags=self.freeform_tags,
             id=self.id,
             recipient_email_address=self.recipient_email_address,
@@ -242,6 +254,7 @@ def get_recipient_invitation(recipient_invitation_id: Optional[_builtins.str] = 
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        features=pulumi.get(__ret__, 'features'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         recipient_email_address=pulumi.get(__ret__, 'recipient_email_address'),
@@ -281,6 +294,7 @@ def get_recipient_invitation_output(recipient_invitation_id: pulumi.Input[Option
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        features=pulumi.get(__response__, 'features'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         recipient_email_address=pulumi.get(__response__, 'recipient_email_address'),

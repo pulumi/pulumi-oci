@@ -26,7 +26,7 @@ class GetControlResult:
     """
     A collection of values returned by getControl.
     """
-    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_default_operator_control=None, is_fully_pre_approved=None, last_modified_info=None, number_of_approvers=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
+    def __init__(__self__, approval_required_op_action_lists=None, approver_groups_lists=None, approvers_lists=None, compartment_id=None, defined_tags=None, description=None, email_id_lists=None, freeform_tags=None, id=None, is_default_operator_control=None, is_fully_pre_approved=None, last_modified_info=None, notification_topic_id=None, number_of_approvers=None, operator_control_id=None, operator_control_name=None, pre_approved_op_action_lists=None, resource_type=None, state=None, system_message=None, time_of_creation=None, time_of_deletion=None, time_of_modification=None):
         if approval_required_op_action_lists and not isinstance(approval_required_op_action_lists, list):
             raise TypeError("Expected argument 'approval_required_op_action_lists' to be a list")
         pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
@@ -63,6 +63,9 @@ class GetControlResult:
         if last_modified_info and not isinstance(last_modified_info, str):
             raise TypeError("Expected argument 'last_modified_info' to be a str")
         pulumi.set(__self__, "last_modified_info", last_modified_info)
+        if notification_topic_id and not isinstance(notification_topic_id, str):
+            raise TypeError("Expected argument 'notification_topic_id' to be a str")
+        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         if number_of_approvers and not isinstance(number_of_approvers, int):
             raise TypeError("Expected argument 'number_of_approvers' to be a int")
         pulumi.set(__self__, "number_of_approvers", number_of_approvers)
@@ -191,6 +194,14 @@ class GetControlResult:
         return pulumi.get(self, "last_modified_info")
 
     @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @_builtins.property
     @pulumi.getter(name="numberOfApprovers")
     def number_of_approvers(self) -> _builtins.int:
         """
@@ -286,6 +297,7 @@ class AwaitableGetControlResult(GetControlResult):
             is_default_operator_control=self.is_default_operator_control,
             is_fully_pre_approved=self.is_fully_pre_approved,
             last_modified_info=self.last_modified_info,
+            notification_topic_id=self.notification_topic_id,
             number_of_approvers=self.number_of_approvers,
             operator_control_id=self.operator_control_id,
             operator_control_name=self.operator_control_name,
@@ -335,6 +347,7 @@ def get_control(operator_control_id: Optional[_builtins.str] = None,
         is_default_operator_control=pulumi.get(__ret__, 'is_default_operator_control'),
         is_fully_pre_approved=pulumi.get(__ret__, 'is_fully_pre_approved'),
         last_modified_info=pulumi.get(__ret__, 'last_modified_info'),
+        notification_topic_id=pulumi.get(__ret__, 'notification_topic_id'),
         number_of_approvers=pulumi.get(__ret__, 'number_of_approvers'),
         operator_control_id=pulumi.get(__ret__, 'operator_control_id'),
         operator_control_name=pulumi.get(__ret__, 'operator_control_name'),
@@ -381,6 +394,7 @@ def get_control_output(operator_control_id: pulumi.Input[Optional[_builtins.str]
         is_default_operator_control=pulumi.get(__response__, 'is_default_operator_control'),
         is_fully_pre_approved=pulumi.get(__response__, 'is_fully_pre_approved'),
         last_modified_info=pulumi.get(__response__, 'last_modified_info'),
+        notification_topic_id=pulumi.get(__response__, 'notification_topic_id'),
         number_of_approvers=pulumi.get(__response__, 'number_of_approvers'),
         operator_control_id=pulumi.get(__response__, 'operator_control_id'),
         operator_control_name=pulumi.get(__response__, 'operator_control_name'),

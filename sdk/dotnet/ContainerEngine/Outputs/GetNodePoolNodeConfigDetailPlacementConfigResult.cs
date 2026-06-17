@@ -26,6 +26,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> FaultDomains;
         /// <summary>
+        /// The OCID of the Host Group to be associated with the worker node instance.
+        /// </summary>
+        public readonly string HostGroupId;
+        /// <summary>
         /// Configuration options for preemptible nodes.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> PreemptibleNodeConfigs;
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<string> faultDomains,
 
+            string hostGroupId,
+
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult> preemptibleNodeConfigs,
 
             string subnetId)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
             FaultDomains = faultDomains;
+            HostGroupId = hostGroupId;
             PreemptibleNodeConfigs = preemptibleNodeConfigs;
             SubnetId = subnetId;
         }

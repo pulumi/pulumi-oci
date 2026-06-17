@@ -27,7 +27,7 @@ class GetPrivateEndpointResult:
     """
     A collection of values returned by getPrivateEndpoint.
     """
-    def __init__(__self__, access_targets=None, additional_prefixes=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, fqdns=None, freeform_tags=None, id=None, name=None, namespace=None, nsg_ids=None, prefix=None, private_endpoint_ip=None, state=None, subnet_id=None, time_created=None, time_modified=None):
+    def __init__(__self__, access_targets=None, additional_prefixes=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, fqdns=None, freeform_tags=None, id=None, name=None, namespace=None, nsg_ids=None, prefix=None, private_endpoint_ip=None, security_attributes=None, state=None, subnet_id=None, time_created=None, time_modified=None):
         if access_targets and not isinstance(access_targets, list):
             raise TypeError("Expected argument 'access_targets' to be a list")
         pulumi.set(__self__, "access_targets", access_targets)
@@ -70,6 +70,9 @@ class GetPrivateEndpointResult:
         if private_endpoint_ip and not isinstance(private_endpoint_ip, str):
             raise TypeError("Expected argument 'private_endpoint_ip' to be a str")
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -154,6 +157,11 @@ class GetPrivateEndpointResult:
         return pulumi.get(self, "private_endpoint_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         return pulumi.get(self, "state")
@@ -194,6 +202,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
             nsg_ids=self.nsg_ids,
             prefix=self.prefix,
             private_endpoint_ip=self.private_endpoint_ip,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
@@ -227,6 +236,7 @@ def get_private_endpoint(name: Optional[_builtins.str] = None,
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         prefix=pulumi.get(__ret__, 'prefix'),
         private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -257,6 +267,7 @@ def get_private_endpoint_output(name: pulumi.Input[Optional[_builtins.str]] = No
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         prefix=pulumi.get(__response__, 'prefix'),
         private_endpoint_ip=pulumi.get(__response__, 'private_endpoint_ip'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         time_created=pulumi.get(__response__, 'time_created'),

@@ -82,6 +82,8 @@ type GetControlResult struct {
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo string `pulumi:"lastModifiedInfo"`
+	// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId string `pulumi:"notificationTopicId"`
 	// Number of approvers required to approve an access request.
 	NumberOfApprovers int    `pulumi:"numberOfApprovers"`
 	OperatorControlId string `pulumi:"operatorControlId"`
@@ -195,6 +197,11 @@ func (o GetControlResultOutput) IsFullyPreApproved() pulumi.BoolOutput {
 // Description associated with the latest modification of the operator control.
 func (o GetControlResultOutput) LastModifiedInfo() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlResult) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+func (o GetControlResultOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlResult) string { return v.NotificationTopicId }).(pulumi.StringOutput)
 }
 
 // Number of approvers required to approve an access request.

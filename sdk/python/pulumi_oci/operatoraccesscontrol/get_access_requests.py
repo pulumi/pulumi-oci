@@ -28,7 +28,7 @@ class GetAccessRequestsResult:
     """
     A collection of values returned by getAccessRequests.
     """
-    def __init__(__self__, access_request_collections=None, compartment_id=None, filters=None, id=None, resource_name=None, resource_type=None, state=None, time_end=None, time_start=None):
+    def __init__(__self__, access_request_collections=None, compartment_id=None, filters=None, id=None, num_days=None, resource_name=None, resource_type=None, state=None, time_end=None, time_start=None):
         if access_request_collections and not isinstance(access_request_collections, list):
             raise TypeError("Expected argument 'access_request_collections' to be a list")
         pulumi.set(__self__, "access_request_collections", access_request_collections)
@@ -41,6 +41,9 @@ class GetAccessRequestsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if num_days and not isinstance(num_days, int):
+            raise TypeError("Expected argument 'num_days' to be a int")
+        pulumi.set(__self__, "num_days", num_days)
         if resource_name and not isinstance(resource_name, str):
             raise TypeError("Expected argument 'resource_name' to be a str")
         pulumi.set(__self__, "resource_name", resource_name)
@@ -87,6 +90,11 @@ class GetAccessRequestsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="numDays")
+    def num_days(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "num_days")
+
+    @_builtins.property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[_builtins.str]:
         """
@@ -131,6 +139,7 @@ class AwaitableGetAccessRequestsResult(GetAccessRequestsResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            num_days=self.num_days,
             resource_name=self.resource_name,
             resource_type=self.resource_type,
             state=self.state,
@@ -140,6 +149,7 @@ class AwaitableGetAccessRequestsResult(GetAccessRequestsResult):
 
 def get_access_requests(compartment_id: Optional[_builtins.str] = None,
                         filters: Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]] = None,
+                        num_days: Optional[_builtins.int] = None,
                         resource_name: Optional[_builtins.str] = None,
                         resource_type: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
@@ -167,6 +177,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.int num_days: The number of days since when the user wants to search .
     :param _builtins.str resource_name: A filter to return only resources that match the given ResourceName.
     :param _builtins.str resource_type: A filter to return only lists of resources that match the entire given service type.
     :param _builtins.str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
@@ -176,6 +187,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['numDays'] = num_days
     __args__['resourceName'] = resource_name
     __args__['resourceType'] = resource_type
     __args__['state'] = state
@@ -189,6 +201,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        num_days=pulumi.get(__ret__, 'num_days'),
         resource_name=pulumi.get(__ret__, 'resource_name'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
@@ -196,6 +209,7 @@ def get_access_requests(compartment_id: Optional[_builtins.str] = None,
         time_start=pulumi.get(__ret__, 'time_start'))
 def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessRequestsFilterArgs', 'GetAccessRequestsFilterArgsDict']]]]] = None,
+                               num_days: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                resource_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -223,6 +237,7 @@ def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.s
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param _builtins.int num_days: The number of days since when the user wants to search .
     :param _builtins.str resource_name: A filter to return only resources that match the given ResourceName.
     :param _builtins.str resource_type: A filter to return only lists of resources that match the entire given service type.
     :param _builtins.str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
@@ -232,6 +247,7 @@ def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.s
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['numDays'] = num_days
     __args__['resourceName'] = resource_name
     __args__['resourceType'] = resource_type
     __args__['state'] = state
@@ -244,6 +260,7 @@ def get_access_requests_output(compartment_id: pulumi.Input[Optional[_builtins.s
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        num_days=pulumi.get(__response__, 'num_days'),
         resource_name=pulumi.get(__response__, 'resource_name'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state'),

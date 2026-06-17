@@ -16,9 +16,11 @@ from .get_configurations import *
 from .get_db_system import *
 from .get_db_system_connection_detail import *
 from .get_db_system_primary_db_instance import *
+from .get_db_system_replicas import *
 from .get_db_systems import *
 from .get_default_configuration import *
 from .get_default_configurations import *
+from .get_insight_capabilities import *
 from .get_shapes import *
 from ._inputs import *
 from . import outputs

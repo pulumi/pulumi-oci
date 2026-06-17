@@ -53,6 +53,11 @@ public final class GetApmDomainsApmDomain {
      */
     private Boolean isFreeTier;
     /**
+     * @return The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
+     */
+    private String logGroupId;
+    /**
      * @return A filter to return only resources that match the given life-cycle state.
      * 
      */
@@ -126,6 +131,13 @@ public final class GetApmDomainsApmDomain {
         return this.isFreeTier;
     }
     /**
+     * @return The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
+     */
+    public String logGroupId() {
+        return this.logGroupId;
+    }
+    /**
      * @return A filter to return only resources that match the given life-cycle state.
      * 
      */
@@ -164,6 +176,7 @@ public final class GetApmDomainsApmDomain {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isFreeTier;
+        private String logGroupId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -178,6 +191,7 @@ public final class GetApmDomainsApmDomain {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isFreeTier = defaults.isFreeTier;
+    	      this.logGroupId = defaults.logGroupId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -248,6 +262,14 @@ public final class GetApmDomainsApmDomain {
             return this;
         }
         @CustomType.Setter
+        public Builder logGroupId(String logGroupId) {
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetApmDomainsApmDomain", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetApmDomainsApmDomain", "state");
@@ -281,6 +303,7 @@ public final class GetApmDomainsApmDomain {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isFreeTier = isFreeTier;
+            _resultValue.logGroupId = logGroupId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

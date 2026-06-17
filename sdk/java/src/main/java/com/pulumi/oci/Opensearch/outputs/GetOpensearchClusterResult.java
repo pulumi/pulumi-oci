@@ -36,6 +36,31 @@ public final class GetOpensearchClusterResult {
     private String compartmentId;
     private Integer configureOutboundClusterTrigger;
     /**
+     * @return The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    private Integer coordinatorNodeCount;
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    private Integer coordinatorNodeHostMemoryGb;
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    private Integer coordinatorNodeHostOcpuCount;
+    /**
+     * @return The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    private String coordinatorNodeHostShape;
+    /**
+     * @return The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    private String coordinatorNodeHostType;
+    /**
      * @return The number of data nodes configured for the cluster.
      * 
      */
@@ -368,6 +393,41 @@ public final class GetOpensearchClusterResult {
     }
     public Integer configureOutboundClusterTrigger() {
         return this.configureOutboundClusterTrigger;
+    }
+    /**
+     * @return The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    public Integer coordinatorNodeCount() {
+        return this.coordinatorNodeCount;
+    }
+    /**
+     * @return The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Integer coordinatorNodeHostMemoryGb() {
+        return this.coordinatorNodeHostMemoryGb;
+    }
+    /**
+     * @return The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Integer coordinatorNodeHostOcpuCount() {
+        return this.coordinatorNodeHostOcpuCount;
+    }
+    /**
+     * @return The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public String coordinatorNodeHostShape() {
+        return this.coordinatorNodeHostShape;
+    }
+    /**
+     * @return The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public String coordinatorNodeHostType() {
+        return this.coordinatorNodeHostType;
     }
     /**
      * @return The number of data nodes configured for the cluster.
@@ -819,6 +879,11 @@ public final class GetOpensearchClusterResult {
         private List<GetOpensearchClusterCertificateConfig> certificateConfigs;
         private String compartmentId;
         private Integer configureOutboundClusterTrigger;
+        private Integer coordinatorNodeCount;
+        private Integer coordinatorNodeHostMemoryGb;
+        private Integer coordinatorNodeHostOcpuCount;
+        private String coordinatorNodeHostShape;
+        private String coordinatorNodeHostType;
         private Integer dataNodeCount;
         private String dataNodeHostBareMetalShape;
         private Integer dataNodeHostMemoryGb;
@@ -890,6 +955,11 @@ public final class GetOpensearchClusterResult {
     	      this.certificateConfigs = defaults.certificateConfigs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configureOutboundClusterTrigger = defaults.configureOutboundClusterTrigger;
+    	      this.coordinatorNodeCount = defaults.coordinatorNodeCount;
+    	      this.coordinatorNodeHostMemoryGb = defaults.coordinatorNodeHostMemoryGb;
+    	      this.coordinatorNodeHostOcpuCount = defaults.coordinatorNodeHostOcpuCount;
+    	      this.coordinatorNodeHostShape = defaults.coordinatorNodeHostShape;
+    	      this.coordinatorNodeHostType = defaults.coordinatorNodeHostType;
     	      this.dataNodeCount = defaults.dataNodeCount;
     	      this.dataNodeHostBareMetalShape = defaults.dataNodeHostBareMetalShape;
     	      this.dataNodeHostMemoryGb = defaults.dataNodeHostMemoryGb;
@@ -992,6 +1062,46 @@ public final class GetOpensearchClusterResult {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "configureOutboundClusterTrigger");
             }
             this.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coordinatorNodeCount(Integer coordinatorNodeCount) {
+            if (coordinatorNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "coordinatorNodeCount");
+            }
+            this.coordinatorNodeCount = coordinatorNodeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coordinatorNodeHostMemoryGb(Integer coordinatorNodeHostMemoryGb) {
+            if (coordinatorNodeHostMemoryGb == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "coordinatorNodeHostMemoryGb");
+            }
+            this.coordinatorNodeHostMemoryGb = coordinatorNodeHostMemoryGb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coordinatorNodeHostOcpuCount(Integer coordinatorNodeHostOcpuCount) {
+            if (coordinatorNodeHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "coordinatorNodeHostOcpuCount");
+            }
+            this.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coordinatorNodeHostShape(String coordinatorNodeHostShape) {
+            if (coordinatorNodeHostShape == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "coordinatorNodeHostShape");
+            }
+            this.coordinatorNodeHostShape = coordinatorNodeHostShape;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder coordinatorNodeHostType(String coordinatorNodeHostType) {
+            if (coordinatorNodeHostType == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "coordinatorNodeHostType");
+            }
+            this.coordinatorNodeHostType = coordinatorNodeHostType;
             return this;
         }
         @CustomType.Setter
@@ -1533,6 +1643,11 @@ public final class GetOpensearchClusterResult {
             _resultValue.certificateConfigs = certificateConfigs;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
+            _resultValue.coordinatorNodeCount = coordinatorNodeCount;
+            _resultValue.coordinatorNodeHostMemoryGb = coordinatorNodeHostMemoryGb;
+            _resultValue.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            _resultValue.coordinatorNodeHostShape = coordinatorNodeHostShape;
+            _resultValue.coordinatorNodeHostType = coordinatorNodeHostType;
             _resultValue.dataNodeCount = dataNodeCount;
             _resultValue.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             _resultValue.dataNodeHostMemoryGb = dataNodeHostMemoryGb;

@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
     public sealed class GetDomainResult
     {
         /// <summary>
+        /// The OCID of the tenancy that has started the registration process for this domain.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -171,6 +175,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
 
         [OutputConstructor]
         private GetDomainResult(
+            string compartmentId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string domainId,
@@ -195,6 +201,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
 
             string txtRecord)
         {
+            CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DomainId = domainId;
             DomainName = domainName;

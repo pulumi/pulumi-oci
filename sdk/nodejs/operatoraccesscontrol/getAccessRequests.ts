@@ -32,6 +32,7 @@ export function getAccessRequests(args: GetAccessRequestsArgs, opts?: pulumi.Inv
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "numDays": args.numDays,
         "resourceName": args.resourceName,
         "resourceType": args.resourceType,
         "state": args.state,
@@ -49,6 +50,10 @@ export interface GetAccessRequestsArgs {
      */
     compartmentId: string;
     filters?: inputs.OperatorAccessControl.GetAccessRequestsFilter[];
+    /**
+     * The number of days since when the user wants to search .
+     */
+    numDays?: number;
     /**
      * A filter to return only resources that match the given ResourceName.
      */
@@ -88,6 +93,7 @@ export interface GetAccessRequestsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly numDays?: number;
     /**
      * The name of the target resource.
      */
@@ -129,6 +135,7 @@ export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?
     return pulumi.runtime.invokeOutput("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "numDays": args.numDays,
         "resourceName": args.resourceName,
         "resourceType": args.resourceType,
         "state": args.state,
@@ -146,6 +153,10 @@ export interface GetAccessRequestsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetAccessRequestsFilterArgs>[] | undefined>;
+    /**
+     * The number of days since when the user wants to search .
+     */
+    numDays?: pulumi.Input<number | undefined>;
     /**
      * A filter to return only resources that match the given ResourceName.
      */

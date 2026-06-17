@@ -109,6 +109,13 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.privateEndpointIp);
     }
 
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
     @Import(name="state")
     private @Nullable Output<String> state;
 
@@ -153,6 +160,7 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
         this.nsgIds = $.nsgIds;
         this.prefix = $.prefix;
         this.privateEndpointIp = $.privateEndpointIp;
+        this.securityAttributes = $.securityAttributes;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
@@ -304,6 +312,15 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
 
         public Builder privateEndpointIp(String privateEndpointIp) {
             return privateEndpointIp(Output.of(privateEndpointIp));
+        }
+
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         public Builder state(@Nullable Output<String> state) {

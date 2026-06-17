@@ -41,6 +41,11 @@ public final class GetDbSystemsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    private @Nullable String systemRole;
 
     private GetDbSystemsResult() {}
     /**
@@ -81,6 +86,13 @@ public final class GetDbSystemsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    public Optional<String> systemRole() {
+        return Optional.ofNullable(this.systemRole);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -97,6 +109,7 @@ public final class GetDbSystemsResult {
         private @Nullable List<GetDbSystemsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
+        private @Nullable String systemRole;
         public Builder() {}
         public Builder(GetDbSystemsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,6 +119,7 @@ public final class GetDbSystemsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.systemRole = defaults.systemRole;
         }
 
         @CustomType.Setter
@@ -152,6 +166,12 @@ public final class GetDbSystemsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder systemRole(@Nullable String systemRole) {
+
+            this.systemRole = systemRole;
+            return this;
+        }
         public GetDbSystemsResult build() {
             final var _resultValue = new GetDbSystemsResult();
             _resultValue.compartmentId = compartmentId;
@@ -160,6 +180,7 @@ public final class GetDbSystemsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.systemRole = systemRole;
             return _resultValue;
         }
     }

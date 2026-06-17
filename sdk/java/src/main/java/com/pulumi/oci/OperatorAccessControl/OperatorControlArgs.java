@@ -141,6 +141,21 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    @Import(name="notificationTopicId")
+    private @Nullable Output<String> notificationTopicId;
+
+    /**
+     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    public Optional<Output<String>> notificationTopicId() {
+        return Optional.ofNullable(this.notificationTopicId);
+    }
+
+    /**
      * (Updatable) Number of approvers required to approve an access request.
      * 
      */
@@ -232,6 +247,7 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
         this.emailIdLists = $.emailIdLists;
         this.freeformTags = $.freeformTags;
         this.isFullyPreApproved = $.isFullyPreApproved;
+        this.notificationTopicId = $.notificationTopicId;
         this.numberOfApprovers = $.numberOfApprovers;
         this.operatorControlName = $.operatorControlName;
         this.preApprovedOpActionLists = $.preApprovedOpActionLists;
@@ -453,6 +469,27 @@ public final class OperatorControlArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder isFullyPreApproved(Boolean isFullyPreApproved) {
             return isFullyPreApproved(Output.of(isFullyPreApproved));
+        }
+
+        /**
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationTopicId(@Nullable Output<String> notificationTopicId) {
+            $.notificationTopicId = notificationTopicId;
+            return this;
+        }
+
+        /**
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationTopicId(String notificationTopicId) {
+            return notificationTopicId(Output.of(notificationTopicId));
         }
 
         /**

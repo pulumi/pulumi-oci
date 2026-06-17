@@ -29,6 +29,7 @@ class OperatorControlArgs:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
                  pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_message: pulumi.Input[Optional[_builtins.str]] = None):
@@ -45,6 +46,7 @@ class OperatorControlArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[_builtins.str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
@@ -68,6 +70,8 @@ class OperatorControlArgs:
             pulumi.set(__self__, "email_id_lists", email_id_lists)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if notification_topic_id is not None:
+            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         if number_of_approvers is not None:
             pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         if pre_approved_op_action_lists is not None:
@@ -196,6 +200,18 @@ class OperatorControlArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "notification_topic_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="numberOfApprovers")
     def number_of_approvers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -250,6 +266,7 @@ class _OperatorControlState:
                  is_default_operator_control: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_modified_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
                  operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
                  pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -273,6 +290,7 @@ class _OperatorControlState:
         :param pulumi.Input[_builtins.bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[_builtins.bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[_builtins.str] last_modified_info: Description associated with the latest modification of the operator control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[_builtins.str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
@@ -309,6 +327,8 @@ class _OperatorControlState:
             pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         if last_modified_info is not None:
             pulumi.set(__self__, "last_modified_info", last_modified_info)
+        if notification_topic_id is not None:
+            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         if number_of_approvers is not None:
             pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         if operator_control_name is not None:
@@ -461,6 +481,18 @@ class _OperatorControlState:
         pulumi.set(self, "last_modified_info", value)
 
     @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "notification_topic_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="numberOfApprovers")
     def number_of_approvers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -587,6 +619,7 @@ class OperatorControl(pulumi.CustomResource):
                  email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
                  operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
                  pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -620,6 +653,7 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_id_lists: (Updatable) List of emailId.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[_builtins.bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[_builtins.str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
@@ -676,6 +710,7 @@ class OperatorControl(pulumi.CustomResource):
                  email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
                  number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
                  operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
                  pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -704,6 +739,7 @@ class OperatorControl(pulumi.CustomResource):
             if is_fully_pre_approved is None and not opts.urn:
                 raise TypeError("Missing required property 'is_fully_pre_approved'")
             __props__.__dict__["is_fully_pre_approved"] = is_fully_pre_approved
+            __props__.__dict__["notification_topic_id"] = notification_topic_id
             __props__.__dict__["number_of_approvers"] = number_of_approvers
             if operator_control_name is None and not opts.urn:
                 raise TypeError("Missing required property 'operator_control_name'")
@@ -741,6 +777,7 @@ class OperatorControl(pulumi.CustomResource):
             is_default_operator_control: pulumi.Input[Optional[_builtins.bool]] = None,
             is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
             last_modified_info: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
             number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
             operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
             pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -768,6 +805,7 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[_builtins.bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[_builtins.str] last_modified_info: Description associated with the latest modification of the operator control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[_builtins.str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
@@ -797,6 +835,7 @@ class OperatorControl(pulumi.CustomResource):
         __props__.__dict__["is_default_operator_control"] = is_default_operator_control
         __props__.__dict__["is_fully_pre_approved"] = is_fully_pre_approved
         __props__.__dict__["last_modified_info"] = last_modified_info
+        __props__.__dict__["notification_topic_id"] = notification_topic_id
         __props__.__dict__["number_of_approvers"] = number_of_approvers
         __props__.__dict__["operator_control_name"] = operator_control_name
         __props__.__dict__["pre_approved_op_action_lists"] = pre_approved_op_action_lists
@@ -895,6 +934,14 @@ class OperatorControl(pulumi.CustomResource):
         Description associated with the latest modification of the operator control.
         """
         return pulumi.get(self, "last_modified_info")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        """
+        return pulumi.get(self, "notification_topic_id")
 
     @_builtins.property
     @pulumi.getter(name="numberOfApprovers")

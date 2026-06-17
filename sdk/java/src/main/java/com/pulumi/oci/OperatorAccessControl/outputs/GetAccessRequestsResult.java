@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsAccessRequestCollection;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetAccessRequestsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,7 @@ public final class GetAccessRequestsResult {
      * 
      */
     private String id;
+    private @Nullable Integer numDays;
     /**
      * @return The name of the target resource.
      * 
@@ -74,6 +76,9 @@ public final class GetAccessRequestsResult {
     public String id() {
         return this.id;
     }
+    public Optional<Integer> numDays() {
+        return Optional.ofNullable(this.numDays);
+    }
     /**
      * @return The name of the target resource.
      * 
@@ -115,6 +120,7 @@ public final class GetAccessRequestsResult {
         private String compartmentId;
         private @Nullable List<GetAccessRequestsFilter> filters;
         private String id;
+        private @Nullable Integer numDays;
         private @Nullable String resourceName;
         private @Nullable String resourceType;
         private @Nullable String state;
@@ -127,6 +133,7 @@ public final class GetAccessRequestsResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.numDays = defaults.numDays;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
@@ -171,6 +178,12 @@ public final class GetAccessRequestsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder numDays(@Nullable Integer numDays) {
+
+            this.numDays = numDays;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
 
             this.resourceName = resourceName;
@@ -206,6 +219,7 @@ public final class GetAccessRequestsResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.numDays = numDays;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
             _resultValue.state = state;

@@ -60,6 +60,8 @@ type GetLinkArgs struct {
 type GetLinkResult struct {
 	// OCID of the child tenancy.
 	ChildTenancyId string `pulumi:"childTenancyId"`
+	// The feature associated with this link. Default value is CORE.
+	Feature string `pulumi:"feature"`
 	// The provider-assigned unique ID for this managed resource.
 	Id     string `pulumi:"id"`
 	LinkId string `pulumi:"linkId"`
@@ -112,6 +114,11 @@ func (o GetLinkResultOutput) ToGetLinkResultOutputWithContext(ctx context.Contex
 // OCID of the child tenancy.
 func (o GetLinkResultOutput) ChildTenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLinkResult) string { return v.ChildTenancyId }).(pulumi.StringOutput)
+}
+
+// The feature associated with this link. Default value is CORE.
+func (o GetLinkResultOutput) Feature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLinkResult) string { return v.Feature }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

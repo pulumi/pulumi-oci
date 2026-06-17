@@ -64,6 +64,8 @@ type GetRecipientInvitationResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-created name to describe the invitation. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	Features []string `pulumi:"features"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
@@ -136,6 +138,11 @@ func (o GetRecipientInvitationResultOutput) DefinedTags() pulumi.StringMapOutput
 // A user-created name to describe the invitation. Avoid entering confidential information.
 func (o GetRecipientInvitationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecipientInvitationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+func (o GetRecipientInvitationResultOutput) Features() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecipientInvitationResult) []string { return v.Features }).(pulumi.StringArrayOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

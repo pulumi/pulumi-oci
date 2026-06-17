@@ -43,6 +43,7 @@ import * as utilities from "../utilities";
  *             subnetId: testSubnet.id,
  *             capacityReservationId: testCapacityReservation.id,
  *             faultDomains: nodePoolNodeConfigDetailsPlacementConfigsFaultDomains,
+ *             hostGroupId: testGroup.id,
  *             preemptibleNodeConfig: {
  *                 preemptionAction: {
  *                     type: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType,
@@ -51,6 +52,7 @@ import * as utilities from "../utilities";
  *             },
  *         }],
  *         size: Number(nodePoolNodeConfigDetailsSize),
+ *         computeClusterId: testComputeCluster.id,
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },

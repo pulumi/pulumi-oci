@@ -54,6 +54,10 @@ export interface GetRecipientInvitationResult {
      */
     readonly displayName: string;
     /**
+     * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     */
+    readonly features: string[];
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: string};

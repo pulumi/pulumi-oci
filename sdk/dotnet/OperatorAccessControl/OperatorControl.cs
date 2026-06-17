@@ -95,6 +95,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Output<string> LastModifiedInfo { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        /// </summary>
+        [Output("notificationTopicId")]
+        public Output<string> NotificationTopicId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Number of approvers required to approve an access request.
         /// </summary>
         [Output("numberOfApprovers")]
@@ -277,6 +283,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         public Input<bool> IsFullyPreApproved { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        /// </summary>
+        [Input("notificationTopicId")]
+        public Input<string>? NotificationTopicId { get; set; }
+
+        /// <summary>
         /// (Updatable) Number of approvers required to approve an access request.
         /// </summary>
         [Input("numberOfApprovers")]
@@ -425,6 +437,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// </summary>
         [Input("lastModifiedInfo")]
         public Input<string>? LastModifiedInfo { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        /// </summary>
+        [Input("notificationTopicId")]
+        public Input<string>? NotificationTopicId { get; set; }
 
         /// <summary>
         /// (Updatable) Number of approvers required to approve an access request.

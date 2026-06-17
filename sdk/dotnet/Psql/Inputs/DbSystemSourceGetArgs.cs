@@ -25,10 +25,16 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<bool>? IsHavingRestoreConfigOverrides { get; set; }
 
         /// <summary>
-        /// The source descriminator. Example: `{"SourceType": "BACKUP"}`.
+        /// The [OCID] of the primary database system.
         /// </summary>
-        [Input("sourceType", required: true)]
-        public Input<string> SourceType { get; set; } = null!;
+        [Input("primaryDbSystemId")]
+        public Input<string>? PrimaryDbSystemId { get; set; }
+
+        /// <summary>
+        /// The source descriminator.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         public DbSystemSourceGetArgs()
         {

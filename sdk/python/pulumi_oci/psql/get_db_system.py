@@ -27,10 +27,13 @@ class GetDbSystemResult:
     """
     A collection of values returned by getDbSystem.
     """
-    def __init__(__self__, admin_username=None, apply_config=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, lifecycle_details=None, management_policies=None, network_details=None, patch_operations=None, shape=None, sources=None, state=None, storage_details=None, system_tags=None, system_type=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_username=None, apply_change_mode_to_stand_alone=None, apply_config=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, kerberos_auth_details=None, lifecycle_details=None, management_policies=None, network_details=None, odsp_insight_details=None, patch_operations=None, replication_configs=None, shape=None, sources=None, state=None, storage_details=None, system_role=None, system_tags=None, system_type=None, time_created=None, time_updated=None):
         if admin_username and not isinstance(admin_username, str):
             raise TypeError("Expected argument 'admin_username' to be a str")
         pulumi.set(__self__, "admin_username", admin_username)
+        if apply_change_mode_to_stand_alone and not isinstance(apply_change_mode_to_stand_alone, str):
+            raise TypeError("Expected argument 'apply_change_mode_to_stand_alone' to be a str")
+        pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
         if apply_config and not isinstance(apply_config, str):
             raise TypeError("Expected argument 'apply_config' to be a str")
         pulumi.set(__self__, "apply_config", apply_config)
@@ -82,6 +85,9 @@ class GetDbSystemResult:
         if instances_details and not isinstance(instances_details, list):
             raise TypeError("Expected argument 'instances_details' to be a list")
         pulumi.set(__self__, "instances_details", instances_details)
+        if kerberos_auth_details and not isinstance(kerberos_auth_details, list):
+            raise TypeError("Expected argument 'kerberos_auth_details' to be a list")
+        pulumi.set(__self__, "kerberos_auth_details", kerberos_auth_details)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -91,9 +97,15 @@ class GetDbSystemResult:
         if network_details and not isinstance(network_details, list):
             raise TypeError("Expected argument 'network_details' to be a list")
         pulumi.set(__self__, "network_details", network_details)
+        if odsp_insight_details and not isinstance(odsp_insight_details, list):
+            raise TypeError("Expected argument 'odsp_insight_details' to be a list")
+        pulumi.set(__self__, "odsp_insight_details", odsp_insight_details)
         if patch_operations and not isinstance(patch_operations, list):
             raise TypeError("Expected argument 'patch_operations' to be a list")
         pulumi.set(__self__, "patch_operations", patch_operations)
+        if replication_configs and not isinstance(replication_configs, list):
+            raise TypeError("Expected argument 'replication_configs' to be a list")
+        pulumi.set(__self__, "replication_configs", replication_configs)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -106,6 +118,9 @@ class GetDbSystemResult:
         if storage_details and not isinstance(storage_details, list):
             raise TypeError("Expected argument 'storage_details' to be a list")
         pulumi.set(__self__, "storage_details", storage_details)
+        if system_role and not isinstance(system_role, str):
+            raise TypeError("Expected argument 'system_role' to be a str")
+        pulumi.set(__self__, "system_role", system_role)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -126,6 +141,11 @@ class GetDbSystemResult:
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @_builtins.property
+    @pulumi.getter(name="applyChangeModeToStandAlone")
+    def apply_change_mode_to_stand_alone(self) -> _builtins.str:
+        return pulumi.get(self, "apply_change_mode_to_stand_alone")
 
     @_builtins.property
     @pulumi.getter(name="applyConfig")
@@ -151,6 +171,9 @@ class GetDbSystemResult:
     @_builtins.property
     @pulumi.getter
     def credentials(self) -> Sequence['outputs.GetDbSystemCredentialResult']:
+        """
+        List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        """
         return pulumi.get(self, "credentials")
 
     @_builtins.property
@@ -249,6 +272,14 @@ class GetDbSystemResult:
         return pulumi.get(self, "instances_details")
 
     @_builtins.property
+    @pulumi.getter(name="kerberosAuthDetails")
+    def kerberos_auth_details(self) -> Sequence['outputs.GetDbSystemKerberosAuthDetailResult']:
+        """
+        Kerberos Authentication details for the database system.
+        """
+        return pulumi.get(self, "kerberos_auth_details")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -273,9 +304,25 @@ class GetDbSystemResult:
         return pulumi.get(self, "network_details")
 
     @_builtins.property
+    @pulumi.getter(name="odspInsightDetails")
+    def odsp_insight_details(self) -> Sequence['outputs.GetDbSystemOdspInsightDetailResult']:
+        """
+        ODSP Insight details for the database system.
+        """
+        return pulumi.get(self, "odsp_insight_details")
+
+    @_builtins.property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> Sequence['outputs.GetDbSystemPatchOperationResult']:
         return pulumi.get(self, "patch_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationConfigs")
+    def replication_configs(self) -> Sequence['outputs.GetDbSystemReplicationConfigResult']:
+        """
+        Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+        """
+        return pulumi.get(self, "replication_configs")
 
     @_builtins.property
     @pulumi.getter
@@ -308,6 +355,14 @@ class GetDbSystemResult:
         Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
+
+    @_builtins.property
+    @pulumi.getter(name="systemRole")
+    def system_role(self) -> _builtins.str:
+        """
+        Type of the database system.
+        """
+        return pulumi.get(self, "system_role")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -349,6 +404,7 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             yield self
         return GetDbSystemResult(
             admin_username=self.admin_username,
+            apply_change_mode_to_stand_alone=self.apply_change_mode_to_stand_alone,
             apply_config=self.apply_config,
             compartment_id=self.compartment_id,
             config_id=self.config_id,
@@ -366,14 +422,18 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             instance_ocpu_count=self.instance_ocpu_count,
             instances=self.instances,
             instances_details=self.instances_details,
+            kerberos_auth_details=self.kerberos_auth_details,
             lifecycle_details=self.lifecycle_details,
             management_policies=self.management_policies,
             network_details=self.network_details,
+            odsp_insight_details=self.odsp_insight_details,
             patch_operations=self.patch_operations,
+            replication_configs=self.replication_configs,
             shape=self.shape,
             sources=self.sources,
             state=self.state,
             storage_details=self.storage_details,
+            system_role=self.system_role,
             system_tags=self.system_tags,
             system_type=self.system_type,
             time_created=self.time_created,
@@ -410,6 +470,7 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
 
     return AwaitableGetDbSystemResult(
         admin_username=pulumi.get(__ret__, 'admin_username'),
+        apply_change_mode_to_stand_alone=pulumi.get(__ret__, 'apply_change_mode_to_stand_alone'),
         apply_config=pulumi.get(__ret__, 'apply_config'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         config_id=pulumi.get(__ret__, 'config_id'),
@@ -427,14 +488,18 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
         instance_ocpu_count=pulumi.get(__ret__, 'instance_ocpu_count'),
         instances=pulumi.get(__ret__, 'instances'),
         instances_details=pulumi.get(__ret__, 'instances_details'),
+        kerberos_auth_details=pulumi.get(__ret__, 'kerberos_auth_details'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         management_policies=pulumi.get(__ret__, 'management_policies'),
         network_details=pulumi.get(__ret__, 'network_details'),
+        odsp_insight_details=pulumi.get(__ret__, 'odsp_insight_details'),
         patch_operations=pulumi.get(__ret__, 'patch_operations'),
+        replication_configs=pulumi.get(__ret__, 'replication_configs'),
         shape=pulumi.get(__ret__, 'shape'),
         sources=pulumi.get(__ret__, 'sources'),
         state=pulumi.get(__ret__, 'state'),
         storage_details=pulumi.get(__ret__, 'storage_details'),
+        system_role=pulumi.get(__ret__, 'system_role'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         system_type=pulumi.get(__ret__, 'system_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -468,6 +533,7 @@ def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = N
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystem:getDbSystem', __args__, opts=opts, typ=GetDbSystemResult)
     return __ret__.apply(lambda __response__: GetDbSystemResult(
         admin_username=pulumi.get(__response__, 'admin_username'),
+        apply_change_mode_to_stand_alone=pulumi.get(__response__, 'apply_change_mode_to_stand_alone'),
         apply_config=pulumi.get(__response__, 'apply_config'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         config_id=pulumi.get(__response__, 'config_id'),
@@ -485,14 +551,18 @@ def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = N
         instance_ocpu_count=pulumi.get(__response__, 'instance_ocpu_count'),
         instances=pulumi.get(__response__, 'instances'),
         instances_details=pulumi.get(__response__, 'instances_details'),
+        kerberos_auth_details=pulumi.get(__response__, 'kerberos_auth_details'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         management_policies=pulumi.get(__response__, 'management_policies'),
         network_details=pulumi.get(__response__, 'network_details'),
+        odsp_insight_details=pulumi.get(__response__, 'odsp_insight_details'),
         patch_operations=pulumi.get(__response__, 'patch_operations'),
+        replication_configs=pulumi.get(__response__, 'replication_configs'),
         shape=pulumi.get(__response__, 'shape'),
         sources=pulumi.get(__response__, 'sources'),
         state=pulumi.get(__response__, 'state'),
         storage_details=pulumi.get(__response__, 'storage_details'),
+        system_role=pulumi.get(__response__, 'system_role'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         system_type=pulumi.get(__response__, 'system_type'),
         time_created=pulumi.get(__response__, 'time_created'),

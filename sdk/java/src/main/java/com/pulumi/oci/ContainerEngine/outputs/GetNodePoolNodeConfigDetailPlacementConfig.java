@@ -28,6 +28,11 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      */
     private List<String> faultDomains;
     /**
+     * @return The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    private String hostGroupId;
+    /**
      * @return Configuration options for preemptible nodes.
      * 
      */
@@ -61,6 +66,13 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
         return this.faultDomains;
     }
     /**
+     * @return The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    public String hostGroupId() {
+        return this.hostGroupId;
+    }
+    /**
      * @return Configuration options for preemptible nodes.
      * 
      */
@@ -87,6 +99,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
         private String availabilityDomain;
         private String capacityReservationId;
         private List<String> faultDomains;
+        private String hostGroupId;
         private List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
         private String subnetId;
         public Builder() {}
@@ -95,6 +108,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.faultDomains = defaults.faultDomains;
+    	      this.hostGroupId = defaults.hostGroupId;
     	      this.preemptibleNodeConfigs = defaults.preemptibleNodeConfigs;
     	      this.subnetId = defaults.subnetId;
         }
@@ -127,6 +141,14 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
+        public Builder hostGroupId(String hostGroupId) {
+            if (hostGroupId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNodeConfigDetailPlacementConfig", "hostGroupId");
+            }
+            this.hostGroupId = hostGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder preemptibleNodeConfigs(List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs) {
             if (preemptibleNodeConfigs == null) {
               throw new MissingRequiredPropertyException("GetNodePoolNodeConfigDetailPlacementConfig", "preemptibleNodeConfigs");
@@ -150,6 +172,7 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.faultDomains = faultDomains;
+            _resultValue.hostGroupId = hostGroupId;
             _resultValue.preemptibleNodeConfigs = preemptibleNodeConfigs;
             _resultValue.subnetId = subnetId;
             return _resultValue;

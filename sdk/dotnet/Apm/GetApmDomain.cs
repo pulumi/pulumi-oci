@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Apm
     public sealed class GetApmDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the APM domain
+        /// The OCID of the APM domain.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public string ApmDomainId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Apm
     public sealed class GetApmDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the APM domain
+        /// The OCID of the APM domain.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
@@ -157,6 +157,10 @@ namespace Pulumi.Oci.Apm
         /// </summary>
         public readonly bool IsFreeTier;
         /// <summary>
+        /// The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+        /// </summary>
+        public readonly string LogGroupId;
+        /// <summary>
         /// The current lifecycle state of the APM domain.
         /// </summary>
         public readonly string State;
@@ -189,6 +193,8 @@ namespace Pulumi.Oci.Apm
 
             bool isFreeTier,
 
+            string logGroupId,
+
             string state,
 
             string timeCreated,
@@ -204,6 +210,7 @@ namespace Pulumi.Oci.Apm
             FreeformTags = freeformTags;
             Id = id;
             IsFreeTier = isFreeTier;
+            LogGroupId = logGroupId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

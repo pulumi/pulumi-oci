@@ -4,7 +4,6 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -24,10 +23,15 @@ public final class DbSystemSource {
      */
     private @Nullable Boolean isHavingRestoreConfigOverrides;
     /**
-     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+     * @return The [OCID] of the primary database system.
      * 
      */
-    private String sourceType;
+    private @Nullable String primaryDbSystemId;
+    /**
+     * @return The source descriminator.
+     * 
+     */
+    private @Nullable String sourceType;
 
     private DbSystemSource() {}
     /**
@@ -45,11 +49,18 @@ public final class DbSystemSource {
         return Optional.ofNullable(this.isHavingRestoreConfigOverrides);
     }
     /**
-     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+     * @return The [OCID] of the primary database system.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> primaryDbSystemId() {
+        return Optional.ofNullable(this.primaryDbSystemId);
+    }
+    /**
+     * @return The source descriminator.
+     * 
+     */
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -63,12 +74,14 @@ public final class DbSystemSource {
     public static final class Builder {
         private @Nullable String backupId;
         private @Nullable Boolean isHavingRestoreConfigOverrides;
-        private String sourceType;
+        private @Nullable String primaryDbSystemId;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(DbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
     	      this.isHavingRestoreConfigOverrides = defaults.isHavingRestoreConfigOverrides;
+    	      this.primaryDbSystemId = defaults.primaryDbSystemId;
     	      this.sourceType = defaults.sourceType;
         }
 
@@ -85,10 +98,14 @@ public final class DbSystemSource {
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            if (sourceType == null) {
-              throw new MissingRequiredPropertyException("DbSystemSource", "sourceType");
-            }
+        public Builder primaryDbSystemId(@Nullable String primaryDbSystemId) {
+
+            this.primaryDbSystemId = primaryDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }
@@ -96,6 +113,7 @@ public final class DbSystemSource {
             final var _resultValue = new DbSystemSource();
             _resultValue.backupId = backupId;
             _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            _resultValue.primaryDbSystemId = primaryDbSystemId;
             _resultValue.sourceType = sourceType;
             return _resultValue;
         }

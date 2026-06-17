@@ -899,6 +899,7 @@ class NodePool(pulumi.CustomResource):
                     "subnet_id": test_subnet["id"],
                     "capacity_reservation_id": test_capacity_reservation["id"],
                     "fault_domains": node_pool_node_config_details_placement_configs_fault_domains,
+                    "host_group_id": test_group["id"],
                     "preemptible_node_config": {
                         "preemption_action": {
                             "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
@@ -907,6 +908,7 @@ class NodePool(pulumi.CustomResource):
                     },
                 }],
                 "size": int(node_pool_node_config_details_size),
+                "compute_cluster_id": test_compute_cluster["id"],
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -1059,6 +1061,7 @@ class NodePool(pulumi.CustomResource):
                     "subnet_id": test_subnet["id"],
                     "capacity_reservation_id": test_capacity_reservation["id"],
                     "fault_domains": node_pool_node_config_details_placement_configs_fault_domains,
+                    "host_group_id": test_group["id"],
                     "preemptible_node_config": {
                         "preemption_action": {
                             "type": node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
@@ -1067,6 +1070,7 @@ class NodePool(pulumi.CustomResource):
                     },
                 }],
                 "size": int(node_pool_node_config_details_size),
+                "compute_cluster_id": test_compute_cluster["id"],
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },

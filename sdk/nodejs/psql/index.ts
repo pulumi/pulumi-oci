@@ -55,6 +55,11 @@ export const getDbSystemPrimaryDbInstance: typeof import("./getDbSystemPrimaryDb
 export const getDbSystemPrimaryDbInstanceOutput: typeof import("./getDbSystemPrimaryDbInstance").getDbSystemPrimaryDbInstanceOutput = null as any;
 utilities.lazyLoad(exports, ["getDbSystemPrimaryDbInstance","getDbSystemPrimaryDbInstanceOutput"], () => require("./getDbSystemPrimaryDbInstance"));
 
+export { GetDbSystemReplicasArgs, GetDbSystemReplicasResult, GetDbSystemReplicasOutputArgs } from "./getDbSystemReplicas";
+export const getDbSystemReplicas: typeof import("./getDbSystemReplicas").getDbSystemReplicas = null as any;
+export const getDbSystemReplicasOutput: typeof import("./getDbSystemReplicas").getDbSystemReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemReplicas","getDbSystemReplicasOutput"], () => require("./getDbSystemReplicas"));
+
 export { GetDbSystemsArgs, GetDbSystemsResult, GetDbSystemsOutputArgs } from "./getDbSystems";
 export const getDbSystems: typeof import("./getDbSystems").getDbSystems = null as any;
 export const getDbSystemsOutput: typeof import("./getDbSystems").getDbSystemsOutput = null as any;
@@ -69,6 +74,11 @@ export { GetDefaultConfigurationsArgs, GetDefaultConfigurationsResult, GetDefaul
 export const getDefaultConfigurations: typeof import("./getDefaultConfigurations").getDefaultConfigurations = null as any;
 export const getDefaultConfigurationsOutput: typeof import("./getDefaultConfigurations").getDefaultConfigurationsOutput = null as any;
 utilities.lazyLoad(exports, ["getDefaultConfigurations","getDefaultConfigurationsOutput"], () => require("./getDefaultConfigurations"));
+
+export { GetInsightCapabilitiesArgs, GetInsightCapabilitiesResult, GetInsightCapabilitiesOutputArgs } from "./getInsightCapabilities";
+export const getInsightCapabilities: typeof import("./getInsightCapabilities").getInsightCapabilities = null as any;
+export const getInsightCapabilitiesOutput: typeof import("./getInsightCapabilities").getInsightCapabilitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getInsightCapabilities","getInsightCapabilitiesOutput"], () => require("./getInsightCapabilities"));
 
 export { GetShapesArgs, GetShapesResult, GetShapesOutputArgs } from "./getShapes";
 export const getShapes: typeof import("./getShapes").getShapes = null as any;

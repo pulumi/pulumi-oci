@@ -83,6 +83,21 @@ public final class GetDbSystemsPlainArgs extends com.pulumi.resources.InvokeArgs
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     * 
+     */
+    @Import(name="systemRole")
+    private @Nullable String systemRole;
+
+    /**
+     * @return A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     * 
+     */
+    public Optional<String> systemRole() {
+        return Optional.ofNullable(this.systemRole);
+    }
+
     private GetDbSystemsPlainArgs() {}
 
     private GetDbSystemsPlainArgs(GetDbSystemsPlainArgs $) {
@@ -91,6 +106,7 @@ public final class GetDbSystemsPlainArgs extends com.pulumi.resources.InvokeArgs
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
+        this.systemRole = $.systemRole;
     }
 
     public static Builder builder() {
@@ -161,6 +177,17 @@ public final class GetDbSystemsPlainArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param systemRole A filter to return only DbSystem resources if their `systemRole` matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemRole(@Nullable String systemRole) {
+            $.systemRole = systemRole;
             return this;
         }
 

@@ -37,6 +37,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
+        /// (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+        /// </summary>
+        [Input("hostGroupId")]
+        public Input<string>? HostGroupId { get; set; }
+
+        /// <summary>
         /// (Updatable) Configuration options for preemptible nodes.
         /// </summary>
         [Input("preemptibleNodeConfig")]

@@ -27,7 +27,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_completed=None, lifecycle_details=None, migration_configs=None, migration_id=None, migration_type=None, replication_schedule_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_completed=None, lifecycle_details=None, migration_configs=None, migration_id=None, migration_type=None, replication_schedule_id=None, security_attributes=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +61,9 @@ class GetMigrationResult:
         if replication_schedule_id and not isinstance(replication_schedule_id, str):
             raise TypeError("Expected argument 'replication_schedule_id' to be a str")
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -160,6 +163,14 @@ class GetMigrationResult:
         return pulumi.get(self, "replication_schedule_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -209,6 +220,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             migration_id=self.migration_id,
             migration_type=self.migration_type,
             replication_schedule_id=self.replication_schedule_id,
+            security_attributes=self.security_attributes,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -251,6 +263,7 @@ def get_migration(migration_id: Optional[_builtins.str] = None,
         migration_id=pulumi.get(__ret__, 'migration_id'),
         migration_type=pulumi.get(__ret__, 'migration_type'),
         replication_schedule_id=pulumi.get(__ret__, 'replication_schedule_id'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -290,6 +303,7 @@ def get_migration_output(migration_id: pulumi.Input[Optional[_builtins.str]] = N
         migration_id=pulumi.get(__response__, 'migration_id'),
         migration_type=pulumi.get(__response__, 'migration_type'),
         replication_schedule_id=pulumi.get(__response__, 'replication_schedule_id'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

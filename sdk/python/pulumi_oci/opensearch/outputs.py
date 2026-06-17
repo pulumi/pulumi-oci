@@ -1363,6 +1363,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  certificate_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigResult'],
                  compartment_id: _builtins.str,
                  configure_outbound_cluster_trigger: _builtins.int,
+                 coordinator_node_count: _builtins.int,
+                 coordinator_node_host_memory_gb: _builtins.int,
+                 coordinator_node_host_ocpu_count: _builtins.int,
+                 coordinator_node_host_shape: _builtins.str,
+                 coordinator_node_host_type: _builtins.str,
                  data_node_count: _builtins.int,
                  data_node_host_bare_metal_shape: _builtins.str,
                  data_node_host_memory_gb: _builtins.int,
@@ -1430,6 +1435,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param Sequence[_builtins.str] availability_domains: The availability domains to distribute the cluser nodes across.
         :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs'] certificate_configs: Custom certificate config for customer provided certs.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.int coordinator_node_count: The number of coordinator nodes configured for the cluster.
+        :param _builtins.int coordinator_node_host_memory_gb: The amount of memory in GB, for the cluster's coordinator nodes.
+        :param _builtins.int coordinator_node_host_ocpu_count: The number of OCPUs configured for the cluster's coordinator nodes.
+        :param _builtins.str coordinator_node_host_shape: The node shape for the cluster's coordinator nodes.
+        :param _builtins.str coordinator_node_host_type: The instance type for the cluster's coordinator nodes.
         :param _builtins.int data_node_count: The number of data nodes configured for the cluster.
         :param _builtins.str data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param _builtins.int data_node_host_memory_gb: The amount of memory in GB, for the cluster's data nodes.
@@ -1496,6 +1506,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "certificate_configs", certificate_configs)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
+        pulumi.set(__self__, "coordinator_node_count", coordinator_node_count)
+        pulumi.set(__self__, "coordinator_node_host_memory_gb", coordinator_node_host_memory_gb)
+        pulumi.set(__self__, "coordinator_node_host_ocpu_count", coordinator_node_host_ocpu_count)
+        pulumi.set(__self__, "coordinator_node_host_shape", coordinator_node_host_shape)
+        pulumi.set(__self__, "coordinator_node_host_type", coordinator_node_host_type)
         pulumi.set(__self__, "data_node_count", data_node_count)
         pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
@@ -1588,6 +1603,46 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
     @pulumi.getter(name="configureOutboundClusterTrigger")
     def configure_outbound_cluster_trigger(self) -> _builtins.int:
         return pulumi.get(self, "configure_outbound_cluster_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeCount")
+    def coordinator_node_count(self) -> _builtins.int:
+        """
+        The number of coordinator nodes configured for the cluster.
+        """
+        return pulumi.get(self, "coordinator_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostMemoryGb")
+    def coordinator_node_host_memory_gb(self) -> _builtins.int:
+        """
+        The amount of memory in GB, for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostOcpuCount")
+    def coordinator_node_host_ocpu_count(self) -> _builtins.int:
+        """
+        The number of OCPUs configured for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostShape")
+    def coordinator_node_host_shape(self) -> _builtins.str:
+        """
+        The node shape for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostType")
+    def coordinator_node_host_type(self) -> _builtins.str:
+        """
+        The instance type for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_type")
 
     @_builtins.property
     @pulumi.getter(name="dataNodeCount")

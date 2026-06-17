@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: dbSystemDisplayName,
  *     id: dbSystemId,
  *     state: dbSystemState,
+ *     systemRole: dbSystemSystemRole,
  * });
  * ```
  */
@@ -34,6 +35,7 @@ export function getDbSystems(args?: GetDbSystemsArgs, opts?: pulumi.InvokeOption
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "systemRole": args.systemRole,
     }, opts);
 }
 
@@ -58,6 +60,10 @@ export interface GetDbSystemsArgs {
      * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: string;
+    /**
+     * A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     */
+    systemRole?: string;
 }
 
 /**
@@ -85,6 +91,10 @@ export interface GetDbSystemsResult {
      * The current state of the database system.
      */
     readonly state?: string;
+    /**
+     * Type of the database system.
+     */
+    readonly systemRole?: string;
 }
 /**
  * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
@@ -102,6 +112,7 @@ export interface GetDbSystemsResult {
  *     displayName: dbSystemDisplayName,
  *     id: dbSystemId,
  *     state: dbSystemState,
+ *     systemRole: dbSystemSystemRole,
  * });
  * ```
  */
@@ -114,6 +125,7 @@ export function getDbSystemsOutput(args?: GetDbSystemsOutputArgs, opts?: pulumi.
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "systemRole": args.systemRole,
     }, opts);
 }
 
@@ -138,4 +150,8 @@ export interface GetDbSystemsOutputArgs {
      * A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
      */
     state?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     */
+    systemRole?: pulumi.Input<string | undefined>;
 }

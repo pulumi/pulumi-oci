@@ -8,9 +8,12 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemCredential;
 import com.pulumi.oci.Psql.outputs.GetDbSystemInstance;
 import com.pulumi.oci.Psql.outputs.GetDbSystemInstancesDetail;
+import com.pulumi.oci.Psql.outputs.GetDbSystemKerberosAuthDetail;
 import com.pulumi.oci.Psql.outputs.GetDbSystemManagementPolicy;
 import com.pulumi.oci.Psql.outputs.GetDbSystemNetworkDetail;
+import com.pulumi.oci.Psql.outputs.GetDbSystemOdspInsightDetail;
 import com.pulumi.oci.Psql.outputs.GetDbSystemPatchOperation;
+import com.pulumi.oci.Psql.outputs.GetDbSystemReplicationConfig;
 import com.pulumi.oci.Psql.outputs.GetDbSystemSource;
 import com.pulumi.oci.Psql.outputs.GetDbSystemStorageDetail;
 import java.lang.Integer;
@@ -28,6 +31,7 @@ public final class GetDbSystemResult {
      * 
      */
     private String adminUsername;
+    private String applyChangeModeToStandAlone;
     private String applyConfig;
     /**
      * @return target compartment to place a new backup
@@ -39,6 +43,10 @@ public final class GetDbSystemResult {
      * 
      */
     private String configId;
+    /**
+     * @return List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+     * 
+     */
     private List<GetDbSystemCredential> credentials;
     private String dbSystemId;
     /**
@@ -94,6 +102,11 @@ public final class GetDbSystemResult {
     private List<GetDbSystemInstance> instances;
     private List<GetDbSystemInstancesDetail> instancesDetails;
     /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    private List<GetDbSystemKerberosAuthDetail> kerberosAuthDetails;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -108,7 +121,17 @@ public final class GetDbSystemResult {
      * 
      */
     private List<GetDbSystemNetworkDetail> networkDetails;
+    /**
+     * @return ODSP Insight details for the database system.
+     * 
+     */
+    private List<GetDbSystemOdspInsightDetail> odspInsightDetails;
     private List<GetDbSystemPatchOperation> patchOperations;
+    /**
+     * @return Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+     * 
+     */
+    private List<GetDbSystemReplicationConfig> replicationConfigs;
     /**
      * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      * 
@@ -129,6 +152,11 @@ public final class GetDbSystemResult {
      * 
      */
     private List<GetDbSystemStorageDetail> storageDetails;
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    private String systemRole;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -158,6 +186,9 @@ public final class GetDbSystemResult {
     public String adminUsername() {
         return this.adminUsername;
     }
+    public String applyChangeModeToStandAlone() {
+        return this.applyChangeModeToStandAlone;
+    }
     public String applyConfig() {
         return this.applyConfig;
     }
@@ -175,6 +206,10 @@ public final class GetDbSystemResult {
     public String configId() {
         return this.configId;
     }
+    /**
+     * @return List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+     * 
+     */
     public List<GetDbSystemCredential> credentials() {
         return this.credentials;
     }
@@ -258,6 +293,13 @@ public final class GetDbSystemResult {
         return this.instancesDetails;
     }
     /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    public List<GetDbSystemKerberosAuthDetail> kerberosAuthDetails() {
+        return this.kerberosAuthDetails;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -278,8 +320,22 @@ public final class GetDbSystemResult {
     public List<GetDbSystemNetworkDetail> networkDetails() {
         return this.networkDetails;
     }
+    /**
+     * @return ODSP Insight details for the database system.
+     * 
+     */
+    public List<GetDbSystemOdspInsightDetail> odspInsightDetails() {
+        return this.odspInsightDetails;
+    }
     public List<GetDbSystemPatchOperation> patchOperations() {
         return this.patchOperations;
+    }
+    /**
+     * @return Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+     * 
+     */
+    public List<GetDbSystemReplicationConfig> replicationConfigs() {
+        return this.replicationConfigs;
     }
     /**
      * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
@@ -308,6 +364,13 @@ public final class GetDbSystemResult {
      */
     public List<GetDbSystemStorageDetail> storageDetails() {
         return this.storageDetails;
+    }
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    public String systemRole() {
+        return this.systemRole;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -348,6 +411,7 @@ public final class GetDbSystemResult {
     @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
+        private String applyChangeModeToStandAlone;
         private String applyConfig;
         private String compartmentId;
         private String configId;
@@ -365,14 +429,18 @@ public final class GetDbSystemResult {
         private Integer instanceOcpuCount;
         private List<GetDbSystemInstance> instances;
         private List<GetDbSystemInstancesDetail> instancesDetails;
+        private List<GetDbSystemKerberosAuthDetail> kerberosAuthDetails;
         private String lifecycleDetails;
         private List<GetDbSystemManagementPolicy> managementPolicies;
         private List<GetDbSystemNetworkDetail> networkDetails;
+        private List<GetDbSystemOdspInsightDetail> odspInsightDetails;
         private List<GetDbSystemPatchOperation> patchOperations;
+        private List<GetDbSystemReplicationConfig> replicationConfigs;
         private String shape;
         private List<GetDbSystemSource> sources;
         private String state;
         private List<GetDbSystemStorageDetail> storageDetails;
+        private String systemRole;
         private Map<String,String> systemTags;
         private String systemType;
         private String timeCreated;
@@ -381,6 +449,7 @@ public final class GetDbSystemResult {
         public Builder(GetDbSystemResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
+    	      this.applyChangeModeToStandAlone = defaults.applyChangeModeToStandAlone;
     	      this.applyConfig = defaults.applyConfig;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configId = defaults.configId;
@@ -398,14 +467,18 @@ public final class GetDbSystemResult {
     	      this.instanceOcpuCount = defaults.instanceOcpuCount;
     	      this.instances = defaults.instances;
     	      this.instancesDetails = defaults.instancesDetails;
+    	      this.kerberosAuthDetails = defaults.kerberosAuthDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementPolicies = defaults.managementPolicies;
     	      this.networkDetails = defaults.networkDetails;
+    	      this.odspInsightDetails = defaults.odspInsightDetails;
     	      this.patchOperations = defaults.patchOperations;
+    	      this.replicationConfigs = defaults.replicationConfigs;
     	      this.shape = defaults.shape;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
     	      this.storageDetails = defaults.storageDetails;
+    	      this.systemRole = defaults.systemRole;
     	      this.systemTags = defaults.systemTags;
     	      this.systemType = defaults.systemType;
     	      this.timeCreated = defaults.timeCreated;
@@ -418,6 +491,14 @@ public final class GetDbSystemResult {
               throw new MissingRequiredPropertyException("GetDbSystemResult", "adminUsername");
             }
             this.adminUsername = adminUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applyChangeModeToStandAlone(String applyChangeModeToStandAlone) {
+            if (applyChangeModeToStandAlone == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "applyChangeModeToStandAlone");
+            }
+            this.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             return this;
         }
         @CustomType.Setter
@@ -564,6 +645,17 @@ public final class GetDbSystemResult {
             return instancesDetails(List.of(instancesDetails));
         }
         @CustomType.Setter
+        public Builder kerberosAuthDetails(List<GetDbSystemKerberosAuthDetail> kerberosAuthDetails) {
+            if (kerberosAuthDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "kerberosAuthDetails");
+            }
+            this.kerberosAuthDetails = kerberosAuthDetails;
+            return this;
+        }
+        public Builder kerberosAuthDetails(GetDbSystemKerberosAuthDetail... kerberosAuthDetails) {
+            return kerberosAuthDetails(List.of(kerberosAuthDetails));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDbSystemResult", "lifecycleDetails");
@@ -594,6 +686,17 @@ public final class GetDbSystemResult {
             return networkDetails(List.of(networkDetails));
         }
         @CustomType.Setter
+        public Builder odspInsightDetails(List<GetDbSystemOdspInsightDetail> odspInsightDetails) {
+            if (odspInsightDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "odspInsightDetails");
+            }
+            this.odspInsightDetails = odspInsightDetails;
+            return this;
+        }
+        public Builder odspInsightDetails(GetDbSystemOdspInsightDetail... odspInsightDetails) {
+            return odspInsightDetails(List.of(odspInsightDetails));
+        }
+        @CustomType.Setter
         public Builder patchOperations(List<GetDbSystemPatchOperation> patchOperations) {
             if (patchOperations == null) {
               throw new MissingRequiredPropertyException("GetDbSystemResult", "patchOperations");
@@ -603,6 +706,17 @@ public final class GetDbSystemResult {
         }
         public Builder patchOperations(GetDbSystemPatchOperation... patchOperations) {
             return patchOperations(List.of(patchOperations));
+        }
+        @CustomType.Setter
+        public Builder replicationConfigs(List<GetDbSystemReplicationConfig> replicationConfigs) {
+            if (replicationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "replicationConfigs");
+            }
+            this.replicationConfigs = replicationConfigs;
+            return this;
+        }
+        public Builder replicationConfigs(GetDbSystemReplicationConfig... replicationConfigs) {
+            return replicationConfigs(List.of(replicationConfigs));
         }
         @CustomType.Setter
         public Builder shape(String shape) {
@@ -643,6 +757,14 @@ public final class GetDbSystemResult {
             return storageDetails(List.of(storageDetails));
         }
         @CustomType.Setter
+        public Builder systemRole(String systemRole) {
+            if (systemRole == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "systemRole");
+            }
+            this.systemRole = systemRole;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDbSystemResult", "systemTags");
@@ -677,6 +799,7 @@ public final class GetDbSystemResult {
         public GetDbSystemResult build() {
             final var _resultValue = new GetDbSystemResult();
             _resultValue.adminUsername = adminUsername;
+            _resultValue.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             _resultValue.applyConfig = applyConfig;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configId = configId;
@@ -694,14 +817,18 @@ public final class GetDbSystemResult {
             _resultValue.instanceOcpuCount = instanceOcpuCount;
             _resultValue.instances = instances;
             _resultValue.instancesDetails = instancesDetails;
+            _resultValue.kerberosAuthDetails = kerberosAuthDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementPolicies = managementPolicies;
             _resultValue.networkDetails = networkDetails;
+            _resultValue.odspInsightDetails = odspInsightDetails;
             _resultValue.patchOperations = patchOperations;
+            _resultValue.replicationConfigs = replicationConfigs;
             _resultValue.shape = shape;
             _resultValue.sources = sources;
             _resultValue.state = state;
             _resultValue.storageDetails = storageDetails;
+            _resultValue.systemRole = systemRole;
             _resultValue.systemTags = systemTags;
             _resultValue.systemType = systemType;
             _resultValue.timeCreated = timeCreated;

@@ -1525,6 +1525,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
                  is_default_operator_control: _builtins.bool,
                  is_fully_pre_approved: _builtins.bool,
                  last_modified_info: _builtins.str,
+                 notification_topic_id: _builtins.str,
                  number_of_approvers: _builtins.int,
                  operator_control_name: _builtins.str,
                  pre_approved_op_action_lists: Sequence[_builtins.str],
@@ -1547,6 +1548,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         :param _builtins.bool is_default_operator_control: Whether the operator control is a default Operator Control.
         :param _builtins.bool is_fully_pre_approved: Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param _builtins.str last_modified_info: Description associated with the latest modification of the operator control.
+        :param _builtins.str notification_topic_id: The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
         :param _builtins.int number_of_approvers: Number of approvers required to approve an access request.
         :param _builtins.str operator_control_name: Name of the operator control. The name must be unique.
         :param Sequence[_builtins.str] pre_approved_op_action_lists: List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
@@ -1569,6 +1571,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
         pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
         pulumi.set(__self__, "last_modified_info", last_modified_info)
+        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         pulumi.set(__self__, "number_of_approvers", number_of_approvers)
         pulumi.set(__self__, "operator_control_name", operator_control_name)
         pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
@@ -1674,6 +1677,14 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         Description associated with the latest modification of the operator control.
         """
         return pulumi.get(self, "last_modified_info")
+
+    @_builtins.property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        """
+        return pulumi.get(self, "notification_topic_id")
 
     @_builtins.property
     @pulumi.getter(name="numberOfApprovers")

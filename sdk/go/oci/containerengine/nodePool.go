@@ -59,6 +59,7 @@ import (
 //							SubnetId:              pulumi.Any(testSubnet.Id),
 //							CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
 //							FaultDomains:          pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsFaultDomains),
+//							HostGroupId:           pulumi.Any(testGroup.Id),
 //							PreemptibleNodeConfig: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{
 //								PreemptionAction: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{
 //									Type:                 pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType),
@@ -67,7 +68,8 @@ import (
 //							},
 //						},
 //					},
-//					Size: pulumi.Any(nodePoolNodeConfigDetailsSize),
+//					Size:             pulumi.Any(nodePoolNodeConfigDetailsSize),
+//					ComputeClusterId: pulumi.Any(testComputeCluster.Id),
 //					DefinedTags: pulumi.StringMap{
 //						"Operations.CostCenter": pulumi.String("42"),
 //					},

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:ApmConfig/config:Config":
 		r = &Config{}
+	case "oci:ApmConfig/dataFile:DataFile":
+		r = &DataFile{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ApmConfig/config",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ApmConfig/dataFile",
 		&module{version},
 	)
 }

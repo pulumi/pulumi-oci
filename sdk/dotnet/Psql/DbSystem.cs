@@ -17,108 +17,6 @@ namespace Pulumi.Oci.Psql
     /// 
     /// Creates a new database system.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDbSystem = new Oci.Psql.DbSystem("test_db_system", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         Credentials = new Oci.Psql.Inputs.DbSystemCredentialsArgs
-    ///         {
-    ///             PasswordDetails = new Oci.Psql.Inputs.DbSystemCredentialsPasswordDetailsArgs
-    ///             {
-    ///                 PasswordType = dbSystemCredentialsPasswordDetailsPasswordType,
-    ///                 Password = dbSystemCredentialsPasswordDetailsPassword,
-    ///                 SecretId = testSecret.Id,
-    ///                 SecretVersion = dbSystemCredentialsPasswordDetailsSecretVersion,
-    ///             },
-    ///             Username = dbSystemCredentialsUsername,
-    ///         },
-    ///         DbVersion = dbSystemDbVersion,
-    ///         DisplayName = dbSystemDisplayName,
-    ///         NetworkDetails = new Oci.Psql.Inputs.DbSystemNetworkDetailsArgs
-    ///         {
-    ///             SubnetId = testSubnet.Id,
-    ///             IsReaderEndpointEnabled = dbSystemNetworkDetailsIsReaderEndpointEnabled,
-    ///             NsgIds = dbSystemNetworkDetailsNsgIds,
-    ///             PrimaryDbEndpointPrivateIp = dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
-    ///         },
-    ///         Shape = dbSystemShape,
-    ///         StorageDetails = new Oci.Psql.Inputs.DbSystemStorageDetailsArgs
-    ///         {
-    ///             IsRegionallyDurable = dbSystemStorageDetailsIsRegionallyDurable,
-    ///             SystemType = dbSystemStorageDetailsSystemType,
-    ///             AvailabilityDomain = dbSystemStorageDetailsAvailabilityDomain,
-    ///             Iops = dbSystemStorageDetailsIops,
-    ///         },
-    ///         ConfigId = testConfig.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         Description = dbSystemDescription,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         InstanceCount = dbSystemInstanceCount,
-    ///         InstanceMemorySizeInGbs = dbSystemInstanceMemorySizeInGbs,
-    ///         InstanceOcpuCount = dbSystemInstanceOcpuCount,
-    ///         InstancesDetails = new[]
-    ///         {
-    ///             new Oci.Psql.Inputs.DbSystemInstancesDetailArgs
-    ///             {
-    ///                 Description = dbSystemInstancesDetailsDescription,
-    ///                 DisplayName = dbSystemInstancesDetailsDisplayName,
-    ///                 PrivateIp = dbSystemInstancesDetailsPrivateIp,
-    ///             },
-    ///         },
-    ///         ManagementPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyArgs
-    ///         {
-    ///             BackupPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyBackupPolicyArgs
-    ///             {
-    ///                 BackupStart = dbSystemManagementPolicyBackupPolicyBackupStart,
-    ///                 CopyPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs
-    ///                 {
-    ///                     CompartmentId = compartmentId,
-    ///                     Regions = dbSystemManagementPolicyBackupPolicyCopyPolicyRegions,
-    ///                     RetentionPeriod = dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod,
-    ///                 },
-    ///                 DaysOfTheMonths = dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
-    ///                 DaysOfTheWeeks = dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
-    ///                 Kind = dbSystemManagementPolicyBackupPolicyKind,
-    ///                 RetentionDays = dbSystemManagementPolicyBackupPolicyRetentionDays,
-    ///             },
-    ///             MaintenanceWindowStart = dbSystemManagementPolicyMaintenanceWindowStart,
-    ///         },
-    ///         Source = new Oci.Psql.Inputs.DbSystemSourceArgs
-    ///         {
-    ///             SourceType = dbSystemSourceSourceType,
-    ///             BackupId = testBackup.Id,
-    ///             IsHavingRestoreConfigOverrides = dbSystemSourceIsHavingRestoreConfigOverrides,
-    ///         },
-    ///         SystemType = dbSystemSystemType,
-    ///         PatchOperations = new[]
-    ///         {
-    ///             new Oci.Psql.Inputs.DbSystemPatchOperationArgs
-    ///             {
-    ///                 Operation = dbSystemPatchOperationsOperation,
-    ///                 Selection = dbSystemPatchOperationsSelection,
-    ///                 Value = dbSystemPatchOperationsValue,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// DbSystems can be imported using the `Id`, e.g.
@@ -135,6 +33,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Output("adminUsername")]
         public Output<string> AdminUsername { get; private set; } = null!;
+
+        /// <summary>
+        /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+        /// </summary>
+        [Output("applyChangeModeToStandAlone")]
+        public Output<string> ApplyChangeModeToStandAlone { get; private set; } = null!;
 
         /// <summary>
         /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
@@ -158,7 +62,7 @@ namespace Pulumi.Oci.Psql
         /// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         /// </summary>
         [Output("credentials")]
-        public Output<Outputs.DbSystemCredentials?> Credentials { get; private set; } = null!;
+        public Output<Outputs.DbSystemCredentials> Credentials { get; private set; } = null!;
 
         /// <summary>
         /// Version of database system software.
@@ -221,6 +125,12 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableArray<Outputs.DbSystemInstancesDetail>> InstancesDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Kerberos Authentication details for the database system.
+        /// </summary>
+        [Output("kerberosAuthDetails")]
+        public Output<Outputs.DbSystemKerberosAuthDetails?> KerberosAuthDetails { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -239,10 +149,24 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemNetworkDetails> NetworkDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) ODSP Insight details for the database system.
+        /// </summary>
+        [Output("odspInsightDetails")]
+        public Output<Outputs.DbSystemOdspInsightDetails?> OdspInsightDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) For adding and removing from read replica database instances. Please remove the PatchOperations after it is applied. Update the InstanceCount arrodrandly. Cannot be specified when creating the resource.
         /// </summary>
         [Output("patchOperations")]
         public Output<ImmutableArray<Outputs.DbSystemPatchOperation>> PatchOperations { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+        /// 
+        /// This configuration does not have any effect on database systems with other roles.
+        /// </summary>
+        [Output("replicationConfig")]
+        public Output<Outputs.DbSystemReplicationConfig> ReplicationConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
@@ -257,7 +181,11 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemSource> Source { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the database system.
+        /// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -269,6 +197,12 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemStorageDetails> StorageDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Type of the database system.
+        /// </summary>
+        [Output("systemRole")]
+        public Output<string> SystemRole { get; private set; } = null!;
+
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
@@ -276,10 +210,6 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Type of the database system.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemType")]
         public Output<string> SystemType { get; private set; } = null!;
@@ -342,6 +272,12 @@ namespace Pulumi.Oci.Psql
 
     public sealed class DbSystemArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+        /// </summary>
+        [Input("applyChangeModeToStandAlone")]
+        public Input<string>? ApplyChangeModeToStandAlone { get; set; }
+
         /// <summary>
         /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         /// </summary>
@@ -439,6 +375,12 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
+        /// Kerberos Authentication details for the database system.
+        /// </summary>
+        [Input("kerberosAuthDetails")]
+        public Input<Inputs.DbSystemKerberosAuthDetailsArgs>? KerberosAuthDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) PostgreSQL database system management policy update details.
         /// </summary>
         [Input("managementPolicy")]
@@ -449,6 +391,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("networkDetails", required: true)]
         public Input<Inputs.DbSystemNetworkDetailsArgs> NetworkDetails { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) ODSP Insight details for the database system.
+        /// </summary>
+        [Input("odspInsightDetails")]
+        public Input<Inputs.DbSystemOdspInsightDetailsArgs>? OdspInsightDetails { get; set; }
 
         [Input("patchOperations")]
         private InputList<Inputs.DbSystemPatchOperationArgs>? _patchOperations;
@@ -463,6 +411,14 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
+        /// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+        /// 
+        /// This configuration does not have any effect on database systems with other roles.
+        /// </summary>
+        [Input("replicationConfig")]
+        public Input<Inputs.DbSystemReplicationConfigArgs>? ReplicationConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         /// </summary>
         [Input("shape", required: true)]
@@ -475,6 +431,16 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemSourceArgs>? Source { get; set; }
 
         /// <summary>
+        /// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
+        /// <summary>
         /// (Updatable) Storage details of the database system.
         /// </summary>
         [Input("storageDetails", required: true)]
@@ -482,10 +448,6 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Type of the database system.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("systemType")]
         public Input<string>? SystemType { get; set; }
@@ -503,6 +465,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("adminUsername")]
         public Input<string>? AdminUsername { get; set; }
+
+        /// <summary>
+        /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+        /// </summary>
+        [Input("applyChangeModeToStandAlone")]
+        public Input<string>? ApplyChangeModeToStandAlone { get; set; }
 
         /// <summary>
         /// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
@@ -613,6 +581,12 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
+        /// Kerberos Authentication details for the database system.
+        /// </summary>
+        [Input("kerberosAuthDetails")]
+        public Input<Inputs.DbSystemKerberosAuthDetailsGetArgs>? KerberosAuthDetails { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -630,6 +604,12 @@ namespace Pulumi.Oci.Psql
         [Input("networkDetails")]
         public Input<Inputs.DbSystemNetworkDetailsGetArgs>? NetworkDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) ODSP Insight details for the database system.
+        /// </summary>
+        [Input("odspInsightDetails")]
+        public Input<Inputs.DbSystemOdspInsightDetailsGetArgs>? OdspInsightDetails { get; set; }
+
         [Input("patchOperations")]
         private InputList<Inputs.DbSystemPatchOperationGetArgs>? _patchOperations;
 
@@ -641,6 +621,14 @@ namespace Pulumi.Oci.Psql
             get => _patchOperations ?? (_patchOperations = new InputList<Inputs.DbSystemPatchOperationGetArgs>());
             set => _patchOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+        /// 
+        /// This configuration does not have any effect on database systems with other roles.
+        /// </summary>
+        [Input("replicationConfig")]
+        public Input<Inputs.DbSystemReplicationConfigGetArgs>? ReplicationConfig { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
@@ -655,7 +643,11 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemSourceGetArgs>? Source { get; set; }
 
         /// <summary>
-        /// The current state of the database system.
+        /// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -665,6 +657,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("storageDetails")]
         public Input<Inputs.DbSystemStorageDetailsGetArgs>? StorageDetails { get; set; }
+
+        /// <summary>
+        /// Type of the database system.
+        /// </summary>
+        [Input("systemRole")]
+        public Input<string>? SystemRole { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
@@ -680,10 +678,6 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// Type of the database system.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("systemType")]
         public Input<string>? SystemType { get; set; }

@@ -85,6 +85,10 @@ export interface GetMigrationResult {
      */
     readonly replicationScheduleId: string;
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The current state of migration.
      */
     readonly state: string;

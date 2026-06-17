@@ -23,6 +23,21 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
     public static final NodePoolNodeConfigDetailsArgs Empty = new NodePoolNodeConfigDetailsArgs();
 
     /**
+     * The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable Output<String> computeClusterId;
+
+    /**
+     * @return The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    public Optional<Output<String>> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -149,6 +164,7 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
     private NodePoolNodeConfigDetailsArgs() {}
 
     private NodePoolNodeConfigDetailsArgs(NodePoolNodeConfigDetailsArgs $) {
+        this.computeClusterId = $.computeClusterId;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
@@ -175,6 +191,27 @@ public final class NodePoolNodeConfigDetailsArgs extends com.pulumi.resources.Re
 
         public Builder(NodePoolNodeConfigDetailsArgs defaults) {
             $ = new NodePoolNodeConfigDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param computeClusterId The OCID of the Compute Cluster to be associated with the worker node instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable Output<String> computeClusterId) {
+            $.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The OCID of the Compute Cluster to be associated with the worker node instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            return computeClusterId(Output.of(computeClusterId));
         }
 
         /**

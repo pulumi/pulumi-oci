@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainGovernanceResult {
     /**
+     * @return The OCID of the tenancy that owns this domain governance entity.
+     * 
+     */
+    private String compartmentId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -80,6 +85,13 @@ public final class GetDomainGovernanceResult {
     private String timeUpdated;
 
     private GetDomainGovernanceResult() {}
+    /**
+     * @return The OCID of the tenancy that owns this domain governance entity.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -184,6 +196,7 @@ public final class GetDomainGovernanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String compartmentId;
         private Map<String,String> definedTags;
         private String domainGovernanceId;
         private String domainId;
@@ -201,6 +214,7 @@ public final class GetDomainGovernanceResult {
         public Builder() {}
         public Builder(GetDomainGovernanceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.domainGovernanceId = defaults.domainGovernanceId;
     	      this.domainId = defaults.domainId;
@@ -217,6 +231,14 @@ public final class GetDomainGovernanceResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDomainGovernanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
@@ -331,6 +353,7 @@ public final class GetDomainGovernanceResult {
         }
         public GetDomainGovernanceResult build() {
             final var _resultValue = new GetDomainGovernanceResult();
+            _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.domainGovernanceId = domainGovernanceId;
             _resultValue.domainId = domainId;

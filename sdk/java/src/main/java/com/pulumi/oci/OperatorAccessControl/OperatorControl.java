@@ -191,6 +191,20 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
         return this.lastModifiedInfo;
     }
     /**
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    @Export(name="notificationTopicId", refs={String.class}, tree="[0]")
+    private Output<String> notificationTopicId;
+
+    /**
+     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    public Output<String> notificationTopicId() {
+        return this.notificationTopicId;
+    }
+    /**
      * (Updatable) Number of approvers required to approve an access request.
      * 
      */

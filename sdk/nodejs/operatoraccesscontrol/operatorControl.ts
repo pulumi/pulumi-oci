@@ -93,6 +93,10 @@ export class OperatorControl extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lastModifiedInfo: pulumi.Output<string>;
     /**
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     */
+    declare public readonly notificationTopicId: pulumi.Output<string>;
+    /**
      * (Updatable) Number of approvers required to approve an access request.
      */
     declare public readonly numberOfApprovers: pulumi.Output<number>;
@@ -157,6 +161,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["isDefaultOperatorControl"] = state?.isDefaultOperatorControl;
             resourceInputs["isFullyPreApproved"] = state?.isFullyPreApproved;
             resourceInputs["lastModifiedInfo"] = state?.lastModifiedInfo;
+            resourceInputs["notificationTopicId"] = state?.notificationTopicId;
             resourceInputs["numberOfApprovers"] = state?.numberOfApprovers;
             resourceInputs["operatorControlName"] = state?.operatorControlName;
             resourceInputs["preApprovedOpActionLists"] = state?.preApprovedOpActionLists;
@@ -191,6 +196,7 @@ export class OperatorControl extends pulumi.CustomResource {
             resourceInputs["emailIdLists"] = args?.emailIdLists;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isFullyPreApproved"] = args?.isFullyPreApproved;
+            resourceInputs["notificationTopicId"] = args?.notificationTopicId;
             resourceInputs["numberOfApprovers"] = args?.numberOfApprovers;
             resourceInputs["operatorControlName"] = args?.operatorControlName;
             resourceInputs["preApprovedOpActionLists"] = args?.preApprovedOpActionLists;
@@ -257,6 +263,10 @@ export interface OperatorControlState {
      * Description associated with the latest modification of the operator control.
      */
     lastModifiedInfo?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     */
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of approvers required to approve an access request.
      */
@@ -335,6 +345,10 @@ export interface OperatorControlArgs {
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
     isFullyPreApproved: pulumi.Input<boolean>;
+    /**
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     */
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of approvers required to approve an access request.
      */

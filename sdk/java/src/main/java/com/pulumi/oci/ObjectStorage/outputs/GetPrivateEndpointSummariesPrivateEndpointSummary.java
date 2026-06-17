@@ -27,6 +27,7 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     private List<String> nsgIds;
     private String prefix;
     private String privateEndpointIp;
+    private Map<String,String> securityAttributes;
     private String state;
     private String subnetId;
     private String timeCreated;
@@ -75,6 +76,9 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     public String privateEndpointIp() {
         return this.privateEndpointIp;
     }
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
     public String state() {
         return this.state;
     }
@@ -111,6 +115,7 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
         private List<String> nsgIds;
         private String prefix;
         private String privateEndpointIp;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private String timeCreated;
@@ -132,6 +137,7 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     	      this.nsgIds = defaults.nsgIds;
     	      this.prefix = defaults.prefix;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -260,6 +266,14 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetPrivateEndpointSummariesPrivateEndpointSummary", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetPrivateEndpointSummariesPrivateEndpointSummary", "state");
@@ -307,6 +321,7 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
             _resultValue.nsgIds = nsgIds;
             _resultValue.prefix = prefix;
             _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;

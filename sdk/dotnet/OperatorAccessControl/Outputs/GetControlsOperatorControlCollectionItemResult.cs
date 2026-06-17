@@ -62,6 +62,10 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// </summary>
         public readonly string LastModifiedInfo;
         /// <summary>
+        /// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+        /// </summary>
+        public readonly string NotificationTopicId;
+        /// <summary>
         /// Number of approvers required to approve an access request.
         /// </summary>
         public readonly int NumberOfApprovers;
@@ -124,6 +128,8 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
 
             string lastModifiedInfo,
 
+            string notificationTopicId,
+
             int numberOfApprovers,
 
             string operatorControlName,
@@ -154,6 +160,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
             IsDefaultOperatorControl = isDefaultOperatorControl;
             IsFullyPreApproved = isFullyPreApproved;
             LastModifiedInfo = lastModifiedInfo;
+            NotificationTopicId = notificationTopicId;
             NumberOfApprovers = numberOfApprovers;
             OperatorControlName = operatorControlName;
             PreApprovedOpActionLists = preApprovedOpActionLists;

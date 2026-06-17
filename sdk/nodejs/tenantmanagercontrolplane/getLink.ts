@@ -46,6 +46,10 @@ export interface GetLinkResult {
      */
     readonly childTenancyId: string;
     /**
+     * The feature associated with this link. Default value is CORE.
+     */
+    readonly feature: string;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;

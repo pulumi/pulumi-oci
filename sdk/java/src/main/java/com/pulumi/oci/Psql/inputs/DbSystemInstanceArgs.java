@@ -91,14 +91,20 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The current state of the database system.
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the database system.
+     * @return (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -272,7 +278,10 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the database system.
+         * @param state (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -283,7 +292,10 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the database system.
+         * @param state (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

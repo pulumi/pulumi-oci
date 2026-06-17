@@ -28,7 +28,8 @@ class MigrationArgs:
                  is_completed: pulumi.Input[Optional[_builtins.bool]] = None,
                  migration_config: pulumi.Input[Optional['MigrationMigrationConfigArgs']] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Migration resource.
 
@@ -40,6 +41,7 @@ class MigrationArgs:
         :param pulumi.Input['MigrationMigrationConfigArgs'] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                
                ** IMPORTANT **
@@ -59,6 +61,8 @@ class MigrationArgs:
             pulumi.set(__self__, "migration_type", migration_type)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -149,16 +153,28 @@ class MigrationArgs:
     def replication_schedule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replication schedule identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
     def replication_schedule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_schedule_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
 
 @pulumi.input_type
@@ -173,6 +189,7 @@ class _MigrationState:
                  migration_config: pulumi.Input[Optional['MigrationMigrationConfigArgs']] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -189,6 +206,7 @@ class _MigrationState:
         :param pulumi.Input['MigrationMigrationConfigArgs'] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                
                ** IMPORTANT **
@@ -216,6 +234,8 @@ class _MigrationState:
             pulumi.set(__self__, "migration_type", migration_type)
         if replication_schedule_id is not None:
             pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -326,16 +346,28 @@ class _MigrationState:
     def replication_schedule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replication schedule identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
     def replication_schedule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_schedule_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
@@ -400,6 +432,7 @@ class Migration(pulumi.CustomResource):
                  migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -429,7 +462,8 @@ class Migration(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             migration_type=migration_migration_type,
-            replication_schedule_id=test_replication_schedule["id"])
+            replication_schedule_id=test_replication_schedule["id"],
+            security_attributes=migration_security_attributes)
         ```
 
         ## Import
@@ -451,6 +485,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                
                ** IMPORTANT **
@@ -490,7 +525,8 @@ class Migration(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             migration_type=migration_migration_type,
-            replication_schedule_id=test_replication_schedule["id"])
+            replication_schedule_id=test_replication_schedule["id"],
+            security_attributes=migration_security_attributes)
         ```
 
         ## Import
@@ -525,6 +561,7 @@ class Migration(pulumi.CustomResource):
                  migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
                  migration_type: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -546,6 +583,7 @@ class Migration(pulumi.CustomResource):
             __props__.__dict__["migration_config"] = migration_config
             __props__.__dict__["migration_type"] = migration_type
             __props__.__dict__["replication_schedule_id"] = replication_schedule_id
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -570,6 +608,7 @@ class Migration(pulumi.CustomResource):
             migration_config: pulumi.Input[Optional[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']]] = None,
             migration_type: pulumi.Input[Optional[_builtins.str]] = None,
             replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -590,6 +629,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Union['MigrationMigrationConfigArgs', 'MigrationMigrationConfigArgsDict']] migration_config: (Updatable) Configuration for a Migration Project.
         :param pulumi.Input[_builtins.str] migration_type: (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param pulumi.Input[_builtins.str] replication_schedule_id: (Updatable) Replication schedule identifier
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
                
                
                ** IMPORTANT **
@@ -612,6 +652,7 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["migration_config"] = migration_config
         __props__.__dict__["migration_type"] = migration_type
         __props__.__dict__["replication_schedule_id"] = replication_schedule_id
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -687,12 +728,20 @@ class Migration(pulumi.CustomResource):
     def replication_schedule_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Replication schedule identifier
+        """
+        return pulumi.get(self, "replication_schedule_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "replication_schedule_id")
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

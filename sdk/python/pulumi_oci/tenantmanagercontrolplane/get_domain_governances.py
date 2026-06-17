@@ -57,6 +57,9 @@ class GetDomainGovernancesResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the tenancy that owns this domain governance entity.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property

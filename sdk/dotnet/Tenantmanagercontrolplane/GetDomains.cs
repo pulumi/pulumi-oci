@@ -202,6 +202,9 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
     [OutputType]
     public sealed class GetDomainsResult
     {
+        /// <summary>
+        /// The OCID of the tenancy that has started the registration process for this domain.
+        /// </summary>
         public readonly string CompartmentId;
         /// <summary>
         /// The list of domain_collection.

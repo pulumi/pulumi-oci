@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainGovernancesResult {
+    /**
+     * @return The OCID of the tenancy that owns this domain governance entity.
+     * 
+     */
     private String compartmentId;
     /**
      * @return The list of domain_governance_collection.
@@ -41,6 +45,10 @@ public final class GetDomainGovernancesResult {
     private @Nullable String state;
 
     private GetDomainGovernancesResult() {}
+    /**
+     * @return The OCID of the tenancy that owns this domain governance entity.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }

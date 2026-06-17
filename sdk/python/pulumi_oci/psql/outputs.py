@@ -27,11 +27,17 @@ __all__ = [
     'DbSystemCredentialsPasswordDetails',
     'DbSystemInstance',
     'DbSystemInstancesDetail',
+    'DbSystemKerberosAuthDetails',
+    'DbSystemKerberosAuthDetailsBackupCredential',
+    'DbSystemKerberosAuthDetailsCredential',
     'DbSystemManagementPolicy',
     'DbSystemManagementPolicyBackupPolicy',
     'DbSystemManagementPolicyBackupPolicyCopyPolicy',
     'DbSystemNetworkDetails',
+    'DbSystemOdspInsightDetails',
+    'DbSystemOdspInsightDetailsOdspInsightList',
     'DbSystemPatchOperation',
+    'DbSystemReplicationConfig',
     'DbSystemSource',
     'DbSystemStorageDetails',
     'GetBackupCopyStatusResult',
@@ -62,11 +68,20 @@ __all__ = [
     'GetDbSystemCredentialPasswordDetailResult',
     'GetDbSystemInstanceResult',
     'GetDbSystemInstancesDetailResult',
+    'GetDbSystemKerberosAuthDetailResult',
+    'GetDbSystemKerberosAuthDetailBackupCredentialResult',
+    'GetDbSystemKerberosAuthDetailCredentialResult',
     'GetDbSystemManagementPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult',
     'GetDbSystemNetworkDetailResult',
+    'GetDbSystemOdspInsightDetailResult',
+    'GetDbSystemOdspInsightDetailOdspInsightListResult',
     'GetDbSystemPatchOperationResult',
+    'GetDbSystemReplicasDbSystemReplicaCollectionResult',
+    'GetDbSystemReplicasDbSystemReplicaCollectionItemResult',
+    'GetDbSystemReplicasFilterResult',
+    'GetDbSystemReplicationConfigResult',
     'GetDbSystemSourceResult',
     'GetDbSystemStorageDetailResult',
     'GetDbSystemsDbSystemCollectionResult',
@@ -75,11 +90,17 @@ __all__ = [
     'GetDbSystemsDbSystemCollectionItemCredentialPasswordDetailResult',
     'GetDbSystemsDbSystemCollectionItemInstanceResult',
     'GetDbSystemsDbSystemCollectionItemInstancesDetailResult',
+    'GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult',
+    'GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialResult',
+    'GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult',
     'GetDbSystemsDbSystemCollectionItemNetworkDetailResult',
+    'GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult',
+    'GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListResult',
     'GetDbSystemsDbSystemCollectionItemPatchOperationResult',
+    'GetDbSystemsDbSystemCollectionItemReplicationConfigResult',
     'GetDbSystemsDbSystemCollectionItemSourceResult',
     'GetDbSystemsDbSystemCollectionItemStorageDetailResult',
     'GetDbSystemsFilterResult',
@@ -90,6 +111,18 @@ __all__ = [
     'GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult',
     'GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemResult',
     'GetDefaultConfigurationsFilterResult',
+    'GetInsightCapabilitiesFilterResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingResult',
+    'GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortResult',
     'GetShapesFilterResult',
     'GetShapesShapeCollectionResult',
     'GetShapesShapeCollectionItemResult',
@@ -663,7 +696,11 @@ class DbSystemInstance(dict):
         :param _builtins.str display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param _builtins.str id: A unique identifier for the database instance node. Immutable on creation.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param _builtins.str state: The current state of the database system.
+        :param _builtins.str state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -728,7 +765,11 @@ class DbSystemInstance(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the database system.
+        (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -809,6 +850,193 @@ class DbSystemInstancesDetail(dict):
         Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
         """
         return pulumi.get(self, "private_ip")
+
+
+@pulumi.output_type
+class DbSystemKerberosAuthDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupCredentials":
+            suggest = "backup_credentials"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemKerberosAuthDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemKerberosAuthDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemKerberosAuthDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 backup_credentials: Optional[Sequence['outputs.DbSystemKerberosAuthDetailsBackupCredential']] = None,
+                 credentials: Optional[Sequence['outputs.DbSystemKerberosAuthDetailsCredential']] = None):
+        """
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        :param Sequence['DbSystemKerberosAuthDetailsBackupCredentialArgs'] backup_credentials: Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        :param Sequence['DbSystemKerberosAuthDetailsCredentialArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if backup_credentials is not None:
+            pulumi.set(__self__, "backup_credentials", backup_credentials)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="backupCredentials")
+    def backup_credentials(self) -> Optional[Sequence['outputs.DbSystemKerberosAuthDetailsBackupCredential']]:
+        """
+        Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "backup_credentials")
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Optional[Sequence['outputs.DbSystemKerberosAuthDetailsCredential']]:
+        """
+        Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        """
+        return pulumi.get(self, "credentials")
+
+
+@pulumi.output_type
+class DbSystemKerberosAuthDetailsBackupCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keytabSecretId":
+            suggest = "keytab_secret_id"
+        elif key == "keytabSecretVersion":
+            suggest = "keytab_secret_version"
+        elif key == "realmName":
+            suggest = "realm_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemKerberosAuthDetailsBackupCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemKerberosAuthDetailsBackupCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemKerberosAuthDetailsBackupCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 keytab_secret_id: Optional[_builtins.str] = None,
+                 keytab_secret_version: Optional[_builtins.str] = None,
+                 realm_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        if keytab_secret_id is not None:
+            pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        if keytab_secret_version is not None:
+            pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> Optional[_builtins.str]:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> Optional[_builtins.str]:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
+class DbSystemKerberosAuthDetailsCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "keytabSecretId":
+            suggest = "keytab_secret_id"
+        elif key == "keytabSecretVersion":
+            suggest = "keytab_secret_version"
+        elif key == "realmName":
+            suggest = "realm_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemKerberosAuthDetailsCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemKerberosAuthDetailsCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemKerberosAuthDetailsCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 keytab_secret_id: Optional[_builtins.str] = None,
+                 keytab_secret_version: Optional[_builtins.str] = None,
+                 realm_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        if keytab_secret_id is not None:
+            pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        if keytab_secret_version is not None:
+            pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> Optional[_builtins.str]:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> Optional[_builtins.str]:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
 
 
 @pulumi.output_type
@@ -1107,6 +1335,103 @@ class DbSystemNetworkDetails(dict):
 
 
 @pulumi.output_type
+class DbSystemOdspInsightDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "odspInsightLists":
+            suggest = "odsp_insight_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemOdspInsightDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemOdspInsightDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemOdspInsightDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 odsp_insight_lists: Optional[Sequence['outputs.DbSystemOdspInsightDetailsOdspInsightList']] = None):
+        """
+        :param _builtins.str kind: (Updatable) Specifies the management of Insight for the dbSystem.
+        :param Sequence['DbSystemOdspInsightDetailsOdspInsightListArgs'] odsp_insight_lists: (Updatable) List of ODSP Insight and their configurations.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if odsp_insight_lists is not None:
+            pulumi.set(__self__, "odsp_insight_lists", odsp_insight_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        (Updatable) Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="odspInsightLists")
+    def odsp_insight_lists(self) -> Optional[Sequence['outputs.DbSystemOdspInsightDetailsOdspInsightList']]:
+        """
+        (Updatable) List of ODSP Insight and their configurations.
+        """
+        return pulumi.get(self, "odsp_insight_lists")
+
+
+@pulumi.output_type
+class DbSystemOdspInsightDetailsOdspInsightList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "insightType":
+            suggest = "insight_type"
+        elif key == "retentionPeriodInDays":
+            suggest = "retention_period_in_days"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemOdspInsightDetailsOdspInsightList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemOdspInsightDetailsOdspInsightList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemOdspInsightDetailsOdspInsightList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 insight_type: Optional[_builtins.str] = None,
+                 retention_period_in_days: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str insight_type: (Updatable) Type of Insight collected for the database system.
+        :param _builtins.int retention_period_in_days: (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        if insight_type is not None:
+            pulumi.set(__self__, "insight_type", insight_type)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+
+    @_builtins.property
+    @pulumi.getter(name="insightType")
+    def insight_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Type of Insight collected for the database system.
+        """
+        return pulumi.get(self, "insight_type")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+
+@pulumi.output_type
 class DbSystemPatchOperation(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1191,16 +1516,68 @@ class DbSystemPatchOperation(dict):
 
 
 @pulumi.output_type
+class DbSystemReplicationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isRpoEnforced":
+            suggest = "is_rpo_enforced"
+        elif key == "rpoInSeconds":
+            suggest = "rpo_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemReplicationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemReplicationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemReplicationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_rpo_enforced: Optional[_builtins.bool] = None,
+                 rpo_in_seconds: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_rpo_enforced: (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+        :param _builtins.str rpo_in_seconds: (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        if is_rpo_enforced is not None:
+            pulumi.set(__self__, "is_rpo_enforced", is_rpo_enforced)
+        if rpo_in_seconds is not None:
+            pulumi.set(__self__, "rpo_in_seconds", rpo_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter(name="isRpoEnforced")
+    def is_rpo_enforced(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+        """
+        return pulumi.get(self, "is_rpo_enforced")
+
+    @_builtins.property
+    @pulumi.getter(name="rpoInSeconds")
+    def rpo_in_seconds(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        return pulumi.get(self, "rpo_in_seconds")
+
+
+@pulumi.output_type
 class DbSystemSource(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "sourceType":
-            suggest = "source_type"
-        elif key == "backupId":
+        if key == "backupId":
             suggest = "backup_id"
         elif key == "isHavingRestoreConfigOverrides":
             suggest = "is_having_restore_config_overrides"
+        elif key == "primaryDbSystemId":
+            suggest = "primary_db_system_id"
+        elif key == "sourceType":
+            suggest = "source_type"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemSource. Access the value via the '{suggest}' property getter instead.")
@@ -1214,27 +1591,24 @@ class DbSystemSource(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 source_type: _builtins.str,
                  backup_id: Optional[_builtins.str] = None,
-                 is_having_restore_config_overrides: Optional[_builtins.bool] = None):
+                 is_having_restore_config_overrides: Optional[_builtins.bool] = None,
+                 primary_db_system_id: Optional[_builtins.str] = None,
+                 source_type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str source_type: The source descriminator. Example: `{"source_type": "BACKUP"}`.
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
+        :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
+        :param _builtins.str source_type: The source descriminator.
         """
-        pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
         if is_having_restore_config_overrides is not None:
             pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
-
-    @_builtins.property
-    @pulumi.getter(name="sourceType")
-    def source_type(self) -> _builtins.str:
-        """
-        The source descriminator. Example: `{"source_type": "BACKUP"}`.
-        """
-        return pulumi.get(self, "source_type")
+        if primary_db_system_id is not None:
+            pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -1251,6 +1625,22 @@ class DbSystemSource(dict):
         Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID] of the primary database system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[_builtins.str]:
+        """
+        The source descriminator.
+        """
+        return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
@@ -2765,6 +3155,126 @@ class GetDbSystemInstancesDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemKerberosAuthDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_credentials: Sequence['outputs.GetDbSystemKerberosAuthDetailBackupCredentialResult'],
+                 credentials: Sequence['outputs.GetDbSystemKerberosAuthDetailCredentialResult'],
+                 kind: _builtins.str):
+        """
+        :param Sequence['GetDbSystemKerberosAuthDetailBackupCredentialArgs'] backup_credentials: Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        :param Sequence['GetDbSystemKerberosAuthDetailCredentialArgs'] credentials: List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        """
+        pulumi.set(__self__, "backup_credentials", backup_credentials)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "kind", kind)
+
+    @_builtins.property
+    @pulumi.getter(name="backupCredentials")
+    def backup_credentials(self) -> Sequence['outputs.GetDbSystemKerberosAuthDetailBackupCredentialResult']:
+        """
+        Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "backup_credentials")
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetDbSystemKerberosAuthDetailCredentialResult']:
+        """
+        List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "credentials")
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetDbSystemKerberosAuthDetailBackupCredentialResult(dict):
+    def __init__(__self__, *,
+                 keytab_secret_id: _builtins.str,
+                 keytab_secret_version: _builtins.str,
+                 realm_name: _builtins.str):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> _builtins.str:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> _builtins.str:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
+class GetDbSystemKerberosAuthDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 keytab_secret_id: _builtins.str,
+                 keytab_secret_version: _builtins.str,
+                 realm_name: _builtins.str):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> _builtins.str:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> _builtins.str:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
 class GetDbSystemManagementPolicyResult(dict):
     def __init__(__self__, *,
                  backup_policies: Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyResult'],
@@ -2807,7 +3317,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
         :param Sequence['GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policies: Backup copy details
         :param Sequence[_builtins.int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param Sequence[_builtins.str] days_of_the_weeks: The day of the week that the backup starts.
-        :param _builtins.str kind: The kind of backup policy.
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
         :param _builtins.int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
@@ -2853,7 +3363,7 @@ class GetDbSystemManagementPolicyBackupPolicyResult(dict):
     @pulumi.getter
     def kind(self) -> _builtins.str:
         """
-        The kind of backup policy.
+        Specifies the management of Insight for the dbSystem.
         """
         return pulumi.get(self, "kind")
 
@@ -2958,6 +3468,64 @@ class GetDbSystemNetworkDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemOdspInsightDetailResult(dict):
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 odsp_insight_lists: Sequence['outputs.GetDbSystemOdspInsightDetailOdspInsightListResult']):
+        """
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        :param Sequence['GetDbSystemOdspInsightDetailOdspInsightListArgs'] odsp_insight_lists: List of ODSP Insight and their configurations.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "odsp_insight_lists", odsp_insight_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="odspInsightLists")
+    def odsp_insight_lists(self) -> Sequence['outputs.GetDbSystemOdspInsightDetailOdspInsightListResult']:
+        """
+        List of ODSP Insight and their configurations.
+        """
+        return pulumi.get(self, "odsp_insight_lists")
+
+
+@pulumi.output_type
+class GetDbSystemOdspInsightDetailOdspInsightListResult(dict):
+    def __init__(__self__, *,
+                 insight_type: _builtins.str,
+                 retention_period_in_days: _builtins.int):
+        """
+        :param _builtins.str insight_type: Type of Insight collected for the database system.
+        :param _builtins.int retention_period_in_days: Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        pulumi.set(__self__, "insight_type", insight_type)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+
+    @_builtins.property
+    @pulumi.getter(name="insightType")
+    def insight_type(self) -> _builtins.str:
+        """
+        Type of Insight collected for the database system.
+        """
+        return pulumi.get(self, "insight_type")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> _builtins.int:
+        """
+        Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+
+@pulumi.output_type
 class GetDbSystemPatchOperationResult(dict):
     def __init__(__self__, *,
                  from_: _builtins.str,
@@ -3005,18 +3573,124 @@ class GetDbSystemPatchOperationResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemReplicasDbSystemReplicaCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbSystemReplicasDbSystemReplicaCollectionItemResult']):
+        """
+        :param Sequence['GetDbSystemReplicasDbSystemReplicaCollectionItemArgs'] items: List of replica database systems.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbSystemReplicasDbSystemReplicaCollectionItemResult']:
+        """
+        List of replica database systems.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbSystemReplicasDbSystemReplicaCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 region: _builtins.str):
+        """
+        :param _builtins.str id: A unique identifier for the replica database system.
+        :param _builtins.str region: Region name of the replica database system region. Example: `us-phoenix-1`
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        A unique identifier for the replica database system.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Region name of the replica database system region. Example: `us-phoenix-1`
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetDbSystemReplicasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbSystemReplicationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_rpo_enforced: _builtins.bool,
+                 rpo_in_seconds: _builtins.str):
+        """
+        :param _builtins.bool is_rpo_enforced: Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+        :param _builtins.str rpo_in_seconds: Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        pulumi.set(__self__, "is_rpo_enforced", is_rpo_enforced)
+        pulumi.set(__self__, "rpo_in_seconds", rpo_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter(name="isRpoEnforced")
+    def is_rpo_enforced(self) -> _builtins.bool:
+        """
+        Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+        """
+        return pulumi.get(self, "is_rpo_enforced")
+
+    @_builtins.property
+    @pulumi.getter(name="rpoInSeconds")
+    def rpo_in_seconds(self) -> _builtins.str:
+        """
+        Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        return pulumi.get(self, "rpo_in_seconds")
+
+
+@pulumi.output_type
 class GetDbSystemSourceResult(dict):
     def __init__(__self__, *,
                  backup_id: _builtins.str,
                  is_having_restore_config_overrides: _builtins.bool,
+                 primary_db_system_id: _builtins.str,
                  source_type: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
+        :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
         :param _builtins.str source_type: The source descriminator.
         """
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
+        pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         pulumi.set(__self__, "source_type", source_type)
 
     @_builtins.property
@@ -3034,6 +3708,14 @@ class GetDbSystemSourceResult(dict):
         Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID] of the primary database system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
@@ -3111,6 +3793,7 @@ class GetDbSystemsDbSystemCollectionResult(dict):
 class GetDbSystemsDbSystemCollectionItemResult(dict):
     def __init__(__self__, *,
                  admin_username: _builtins.str,
+                 apply_change_mode_to_stand_alone: _builtins.str,
                  apply_config: _builtins.str,
                  compartment_id: _builtins.str,
                  config_id: _builtins.str,
@@ -3126,14 +3809,18 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  instance_ocpu_count: _builtins.int,
                  instances: Sequence['outputs.GetDbSystemsDbSystemCollectionItemInstanceResult'],
                  instances_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemInstancesDetailResult'],
+                 kerberos_auth_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult'],
                  lifecycle_details: _builtins.str,
                  management_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyResult'],
                  network_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult'],
+                 odsp_insight_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult'],
                  patch_operations: Sequence['outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult'],
+                 replication_configs: Sequence['outputs.GetDbSystemsDbSystemCollectionItemReplicationConfigResult'],
                  shape: _builtins.str,
                  sources: Sequence['outputs.GetDbSystemsDbSystemCollectionItemSourceResult'],
                  state: _builtins.str,
                  storage_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult'],
+                 system_role: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  system_type: _builtins.str,
                  time_created: _builtins.str,
@@ -3142,6 +3829,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param _builtins.str admin_username: The database system administrator username.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param _builtins.str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemCredentialArgs'] credentials: List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
         :param _builtins.str db_version: The major and minor versions of the database system software.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: Description of the database instance node.
@@ -3152,19 +3840,24 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param _builtins.int instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
         :param _builtins.int instance_ocpu_count: The total number of OCPUs available to each database instance node.
         :param Sequence['GetDbSystemsDbSystemCollectionItemInstanceArgs'] instances: The list of instances, or nodes, in the database system.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs'] kerberos_auth_details: Kerberos Authentication details for the database system.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyArgs'] management_policies: PostgreSQL database system management policy.
         :param Sequence['GetDbSystemsDbSystemCollectionItemNetworkDetailArgs'] network_details: Network details for the database system.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs'] odsp_insight_details: ODSP Insight details for the database system.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemReplicationConfigArgs'] replication_configs: Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
         :param _builtins.str shape: The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: The source of the database system.
         :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Sequence['GetDbSystemsDbSystemCollectionItemStorageDetailArgs'] storage_details: Storage details of the database system.
+        :param _builtins.str system_role: A filter to return only DbSystem resources if their `systemRole` matches the given value.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str system_type: Type of the database system.
         :param _builtins.str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
         pulumi.set(__self__, "apply_config", apply_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_id", config_id)
@@ -3180,14 +3873,18 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
         pulumi.set(__self__, "instances", instances)
         pulumi.set(__self__, "instances_details", instances_details)
+        pulumi.set(__self__, "kerberos_auth_details", kerberos_auth_details)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "management_policies", management_policies)
         pulumi.set(__self__, "network_details", network_details)
+        pulumi.set(__self__, "odsp_insight_details", odsp_insight_details)
         pulumi.set(__self__, "patch_operations", patch_operations)
+        pulumi.set(__self__, "replication_configs", replication_configs)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "sources", sources)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_details", storage_details)
+        pulumi.set(__self__, "system_role", system_role)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_type", system_type)
         pulumi.set(__self__, "time_created", time_created)
@@ -3200,6 +3897,11 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @_builtins.property
+    @pulumi.getter(name="applyChangeModeToStandAlone")
+    def apply_change_mode_to_stand_alone(self) -> _builtins.str:
+        return pulumi.get(self, "apply_change_mode_to_stand_alone")
 
     @_builtins.property
     @pulumi.getter(name="applyConfig")
@@ -3225,6 +3927,9 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def credentials(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemCredentialResult']:
+        """
+        List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        """
         return pulumi.get(self, "credentials")
 
     @_builtins.property
@@ -3313,6 +4018,14 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         return pulumi.get(self, "instances_details")
 
     @_builtins.property
+    @pulumi.getter(name="kerberosAuthDetails")
+    def kerberos_auth_details(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult']:
+        """
+        Kerberos Authentication details for the database system.
+        """
+        return pulumi.get(self, "kerberos_auth_details")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -3337,9 +4050,25 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         return pulumi.get(self, "network_details")
 
     @_builtins.property
+    @pulumi.getter(name="odspInsightDetails")
+    def odsp_insight_details(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult']:
+        """
+        ODSP Insight details for the database system.
+        """
+        return pulumi.get(self, "odsp_insight_details")
+
+    @_builtins.property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult']:
         return pulumi.get(self, "patch_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationConfigs")
+    def replication_configs(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemReplicationConfigResult']:
+        """
+        Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+        """
+        return pulumi.get(self, "replication_configs")
 
     @_builtins.property
     @pulumi.getter
@@ -3372,6 +4101,14 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
+
+    @_builtins.property
+    @pulumi.getter(name="systemRole")
+    def system_role(self) -> _builtins.str:
+        """
+        A filter to return only DbSystem resources if their `systemRole` matches the given value.
+        """
+        return pulumi.get(self, "system_role")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -3590,6 +4327,126 @@ class GetDbSystemsDbSystemCollectionItemInstancesDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_credentials: Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialResult'],
+                 credentials: Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialResult'],
+                 kind: _builtins.str):
+        """
+        :param Sequence['GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs'] backup_credentials: Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs'] credentials: List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        """
+        pulumi.set(__self__, "backup_credentials", backup_credentials)
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "kind", kind)
+
+    @_builtins.property
+    @pulumi.getter(name="backupCredentials")
+    def backup_credentials(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialResult']:
+        """
+        Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "backup_credentials")
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialResult']:
+        """
+        List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "credentials")
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialResult(dict):
+    def __init__(__self__, *,
+                 keytab_secret_id: _builtins.str,
+                 keytab_secret_version: _builtins.str,
+                 realm_name: _builtins.str):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> _builtins.str:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> _builtins.str:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialResult(dict):
+    def __init__(__self__, *,
+                 keytab_secret_id: _builtins.str,
+                 keytab_secret_version: _builtins.str,
+                 realm_name: _builtins.str):
+        """
+        :param _builtins.str keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param _builtins.str keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param _builtins.str realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> _builtins.str:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> _builtins.str:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
 class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
     def __init__(__self__, *,
                  backup_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult'],
@@ -3632,7 +4489,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
         :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policies: Backup copy details
         :param Sequence[_builtins.int] days_of_the_months: Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         :param Sequence[_builtins.str] days_of_the_weeks: The day of the week that the backup starts.
-        :param _builtins.str kind: The kind of backup policy.
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
         :param _builtins.int retention_days: How many days the data should be stored after the database system deletion.
         """
         pulumi.set(__self__, "backup_start", backup_start)
@@ -3678,7 +4535,7 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult(dict)
     @pulumi.getter
     def kind(self) -> _builtins.str:
         """
-        The kind of backup policy.
+        Specifies the management of Insight for the dbSystem.
         """
         return pulumi.get(self, "kind")
 
@@ -3783,6 +4640,64 @@ class GetDbSystemsDbSystemCollectionItemNetworkDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult(dict):
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 odsp_insight_lists: Sequence['outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListResult']):
+        """
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs'] odsp_insight_lists: List of ODSP Insight and their configurations.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "odsp_insight_lists", odsp_insight_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="odspInsightLists")
+    def odsp_insight_lists(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListResult']:
+        """
+        List of ODSP Insight and their configurations.
+        """
+        return pulumi.get(self, "odsp_insight_lists")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListResult(dict):
+    def __init__(__self__, *,
+                 insight_type: _builtins.str,
+                 retention_period_in_days: _builtins.int):
+        """
+        :param _builtins.str insight_type: Type of Insight collected for the database system.
+        :param _builtins.int retention_period_in_days: Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        pulumi.set(__self__, "insight_type", insight_type)
+        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+
+    @_builtins.property
+    @pulumi.getter(name="insightType")
+    def insight_type(self) -> _builtins.str:
+        """
+        Type of Insight collected for the database system.
+        """
+        return pulumi.get(self, "insight_type")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> _builtins.int:
+        """
+        Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+
+@pulumi.output_type
 class GetDbSystemsDbSystemCollectionItemPatchOperationResult(dict):
     def __init__(__self__, *,
                  from_: _builtins.str,
@@ -3830,18 +4745,50 @@ class GetDbSystemsDbSystemCollectionItemPatchOperationResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemReplicationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_rpo_enforced: _builtins.bool,
+                 rpo_in_seconds: _builtins.str):
+        """
+        :param _builtins.bool is_rpo_enforced: Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+        :param _builtins.str rpo_in_seconds: Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        pulumi.set(__self__, "is_rpo_enforced", is_rpo_enforced)
+        pulumi.set(__self__, "rpo_in_seconds", rpo_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter(name="isRpoEnforced")
+    def is_rpo_enforced(self) -> _builtins.bool:
+        """
+        Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+        """
+        return pulumi.get(self, "is_rpo_enforced")
+
+    @_builtins.property
+    @pulumi.getter(name="rpoInSeconds")
+    def rpo_in_seconds(self) -> _builtins.str:
+        """
+        Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        return pulumi.get(self, "rpo_in_seconds")
+
+
+@pulumi.output_type
 class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
     def __init__(__self__, *,
                  backup_id: _builtins.str,
                  is_having_restore_config_overrides: _builtins.bool,
+                 primary_db_system_id: _builtins.str,
                  source_type: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
+        :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
         :param _builtins.str source_type: The source descriminator.
         """
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
+        pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         pulumi.set(__self__, "source_type", source_type)
 
     @_builtins.property
@@ -3859,6 +4806,14 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
         Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID] of the primary database system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
@@ -4344,6 +5299,483 @@ class GetDefaultConfigurationsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the filter parameter.
+        :param Sequence[_builtins.str] values: Allowed values for enum-based filters.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the filter parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Allowed values for enum-based filters.
+        """
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemResult']):
+        """
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemArgs'] items: PostgreSQL insight capabilities list.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemResult']:
+        """
+        PostgreSQL insight capabilities list.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 data_type_capabilities: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityResult'],
+                 description: _builtins.str,
+                 insight_type: _builtins.str):
+        """
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs'] data_type_capabilities: Supported insight data types for this insight type.
+        :param _builtins.str description: Human-readable description of the insight type.
+        :param _builtins.str insight_type: Echo of the requested insight type.
+        """
+        pulumi.set(__self__, "data_type_capabilities", data_type_capabilities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "insight_type", insight_type)
+
+    @_builtins.property
+    @pulumi.getter(name="dataTypeCapabilities")
+    def data_type_capabilities(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityResult']:
+        """
+        Supported insight data types for this insight type.
+        """
+        return pulumi.get(self, "data_type_capabilities")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Human-readable description of the insight type.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="insightType")
+    def insight_type(self) -> _builtins.str:
+        """
+        Echo of the requested insight type.
+        """
+        return pulumi.get(self, "insight_type")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityResult(dict):
+    def __init__(__self__, *,
+                 data_contracts: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractResult'],
+                 date_time_range_supports: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportResult'],
+                 description: _builtins.str,
+                 filters: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterResult'],
+                 granularities: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityResult'],
+                 insight_data_type: _builtins.str,
+                 limits: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitResult'],
+                 paginations: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationResult'],
+                 sortings: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingResult']):
+        """
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs'] data_contracts: Describes the response data format returned for an insight type.
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs'] date_time_range_supports: Indicates whether a time range is required for the insight.
+        :param _builtins.str description: Human-readable description of the insight type.
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs'] filters: Supported filters for this insight data type.
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs'] granularities: Describes time granularity behavior for time-series Insight.
+        :param _builtins.str insight_data_type: Insight data type identifier (for example, AAS_TIME_SERIES).
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs'] limits: Defines limits applicable to an insight type.
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs'] paginations: Describes pagination support for an insight type.
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs'] sortings: Describes sorting support for an insight type.
+        """
+        pulumi.set(__self__, "data_contracts", data_contracts)
+        pulumi.set(__self__, "date_time_range_supports", date_time_range_supports)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "filters", filters)
+        pulumi.set(__self__, "granularities", granularities)
+        pulumi.set(__self__, "insight_data_type", insight_data_type)
+        pulumi.set(__self__, "limits", limits)
+        pulumi.set(__self__, "paginations", paginations)
+        pulumi.set(__self__, "sortings", sortings)
+
+    @_builtins.property
+    @pulumi.getter(name="dataContracts")
+    def data_contracts(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractResult']:
+        """
+        Describes the response data format returned for an insight type.
+        """
+        return pulumi.get(self, "data_contracts")
+
+    @_builtins.property
+    @pulumi.getter(name="dateTimeRangeSupports")
+    def date_time_range_supports(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportResult']:
+        """
+        Indicates whether a time range is required for the insight.
+        """
+        return pulumi.get(self, "date_time_range_supports")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Human-readable description of the insight type.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterResult']:
+        """
+        Supported filters for this insight data type.
+        """
+        return pulumi.get(self, "filters")
+
+    @_builtins.property
+    @pulumi.getter
+    def granularities(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityResult']:
+        """
+        Describes time granularity behavior for time-series Insight.
+        """
+        return pulumi.get(self, "granularities")
+
+    @_builtins.property
+    @pulumi.getter(name="insightDataType")
+    def insight_data_type(self) -> _builtins.str:
+        """
+        Insight data type identifier (for example, AAS_TIME_SERIES).
+        """
+        return pulumi.get(self, "insight_data_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def limits(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitResult']:
+        """
+        Defines limits applicable to an insight type.
+        """
+        return pulumi.get(self, "limits")
+
+    @_builtins.property
+    @pulumi.getter
+    def paginations(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationResult']:
+        """
+        Describes pagination support for an insight type.
+        """
+        return pulumi.get(self, "paginations")
+
+    @_builtins.property
+    @pulumi.getter
+    def sortings(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingResult']:
+        """
+        Describes sorting support for an insight type.
+        """
+        return pulumi.get(self, "sortings")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractResult(dict):
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 unit: _builtins.str):
+        """
+        :param _builtins.str kind: Indicates the structure of the insight data payload.
+        :param _builtins.str unit: Optional unit associated with numeric values.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Indicates the structure of the insight data payload.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> _builtins.str:
+        """
+        Optional unit associated with numeric values.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportResult(dict):
+    def __init__(__self__, *,
+                 is_required: _builtins.bool):
+        """
+        :param _builtins.bool is_required: Indicates whether start and end time parameters are required.
+        """
+        pulumi.set(__self__, "is_required", is_required)
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        Indicates whether start and end time parameters are required.
+        """
+        return pulumi.get(self, "is_required")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterResult(dict):
+    def __init__(__self__, *,
+                 can_use_partial_match: _builtins.bool,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.bool can_use_partial_match: Indicates whether partial matching is supported.
+        :param _builtins.str name: Name of the filter parameter.
+        :param _builtins.str type: Granularity selection strategy.
+        :param Sequence[_builtins.str] values: Allowed values for enum-based filters.
+        """
+        pulumi.set(__self__, "can_use_partial_match", can_use_partial_match)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="canUsePartialMatch")
+    def can_use_partial_match(self) -> _builtins.bool:
+        """
+        Indicates whether partial matching is supported.
+        """
+        return pulumi.get(self, "can_use_partial_match")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the filter parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Granularity selection strategy.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Allowed values for enum-based filters.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityResult(dict):
+    def __init__(__self__, *,
+                 max_seconds: _builtins.int,
+                 min_seconds: _builtins.int,
+                 type: _builtins.str):
+        """
+        :param _builtins.int max_seconds: Maximum supported granularity in seconds.
+        :param _builtins.int min_seconds: Minimum supported granularity in seconds.
+        :param _builtins.str type: Granularity selection strategy.
+        """
+        pulumi.set(__self__, "max_seconds", max_seconds)
+        pulumi.set(__self__, "min_seconds", min_seconds)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="maxSeconds")
+    def max_seconds(self) -> _builtins.int:
+        """
+        Maximum supported granularity in seconds.
+        """
+        return pulumi.get(self, "max_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="minSeconds")
+    def min_seconds(self) -> _builtins.int:
+        """
+        Minimum supported granularity in seconds.
+        """
+        return pulumi.get(self, "min_seconds")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Granularity selection strategy.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitResult(dict):
+    def __init__(__self__, *,
+                 max_rows: _builtins.int,
+                 max_time_range_days: _builtins.int):
+        """
+        :param _builtins.int max_rows: Maximum number of rows returned.
+        :param _builtins.int max_time_range_days: Maximum allowed time range in days.
+        """
+        pulumi.set(__self__, "max_rows", max_rows)
+        pulumi.set(__self__, "max_time_range_days", max_time_range_days)
+
+    @_builtins.property
+    @pulumi.getter(name="maxRows")
+    def max_rows(self) -> _builtins.int:
+        """
+        Maximum number of rows returned.
+        """
+        return pulumi.get(self, "max_rows")
+
+    @_builtins.property
+    @pulumi.getter(name="maxTimeRangeDays")
+    def max_time_range_days(self) -> _builtins.int:
+        """
+        Maximum allowed time range in days.
+        """
+        return pulumi.get(self, "max_time_range_days")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationResult(dict):
+    def __init__(__self__, *,
+                 default_limit: _builtins.int,
+                 is_supported: _builtins.bool,
+                 max_limit: _builtins.int):
+        """
+        :param _builtins.int default_limit: Default number of items per page.
+        :param _builtins.bool is_supported: Indicates whether sorting is supported.
+        :param _builtins.int max_limit: Maximum number of items per page.
+        """
+        pulumi.set(__self__, "default_limit", default_limit)
+        pulumi.set(__self__, "is_supported", is_supported)
+        pulumi.set(__self__, "max_limit", max_limit)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultLimit")
+    def default_limit(self) -> _builtins.int:
+        """
+        Default number of items per page.
+        """
+        return pulumi.get(self, "default_limit")
+
+    @_builtins.property
+    @pulumi.getter(name="isSupported")
+    def is_supported(self) -> _builtins.bool:
+        """
+        Indicates whether sorting is supported.
+        """
+        return pulumi.get(self, "is_supported")
+
+    @_builtins.property
+    @pulumi.getter(name="maxLimit")
+    def max_limit(self) -> _builtins.int:
+        """
+        Maximum number of items per page.
+        """
+        return pulumi.get(self, "max_limit")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingResult(dict):
+    def __init__(__self__, *,
+                 default_sorts: Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortResult'],
+                 fields: Sequence[_builtins.str],
+                 is_supported: _builtins.bool):
+        """
+        :param Sequence['GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs'] default_sorts: Default sorting behavior for an insight type.
+        :param Sequence[_builtins.str] fields: Fields that can be used for sorting.
+        :param _builtins.bool is_supported: Indicates whether sorting is supported.
+        """
+        pulumi.set(__self__, "default_sorts", default_sorts)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "is_supported", is_supported)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultSorts")
+    def default_sorts(self) -> Sequence['outputs.GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortResult']:
+        """
+        Default sorting behavior for an insight type.
+        """
+        return pulumi.get(self, "default_sorts")
+
+    @_builtins.property
+    @pulumi.getter
+    def fields(self) -> Sequence[_builtins.str]:
+        """
+        Fields that can be used for sorting.
+        """
+        return pulumi.get(self, "fields")
+
+    @_builtins.property
+    @pulumi.getter(name="isSupported")
+    def is_supported(self) -> _builtins.bool:
+        """
+        Indicates whether sorting is supported.
+        """
+        return pulumi.get(self, "is_supported")
+
+
+@pulumi.output_type
+class GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortResult(dict):
+    def __init__(__self__, *,
+                 field: _builtins.str,
+                 order: _builtins.str):
+        """
+        :param _builtins.str field: Default field used for sorting.
+        :param _builtins.str order: Default sort order.
+        """
+        pulumi.set(__self__, "field", field)
+        pulumi.set(__self__, "order", order)
+
+    @_builtins.property
+    @pulumi.getter
+    def field(self) -> _builtins.str:
+        """
+        Default field used for sorting.
+        """
+        return pulumi.get(self, "field")
+
+    @_builtins.property
+    @pulumi.getter
+    def order(self) -> _builtins.str:
+        """
+        Default sort order.
+        """
+        return pulumi.get(self, "order")
 
 
 @pulumi.output_type

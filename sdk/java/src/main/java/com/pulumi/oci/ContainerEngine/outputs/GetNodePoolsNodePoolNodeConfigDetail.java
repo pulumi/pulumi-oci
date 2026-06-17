@@ -17,6 +17,11 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolsNodePoolNodeConfigDetail {
     /**
+     * @return The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    private String computeClusterId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -58,6 +63,13 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
     private Integer size;
 
     private GetNodePoolsNodePoolNodeConfigDetail() {}
+    /**
+     * @return The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    public String computeClusterId() {
+        return this.computeClusterId;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -124,6 +136,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String computeClusterId;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
         private Boolean isPvEncryptionInTransitEnabled;
@@ -135,6 +148,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
@@ -145,6 +159,14 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
     	      this.size = defaults.size;
         }
 
+        @CustomType.Setter
+        public Builder computeClusterId(String computeClusterId) {
+            if (computeClusterId == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNodeConfigDetail", "computeClusterId");
+            }
+            this.computeClusterId = computeClusterId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
@@ -220,6 +242,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         }
         public GetNodePoolsNodePoolNodeConfigDetail build() {
             final var _resultValue = new GetNodePoolsNodePoolNodeConfigDetail();
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;

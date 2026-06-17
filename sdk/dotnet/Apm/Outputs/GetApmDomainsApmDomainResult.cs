@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Apm.Outputs
         /// </summary>
         public readonly bool IsFreeTier;
         /// <summary>
+        /// The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+        /// </summary>
+        public readonly string LogGroupId;
+        /// <summary>
         /// A filter to return only resources that match the given life-cycle state.
         /// </summary>
         public readonly string State;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.Apm.Outputs
 
             bool isFreeTier,
 
+            string logGroupId,
+
             string state,
 
             string timeCreated,
@@ -90,6 +96,7 @@ namespace Pulumi.Oci.Apm.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsFreeTier = isFreeTier;
+            LogGroupId = logGroupId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

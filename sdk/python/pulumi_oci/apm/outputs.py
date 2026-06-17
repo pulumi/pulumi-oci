@@ -32,6 +32,7 @@ class GetApmDomainsApmDomainResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_free_tier: _builtins.bool,
+                 log_group_id: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
@@ -44,6 +45,7 @@ class GetApmDomainsApmDomainResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: Unique identifier that is immutable on creation.
         :param _builtins.bool is_free_tier: Indicates if this is an Always Free resource.
+        :param _builtins.str log_group_id: The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
         :param _builtins.str state: A filter to return only resources that match the given life-cycle state.
         :param _builtins.str time_created: The time the APM domain was created, expressed in RFC 3339 timestamp format.
         :param _builtins.str time_updated: The time the APM domain was updated, expressed in RFC 3339 timestamp format.
@@ -56,6 +58,7 @@ class GetApmDomainsApmDomainResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_free_tier", is_free_tier)
+        pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -123,6 +126,14 @@ class GetApmDomainsApmDomainResult(dict):
         Indicates if this is an Always Free resource.
         """
         return pulumi.get(self, "is_free_tier")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+        """
+        return pulumi.get(self, "log_group_id")
 
     @_builtins.property
     @pulumi.getter

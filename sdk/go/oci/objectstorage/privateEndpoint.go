@@ -28,6 +28,7 @@ type PrivateEndpoint struct {
 	NsgIds             pulumi.StringArrayOutput               `pulumi:"nsgIds"`
 	Prefix             pulumi.StringOutput                    `pulumi:"prefix"`
 	PrivateEndpointIp  pulumi.StringOutput                    `pulumi:"privateEndpointIp"`
+	SecurityAttributes pulumi.StringMapOutput                 `pulumi:"securityAttributes"`
 	State              pulumi.StringOutput                    `pulumi:"state"`
 	SubnetId           pulumi.StringOutput                    `pulumi:"subnetId"`
 	TimeCreated        pulumi.StringOutput                    `pulumi:"timeCreated"`
@@ -92,6 +93,7 @@ type privateEndpointState struct {
 	NsgIds             []string                                `pulumi:"nsgIds"`
 	Prefix             *string                                 `pulumi:"prefix"`
 	PrivateEndpointIp  *string                                 `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
 	State              *string                                 `pulumi:"state"`
 	SubnetId           *string                                 `pulumi:"subnetId"`
 	TimeCreated        *string                                 `pulumi:"timeCreated"`
@@ -112,6 +114,7 @@ type PrivateEndpointState struct {
 	NsgIds             pulumi.StringArrayInput
 	Prefix             pulumi.StringPtrInput
 	PrivateEndpointIp  pulumi.StringPtrInput
+	SecurityAttributes pulumi.StringMapInput
 	State              pulumi.StringPtrInput
 	SubnetId           pulumi.StringPtrInput
 	TimeCreated        pulumi.StringPtrInput
@@ -134,6 +137,7 @@ type privateEndpointArgs struct {
 	NsgIds             []string                                `pulumi:"nsgIds"`
 	Prefix             string                                  `pulumi:"prefix"`
 	PrivateEndpointIp  *string                                 `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
 	State              *string                                 `pulumi:"state"`
 	SubnetId           string                                  `pulumi:"subnetId"`
 }
@@ -151,6 +155,7 @@ type PrivateEndpointArgs struct {
 	NsgIds             pulumi.StringArrayInput
 	Prefix             pulumi.StringInput
 	PrivateEndpointIp  pulumi.StringPtrInput
+	SecurityAttributes pulumi.StringMapInput
 	State              pulumi.StringPtrInput
 	SubnetId           pulumi.StringInput
 }
@@ -292,6 +297,10 @@ func (o PrivateEndpointOutput) Prefix() pulumi.StringOutput {
 
 func (o PrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+func (o PrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 func (o PrivateEndpointOutput) State() pulumi.StringOutput {

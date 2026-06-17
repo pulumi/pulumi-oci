@@ -19,102 +19,6 @@ import (
 //
 // Creates a new database system.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/psql"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := psql.NewDbSystem(ctx, "test_db_system", &psql.DbSystemArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				Credentials: &psql.DbSystemCredentialsArgs{
-//					PasswordDetails: &psql.DbSystemCredentialsPasswordDetailsArgs{
-//						PasswordType:  pulumi.Any(dbSystemCredentialsPasswordDetailsPasswordType),
-//						Password:      pulumi.Any(dbSystemCredentialsPasswordDetailsPassword),
-//						SecretId:      pulumi.Any(testSecret.Id),
-//						SecretVersion: pulumi.Any(dbSystemCredentialsPasswordDetailsSecretVersion),
-//					},
-//					Username: pulumi.Any(dbSystemCredentialsUsername),
-//				},
-//				DbVersion:   pulumi.Any(dbSystemDbVersion),
-//				DisplayName: pulumi.Any(dbSystemDisplayName),
-//				NetworkDetails: &psql.DbSystemNetworkDetailsArgs{
-//					SubnetId:                   pulumi.Any(testSubnet.Id),
-//					IsReaderEndpointEnabled:    pulumi.Any(dbSystemNetworkDetailsIsReaderEndpointEnabled),
-//					NsgIds:                     pulumi.Any(dbSystemNetworkDetailsNsgIds),
-//					PrimaryDbEndpointPrivateIp: pulumi.Any(dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp),
-//				},
-//				Shape: pulumi.Any(dbSystemShape),
-//				StorageDetails: &psql.DbSystemStorageDetailsArgs{
-//					IsRegionallyDurable: pulumi.Any(dbSystemStorageDetailsIsRegionallyDurable),
-//					SystemType:          pulumi.Any(dbSystemStorageDetailsSystemType),
-//					AvailabilityDomain:  pulumi.Any(dbSystemStorageDetailsAvailabilityDomain),
-//					Iops:                pulumi.Any(dbSystemStorageDetailsIops),
-//				},
-//				ConfigId: pulumi.Any(testConfig.Id),
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				Description: pulumi.Any(dbSystemDescription),
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
-//				InstanceCount:           pulumi.Any(dbSystemInstanceCount),
-//				InstanceMemorySizeInGbs: pulumi.Any(dbSystemInstanceMemorySizeInGbs),
-//				InstanceOcpuCount:       pulumi.Any(dbSystemInstanceOcpuCount),
-//				InstancesDetails: psql.DbSystemInstancesDetailArray{
-//					&psql.DbSystemInstancesDetailArgs{
-//						Description: pulumi.Any(dbSystemInstancesDetailsDescription),
-//						DisplayName: pulumi.Any(dbSystemInstancesDetailsDisplayName),
-//						PrivateIp:   pulumi.Any(dbSystemInstancesDetailsPrivateIp),
-//					},
-//				},
-//				ManagementPolicy: &psql.DbSystemManagementPolicyArgs{
-//					BackupPolicy: &psql.DbSystemManagementPolicyBackupPolicyArgs{
-//						BackupStart: pulumi.Any(dbSystemManagementPolicyBackupPolicyBackupStart),
-//						CopyPolicy: &psql.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{
-//							CompartmentId:   pulumi.Any(compartmentId),
-//							Regions:         pulumi.Any(dbSystemManagementPolicyBackupPolicyCopyPolicyRegions),
-//							RetentionPeriod: pulumi.Any(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod),
-//						},
-//						DaysOfTheMonths: pulumi.Any(dbSystemManagementPolicyBackupPolicyDaysOfTheMonth),
-//						DaysOfTheWeeks:  pulumi.Any(dbSystemManagementPolicyBackupPolicyDaysOfTheWeek),
-//						Kind:            pulumi.Any(dbSystemManagementPolicyBackupPolicyKind),
-//						RetentionDays:   pulumi.Any(dbSystemManagementPolicyBackupPolicyRetentionDays),
-//					},
-//					MaintenanceWindowStart: pulumi.Any(dbSystemManagementPolicyMaintenanceWindowStart),
-//				},
-//				Source: &psql.DbSystemSourceArgs{
-//					SourceType:                     pulumi.Any(dbSystemSourceSourceType),
-//					BackupId:                       pulumi.Any(testBackup.Id),
-//					IsHavingRestoreConfigOverrides: pulumi.Any(dbSystemSourceIsHavingRestoreConfigOverrides),
-//				},
-//				SystemType: pulumi.Any(dbSystemSystemType),
-//				PatchOperations: psql.DbSystemPatchOperationArray{
-//					&psql.DbSystemPatchOperationArgs{
-//						Operation: pulumi.Any(dbSystemPatchOperationsOperation),
-//						Selection: pulumi.Any(dbSystemPatchOperationsSelection),
-//						Value:     pulumi.Any(dbSystemPatchOperationsValue),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // DbSystems can be imported using the `id`, e.g.
@@ -127,6 +31,8 @@ type DbSystem struct {
 
 	// The database system administrator username.
 	AdminUsername pulumi.StringOutput `pulumi:"adminUsername"`
+	// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+	ApplyChangeModeToStandAlone pulumi.StringOutput `pulumi:"applyChangeModeToStandAlone"`
 	// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 	ApplyConfig pulumi.StringPtrOutput `pulumi:"applyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -134,7 +40,7 @@ type DbSystem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
 	ConfigId pulumi.StringOutput `pulumi:"configId"`
 	// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-	Credentials DbSystemCredentialsPtrOutput `pulumi:"credentials"`
+	Credentials DbSystemCredentialsOutput `pulumi:"credentials"`
 	// Version of database system software.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -155,28 +61,38 @@ type DbSystem struct {
 	Instances DbSystemInstanceArrayOutput `pulumi:"instances"`
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails DbSystemInstancesDetailArrayOutput `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails DbSystemKerberosAuthDetailsPtrOutput `pulumi:"kerberosAuthDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyOutput `pulumi:"managementPolicy"`
 	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsOutput `pulumi:"networkDetails"`
+	// (Updatable) ODSP Insight details for the database system.
+	OdspInsightDetails DbSystemOdspInsightDetailsPtrOutput `pulumi:"odspInsightDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayOutput `pulumi:"patchOperations"`
+	// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+	//
+	// This configuration does not have any effect on database systems with other roles.
+	ReplicationConfig DbSystemReplicationConfigOutput `pulumi:"replicationConfig"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The source of the database system.
 	Source DbSystemSourceOutput `pulumi:"source"`
-	// The current state of the database system.
-	State pulumi.StringOutput `pulumi:"state"`
-	// (Updatable) Storage details of the database system.
-	StorageDetails DbSystemStorageDetailsOutput `pulumi:"storageDetails"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Type of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) Storage details of the database system.
+	StorageDetails DbSystemStorageDetailsOutput `pulumi:"storageDetails"`
+	// Type of the database system.
+	SystemRole pulumi.StringOutput `pulumi:"systemRole"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// Type of the database system.
 	SystemType pulumi.StringOutput `pulumi:"systemType"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -234,6 +150,8 @@ func GetDbSystem(ctx *pulumi.Context,
 type dbSystemState struct {
 	// The database system administrator username.
 	AdminUsername *string `pulumi:"adminUsername"`
+	// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+	ApplyChangeModeToStandAlone *string `pulumi:"applyChangeModeToStandAlone"`
 	// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 	ApplyConfig *string `pulumi:"applyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -262,28 +180,38 @@ type dbSystemState struct {
 	Instances []DbSystemInstance `pulumi:"instances"`
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails []DbSystemInstancesDetail `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails *DbSystemKerberosAuthDetails `pulumi:"kerberosAuthDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy *DbSystemManagementPolicy `pulumi:"managementPolicy"`
 	// (Updatable) Network details for the database system.
 	NetworkDetails *DbSystemNetworkDetails `pulumi:"networkDetails"`
+	// (Updatable) ODSP Insight details for the database system.
+	OdspInsightDetails *DbSystemOdspInsightDetails `pulumi:"odspInsightDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
+	// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+	//
+	// This configuration does not have any effect on database systems with other roles.
+	ReplicationConfig *DbSystemReplicationConfig `pulumi:"replicationConfig"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
 	// The source of the database system.
 	Source *DbSystemSource `pulumi:"source"`
-	// The current state of the database system.
-	State *string `pulumi:"state"`
-	// (Updatable) Storage details of the database system.
-	StorageDetails *DbSystemStorageDetails `pulumi:"storageDetails"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// Type of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State *string `pulumi:"state"`
+	// (Updatable) Storage details of the database system.
+	StorageDetails *DbSystemStorageDetails `pulumi:"storageDetails"`
+	// Type of the database system.
+	SystemRole *string `pulumi:"systemRole"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Type of the database system.
 	SystemType *string `pulumi:"systemType"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -294,6 +222,8 @@ type dbSystemState struct {
 type DbSystemState struct {
 	// The database system administrator username.
 	AdminUsername pulumi.StringPtrInput
+	// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+	ApplyChangeModeToStandAlone pulumi.StringPtrInput
 	// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 	ApplyConfig pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -322,28 +252,38 @@ type DbSystemState struct {
 	Instances DbSystemInstanceArrayInput
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails DbSystemInstancesDetailArrayInput
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails DbSystemKerberosAuthDetailsPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyPtrInput
 	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsPtrInput
+	// (Updatable) ODSP Insight details for the database system.
+	OdspInsightDetails DbSystemOdspInsightDetailsPtrInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
+	// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+	//
+	// This configuration does not have any effect on database systems with other roles.
+	ReplicationConfig DbSystemReplicationConfigPtrInput
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringPtrInput
 	// The source of the database system.
 	Source DbSystemSourcePtrInput
-	// The current state of the database system.
-	State pulumi.StringPtrInput
-	// (Updatable) Storage details of the database system.
-	StorageDetails DbSystemStorageDetailsPtrInput
-	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput
-	// Type of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State pulumi.StringPtrInput
+	// (Updatable) Storage details of the database system.
+	StorageDetails DbSystemStorageDetailsPtrInput
+	// Type of the database system.
+	SystemRole pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
+	// Type of the database system.
 	SystemType pulumi.StringPtrInput
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -356,6 +296,8 @@ func (DbSystemState) ElementType() reflect.Type {
 }
 
 type dbSystemArgs struct {
+	// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+	ApplyChangeModeToStandAlone *string `pulumi:"applyChangeModeToStandAlone"`
 	// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 	ApplyConfig *string `pulumi:"applyConfig"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -382,27 +324,39 @@ type dbSystemArgs struct {
 	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails []DbSystemInstancesDetail `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails *DbSystemKerberosAuthDetails `pulumi:"kerberosAuthDetails"`
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy *DbSystemManagementPolicy `pulumi:"managementPolicy"`
 	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetails `pulumi:"networkDetails"`
+	// (Updatable) ODSP Insight details for the database system.
+	OdspInsightDetails *DbSystemOdspInsightDetails `pulumi:"odspInsightDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
+	// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+	//
+	// This configuration does not have any effect on database systems with other roles.
+	ReplicationConfig *DbSystemReplicationConfig `pulumi:"replicationConfig"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 	// The source of the database system.
 	Source *DbSystemSource `pulumi:"source"`
-	// (Updatable) Storage details of the database system.
-	StorageDetails DbSystemStorageDetails `pulumi:"storageDetails"`
-	// Type of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State *string `pulumi:"state"`
+	// (Updatable) Storage details of the database system.
+	StorageDetails DbSystemStorageDetails `pulumi:"storageDetails"`
+	// Type of the database system.
 	SystemType *string `pulumi:"systemType"`
 }
 
 // The set of arguments for constructing a DbSystem resource.
 type DbSystemArgs struct {
+	// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+	ApplyChangeModeToStandAlone pulumi.StringPtrInput
 	// Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 	ApplyConfig pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
@@ -429,22 +383,32 @@ type DbSystemArgs struct {
 	InstanceOcpuCount pulumi.IntPtrInput
 	// Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
 	InstancesDetails DbSystemInstancesDetailArrayInput
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails DbSystemKerberosAuthDetailsPtrInput
 	// (Updatable) PostgreSQL database system management policy update details.
 	ManagementPolicy DbSystemManagementPolicyPtrInput
 	// (Updatable) Network details for the database system.
 	NetworkDetails DbSystemNetworkDetailsInput
+	// (Updatable) ODSP Insight details for the database system.
+	OdspInsightDetails DbSystemOdspInsightDetailsPtrInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
+	// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+	//
+	// This configuration does not have any effect on database systems with other roles.
+	ReplicationConfig DbSystemReplicationConfigPtrInput
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput
 	// The source of the database system.
 	Source DbSystemSourcePtrInput
-	// (Updatable) Storage details of the database system.
-	StorageDetails DbSystemStorageDetailsInput
-	// Type of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State pulumi.StringPtrInput
+	// (Updatable) Storage details of the database system.
+	StorageDetails DbSystemStorageDetailsInput
+	// Type of the database system.
 	SystemType pulumi.StringPtrInput
 }
 
@@ -540,6 +504,11 @@ func (o DbSystemOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
+// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+func (o DbSystemOutput) ApplyChangeModeToStandAlone() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.ApplyChangeModeToStandAlone }).(pulumi.StringOutput)
+}
+
 // Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
 func (o DbSystemOutput) ApplyConfig() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.ApplyConfig }).(pulumi.StringPtrOutput)
@@ -556,8 +525,8 @@ func (o DbSystemOutput) ConfigId() pulumi.StringOutput {
 }
 
 // Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-func (o DbSystemOutput) Credentials() DbSystemCredentialsPtrOutput {
-	return o.ApplyT(func(v *DbSystem) DbSystemCredentialsPtrOutput { return v.Credentials }).(DbSystemCredentialsPtrOutput)
+func (o DbSystemOutput) Credentials() DbSystemCredentialsOutput {
+	return o.ApplyT(func(v *DbSystem) DbSystemCredentialsOutput { return v.Credentials }).(DbSystemCredentialsOutput)
 }
 
 // Version of database system software.
@@ -610,6 +579,11 @@ func (o DbSystemOutput) InstancesDetails() DbSystemInstancesDetailArrayOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemInstancesDetailArrayOutput { return v.InstancesDetails }).(DbSystemInstancesDetailArrayOutput)
 }
 
+// Kerberos Authentication details for the database system.
+func (o DbSystemOutput) KerberosAuthDetails() DbSystemKerberosAuthDetailsPtrOutput {
+	return o.ApplyT(func(v *DbSystem) DbSystemKerberosAuthDetailsPtrOutput { return v.KerberosAuthDetails }).(DbSystemKerberosAuthDetailsPtrOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DbSystemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -625,9 +599,21 @@ func (o DbSystemOutput) NetworkDetails() DbSystemNetworkDetailsOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemNetworkDetailsOutput { return v.NetworkDetails }).(DbSystemNetworkDetailsOutput)
 }
 
+// (Updatable) ODSP Insight details for the database system.
+func (o DbSystemOutput) OdspInsightDetails() DbSystemOdspInsightDetailsPtrOutput {
+	return o.ApplyT(func(v *DbSystem) DbSystemOdspInsightDetailsPtrOutput { return v.OdspInsightDetails }).(DbSystemOdspInsightDetailsPtrOutput)
+}
+
 // (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 func (o DbSystemOutput) PatchOperations() DbSystemPatchOperationArrayOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemPatchOperationArrayOutput { return v.PatchOperations }).(DbSystemPatchOperationArrayOutput)
+}
+
+// (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+//
+// This configuration does not have any effect on database systems with other roles.
+func (o DbSystemOutput) ReplicationConfig() DbSystemReplicationConfigOutput {
+	return o.ApplyT(func(v *DbSystem) DbSystemReplicationConfigOutput { return v.ReplicationConfig }).(DbSystemReplicationConfigOutput)
 }
 
 // (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
@@ -640,7 +626,10 @@ func (o DbSystemOutput) Source() DbSystemSourceOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemSourceOutput { return v.Source }).(DbSystemSourceOutput)
 }
 
-// The current state of the database system.
+// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -650,15 +639,17 @@ func (o DbSystemOutput) StorageDetails() DbSystemStorageDetailsOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemStorageDetailsOutput { return v.StorageDetails }).(DbSystemStorageDetailsOutput)
 }
 
+// Type of the database system.
+func (o DbSystemOutput) SystemRole() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.SystemRole }).(pulumi.StringOutput)
+}
+
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DbSystemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of the database system.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.SystemType }).(pulumi.StringOutput)
 }

@@ -54,6 +54,10 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string ReplicationScheduleId;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
         /// </summary>
         public readonly string State;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             string replicationScheduleId,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
             MigrationConfigs = migrationConfigs;
             MigrationType = migrationType;
             ReplicationScheduleId = replicationScheduleId;
+            SecurityAttributes = securityAttributes;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

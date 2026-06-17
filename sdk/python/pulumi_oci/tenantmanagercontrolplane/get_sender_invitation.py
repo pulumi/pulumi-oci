@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSenderInvitationResult',
@@ -26,7 +27,7 @@ class GetSenderInvitationResult:
     """
     A collection of values returned by getSenderInvitation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, recipient_email_address=None, recipient_invitation_id=None, recipient_tenancy_id=None, sender_invitation_id=None, state=None, status=None, subjects=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, invitation_features=None, recipient_email_address=None, recipient_invitation_id=None, recipient_tenancy_id=None, sender_invitation_id=None, state=None, status=None, subjects=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,6 +43,9 @@ class GetSenderInvitationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if invitation_features and not isinstance(invitation_features, list):
+            raise TypeError("Expected argument 'invitation_features' to be a list")
+        pulumi.set(__self__, "invitation_features", invitation_features)
         if recipient_email_address and not isinstance(recipient_email_address, str):
             raise TypeError("Expected argument 'recipient_email_address' to be a str")
         pulumi.set(__self__, "recipient_email_address", recipient_email_address)
@@ -112,6 +116,14 @@ class GetSenderInvitationResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="invitationFeatures")
+    def invitation_features(self) -> Sequence['outputs.GetSenderInvitationInvitationFeatureResult']:
+        """
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        """
+        return pulumi.get(self, "invitation_features")
 
     @_builtins.property
     @pulumi.getter(name="recipientEmailAddress")
@@ -202,6 +214,7 @@ class AwaitableGetSenderInvitationResult(GetSenderInvitationResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            invitation_features=self.invitation_features,
             recipient_email_address=self.recipient_email_address,
             recipient_invitation_id=self.recipient_invitation_id,
             recipient_tenancy_id=self.recipient_tenancy_id,
@@ -244,6 +257,7 @@ def get_sender_invitation(sender_invitation_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        invitation_features=pulumi.get(__ret__, 'invitation_features'),
         recipient_email_address=pulumi.get(__ret__, 'recipient_email_address'),
         recipient_invitation_id=pulumi.get(__ret__, 'recipient_invitation_id'),
         recipient_tenancy_id=pulumi.get(__ret__, 'recipient_tenancy_id'),
@@ -283,6 +297,7 @@ def get_sender_invitation_output(sender_invitation_id: pulumi.Input[Optional[_bu
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        invitation_features=pulumi.get(__response__, 'invitation_features'),
         recipient_email_address=pulumi.get(__response__, 'recipient_email_address'),
         recipient_invitation_id=pulumi.get(__response__, 'recipient_invitation_id'),
         recipient_tenancy_id=pulumi.get(__response__, 'recipient_tenancy_id'),

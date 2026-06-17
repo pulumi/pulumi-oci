@@ -43,6 +43,8 @@ __all__ = [
     'GetConfigsConfigCollectionItemOverrideOverrideListResult',
     'GetConfigsConfigCollectionItemRuleResult',
     'GetConfigsFilterResult',
+    'GetDataFilesFilterResult',
+    'GetDataFilesItemResult',
 ]
 
 @pulumi.output_type
@@ -1565,5 +1567,99 @@ class GetConfigsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDataFilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDataFilesItemResult(dict):
+    def __init__(__self__, *,
+                 apm_type: _builtins.str,
+                 md5: _builtins.str,
+                 metadata: Mapping[str, _builtins.str],
+                 name: _builtins.str,
+                 size_in_bytes: _builtins.str,
+                 time_last_modified: _builtins.str):
+        """
+        :param _builtins.str apm_type: The type of the data file.
+        :param Mapping[str, _builtins.str] metadata: Optional user-defined metadata key and value to search by.
+        :param _builtins.str name: A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+        """
+        pulumi.set(__self__, "apm_type", apm_type)
+        pulumi.set(__self__, "md5", md5)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_modified", time_last_modified)
+
+    @_builtins.property
+    @pulumi.getter(name="apmType")
+    def apm_type(self) -> _builtins.str:
+        """
+        The type of the data file.
+        """
+        return pulumi.get(self, "apm_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def md5(self) -> _builtins.str:
+        return pulumi.get(self, "md5")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Optional user-defined metadata key and value to search by.
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> _builtins.str:
+        return pulumi.get(self, "size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastModified")
+    def time_last_modified(self) -> _builtins.str:
+        return pulumi.get(self, "time_last_modified")
 
 

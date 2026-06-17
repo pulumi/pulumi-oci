@@ -17,14 +17,14 @@ public final class DesktopPoolSessionLifecycleActionsArgs extends com.pulumi.res
     public static final DesktopPoolSessionLifecycleActionsArgs Empty = new DesktopPoolSessionLifecycleActionsArgs();
 
     /**
-     * (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+     * (Updatable) Action and grace period for disconnect
      * 
      */
     @Import(name="disconnect")
     private @Nullable Output<DesktopPoolSessionLifecycleActionsDisconnectArgs> disconnect;
 
     /**
-     * @return (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+     * @return (Updatable) Action and grace period for disconnect
      * 
      */
     public Optional<Output<DesktopPoolSessionLifecycleActionsDisconnectArgs>> disconnect() {
@@ -72,7 +72,7 @@ public final class DesktopPoolSessionLifecycleActionsArgs extends com.pulumi.res
         }
 
         /**
-         * @param disconnect (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+         * @param disconnect (Updatable) Action and grace period for disconnect
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DesktopPoolSessionLifecycleActionsArgs extends com.pulumi.res
         }
 
         /**
-         * @param disconnect (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availabilityPolicy` schedule.
+         * @param disconnect (Updatable) Action and grace period for disconnect
          * 
          * @return builder
          * 

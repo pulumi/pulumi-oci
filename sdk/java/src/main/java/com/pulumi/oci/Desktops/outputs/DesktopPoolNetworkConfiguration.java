@@ -6,10 +6,17 @@ package com.pulumi.oci.Desktops.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DesktopPoolNetworkConfiguration {
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
@@ -22,6 +29,13 @@ public final class DesktopPoolNetworkConfiguration {
     private String vcnId;
 
     private DesktopPoolNetworkConfiguration() {}
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
@@ -46,15 +60,23 @@ public final class DesktopPoolNetworkConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Map<String,String> securityAttributes;
         private String subnetId;
         private String vcnId;
         public Builder() {}
         public Builder(DesktopPoolNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.subnetId = defaults.subnetId;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
@@ -73,6 +95,7 @@ public final class DesktopPoolNetworkConfiguration {
         }
         public DesktopPoolNetworkConfiguration build() {
             final var _resultValue = new DesktopPoolNetworkConfiguration();
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.subnetId = subnetId;
             _resultValue.vcnId = vcnId;
             return _resultValue;

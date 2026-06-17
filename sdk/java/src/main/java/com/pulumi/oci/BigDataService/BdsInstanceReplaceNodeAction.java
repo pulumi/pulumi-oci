@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *         var testBdsInstanceReplaceNodeAction = new BdsInstanceReplaceNodeAction("testBdsInstanceReplaceNodeAction", BdsInstanceReplaceNodeActionArgs.builder()
  *             .bdsInstanceId(bdsInstanceId)
  *             .nodeHostName(nodeHostName)
- *             .clusterAdminPassword("<admin-password>")
+ *             .clusterAdminPassword("<your-value-in-base64>")
  *             .nodeBackupId(nodeBackupId)
  *             .shape(shape)
  *             .build());

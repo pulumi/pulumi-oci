@@ -119,6 +119,11 @@ public final class GetDesktopPoolResult {
      */
     private List<GetDesktopPoolPrivateAccessDetail> privateAccessDetails;
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Action to be triggered on inactivity or disconnect
      * 
      */
@@ -316,6 +321,13 @@ public final class GetDesktopPoolResult {
         return this.privateAccessDetails;
     }
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Action to be triggered on inactivity or disconnect
      * 
      */
@@ -424,6 +436,7 @@ public final class GetDesktopPoolResult {
         private List<GetDesktopPoolNetworkConfiguration> networkConfigurations;
         private List<String> nsgIds;
         private List<GetDesktopPoolPrivateAccessDetail> privateAccessDetails;
+        private Map<String,String> securityAttributes;
         private List<GetDesktopPoolSessionLifecycleAction> sessionLifecycleActions;
         private List<GetDesktopPoolShapeConfig> shapeConfigs;
         private String shapeName;
@@ -459,6 +472,7 @@ public final class GetDesktopPoolResult {
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateAccessDetails = defaults.privateAccessDetails;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.sessionLifecycleActions = defaults.sessionLifecycleActions;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.shapeName = defaults.shapeName;
@@ -659,6 +673,14 @@ public final class GetDesktopPoolResult {
             return privateAccessDetails(List.of(privateAccessDetails));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sessionLifecycleActions(List<GetDesktopPoolSessionLifecycleAction> sessionLifecycleActions) {
             if (sessionLifecycleActions == null) {
               throw new MissingRequiredPropertyException("GetDesktopPoolResult", "sessionLifecycleActions");
@@ -775,6 +797,7 @@ public final class GetDesktopPoolResult {
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateAccessDetails = privateAccessDetails;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.sessionLifecycleActions = sessionLifecycleActions;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.shapeName = shapeName;

@@ -36,8 +36,20 @@ namespace Pulumi.Oci.Desktops.Inputs
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;

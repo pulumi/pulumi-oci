@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
+ *     feature: linkFeature,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,
  * });
@@ -29,6 +30,7 @@ export function getLinks(args?: GetLinksArgs, opts?: pulumi.InvokeOptions): Prom
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Tenantmanagercontrolplane/getLinks:getLinks", {
         "childTenancyId": args.childTenancyId,
+        "feature": args.feature,
         "filters": args.filters,
         "parentTenancyId": args.parentTenancyId,
         "state": args.state,
@@ -43,6 +45,10 @@ export interface GetLinksArgs {
      * The ID of the child tenancy this link is associated with.
      */
     childTenancyId?: string;
+    /**
+     * The feature associated with this link.
+     */
+    feature?: string;
     filters?: inputs.Tenantmanagercontrolplane.GetLinksFilter[];
     /**
      * The ID of the parent tenancy this link is associated with.
@@ -62,6 +68,10 @@ export interface GetLinksResult {
      * OCID of the child tenancy.
      */
     readonly childTenancyId?: string;
+    /**
+     * The feature associated with this link. Default value is CORE.
+     */
+    readonly feature?: string;
     readonly filters?: outputs.Tenantmanagercontrolplane.GetLinksFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -93,6 +103,7 @@ export interface GetLinksResult {
  *
  * const testLinks = oci.tenantmanagercontrolplane.getLinks({
  *     childTenancyId: testTenancy.id,
+ *     feature: linkFeature,
  *     parentTenancyId: testTenancy.id,
  *     state: linkState,
  * });
@@ -103,6 +114,7 @@ export function getLinksOutput(args?: GetLinksOutputArgs, opts?: pulumi.InvokeOu
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Tenantmanagercontrolplane/getLinks:getLinks", {
         "childTenancyId": args.childTenancyId,
+        "feature": args.feature,
         "filters": args.filters,
         "parentTenancyId": args.parentTenancyId,
         "state": args.state,
@@ -117,6 +129,10 @@ export interface GetLinksOutputArgs {
      * The ID of the child tenancy this link is associated with.
      */
     childTenancyId?: pulumi.Input<string | undefined>;
+    /**
+     * The feature associated with this link.
+     */
+    feature?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetLinksFilterArgs>[] | undefined>;
     /**
      * The ID of the parent tenancy this link is associated with.

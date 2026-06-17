@@ -43,6 +43,7 @@ type LookupPrivateEndpointResult struct {
 	NsgIds             []string                                `pulumi:"nsgIds"`
 	Prefix             string                                  `pulumi:"prefix"`
 	PrivateEndpointIp  string                                  `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
 	State              string                                  `pulumi:"state"`
 	SubnetId           string                                  `pulumi:"subnetId"`
 	TimeCreated        string                                  `pulumi:"timeCreated"`
@@ -137,6 +138,10 @@ func (o LookupPrivateEndpointResultOutput) Prefix() pulumi.StringOutput {
 
 func (o LookupPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+func (o LookupPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 func (o LookupPrivateEndpointResultOutput) State() pulumi.StringOutput {

@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .description(apmDomainDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isFreeTier(apmDomainIsFreeTier)
+ *             .logGroupId(testLogGroup.id())
  *             .build());
  * 
  *     }
@@ -159,9 +160,6 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFreeTier;
@@ -169,12 +167,29 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
+     */
+    public Output<Boolean> isFreeTier() {
+        return this.isFreeTier;
+    }
+    /**
+     * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> isFreeTier() {
-        return this.isFreeTier;
+    @Export(name="logGroupId", refs={String.class}, tree="[0]")
+    private Output<String> logGroupId;
+
+    /**
+     * @return (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> logGroupId() {
+        return this.logGroupId;
     }
     /**
      * The current lifecycle state of the APM domain.

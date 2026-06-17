@@ -14,83 +14,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new database system.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDbSystem = new oci.psql.DbSystem("test_db_system", {
- *     compartmentId: compartmentId,
- *     credentials: {
- *         passwordDetails: {
- *             passwordType: dbSystemCredentialsPasswordDetailsPasswordType,
- *             password: dbSystemCredentialsPasswordDetailsPassword,
- *             secretId: testSecret.id,
- *             secretVersion: dbSystemCredentialsPasswordDetailsSecretVersion,
- *         },
- *         username: dbSystemCredentialsUsername,
- *     },
- *     dbVersion: dbSystemDbVersion,
- *     displayName: dbSystemDisplayName,
- *     networkDetails: {
- *         subnetId: testSubnet.id,
- *         isReaderEndpointEnabled: dbSystemNetworkDetailsIsReaderEndpointEnabled === "true",
- *         nsgIds: dbSystemNetworkDetailsNsgIds,
- *         primaryDbEndpointPrivateIp: dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
- *     },
- *     shape: dbSystemShape,
- *     storageDetails: {
- *         isRegionallyDurable: dbSystemStorageDetailsIsRegionallyDurable === "true",
- *         systemType: dbSystemStorageDetailsSystemType,
- *         availabilityDomain: dbSystemStorageDetailsAvailabilityDomain,
- *         iops: dbSystemStorageDetailsIops,
- *     },
- *     configId: testConfig.id,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     description: dbSystemDescription,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     instanceCount: Number(dbSystemInstanceCount),
- *     instanceMemorySizeInGbs: Number(dbSystemInstanceMemorySizeInGbs),
- *     instanceOcpuCount: Number(dbSystemInstanceOcpuCount),
- *     instancesDetails: [{
- *         description: dbSystemInstancesDetailsDescription,
- *         displayName: dbSystemInstancesDetailsDisplayName,
- *         privateIp: dbSystemInstancesDetailsPrivateIp,
- *     }],
- *     managementPolicy: {
- *         backupPolicy: {
- *             backupStart: dbSystemManagementPolicyBackupPolicyBackupStart,
- *             copyPolicy: {
- *                 compartmentId: compartmentId,
- *                 regions: dbSystemManagementPolicyBackupPolicyCopyPolicyRegions,
- *                 retentionPeriod: Number(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod),
- *             },
- *             daysOfTheMonths: dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
- *             daysOfTheWeeks: dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
- *             kind: dbSystemManagementPolicyBackupPolicyKind,
- *             retentionDays: Number(dbSystemManagementPolicyBackupPolicyRetentionDays),
- *         },
- *         maintenanceWindowStart: dbSystemManagementPolicyMaintenanceWindowStart,
- *     },
- *     source: {
- *         sourceType: dbSystemSourceSourceType,
- *         backupId: testBackup.id,
- *         isHavingRestoreConfigOverrides: dbSystemSourceIsHavingRestoreConfigOverrides === "true",
- *     },
- *     systemType: dbSystemSystemType,
- *     patchOperations: [{
- *         operation: dbSystemPatchOperationsOperation,
- *         selection: dbSystemPatchOperationsSelection,
- *         value: dbSystemPatchOperationsValue,
- *     }],
- * });
- * ```
- *
  * ## Import
  *
  * DbSystems can be imported using the `id`, e.g.
@@ -132,6 +55,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly adminUsername: pulumi.Output<string>;
     /**
+     * Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     */
+    declare public readonly applyChangeModeToStandAlone: pulumi.Output<string>;
+    /**
      * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
      */
     declare public readonly applyConfig: pulumi.Output<string | undefined>;
@@ -146,7 +73,7 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      */
-    declare public readonly credentials: pulumi.Output<outputs.Psql.DbSystemCredentials | undefined>;
+    declare public readonly credentials: pulumi.Output<outputs.Psql.DbSystemCredentials>;
     /**
      * Version of database system software.
      */
@@ -188,6 +115,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     declare public readonly instancesDetails: pulumi.Output<outputs.Psql.DbSystemInstancesDetail[]>;
     /**
+     * Kerberos Authentication details for the database system.
+     */
+    declare public readonly kerberosAuthDetails: pulumi.Output<outputs.Psql.DbSystemKerberosAuthDetails | undefined>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
@@ -200,9 +131,19 @@ export class DbSystem extends pulumi.CustomResource {
      */
     declare public readonly networkDetails: pulumi.Output<outputs.Psql.DbSystemNetworkDetails>;
     /**
+     * (Updatable) ODSP Insight details for the database system.
+     */
+    declare public readonly odspInsightDetails: pulumi.Output<outputs.Psql.DbSystemOdspInsightDetails | undefined>;
+    /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      */
     declare public readonly patchOperations: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
+    /**
+     * (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     *
+     * This configuration does not have any effect on database systems with other roles.
+     */
+    declare public readonly replicationConfig: pulumi.Output<outputs.Psql.DbSystemReplicationConfig>;
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
@@ -212,23 +153,27 @@ export class DbSystem extends pulumi.CustomResource {
      */
     declare public readonly source: pulumi.Output<outputs.Psql.DbSystemSource>;
     /**
-     * The current state of the database system.
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Storage details of the database system.
      */
     declare public readonly storageDetails: pulumi.Output<outputs.Psql.DbSystemStorageDetails>;
+    /**
+     * Type of the database system.
+     */
+    declare public /*out*/ readonly systemRole: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Type of the database system.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly systemType: pulumi.Output<string>;
     /**
@@ -254,6 +199,7 @@ export class DbSystem extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DbSystemState | undefined;
             resourceInputs["adminUsername"] = state?.adminUsername;
+            resourceInputs["applyChangeModeToStandAlone"] = state?.applyChangeModeToStandAlone;
             resourceInputs["applyConfig"] = state?.applyConfig;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["configId"] = state?.configId;
@@ -268,14 +214,18 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["instanceOcpuCount"] = state?.instanceOcpuCount;
             resourceInputs["instances"] = state?.instances;
             resourceInputs["instancesDetails"] = state?.instancesDetails;
+            resourceInputs["kerberosAuthDetails"] = state?.kerberosAuthDetails;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["managementPolicy"] = state?.managementPolicy;
             resourceInputs["networkDetails"] = state?.networkDetails;
+            resourceInputs["odspInsightDetails"] = state?.odspInsightDetails;
             resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["replicationConfig"] = state?.replicationConfig;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["source"] = state?.source;
             resourceInputs["state"] = state?.state;
             resourceInputs["storageDetails"] = state?.storageDetails;
+            resourceInputs["systemRole"] = state?.systemRole;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["systemType"] = state?.systemType;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -300,6 +250,7 @@ export class DbSystem extends pulumi.CustomResource {
             if (args?.storageDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storageDetails'");
             }
+            resourceInputs["applyChangeModeToStandAlone"] = args?.applyChangeModeToStandAlone;
             resourceInputs["applyConfig"] = args?.applyConfig;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["configId"] = args?.configId;
@@ -313,17 +264,21 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["instanceMemorySizeInGbs"] = args?.instanceMemorySizeInGbs;
             resourceInputs["instanceOcpuCount"] = args?.instanceOcpuCount;
             resourceInputs["instancesDetails"] = args?.instancesDetails;
+            resourceInputs["kerberosAuthDetails"] = args?.kerberosAuthDetails;
             resourceInputs["managementPolicy"] = args?.managementPolicy;
             resourceInputs["networkDetails"] = args?.networkDetails;
+            resourceInputs["odspInsightDetails"] = args?.odspInsightDetails;
             resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["replicationConfig"] = args?.replicationConfig;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["source"] = args?.source;
+            resourceInputs["state"] = args?.state;
             resourceInputs["storageDetails"] = args?.storageDetails;
             resourceInputs["systemType"] = args?.systemType;
             resourceInputs["adminUsername"] = undefined /*out*/;
             resourceInputs["instances"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
-            resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemRole"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -341,6 +296,10 @@ export interface DbSystemState {
      * The database system administrator username.
      */
     adminUsername?: pulumi.Input<string | undefined>;
+    /**
+     * Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     */
+    applyChangeModeToStandAlone?: pulumi.Input<string | undefined>;
     /**
      * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
      */
@@ -398,6 +357,10 @@ export interface DbSystemState {
      */
     instancesDetails?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemInstancesDetail>[] | undefined>;
     /**
+     * Kerberos Authentication details for the database system.
+     */
+    kerberosAuthDetails?: pulumi.Input<inputs.Psql.DbSystemKerberosAuthDetails | undefined>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
@@ -410,9 +373,19 @@ export interface DbSystemState {
      */
     networkDetails?: pulumi.Input<inputs.Psql.DbSystemNetworkDetails | undefined>;
     /**
+     * (Updatable) ODSP Insight details for the database system.
+     */
+    odspInsightDetails?: pulumi.Input<inputs.Psql.DbSystemOdspInsightDetails | undefined>;
+    /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[] | undefined>;
+    /**
+     * (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     *
+     * This configuration does not have any effect on database systems with other roles.
+     */
+    replicationConfig?: pulumi.Input<inputs.Psql.DbSystemReplicationConfig | undefined>;
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
@@ -422,7 +395,11 @@ export interface DbSystemState {
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource | undefined>;
     /**
-     * The current state of the database system.
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     state?: pulumi.Input<string | undefined>;
     /**
@@ -430,15 +407,15 @@ export interface DbSystemState {
      */
     storageDetails?: pulumi.Input<inputs.Psql.DbSystemStorageDetails | undefined>;
     /**
+     * Type of the database system.
+     */
+    systemRole?: pulumi.Input<string | undefined>;
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Type of the database system.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemType?: pulumi.Input<string | undefined>;
     /**
@@ -455,6 +432,10 @@ export interface DbSystemState {
  * The set of arguments for constructing a DbSystem resource.
  */
 export interface DbSystemArgs {
+    /**
+     * Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     */
+    applyChangeModeToStandAlone?: pulumi.Input<string | undefined>;
     /**
      * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
      */
@@ -508,6 +489,10 @@ export interface DbSystemArgs {
      */
     instancesDetails?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemInstancesDetail>[] | undefined>;
     /**
+     * Kerberos Authentication details for the database system.
+     */
+    kerberosAuthDetails?: pulumi.Input<inputs.Psql.DbSystemKerberosAuthDetails | undefined>;
+    /**
      * (Updatable) PostgreSQL database system management policy update details.
      */
     managementPolicy?: pulumi.Input<inputs.Psql.DbSystemManagementPolicy | undefined>;
@@ -516,9 +501,19 @@ export interface DbSystemArgs {
      */
     networkDetails: pulumi.Input<inputs.Psql.DbSystemNetworkDetails>;
     /**
+     * (Updatable) ODSP Insight details for the database system.
+     */
+    odspInsightDetails?: pulumi.Input<inputs.Psql.DbSystemOdspInsightDetails | undefined>;
+    /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[] | undefined>;
+    /**
+     * (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     *
+     * This configuration does not have any effect on database systems with other roles.
+     */
+    replicationConfig?: pulumi.Input<inputs.Psql.DbSystemReplicationConfig | undefined>;
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
@@ -528,15 +523,19 @@ export interface DbSystemArgs {
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource | undefined>;
     /**
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    state?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) Storage details of the database system.
      */
     storageDetails: pulumi.Input<inputs.Psql.DbSystemStorageDetails>;
     /**
      * Type of the database system.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemType?: pulumi.Input<string | undefined>;
 }

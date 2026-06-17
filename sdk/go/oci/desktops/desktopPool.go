@@ -19,104 +19,6 @@ import (
 //
 // Creates a desktop pool with the given configuration parameters.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/desktops"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := desktops.NewDesktopPool(ctx, "test_desktop_pool", &desktops.DesktopPoolArgs{
-//				ArePrivilegedUsers: pulumi.Any(desktopPoolArePrivilegedUsers),
-//				AvailabilityDomain: pulumi.Any(desktopPoolAvailabilityDomain),
-//				AvailabilityPolicy: &desktops.DesktopPoolAvailabilityPolicyArgs{
-//					StartSchedule: &desktops.DesktopPoolAvailabilityPolicyStartScheduleArgs{
-//						CronExpression: pulumi.String("0 10 8 ? * 2"),
-//						Timezone:       pulumi.String("America/Denver"),
-//					},
-//					StopSchedule: &desktops.DesktopPoolAvailabilityPolicyStopScheduleArgs{
-//						CronExpression: pulumi.String("0 20 18 ? * 6"),
-//						Timezone:       pulumi.String("America/Denver"),
-//					},
-//				},
-//				CompartmentId:  pulumi.Any(compartmentId),
-//				ContactDetails: pulumi.Any(desktopPoolContactDetails),
-//				DevicePolicy: &desktops.DesktopPoolDevicePolicyArgs{
-//					AudioMode:           pulumi.Any(desktopPoolDevicePolicyAudioMode),
-//					CdmMode:             pulumi.Any(desktopPoolDevicePolicyCdmMode),
-//					ClipboardMode:       pulumi.Any(desktopPoolDevicePolicyClipboardMode),
-//					IsDisplayEnabled:    pulumi.Any(desktopPoolDevicePolicyIsDisplayEnabled),
-//					IsKeyboardEnabled:   pulumi.Any(desktopPoolDevicePolicyIsKeyboardEnabled),
-//					IsPointerEnabled:    pulumi.Any(desktopPoolDevicePolicyIsPointerEnabled),
-//					IsPrintingEnabled:   pulumi.Any(desktopPoolDevicePolicyIsPrintingEnabled),
-//					IsVideoInputEnabled: pulumi.Any(desktopPoolDevicePolicyIsVideoInputEnabled),
-//				},
-//				DisplayName: pulumi.Any(desktopPoolDisplayName),
-//				Image: &desktops.DesktopPoolImageArgs{
-//					ImageId:         pulumi.Any(testImage.Id),
-//					ImageName:       pulumi.Any(desktopPoolImageImageName),
-//					OperatingSystem: pulumi.Any(desktopPoolImageOperatingSystem),
-//				},
-//				IsStorageEnabled: pulumi.Any(desktopPoolIsStorageEnabled),
-//				MaximumSize:      pulumi.Any(desktopPoolMaximumSize),
-//				NetworkConfiguration: &desktops.DesktopPoolNetworkConfigurationArgs{
-//					SubnetId: pulumi.Any(testSubnet.Id),
-//					VcnId:    pulumi.Any(testVcn.Id),
-//				},
-//				ShapeName:             pulumi.String("VM.Standard.E4.Flex"),
-//				StandbySize:           pulumi.Any(desktopPoolStandbySize),
-//				StorageBackupPolicyId: pulumi.String("ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz"),
-//				StorageSizeInGbs:      pulumi.Any(desktopPoolStorageSizeInGbs),
-//				BootVolumeSizeInGbs:   pulumi.Any(desktopPoolBootVolumeSizeInGbs),
-//				AreVolumesPreserved:   pulumi.Any(desktopPoolAreVolumesPreserved),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(desktopPoolDescription),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				NsgIds: pulumi.Any(desktopPoolNsgIds),
-//				ShapeConfig: &desktops.DesktopPoolShapeConfigArgs{
-//					BaselineOcpuUtilization: pulumi.Any(desktopPoolShapeConfigBaselineOcpuUtilization),
-//					MemoryInGbs:             pulumi.Any(desktopPoolShapeConfigMemoryInGbs),
-//					Ocpus:                   pulumi.Any(desktopPoolShapeConfigOcpus),
-//				},
-//				PrivateAccessDetails: &desktops.DesktopPoolPrivateAccessDetailsArgs{
-//					SubnetId:  pulumi.Any(testSubnet.Id),
-//					NsgIds:    pulumi.Any(desktopPoolPrivateAccessDetailsNsgIds),
-//					PrivateIp: pulumi.Any(desktopPoolPrivateAccessDetailsPrivateIp),
-//				},
-//				SessionLifecycleActions: &desktops.DesktopPoolSessionLifecycleActionsArgs{
-//					Disconnect: &desktops.DesktopPoolSessionLifecycleActionsDisconnectArgs{
-//						Action:               pulumi.String("STOP"),
-//						GracePeriodInMinutes: pulumi.Any(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes),
-//					},
-//					Inactivity: &desktops.DesktopPoolSessionLifecycleActionsInactivityArgs{
-//						Action:               pulumi.String("DISCONNECT"),
-//						GracePeriodInMinutes: pulumi.Any(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes),
-//					},
-//				},
-//				TimeStartScheduled: pulumi.Any(desktopPoolTimeStartScheduled),
-//				TimeStopScheduled:  pulumi.Any(desktopPoolTimeStopScheduled),
-//				UseDedicatedVmHost: pulumi.Any(desktopPoolUseDedicatedVmHost),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // DesktopPools can be imported using the `id`, e.g.
@@ -162,12 +64,14 @@ type DesktopPool struct {
 	IsStorageEnabled pulumi.BoolOutput `pulumi:"isStorageEnabled"`
 	// (Updatable) The maximum number of desktops permitted in the desktop pool.
 	MaximumSize pulumi.IntOutput `pulumi:"maximumSize"`
-	// Provides information about the network configuration of the desktop pool.
+	// (Updatable) Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationOutput `pulumi:"networkConfiguration"`
 	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
-	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsOutput `pulumi:"privateAccessDetails"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The details of action to be triggered in case of inactivity or disconnect
 	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrOutput `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -302,12 +206,14 @@ type desktopPoolState struct {
 	IsStorageEnabled *bool `pulumi:"isStorageEnabled"`
 	// (Updatable) The maximum number of desktops permitted in the desktop pool.
 	MaximumSize *int `pulumi:"maximumSize"`
-	// Provides information about the network configuration of the desktop pool.
+	// (Updatable) Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration *DesktopPoolNetworkConfiguration `pulumi:"networkConfiguration"`
 	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
-	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The details of action to be triggered in case of inactivity or disconnect
 	SessionLifecycleActions *DesktopPoolSessionLifecycleActions `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -368,12 +274,14 @@ type DesktopPoolState struct {
 	IsStorageEnabled pulumi.BoolPtrInput
 	// (Updatable) The maximum number of desktops permitted in the desktop pool.
 	MaximumSize pulumi.IntPtrInput
-	// Provides information about the network configuration of the desktop pool.
+	// (Updatable) Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationPtrInput
 	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput
-	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The details of action to be triggered in case of inactivity or disconnect
 	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrInput
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -436,12 +344,14 @@ type desktopPoolArgs struct {
 	IsStorageEnabled bool `pulumi:"isStorageEnabled"`
 	// (Updatable) The maximum number of desktops permitted in the desktop pool.
 	MaximumSize int `pulumi:"maximumSize"`
-	// Provides information about the network configuration of the desktop pool.
+	// (Updatable) Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfiguration `pulumi:"networkConfiguration"`
 	// A list of network security groups for the private access.
 	NsgIds []string `pulumi:"nsgIds"`
-	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails *DesktopPoolPrivateAccessDetails `pulumi:"privateAccessDetails"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The details of action to be triggered in case of inactivity or disconnect
 	SessionLifecycleActions *DesktopPoolSessionLifecycleActions `pulumi:"sessionLifecycleActions"`
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -497,12 +407,14 @@ type DesktopPoolArgs struct {
 	IsStorageEnabled pulumi.BoolInput
 	// (Updatable) The maximum number of desktops permitted in the desktop pool.
 	MaximumSize pulumi.IntInput
-	// Provides information about the network configuration of the desktop pool.
+	// (Updatable) Provides information about the network configuration of the desktop pool.
 	NetworkConfiguration DesktopPoolNetworkConfigurationInput
 	// A list of network security groups for the private access.
 	NsgIds pulumi.StringArrayInput
-	// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+	// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 	PrivateAccessDetails DesktopPoolPrivateAccessDetailsPtrInput
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The details of action to be triggered in case of inactivity or disconnect
 	SessionLifecycleActions DesktopPoolSessionLifecycleActionsPtrInput
 	// The compute instance shape configuration requested for each desktop in the desktop pool.
@@ -693,7 +605,7 @@ func (o DesktopPoolOutput) MaximumSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.IntOutput { return v.MaximumSize }).(pulumi.IntOutput)
 }
 
-// Provides information about the network configuration of the desktop pool.
+// (Updatable) Provides information about the network configuration of the desktop pool.
 func (o DesktopPoolOutput) NetworkConfiguration() DesktopPoolNetworkConfigurationOutput {
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolNetworkConfigurationOutput { return v.NetworkConfiguration }).(DesktopPoolNetworkConfigurationOutput)
 }
@@ -703,9 +615,14 @@ func (o DesktopPoolOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DesktopPool) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
 func (o DesktopPoolOutput) PrivateAccessDetails() DesktopPoolPrivateAccessDetailsOutput {
 	return o.ApplyT(func(v *DesktopPool) DesktopPoolPrivateAccessDetailsOutput { return v.PrivateAccessDetails }).(DesktopPoolPrivateAccessDetailsOutput)
+}
+
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DesktopPoolOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DesktopPool) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The details of action to be triggered in case of inactivity or disconnect

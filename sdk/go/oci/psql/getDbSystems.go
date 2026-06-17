@@ -34,6 +34,7 @@ import (
 //				DisplayName:   pulumi.StringRef(dbSystemDisplayName),
 //				Id:            pulumi.StringRef(dbSystemId),
 //				State:         pulumi.StringRef(dbSystemState),
+//				SystemRole:    pulumi.StringRef(dbSystemSystemRole),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -64,6 +65,8 @@ type GetDbSystemsArgs struct {
 	Id *string `pulumi:"id"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
+	// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+	SystemRole *string `pulumi:"systemRole"`
 }
 
 // A collection of values returned by getDbSystems.
@@ -79,6 +82,8 @@ type GetDbSystemsResult struct {
 	Id *string `pulumi:"id"`
 	// The current state of the database system.
 	State *string `pulumi:"state"`
+	// Type of the database system.
+	SystemRole *string `pulumi:"systemRole"`
 }
 
 func GetDbSystemsOutput(ctx *pulumi.Context, args GetDbSystemsOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsResultOutput {
@@ -101,6 +106,8 @@ type GetDbSystemsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+	SystemRole pulumi.StringPtrInput `pulumi:"systemRole"`
 }
 
 func (GetDbSystemsOutputArgs) ElementType() reflect.Type {
@@ -149,6 +156,11 @@ func (o GetDbSystemsResultOutput) Id() pulumi.StringPtrOutput {
 // The current state of the database system.
 func (o GetDbSystemsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Type of the database system.
+func (o GetDbSystemsResultOutput) SystemRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsResult) *string { return v.SystemRole }).(pulumi.StringPtrOutput)
 }
 
 func init() {

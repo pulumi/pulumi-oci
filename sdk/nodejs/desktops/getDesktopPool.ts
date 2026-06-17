@@ -122,6 +122,10 @@ export interface GetDesktopPoolResult {
      */
     readonly privateAccessDetails: outputs.Desktops.GetDesktopPoolPrivateAccessDetail[];
     /**
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * Action to be triggered on inactivity or disconnect
      */
     readonly sessionLifecycleActions: outputs.Desktops.GetDesktopPoolSessionLifecycleAction[];

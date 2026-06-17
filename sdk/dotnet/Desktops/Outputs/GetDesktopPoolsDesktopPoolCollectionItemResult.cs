@@ -91,6 +91,10 @@ namespace Pulumi.Oci.Desktops.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult> PrivateAccessDetails;
         /// <summary>
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// Action to be triggered on inactivity or disconnect
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult> SessionLifecycleActions;
@@ -177,6 +181,8 @@ namespace Pulumi.Oci.Desktops.Outputs
 
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult> privateAccessDetails,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult> sessionLifecycleActions,
 
             ImmutableArray<Outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult> shapeConfigs,
@@ -219,6 +225,7 @@ namespace Pulumi.Oci.Desktops.Outputs
             NetworkConfigurations = networkConfigurations;
             NsgIds = nsgIds;
             PrivateAccessDetails = privateAccessDetails;
+            SecurityAttributes = securityAttributes;
             SessionLifecycleActions = sessionLifecycleActions;
             ShapeConfigs = shapeConfigs;
             ShapeName = shapeName;

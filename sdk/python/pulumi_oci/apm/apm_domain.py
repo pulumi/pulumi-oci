@@ -24,7 +24,8 @@ class ApmDomainArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None):
+                 is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApmDomain resource.
 
@@ -34,6 +35,7 @@ class ApmDomainArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
                
                ** IMPORTANT **
@@ -49,6 +51,8 @@ class ApmDomainArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_free_tier is not None:
             pulumi.set(__self__, "is_free_tier", is_free_tier)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -115,16 +119,28 @@ class ApmDomainArgs:
     def is_free_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
     def is_free_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_free_tier", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
 
 
 @pulumi.input_type
@@ -137,6 +153,7 @@ class _ApmDomainState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
@@ -150,6 +167,7 @@ class _ApmDomainState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
                
                ** IMPORTANT **
@@ -172,6 +190,8 @@ class _ApmDomainState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_free_tier is not None:
             pulumi.set(__self__, "is_free_tier", is_free_tier)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -256,16 +276,28 @@ class _ApmDomainState:
     def is_free_tier(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_free_tier")
 
     @is_free_tier.setter
     def is_free_tier(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_free_tier", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -316,6 +348,7 @@ class ApmDomain(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Application Performance Monitoring service.
@@ -341,7 +374,8 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier == "true")
+            is_free_tier=apm_domain_is_free_tier == "true",
+            log_group_id=test_log_group["id"])
         ```
 
         ## Import
@@ -361,6 +395,7 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
                
                ** IMPORTANT **
@@ -396,7 +431,8 @@ class ApmDomain(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=apm_domain_is_free_tier == "true")
+            is_free_tier=apm_domain_is_free_tier == "true",
+            log_group_id=test_log_group["id"])
         ```
 
         ## Import
@@ -429,6 +465,7 @@ class ApmDomain(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -448,6 +485,7 @@ class ApmDomain(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_free_tier"] = is_free_tier
+            __props__.__dict__["log_group_id"] = log_group_id
             __props__.__dict__["data_upload_endpoint"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -469,6 +507,7 @@ class ApmDomain(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_free_tier: pulumi.Input[Optional[_builtins.bool]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApmDomain':
@@ -486,6 +525,7 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the APM domain.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
+        :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
                
                ** IMPORTANT **
@@ -505,6 +545,7 @@ class ApmDomain(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_free_tier"] = is_free_tier
+        __props__.__dict__["log_group_id"] = log_group_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -563,12 +604,20 @@ class ApmDomain(pulumi.CustomResource):
     def is_free_tier(self) -> pulumi.Output[_builtins.bool]:
         """
         Indicates whether this is an "Always Free" resource. The default value is false.
+        """
+        return pulumi.get(self, "is_free_tier")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "is_free_tier")
+        return pulumi.get(self, "log_group_id")
 
     @_builtins.property
     @pulumi.getter

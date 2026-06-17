@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsFilterArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -38,6 +39,21 @@ public final class GetAccessRequestsArgs extends com.pulumi.resources.InvokeArgs
 
     public Optional<Output<List<GetAccessRequestsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * The number of days since when the user wants to search .
+     * 
+     */
+    @Import(name="numDays")
+    private @Nullable Output<Integer> numDays;
+
+    /**
+     * @return The number of days since when the user wants to search .
+     * 
+     */
+    public Optional<Output<Integer>> numDays() {
+        return Optional.ofNullable(this.numDays);
     }
 
     /**
@@ -120,6 +136,7 @@ public final class GetAccessRequestsArgs extends com.pulumi.resources.InvokeArgs
     private GetAccessRequestsArgs(GetAccessRequestsArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.numDays = $.numDays;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
         this.state = $.state;
@@ -177,6 +194,27 @@ public final class GetAccessRequestsArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetAccessRequestsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param numDays The number of days since when the user wants to search .
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numDays(@Nullable Output<Integer> numDays) {
+            $.numDays = numDays;
+            return this;
+        }
+
+        /**
+         * @param numDays The number of days since when the user wants to search .
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numDays(Integer numDays) {
+            return numDays(Output.of(numDays));
         }
 
         /**

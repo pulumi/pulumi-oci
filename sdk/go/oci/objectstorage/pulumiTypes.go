@@ -3321,6 +3321,7 @@ type GetPrivateEndpointSummariesPrivateEndpointSummary struct {
 	NsgIds             []string                                                        `pulumi:"nsgIds"`
 	Prefix             string                                                          `pulumi:"prefix"`
 	PrivateEndpointIp  string                                                          `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string                                               `pulumi:"securityAttributes"`
 	State              string                                                          `pulumi:"state"`
 	SubnetId           string                                                          `pulumi:"subnetId"`
 	TimeCreated        string                                                          `pulumi:"timeCreated"`
@@ -3353,6 +3354,7 @@ type GetPrivateEndpointSummariesPrivateEndpointSummaryArgs struct {
 	NsgIds             pulumi.StringArrayInput                                                 `pulumi:"nsgIds"`
 	Prefix             pulumi.StringInput                                                      `pulumi:"prefix"`
 	PrivateEndpointIp  pulumi.StringInput                                                      `pulumi:"privateEndpointIp"`
+	SecurityAttributes pulumi.StringMapInput                                                   `pulumi:"securityAttributes"`
 	State              pulumi.StringInput                                                      `pulumi:"state"`
 	SubnetId           pulumi.StringInput                                                      `pulumi:"subnetId"`
 	TimeCreated        pulumi.StringInput                                                      `pulumi:"timeCreated"`
@@ -3468,6 +3470,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Prefix() pulumi
 
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) PrivateEndpointIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) State() pulumi.StringOutput {

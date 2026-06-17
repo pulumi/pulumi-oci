@@ -265,7 +265,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         test_bds_instance_replace_node_action = oci.bigdataservice.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action",
             bds_instance_id=bds_instance_id,
             node_host_name=node_host_name,
-            cluster_admin_password="<admin-password>",
+            cluster_admin_password="<your-value-in-base64>",
             node_backup_id=node_backup_id,
             shape=shape)
         ```
@@ -305,7 +305,7 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         test_bds_instance_replace_node_action = oci.bigdataservice.BdsInstanceReplaceNodeAction("test_bds_instance_replace_node_action",
             bds_instance_id=bds_instance_id,
             node_host_name=node_host_name,
-            cluster_admin_password="<admin-password>",
+            cluster_admin_password="<your-value-in-base64>",
             node_backup_id=node_backup_id,
             shape=shape)
         ```

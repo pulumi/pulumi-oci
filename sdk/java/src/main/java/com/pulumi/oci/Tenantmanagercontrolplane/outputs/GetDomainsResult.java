@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsResult {
+    /**
+     * @return The OCID of the tenancy that has started the registration process for this domain.
+     * 
+     */
     private String compartmentId;
     /**
      * @return The list of domain_collection.
@@ -41,6 +45,10 @@ public final class GetDomainsResult {
     private @Nullable String status;
 
     private GetDomainsResult() {}
+    /**
+     * @return The OCID of the tenancy that has started the registration process for this domain.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }

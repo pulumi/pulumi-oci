@@ -48,6 +48,7 @@ import (
 //				},
 //				MigrationType:         pulumi.Any(migrationMigrationType),
 //				ReplicationScheduleId: pulumi.Any(testReplicationSchedule.Id),
+//				SecurityAttributes:    pulumi.Any(migrationSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -85,10 +86,12 @@ type Migration struct {
 	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
 	MigrationType pulumi.StringOutput `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
+	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId pulumi.StringOutput `pulumi:"replicationScheduleId"`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of migration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -152,10 +155,12 @@ type migrationState struct {
 	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
 	MigrationType *string `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
+	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of migration.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -184,10 +189,12 @@ type MigrationState struct {
 	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
 	MigrationType pulumi.StringPtrInput
 	// (Updatable) Replication schedule identifier
+	ReplicationScheduleId pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId pulumi.StringPtrInput
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of migration.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -218,10 +225,12 @@ type migrationArgs struct {
 	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
 	MigrationType *string `pulumi:"migrationType"`
 	// (Updatable) Replication schedule identifier
+	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 }
 
 // The set of arguments for constructing a Migration resource.
@@ -241,10 +250,12 @@ type MigrationArgs struct {
 	// (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
 	MigrationType pulumi.StringPtrInput
 	// (Updatable) Replication schedule identifier
+	ReplicationScheduleId pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ReplicationScheduleId pulumi.StringPtrInput
+	SecurityAttributes pulumi.StringMapInput
 }
 
 func (MigrationArgs) ElementType() reflect.Type {
@@ -375,11 +386,16 @@ func (o MigrationOutput) MigrationType() pulumi.StringOutput {
 }
 
 // (Updatable) Replication schedule identifier
+func (o MigrationOutput) ReplicationScheduleId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o MigrationOutput) ReplicationScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+func (o MigrationOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of migration.

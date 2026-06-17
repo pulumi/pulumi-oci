@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := tenantmanagercontrolplane.GetLinks(ctx, &tenantmanagercontrolplane.GetLinksArgs{
 //				ChildTenancyId:  pulumi.StringRef(testTenancy.Id),
+//				Feature:         pulumi.StringRef(linkFeature),
 //				ParentTenancyId: pulumi.StringRef(testTenancy.Id),
 //				State:           pulumi.StringRef(linkState),
 //			}, nil)
@@ -55,8 +56,10 @@ func GetLinks(ctx *pulumi.Context, args *GetLinksArgs, opts ...pulumi.InvokeOpti
 // A collection of arguments for invoking getLinks.
 type GetLinksArgs struct {
 	// The ID of the child tenancy this link is associated with.
-	ChildTenancyId *string          `pulumi:"childTenancyId"`
-	Filters        []GetLinksFilter `pulumi:"filters"`
+	ChildTenancyId *string `pulumi:"childTenancyId"`
+	// The feature associated with this link.
+	Feature *string          `pulumi:"feature"`
+	Filters []GetLinksFilter `pulumi:"filters"`
 	// The ID of the parent tenancy this link is associated with.
 	ParentTenancyId *string `pulumi:"parentTenancyId"`
 	// The lifecycle state of the resource.
@@ -66,8 +69,10 @@ type GetLinksArgs struct {
 // A collection of values returned by getLinks.
 type GetLinksResult struct {
 	// OCID of the child tenancy.
-	ChildTenancyId *string          `pulumi:"childTenancyId"`
-	Filters        []GetLinksFilter `pulumi:"filters"`
+	ChildTenancyId *string `pulumi:"childTenancyId"`
+	// The feature associated with this link. Default value is CORE.
+	Feature *string          `pulumi:"feature"`
+	Filters []GetLinksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of link_collection.
@@ -90,8 +95,10 @@ func GetLinksOutput(ctx *pulumi.Context, args GetLinksOutputArgs, opts ...pulumi
 // A collection of arguments for invoking getLinks.
 type GetLinksOutputArgs struct {
 	// The ID of the child tenancy this link is associated with.
-	ChildTenancyId pulumi.StringPtrInput    `pulumi:"childTenancyId"`
-	Filters        GetLinksFilterArrayInput `pulumi:"filters"`
+	ChildTenancyId pulumi.StringPtrInput `pulumi:"childTenancyId"`
+	// The feature associated with this link.
+	Feature pulumi.StringPtrInput    `pulumi:"feature"`
+	Filters GetLinksFilterArrayInput `pulumi:"filters"`
 	// The ID of the parent tenancy this link is associated with.
 	ParentTenancyId pulumi.StringPtrInput `pulumi:"parentTenancyId"`
 	// The lifecycle state of the resource.
@@ -120,6 +127,11 @@ func (o GetLinksResultOutput) ToGetLinksResultOutputWithContext(ctx context.Cont
 // OCID of the child tenancy.
 func (o GetLinksResultOutput) ChildTenancyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLinksResult) *string { return v.ChildTenancyId }).(pulumi.StringPtrOutput)
+}
+
+// The feature associated with this link. Default value is CORE.
+func (o GetLinksResultOutput) Feature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLinksResult) *string { return v.Feature }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLinksResultOutput) Filters() GetLinksFilterArrayOutput {

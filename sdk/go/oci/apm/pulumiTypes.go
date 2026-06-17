@@ -30,6 +30,8 @@ type GetApmDomainsApmDomain struct {
 	Id string `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
 	IsFreeTier bool `pulumi:"isFreeTier"`
+	// The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+	LogGroupId string `pulumi:"logGroupId"`
 	// A filter to return only resources that match the given life-cycle state.
 	State string `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
@@ -66,6 +68,8 @@ type GetApmDomainsApmDomainArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
 	IsFreeTier pulumi.BoolInput `pulumi:"isFreeTier"`
+	// The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// A filter to return only resources that match the given life-cycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
@@ -163,6 +167,11 @@ func (o GetApmDomainsApmDomainOutput) Id() pulumi.StringOutput {
 // Indicates if this is an Always Free resource.
 func (o GetApmDomainsApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetApmDomainsApmDomain) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
+}
+
+// The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+func (o GetApmDomainsApmDomainOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given life-cycle state.

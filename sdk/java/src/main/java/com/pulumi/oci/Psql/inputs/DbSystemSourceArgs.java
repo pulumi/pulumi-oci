@@ -5,7 +5,6 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -48,18 +47,33 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+     * The [OCID] of the primary database system.
      * 
      */
-    @Import(name="sourceType", required=true)
-    private Output<String> sourceType;
+    @Import(name="primaryDbSystemId")
+    private @Nullable Output<String> primaryDbSystemId;
 
     /**
-     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+     * @return The [OCID] of the primary database system.
      * 
      */
-    public Output<String> sourceType() {
-        return this.sourceType;
+    public Optional<Output<String>> primaryDbSystemId() {
+        return Optional.ofNullable(this.primaryDbSystemId);
+    }
+
+    /**
+     * The source descriminator.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return The source descriminator.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     private DbSystemSourceArgs() {}
@@ -67,6 +81,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     private DbSystemSourceArgs(DbSystemSourceArgs $) {
         this.backupId = $.backupId;
         this.isHavingRestoreConfigOverrides = $.isHavingRestoreConfigOverrides;
+        this.primaryDbSystemId = $.primaryDbSystemId;
         this.sourceType = $.sourceType;
     }
 
@@ -131,18 +146,39 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceType The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+         * @param primaryDbSystemId The [OCID] of the primary database system.
          * 
          * @return builder
          * 
          */
-        public Builder sourceType(Output<String> sourceType) {
+        public Builder primaryDbSystemId(@Nullable Output<String> primaryDbSystemId) {
+            $.primaryDbSystemId = primaryDbSystemId;
+            return this;
+        }
+
+        /**
+         * @param primaryDbSystemId The [OCID] of the primary database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder primaryDbSystemId(String primaryDbSystemId) {
+            return primaryDbSystemId(Output.of(primaryDbSystemId));
+        }
+
+        /**
+         * @param sourceType The source descriminator.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
             $.sourceType = sourceType;
             return this;
         }
 
         /**
-         * @param sourceType The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
+         * @param sourceType The source descriminator.
          * 
          * @return builder
          * 
@@ -152,9 +188,6 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public DbSystemSourceArgs build() {
-            if ($.sourceType == null) {
-                throw new MissingRequiredPropertyException("DbSystemSourceArgs", "sourceType");
-            }
             return $;
         }
     }

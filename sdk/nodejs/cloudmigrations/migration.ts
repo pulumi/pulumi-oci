@@ -35,6 +35,7 @@ import * as utilities from "../utilities";
  *     },
  *     migrationType: migrationMigrationType,
  *     replicationScheduleId: testReplicationSchedule.id,
+ *     securityAttributes: migrationSecurityAttributes,
  * });
  * ```
  *
@@ -108,12 +109,16 @@ export class Migration extends pulumi.CustomResource {
     declare public readonly migrationType: pulumi.Output<string>;
     /**
      * (Updatable) Replication schedule identifier
+     */
+    declare public readonly replicationScheduleId: pulumi.Output<string>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly replicationScheduleId: pulumi.Output<string>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of migration.
      */
@@ -153,6 +158,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["migrationConfig"] = state?.migrationConfig;
             resourceInputs["migrationType"] = state?.migrationType;
             resourceInputs["replicationScheduleId"] = state?.replicationScheduleId;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -173,6 +179,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["migrationConfig"] = args?.migrationConfig;
             resourceInputs["migrationType"] = args?.migrationType;
             resourceInputs["replicationScheduleId"] = args?.replicationScheduleId;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -222,12 +229,16 @@ export interface MigrationState {
     migrationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Replication schedule identifier
+     */
+    replicationScheduleId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicationScheduleId?: pulumi.Input<string | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of migration.
      */
@@ -280,10 +291,14 @@ export interface MigrationArgs {
     migrationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Replication schedule identifier
+     */
+    replicationScheduleId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicationScheduleId?: pulumi.Input<string | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

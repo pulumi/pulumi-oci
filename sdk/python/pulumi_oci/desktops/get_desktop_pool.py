@@ -27,7 +27,7 @@ class GetDesktopPoolResult:
     """
     A collection of values returned by getDesktopPool.
     """
-    def __init__(__self__, active_desktops=None, are_privileged_users=None, are_volumes_preserved=None, availability_domain=None, availability_policies=None, boot_volume_size_in_gbs=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
+    def __init__(__self__, active_desktops=None, are_privileged_users=None, are_volumes_preserved=None, availability_domain=None, availability_policies=None, boot_volume_size_in_gbs=None, compartment_id=None, contact_details=None, defined_tags=None, description=None, desktop_pool_id=None, device_policies=None, display_name=None, freeform_tags=None, id=None, images=None, is_storage_enabled=None, maximum_size=None, network_configurations=None, nsg_ids=None, private_access_details=None, security_attributes=None, session_lifecycle_actions=None, shape_configs=None, shape_name=None, standby_size=None, state=None, storage_backup_policy_id=None, storage_size_in_gbs=None, time_created=None, time_start_scheduled=None, time_stop_scheduled=None, use_dedicated_vm_host=None):
         if active_desktops and not isinstance(active_desktops, int):
             raise TypeError("Expected argument 'active_desktops' to be a int")
         pulumi.set(__self__, "active_desktops", active_desktops)
@@ -91,6 +91,9 @@ class GetDesktopPoolResult:
         if private_access_details and not isinstance(private_access_details, list):
             raise TypeError("Expected argument 'private_access_details' to be a list")
         pulumi.set(__self__, "private_access_details", private_access_details)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if session_lifecycle_actions and not isinstance(session_lifecycle_actions, list):
             raise TypeError("Expected argument 'session_lifecycle_actions' to be a list")
         pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
@@ -288,6 +291,14 @@ class GetDesktopPoolResult:
         return pulumi.get(self, "private_access_details")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
     def session_lifecycle_actions(self) -> Sequence['outputs.GetDesktopPoolSessionLifecycleActionResult']:
         """
@@ -404,6 +415,7 @@ class AwaitableGetDesktopPoolResult(GetDesktopPoolResult):
             network_configurations=self.network_configurations,
             nsg_ids=self.nsg_ids,
             private_access_details=self.private_access_details,
+            security_attributes=self.security_attributes,
             session_lifecycle_actions=self.session_lifecycle_actions,
             shape_configs=self.shape_configs,
             shape_name=self.shape_name,
@@ -463,6 +475,7 @@ def get_desktop_pool(desktop_pool_id: Optional[_builtins.str] = None,
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_access_details=pulumi.get(__ret__, 'private_access_details'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         session_lifecycle_actions=pulumi.get(__ret__, 'session_lifecycle_actions'),
         shape_configs=pulumi.get(__ret__, 'shape_configs'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
@@ -519,6 +532,7 @@ def get_desktop_pool_output(desktop_pool_id: pulumi.Input[Optional[_builtins.str
         network_configurations=pulumi.get(__response__, 'network_configurations'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         private_access_details=pulumi.get(__response__, 'private_access_details'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         session_lifecycle_actions=pulumi.get(__response__, 'session_lifecycle_actions'),
         shape_configs=pulumi.get(__response__, 'shape_configs'),
         shape_name=pulumi.get(__response__, 'shape_name'),

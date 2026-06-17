@@ -8,9 +8,12 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Psql.inputs.DbSystemCredentialsArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemInstanceArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
+import com.pulumi.oci.Psql.inputs.DbSystemKerberosAuthDetailsArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemNetworkDetailsArgs;
+import com.pulumi.oci.Psql.inputs.DbSystemOdspInsightDetailsArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
+import com.pulumi.oci.Psql.inputs.DbSystemReplicationConfigArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
 import java.lang.Integer;
@@ -39,6 +42,21 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> adminUsername() {
         return Optional.ofNullable(this.adminUsername);
+    }
+
+    /**
+     * Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     * 
+     */
+    @Import(name="applyChangeModeToStandAlone")
+    private @Nullable Output<String> applyChangeModeToStandAlone;
+
+    /**
+     * @return Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     * 
+     */
+    public Optional<Output<String>> applyChangeModeToStandAlone() {
+        return Optional.ofNullable(this.applyChangeModeToStandAlone);
     }
 
     /**
@@ -252,6 +270,21 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Kerberos Authentication details for the database system.
+     * 
+     */
+    @Import(name="kerberosAuthDetails")
+    private @Nullable Output<DbSystemKerberosAuthDetailsArgs> kerberosAuthDetails;
+
+    /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    public Optional<Output<DbSystemKerberosAuthDetailsArgs>> kerberosAuthDetails() {
+        return Optional.ofNullable(this.kerberosAuthDetails);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -297,6 +330,21 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) ODSP Insight details for the database system.
+     * 
+     */
+    @Import(name="odspInsightDetails")
+    private @Nullable Output<DbSystemOdspInsightDetailsArgs> odspInsightDetails;
+
+    /**
+     * @return (Updatable) ODSP Insight details for the database system.
+     * 
+     */
+    public Optional<Output<DbSystemOdspInsightDetailsArgs>> odspInsightDetails() {
+        return Optional.ofNullable(this.odspInsightDetails);
+    }
+
+    /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
@@ -309,6 +357,25 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<DbSystemPatchOperationArgs>>> patchOperations() {
         return Optional.ofNullable(this.patchOperations);
+    }
+
+    /**
+     * (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     * 
+     * This configuration does not have any effect on database systems with other roles.
+     * 
+     */
+    @Import(name="replicationConfig")
+    private @Nullable Output<DbSystemReplicationConfigArgs> replicationConfig;
+
+    /**
+     * @return (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     * 
+     * This configuration does not have any effect on database systems with other roles.
+     * 
+     */
+    public Optional<Output<DbSystemReplicationConfigArgs>> replicationConfig() {
+        return Optional.ofNullable(this.replicationConfig);
     }
 
     /**
@@ -342,14 +409,20 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the database system.
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the database system.
+     * @return (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> state() {
@@ -372,6 +445,21 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Type of the database system.
+     * 
+     */
+    @Import(name="systemRole")
+    private @Nullable Output<String> systemRole;
+
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    public Optional<Output<String>> systemRole() {
+        return Optional.ofNullable(this.systemRole);
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -389,18 +477,12 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     /**
      * Type of the database system.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="systemType")
     private @Nullable Output<String> systemType;
 
     /**
      * @return Type of the database system.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> systemType() {
@@ -441,6 +523,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
 
     private DbSystemState(DbSystemState $) {
         this.adminUsername = $.adminUsername;
+        this.applyChangeModeToStandAlone = $.applyChangeModeToStandAlone;
         this.applyConfig = $.applyConfig;
         this.compartmentId = $.compartmentId;
         this.configId = $.configId;
@@ -455,14 +538,18 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         this.instanceOcpuCount = $.instanceOcpuCount;
         this.instances = $.instances;
         this.instancesDetails = $.instancesDetails;
+        this.kerberosAuthDetails = $.kerberosAuthDetails;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managementPolicy = $.managementPolicy;
         this.networkDetails = $.networkDetails;
+        this.odspInsightDetails = $.odspInsightDetails;
         this.patchOperations = $.patchOperations;
+        this.replicationConfig = $.replicationConfig;
         this.shape = $.shape;
         this.source = $.source;
         this.state = $.state;
         this.storageDetails = $.storageDetails;
+        this.systemRole = $.systemRole;
         this.systemTags = $.systemTags;
         this.systemType = $.systemType;
         this.timeCreated = $.timeCreated;
@@ -506,6 +593,27 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder adminUsername(String adminUsername) {
             return adminUsername(Output.of(adminUsername));
+        }
+
+        /**
+         * @param applyChangeModeToStandAlone Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyChangeModeToStandAlone(@Nullable Output<String> applyChangeModeToStandAlone) {
+            $.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
+            return this;
+        }
+
+        /**
+         * @param applyChangeModeToStandAlone Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyChangeModeToStandAlone(String applyChangeModeToStandAlone) {
+            return applyChangeModeToStandAlone(Output.of(applyChangeModeToStandAlone));
         }
 
         /**
@@ -823,6 +931,27 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param kerberosAuthDetails Kerberos Authentication details for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberosAuthDetails(@Nullable Output<DbSystemKerberosAuthDetailsArgs> kerberosAuthDetails) {
+            $.kerberosAuthDetails = kerberosAuthDetails;
+            return this;
+        }
+
+        /**
+         * @param kerberosAuthDetails Kerberos Authentication details for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kerberosAuthDetails(DbSystemKerberosAuthDetailsArgs kerberosAuthDetails) {
+            return kerberosAuthDetails(Output.of(kerberosAuthDetails));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
          * @return builder
@@ -886,6 +1015,27 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param odspInsightDetails (Updatable) ODSP Insight details for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odspInsightDetails(@Nullable Output<DbSystemOdspInsightDetailsArgs> odspInsightDetails) {
+            $.odspInsightDetails = odspInsightDetails;
+            return this;
+        }
+
+        /**
+         * @param odspInsightDetails (Updatable) ODSP Insight details for the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder odspInsightDetails(DbSystemOdspInsightDetailsArgs odspInsightDetails) {
+            return odspInsightDetails(Output.of(odspInsightDetails));
+        }
+
+        /**
          * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
          * 
          * @return builder
@@ -914,6 +1064,31 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder patchOperations(DbSystemPatchOperationArgs... patchOperations) {
             return patchOperations(List.of(patchOperations));
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+         * 
+         * This configuration does not have any effect on database systems with other roles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(@Nullable Output<DbSystemReplicationConfigArgs> replicationConfig) {
+            $.replicationConfig = replicationConfig;
+            return this;
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+         * 
+         * This configuration does not have any effect on database systems with other roles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(DbSystemReplicationConfigArgs replicationConfig) {
+            return replicationConfig(Output.of(replicationConfig));
         }
 
         /**
@@ -959,7 +1134,10 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the database system.
+         * @param state (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -970,7 +1148,10 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the database system.
+         * @param state (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -1001,6 +1182,27 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param systemRole Type of the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemRole(@Nullable Output<String> systemRole) {
+            $.systemRole = systemRole;
+            return this;
+        }
+
+        /**
+         * @param systemRole Type of the database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemRole(String systemRole) {
+            return systemRole(Output.of(systemRole));
+        }
+
+        /**
          * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
          * 
          * @return builder
@@ -1024,9 +1226,6 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param systemType Type of the database system.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -1037,9 +1236,6 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemType Type of the database system.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

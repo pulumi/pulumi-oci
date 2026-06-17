@@ -126,6 +126,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         }
 
         /// <summary>
+        /// The number of days since when the user wants to search .
+        /// </summary>
+        [Input("numDays")]
+        public int? NumDays { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given ResourceName.
         /// </summary>
         [Input("resourceName")]
@@ -176,6 +182,12 @@ namespace Pulumi.Oci.OperatorAccessControl
             get => _filters ?? (_filters = new InputList<Inputs.GetAccessRequestsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// The number of days since when the user wants to search .
+        /// </summary>
+        [Input("numDays")]
+        public Input<int>? NumDays { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given ResourceName.
@@ -230,6 +242,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly int? NumDays;
         /// <summary>
         /// The name of the target resource.
         /// </summary>
@@ -255,6 +268,8 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string id,
 
+            int? numDays,
+
             string? resourceName,
 
             string? resourceType,
@@ -269,6 +284,7 @@ namespace Pulumi.Oci.OperatorAccessControl
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            NumDays = numDays;
             ResourceName = resourceName;
             ResourceType = resourceType;
             State = state;

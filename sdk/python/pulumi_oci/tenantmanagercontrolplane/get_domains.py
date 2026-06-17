@@ -57,6 +57,9 @@ class GetDomainsResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the tenancy that has started the registration process for this domain.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property

@@ -74,6 +74,16 @@ type GetOpensearchClusterResult struct {
 	// The OCID of the compartment where the cluster is located.
 	CompartmentId                   string `pulumi:"compartmentId"`
 	ConfigureOutboundClusterTrigger int    `pulumi:"configureOutboundClusterTrigger"`
+	// The number of coordinator nodes configured for the cluster.
+	CoordinatorNodeCount int `pulumi:"coordinatorNodeCount"`
+	// The amount of memory in GB, for the cluster's coordinator nodes.
+	CoordinatorNodeHostMemoryGb int `pulumi:"coordinatorNodeHostMemoryGb"`
+	// The number of OCPUs configured for the cluster's coordinator nodes.
+	CoordinatorNodeHostOcpuCount int `pulumi:"coordinatorNodeHostOcpuCount"`
+	// The node shape for the cluster's coordinator nodes.
+	CoordinatorNodeHostShape string `pulumi:"coordinatorNodeHostShape"`
+	// The instance type for the cluster's coordinator nodes.
+	CoordinatorNodeHostType string `pulumi:"coordinatorNodeHostType"`
 	// The number of data nodes configured for the cluster.
 	DataNodeCount int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
@@ -254,6 +264,31 @@ func (o GetOpensearchClusterResultOutput) CompartmentId() pulumi.StringOutput {
 
 func (o GetOpensearchClusterResultOutput) ConfigureOutboundClusterTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.ConfigureOutboundClusterTrigger }).(pulumi.IntOutput)
+}
+
+// The number of coordinator nodes configured for the cluster.
+func (o GetOpensearchClusterResultOutput) CoordinatorNodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.CoordinatorNodeCount }).(pulumi.IntOutput)
+}
+
+// The amount of memory in GB, for the cluster's coordinator nodes.
+func (o GetOpensearchClusterResultOutput) CoordinatorNodeHostMemoryGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.CoordinatorNodeHostMemoryGb }).(pulumi.IntOutput)
+}
+
+// The number of OCPUs configured for the cluster's coordinator nodes.
+func (o GetOpensearchClusterResultOutput) CoordinatorNodeHostOcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.CoordinatorNodeHostOcpuCount }).(pulumi.IntOutput)
+}
+
+// The node shape for the cluster's coordinator nodes.
+func (o GetOpensearchClusterResultOutput) CoordinatorNodeHostShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.CoordinatorNodeHostShape }).(pulumi.StringOutput)
+}
+
+// The instance type for the cluster's coordinator nodes.
+func (o GetOpensearchClusterResultOutput) CoordinatorNodeHostType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.CoordinatorNodeHostType }).(pulumi.StringOutput)
 }
 
 // The number of data nodes configured for the cluster.

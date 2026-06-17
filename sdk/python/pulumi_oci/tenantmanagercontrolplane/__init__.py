@@ -14,6 +14,8 @@ from .get_domain_governance import *
 from .get_domain_governances import *
 from .get_domains import *
 from .get_link import *
+from .get_link_features import *
+from .get_link_tenancy_name import *
 from .get_links import *
 from .get_organization import *
 from .get_organization_tenancies import *

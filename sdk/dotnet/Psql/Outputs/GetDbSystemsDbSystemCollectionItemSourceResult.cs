@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly bool IsHavingRestoreConfigOverrides;
         /// <summary>
+        /// The [OCID] of the primary database system.
+        /// </summary>
+        public readonly string PrimaryDbSystemId;
+        /// <summary>
         /// The source descriminator.
         /// </summary>
         public readonly string SourceType;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.Psql.Outputs
 
             bool isHavingRestoreConfigOverrides,
 
+            string primaryDbSystemId,
+
             string sourceType)
         {
             BackupId = backupId;
             IsHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            PrimaryDbSystemId = primaryDbSystemId;
             SourceType = sourceType;
         }
     }

@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The database system administrator username.
         /// </summary>
         public readonly string AdminUsername;
+        public readonly string ApplyChangeModeToStandAlone;
         public readonly string ApplyConfig;
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -26,6 +27,9 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         /// </summary>
         public readonly string ConfigId;
+        /// <summary>
+        /// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemCredentialResult> Credentials;
         /// <summary>
         /// The major and minor versions of the database system software.
@@ -69,6 +73,10 @@ namespace Pulumi.Oci.Psql.Outputs
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemInstanceResult> Instances;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemInstancesDetailResult> InstancesDetails;
         /// <summary>
+        /// Kerberos Authentication details for the database system.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult> KerberosAuthDetails;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -80,7 +88,15 @@ namespace Pulumi.Oci.Psql.Outputs
         /// Network details for the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult> NetworkDetails;
+        /// <summary>
+        /// ODSP Insight details for the database system.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult> OdspInsightDetails;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult> PatchOperations;
+        /// <summary>
+        /// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemReplicationConfigResult> ReplicationConfigs;
         /// <summary>
         /// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
         /// </summary>
@@ -97,6 +113,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// Storage details of the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult> StorageDetails;
+        /// <summary>
+        /// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+        /// </summary>
+        public readonly string SystemRole;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
@@ -117,6 +137,8 @@ namespace Pulumi.Oci.Psql.Outputs
         [OutputConstructor]
         private GetDbSystemsDbSystemCollectionItemResult(
             string adminUsername,
+
+            string applyChangeModeToStandAlone,
 
             string applyConfig,
 
@@ -148,13 +170,19 @@ namespace Pulumi.Oci.Psql.Outputs
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemInstancesDetailResult> instancesDetails,
 
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetailResult> kerberosAuthDetails,
+
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyResult> managementPolicies,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemNetworkDetailResult> networkDetails,
 
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult> odspInsightDetails,
+
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemPatchOperationResult> patchOperations,
+
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemReplicationConfigResult> replicationConfigs,
 
             string shape,
 
@@ -163,6 +191,8 @@ namespace Pulumi.Oci.Psql.Outputs
             string state,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult> storageDetails,
+
+            string systemRole,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -173,6 +203,7 @@ namespace Pulumi.Oci.Psql.Outputs
             string timeUpdated)
         {
             AdminUsername = adminUsername;
+            ApplyChangeModeToStandAlone = applyChangeModeToStandAlone;
             ApplyConfig = applyConfig;
             CompartmentId = compartmentId;
             ConfigId = configId;
@@ -188,14 +219,18 @@ namespace Pulumi.Oci.Psql.Outputs
             InstanceOcpuCount = instanceOcpuCount;
             Instances = instances;
             InstancesDetails = instancesDetails;
+            KerberosAuthDetails = kerberosAuthDetails;
             LifecycleDetails = lifecycleDetails;
             ManagementPolicies = managementPolicies;
             NetworkDetails = networkDetails;
+            OdspInsightDetails = odspInsightDetails;
             PatchOperations = patchOperations;
+            ReplicationConfigs = replicationConfigs;
             Shape = shape;
             Sources = sources;
             State = state;
             StorageDetails = storageDetails;
+            SystemRole = systemRole;
             SystemTags = systemTags;
             SystemType = systemType;
             TimeCreated = timeCreated;

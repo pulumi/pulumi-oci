@@ -79,6 +79,8 @@ type LookupMigrationResult struct {
 	MigrationType string `pulumi:"migrationType"`
 	// Replication schedule identifier
 	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of migration.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -175,6 +177,11 @@ func (o LookupMigrationResultOutput) MigrationType() pulumi.StringOutput {
 // Replication schedule identifier
 func (o LookupMigrationResultOutput) ReplicationScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMigrationResult) string { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupMigrationResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of migration.

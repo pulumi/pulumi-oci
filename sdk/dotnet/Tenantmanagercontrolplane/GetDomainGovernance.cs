@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
     public sealed class GetDomainGovernanceResult
     {
         /// <summary>
+        /// The OCID of the tenancy that owns this domain governance entity.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -179,6 +183,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
 
         [OutputConstructor]
         private GetDomainGovernanceResult(
+            string compartmentId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string domainGovernanceId,
@@ -207,6 +213,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
 
             string timeUpdated)
         {
+            CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DomainGovernanceId = domainGovernanceId;
             DomainId = domainId;

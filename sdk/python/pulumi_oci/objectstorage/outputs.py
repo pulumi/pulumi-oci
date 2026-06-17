@@ -1679,6 +1679,7 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
                  nsg_ids: Sequence[_builtins.str],
                  prefix: _builtins.str,
                  private_endpoint_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  time_created: _builtins.str,
@@ -1697,6 +1698,7 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "prefix", prefix)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
@@ -1771,6 +1773,11 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> _builtins.str:
         return pulumi.get(self, "private_endpoint_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

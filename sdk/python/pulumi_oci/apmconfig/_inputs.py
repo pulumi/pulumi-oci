@@ -33,6 +33,8 @@ __all__ = [
     'ConfigRuleArgsDict',
     'GetConfigsFilterArgs',
     'GetConfigsFilterArgsDict',
+    'GetDataFilesFilterArgs',
+    'GetDataFilesFilterArgsDict',
 ]
 
 class ConfigConfigArgsDict(TypedDict):
@@ -614,6 +616,59 @@ class GetConfigsFilterArgs:
     def name(self) -> _builtins.str:
         """
         The name of the metric. This must be a known metric name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDataFilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDataFilesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return resources that match the specified name. Supports regular expressions to filter data files.
         """
         return pulumi.get(self, "name")
 

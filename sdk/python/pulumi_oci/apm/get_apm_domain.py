@@ -26,7 +26,7 @@ class GetApmDomainResult:
     """
     A collection of values returned by getApmDomain.
     """
-    def __init__(__self__, apm_domain_id=None, compartment_id=None, data_upload_endpoint=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_free_tier=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, apm_domain_id=None, compartment_id=None, data_upload_endpoint=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_free_tier=None, log_group_id=None, state=None, time_created=None, time_updated=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -54,6 +54,9 @@ class GetApmDomainResult:
         if is_free_tier and not isinstance(is_free_tier, bool):
             raise TypeError("Expected argument 'is_free_tier' to be a bool")
         pulumi.set(__self__, "is_free_tier", is_free_tier)
+        if log_group_id and not isinstance(log_group_id, str):
+            raise TypeError("Expected argument 'log_group_id' to be a str")
+        pulumi.set(__self__, "log_group_id", log_group_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -134,6 +137,14 @@ class GetApmDomainResult:
         return pulumi.get(self, "is_free_tier")
 
     @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -173,6 +184,7 @@ class AwaitableGetApmDomainResult(GetApmDomainResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_free_tier=self.is_free_tier,
+            log_group_id=self.log_group_id,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -195,7 +207,7 @@ def get_apm_domain(apm_domain_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str apm_domain_id: The OCID of the APM domain
+    :param _builtins.str apm_domain_id: The OCID of the APM domain.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -212,6 +224,7 @@ def get_apm_domain(apm_domain_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
+        log_group_id=pulumi.get(__ret__, 'log_group_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -232,7 +245,7 @@ def get_apm_domain_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] =
     ```
 
 
-    :param _builtins.str apm_domain_id: The OCID of the APM domain
+    :param _builtins.str apm_domain_id: The OCID of the APM domain.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -248,6 +261,7 @@ def get_apm_domain_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] =
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_free_tier=pulumi.get(__response__, 'is_free_tier'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

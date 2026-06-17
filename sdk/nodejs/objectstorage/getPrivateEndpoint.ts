@@ -40,6 +40,7 @@ export interface GetPrivateEndpointResult {
     readonly nsgIds: string[];
     readonly prefix: string;
     readonly privateEndpointIp: string;
+    readonly securityAttributes: {[key: string]: string};
     readonly state: string;
     readonly subnetId: string;
     readonly timeCreated: string;

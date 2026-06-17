@@ -12,6 +12,12 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
     public sealed class NodePoolNodeConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the Compute Cluster to be associated with the worker node instance.
+        /// </summary>
+        [Input("computeClusterId")]
+        public Input<string>? ComputeClusterId { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

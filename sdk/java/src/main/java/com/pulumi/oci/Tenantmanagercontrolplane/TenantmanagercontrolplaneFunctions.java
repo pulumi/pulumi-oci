@@ -23,7 +23,11 @@ import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainPlainArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetDomainsPlainArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkArgs;
+import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesPlainArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkPlainArgs;
+import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNamePlainArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinksPlainArgs;
 import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetOrganizationArgs;
@@ -61,7 +65,9 @@ import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetDomainGovernanceResul
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetDomainGovernancesResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetDomainResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetDomainsResult;
+import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetLinkFeaturesResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetLinkResult;
+import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetLinkTenancyNameResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetLinksResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetOrganizationResult;
 import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetOrganizationTenanciesResult;
@@ -1812,6 +1818,426 @@ public final class TenantmanagercontrolplaneFunctions {
         return Deployment.getInstance().invokeAsync("oci:Tenantmanagercontrolplane/getLink:getLink", TypeShape.of(GetLinkResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Return a list of link features.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkFeatures = TenantmanagercontrolplaneFunctions.getLinkFeatures(GetLinkFeaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkFeaturesResult> getLinkFeatures(GetLinkFeaturesArgs args) {
+        return getLinkFeatures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Return a list of link features.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkFeatures = TenantmanagercontrolplaneFunctions.getLinkFeatures(GetLinkFeaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLinkFeaturesResult> getLinkFeaturesPlain(GetLinkFeaturesPlainArgs args) {
+        return getLinkFeaturesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Return a list of link features.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkFeatures = TenantmanagercontrolplaneFunctions.getLinkFeatures(GetLinkFeaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkFeaturesResult> getLinkFeatures(GetLinkFeaturesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Tenantmanagercontrolplane/getLinkFeatures:getLinkFeatures", TypeShape.of(GetLinkFeaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Return a list of link features.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkFeatures = TenantmanagercontrolplaneFunctions.getLinkFeatures(GetLinkFeaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkFeaturesResult> getLinkFeatures(GetLinkFeaturesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Tenantmanagercontrolplane/getLinkFeatures:getLinkFeatures", TypeShape.of(GetLinkFeaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Link Features in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Return a list of link features.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkFeaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkFeatures = TenantmanagercontrolplaneFunctions.getLinkFeatures(GetLinkFeaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLinkFeaturesResult> getLinkFeaturesPlain(GetLinkFeaturesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Tenantmanagercontrolplane/getLinkFeatures:getLinkFeatures", TypeShape.of(GetLinkFeaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Link Tenancy Name resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Gets information about the link along with the parent and child tenancy names.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
+     *             .linkId(testLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkTenancyNameResult> getLinkTenancyName(GetLinkTenancyNameArgs args) {
+        return getLinkTenancyName(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Link Tenancy Name resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Gets information about the link along with the parent and child tenancy names.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
+     *             .linkId(testLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLinkTenancyNameResult> getLinkTenancyNamePlain(GetLinkTenancyNamePlainArgs args) {
+        return getLinkTenancyNamePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Link Tenancy Name resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Gets information about the link along with the parent and child tenancy names.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
+     *             .linkId(testLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkTenancyNameResult> getLinkTenancyName(GetLinkTenancyNameArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Tenantmanagercontrolplane/getLinkTenancyName:getLinkTenancyName", TypeShape.of(GetLinkTenancyNameResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Link Tenancy Name resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Gets information about the link along with the parent and child tenancy names.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
+     *             .linkId(testLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLinkTenancyNameResult> getLinkTenancyName(GetLinkTenancyNameArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Tenantmanagercontrolplane/getLinkTenancyName:getLinkTenancyName", TypeShape.of(GetLinkTenancyNameResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Link Tenancy Name resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
+     * 
+     * Gets information about the link along with the parent and child tenancy names.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.TenantmanagercontrolplaneFunctions;
+     * import com.pulumi.oci.Tenantmanagercontrolplane.inputs.GetLinkTenancyNameArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
+     *             .linkId(testLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLinkTenancyNameResult> getLinkTenancyNamePlain(GetLinkTenancyNamePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Tenantmanagercontrolplane/getLinkTenancyName:getLinkTenancyName", TypeShape.of(GetLinkTenancyNameResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Links in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
      * 
      * Return a (paginated) list of links.
@@ -1842,6 +2268,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -1886,6 +2313,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -1930,6 +2358,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -1974,6 +2403,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -2018,6 +2448,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -2062,6 +2493,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());
@@ -2106,6 +2538,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
      *             .childTenancyId(testTenancy.id())
+     *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.id())
      *             .state(linkState)
      *             .build());

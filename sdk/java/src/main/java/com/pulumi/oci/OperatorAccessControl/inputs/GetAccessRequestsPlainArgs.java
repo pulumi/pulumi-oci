@@ -6,6 +6,7 @@ package com.pulumi.oci.OperatorAccessControl.inputs;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -37,6 +38,21 @@ public final class GetAccessRequestsPlainArgs extends com.pulumi.resources.Invok
 
     public Optional<List<GetAccessRequestsFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * The number of days since when the user wants to search .
+     * 
+     */
+    @Import(name="numDays")
+    private @Nullable Integer numDays;
+
+    /**
+     * @return The number of days since when the user wants to search .
+     * 
+     */
+    public Optional<Integer> numDays() {
+        return Optional.ofNullable(this.numDays);
     }
 
     /**
@@ -119,6 +135,7 @@ public final class GetAccessRequestsPlainArgs extends com.pulumi.resources.Invok
     private GetAccessRequestsPlainArgs(GetAccessRequestsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.numDays = $.numDays;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
         this.state = $.state;
@@ -162,6 +179,17 @@ public final class GetAccessRequestsPlainArgs extends com.pulumi.resources.Invok
 
         public Builder filters(GetAccessRequestsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param numDays The number of days since when the user wants to search .
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numDays(@Nullable Integer numDays) {
+            $.numDays = numDays;
+            return this;
         }
 
         /**

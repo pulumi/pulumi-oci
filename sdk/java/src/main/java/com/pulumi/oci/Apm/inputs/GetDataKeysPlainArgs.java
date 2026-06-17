@@ -18,14 +18,14 @@ public final class GetDataKeysPlainArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetDataKeysPlainArgs Empty = new GetDataKeysPlainArgs();
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private String apmDomainId;
 
     /**
-     * @return The OCID of the APM domain
+     * @return The OCID of the APM domain.
      * 
      */
     public String apmDomainId() {
@@ -81,7 +81,7 @@ public final class GetDataKeysPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param apmDomainId The OCID of the APM domain
+         * @param apmDomainId The OCID of the APM domain.
          * 
          * @return builder
          * 

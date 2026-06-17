@@ -19,6 +19,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigDetails {
     /**
+     * @return The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    private @Nullable String computeClusterId;
+    /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -62,6 +67,13 @@ public final class NodePoolNodeConfigDetails {
     private Integer size;
 
     private NodePoolNodeConfigDetails() {}
+    /**
+     * @return The OCID of the Compute Cluster to be associated with the worker node instance.
+     * 
+     */
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
+    }
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -130,6 +142,7 @@ public final class NodePoolNodeConfigDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String computeClusterId;
         private @Nullable Map<String,String> definedTags;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
@@ -141,6 +154,7 @@ public final class NodePoolNodeConfigDetails {
         public Builder() {}
         public Builder(NodePoolNodeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
@@ -151,6 +165,12 @@ public final class NodePoolNodeConfigDetails {
     	      this.size = defaults.size;
         }
 
+        @CustomType.Setter
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+
+            this.computeClusterId = computeClusterId;
+            return this;
+        }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
@@ -211,6 +231,7 @@ public final class NodePoolNodeConfigDetails {
         }
         public NodePoolNodeConfigDetails build() {
             final var _resultValue = new NodePoolNodeConfigDetails();
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;

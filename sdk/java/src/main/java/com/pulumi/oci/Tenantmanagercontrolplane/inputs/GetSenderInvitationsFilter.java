@@ -17,9 +17,17 @@ public final class GetSenderInvitationsFilter extends com.pulumi.resources.Invok
 
     public static final GetSenderInvitationsFilter Empty = new GetSenderInvitationsFilter();
 
+    /**
+     * Name of the feature.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return Name of the feature.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetSenderInvitationsFilter extends com.pulumi.resources.Invok
             $ = new GetSenderInvitationsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the feature.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

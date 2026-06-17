@@ -12,9 +12,12 @@ import com.pulumi.oci.Psql.inputs.DbSystemState;
 import com.pulumi.oci.Psql.outputs.DbSystemCredentials;
 import com.pulumi.oci.Psql.outputs.DbSystemInstance;
 import com.pulumi.oci.Psql.outputs.DbSystemInstancesDetail;
+import com.pulumi.oci.Psql.outputs.DbSystemKerberosAuthDetails;
 import com.pulumi.oci.Psql.outputs.DbSystemManagementPolicy;
 import com.pulumi.oci.Psql.outputs.DbSystemNetworkDetails;
+import com.pulumi.oci.Psql.outputs.DbSystemOdspInsightDetails;
 import com.pulumi.oci.Psql.outputs.DbSystemPatchOperation;
+import com.pulumi.oci.Psql.outputs.DbSystemReplicationConfig;
 import com.pulumi.oci.Psql.outputs.DbSystemSource;
 import com.pulumi.oci.Psql.outputs.DbSystemStorageDetails;
 import com.pulumi.oci.Utilities;
@@ -32,111 +35,6 @@ import javax.annotation.Nullable;
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
  * 
  * Creates a new database system.
- * 
- * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Psql.DbSystem;
- * import com.pulumi.oci.Psql.DbSystemArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemCredentialsArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemCredentialsPasswordDetailsArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemNetworkDetailsArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemInstancesDetailArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyCopyPolicyArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
- * import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
- * import java.util.ArrayList;
- * import java.util.Arrays;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()
- *             .compartmentId(compartmentId)
- *             .credentials(DbSystemCredentialsArgs.builder()
- *                 .passwordDetails(DbSystemCredentialsPasswordDetailsArgs.builder()
- *                     .passwordType(dbSystemCredentialsPasswordDetailsPasswordType)
- *                     .password(dbSystemCredentialsPasswordDetailsPassword)
- *                     .secretId(testSecret.id())
- *                     .secretVersion(dbSystemCredentialsPasswordDetailsSecretVersion)
- *                     .build())
- *                 .username(dbSystemCredentialsUsername)
- *                 .build())
- *             .dbVersion(dbSystemDbVersion)
- *             .displayName(dbSystemDisplayName)
- *             .networkDetails(DbSystemNetworkDetailsArgs.builder()
- *                 .subnetId(testSubnet.id())
- *                 .isReaderEndpointEnabled(dbSystemNetworkDetailsIsReaderEndpointEnabled)
- *                 .nsgIds(dbSystemNetworkDetailsNsgIds)
- *                 .primaryDbEndpointPrivateIp(dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp)
- *                 .build())
- *             .shape(dbSystemShape)
- *             .storageDetails(DbSystemStorageDetailsArgs.builder()
- *                 .isRegionallyDurable(dbSystemStorageDetailsIsRegionallyDurable)
- *                 .systemType(dbSystemStorageDetailsSystemType)
- *                 .availabilityDomain(dbSystemStorageDetailsAvailabilityDomain)
- *                 .iops(dbSystemStorageDetailsIops)
- *                 .build())
- *             .configId(testConfig.id())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .description(dbSystemDescription)
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .instanceCount(dbSystemInstanceCount)
- *             .instanceMemorySizeInGbs(dbSystemInstanceMemorySizeInGbs)
- *             .instanceOcpuCount(dbSystemInstanceOcpuCount)
- *             .instancesDetails(DbSystemInstancesDetailArgs.builder()
- *                 .description(dbSystemInstancesDetailsDescription)
- *                 .displayName(dbSystemInstancesDetailsDisplayName)
- *                 .privateIp(dbSystemInstancesDetailsPrivateIp)
- *                 .build())
- *             .managementPolicy(DbSystemManagementPolicyArgs.builder()
- *                 .backupPolicy(DbSystemManagementPolicyBackupPolicyArgs.builder()
- *                     .backupStart(dbSystemManagementPolicyBackupPolicyBackupStart)
- *                     .copyPolicy(DbSystemManagementPolicyBackupPolicyCopyPolicyArgs.builder()
- *                         .compartmentId(compartmentId)
- *                         .regions(dbSystemManagementPolicyBackupPolicyCopyPolicyRegions)
- *                         .retentionPeriod(dbSystemManagementPolicyBackupPolicyCopyPolicyRetentionPeriod)
- *                         .build())
- *                     .daysOfTheMonths(dbSystemManagementPolicyBackupPolicyDaysOfTheMonth)
- *                     .daysOfTheWeeks(dbSystemManagementPolicyBackupPolicyDaysOfTheWeek)
- *                     .kind(dbSystemManagementPolicyBackupPolicyKind)
- *                     .retentionDays(dbSystemManagementPolicyBackupPolicyRetentionDays)
- *                     .build())
- *                 .maintenanceWindowStart(dbSystemManagementPolicyMaintenanceWindowStart)
- *                 .build())
- *             .source(DbSystemSourceArgs.builder()
- *                 .sourceType(dbSystemSourceSourceType)
- *                 .backupId(testBackup.id())
- *                 .isHavingRestoreConfigOverrides(dbSystemSourceIsHavingRestoreConfigOverrides)
- *                 .build())
- *             .systemType(dbSystemSystemType)
- *             .patchOperations(DbSystemPatchOperationArgs.builder()
- *                 .operation(dbSystemPatchOperationsOperation)
- *                 .selection(dbSystemPatchOperationsSelection)
- *                 .value(dbSystemPatchOperationsValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * 
  * ## Import
  * 
@@ -162,6 +60,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> adminUsername() {
         return this.adminUsername;
+    }
+    /**
+     * Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     * 
+     */
+    @Export(name="applyChangeModeToStandAlone", refs={String.class}, tree="[0]")
+    private Output<String> applyChangeModeToStandAlone;
+
+    /**
+     * @return Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
+     * 
+     */
+    public Output<String> applyChangeModeToStandAlone() {
+        return this.applyChangeModeToStandAlone;
     }
     /**
      * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
@@ -210,14 +122,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="credentials", refs={DbSystemCredentials.class}, tree="[0]")
-    private Output</* @Nullable */ DbSystemCredentials> credentials;
+    private Output<DbSystemCredentials> credentials;
 
     /**
      * @return Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      * 
      */
-    public Output<Optional<DbSystemCredentials>> credentials() {
-        return Codegen.optional(this.credentials);
+    public Output<DbSystemCredentials> credentials() {
+        return this.credentials;
     }
     /**
      * Version of database system software.
@@ -360,6 +272,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.instancesDetails;
     }
     /**
+     * Kerberos Authentication details for the database system.
+     * 
+     */
+    @Export(name="kerberosAuthDetails", refs={DbSystemKerberosAuthDetails.class}, tree="[0]")
+    private Output</* @Nullable */ DbSystemKerberosAuthDetails> kerberosAuthDetails;
+
+    /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    public Output<Optional<DbSystemKerberosAuthDetails>> kerberosAuthDetails() {
+        return Codegen.optional(this.kerberosAuthDetails);
+    }
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -402,6 +328,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.networkDetails;
     }
     /**
+     * (Updatable) ODSP Insight details for the database system.
+     * 
+     */
+    @Export(name="odspInsightDetails", refs={DbSystemOdspInsightDetails.class}, tree="[0]")
+    private Output</* @Nullable */ DbSystemOdspInsightDetails> odspInsightDetails;
+
+    /**
+     * @return (Updatable) ODSP Insight details for the database system.
+     * 
+     */
+    public Output<Optional<DbSystemOdspInsightDetails>> odspInsightDetails() {
+        return Codegen.optional(this.odspInsightDetails);
+    }
+    /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
@@ -414,6 +354,24 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<DbSystemPatchOperation>>> patchOperations() {
         return Codegen.optional(this.patchOperations);
+    }
+    /**
+     * (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     * 
+     * This configuration does not have any effect on database systems with other roles.
+     * 
+     */
+    @Export(name="replicationConfig", refs={DbSystemReplicationConfig.class}, tree="[0]")
+    private Output<DbSystemReplicationConfig> replicationConfig;
+
+    /**
+     * @return (Updatable) Details of the replication configuration that is applicable when database system gets the  PRIMARY_DB_SYSTEM role.
+     * 
+     * This configuration does not have any effect on database systems with other roles.
+     * 
+     */
+    public Output<DbSystemReplicationConfig> replicationConfig() {
+        return this.replicationConfig;
     }
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
@@ -444,14 +402,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.source;
     }
     /**
-     * The current state of the database system.
+     * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the database system.
+     * @return (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> state() {
@@ -472,6 +436,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.storageDetails;
     }
     /**
+     * Type of the database system.
+     * 
+     */
+    @Export(name="systemRole", refs={String.class}, tree="[0]")
+    private Output<String> systemRole;
+
+    /**
+     * @return Type of the database system.
+     * 
+     */
+    public Output<String> systemRole() {
+        return this.systemRole;
+    }
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -488,18 +466,12 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     /**
      * Type of the database system.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="systemType", refs={String.class}, tree="[0]")
     private Output<String> systemType;
 
     /**
      * @return Type of the database system.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> systemType() {

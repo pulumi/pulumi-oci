@@ -5,6 +5,7 @@ package com.pulumi.oci.Tenantmanagercontrolplane.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Tenantmanagercontrolplane.outputs.GetSenderInvitationInvitationFeature;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,11 @@ public final class GetSenderInvitationResult {
      * 
      */
     private String id;
+    /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    private List<GetSenderInvitationInvitationFeature> invitationFeatures;
     /**
      * @return Email address of the recipient.
      * 
@@ -121,6 +127,13 @@ public final class GetSenderInvitationResult {
         return this.id;
     }
     /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    public List<GetSenderInvitationInvitationFeature> invitationFeatures() {
+        return this.invitationFeatures;
+    }
+    /**
      * @return Email address of the recipient.
      * 
      */
@@ -201,6 +214,7 @@ public final class GetSenderInvitationResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetSenderInvitationInvitationFeature> invitationFeatures;
         private String recipientEmailAddress;
         private String recipientInvitationId;
         private String recipientTenancyId;
@@ -219,6 +233,7 @@ public final class GetSenderInvitationResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.invitationFeatures = defaults.invitationFeatures;
     	      this.recipientEmailAddress = defaults.recipientEmailAddress;
     	      this.recipientInvitationId = defaults.recipientInvitationId;
     	      this.recipientTenancyId = defaults.recipientTenancyId;
@@ -270,6 +285,17 @@ public final class GetSenderInvitationResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder invitationFeatures(List<GetSenderInvitationInvitationFeature> invitationFeatures) {
+            if (invitationFeatures == null) {
+              throw new MissingRequiredPropertyException("GetSenderInvitationResult", "invitationFeatures");
+            }
+            this.invitationFeatures = invitationFeatures;
+            return this;
+        }
+        public Builder invitationFeatures(GetSenderInvitationInvitationFeature... invitationFeatures) {
+            return invitationFeatures(List.of(invitationFeatures));
         }
         @CustomType.Setter
         public Builder recipientEmailAddress(String recipientEmailAddress) {
@@ -361,6 +387,7 @@ public final class GetSenderInvitationResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.invitationFeatures = invitationFeatures;
             _resultValue.recipientEmailAddress = recipientEmailAddress;
             _resultValue.recipientInvitationId = recipientInvitationId;
             _resultValue.recipientTenancyId = recipientTenancyId;

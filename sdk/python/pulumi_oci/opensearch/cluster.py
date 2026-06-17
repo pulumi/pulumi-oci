@@ -42,6 +42,11 @@ class ClusterArgs:
                  vcn_id: pulumi.Input[_builtins.str],
                  certificate_config: pulumi.Input[Optional['ClusterCertificateConfigArgs']] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 coordinator_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -98,6 +103,11 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the cluster's VCN.
         :param pulumi.Input['ClusterCertificateConfigArgs'] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_shape: (Updatable) The node shape for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_type: The instance type for the cluster's coordinator nodes.
         :param pulumi.Input[_builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[_builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -158,6 +168,16 @@ class ClusterArgs:
             pulumi.set(__self__, "certificate_config", certificate_config)
         if configure_outbound_cluster_trigger is not None:
             pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
+        if coordinator_node_count is not None:
+            pulumi.set(__self__, "coordinator_node_count", coordinator_node_count)
+        if coordinator_node_host_memory_gb is not None:
+            pulumi.set(__self__, "coordinator_node_host_memory_gb", coordinator_node_host_memory_gb)
+        if coordinator_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "coordinator_node_host_ocpu_count", coordinator_node_host_ocpu_count)
+        if coordinator_node_host_shape is not None:
+            pulumi.set(__self__, "coordinator_node_host_shape", coordinator_node_host_shape)
+        if coordinator_node_host_type is not None:
+            pulumi.set(__self__, "coordinator_node_host_type", coordinator_node_host_type)
         if data_node_host_bare_metal_shape is not None:
             pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         if data_node_host_shape is not None:
@@ -474,6 +494,66 @@ class ClusterArgs:
     @configure_outbound_cluster_trigger.setter
     def configure_outbound_cluster_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_outbound_cluster_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeCount")
+    def coordinator_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of coordinator nodes configured for the cluster.
+        """
+        return pulumi.get(self, "coordinator_node_count")
+
+    @coordinator_node_count.setter
+    def coordinator_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostMemoryGb")
+    def coordinator_node_host_memory_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_memory_gb")
+
+    @coordinator_node_host_memory_gb.setter
+    def coordinator_node_host_memory_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_host_memory_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostOcpuCount")
+    def coordinator_node_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_ocpu_count")
+
+    @coordinator_node_host_ocpu_count.setter
+    def coordinator_node_host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_host_ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostShape")
+    def coordinator_node_host_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_shape")
+
+    @coordinator_node_host_shape.setter
+    def coordinator_node_host_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "coordinator_node_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostType")
+    def coordinator_node_host_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The instance type for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_type")
+
+    @coordinator_node_host_type.setter
+    def coordinator_node_host_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "coordinator_node_host_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataNodeHostBareMetalShape")
@@ -871,6 +951,11 @@ class _ClusterState:
                  certificate_config: pulumi.Input[Optional['ClusterCertificateConfigArgs']] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 coordinator_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  data_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -940,6 +1025,11 @@ class _ClusterState:
         :param pulumi.Input['ClusterCertificateConfigArgs'] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_shape: (Updatable) The node shape for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_type: The instance type for the cluster's coordinator nodes.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[_builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -1015,6 +1105,16 @@ class _ClusterState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if configure_outbound_cluster_trigger is not None:
             pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
+        if coordinator_node_count is not None:
+            pulumi.set(__self__, "coordinator_node_count", coordinator_node_count)
+        if coordinator_node_host_memory_gb is not None:
+            pulumi.set(__self__, "coordinator_node_host_memory_gb", coordinator_node_host_memory_gb)
+        if coordinator_node_host_ocpu_count is not None:
+            pulumi.set(__self__, "coordinator_node_host_ocpu_count", coordinator_node_host_ocpu_count)
+        if coordinator_node_host_shape is not None:
+            pulumi.set(__self__, "coordinator_node_host_shape", coordinator_node_host_shape)
+        if coordinator_node_host_type is not None:
+            pulumi.set(__self__, "coordinator_node_host_type", coordinator_node_host_type)
         if data_node_count is not None:
             pulumi.set(__self__, "data_node_count", data_node_count)
         if data_node_host_bare_metal_shape is not None:
@@ -1187,6 +1287,66 @@ class _ClusterState:
     @configure_outbound_cluster_trigger.setter
     def configure_outbound_cluster_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "configure_outbound_cluster_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeCount")
+    def coordinator_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of coordinator nodes configured for the cluster.
+        """
+        return pulumi.get(self, "coordinator_node_count")
+
+    @coordinator_node_count.setter
+    def coordinator_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostMemoryGb")
+    def coordinator_node_host_memory_gb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_memory_gb")
+
+    @coordinator_node_host_memory_gb.setter
+    def coordinator_node_host_memory_gb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_host_memory_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostOcpuCount")
+    def coordinator_node_host_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_ocpu_count")
+
+    @coordinator_node_host_ocpu_count.setter
+    def coordinator_node_host_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "coordinator_node_host_ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostShape")
+    def coordinator_node_host_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The node shape for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_shape")
+
+    @coordinator_node_host_shape.setter
+    def coordinator_node_host_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "coordinator_node_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostType")
+    def coordinator_node_host_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The instance type for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_type")
+
+    @coordinator_node_host_type.setter
+    def coordinator_node_host_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "coordinator_node_host_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataNodeCount")
@@ -1946,6 +2106,11 @@ class Cluster(pulumi.CustomResource):
                  certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 coordinator_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  data_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2028,6 +2193,11 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_shape: (Updatable) The node shape for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_type: The instance type for the cluster's coordinator nodes.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[_builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -2133,6 +2303,11 @@ class Cluster(pulumi.CustomResource):
                  certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 coordinator_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 coordinator_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  data_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  data_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2197,6 +2372,11 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["configure_outbound_cluster_trigger"] = configure_outbound_cluster_trigger
+            __props__.__dict__["coordinator_node_count"] = coordinator_node_count
+            __props__.__dict__["coordinator_node_host_memory_gb"] = coordinator_node_host_memory_gb
+            __props__.__dict__["coordinator_node_host_ocpu_count"] = coordinator_node_host_ocpu_count
+            __props__.__dict__["coordinator_node_host_shape"] = coordinator_node_host_shape
+            __props__.__dict__["coordinator_node_host_type"] = coordinator_node_host_type
             if data_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'data_node_count'")
             __props__.__dict__["data_node_count"] = data_node_count
@@ -2312,6 +2492,11 @@ class Cluster(pulumi.CustomResource):
             certificate_config: pulumi.Input[Optional[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             configure_outbound_cluster_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            coordinator_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            coordinator_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            coordinator_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            coordinator_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            coordinator_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
             data_node_count: pulumi.Input[Optional[_builtins.int]] = None,
             data_node_host_bare_metal_shape: pulumi.Input[Optional[_builtins.str]] = None,
             data_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2385,6 +2570,11 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
+        :param pulumi.Input[_builtins.int] coordinator_node_count: (Updatable) The number of coordinator nodes configured for the cluster.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.int] coordinator_node_host_ocpu_count: (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_shape: (Updatable) The node shape for the cluster's coordinator nodes.
+        :param pulumi.Input[_builtins.str] coordinator_node_host_type: The instance type for the cluster's coordinator nodes.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[_builtins.int] data_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
@@ -2460,6 +2650,11 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["certificate_config"] = certificate_config
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["configure_outbound_cluster_trigger"] = configure_outbound_cluster_trigger
+        __props__.__dict__["coordinator_node_count"] = coordinator_node_count
+        __props__.__dict__["coordinator_node_host_memory_gb"] = coordinator_node_host_memory_gb
+        __props__.__dict__["coordinator_node_host_ocpu_count"] = coordinator_node_host_ocpu_count
+        __props__.__dict__["coordinator_node_host_shape"] = coordinator_node_host_shape
+        __props__.__dict__["coordinator_node_host_type"] = coordinator_node_host_type
         __props__.__dict__["data_node_count"] = data_node_count
         __props__.__dict__["data_node_host_bare_metal_shape"] = data_node_host_bare_metal_shape
         __props__.__dict__["data_node_host_memory_gb"] = data_node_host_memory_gb
@@ -2555,6 +2750,46 @@ class Cluster(pulumi.CustomResource):
         (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         """
         return pulumi.get(self, "configure_outbound_cluster_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeCount")
+    def coordinator_node_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of coordinator nodes configured for the cluster.
+        """
+        return pulumi.get(self, "coordinator_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostMemoryGb")
+    def coordinator_node_host_memory_gb(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostOcpuCount")
+    def coordinator_node_host_ocpu_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostShape")
+    def coordinator_node_host_shape(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The node shape for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostType")
+    def coordinator_node_host_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The instance type for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_type")
 
     @_builtins.property
     @pulumi.getter(name="dataNodeCount")

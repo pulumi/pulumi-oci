@@ -428,18 +428,26 @@ class DesktopPoolNetworkConfigurationArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
     """
+    security_attributes: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+    """
 
 @pulumi.input_type
 class DesktopPoolNetworkConfigurationArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 vcn_id: pulumi.Input[_builtins.str]):
+                 vcn_id: pulumi.Input[_builtins.str],
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -465,11 +473,23 @@ class DesktopPoolNetworkConfigurationArgs:
     def vcn_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "vcn_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
     subnet_id: pulumi.Input[_builtins.str]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
     """
     endpoint_fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -483,6 +503,10 @@ class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
     """
     The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
     """
+    security_attributes: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+    """
     vcn_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
@@ -495,12 +519,14 @@ class DesktopPoolPrivateAccessDetailsArgs:
                  endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param pulumi.Input[_builtins.str] endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
         :param pulumi.Input[_builtins.str] private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -510,6 +536,8 @@ class DesktopPoolPrivateAccessDetailsArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if vcn_id is not None:
             pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -517,7 +545,7 @@ class DesktopPoolPrivateAccessDetailsArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -562,6 +590,18 @@ class DesktopPoolPrivateAccessDetailsArgs:
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -577,7 +617,7 @@ class DesktopPoolPrivateAccessDetailsArgs:
 class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
     disconnect: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]]
     """
-    (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+    (Updatable) Action and grace period for disconnect
     """
     inactivity: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]]
     """
@@ -590,7 +630,7 @@ class DesktopPoolSessionLifecycleActionsArgs:
                  disconnect: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']] = None,
                  inactivity: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']] = None):
         """
-        :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+        :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs'] inactivity: (Updatable) Action and grace period for inactivity
         """
         if disconnect is not None:
@@ -602,7 +642,7 @@ class DesktopPoolSessionLifecycleActionsArgs:
     @pulumi.getter
     def disconnect(self) -> pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']]:
         """
-        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+        (Updatable) Action and grace period for disconnect
         """
         return pulumi.get(self, "disconnect")
 
@@ -626,7 +666,7 @@ class DesktopPoolSessionLifecycleActionsArgs:
 class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
     action: pulumi.Input[_builtins.str]
     """
-    (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+    (Updatable) a disconnect action to be triggered
     """
     grace_period_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -639,7 +679,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
                  action: pulumi.Input[_builtins.str],
                  grace_period_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.str] action: (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+        :param pulumi.Input[_builtins.str] action: (Updatable) a disconnect action to be triggered
         :param pulumi.Input[_builtins.int] grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -650,7 +690,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+        (Updatable) a disconnect action to be triggered
         """
         return pulumi.get(self, "action")
 
@@ -674,7 +714,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
 class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
     action: pulumi.Input[_builtins.str]
     """
-    (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+    (Updatable) an inactivity action to be triggered
     """
     grace_period_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -687,7 +727,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
                  action: pulumi.Input[_builtins.str],
                  grace_period_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.str] action: (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+        :param pulumi.Input[_builtins.str] action: (Updatable) an inactivity action to be triggered
         :param pulumi.Input[_builtins.int] grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -698,7 +738,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+        (Updatable) an inactivity action to be triggered
         """
         return pulumi.get(self, "action")
 

@@ -69,6 +69,9 @@ export interface GetDomainsArgs {
  * A collection of values returned by getDomains.
  */
 export interface GetDomainsResult {
+    /**
+     * The OCID of the tenancy that has started the registration process for this domain.
+     */
     readonly compartmentId: string;
     /**
      * The list of domain_collection.

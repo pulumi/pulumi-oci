@@ -37,6 +37,12 @@ __all__ = [
     'DbSystemInstanceArgsDict',
     'DbSystemInstancesDetailArgs',
     'DbSystemInstancesDetailArgsDict',
+    'DbSystemKerberosAuthDetailsArgs',
+    'DbSystemKerberosAuthDetailsArgsDict',
+    'DbSystemKerberosAuthDetailsBackupCredentialArgs',
+    'DbSystemKerberosAuthDetailsBackupCredentialArgsDict',
+    'DbSystemKerberosAuthDetailsCredentialArgs',
+    'DbSystemKerberosAuthDetailsCredentialArgsDict',
     'DbSystemManagementPolicyArgs',
     'DbSystemManagementPolicyArgsDict',
     'DbSystemManagementPolicyBackupPolicyArgs',
@@ -45,8 +51,14 @@ __all__ = [
     'DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict',
     'DbSystemNetworkDetailsArgs',
     'DbSystemNetworkDetailsArgsDict',
+    'DbSystemOdspInsightDetailsArgs',
+    'DbSystemOdspInsightDetailsArgsDict',
+    'DbSystemOdspInsightDetailsOdspInsightListArgs',
+    'DbSystemOdspInsightDetailsOdspInsightListArgsDict',
     'DbSystemPatchOperationArgs',
     'DbSystemPatchOperationArgsDict',
+    'DbSystemReplicationConfigArgs',
+    'DbSystemReplicationConfigArgsDict',
     'DbSystemSourceArgs',
     'DbSystemSourceArgsDict',
     'DbSystemStorageDetailsArgs',
@@ -55,10 +67,14 @@ __all__ = [
     'GetBackupsFilterArgsDict',
     'GetConfigurationsFilterArgs',
     'GetConfigurationsFilterArgsDict',
+    'GetDbSystemReplicasFilterArgs',
+    'GetDbSystemReplicasFilterArgsDict',
     'GetDbSystemsFilterArgs',
     'GetDbSystemsFilterArgsDict',
     'GetDefaultConfigurationsFilterArgs',
     'GetDefaultConfigurationsFilterArgsDict',
+    'GetInsightCapabilitiesFilterArgs',
+    'GetInsightCapabilitiesFilterArgsDict',
     'GetShapesFilterArgs',
     'GetShapesFilterArgsDict',
 ]
@@ -699,7 +715,11 @@ class DbSystemInstanceArgsDict(TypedDict):
     """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The current state of the database system.
+    (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
     time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -727,7 +747,11 @@ class DbSystemInstanceArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] id: A unique identifier for the database instance node. Immutable on creation.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] state: The current state of the database system.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -812,7 +836,11 @@ class DbSystemInstanceArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The current state of the database system.
+        (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -912,6 +940,212 @@ class DbSystemInstancesDetailArgs:
     @private_ip.setter
     def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
+
+
+class DbSystemKerberosAuthDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    Specifies the management of Insight for the dbSystem.
+    """
+    backup_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsBackupCredentialArgsDict']]]]]
+    """
+    Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+    """
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsCredentialArgsDict']]]]]
+    """
+    Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+    """
+
+@pulumi.input_type
+class DbSystemKerberosAuthDetailsArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[_builtins.str],
+                 backup_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsBackupCredentialArgs']]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsCredentialArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: Specifies the management of Insight for the dbSystem.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsBackupCredentialArgs']]] backup_credentials: Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsCredentialArgs']]] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if backup_credentials is not None:
+            pulumi.set(__self__, "backup_credentials", backup_credentials)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[_builtins.str]:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupCredentials")
+    def backup_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsBackupCredentialArgs']]]]:
+        """
+        Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+        """
+        return pulumi.get(self, "backup_credentials")
+
+    @backup_credentials.setter
+    def backup_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsBackupCredentialArgs']]]]):
+        pulumi.set(self, "backup_credentials", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsCredentialArgs']]]]:
+        """
+        Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemKerberosAuthDetailsCredentialArgs']]]]):
+        pulumi.set(self, "credentials", value)
+
+
+class DbSystemKerberosAuthDetailsBackupCredentialArgsDict(TypedDict):
+    keytab_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+    """
+    keytab_secret_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The secret version of the stored Kerberos keytab file.
+    """
+    realm_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+    """
+
+@pulumi.input_type
+class DbSystemKerberosAuthDetailsBackupCredentialArgs:
+    def __init__(__self__, *,
+                 keytab_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytab_secret_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param pulumi.Input[_builtins.str] keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param pulumi.Input[_builtins.str] realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        if keytab_secret_id is not None:
+            pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        if keytab_secret_version is not None:
+            pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @keytab_secret_id.setter
+    def keytab_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "keytab_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @keytab_secret_version.setter
+    def keytab_secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "keytab_secret_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+    @realm_name.setter
+    def realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "realm_name", value)
+
+
+class DbSystemKerberosAuthDetailsCredentialArgsDict(TypedDict):
+    keytab_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+    """
+    keytab_secret_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The secret version of the stored Kerberos keytab file.
+    """
+    realm_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+    """
+
+@pulumi.input_type
+class DbSystemKerberosAuthDetailsCredentialArgs:
+    def __init__(__self__, *,
+                 keytab_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 keytab_secret_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 realm_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] keytab_secret_id: The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        :param pulumi.Input[_builtins.str] keytab_secret_version: The secret version of the stored Kerberos keytab file.
+        :param pulumi.Input[_builtins.str] realm_name: Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        if keytab_secret_id is not None:
+            pulumi.set(__self__, "keytab_secret_id", keytab_secret_id)
+        if keytab_secret_version is not None:
+            pulumi.set(__self__, "keytab_secret_version", keytab_secret_version)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretId")
+    def keytab_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+        """
+        return pulumi.get(self, "keytab_secret_id")
+
+    @keytab_secret_id.setter
+    def keytab_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "keytab_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keytabSecretVersion")
+    def keytab_secret_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secret version of the stored Kerberos keytab file.
+        """
+        return pulumi.get(self, "keytab_secret_version")
+
+    @keytab_secret_version.setter
+    def keytab_secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "keytab_secret_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+        """
+        return pulumi.get(self, "realm_name")
+
+    @realm_name.setter
+    def realm_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "realm_name", value)
 
 
 class DbSystemManagementPolicyArgsDict(TypedDict):
@@ -1253,6 +1487,103 @@ class DbSystemNetworkDetailsArgs:
         pulumi.set(self, "primary_db_endpoint_private_ip", value)
 
 
+class DbSystemOdspInsightDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the management of Insight for the dbSystem.
+    """
+    odsp_insight_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemOdspInsightDetailsOdspInsightListArgsDict']]]]]
+    """
+    (Updatable) List of ODSP Insight and their configurations.
+    """
+
+@pulumi.input_type
+class DbSystemOdspInsightDetailsArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[_builtins.str],
+                 odsp_insight_lists: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemOdspInsightDetailsOdspInsightListArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: (Updatable) Specifies the management of Insight for the dbSystem.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemOdspInsightDetailsOdspInsightListArgs']]] odsp_insight_lists: (Updatable) List of ODSP Insight and their configurations.
+        """
+        pulumi.set(__self__, "kind", kind)
+        if odsp_insight_lists is not None:
+            pulumi.set(__self__, "odsp_insight_lists", odsp_insight_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter(name="odspInsightLists")
+    def odsp_insight_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemOdspInsightDetailsOdspInsightListArgs']]]]:
+        """
+        (Updatable) List of ODSP Insight and their configurations.
+        """
+        return pulumi.get(self, "odsp_insight_lists")
+
+    @odsp_insight_lists.setter
+    def odsp_insight_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemOdspInsightDetailsOdspInsightListArgs']]]]):
+        pulumi.set(self, "odsp_insight_lists", value)
+
+
+class DbSystemOdspInsightDetailsOdspInsightListArgsDict(TypedDict):
+    insight_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Type of Insight collected for the database system.
+    """
+    retention_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+    """
+
+@pulumi.input_type
+class DbSystemOdspInsightDetailsOdspInsightListArgs:
+    def __init__(__self__, *,
+                 insight_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] insight_type: (Updatable) Type of Insight collected for the database system.
+        :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        if insight_type is not None:
+            pulumi.set(__self__, "insight_type", insight_type)
+        if retention_period_in_days is not None:
+            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+
+    @_builtins.property
+    @pulumi.getter(name="insightType")
+    def insight_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Type of Insight collected for the database system.
+        """
+        return pulumi.get(self, "insight_type")
+
+    @insight_type.setter
+    def insight_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "insight_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriodInDays")
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+        """
+        return pulumi.get(self, "retention_period_in_days")
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "retention_period_in_days", value)
+
+
 class DbSystemPatchOperationArgsDict(TypedDict):
     operation: pulumi.Input[_builtins.str]
     """
@@ -1359,11 +1690,56 @@ class DbSystemPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
+class DbSystemReplicationConfigArgsDict(TypedDict):
+    is_rpo_enforced: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+    """
+    rpo_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+    """
+
+@pulumi.input_type
+class DbSystemReplicationConfigArgs:
+    def __init__(__self__, *,
+                 is_rpo_enforced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rpo_in_seconds: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_rpo_enforced: (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+        :param pulumi.Input[_builtins.str] rpo_in_seconds: (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        if is_rpo_enforced is not None:
+            pulumi.set(__self__, "is_rpo_enforced", is_rpo_enforced)
+        if rpo_in_seconds is not None:
+            pulumi.set(__self__, "rpo_in_seconds", rpo_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter(name="isRpoEnforced")
+    def is_rpo_enforced(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+        """
+        return pulumi.get(self, "is_rpo_enforced")
+
+    @is_rpo_enforced.setter
+    def is_rpo_enforced(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_rpo_enforced", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rpoInSeconds")
+    def rpo_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+        """
+        return pulumi.get(self, "rpo_in_seconds")
+
+    @rpo_in_seconds.setter
+    def rpo_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rpo_in_seconds", value)
+
+
 class DbSystemSourceArgsDict(TypedDict):
-    source_type: pulumi.Input[_builtins.str]
-    """
-    The source descriminator. Example: `{"source_type": "BACKUP"}`.
-    """
     backup_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
@@ -1372,35 +1748,36 @@ class DbSystemSourceArgsDict(TypedDict):
     """
     Deprecated. Don't use.
     """
+    primary_db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID] of the primary database system.
+    """
+    source_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The source descriminator.
+    """
 
 @pulumi.input_type
 class DbSystemSourceArgs:
     def __init__(__self__, *,
-                 source_type: pulumi.Input[_builtins.str],
                  backup_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 is_having_restore_config_overrides: pulumi.Input[Optional[_builtins.bool]] = None):
+                 is_having_restore_config_overrides: pulumi.Input[Optional[_builtins.bool]] = None,
+                 primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] source_type: The source descriminator. Example: `{"source_type": "BACKUP"}`.
         :param pulumi.Input[_builtins.str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         :param pulumi.Input[_builtins.bool] is_having_restore_config_overrides: Deprecated. Don't use.
+        :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID] of the primary database system.
+        :param pulumi.Input[_builtins.str] source_type: The source descriminator.
         """
-        pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
         if is_having_restore_config_overrides is not None:
             pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
-
-    @_builtins.property
-    @pulumi.getter(name="sourceType")
-    def source_type(self) -> pulumi.Input[_builtins.str]:
-        """
-        The source descriminator. Example: `{"source_type": "BACKUP"}`.
-        """
-        return pulumi.get(self, "source_type")
-
-    @source_type.setter
-    def source_type(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "source_type", value)
+        if primary_db_system_id is not None:
+            pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -1425,6 +1802,30 @@ class DbSystemSourceArgs:
     @is_having_restore_config_overrides.setter
     def is_having_restore_config_overrides(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_having_restore_config_overrides", value)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryDbSystemId")
+    def primary_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID] of the primary database system.
+        """
+        return pulumi.get(self, "primary_db_system_id")
+
+    @primary_db_system_id.setter
+    def primary_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "primary_db_system_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The source descriminator.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_type", value)
 
 
 class DbSystemStorageDetailsArgsDict(TypedDict):
@@ -1602,6 +2003,50 @@ class GetConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
+class GetDbSystemReplicasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDbSystemReplicasFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
 class GetDbSystemsFilterArgsDict(TypedDict):
     name: _builtins.str
     values: Sequence[_builtins.str]
@@ -1674,6 +2119,66 @@ class GetDefaultConfigurationsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetInsightCapabilitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the filter parameter.
+    """
+    values: Sequence[_builtins.str]
+    """
+    Allowed values for enum-based filters.
+    """
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetInsightCapabilitiesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the filter parameter.
+        :param Sequence[_builtins.str] values: Allowed values for enum-based filters.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the filter parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Allowed values for enum-based filters.
+        """
         return pulumi.get(self, "values")
 
     @values.setter

@@ -97,6 +97,12 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> privateEndpointIp() {
         return this.privateEndpointIp;
     }
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
+    }
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 

@@ -60,6 +60,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .migrationType(migrationMigrationType)
  *             .replicationScheduleId(testReplicationSchedule.id())
+ *             .securityAttributes(migrationSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -193,9 +194,6 @@ public class Migration extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Replication schedule identifier
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="replicationScheduleId", refs={String.class}, tree="[0]")
     private Output<String> replicationScheduleId;
@@ -203,12 +201,29 @@ public class Migration extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Replication schedule identifier
      * 
+     */
+    public Output<String> replicationScheduleId() {
+        return this.replicationScheduleId;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> replicationScheduleId() {
-        return this.replicationScheduleId;
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The current state of migration.

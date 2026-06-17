@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -61,6 +63,10 @@ export interface GetSenderInvitationResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     */
+    readonly invitationFeatures: outputs.Tenantmanagercontrolplane.GetSenderInvitationInvitationFeature[];
     /**
      * Email address of the recipient.
      */

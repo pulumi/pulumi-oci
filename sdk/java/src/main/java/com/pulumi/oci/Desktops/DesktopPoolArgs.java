@@ -259,14 +259,14 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Provides information about the network configuration of the desktop pool.
+     * (Updatable) Provides information about the network configuration of the desktop pool.
      * 
      */
     @Import(name="networkConfiguration", required=true)
     private Output<DesktopPoolNetworkConfigurationArgs> networkConfiguration;
 
     /**
-     * @return Provides information about the network configuration of the desktop pool.
+     * @return (Updatable) Provides information about the network configuration of the desktop pool.
      * 
      */
     public Output<DesktopPoolNetworkConfigurationArgs> networkConfiguration() {
@@ -289,18 +289,33 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
      * 
      */
     @Import(name="privateAccessDetails")
     private @Nullable Output<DesktopPoolPrivateAccessDetailsArgs> privateAccessDetails;
 
     /**
-     * @return The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+     * @return (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
      * 
      */
     public Optional<Output<DesktopPoolPrivateAccessDetailsArgs>> privateAccessDetails() {
         return Optional.ofNullable(this.privateAccessDetails);
+    }
+
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     /**
@@ -459,6 +474,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         this.networkConfiguration = $.networkConfiguration;
         this.nsgIds = $.nsgIds;
         this.privateAccessDetails = $.privateAccessDetails;
+        this.securityAttributes = $.securityAttributes;
         this.sessionLifecycleActions = $.sessionLifecycleActions;
         this.shapeConfig = $.shapeConfig;
         this.shapeName = $.shapeName;
@@ -810,7 +826,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfiguration Provides information about the network configuration of the desktop pool.
+         * @param networkConfiguration (Updatable) Provides information about the network configuration of the desktop pool.
          * 
          * @return builder
          * 
@@ -821,7 +837,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkConfiguration Provides information about the network configuration of the desktop pool.
+         * @param networkConfiguration (Updatable) Provides information about the network configuration of the desktop pool.
          * 
          * @return builder
          * 
@@ -862,7 +878,7 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateAccessDetails The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+         * @param privateAccessDetails (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
          * 
          * @return builder
          * 
@@ -873,13 +889,34 @@ public final class DesktopPoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateAccessDetails The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
+         * @param privateAccessDetails (Updatable) The details of the desktop&#39;s private access network connectivity to be set up for the desktop pool.
          * 
          * @return builder
          * 
          */
         public Builder privateAccessDetails(DesktopPoolPrivateAccessDetailsArgs privateAccessDetails) {
             return privateAccessDetails(Output.of(privateAccessDetails));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

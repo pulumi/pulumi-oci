@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
         /// </summary>
         public readonly string ChildTenancyId;
         /// <summary>
+        /// The feature associated with this link.
+        /// </summary>
+        public readonly string Feature;
+        /// <summary>
         /// OCID of the link.
         /// </summary>
         public readonly string Id;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
         private GetLinksLinkCollectionItemResult(
             string childTenancyId,
 
+            string feature,
+
             string id,
 
             string parentTenancyId,
@@ -59,6 +65,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
             string timeUpdated)
         {
             ChildTenancyId = childTenancyId;
+            Feature = feature;
             Id = id;
             ParentTenancyId = parentTenancyId;
             State = state;

@@ -110,9 +110,6 @@ public final class ApmDomainState extends com.pulumi.resources.ResourceArgs {
     /**
      * Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isFreeTier")
     private @Nullable Output<Boolean> isFreeTier;
@@ -120,12 +117,30 @@ public final class ApmDomainState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
      * 
+     */
+    public Optional<Output<Boolean>> isFreeTier() {
+        return Optional.ofNullable(this.isFreeTier);
+    }
+
+    /**
+     * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Boolean>> isFreeTier() {
-        return Optional.ofNullable(this.isFreeTier);
+    @Import(name="logGroupId")
+    private @Nullable Output<String> logGroupId;
+
+    /**
+     * @return (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
 
     /**
@@ -183,6 +198,7 @@ public final class ApmDomainState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isFreeTier = $.isFreeTier;
+        this.logGroupId = $.logGroupId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -335,9 +351,6 @@ public final class ApmDomainState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isFreeTier Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -349,14 +362,38 @@ public final class ApmDomainState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isFreeTier Indicates whether this is an &#34;Always Free&#34; resource. The default value is false.
          * 
+         * @return builder
+         * 
+         */
+        public Builder isFreeTier(Boolean isFreeTier) {
+            return isFreeTier(Output.of(isFreeTier));
+        }
+
+        /**
+         * @param logGroupId (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder isFreeTier(Boolean isFreeTier) {
-            return isFreeTier(Output.of(isFreeTier));
+        public Builder logGroupId(@Nullable Output<String> logGroupId) {
+            $.logGroupId = logGroupId;
+            return this;
+        }
+
+        /**
+         * @param logGroupId (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logGroupId(String logGroupId) {
+            return logGroupId(Output.of(logGroupId));
         }
 
         /**

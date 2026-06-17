@@ -32,6 +32,9 @@ __all__ = [
     'GetDomainsDomainCollectionResult',
     'GetDomainsDomainCollectionItemResult',
     'GetDomainsFilterResult',
+    'GetLinkFeaturesFilterResult',
+    'GetLinkFeaturesLinkFeaturesCollectionResult',
+    'GetLinkFeaturesLinkFeaturesCollectionItemResult',
     'GetLinksFilterResult',
     'GetLinksLinkCollectionResult',
     'GetLinksLinkCollectionItemResult',
@@ -44,9 +47,11 @@ __all__ = [
     'GetRecipientInvitationsFilterResult',
     'GetRecipientInvitationsRecipientInvitationCollectionResult',
     'GetRecipientInvitationsRecipientInvitationCollectionItemResult',
+    'GetSenderInvitationInvitationFeatureResult',
     'GetSenderInvitationsFilterResult',
     'GetSenderInvitationsSenderInvitationCollectionResult',
     'GetSenderInvitationsSenderInvitationCollectionItemResult',
+    'GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult',
     'GetSubscriptionAvailableRegionsAvailableRegionCollectionResult',
     'GetSubscriptionAvailableRegionsAvailableRegionCollectionItemResult',
     'GetSubscriptionAvailableRegionsFilterResult',
@@ -1366,6 +1371,113 @@ class GetDomainsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetLinkFeaturesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetLinkFeaturesLinkFeaturesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLinkFeaturesLinkFeaturesCollectionItemResult']):
+        """
+        :param Sequence['GetLinkFeaturesLinkFeaturesCollectionItemArgs'] items: Array containing LinkFeature items.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLinkFeaturesLinkFeaturesCollectionItemResult']:
+        """
+        Array containing LinkFeature items.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLinkFeaturesLinkFeaturesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 feature: _builtins.str,
+                 partner_service_console_url: _builtins.str,
+                 user_guide_url: _builtins.str):
+        """
+        :param _builtins.str description: Description of the feature.
+        :param _builtins.str display_name: Display name of the feature.
+        :param _builtins.str feature: The feature associated with this link. Default value is CORE.
+        :param _builtins.str partner_service_console_url: ConsoleUrl of the feature.
+        :param _builtins.str user_guide_url: UserGuideUrl of the feature.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "feature", feature)
+        pulumi.set(__self__, "partner_service_console_url", partner_service_console_url)
+        pulumi.set(__self__, "user_guide_url", user_guide_url)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the feature.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Display name of the feature.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        The feature associated with this link. Default value is CORE.
+        """
+        return pulumi.get(self, "feature")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerServiceConsoleUrl")
+    def partner_service_console_url(self) -> _builtins.str:
+        """
+        ConsoleUrl of the feature.
+        """
+        return pulumi.get(self, "partner_service_console_url")
+
+    @_builtins.property
+    @pulumi.getter(name="userGuideUrl")
+    def user_guide_url(self) -> _builtins.str:
+        """
+        UserGuideUrl of the feature.
+        """
+        return pulumi.get(self, "user_guide_url")
+
+
+@pulumi.output_type
 class GetLinksFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -1408,6 +1520,7 @@ class GetLinksLinkCollectionResult(dict):
 class GetLinksLinkCollectionItemResult(dict):
     def __init__(__self__, *,
                  child_tenancy_id: _builtins.str,
+                 feature: _builtins.str,
                  id: _builtins.str,
                  parent_tenancy_id: _builtins.str,
                  state: _builtins.str,
@@ -1416,6 +1529,7 @@ class GetLinksLinkCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str child_tenancy_id: The ID of the child tenancy this link is associated with.
+        :param _builtins.str feature: The feature associated with this link.
         :param _builtins.str id: OCID of the link.
         :param _builtins.str parent_tenancy_id: The ID of the parent tenancy this link is associated with.
         :param _builtins.str state: The lifecycle state of the resource.
@@ -1424,6 +1538,7 @@ class GetLinksLinkCollectionItemResult(dict):
         :param _builtins.str time_updated: Date-time when this link was last updated.
         """
         pulumi.set(__self__, "child_tenancy_id", child_tenancy_id)
+        pulumi.set(__self__, "feature", feature)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "parent_tenancy_id", parent_tenancy_id)
         pulumi.set(__self__, "state", state)
@@ -1438,6 +1553,14 @@ class GetLinksLinkCollectionItemResult(dict):
         The ID of the child tenancy this link is associated with.
         """
         return pulumi.get(self, "child_tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        The feature associated with this link.
+        """
+        return pulumi.get(self, "feature")
 
     @_builtins.property
     @pulumi.getter
@@ -1807,6 +1930,7 @@ class GetRecipientInvitationsRecipientInvitationCollectionItemResult(dict):
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 features: Sequence[_builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  recipient_email_address: _builtins.str,
@@ -1822,6 +1946,7 @@ class GetRecipientInvitationsRecipientInvitationCollectionItemResult(dict):
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str display_name: A user-created name to describe the invitation. Avoid entering confidential information.
+        :param Sequence[_builtins.str] features: List of features that the invitation is being sent for. Each feature would create one link, of that type.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: OCID of the recipient invitation.
         :param _builtins.str recipient_email_address: Email address of the recipient.
@@ -1837,6 +1962,7 @@ class GetRecipientInvitationsRecipientInvitationCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "recipient_email_address", recipient_email_address)
@@ -1872,6 +1998,14 @@ class GetRecipientInvitationsRecipientInvitationCollectionItemResult(dict):
         A user-created name to describe the invitation. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        """
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        """
+        return pulumi.get(self, "features")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -1963,11 +2097,54 @@ class GetRecipientInvitationsRecipientInvitationCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetSenderInvitationInvitationFeatureResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 recipient_invitation_id: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str name: Name of the feature.
+        :param _builtins.str recipient_invitation_id: OCID of the corresponding recipient invitation.
+        :param _builtins.str status: Status of the sender invitation.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "recipient_invitation_id", recipient_invitation_id)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the feature.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="recipientInvitationId")
+    def recipient_invitation_id(self) -> _builtins.str:
+        """
+        OCID of the corresponding recipient invitation.
+        """
+        return pulumi.get(self, "recipient_invitation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Status of the sender invitation.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
 class GetSenderInvitationsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the feature.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1976,6 +2153,9 @@ class GetSenderInvitationsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        Name of the feature.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -2007,8 +2187,10 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 features: Sequence[_builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 invitation_features: Sequence['outputs.GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult'],
                  recipient_email_address: _builtins.str,
                  recipient_invitation_id: _builtins.str,
                  recipient_tenancy_id: _builtins.str,
@@ -2024,6 +2206,7 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: OCID of the sender invitation.
+        :param Sequence['GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureArgs'] invitation_features: List of features that the invitation is being sent for. Each feature would create one link, of that type.
         :param _builtins.str recipient_email_address: Email address of the recipient.
         :param _builtins.str recipient_invitation_id: OCID of the corresponding recipient invitation.
         :param _builtins.str recipient_tenancy_id: The tenancy that the invitation is addressed to.
@@ -2037,8 +2220,10 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "invitation_features", invitation_features)
         pulumi.set(__self__, "recipient_email_address", recipient_email_address)
         pulumi.set(__self__, "recipient_invitation_id", recipient_invitation_id)
         pulumi.set(__self__, "recipient_tenancy_id", recipient_tenancy_id)
@@ -2074,6 +2259,11 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "features")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -2088,6 +2278,14 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
         OCID of the sender invitation.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="invitationFeatures")
+    def invitation_features(self) -> Sequence['outputs.GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult']:
+        """
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        """
+        return pulumi.get(self, "invitation_features")
 
     @_builtins.property
     @pulumi.getter(name="recipientEmailAddress")
@@ -2160,6 +2358,46 @@ class GetSenderInvitationsSenderInvitationCollectionItemResult(dict):
         Date and time when the sender invitation was last updated.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSenderInvitationsSenderInvitationCollectionItemInvitationFeatureResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 recipient_invitation_id: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str name: Name of the feature.
+        :param _builtins.str recipient_invitation_id: OCID of the corresponding recipient invitation.
+        :param _builtins.str status: The status of the sender invitation.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "recipient_invitation_id", recipient_invitation_id)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the feature.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="recipientInvitationId")
+    def recipient_invitation_id(self) -> _builtins.str:
+        """
+        OCID of the corresponding recipient invitation.
+        """
+        return pulumi.get(self, "recipient_invitation_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The status of the sender invitation.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

@@ -60,6 +60,8 @@ type GetAccessRequestsArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string                    `pulumi:"compartmentId"`
 	Filters       []GetAccessRequestsFilter `pulumi:"filters"`
+	// The number of days since when the user wants to search .
+	NumDays *int `pulumi:"numDays"`
 	// A filter to return only resources that match the given ResourceName.
 	ResourceName *string `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
@@ -80,7 +82,8 @@ type GetAccessRequestsResult struct {
 	CompartmentId string                    `pulumi:"compartmentId"`
 	Filters       []GetAccessRequestsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id      string `pulumi:"id"`
+	NumDays *int   `pulumi:"numDays"`
 	// The name of the target resource.
 	ResourceName *string `pulumi:"resourceName"`
 	// resourceType for which the AccessRequest is applicable
@@ -105,6 +108,8 @@ type GetAccessRequestsOutputArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput                `pulumi:"compartmentId"`
 	Filters       GetAccessRequestsFilterArrayInput `pulumi:"filters"`
+	// The number of days since when the user wants to search .
+	NumDays pulumi.IntPtrInput `pulumi:"numDays"`
 	// A filter to return only resources that match the given ResourceName.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
@@ -155,6 +160,10 @@ func (o GetAccessRequestsResultOutput) Filters() GetAccessRequestsFilterArrayOut
 // The provider-assigned unique ID for this managed resource.
 func (o GetAccessRequestsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessRequestsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAccessRequestsResultOutput) NumDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsResult) *int { return v.NumDays }).(pulumi.IntPtrOutput)
 }
 
 // The name of the target resource.

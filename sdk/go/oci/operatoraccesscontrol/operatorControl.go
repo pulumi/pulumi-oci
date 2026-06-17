@@ -51,6 +51,8 @@ type OperatorControl struct {
 	IsFullyPreApproved pulumi.BoolOutput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo pulumi.StringOutput `pulumi:"lastModifiedInfo"`
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId pulumi.StringOutput `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an access request.
 	NumberOfApprovers pulumi.IntOutput `pulumi:"numberOfApprovers"`
 	// (Updatable) Name of the operator control.
@@ -141,6 +143,8 @@ type operatorControlState struct {
 	IsFullyPreApproved *bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo *string `pulumi:"lastModifiedInfo"`
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an access request.
 	NumberOfApprovers *int `pulumi:"numberOfApprovers"`
 	// (Updatable) Name of the operator control.
@@ -187,6 +191,8 @@ type OperatorControlState struct {
 	IsFullyPreApproved pulumi.BoolPtrInput
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo pulumi.StringPtrInput
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId pulumi.StringPtrInput
 	// (Updatable) Number of approvers required to approve an access request.
 	NumberOfApprovers pulumi.IntPtrInput
 	// (Updatable) Name of the operator control.
@@ -231,6 +237,8 @@ type operatorControlArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an access request.
 	NumberOfApprovers *int `pulumi:"numberOfApprovers"`
 	// (Updatable) Name of the operator control.
@@ -264,6 +272,8 @@ type OperatorControlArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolInput
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId pulumi.StringPtrInput
 	// (Updatable) Number of approvers required to approve an access request.
 	NumberOfApprovers pulumi.IntPtrInput
 	// (Updatable) Name of the operator control.
@@ -419,6 +429,11 @@ func (o OperatorControlOutput) IsFullyPreApproved() pulumi.BoolOutput {
 // Description associated with the latest modification of the operator control.
 func (o OperatorControlOutput) LastModifiedInfo() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.LastModifiedInfo }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+func (o OperatorControlOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.NotificationTopicId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Number of approvers required to approve an access request.

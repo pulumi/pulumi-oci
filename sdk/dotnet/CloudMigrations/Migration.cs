@@ -46,6 +46,7 @@ namespace Pulumi.Oci.CloudMigrations
     ///         },
     ///         MigrationType = migrationMigrationType,
     ///         ReplicationScheduleId = testReplicationSchedule.Id,
+    ///         SecurityAttributes = migrationSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -112,13 +113,19 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// (Updatable) Replication schedule identifier
+        /// </summary>
+        [Output("replicationScheduleId")]
+        public Output<string> ReplicationScheduleId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("replicationScheduleId")]
-        public Output<string> ReplicationScheduleId { get; private set; } = null!;
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of migration.
@@ -246,13 +253,25 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// (Updatable) Replication schedule identifier
+        /// </summary>
+        [Input("replicationScheduleId")]
+        public Input<string>? ReplicationScheduleId { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("replicationScheduleId")]
-        public Input<string>? ReplicationScheduleId { get; set; }
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         public MigrationArgs()
         {
@@ -324,13 +343,25 @@ namespace Pulumi.Oci.CloudMigrations
 
         /// <summary>
         /// (Updatable) Replication schedule identifier
+        /// </summary>
+        [Input("replicationScheduleId")]
+        public Input<string>? ReplicationScheduleId { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("replicationScheduleId")]
-        public Input<string>? ReplicationScheduleId { get; set; }
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The current state of migration.

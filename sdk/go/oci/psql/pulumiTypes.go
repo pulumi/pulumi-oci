@@ -1271,7 +1271,10 @@ type DbSystemInstance struct {
 	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The current state of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -1301,7 +1304,10 @@ type DbSystemInstanceArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
-	// The current state of the database system.
+	// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -1385,7 +1391,10 @@ func (o DbSystemInstanceOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the database system.
+// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemInstanceOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -1533,6 +1542,413 @@ func (o DbSystemInstancesDetailArrayOutput) Index(i pulumi.IntInput) DbSystemIns
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemInstancesDetail {
 		return vs[0].([]DbSystemInstancesDetail)[vs[1].(int)]
 	}).(DbSystemInstancesDetailOutput)
+}
+
+type DbSystemKerberosAuthDetails struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials []DbSystemKerberosAuthDetailsBackupCredential `pulumi:"backupCredentials"`
+	// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+	Credentials []DbSystemKerberosAuthDetailsCredential `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+}
+
+// DbSystemKerberosAuthDetailsInput is an input type that accepts DbSystemKerberosAuthDetailsArgs and DbSystemKerberosAuthDetailsOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsInput` via:
+//
+//	DbSystemKerberosAuthDetailsArgs{...}
+type DbSystemKerberosAuthDetailsInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsOutput() DbSystemKerberosAuthDetailsOutput
+	ToDbSystemKerberosAuthDetailsOutputWithContext(context.Context) DbSystemKerberosAuthDetailsOutput
+}
+
+type DbSystemKerberosAuthDetailsArgs struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials DbSystemKerberosAuthDetailsBackupCredentialArrayInput `pulumi:"backupCredentials"`
+	// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+	Credentials DbSystemKerberosAuthDetailsCredentialArrayInput `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (DbSystemKerberosAuthDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetails)(nil)).Elem()
+}
+
+func (i DbSystemKerberosAuthDetailsArgs) ToDbSystemKerberosAuthDetailsOutput() DbSystemKerberosAuthDetailsOutput {
+	return i.ToDbSystemKerberosAuthDetailsOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsArgs) ToDbSystemKerberosAuthDetailsOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsOutput)
+}
+
+func (i DbSystemKerberosAuthDetailsArgs) ToDbSystemKerberosAuthDetailsPtrOutput() DbSystemKerberosAuthDetailsPtrOutput {
+	return i.ToDbSystemKerberosAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsArgs) ToDbSystemKerberosAuthDetailsPtrOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsOutput).ToDbSystemKerberosAuthDetailsPtrOutputWithContext(ctx)
+}
+
+// DbSystemKerberosAuthDetailsPtrInput is an input type that accepts DbSystemKerberosAuthDetailsArgs, DbSystemKerberosAuthDetailsPtr and DbSystemKerberosAuthDetailsPtrOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsPtrInput` via:
+//
+//	        DbSystemKerberosAuthDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbSystemKerberosAuthDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsPtrOutput() DbSystemKerberosAuthDetailsPtrOutput
+	ToDbSystemKerberosAuthDetailsPtrOutputWithContext(context.Context) DbSystemKerberosAuthDetailsPtrOutput
+}
+
+type dbSystemKerberosAuthDetailsPtrType DbSystemKerberosAuthDetailsArgs
+
+func DbSystemKerberosAuthDetailsPtr(v *DbSystemKerberosAuthDetailsArgs) DbSystemKerberosAuthDetailsPtrInput {
+	return (*dbSystemKerberosAuthDetailsPtrType)(v)
+}
+
+func (*dbSystemKerberosAuthDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemKerberosAuthDetails)(nil)).Elem()
+}
+
+func (i *dbSystemKerberosAuthDetailsPtrType) ToDbSystemKerberosAuthDetailsPtrOutput() DbSystemKerberosAuthDetailsPtrOutput {
+	return i.ToDbSystemKerberosAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dbSystemKerberosAuthDetailsPtrType) ToDbSystemKerberosAuthDetailsPtrOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsPtrOutput)
+}
+
+type DbSystemKerberosAuthDetailsOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetails)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsOutput) ToDbSystemKerberosAuthDetailsOutput() DbSystemKerberosAuthDetailsOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsOutput) ToDbSystemKerberosAuthDetailsOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsOutput) ToDbSystemKerberosAuthDetailsPtrOutput() DbSystemKerberosAuthDetailsPtrOutput {
+	return o.ToDbSystemKerberosAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DbSystemKerberosAuthDetailsOutput) ToDbSystemKerberosAuthDetailsPtrOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbSystemKerberosAuthDetails) *DbSystemKerberosAuthDetails {
+		return &v
+	}).(DbSystemKerberosAuthDetailsPtrOutput)
+}
+
+// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+func (o DbSystemKerberosAuthDetailsOutput) BackupCredentials() DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetails) []DbSystemKerberosAuthDetailsBackupCredential {
+		return v.BackupCredentials
+	}).(DbSystemKerberosAuthDetailsBackupCredentialArrayOutput)
+}
+
+// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+func (o DbSystemKerberosAuthDetailsOutput) Credentials() DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetails) []DbSystemKerberosAuthDetailsCredential { return v.Credentials }).(DbSystemKerberosAuthDetailsCredentialArrayOutput)
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o DbSystemKerberosAuthDetailsOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetails) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type DbSystemKerberosAuthDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemKerberosAuthDetails)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsPtrOutput) ToDbSystemKerberosAuthDetailsPtrOutput() DbSystemKerberosAuthDetailsPtrOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsPtrOutput) ToDbSystemKerberosAuthDetailsPtrOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsPtrOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsPtrOutput) Elem() DbSystemKerberosAuthDetailsOutput {
+	return o.ApplyT(func(v *DbSystemKerberosAuthDetails) DbSystemKerberosAuthDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DbSystemKerberosAuthDetails
+		return ret
+	}).(DbSystemKerberosAuthDetailsOutput)
+}
+
+// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+func (o DbSystemKerberosAuthDetailsPtrOutput) BackupCredentials() DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return o.ApplyT(func(v *DbSystemKerberosAuthDetails) []DbSystemKerberosAuthDetailsBackupCredential {
+		if v == nil {
+			return nil
+		}
+		return v.BackupCredentials
+	}).(DbSystemKerberosAuthDetailsBackupCredentialArrayOutput)
+}
+
+// Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
+func (o DbSystemKerberosAuthDetailsPtrOutput) Credentials() DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return o.ApplyT(func(v *DbSystemKerberosAuthDetails) []DbSystemKerberosAuthDetailsCredential {
+		if v == nil {
+			return nil
+		}
+		return v.Credentials
+	}).(DbSystemKerberosAuthDetailsCredentialArrayOutput)
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o DbSystemKerberosAuthDetailsPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemKerberosAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+type DbSystemKerberosAuthDetailsBackupCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId *string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion *string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName *string `pulumi:"realmName"`
+}
+
+// DbSystemKerberosAuthDetailsBackupCredentialInput is an input type that accepts DbSystemKerberosAuthDetailsBackupCredentialArgs and DbSystemKerberosAuthDetailsBackupCredentialOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsBackupCredentialInput` via:
+//
+//	DbSystemKerberosAuthDetailsBackupCredentialArgs{...}
+type DbSystemKerberosAuthDetailsBackupCredentialInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsBackupCredentialOutput() DbSystemKerberosAuthDetailsBackupCredentialOutput
+	ToDbSystemKerberosAuthDetailsBackupCredentialOutputWithContext(context.Context) DbSystemKerberosAuthDetailsBackupCredentialOutput
+}
+
+type DbSystemKerberosAuthDetailsBackupCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringPtrInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringPtrInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringPtrInput `pulumi:"realmName"`
+}
+
+func (DbSystemKerberosAuthDetailsBackupCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetailsBackupCredential)(nil)).Elem()
+}
+
+func (i DbSystemKerberosAuthDetailsBackupCredentialArgs) ToDbSystemKerberosAuthDetailsBackupCredentialOutput() DbSystemKerberosAuthDetailsBackupCredentialOutput {
+	return i.ToDbSystemKerberosAuthDetailsBackupCredentialOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsBackupCredentialArgs) ToDbSystemKerberosAuthDetailsBackupCredentialOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsBackupCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsBackupCredentialOutput)
+}
+
+// DbSystemKerberosAuthDetailsBackupCredentialArrayInput is an input type that accepts DbSystemKerberosAuthDetailsBackupCredentialArray and DbSystemKerberosAuthDetailsBackupCredentialArrayOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsBackupCredentialArrayInput` via:
+//
+//	DbSystemKerberosAuthDetailsBackupCredentialArray{ DbSystemKerberosAuthDetailsBackupCredentialArgs{...} }
+type DbSystemKerberosAuthDetailsBackupCredentialArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutput() DbSystemKerberosAuthDetailsBackupCredentialArrayOutput
+	ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutputWithContext(context.Context) DbSystemKerberosAuthDetailsBackupCredentialArrayOutput
+}
+
+type DbSystemKerberosAuthDetailsBackupCredentialArray []DbSystemKerberosAuthDetailsBackupCredentialInput
+
+func (DbSystemKerberosAuthDetailsBackupCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemKerberosAuthDetailsBackupCredential)(nil)).Elem()
+}
+
+func (i DbSystemKerberosAuthDetailsBackupCredentialArray) ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutput() DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return i.ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsBackupCredentialArray) ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsBackupCredentialArrayOutput)
+}
+
+type DbSystemKerberosAuthDetailsBackupCredentialOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsBackupCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetailsBackupCredential)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsBackupCredentialOutput) ToDbSystemKerberosAuthDetailsBackupCredentialOutput() DbSystemKerberosAuthDetailsBackupCredentialOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsBackupCredentialOutput) ToDbSystemKerberosAuthDetailsBackupCredentialOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsBackupCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o DbSystemKerberosAuthDetailsBackupCredentialOutput) KeytabSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsBackupCredential) *string { return v.KeytabSecretId }).(pulumi.StringPtrOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o DbSystemKerberosAuthDetailsBackupCredentialOutput) KeytabSecretVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsBackupCredential) *string { return v.KeytabSecretVersion }).(pulumi.StringPtrOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o DbSystemKerberosAuthDetailsBackupCredentialOutput) RealmName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsBackupCredential) *string { return v.RealmName }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemKerberosAuthDetailsBackupCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsBackupCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemKerberosAuthDetailsBackupCredential)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsBackupCredentialArrayOutput) ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutput() DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsBackupCredentialArrayOutput) ToDbSystemKerberosAuthDetailsBackupCredentialArrayOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsBackupCredentialArrayOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsBackupCredentialArrayOutput) Index(i pulumi.IntInput) DbSystemKerberosAuthDetailsBackupCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemKerberosAuthDetailsBackupCredential {
+		return vs[0].([]DbSystemKerberosAuthDetailsBackupCredential)[vs[1].(int)]
+	}).(DbSystemKerberosAuthDetailsBackupCredentialOutput)
+}
+
+type DbSystemKerberosAuthDetailsCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId *string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion *string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName *string `pulumi:"realmName"`
+}
+
+// DbSystemKerberosAuthDetailsCredentialInput is an input type that accepts DbSystemKerberosAuthDetailsCredentialArgs and DbSystemKerberosAuthDetailsCredentialOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsCredentialInput` via:
+//
+//	DbSystemKerberosAuthDetailsCredentialArgs{...}
+type DbSystemKerberosAuthDetailsCredentialInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsCredentialOutput() DbSystemKerberosAuthDetailsCredentialOutput
+	ToDbSystemKerberosAuthDetailsCredentialOutputWithContext(context.Context) DbSystemKerberosAuthDetailsCredentialOutput
+}
+
+type DbSystemKerberosAuthDetailsCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringPtrInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringPtrInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringPtrInput `pulumi:"realmName"`
+}
+
+func (DbSystemKerberosAuthDetailsCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetailsCredential)(nil)).Elem()
+}
+
+func (i DbSystemKerberosAuthDetailsCredentialArgs) ToDbSystemKerberosAuthDetailsCredentialOutput() DbSystemKerberosAuthDetailsCredentialOutput {
+	return i.ToDbSystemKerberosAuthDetailsCredentialOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsCredentialArgs) ToDbSystemKerberosAuthDetailsCredentialOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsCredentialOutput)
+}
+
+// DbSystemKerberosAuthDetailsCredentialArrayInput is an input type that accepts DbSystemKerberosAuthDetailsCredentialArray and DbSystemKerberosAuthDetailsCredentialArrayOutput values.
+// You can construct a concrete instance of `DbSystemKerberosAuthDetailsCredentialArrayInput` via:
+//
+//	DbSystemKerberosAuthDetailsCredentialArray{ DbSystemKerberosAuthDetailsCredentialArgs{...} }
+type DbSystemKerberosAuthDetailsCredentialArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemKerberosAuthDetailsCredentialArrayOutput() DbSystemKerberosAuthDetailsCredentialArrayOutput
+	ToDbSystemKerberosAuthDetailsCredentialArrayOutputWithContext(context.Context) DbSystemKerberosAuthDetailsCredentialArrayOutput
+}
+
+type DbSystemKerberosAuthDetailsCredentialArray []DbSystemKerberosAuthDetailsCredentialInput
+
+func (DbSystemKerberosAuthDetailsCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemKerberosAuthDetailsCredential)(nil)).Elem()
+}
+
+func (i DbSystemKerberosAuthDetailsCredentialArray) ToDbSystemKerberosAuthDetailsCredentialArrayOutput() DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return i.ToDbSystemKerberosAuthDetailsCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemKerberosAuthDetailsCredentialArray) ToDbSystemKerberosAuthDetailsCredentialArrayOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemKerberosAuthDetailsCredentialArrayOutput)
+}
+
+type DbSystemKerberosAuthDetailsCredentialOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemKerberosAuthDetailsCredential)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsCredentialOutput) ToDbSystemKerberosAuthDetailsCredentialOutput() DbSystemKerberosAuthDetailsCredentialOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsCredentialOutput) ToDbSystemKerberosAuthDetailsCredentialOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o DbSystemKerberosAuthDetailsCredentialOutput) KeytabSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsCredential) *string { return v.KeytabSecretId }).(pulumi.StringPtrOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o DbSystemKerberosAuthDetailsCredentialOutput) KeytabSecretVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsCredential) *string { return v.KeytabSecretVersion }).(pulumi.StringPtrOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o DbSystemKerberosAuthDetailsCredentialOutput) RealmName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemKerberosAuthDetailsCredential) *string { return v.RealmName }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemKerberosAuthDetailsCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemKerberosAuthDetailsCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemKerberosAuthDetailsCredential)(nil)).Elem()
+}
+
+func (o DbSystemKerberosAuthDetailsCredentialArrayOutput) ToDbSystemKerberosAuthDetailsCredentialArrayOutput() DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsCredentialArrayOutput) ToDbSystemKerberosAuthDetailsCredentialArrayOutputWithContext(ctx context.Context) DbSystemKerberosAuthDetailsCredentialArrayOutput {
+	return o
+}
+
+func (o DbSystemKerberosAuthDetailsCredentialArrayOutput) Index(i pulumi.IntInput) DbSystemKerberosAuthDetailsCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemKerberosAuthDetailsCredential {
+		return vs[0].([]DbSystemKerberosAuthDetailsCredential)[vs[1].(int)]
+	}).(DbSystemKerberosAuthDetailsCredentialOutput)
 }
 
 type DbSystemManagementPolicy struct {
@@ -2302,6 +2718,270 @@ func (o DbSystemNetworkDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type DbSystemOdspInsightDetails struct {
+	// (Updatable) Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+	// (Updatable) List of ODSP Insight and their configurations.
+	OdspInsightLists []DbSystemOdspInsightDetailsOdspInsightList `pulumi:"odspInsightLists"`
+}
+
+// DbSystemOdspInsightDetailsInput is an input type that accepts DbSystemOdspInsightDetailsArgs and DbSystemOdspInsightDetailsOutput values.
+// You can construct a concrete instance of `DbSystemOdspInsightDetailsInput` via:
+//
+//	DbSystemOdspInsightDetailsArgs{...}
+type DbSystemOdspInsightDetailsInput interface {
+	pulumi.Input
+
+	ToDbSystemOdspInsightDetailsOutput() DbSystemOdspInsightDetailsOutput
+	ToDbSystemOdspInsightDetailsOutputWithContext(context.Context) DbSystemOdspInsightDetailsOutput
+}
+
+type DbSystemOdspInsightDetailsArgs struct {
+	// (Updatable) Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) List of ODSP Insight and their configurations.
+	OdspInsightLists DbSystemOdspInsightDetailsOdspInsightListArrayInput `pulumi:"odspInsightLists"`
+}
+
+func (DbSystemOdspInsightDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemOdspInsightDetails)(nil)).Elem()
+}
+
+func (i DbSystemOdspInsightDetailsArgs) ToDbSystemOdspInsightDetailsOutput() DbSystemOdspInsightDetailsOutput {
+	return i.ToDbSystemOdspInsightDetailsOutputWithContext(context.Background())
+}
+
+func (i DbSystemOdspInsightDetailsArgs) ToDbSystemOdspInsightDetailsOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOdspInsightDetailsOutput)
+}
+
+func (i DbSystemOdspInsightDetailsArgs) ToDbSystemOdspInsightDetailsPtrOutput() DbSystemOdspInsightDetailsPtrOutput {
+	return i.ToDbSystemOdspInsightDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DbSystemOdspInsightDetailsArgs) ToDbSystemOdspInsightDetailsPtrOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOdspInsightDetailsOutput).ToDbSystemOdspInsightDetailsPtrOutputWithContext(ctx)
+}
+
+// DbSystemOdspInsightDetailsPtrInput is an input type that accepts DbSystemOdspInsightDetailsArgs, DbSystemOdspInsightDetailsPtr and DbSystemOdspInsightDetailsPtrOutput values.
+// You can construct a concrete instance of `DbSystemOdspInsightDetailsPtrInput` via:
+//
+//	        DbSystemOdspInsightDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbSystemOdspInsightDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDbSystemOdspInsightDetailsPtrOutput() DbSystemOdspInsightDetailsPtrOutput
+	ToDbSystemOdspInsightDetailsPtrOutputWithContext(context.Context) DbSystemOdspInsightDetailsPtrOutput
+}
+
+type dbSystemOdspInsightDetailsPtrType DbSystemOdspInsightDetailsArgs
+
+func DbSystemOdspInsightDetailsPtr(v *DbSystemOdspInsightDetailsArgs) DbSystemOdspInsightDetailsPtrInput {
+	return (*dbSystemOdspInsightDetailsPtrType)(v)
+}
+
+func (*dbSystemOdspInsightDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemOdspInsightDetails)(nil)).Elem()
+}
+
+func (i *dbSystemOdspInsightDetailsPtrType) ToDbSystemOdspInsightDetailsPtrOutput() DbSystemOdspInsightDetailsPtrOutput {
+	return i.ToDbSystemOdspInsightDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *dbSystemOdspInsightDetailsPtrType) ToDbSystemOdspInsightDetailsPtrOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOdspInsightDetailsPtrOutput)
+}
+
+type DbSystemOdspInsightDetailsOutput struct{ *pulumi.OutputState }
+
+func (DbSystemOdspInsightDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemOdspInsightDetails)(nil)).Elem()
+}
+
+func (o DbSystemOdspInsightDetailsOutput) ToDbSystemOdspInsightDetailsOutput() DbSystemOdspInsightDetailsOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsOutput) ToDbSystemOdspInsightDetailsOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsOutput) ToDbSystemOdspInsightDetailsPtrOutput() DbSystemOdspInsightDetailsPtrOutput {
+	return o.ToDbSystemOdspInsightDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DbSystemOdspInsightDetailsOutput) ToDbSystemOdspInsightDetailsPtrOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbSystemOdspInsightDetails) *DbSystemOdspInsightDetails {
+		return &v
+	}).(DbSystemOdspInsightDetailsPtrOutput)
+}
+
+// (Updatable) Specifies the management of Insight for the dbSystem.
+func (o DbSystemOdspInsightDetailsOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v DbSystemOdspInsightDetails) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) List of ODSP Insight and their configurations.
+func (o DbSystemOdspInsightDetailsOutput) OdspInsightLists() DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return o.ApplyT(func(v DbSystemOdspInsightDetails) []DbSystemOdspInsightDetailsOdspInsightList {
+		return v.OdspInsightLists
+	}).(DbSystemOdspInsightDetailsOdspInsightListArrayOutput)
+}
+
+type DbSystemOdspInsightDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DbSystemOdspInsightDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemOdspInsightDetails)(nil)).Elem()
+}
+
+func (o DbSystemOdspInsightDetailsPtrOutput) ToDbSystemOdspInsightDetailsPtrOutput() DbSystemOdspInsightDetailsPtrOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsPtrOutput) ToDbSystemOdspInsightDetailsPtrOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsPtrOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsPtrOutput) Elem() DbSystemOdspInsightDetailsOutput {
+	return o.ApplyT(func(v *DbSystemOdspInsightDetails) DbSystemOdspInsightDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DbSystemOdspInsightDetails
+		return ret
+	}).(DbSystemOdspInsightDetailsOutput)
+}
+
+// (Updatable) Specifies the management of Insight for the dbSystem.
+func (o DbSystemOdspInsightDetailsPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemOdspInsightDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of ODSP Insight and their configurations.
+func (o DbSystemOdspInsightDetailsPtrOutput) OdspInsightLists() DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return o.ApplyT(func(v *DbSystemOdspInsightDetails) []DbSystemOdspInsightDetailsOdspInsightList {
+		if v == nil {
+			return nil
+		}
+		return v.OdspInsightLists
+	}).(DbSystemOdspInsightDetailsOdspInsightListArrayOutput)
+}
+
+type DbSystemOdspInsightDetailsOdspInsightList struct {
+	// (Updatable) Type of Insight collected for the database system.
+	InsightType *string `pulumi:"insightType"`
+	// (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays *int `pulumi:"retentionPeriodInDays"`
+}
+
+// DbSystemOdspInsightDetailsOdspInsightListInput is an input type that accepts DbSystemOdspInsightDetailsOdspInsightListArgs and DbSystemOdspInsightDetailsOdspInsightListOutput values.
+// You can construct a concrete instance of `DbSystemOdspInsightDetailsOdspInsightListInput` via:
+//
+//	DbSystemOdspInsightDetailsOdspInsightListArgs{...}
+type DbSystemOdspInsightDetailsOdspInsightListInput interface {
+	pulumi.Input
+
+	ToDbSystemOdspInsightDetailsOdspInsightListOutput() DbSystemOdspInsightDetailsOdspInsightListOutput
+	ToDbSystemOdspInsightDetailsOdspInsightListOutputWithContext(context.Context) DbSystemOdspInsightDetailsOdspInsightListOutput
+}
+
+type DbSystemOdspInsightDetailsOdspInsightListArgs struct {
+	// (Updatable) Type of Insight collected for the database system.
+	InsightType pulumi.StringPtrInput `pulumi:"insightType"`
+	// (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays pulumi.IntPtrInput `pulumi:"retentionPeriodInDays"`
+}
+
+func (DbSystemOdspInsightDetailsOdspInsightListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemOdspInsightDetailsOdspInsightList)(nil)).Elem()
+}
+
+func (i DbSystemOdspInsightDetailsOdspInsightListArgs) ToDbSystemOdspInsightDetailsOdspInsightListOutput() DbSystemOdspInsightDetailsOdspInsightListOutput {
+	return i.ToDbSystemOdspInsightDetailsOdspInsightListOutputWithContext(context.Background())
+}
+
+func (i DbSystemOdspInsightDetailsOdspInsightListArgs) ToDbSystemOdspInsightDetailsOdspInsightListOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOdspInsightListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOdspInsightDetailsOdspInsightListOutput)
+}
+
+// DbSystemOdspInsightDetailsOdspInsightListArrayInput is an input type that accepts DbSystemOdspInsightDetailsOdspInsightListArray and DbSystemOdspInsightDetailsOdspInsightListArrayOutput values.
+// You can construct a concrete instance of `DbSystemOdspInsightDetailsOdspInsightListArrayInput` via:
+//
+//	DbSystemOdspInsightDetailsOdspInsightListArray{ DbSystemOdspInsightDetailsOdspInsightListArgs{...} }
+type DbSystemOdspInsightDetailsOdspInsightListArrayInput interface {
+	pulumi.Input
+
+	ToDbSystemOdspInsightDetailsOdspInsightListArrayOutput() DbSystemOdspInsightDetailsOdspInsightListArrayOutput
+	ToDbSystemOdspInsightDetailsOdspInsightListArrayOutputWithContext(context.Context) DbSystemOdspInsightDetailsOdspInsightListArrayOutput
+}
+
+type DbSystemOdspInsightDetailsOdspInsightListArray []DbSystemOdspInsightDetailsOdspInsightListInput
+
+func (DbSystemOdspInsightDetailsOdspInsightListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemOdspInsightDetailsOdspInsightList)(nil)).Elem()
+}
+
+func (i DbSystemOdspInsightDetailsOdspInsightListArray) ToDbSystemOdspInsightDetailsOdspInsightListArrayOutput() DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return i.ToDbSystemOdspInsightDetailsOdspInsightListArrayOutputWithContext(context.Background())
+}
+
+func (i DbSystemOdspInsightDetailsOdspInsightListArray) ToDbSystemOdspInsightDetailsOdspInsightListArrayOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOdspInsightDetailsOdspInsightListArrayOutput)
+}
+
+type DbSystemOdspInsightDetailsOdspInsightListOutput struct{ *pulumi.OutputState }
+
+func (DbSystemOdspInsightDetailsOdspInsightListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemOdspInsightDetailsOdspInsightList)(nil)).Elem()
+}
+
+func (o DbSystemOdspInsightDetailsOdspInsightListOutput) ToDbSystemOdspInsightDetailsOdspInsightListOutput() DbSystemOdspInsightDetailsOdspInsightListOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsOdspInsightListOutput) ToDbSystemOdspInsightDetailsOdspInsightListOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOdspInsightListOutput {
+	return o
+}
+
+// (Updatable) Type of Insight collected for the database system.
+func (o DbSystemOdspInsightDetailsOdspInsightListOutput) InsightType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemOdspInsightDetailsOdspInsightList) *string { return v.InsightType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+func (o DbSystemOdspInsightDetailsOdspInsightListOutput) RetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbSystemOdspInsightDetailsOdspInsightList) *int { return v.RetentionPeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+type DbSystemOdspInsightDetailsOdspInsightListArrayOutput struct{ *pulumi.OutputState }
+
+func (DbSystemOdspInsightDetailsOdspInsightListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbSystemOdspInsightDetailsOdspInsightList)(nil)).Elem()
+}
+
+func (o DbSystemOdspInsightDetailsOdspInsightListArrayOutput) ToDbSystemOdspInsightDetailsOdspInsightListArrayOutput() DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsOdspInsightListArrayOutput) ToDbSystemOdspInsightDetailsOdspInsightListArrayOutputWithContext(ctx context.Context) DbSystemOdspInsightDetailsOdspInsightListArrayOutput {
+	return o
+}
+
+func (o DbSystemOdspInsightDetailsOdspInsightListArrayOutput) Index(i pulumi.IntInput) DbSystemOdspInsightDetailsOdspInsightListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbSystemOdspInsightDetailsOdspInsightList {
+		return vs[0].([]DbSystemOdspInsightDetailsOdspInsightList)[vs[1].(int)]
+	}).(DbSystemOdspInsightDetailsOdspInsightListOutput)
+}
+
 type DbSystemPatchOperation struct {
 	From *string `pulumi:"from"`
 	// The operation can be one of these values: `INSERT`, `REMOVE`.
@@ -2435,13 +3115,171 @@ func (o DbSystemPatchOperationArrayOutput) Index(i pulumi.IntInput) DbSystemPatc
 	}).(DbSystemPatchOperationOutput)
 }
 
+type DbSystemReplicationConfig struct {
+	// (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+	IsRpoEnforced *bool `pulumi:"isRpoEnforced"`
+	// (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds *string `pulumi:"rpoInSeconds"`
+}
+
+// DbSystemReplicationConfigInput is an input type that accepts DbSystemReplicationConfigArgs and DbSystemReplicationConfigOutput values.
+// You can construct a concrete instance of `DbSystemReplicationConfigInput` via:
+//
+//	DbSystemReplicationConfigArgs{...}
+type DbSystemReplicationConfigInput interface {
+	pulumi.Input
+
+	ToDbSystemReplicationConfigOutput() DbSystemReplicationConfigOutput
+	ToDbSystemReplicationConfigOutputWithContext(context.Context) DbSystemReplicationConfigOutput
+}
+
+type DbSystemReplicationConfigArgs struct {
+	// (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+	IsRpoEnforced pulumi.BoolPtrInput `pulumi:"isRpoEnforced"`
+	// (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds pulumi.StringPtrInput `pulumi:"rpoInSeconds"`
+}
+
+func (DbSystemReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (i DbSystemReplicationConfigArgs) ToDbSystemReplicationConfigOutput() DbSystemReplicationConfigOutput {
+	return i.ToDbSystemReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i DbSystemReplicationConfigArgs) ToDbSystemReplicationConfigOutputWithContext(ctx context.Context) DbSystemReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemReplicationConfigOutput)
+}
+
+func (i DbSystemReplicationConfigArgs) ToDbSystemReplicationConfigPtrOutput() DbSystemReplicationConfigPtrOutput {
+	return i.ToDbSystemReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DbSystemReplicationConfigArgs) ToDbSystemReplicationConfigPtrOutputWithContext(ctx context.Context) DbSystemReplicationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemReplicationConfigOutput).ToDbSystemReplicationConfigPtrOutputWithContext(ctx)
+}
+
+// DbSystemReplicationConfigPtrInput is an input type that accepts DbSystemReplicationConfigArgs, DbSystemReplicationConfigPtr and DbSystemReplicationConfigPtrOutput values.
+// You can construct a concrete instance of `DbSystemReplicationConfigPtrInput` via:
+//
+//	        DbSystemReplicationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbSystemReplicationConfigPtrInput interface {
+	pulumi.Input
+
+	ToDbSystemReplicationConfigPtrOutput() DbSystemReplicationConfigPtrOutput
+	ToDbSystemReplicationConfigPtrOutputWithContext(context.Context) DbSystemReplicationConfigPtrOutput
+}
+
+type dbSystemReplicationConfigPtrType DbSystemReplicationConfigArgs
+
+func DbSystemReplicationConfigPtr(v *DbSystemReplicationConfigArgs) DbSystemReplicationConfigPtrInput {
+	return (*dbSystemReplicationConfigPtrType)(v)
+}
+
+func (*dbSystemReplicationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (i *dbSystemReplicationConfigPtrType) ToDbSystemReplicationConfigPtrOutput() DbSystemReplicationConfigPtrOutput {
+	return i.ToDbSystemReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *dbSystemReplicationConfigPtrType) ToDbSystemReplicationConfigPtrOutputWithContext(ctx context.Context) DbSystemReplicationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemReplicationConfigPtrOutput)
+}
+
+type DbSystemReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (DbSystemReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (o DbSystemReplicationConfigOutput) ToDbSystemReplicationConfigOutput() DbSystemReplicationConfigOutput {
+	return o
+}
+
+func (o DbSystemReplicationConfigOutput) ToDbSystemReplicationConfigOutputWithContext(ctx context.Context) DbSystemReplicationConfigOutput {
+	return o
+}
+
+func (o DbSystemReplicationConfigOutput) ToDbSystemReplicationConfigPtrOutput() DbSystemReplicationConfigPtrOutput {
+	return o.ToDbSystemReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DbSystemReplicationConfigOutput) ToDbSystemReplicationConfigPtrOutputWithContext(ctx context.Context) DbSystemReplicationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbSystemReplicationConfig) *DbSystemReplicationConfig {
+		return &v
+	}).(DbSystemReplicationConfigPtrOutput)
+}
+
+// (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+func (o DbSystemReplicationConfigOutput) IsRpoEnforced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbSystemReplicationConfig) *bool { return v.IsRpoEnforced }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+func (o DbSystemReplicationConfigOutput) RpoInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemReplicationConfig) *string { return v.RpoInSeconds }).(pulumi.StringPtrOutput)
+}
+
+type DbSystemReplicationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DbSystemReplicationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (o DbSystemReplicationConfigPtrOutput) ToDbSystemReplicationConfigPtrOutput() DbSystemReplicationConfigPtrOutput {
+	return o
+}
+
+func (o DbSystemReplicationConfigPtrOutput) ToDbSystemReplicationConfigPtrOutputWithContext(ctx context.Context) DbSystemReplicationConfigPtrOutput {
+	return o
+}
+
+func (o DbSystemReplicationConfigPtrOutput) Elem() DbSystemReplicationConfigOutput {
+	return o.ApplyT(func(v *DbSystemReplicationConfig) DbSystemReplicationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DbSystemReplicationConfig
+		return ret
+	}).(DbSystemReplicationConfigOutput)
+}
+
+// (Updatable) Specify if Recovery point objective (RPO) enforcement needs to be enabled on the database  system.
+func (o DbSystemReplicationConfigPtrOutput) IsRpoEnforced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DbSystemReplicationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsRpoEnforced
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+func (o DbSystemReplicationConfigPtrOutput) RpoInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemReplicationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RpoInSeconds
+	}).(pulumi.StringPtrOutput)
+}
+
 type DbSystemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId *string `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides *bool `pulumi:"isHavingRestoreConfigOverrides"`
-	// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
-	SourceType string `pulumi:"sourceType"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId *string `pulumi:"primaryDbSystemId"`
+	// The source descriminator.
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // DbSystemSourceInput is an input type that accepts DbSystemSourceArgs and DbSystemSourceOutput values.
@@ -2460,8 +3298,10 @@ type DbSystemSourceArgs struct {
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolPtrInput `pulumi:"isHavingRestoreConfigOverrides"`
-	// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId pulumi.StringPtrInput `pulumi:"primaryDbSystemId"`
+	// The source descriminator.
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (DbSystemSourceArgs) ElementType() reflect.Type {
@@ -2551,9 +3391,14 @@ func (o DbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOut
 	return o.ApplyT(func(v DbSystemSource) *bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolPtrOutput)
 }
 
-// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
-func (o DbSystemSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v DbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+// The [OCID] of the primary database system.
+func (o DbSystemSourceOutput) PrimaryDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemSource) *string { return v.PrimaryDbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// The source descriminator.
+func (o DbSystemSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type DbSystemSourcePtrOutput struct{ *pulumi.OutputState }
@@ -2600,13 +3445,23 @@ func (o DbSystemSourcePtrOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
+// The [OCID] of the primary database system.
+func (o DbSystemSourcePtrOutput) PrimaryDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrimaryDbSystemId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The source descriminator.
 func (o DbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemSource) *string {
 		if v == nil {
 			return nil
 		}
-		return &v.SourceType
+		return v.SourceType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -6330,6 +7185,353 @@ func (o GetDbSystemInstancesDetailArrayOutput) Index(i pulumi.IntInput) GetDbSys
 	}).(GetDbSystemInstancesDetailOutput)
 }
 
+type GetDbSystemKerberosAuthDetail struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials []GetDbSystemKerberosAuthDetailBackupCredential `pulumi:"backupCredentials"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+	Credentials []GetDbSystemKerberosAuthDetailCredential `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+}
+
+// GetDbSystemKerberosAuthDetailInput is an input type that accepts GetDbSystemKerberosAuthDetailArgs and GetDbSystemKerberosAuthDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailInput` via:
+//
+//	GetDbSystemKerberosAuthDetailArgs{...}
+type GetDbSystemKerberosAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailOutput() GetDbSystemKerberosAuthDetailOutput
+	ToGetDbSystemKerberosAuthDetailOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailOutput
+}
+
+type GetDbSystemKerberosAuthDetailArgs struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials GetDbSystemKerberosAuthDetailBackupCredentialArrayInput `pulumi:"backupCredentials"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+	Credentials GetDbSystemKerberosAuthDetailCredentialArrayInput `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (GetDbSystemKerberosAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailArgs) ToGetDbSystemKerberosAuthDetailOutput() GetDbSystemKerberosAuthDetailOutput {
+	return i.ToGetDbSystemKerberosAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailArgs) ToGetDbSystemKerberosAuthDetailOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailOutput)
+}
+
+// GetDbSystemKerberosAuthDetailArrayInput is an input type that accepts GetDbSystemKerberosAuthDetailArray and GetDbSystemKerberosAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailArrayInput` via:
+//
+//	GetDbSystemKerberosAuthDetailArray{ GetDbSystemKerberosAuthDetailArgs{...} }
+type GetDbSystemKerberosAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailArrayOutput() GetDbSystemKerberosAuthDetailArrayOutput
+	ToGetDbSystemKerberosAuthDetailArrayOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailArrayOutput
+}
+
+type GetDbSystemKerberosAuthDetailArray []GetDbSystemKerberosAuthDetailInput
+
+func (GetDbSystemKerberosAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailArray) ToGetDbSystemKerberosAuthDetailArrayOutput() GetDbSystemKerberosAuthDetailArrayOutput {
+	return i.ToGetDbSystemKerberosAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailArray) ToGetDbSystemKerberosAuthDetailArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailArrayOutput)
+}
+
+type GetDbSystemKerberosAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailOutput) ToGetDbSystemKerberosAuthDetailOutput() GetDbSystemKerberosAuthDetailOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailOutput) ToGetDbSystemKerberosAuthDetailOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailOutput {
+	return o
+}
+
+// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+func (o GetDbSystemKerberosAuthDetailOutput) BackupCredentials() GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetail) []GetDbSystemKerberosAuthDetailBackupCredential {
+		return v.BackupCredentials
+	}).(GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput)
+}
+
+// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+func (o GetDbSystemKerberosAuthDetailOutput) Credentials() GetDbSystemKerberosAuthDetailCredentialArrayOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetail) []GetDbSystemKerberosAuthDetailCredential { return v.Credentials }).(GetDbSystemKerberosAuthDetailCredentialArrayOutput)
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemKerberosAuthDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetail) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type GetDbSystemKerberosAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailArrayOutput) ToGetDbSystemKerberosAuthDetailArrayOutput() GetDbSystemKerberosAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailArrayOutput) ToGetDbSystemKerberosAuthDetailArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemKerberosAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemKerberosAuthDetail {
+		return vs[0].([]GetDbSystemKerberosAuthDetail)[vs[1].(int)]
+	}).(GetDbSystemKerberosAuthDetailOutput)
+}
+
+type GetDbSystemKerberosAuthDetailBackupCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName string `pulumi:"realmName"`
+}
+
+// GetDbSystemKerberosAuthDetailBackupCredentialInput is an input type that accepts GetDbSystemKerberosAuthDetailBackupCredentialArgs and GetDbSystemKerberosAuthDetailBackupCredentialOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailBackupCredentialInput` via:
+//
+//	GetDbSystemKerberosAuthDetailBackupCredentialArgs{...}
+type GetDbSystemKerberosAuthDetailBackupCredentialInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailBackupCredentialOutput() GetDbSystemKerberosAuthDetailBackupCredentialOutput
+	ToGetDbSystemKerberosAuthDetailBackupCredentialOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailBackupCredentialOutput
+}
+
+type GetDbSystemKerberosAuthDetailBackupCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringInput `pulumi:"realmName"`
+}
+
+func (GetDbSystemKerberosAuthDetailBackupCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailBackupCredentialArgs) ToGetDbSystemKerberosAuthDetailBackupCredentialOutput() GetDbSystemKerberosAuthDetailBackupCredentialOutput {
+	return i.ToGetDbSystemKerberosAuthDetailBackupCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailBackupCredentialArgs) ToGetDbSystemKerberosAuthDetailBackupCredentialOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailBackupCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailBackupCredentialOutput)
+}
+
+// GetDbSystemKerberosAuthDetailBackupCredentialArrayInput is an input type that accepts GetDbSystemKerberosAuthDetailBackupCredentialArray and GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailBackupCredentialArrayInput` via:
+//
+//	GetDbSystemKerberosAuthDetailBackupCredentialArray{ GetDbSystemKerberosAuthDetailBackupCredentialArgs{...} }
+type GetDbSystemKerberosAuthDetailBackupCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput
+	ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput
+}
+
+type GetDbSystemKerberosAuthDetailBackupCredentialArray []GetDbSystemKerberosAuthDetailBackupCredentialInput
+
+func (GetDbSystemKerberosAuthDetailBackupCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailBackupCredentialArray) ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput {
+	return i.ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailBackupCredentialArray) ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput)
+}
+
+type GetDbSystemKerberosAuthDetailBackupCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailBackupCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailBackupCredentialOutput) ToGetDbSystemKerberosAuthDetailBackupCredentialOutput() GetDbSystemKerberosAuthDetailBackupCredentialOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailBackupCredentialOutput) ToGetDbSystemKerberosAuthDetailBackupCredentialOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailBackupCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o GetDbSystemKerberosAuthDetailBackupCredentialOutput) KeytabSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailBackupCredential) string { return v.KeytabSecretId }).(pulumi.StringOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o GetDbSystemKerberosAuthDetailBackupCredentialOutput) KeytabSecretVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailBackupCredential) string { return v.KeytabSecretVersion }).(pulumi.StringOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o GetDbSystemKerberosAuthDetailBackupCredentialOutput) RealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailBackupCredential) string { return v.RealmName }).(pulumi.StringOutput)
+}
+
+type GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput) ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput) ToGetDbSystemKerberosAuthDetailBackupCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput) Index(i pulumi.IntInput) GetDbSystemKerberosAuthDetailBackupCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemKerberosAuthDetailBackupCredential {
+		return vs[0].([]GetDbSystemKerberosAuthDetailBackupCredential)[vs[1].(int)]
+	}).(GetDbSystemKerberosAuthDetailBackupCredentialOutput)
+}
+
+type GetDbSystemKerberosAuthDetailCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName string `pulumi:"realmName"`
+}
+
+// GetDbSystemKerberosAuthDetailCredentialInput is an input type that accepts GetDbSystemKerberosAuthDetailCredentialArgs and GetDbSystemKerberosAuthDetailCredentialOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailCredentialInput` via:
+//
+//	GetDbSystemKerberosAuthDetailCredentialArgs{...}
+type GetDbSystemKerberosAuthDetailCredentialInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailCredentialOutput() GetDbSystemKerberosAuthDetailCredentialOutput
+	ToGetDbSystemKerberosAuthDetailCredentialOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailCredentialOutput
+}
+
+type GetDbSystemKerberosAuthDetailCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringInput `pulumi:"realmName"`
+}
+
+func (GetDbSystemKerberosAuthDetailCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailCredentialArgs) ToGetDbSystemKerberosAuthDetailCredentialOutput() GetDbSystemKerberosAuthDetailCredentialOutput {
+	return i.ToGetDbSystemKerberosAuthDetailCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailCredentialArgs) ToGetDbSystemKerberosAuthDetailCredentialOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailCredentialOutput)
+}
+
+// GetDbSystemKerberosAuthDetailCredentialArrayInput is an input type that accepts GetDbSystemKerberosAuthDetailCredentialArray and GetDbSystemKerberosAuthDetailCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemKerberosAuthDetailCredentialArrayInput` via:
+//
+//	GetDbSystemKerberosAuthDetailCredentialArray{ GetDbSystemKerberosAuthDetailCredentialArgs{...} }
+type GetDbSystemKerberosAuthDetailCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemKerberosAuthDetailCredentialArrayOutput() GetDbSystemKerberosAuthDetailCredentialArrayOutput
+	ToGetDbSystemKerberosAuthDetailCredentialArrayOutputWithContext(context.Context) GetDbSystemKerberosAuthDetailCredentialArrayOutput
+}
+
+type GetDbSystemKerberosAuthDetailCredentialArray []GetDbSystemKerberosAuthDetailCredentialInput
+
+func (GetDbSystemKerberosAuthDetailCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemKerberosAuthDetailCredentialArray) ToGetDbSystemKerberosAuthDetailCredentialArrayOutput() GetDbSystemKerberosAuthDetailCredentialArrayOutput {
+	return i.ToGetDbSystemKerberosAuthDetailCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemKerberosAuthDetailCredentialArray) ToGetDbSystemKerberosAuthDetailCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemKerberosAuthDetailCredentialArrayOutput)
+}
+
+type GetDbSystemKerberosAuthDetailCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailCredentialOutput) ToGetDbSystemKerberosAuthDetailCredentialOutput() GetDbSystemKerberosAuthDetailCredentialOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailCredentialOutput) ToGetDbSystemKerberosAuthDetailCredentialOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o GetDbSystemKerberosAuthDetailCredentialOutput) KeytabSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailCredential) string { return v.KeytabSecretId }).(pulumi.StringOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o GetDbSystemKerberosAuthDetailCredentialOutput) KeytabSecretVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailCredential) string { return v.KeytabSecretVersion }).(pulumi.StringOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o GetDbSystemKerberosAuthDetailCredentialOutput) RealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemKerberosAuthDetailCredential) string { return v.RealmName }).(pulumi.StringOutput)
+}
+
+type GetDbSystemKerberosAuthDetailCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemKerberosAuthDetailCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemKerberosAuthDetailCredentialArrayOutput) ToGetDbSystemKerberosAuthDetailCredentialArrayOutput() GetDbSystemKerberosAuthDetailCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailCredentialArrayOutput) ToGetDbSystemKerberosAuthDetailCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemKerberosAuthDetailCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemKerberosAuthDetailCredentialArrayOutput) Index(i pulumi.IntInput) GetDbSystemKerberosAuthDetailCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemKerberosAuthDetailCredential {
+		return vs[0].([]GetDbSystemKerberosAuthDetailCredential)[vs[1].(int)]
+	}).(GetDbSystemKerberosAuthDetailCredentialOutput)
+}
+
 type GetDbSystemManagementPolicy struct {
 	// PostgreSQL database system backup policy.
 	BackupPolicies []GetDbSystemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
@@ -6445,7 +7647,7 @@ type GetDbSystemManagementPolicyBackupPolicy struct {
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
 	DaysOfTheWeeks []string `pulumi:"daysOfTheWeeks"`
-	// The kind of backup policy.
+	// Specifies the management of Insight for the dbSystem.
 	Kind string `pulumi:"kind"`
 	// How many days the data should be stored after the database system deletion.
 	RetentionDays int `pulumi:"retentionDays"`
@@ -6471,7 +7673,7 @@ type GetDbSystemManagementPolicyBackupPolicyArgs struct {
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
 	DaysOfTheWeeks pulumi.StringArrayInput `pulumi:"daysOfTheWeeks"`
-	// The kind of backup policy.
+	// Specifies the management of Insight for the dbSystem.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// How many days the data should be stored after the database system deletion.
 	RetentionDays pulumi.IntInput `pulumi:"retentionDays"`
@@ -6550,7 +7752,7 @@ func (o GetDbSystemManagementPolicyBackupPolicyOutput) DaysOfTheWeeks() pulumi.S
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) []string { return v.DaysOfTheWeeks }).(pulumi.StringArrayOutput)
 }
 
-// The kind of backup policy.
+// Specifies the management of Insight for the dbSystem.
 func (o GetDbSystemManagementPolicyBackupPolicyOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicyBackupPolicy) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -6819,6 +8021,220 @@ func (o GetDbSystemNetworkDetailArrayOutput) Index(i pulumi.IntInput) GetDbSyste
 	}).(GetDbSystemNetworkDetailOutput)
 }
 
+type GetDbSystemOdspInsightDetail struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+	// List of ODSP Insight and their configurations.
+	OdspInsightLists []GetDbSystemOdspInsightDetailOdspInsightList `pulumi:"odspInsightLists"`
+}
+
+// GetDbSystemOdspInsightDetailInput is an input type that accepts GetDbSystemOdspInsightDetailArgs and GetDbSystemOdspInsightDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemOdspInsightDetailInput` via:
+//
+//	GetDbSystemOdspInsightDetailArgs{...}
+type GetDbSystemOdspInsightDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOdspInsightDetailOutput() GetDbSystemOdspInsightDetailOutput
+	ToGetDbSystemOdspInsightDetailOutputWithContext(context.Context) GetDbSystemOdspInsightDetailOutput
+}
+
+type GetDbSystemOdspInsightDetailArgs struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// List of ODSP Insight and their configurations.
+	OdspInsightLists GetDbSystemOdspInsightDetailOdspInsightListArrayInput `pulumi:"odspInsightLists"`
+}
+
+func (GetDbSystemOdspInsightDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOdspInsightDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOdspInsightDetailArgs) ToGetDbSystemOdspInsightDetailOutput() GetDbSystemOdspInsightDetailOutput {
+	return i.ToGetDbSystemOdspInsightDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOdspInsightDetailArgs) ToGetDbSystemOdspInsightDetailOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOdspInsightDetailOutput)
+}
+
+// GetDbSystemOdspInsightDetailArrayInput is an input type that accepts GetDbSystemOdspInsightDetailArray and GetDbSystemOdspInsightDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOdspInsightDetailArrayInput` via:
+//
+//	GetDbSystemOdspInsightDetailArray{ GetDbSystemOdspInsightDetailArgs{...} }
+type GetDbSystemOdspInsightDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOdspInsightDetailArrayOutput() GetDbSystemOdspInsightDetailArrayOutput
+	ToGetDbSystemOdspInsightDetailArrayOutputWithContext(context.Context) GetDbSystemOdspInsightDetailArrayOutput
+}
+
+type GetDbSystemOdspInsightDetailArray []GetDbSystemOdspInsightDetailInput
+
+func (GetDbSystemOdspInsightDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOdspInsightDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemOdspInsightDetailArray) ToGetDbSystemOdspInsightDetailArrayOutput() GetDbSystemOdspInsightDetailArrayOutput {
+	return i.ToGetDbSystemOdspInsightDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOdspInsightDetailArray) ToGetDbSystemOdspInsightDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOdspInsightDetailArrayOutput)
+}
+
+type GetDbSystemOdspInsightDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOdspInsightDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOdspInsightDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOdspInsightDetailOutput) ToGetDbSystemOdspInsightDetailOutput() GetDbSystemOdspInsightDetailOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailOutput) ToGetDbSystemOdspInsightDetailOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOutput {
+	return o
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemOdspInsightDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOdspInsightDetail) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// List of ODSP Insight and their configurations.
+func (o GetDbSystemOdspInsightDetailOutput) OdspInsightLists() GetDbSystemOdspInsightDetailOdspInsightListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemOdspInsightDetail) []GetDbSystemOdspInsightDetailOdspInsightList {
+		return v.OdspInsightLists
+	}).(GetDbSystemOdspInsightDetailOdspInsightListArrayOutput)
+}
+
+type GetDbSystemOdspInsightDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOdspInsightDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOdspInsightDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemOdspInsightDetailArrayOutput) ToGetDbSystemOdspInsightDetailArrayOutput() GetDbSystemOdspInsightDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailArrayOutput) ToGetDbSystemOdspInsightDetailArrayOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemOdspInsightDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOdspInsightDetail {
+		return vs[0].([]GetDbSystemOdspInsightDetail)[vs[1].(int)]
+	}).(GetDbSystemOdspInsightDetailOutput)
+}
+
+type GetDbSystemOdspInsightDetailOdspInsightList struct {
+	// Type of Insight collected for the database system.
+	InsightType string `pulumi:"insightType"`
+	// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+}
+
+// GetDbSystemOdspInsightDetailOdspInsightListInput is an input type that accepts GetDbSystemOdspInsightDetailOdspInsightListArgs and GetDbSystemOdspInsightDetailOdspInsightListOutput values.
+// You can construct a concrete instance of `GetDbSystemOdspInsightDetailOdspInsightListInput` via:
+//
+//	GetDbSystemOdspInsightDetailOdspInsightListArgs{...}
+type GetDbSystemOdspInsightDetailOdspInsightListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOdspInsightDetailOdspInsightListOutput() GetDbSystemOdspInsightDetailOdspInsightListOutput
+	ToGetDbSystemOdspInsightDetailOdspInsightListOutputWithContext(context.Context) GetDbSystemOdspInsightDetailOdspInsightListOutput
+}
+
+type GetDbSystemOdspInsightDetailOdspInsightListArgs struct {
+	// Type of Insight collected for the database system.
+	InsightType pulumi.StringInput `pulumi:"insightType"`
+	// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays pulumi.IntInput `pulumi:"retentionPeriodInDays"`
+}
+
+func (GetDbSystemOdspInsightDetailOdspInsightListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (i GetDbSystemOdspInsightDetailOdspInsightListArgs) ToGetDbSystemOdspInsightDetailOdspInsightListOutput() GetDbSystemOdspInsightDetailOdspInsightListOutput {
+	return i.ToGetDbSystemOdspInsightDetailOdspInsightListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOdspInsightDetailOdspInsightListArgs) ToGetDbSystemOdspInsightDetailOdspInsightListOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOdspInsightListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOdspInsightDetailOdspInsightListOutput)
+}
+
+// GetDbSystemOdspInsightDetailOdspInsightListArrayInput is an input type that accepts GetDbSystemOdspInsightDetailOdspInsightListArray and GetDbSystemOdspInsightDetailOdspInsightListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemOdspInsightDetailOdspInsightListArrayInput` via:
+//
+//	GetDbSystemOdspInsightDetailOdspInsightListArray{ GetDbSystemOdspInsightDetailOdspInsightListArgs{...} }
+type GetDbSystemOdspInsightDetailOdspInsightListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemOdspInsightDetailOdspInsightListArrayOutput
+	ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutputWithContext(context.Context) GetDbSystemOdspInsightDetailOdspInsightListArrayOutput
+}
+
+type GetDbSystemOdspInsightDetailOdspInsightListArray []GetDbSystemOdspInsightDetailOdspInsightListInput
+
+func (GetDbSystemOdspInsightDetailOdspInsightListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (i GetDbSystemOdspInsightDetailOdspInsightListArray) ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemOdspInsightDetailOdspInsightListArrayOutput {
+	return i.ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemOdspInsightDetailOdspInsightListArray) ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOdspInsightListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemOdspInsightDetailOdspInsightListArrayOutput)
+}
+
+type GetDbSystemOdspInsightDetailOdspInsightListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOdspInsightDetailOdspInsightListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (o GetDbSystemOdspInsightDetailOdspInsightListOutput) ToGetDbSystemOdspInsightDetailOdspInsightListOutput() GetDbSystemOdspInsightDetailOdspInsightListOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailOdspInsightListOutput) ToGetDbSystemOdspInsightDetailOdspInsightListOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOdspInsightListOutput {
+	return o
+}
+
+// Type of Insight collected for the database system.
+func (o GetDbSystemOdspInsightDetailOdspInsightListOutput) InsightType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemOdspInsightDetailOdspInsightList) string { return v.InsightType }).(pulumi.StringOutput)
+}
+
+// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+func (o GetDbSystemOdspInsightDetailOdspInsightListOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemOdspInsightDetailOdspInsightList) int { return v.RetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+type GetDbSystemOdspInsightDetailOdspInsightListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemOdspInsightDetailOdspInsightListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (o GetDbSystemOdspInsightDetailOdspInsightListArrayOutput) ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemOdspInsightDetailOdspInsightListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailOdspInsightListArrayOutput) ToGetDbSystemOdspInsightDetailOdspInsightListArrayOutputWithContext(ctx context.Context) GetDbSystemOdspInsightDetailOdspInsightListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemOdspInsightDetailOdspInsightListArrayOutput) Index(i pulumi.IntInput) GetDbSystemOdspInsightDetailOdspInsightListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemOdspInsightDetailOdspInsightList {
+		return vs[0].([]GetDbSystemOdspInsightDetailOdspInsightList)[vs[1].(int)]
+	}).(GetDbSystemOdspInsightDetailOdspInsightListOutput)
+}
+
 type GetDbSystemPatchOperation struct {
 	From         string            `pulumi:"from"`
 	Operation    string            `pulumi:"operation"`
@@ -6943,11 +8359,430 @@ func (o GetDbSystemPatchOperationArrayOutput) Index(i pulumi.IntInput) GetDbSyst
 	}).(GetDbSystemPatchOperationOutput)
 }
 
+type GetDbSystemReplicasDbSystemReplicaCollection struct {
+	// List of replica database systems.
+	Items []GetDbSystemReplicasDbSystemReplicaCollectionItem `pulumi:"items"`
+}
+
+// GetDbSystemReplicasDbSystemReplicaCollectionInput is an input type that accepts GetDbSystemReplicasDbSystemReplicaCollectionArgs and GetDbSystemReplicasDbSystemReplicaCollectionOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasDbSystemReplicaCollectionInput` via:
+//
+//	GetDbSystemReplicasDbSystemReplicaCollectionArgs{...}
+type GetDbSystemReplicasDbSystemReplicaCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasDbSystemReplicaCollectionOutput() GetDbSystemReplicasDbSystemReplicaCollectionOutput
+	ToGetDbSystemReplicasDbSystemReplicaCollectionOutputWithContext(context.Context) GetDbSystemReplicasDbSystemReplicaCollectionOutput
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionArgs struct {
+	// List of replica database systems.
+	Items GetDbSystemReplicasDbSystemReplicaCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollection)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionArgs) ToGetDbSystemReplicasDbSystemReplicaCollectionOutput() GetDbSystemReplicasDbSystemReplicaCollectionOutput {
+	return i.ToGetDbSystemReplicasDbSystemReplicaCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionArgs) ToGetDbSystemReplicasDbSystemReplicaCollectionOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasDbSystemReplicaCollectionOutput)
+}
+
+// GetDbSystemReplicasDbSystemReplicaCollectionArrayInput is an input type that accepts GetDbSystemReplicasDbSystemReplicaCollectionArray and GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasDbSystemReplicaCollectionArrayInput` via:
+//
+//	GetDbSystemReplicasDbSystemReplicaCollectionArray{ GetDbSystemReplicasDbSystemReplicaCollectionArgs{...} }
+type GetDbSystemReplicasDbSystemReplicaCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput
+	ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutputWithContext(context.Context) GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionArray []GetDbSystemReplicasDbSystemReplicaCollectionInput
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasDbSystemReplicaCollection)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionArray) ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput {
+	return i.ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionArray) ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput)
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollection)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionOutput() GetDbSystemReplicasDbSystemReplicaCollectionOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionOutput {
+	return o
+}
+
+// List of replica database systems.
+func (o GetDbSystemReplicasDbSystemReplicaCollectionOutput) Items() GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasDbSystemReplicaCollection) []GetDbSystemReplicasDbSystemReplicaCollectionItem {
+		return v.Items
+	}).(GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput)
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasDbSystemReplicaCollection)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput) Index(i pulumi.IntInput) GetDbSystemReplicasDbSystemReplicaCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemReplicasDbSystemReplicaCollection {
+		return vs[0].([]GetDbSystemReplicasDbSystemReplicaCollection)[vs[1].(int)]
+	}).(GetDbSystemReplicasDbSystemReplicaCollectionOutput)
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionItem struct {
+	// A unique identifier for the replica database system.
+	Id string `pulumi:"id"`
+	// Region name of the replica database system region. Example: `us-phoenix-1`
+	Region string `pulumi:"region"`
+}
+
+// GetDbSystemReplicasDbSystemReplicaCollectionItemInput is an input type that accepts GetDbSystemReplicasDbSystemReplicaCollectionItemArgs and GetDbSystemReplicasDbSystemReplicaCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasDbSystemReplicaCollectionItemInput` via:
+//
+//	GetDbSystemReplicasDbSystemReplicaCollectionItemArgs{...}
+type GetDbSystemReplicasDbSystemReplicaCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemOutput
+	ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutputWithContext(context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemOutput
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionItemArgs struct {
+	// A unique identifier for the replica database system.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Region name of the replica database system region. Example: `us-phoenix-1`
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionItemArgs) ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemOutput {
+	return i.ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionItemArgs) ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasDbSystemReplicaCollectionItemOutput)
+}
+
+// GetDbSystemReplicasDbSystemReplicaCollectionItemArrayInput is an input type that accepts GetDbSystemReplicasDbSystemReplicaCollectionItemArray and GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasDbSystemReplicaCollectionItemArrayInput` via:
+//
+//	GetDbSystemReplicasDbSystemReplicaCollectionItemArray{ GetDbSystemReplicasDbSystemReplicaCollectionItemArgs{...} }
+type GetDbSystemReplicasDbSystemReplicaCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput
+	ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutputWithContext(context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionItemArray []GetDbSystemReplicasDbSystemReplicaCollectionItemInput
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasDbSystemReplicaCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionItemArray) ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput {
+	return i.ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasDbSystemReplicaCollectionItemArray) ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput)
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionItemOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemOutput {
+	return o
+}
+
+// A unique identifier for the replica database system.
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasDbSystemReplicaCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Region name of the replica database system region. Example: `us-phoenix-1`
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasDbSystemReplicaCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasDbSystemReplicaCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput() GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput) ToGetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbSystemReplicasDbSystemReplicaCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemReplicasDbSystemReplicaCollectionItem {
+		return vs[0].([]GetDbSystemReplicasDbSystemReplicaCollectionItem)[vs[1].(int)]
+	}).(GetDbSystemReplicasDbSystemReplicaCollectionItemOutput)
+}
+
+type GetDbSystemReplicasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbSystemReplicasFilterInput is an input type that accepts GetDbSystemReplicasFilterArgs and GetDbSystemReplicasFilterOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasFilterInput` via:
+//
+//	GetDbSystemReplicasFilterArgs{...}
+type GetDbSystemReplicasFilterInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasFilterOutput() GetDbSystemReplicasFilterOutput
+	ToGetDbSystemReplicasFilterOutputWithContext(context.Context) GetDbSystemReplicasFilterOutput
+}
+
+type GetDbSystemReplicasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbSystemReplicasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasFilterArgs) ToGetDbSystemReplicasFilterOutput() GetDbSystemReplicasFilterOutput {
+	return i.ToGetDbSystemReplicasFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasFilterArgs) ToGetDbSystemReplicasFilterOutputWithContext(ctx context.Context) GetDbSystemReplicasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasFilterOutput)
+}
+
+// GetDbSystemReplicasFilterArrayInput is an input type that accepts GetDbSystemReplicasFilterArray and GetDbSystemReplicasFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicasFilterArrayInput` via:
+//
+//	GetDbSystemReplicasFilterArray{ GetDbSystemReplicasFilterArgs{...} }
+type GetDbSystemReplicasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicasFilterArrayOutput() GetDbSystemReplicasFilterArrayOutput
+	ToGetDbSystemReplicasFilterArrayOutputWithContext(context.Context) GetDbSystemReplicasFilterArrayOutput
+}
+
+type GetDbSystemReplicasFilterArray []GetDbSystemReplicasFilterInput
+
+func (GetDbSystemReplicasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasFilter)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicasFilterArray) ToGetDbSystemReplicasFilterArrayOutput() GetDbSystemReplicasFilterArrayOutput {
+	return i.ToGetDbSystemReplicasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicasFilterArray) ToGetDbSystemReplicasFilterArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicasFilterArrayOutput)
+}
+
+type GetDbSystemReplicasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicasFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasFilterOutput) ToGetDbSystemReplicasFilterOutput() GetDbSystemReplicasFilterOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasFilterOutput) ToGetDbSystemReplicasFilterOutputWithContext(ctx context.Context) GetDbSystemReplicasFilterOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemReplicasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbSystemReplicasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemReplicasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbSystemReplicasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicasFilter)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicasFilterArrayOutput) ToGetDbSystemReplicasFilterArrayOutput() GetDbSystemReplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasFilterArrayOutput) ToGetDbSystemReplicasFilterArrayOutputWithContext(ctx context.Context) GetDbSystemReplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetDbSystemReplicasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemReplicasFilter {
+		return vs[0].([]GetDbSystemReplicasFilter)[vs[1].(int)]
+	}).(GetDbSystemReplicasFilterOutput)
+}
+
+type GetDbSystemReplicationConfig struct {
+	// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+	IsRpoEnforced bool `pulumi:"isRpoEnforced"`
+	// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds string `pulumi:"rpoInSeconds"`
+}
+
+// GetDbSystemReplicationConfigInput is an input type that accepts GetDbSystemReplicationConfigArgs and GetDbSystemReplicationConfigOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicationConfigInput` via:
+//
+//	GetDbSystemReplicationConfigArgs{...}
+type GetDbSystemReplicationConfigInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicationConfigOutput() GetDbSystemReplicationConfigOutput
+	ToGetDbSystemReplicationConfigOutputWithContext(context.Context) GetDbSystemReplicationConfigOutput
+}
+
+type GetDbSystemReplicationConfigArgs struct {
+	// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+	IsRpoEnforced pulumi.BoolInput `pulumi:"isRpoEnforced"`
+	// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds pulumi.StringInput `pulumi:"rpoInSeconds"`
+}
+
+func (GetDbSystemReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicationConfigArgs) ToGetDbSystemReplicationConfigOutput() GetDbSystemReplicationConfigOutput {
+	return i.ToGetDbSystemReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicationConfigArgs) ToGetDbSystemReplicationConfigOutputWithContext(ctx context.Context) GetDbSystemReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicationConfigOutput)
+}
+
+// GetDbSystemReplicationConfigArrayInput is an input type that accepts GetDbSystemReplicationConfigArray and GetDbSystemReplicationConfigArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemReplicationConfigArrayInput` via:
+//
+//	GetDbSystemReplicationConfigArray{ GetDbSystemReplicationConfigArgs{...} }
+type GetDbSystemReplicationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemReplicationConfigArrayOutput() GetDbSystemReplicationConfigArrayOutput
+	ToGetDbSystemReplicationConfigArrayOutputWithContext(context.Context) GetDbSystemReplicationConfigArrayOutput
+}
+
+type GetDbSystemReplicationConfigArray []GetDbSystemReplicationConfigInput
+
+func (GetDbSystemReplicationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemReplicationConfigArray) ToGetDbSystemReplicationConfigArrayOutput() GetDbSystemReplicationConfigArrayOutput {
+	return i.ToGetDbSystemReplicationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemReplicationConfigArray) ToGetDbSystemReplicationConfigArrayOutputWithContext(ctx context.Context) GetDbSystemReplicationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemReplicationConfigArrayOutput)
+}
+
+type GetDbSystemReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicationConfigOutput) ToGetDbSystemReplicationConfigOutput() GetDbSystemReplicationConfigOutput {
+	return o
+}
+
+func (o GetDbSystemReplicationConfigOutput) ToGetDbSystemReplicationConfigOutputWithContext(ctx context.Context) GetDbSystemReplicationConfigOutput {
+	return o
+}
+
+// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+func (o GetDbSystemReplicationConfigOutput) IsRpoEnforced() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemReplicationConfig) bool { return v.IsRpoEnforced }).(pulumi.BoolOutput)
+}
+
+// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+func (o GetDbSystemReplicationConfigOutput) RpoInSeconds() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemReplicationConfig) string { return v.RpoInSeconds }).(pulumi.StringOutput)
+}
+
+type GetDbSystemReplicationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemReplicationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemReplicationConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemReplicationConfigArrayOutput) ToGetDbSystemReplicationConfigArrayOutput() GetDbSystemReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicationConfigArrayOutput) ToGetDbSystemReplicationConfigArrayOutputWithContext(ctx context.Context) GetDbSystemReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemReplicationConfigArrayOutput) Index(i pulumi.IntInput) GetDbSystemReplicationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemReplicationConfig {
+		return vs[0].([]GetDbSystemReplicationConfig)[vs[1].(int)]
+	}).(GetDbSystemReplicationConfigOutput)
+}
+
 type GetDbSystemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId string `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -6968,6 +8803,8 @@ type GetDbSystemSourceArgs struct {
 	BackupId pulumi.StringInput `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId pulumi.StringInput `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -7031,6 +8868,11 @@ func (o GetDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 // Deprecated. Don't use.
 func (o GetDbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
+}
+
+// The [OCID] of the primary database system.
+func (o GetDbSystemSourceOutput) PrimaryDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemSource) string { return v.PrimaryDbSystemId }).(pulumi.StringOutput)
 }
 
 // The source descriminator.
@@ -7278,12 +9120,14 @@ func (o GetDbSystemsDbSystemCollectionArrayOutput) Index(i pulumi.IntInput) GetD
 
 type GetDbSystemsDbSystemCollectionItem struct {
 	// The database system administrator username.
-	AdminUsername string `pulumi:"adminUsername"`
-	ApplyConfig   string `pulumi:"applyConfig"`
+	AdminUsername               string `pulumi:"adminUsername"`
+	ApplyChangeModeToStandAlone string `pulumi:"applyChangeModeToStandAlone"`
+	ApplyConfig                 string `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
-	ConfigId    string                                         `pulumi:"configId"`
+	ConfigId string `pulumi:"configId"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 	Credentials []GetDbSystemsDbSystemCollectionItemCredential `pulumi:"credentials"`
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
@@ -7306,13 +9150,19 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	// The list of instances, or nodes, in the database system.
 	Instances        []GetDbSystemsDbSystemCollectionItemInstance        `pulumi:"instances"`
 	InstancesDetails []GetDbSystemsDbSystemCollectionItemInstancesDetail `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails []GetDbSystemsDbSystemCollectionItemKerberosAuthDetail `pulumi:"kerberosAuthDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// PostgreSQL database system management policy.
 	ManagementPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicy `pulumi:"managementPolicies"`
 	// Network details for the database system.
-	NetworkDetails  []GetDbSystemsDbSystemCollectionItemNetworkDetail  `pulumi:"networkDetails"`
-	PatchOperations []GetDbSystemsDbSystemCollectionItemPatchOperation `pulumi:"patchOperations"`
+	NetworkDetails []GetDbSystemsDbSystemCollectionItemNetworkDetail `pulumi:"networkDetails"`
+	// ODSP Insight details for the database system.
+	OdspInsightDetails []GetDbSystemsDbSystemCollectionItemOdspInsightDetail `pulumi:"odspInsightDetails"`
+	PatchOperations    []GetDbSystemsDbSystemCollectionItemPatchOperation    `pulumi:"patchOperations"`
+	// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+	ReplicationConfigs []GetDbSystemsDbSystemCollectionItemReplicationConfig `pulumi:"replicationConfigs"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 	// The source of the database system.
@@ -7321,6 +9171,8 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	State string `pulumi:"state"`
 	// Storage details of the database system.
 	StorageDetails []GetDbSystemsDbSystemCollectionItemStorageDetail `pulumi:"storageDetails"`
+	// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+	SystemRole string `pulumi:"systemRole"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of the database system.
@@ -7344,12 +9196,14 @@ type GetDbSystemsDbSystemCollectionItemInput interface {
 
 type GetDbSystemsDbSystemCollectionItemArgs struct {
 	// The database system administrator username.
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
-	ApplyConfig   pulumi.StringInput `pulumi:"applyConfig"`
+	AdminUsername               pulumi.StringInput `pulumi:"adminUsername"`
+	ApplyChangeModeToStandAlone pulumi.StringInput `pulumi:"applyChangeModeToStandAlone"`
+	ApplyConfig                 pulumi.StringInput `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
-	ConfigId    pulumi.StringInput                                     `pulumi:"configId"`
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 	Credentials GetDbSystemsDbSystemCollectionItemCredentialArrayInput `pulumi:"credentials"`
 	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
@@ -7372,13 +9226,19 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	// The list of instances, or nodes, in the database system.
 	Instances        GetDbSystemsDbSystemCollectionItemInstanceArrayInput        `pulumi:"instances"`
 	InstancesDetails GetDbSystemsDbSystemCollectionItemInstancesDetailArrayInput `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayInput `pulumi:"kerberosAuthDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// PostgreSQL database system management policy.
 	ManagementPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyArrayInput `pulumi:"managementPolicies"`
 	// Network details for the database system.
-	NetworkDetails  GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput  `pulumi:"networkDetails"`
-	PatchOperations GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput `pulumi:"patchOperations"`
+	NetworkDetails GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput `pulumi:"networkDetails"`
+	// ODSP Insight details for the database system.
+	OdspInsightDetails GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayInput `pulumi:"odspInsightDetails"`
+	PatchOperations    GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput    `pulumi:"patchOperations"`
+	// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+	ReplicationConfigs GetDbSystemsDbSystemCollectionItemReplicationConfigArrayInput `pulumi:"replicationConfigs"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The source of the database system.
@@ -7387,6 +9247,8 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// Storage details of the database system.
 	StorageDetails GetDbSystemsDbSystemCollectionItemStorageDetailArrayInput `pulumi:"storageDetails"`
+	// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+	SystemRole pulumi.StringInput `pulumi:"systemRole"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Type of the database system.
@@ -7453,6 +9315,10 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) AdminUsername() pulumi.StringO
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
+func (o GetDbSystemsDbSystemCollectionItemOutput) ApplyChangeModeToStandAlone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.ApplyChangeModeToStandAlone }).(pulumi.StringOutput)
+}
+
 func (o GetDbSystemsDbSystemCollectionItemOutput) ApplyConfig() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.ApplyConfig }).(pulumi.StringOutput)
 }
@@ -7467,6 +9333,7 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) ConfigId() pulumi.StringOutput
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.ConfigId }).(pulumi.StringOutput)
 }
 
+// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Credentials() GetDbSystemsDbSystemCollectionItemCredentialArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemCredential {
 		return v.Credentials
@@ -7531,6 +9398,13 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) InstancesDetails() GetDbSystem
 	}).(GetDbSystemsDbSystemCollectionItemInstancesDetailArrayOutput)
 }
 
+// Kerberos Authentication details for the database system.
+func (o GetDbSystemsDbSystemCollectionItemOutput) KerberosAuthDetails() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemKerberosAuthDetail {
+		return v.KerberosAuthDetails
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDbSystemsDbSystemCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -7550,10 +9424,24 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) NetworkDetails() GetDbSystemsD
 	}).(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput)
 }
 
+// ODSP Insight details for the database system.
+func (o GetDbSystemsDbSystemCollectionItemOutput) OdspInsightDetails() GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemOdspInsightDetail {
+		return v.OdspInsightDetails
+	}).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput)
+}
+
 func (o GetDbSystemsDbSystemCollectionItemOutput) PatchOperations() GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemPatchOperation {
 		return v.PatchOperations
 	}).(GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput)
+}
+
+// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+func (o GetDbSystemsDbSystemCollectionItemOutput) ReplicationConfigs() GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemReplicationConfig {
+		return v.ReplicationConfigs
+	}).(GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput)
 }
 
 // The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
@@ -7578,6 +9466,11 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) StorageDetails() GetDbSystemsD
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemStorageDetail {
 		return v.StorageDetails
 	}).(GetDbSystemsDbSystemCollectionItemStorageDetailArrayOutput)
+}
+
+// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+func (o GetDbSystemsDbSystemCollectionItemOutput) SystemRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.SystemRole }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8106,6 +9999,363 @@ func (o GetDbSystemsDbSystemCollectionItemInstancesDetailArrayOutput) Index(i pu
 	}).(GetDbSystemsDbSystemCollectionItemInstancesDetailOutput)
 }
 
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetail struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential `pulumi:"backupCredentials"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+	Credentials []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs{...}
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs struct {
+	// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+	BackupCredentials GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayInput `pulumi:"backupCredentials"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+	Credentials GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayInput `pulumi:"credentials"`
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray{ GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs{...} }
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailInput
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput {
+	return o
+}
+
+// Optional. List of Kerberos Credentials previously configured for the dbsystem. Currently supports only one entry.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) BackupCredentials() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetail) []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential {
+		return v.BackupCredentials
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput)
+}
+
+// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) Credentials() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetail) []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential {
+		return v.Credentials
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput)
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetail) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemKerberosAuthDetail {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemKerberosAuthDetail)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName string `pulumi:"realmName"`
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs{...}
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringInput `pulumi:"realmName"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray{ GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs{...} }
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialInput
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) KeytabSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential) string {
+		return v.KeytabSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) KeytabSecretVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential) string {
+		return v.KeytabSecretVersion
+	}).(pulumi.StringOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput) RealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential) string {
+		return v.RealmName
+	}).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredential)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId string `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion string `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName string `pulumi:"realmName"`
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs{...}
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs struct {
+	// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+	KeytabSecretId pulumi.StringInput `pulumi:"keytabSecretId"`
+	// The secret version of the stored Kerberos keytab file.
+	KeytabSecretVersion pulumi.StringInput `pulumi:"keytabSecretVersion"`
+	// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+	RealmName pulumi.StringInput `pulumi:"realmName"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray and GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray{ GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs{...} }
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray []GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialInput
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput {
+	return o
+}
+
+// The OCID of the secret where the Kerberos keytab file is stored as base64 text.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) KeytabSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential) string { return v.KeytabSecretId }).(pulumi.StringOutput)
+}
+
+// The secret version of the stored Kerberos keytab file.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) KeytabSecretVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential) string {
+		return v.KeytabSecretVersion
+	}).(pulumi.StringOutput)
+}
+
+// Kerberos realm name.  https://docs.oracle.com/cd/E36784_01/html/E37126/kplanning-27.html Realm names can consist of any ASCII string. Usually, the realm name is the same as your DNS domain name  except that the realm name is in uppercase. This convention helps differentiate problems with the Kerberos  service from problems with the DNS namespace, while keeping a name that is familiar. You can use any string,  but configuration and maintenance might then require more work. Use realm names that follow the standard  Internet naming structure.
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput) RealmName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential) string { return v.RealmName }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput() GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput) ToGetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredential)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput)
+}
+
 type GetDbSystemsDbSystemCollectionItemManagementPolicy struct {
 	// PostgreSQL database system backup policy.
 	BackupPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
@@ -8223,7 +10473,7 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy struct {
 	DaysOfTheMonths []int `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
 	DaysOfTheWeeks []string `pulumi:"daysOfTheWeeks"`
-	// The kind of backup policy.
+	// Specifies the management of Insight for the dbSystem.
 	Kind string `pulumi:"kind"`
 	// How many days the data should be stored after the database system deletion.
 	RetentionDays int `pulumi:"retentionDays"`
@@ -8249,7 +10499,7 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs struct {
 	DaysOfTheMonths pulumi.IntArrayInput `pulumi:"daysOfTheMonths"`
 	// The day of the week that the backup starts.
 	DaysOfTheWeeks pulumi.StringArrayInput `pulumi:"daysOfTheWeeks"`
-	// The kind of backup policy.
+	// Specifies the management of Insight for the dbSystem.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// How many days the data should be stored after the database system deletion.
 	RetentionDays pulumi.IntInput `pulumi:"retentionDays"`
@@ -8330,7 +10580,7 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) Da
 	}).(pulumi.StringArrayOutput)
 }
 
-// The kind of backup policy.
+// Specifies the management of Insight for the dbSystem.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -8605,6 +10855,224 @@ func (o GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput) Index(i pulu
 	}).(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput)
 }
 
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetail struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+	// List of ODSP Insight and their configurations.
+	OdspInsightLists []GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList `pulumi:"odspInsightLists"`
+}
+
+// GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput is an input type that accepts GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs and GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs{...}
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// List of ODSP Insight and their configurations.
+	OdspInsightLists GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayInput `pulumi:"odspInsightLists"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray and GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray{ GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs{...} }
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray []GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemOdspInsightDetail)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput {
+	return o
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemOdspInsightDetail) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// List of ODSP Insight and their configurations.
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput) OdspInsightLists() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemOdspInsightDetail) []GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList {
+		return v.OdspInsightLists
+	}).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemOdspInsightDetail)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemOdspInsightDetail {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemOdspInsightDetail)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList struct {
+	// Type of Insight collected for the database system.
+	InsightType string `pulumi:"insightType"`
+	// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
+}
+
+// GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListInput is an input type that accepts GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs and GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs{...}
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs struct {
+	// Type of Insight collected for the database system.
+	InsightType pulumi.StringInput `pulumi:"insightType"`
+	// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+	RetentionPeriodInDays pulumi.IntInput `pulumi:"retentionPeriodInDays"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray and GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray{ GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs{...} }
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray []GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListInput
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput {
+	return o
+}
+
+// Type of Insight collected for the database system.
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput) InsightType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList) string {
+		return v.InsightType
+	}).(pulumi.StringOutput)
+}
+
+// Retention period for Insight data, in days. Current supported value is 7 days. the system default is 7 days.
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput) RetentionPeriodInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList) int {
+		return v.RetentionPeriodInDays
+	}).(pulumi.IntOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput() GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput) ToGetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightList)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput)
+}
+
 type GetDbSystemsDbSystemCollectionItemPatchOperation struct {
 	From         string            `pulumi:"from"`
 	Operation    string            `pulumi:"operation"`
@@ -8729,11 +11197,119 @@ func (o GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput) Index(i pul
 	}).(GetDbSystemsDbSystemCollectionItemPatchOperationOutput)
 }
 
+type GetDbSystemsDbSystemCollectionItemReplicationConfig struct {
+	// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+	IsRpoEnforced bool `pulumi:"isRpoEnforced"`
+	// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds string `pulumi:"rpoInSeconds"`
+}
+
+// GetDbSystemsDbSystemCollectionItemReplicationConfigInput is an input type that accepts GetDbSystemsDbSystemCollectionItemReplicationConfigArgs and GetDbSystemsDbSystemCollectionItemReplicationConfigOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemReplicationConfigInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemReplicationConfigArgs{...}
+type GetDbSystemsDbSystemCollectionItemReplicationConfigInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigOutput
+	ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemReplicationConfigArgs struct {
+	// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+	IsRpoEnforced pulumi.BoolInput `pulumi:"isRpoEnforced"`
+	// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+	RpoInSeconds pulumi.StringInput `pulumi:"rpoInSeconds"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemReplicationConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemReplicationConfigArgs) ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemReplicationConfigArgs) ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemReplicationConfigOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemReplicationConfigArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemReplicationConfigArray and GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemReplicationConfigArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemReplicationConfigArray{ GetDbSystemsDbSystemCollectionItemReplicationConfigArgs{...} }
+type GetDbSystemsDbSystemCollectionItemReplicationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemReplicationConfigArray []GetDbSystemsDbSystemCollectionItemReplicationConfigInput
+
+func (GetDbSystemsDbSystemCollectionItemReplicationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemReplicationConfig)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemReplicationConfigArray) ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemReplicationConfigArray) ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemReplicationConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigOutput) ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigOutput) ToGetDbSystemsDbSystemCollectionItemReplicationConfigOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigOutput {
+	return o
+}
+
+// Specifies if Recovery point objective (RPO) enforcement is enabled on the database system.
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigOutput) IsRpoEnforced() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemReplicationConfig) bool { return v.IsRpoEnforced }).(pulumi.BoolOutput)
+}
+
+// Specifies the Recovery point objective (RPO) in seconds that will be enforced, if the  `isRpoEnforced` flag is true.
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigOutput) RpoInSeconds() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemReplicationConfig) string { return v.RpoInSeconds }).(pulumi.StringOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemReplicationConfig)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput) ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput() GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput) ToGetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemReplicationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemReplicationConfig {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemReplicationConfig)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemReplicationConfigOutput)
+}
+
 type GetDbSystemsDbSystemCollectionItemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId string `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
 }
@@ -8754,6 +11330,8 @@ type GetDbSystemsDbSystemCollectionItemSourceArgs struct {
 	BackupId pulumi.StringInput `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
+	// The [OCID] of the primary database system.
+	PrimaryDbSystemId pulumi.StringInput `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
@@ -8817,6 +11395,11 @@ func (o GetDbSystemsDbSystemCollectionItemSourceOutput) BackupId() pulumi.String
 // Deprecated. Don't use.
 func (o GetDbSystemsDbSystemCollectionItemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
+}
+
+// The [OCID] of the primary database system.
+func (o GetDbSystemsDbSystemCollectionItemSourceOutput) PrimaryDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.PrimaryDbSystemId }).(pulumi.StringOutput)
 }
 
 // The source descriminator.
@@ -10002,6 +12585,1445 @@ func (o GetDefaultConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetD
 	}).(GetDefaultConfigurationsFilterOutput)
 }
 
+type GetInsightCapabilitiesFilter struct {
+	// Name of the filter parameter.
+	Name  string `pulumi:"name"`
+	Regex *bool  `pulumi:"regex"`
+	// Allowed values for enum-based filters.
+	Values []string `pulumi:"values"`
+}
+
+// GetInsightCapabilitiesFilterInput is an input type that accepts GetInsightCapabilitiesFilterArgs and GetInsightCapabilitiesFilterOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesFilterInput` via:
+//
+//	GetInsightCapabilitiesFilterArgs{...}
+type GetInsightCapabilitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesFilterOutput() GetInsightCapabilitiesFilterOutput
+	ToGetInsightCapabilitiesFilterOutputWithContext(context.Context) GetInsightCapabilitiesFilterOutput
+}
+
+type GetInsightCapabilitiesFilterArgs struct {
+	// Name of the filter parameter.
+	Name  pulumi.StringInput  `pulumi:"name"`
+	Regex pulumi.BoolPtrInput `pulumi:"regex"`
+	// Allowed values for enum-based filters.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInsightCapabilitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesFilter)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesFilterArgs) ToGetInsightCapabilitiesFilterOutput() GetInsightCapabilitiesFilterOutput {
+	return i.ToGetInsightCapabilitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesFilterArgs) ToGetInsightCapabilitiesFilterOutputWithContext(ctx context.Context) GetInsightCapabilitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesFilterOutput)
+}
+
+// GetInsightCapabilitiesFilterArrayInput is an input type that accepts GetInsightCapabilitiesFilterArray and GetInsightCapabilitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesFilterArrayInput` via:
+//
+//	GetInsightCapabilitiesFilterArray{ GetInsightCapabilitiesFilterArgs{...} }
+type GetInsightCapabilitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesFilterArrayOutput() GetInsightCapabilitiesFilterArrayOutput
+	ToGetInsightCapabilitiesFilterArrayOutputWithContext(context.Context) GetInsightCapabilitiesFilterArrayOutput
+}
+
+type GetInsightCapabilitiesFilterArray []GetInsightCapabilitiesFilterInput
+
+func (GetInsightCapabilitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesFilter)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesFilterArray) ToGetInsightCapabilitiesFilterArrayOutput() GetInsightCapabilitiesFilterArrayOutput {
+	return i.ToGetInsightCapabilitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesFilterArray) ToGetInsightCapabilitiesFilterArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesFilterArrayOutput)
+}
+
+type GetInsightCapabilitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesFilter)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesFilterOutput) ToGetInsightCapabilitiesFilterOutput() GetInsightCapabilitiesFilterOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesFilterOutput) ToGetInsightCapabilitiesFilterOutputWithContext(ctx context.Context) GetInsightCapabilitiesFilterOutput {
+	return o
+}
+
+// Name of the filter parameter.
+func (o GetInsightCapabilitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInsightCapabilitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+// Allowed values for enum-based filters.
+func (o GetInsightCapabilitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInsightCapabilitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesFilter)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesFilterArrayOutput) ToGetInsightCapabilitiesFilterArrayOutput() GetInsightCapabilitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesFilterArrayOutput) ToGetInsightCapabilitiesFilterArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesFilterArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesFilter {
+		return vs[0].([]GetInsightCapabilitiesFilter)[vs[1].(int)]
+	}).(GetInsightCapabilitiesFilterOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollection struct {
+	// PostgreSQL insight capabilities list.
+	Items []GetInsightCapabilitiesInsightCapabilityCollectionItem `pulumi:"items"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionArgs and GetInsightCapabilitiesInsightCapabilityCollectionOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionOutput() GetInsightCapabilitiesInsightCapabilityCollectionOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionArgs struct {
+	// PostgreSQL insight capabilities list.
+	Items GetInsightCapabilitiesInsightCapabilityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollection)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionOutput() GetInsightCapabilitiesInsightCapabilityCollectionOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionArray and GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionArray{ GetInsightCapabilitiesInsightCapabilityCollectionArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionArray []GetInsightCapabilitiesInsightCapabilityCollectionInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollection)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionArray) ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionArray) ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollection)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionOutput() GetInsightCapabilitiesInsightCapabilityCollectionOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionOutput {
+	return o
+}
+
+// PostgreSQL insight capabilities list.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionOutput) Items() GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollection) []GetInsightCapabilitiesInsightCapabilityCollectionItem {
+		return v.Items
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollection)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollection {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollection)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItem struct {
+	// Supported insight data types for this insight type.
+	DataTypeCapabilities []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability `pulumi:"dataTypeCapabilities"`
+	// Human-readable description of the insight type.
+	Description string `pulumi:"description"`
+	// Echo of the requested insight type.
+	InsightType string `pulumi:"insightType"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemArgs struct {
+	// Supported insight data types for this insight type.
+	DataTypeCapabilities GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayInput `pulumi:"dataTypeCapabilities"`
+	// Human-readable description of the insight type.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Echo of the requested insight type.
+	InsightType pulumi.StringInput `pulumi:"insightType"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItem)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemArray and GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemArray []GetInsightCapabilitiesInsightCapabilityCollectionItemInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItem)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItem)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemOutput {
+	return o
+}
+
+// Supported insight data types for this insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) DataTypeCapabilities() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItem) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability {
+		return v.DataTypeCapabilities
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput)
+}
+
+// Human-readable description of the insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Echo of the requested insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemOutput) InsightType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItem) string { return v.InsightType }).(pulumi.StringOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItem)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItem {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItem)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability struct {
+	// Describes the response data format returned for an insight type.
+	DataContracts []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract `pulumi:"dataContracts"`
+	// Indicates whether a time range is required for the insight.
+	DateTimeRangeSupports []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport `pulumi:"dateTimeRangeSupports"`
+	// Human-readable description of the insight type.
+	Description string `pulumi:"description"`
+	// Supported filters for this insight data type.
+	Filters []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter `pulumi:"filters"`
+	// Describes time granularity behavior for time-series Insight.
+	Granularities []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity `pulumi:"granularities"`
+	// Insight data type identifier (for example, AAS_TIME_SERIES).
+	InsightDataType string `pulumi:"insightDataType"`
+	// Defines limits applicable to an insight type.
+	Limits []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit `pulumi:"limits"`
+	// Describes pagination support for an insight type.
+	Paginations []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination `pulumi:"paginations"`
+	// Describes sorting support for an insight type.
+	Sortings []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting `pulumi:"sortings"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs struct {
+	// Describes the response data format returned for an insight type.
+	DataContracts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayInput `pulumi:"dataContracts"`
+	// Indicates whether a time range is required for the insight.
+	DateTimeRangeSupports GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayInput `pulumi:"dateTimeRangeSupports"`
+	// Human-readable description of the insight type.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Supported filters for this insight data type.
+	Filters GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayInput `pulumi:"filters"`
+	// Describes time granularity behavior for time-series Insight.
+	Granularities GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayInput `pulumi:"granularities"`
+	// Insight data type identifier (for example, AAS_TIME_SERIES).
+	InsightDataType pulumi.StringInput `pulumi:"insightDataType"`
+	// Defines limits applicable to an insight type.
+	Limits GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayInput `pulumi:"limits"`
+	// Describes pagination support for an insight type.
+	Paginations GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayInput `pulumi:"paginations"`
+	// Describes sorting support for an insight type.
+	Sortings GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayInput `pulumi:"sortings"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput {
+	return o
+}
+
+// Describes the response data format returned for an insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) DataContracts() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract {
+		return v.DataContracts
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput)
+}
+
+// Indicates whether a time range is required for the insight.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) DateTimeRangeSupports() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport {
+		return v.DateTimeRangeSupports
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput)
+}
+
+// Human-readable description of the insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Supported filters for this insight data type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Filters() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter {
+		return v.Filters
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput)
+}
+
+// Describes time granularity behavior for time-series Insight.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Granularities() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity {
+		return v.Granularities
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput)
+}
+
+// Insight data type identifier (for example, AAS_TIME_SERIES).
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) InsightDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) string {
+		return v.InsightDataType
+	}).(pulumi.StringOutput)
+}
+
+// Defines limits applicable to an insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Limits() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit {
+		return v.Limits
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput)
+}
+
+// Describes pagination support for an insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Paginations() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination {
+		return v.Paginations
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput)
+}
+
+// Describes sorting support for an insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput) Sortings() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting {
+		return v.Sortings
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapability)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract struct {
+	// Indicates the structure of the insight data payload.
+	Kind string `pulumi:"kind"`
+	// Optional unit associated with numeric values.
+	Unit string `pulumi:"unit"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs struct {
+	// Indicates the structure of the insight data payload.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Optional unit associated with numeric values.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput {
+	return o
+}
+
+// Indicates the structure of the insight data payload.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract) string {
+		return v.Kind
+	}).(pulumi.StringOutput)
+}
+
+// Optional unit associated with numeric values.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract) string {
+		return v.Unit
+	}).(pulumi.StringOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContract)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport struct {
+	// Indicates whether start and end time parameters are required.
+	IsRequired bool `pulumi:"isRequired"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs struct {
+	// Indicates whether start and end time parameters are required.
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput {
+	return o
+}
+
+// Indicates whether start and end time parameters are required.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport) bool {
+		return v.IsRequired
+	}).(pulumi.BoolOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupport)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter struct {
+	// Indicates whether partial matching is supported.
+	CanUsePartialMatch bool `pulumi:"canUsePartialMatch"`
+	// Name of the filter parameter.
+	Name string `pulumi:"name"`
+	// Granularity selection strategy.
+	Type string `pulumi:"type"`
+	// Allowed values for enum-based filters.
+	Values []string `pulumi:"values"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs struct {
+	// Indicates whether partial matching is supported.
+	CanUsePartialMatch pulumi.BoolInput `pulumi:"canUsePartialMatch"`
+	// Name of the filter parameter.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Granularity selection strategy.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Allowed values for enum-based filters.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput {
+	return o
+}
+
+// Indicates whether partial matching is supported.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) CanUsePartialMatch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter) bool {
+		return v.CanUsePartialMatch
+	}).(pulumi.BoolOutput)
+}
+
+// Name of the filter parameter.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Granularity selection strategy.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Allowed values for enum-based filters.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilter)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity struct {
+	// Maximum supported granularity in seconds.
+	MaxSeconds int `pulumi:"maxSeconds"`
+	// Minimum supported granularity in seconds.
+	MinSeconds int `pulumi:"minSeconds"`
+	// Granularity selection strategy.
+	Type string `pulumi:"type"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs struct {
+	// Maximum supported granularity in seconds.
+	MaxSeconds pulumi.IntInput `pulumi:"maxSeconds"`
+	// Minimum supported granularity in seconds.
+	MinSeconds pulumi.IntInput `pulumi:"minSeconds"`
+	// Granularity selection strategy.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput {
+	return o
+}
+
+// Maximum supported granularity in seconds.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) MaxSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity) int {
+		return v.MaxSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Minimum supported granularity in seconds.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) MinSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity) int {
+		return v.MinSeconds
+	}).(pulumi.IntOutput)
+}
+
+// Granularity selection strategy.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularity)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit struct {
+	// Maximum number of rows returned.
+	MaxRows int `pulumi:"maxRows"`
+	// Maximum allowed time range in days.
+	MaxTimeRangeDays int `pulumi:"maxTimeRangeDays"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs struct {
+	// Maximum number of rows returned.
+	MaxRows pulumi.IntInput `pulumi:"maxRows"`
+	// Maximum allowed time range in days.
+	MaxTimeRangeDays pulumi.IntInput `pulumi:"maxTimeRangeDays"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput {
+	return o
+}
+
+// Maximum number of rows returned.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput) MaxRows() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit) int {
+		return v.MaxRows
+	}).(pulumi.IntOutput)
+}
+
+// Maximum allowed time range in days.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput) MaxTimeRangeDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit) int {
+		return v.MaxTimeRangeDays
+	}).(pulumi.IntOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimit)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination struct {
+	// Default number of items per page.
+	DefaultLimit int `pulumi:"defaultLimit"`
+	// Indicates whether sorting is supported.
+	IsSupported bool `pulumi:"isSupported"`
+	// Maximum number of items per page.
+	MaxLimit int `pulumi:"maxLimit"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs struct {
+	// Default number of items per page.
+	DefaultLimit pulumi.IntInput `pulumi:"defaultLimit"`
+	// Indicates whether sorting is supported.
+	IsSupported pulumi.BoolInput `pulumi:"isSupported"`
+	// Maximum number of items per page.
+	MaxLimit pulumi.IntInput `pulumi:"maxLimit"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput {
+	return o
+}
+
+// Default number of items per page.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) DefaultLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination) int {
+		return v.DefaultLimit
+	}).(pulumi.IntOutput)
+}
+
+// Indicates whether sorting is supported.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) IsSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination) bool {
+		return v.IsSupported
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum number of items per page.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput) MaxLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination) int {
+		return v.MaxLimit
+	}).(pulumi.IntOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPagination)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting struct {
+	// Default sorting behavior for an insight type.
+	DefaultSorts []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort `pulumi:"defaultSorts"`
+	// Fields that can be used for sorting.
+	Fields []string `pulumi:"fields"`
+	// Indicates whether sorting is supported.
+	IsSupported bool `pulumi:"isSupported"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs struct {
+	// Default sorting behavior for an insight type.
+	DefaultSorts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayInput `pulumi:"defaultSorts"`
+	// Fields that can be used for sorting.
+	Fields pulumi.StringArrayInput `pulumi:"fields"`
+	// Indicates whether sorting is supported.
+	IsSupported pulumi.BoolInput `pulumi:"isSupported"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput {
+	return o
+}
+
+// Default sorting behavior for an insight type.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) DefaultSorts() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting) []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort {
+		return v.DefaultSorts
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput)
+}
+
+// Fields that can be used for sorting.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) Fields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting) []string {
+		return v.Fields
+	}).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether sorting is supported.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput) IsSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting) bool {
+		return v.IsSupported
+	}).(pulumi.BoolOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySorting)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort struct {
+	// Default field used for sorting.
+	Field string `pulumi:"field"`
+	// Default sort order.
+	Order string `pulumi:"order"`
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs{...}
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs struct {
+	// Default field used for sorting.
+	Field pulumi.StringInput `pulumi:"field"`
+	// Default sort order.
+	Order pulumi.StringInput `pulumi:"order"`
+}
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput)
+}
+
+// GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayInput is an input type that accepts GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray and GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput values.
+// You can construct a concrete instance of `GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayInput` via:
+//
+//	GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray{ GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs{...} }
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayInput interface {
+	pulumi.Input
+
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput
+	ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutputWithContext(context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray []GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortInput
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort)(nil)).Elem()
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput {
+	return i.ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutputWithContext(context.Background())
+}
+
+func (i GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput {
+	return o
+}
+
+// Default field used for sorting.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput) Field() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort) string {
+		return v.Field
+	}).(pulumi.StringOutput)
+}
+
+// Default sort order.
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput) Order() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort) string {
+		return v.Order
+	}).(pulumi.StringOutput)
+}
+
+type GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort)(nil)).Elem()
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput() GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput) ToGetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutputWithContext(ctx context.Context) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput {
+	return o
+}
+
+func (o GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput) Index(i pulumi.IntInput) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort {
+		return vs[0].([]GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSort)[vs[1].(int)]
+	}).(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput)
+}
+
 type GetShapesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -10622,6 +14644,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemInstanceArrayInput)(nil)).Elem(), DbSystemInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemInstancesDetailInput)(nil)).Elem(), DbSystemInstancesDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemInstancesDetailArrayInput)(nil)).Elem(), DbSystemInstancesDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsInput)(nil)).Elem(), DbSystemKerberosAuthDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsPtrInput)(nil)).Elem(), DbSystemKerberosAuthDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsBackupCredentialInput)(nil)).Elem(), DbSystemKerberosAuthDetailsBackupCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsBackupCredentialArrayInput)(nil)).Elem(), DbSystemKerberosAuthDetailsBackupCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsCredentialInput)(nil)).Elem(), DbSystemKerberosAuthDetailsCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemKerberosAuthDetailsCredentialArrayInput)(nil)).Elem(), DbSystemKerberosAuthDetailsCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyInput)(nil)).Elem(), DbSystemManagementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyArgs{})
@@ -10630,8 +14658,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsPtrInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemOdspInsightDetailsInput)(nil)).Elem(), DbSystemOdspInsightDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemOdspInsightDetailsPtrInput)(nil)).Elem(), DbSystemOdspInsightDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemOdspInsightDetailsOdspInsightListInput)(nil)).Elem(), DbSystemOdspInsightDetailsOdspInsightListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemOdspInsightDetailsOdspInsightListArrayInput)(nil)).Elem(), DbSystemOdspInsightDetailsOdspInsightListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemPatchOperationInput)(nil)).Elem(), DbSystemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemPatchOperationArrayInput)(nil)).Elem(), DbSystemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemReplicationConfigInput)(nil)).Elem(), DbSystemReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemReplicationConfigPtrInput)(nil)).Elem(), DbSystemReplicationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemSourceInput)(nil)).Elem(), DbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemSourcePtrInput)(nil)).Elem(), DbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemStorageDetailsInput)(nil)).Elem(), DbSystemStorageDetailsArgs{})
@@ -10692,6 +14726,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemInstanceArrayInput)(nil)).Elem(), GetDbSystemInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemInstancesDetailInput)(nil)).Elem(), GetDbSystemInstancesDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemInstancesDetailArrayInput)(nil)).Elem(), GetDbSystemInstancesDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailArrayInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailBackupCredentialInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailBackupCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailBackupCredentialArrayInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailBackupCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailCredentialInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemKerberosAuthDetailCredentialArrayInput)(nil)).Elem(), GetDbSystemKerberosAuthDetailCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyArgs{})
@@ -10700,8 +14740,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailInput)(nil)).Elem(), GetDbSystemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemNetworkDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailInput)(nil)).Elem(), GetDbSystemOdspInsightDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailArrayInput)(nil)).Elem(), GetDbSystemOdspInsightDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailOdspInsightListInput)(nil)).Elem(), GetDbSystemOdspInsightDetailOdspInsightListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailOdspInsightListArrayInput)(nil)).Elem(), GetDbSystemOdspInsightDetailOdspInsightListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationInput)(nil)).Elem(), GetDbSystemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationArrayInput)(nil)).Elem(), GetDbSystemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionArrayInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionItemInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionItemArrayInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasFilterInput)(nil)).Elem(), GetDbSystemReplicasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasFilterArrayInput)(nil)).Elem(), GetDbSystemReplicasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicationConfigInput)(nil)).Elem(), GetDbSystemReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicationConfigArrayInput)(nil)).Elem(), GetDbSystemReplicationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemSourceInput)(nil)).Elem(), GetDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemSourceArrayInput)(nil)).Elem(), GetDbSystemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemStorageDetailInput)(nil)).Elem(), GetDbSystemStorageDetailArgs{})
@@ -10718,6 +14770,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemInstanceArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemInstancesDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemInstancesDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemInstancesDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemInstancesDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs{})
@@ -10726,8 +14784,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemOdspInsightDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperationInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemReplicationConfigInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemReplicationConfigArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemReplicationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemSourceInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemSourceArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemStorageDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemStorageDetailArgs{})
@@ -10748,6 +14812,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemArrayInput)(nil)).Elem(), GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultConfigurationsFilterInput)(nil)).Elem(), GetDefaultConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultConfigurationsFilterArrayInput)(nil)).Elem(), GetDefaultConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesFilterInput)(nil)).Elem(), GetInsightCapabilitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesFilterArrayInput)(nil)).Elem(), GetInsightCapabilitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayInput)(nil)).Elem(), GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeCollectionInput)(nil)).Elem(), GetShapesShapeCollectionArgs{})
@@ -10780,6 +14868,12 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemInstanceArrayOutput{})
 	pulumi.RegisterOutputType(DbSystemInstancesDetailOutput{})
 	pulumi.RegisterOutputType(DbSystemInstancesDetailArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsBackupCredentialOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsBackupCredentialArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsCredentialOutput{})
+	pulumi.RegisterOutputType(DbSystemKerberosAuthDetailsCredentialArrayOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyOutput{})
@@ -10788,8 +14882,14 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemOdspInsightDetailsOutput{})
+	pulumi.RegisterOutputType(DbSystemOdspInsightDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemOdspInsightDetailsOdspInsightListOutput{})
+	pulumi.RegisterOutputType(DbSystemOdspInsightDetailsOdspInsightListArrayOutput{})
 	pulumi.RegisterOutputType(DbSystemPatchOperationOutput{})
 	pulumi.RegisterOutputType(DbSystemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(DbSystemReplicationConfigOutput{})
+	pulumi.RegisterOutputType(DbSystemReplicationConfigPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemSourceOutput{})
 	pulumi.RegisterOutputType(DbSystemSourcePtrOutput{})
 	pulumi.RegisterOutputType(DbSystemStorageDetailsOutput{})
@@ -10850,6 +14950,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemInstancesDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemInstancesDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailBackupCredentialOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailBackupCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailCredentialOutput{})
+	pulumi.RegisterOutputType(GetDbSystemKerberosAuthDetailCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyOutput{})
@@ -10858,8 +14964,20 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailOdspInsightListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailOdspInsightListArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasFilterOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicationConfigOutput{})
+	pulumi.RegisterOutputType(GetDbSystemReplicationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(GetDbSystemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemStorageDetailOutput{})
@@ -10876,6 +14994,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemInstancesDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemInstancesDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailBackupCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyOutput{})
@@ -10884,8 +15008,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemOdspInsightDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemReplicationConfigOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemSourceOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemStorageDetailOutput{})
@@ -10906,6 +15036,30 @@ func init() {
 	pulumi.RegisterOutputType(GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDefaultConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetDefaultConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDataContractArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityDateTimeRangeSupportArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityGranularityArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityLimitArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilityPaginationArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingArrayOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortOutput{})
+	pulumi.RegisterOutputType(GetInsightCapabilitiesInsightCapabilityCollectionItemDataTypeCapabilitySortingDefaultSortArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeCollectionOutput{})

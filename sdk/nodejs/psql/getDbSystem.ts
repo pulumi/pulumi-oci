@@ -53,6 +53,7 @@ export interface GetDbSystemResult {
      * The database system administrator username.
      */
     readonly adminUsername: string;
+    readonly applyChangeModeToStandAlone: string;
     readonly applyConfig: string;
     /**
      * target compartment to place a new backup
@@ -62,6 +63,9 @@ export interface GetDbSystemResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
     readonly configId: string;
+    /**
+     * List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+     */
     readonly credentials: outputs.Psql.GetDbSystemCredential[];
     readonly dbSystemId: string;
     /**
@@ -107,6 +111,10 @@ export interface GetDbSystemResult {
     readonly instances: outputs.Psql.GetDbSystemInstance[];
     readonly instancesDetails: outputs.Psql.GetDbSystemInstancesDetail[];
     /**
+     * Kerberos Authentication details for the database system.
+     */
+    readonly kerberosAuthDetails: outputs.Psql.GetDbSystemKerberosAuthDetail[];
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
@@ -118,7 +126,15 @@ export interface GetDbSystemResult {
      * Network details for the database system.
      */
     readonly networkDetails: outputs.Psql.GetDbSystemNetworkDetail[];
+    /**
+     * ODSP Insight details for the database system.
+     */
+    readonly odspInsightDetails: outputs.Psql.GetDbSystemOdspInsightDetail[];
     readonly patchOperations: outputs.Psql.GetDbSystemPatchOperation[];
+    /**
+     * Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+     */
+    readonly replicationConfigs: outputs.Psql.GetDbSystemReplicationConfig[];
     /**
      * The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      */
@@ -135,6 +151,10 @@ export interface GetDbSystemResult {
      * Storage details of the database system.
      */
     readonly storageDetails: outputs.Psql.GetDbSystemStorageDetail[];
+    /**
+     * Type of the database system.
+     */
+    readonly systemRole: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */

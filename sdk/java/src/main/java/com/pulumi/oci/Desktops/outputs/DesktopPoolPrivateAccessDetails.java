@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,7 +30,12 @@ public final class DesktopPoolPrivateAccessDetails {
      */
     private @Nullable String privateIp;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     private String subnetId;
@@ -62,7 +68,14 @@ public final class DesktopPoolPrivateAccessDetails {
         return Optional.ofNullable(this.privateIp);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
      * 
      */
     public String subnetId() {
@@ -88,6 +101,7 @@ public final class DesktopPoolPrivateAccessDetails {
         private @Nullable String endpointFqdn;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
+        private @Nullable Map<String,String> securityAttributes;
         private String subnetId;
         private @Nullable String vcnId;
         public Builder() {}
@@ -96,6 +110,7 @@ public final class DesktopPoolPrivateAccessDetails {
     	      this.endpointFqdn = defaults.endpointFqdn;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateIp = defaults.privateIp;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.subnetId = defaults.subnetId;
     	      this.vcnId = defaults.vcnId;
         }
@@ -122,6 +137,12 @@ public final class DesktopPoolPrivateAccessDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("DesktopPoolPrivateAccessDetails", "subnetId");
@@ -140,6 +161,7 @@ public final class DesktopPoolPrivateAccessDetails {
             _resultValue.endpointFqdn = endpointFqdn;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateIp = privateIp;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.subnetId = subnetId;
             _resultValue.vcnId = vcnId;
             return _resultValue;

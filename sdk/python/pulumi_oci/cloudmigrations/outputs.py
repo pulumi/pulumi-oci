@@ -7441,6 +7441,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
                  migration_configs: Sequence['outputs.GetMigrationsMigrationCollectionItemMigrationConfigResult'],
                  migration_type: _builtins.str,
                  replication_schedule_id: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
@@ -7456,6 +7457,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemMigrationConfigArgs'] migration_configs: Configuration for a Migration Project.
         :param _builtins.str migration_type: Type of migration project (OCI/OLVM). This determines the target environment for the migration.
         :param _builtins.str replication_schedule_id: Replication schedule identifier
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time when the migration project was created. An RFC3339 formatted datetime string
@@ -7471,6 +7473,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         pulumi.set(__self__, "migration_configs", migration_configs)
         pulumi.set(__self__, "migration_type", migration_type)
         pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -7555,6 +7558,14 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         Replication schedule identifier
         """
         return pulumi.get(self, "replication_schedule_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

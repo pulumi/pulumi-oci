@@ -43,7 +43,11 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The current state of the database system.
+        /// (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

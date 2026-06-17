@@ -58,6 +58,8 @@ type GetDomainArgs struct {
 
 // A collection of values returned by getDomain.
 type GetDomainResult struct {
+	// The OCID of the tenancy that has started the registration process for this domain.
+	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	DomainId    string            `pulumi:"domainId"`
@@ -115,6 +117,11 @@ func (o GetDomainResultOutput) ToGetDomainResultOutput() GetDomainResultOutput {
 
 func (o GetDomainResultOutput) ToGetDomainResultOutputWithContext(ctx context.Context) GetDomainResultOutput {
 	return o
+}
+
+// The OCID of the tenancy that has started the registration process for this domain.
+func (o GetDomainResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

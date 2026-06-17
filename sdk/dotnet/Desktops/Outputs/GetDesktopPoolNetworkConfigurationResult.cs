@@ -14,7 +14,11 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class GetDesktopPoolNetworkConfigurationResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.Desktops.Outputs
 
         [OutputConstructor]
         private GetDesktopPoolNetworkConfigurationResult(
+            ImmutableDictionary<string, string> securityAttributes,
+
             string subnetId,
 
             string vcnId)
         {
+            SecurityAttributes = securityAttributes;
             SubnetId = subnetId;
             VcnId = vcnId;
         }

@@ -182,6 +182,26 @@ namespace Pulumi.Oci.Opensearch
         public readonly string CompartmentId;
         public readonly int ConfigureOutboundClusterTrigger;
         /// <summary>
+        /// The number of coordinator nodes configured for the cluster.
+        /// </summary>
+        public readonly int CoordinatorNodeCount;
+        /// <summary>
+        /// The amount of memory in GB, for the cluster's coordinator nodes.
+        /// </summary>
+        public readonly int CoordinatorNodeHostMemoryGb;
+        /// <summary>
+        /// The number of OCPUs configured for the cluster's coordinator nodes.
+        /// </summary>
+        public readonly int CoordinatorNodeHostOcpuCount;
+        /// <summary>
+        /// The node shape for the cluster's coordinator nodes.
+        /// </summary>
+        public readonly string CoordinatorNodeHostShape;
+        /// <summary>
+        /// The instance type for the cluster's coordinator nodes.
+        /// </summary>
+        public readonly string CoordinatorNodeHostType;
+        /// <summary>
         /// The number of data nodes configured for the cluster.
         /// </summary>
         public readonly int DataNodeCount;
@@ -439,6 +459,16 @@ namespace Pulumi.Oci.Opensearch
 
             int configureOutboundClusterTrigger,
 
+            int coordinatorNodeCount,
+
+            int coordinatorNodeHostMemoryGb,
+
+            int coordinatorNodeHostOcpuCount,
+
+            string coordinatorNodeHostShape,
+
+            string coordinatorNodeHostType,
+
             int dataNodeCount,
 
             string dataNodeHostBareMetalShape,
@@ -571,6 +601,11 @@ namespace Pulumi.Oci.Opensearch
             CertificateConfigs = certificateConfigs;
             CompartmentId = compartmentId;
             ConfigureOutboundClusterTrigger = configureOutboundClusterTrigger;
+            CoordinatorNodeCount = coordinatorNodeCount;
+            CoordinatorNodeHostMemoryGb = coordinatorNodeHostMemoryGb;
+            CoordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            CoordinatorNodeHostShape = coordinatorNodeHostShape;
+            CoordinatorNodeHostType = coordinatorNodeHostType;
             DataNodeCount = dataNodeCount;
             DataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             DataNodeHostMemoryGb = dataNodeHostMemoryGb;

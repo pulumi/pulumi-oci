@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetNodePoolNodeConfigDetailResult
     {
         /// <summary>
+        /// The OCID of the Compute Cluster to be associated with the worker node instance.
+        /// </summary>
+        public readonly string ComputeClusterId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -48,6 +52,8 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetNodePoolNodeConfigDetailResult(
+            string computeClusterId,
+
             ImmutableDictionary<string, string> definedTags,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -64,6 +70,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             int size)
         {
+            ComputeClusterId = computeClusterId;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;

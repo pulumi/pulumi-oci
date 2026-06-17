@@ -37,7 +37,10 @@ public final class DbSystemInstance {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return The current state of the database system.
+     * @return (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String state;
@@ -89,7 +92,10 @@ public final class DbSystemInstance {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return The current state of the database system.
+     * @return (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> state() {

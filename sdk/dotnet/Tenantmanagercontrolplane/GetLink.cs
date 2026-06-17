@@ -128,6 +128,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// </summary>
         public readonly string ChildTenancyId;
         /// <summary>
+        /// The feature associated with this link. Default value is CORE.
+        /// </summary>
+        public readonly string Feature;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -157,6 +161,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         private GetLinkResult(
             string childTenancyId,
 
+            string feature,
+
             string id,
 
             string linkId,
@@ -172,6 +178,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
             string timeUpdated)
         {
             ChildTenancyId = childTenancyId;
+            Feature = feature;
             Id = id;
             LinkId = linkId;
             ParentTenancyId = parentTenancyId;

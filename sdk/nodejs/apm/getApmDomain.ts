@@ -32,7 +32,7 @@ export function getApmDomain(args: GetApmDomainArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetApmDomainArgs {
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     apmDomainId: string;
 }
@@ -75,6 +75,10 @@ export interface GetApmDomainResult {
      */
     readonly isFreeTier: boolean;
     /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     */
+    readonly logGroupId: string;
+    /**
      * The current lifecycle state of the APM domain.
      */
     readonly state: string;
@@ -115,7 +119,7 @@ export function getApmDomainOutput(args: GetApmDomainOutputArgs, opts?: pulumi.I
  */
 export interface GetApmDomainOutputArgs {
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     apmDomainId: pulumi.Input<string>;
 }

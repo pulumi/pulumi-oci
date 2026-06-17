@@ -417,6 +417,8 @@ class DesktopPoolNetworkConfiguration(dict):
             suggest = "subnet_id"
         elif key == "vcnId":
             suggest = "vcn_id"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DesktopPoolNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
@@ -431,13 +433,17 @@ class DesktopPoolNetworkConfiguration(dict):
 
     def __init__(__self__, *,
                  subnet_id: _builtins.str,
-                 vcn_id: _builtins.str):
+                 vcn_id: _builtins.str,
+                 security_attributes: Optional[Mapping[str, _builtins.str]] = None):
         """
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+        :param Mapping[str, _builtins.str] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -455,6 +461,14 @@ class DesktopPoolNetworkConfiguration(dict):
         """
         return pulumi.get(self, "vcn_id")
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
 
 @pulumi.output_type
 class DesktopPoolPrivateAccessDetails(dict):
@@ -469,6 +483,8 @@ class DesktopPoolPrivateAccessDetails(dict):
             suggest = "nsg_ids"
         elif key == "privateIp":
             suggest = "private_ip"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "vcnId":
             suggest = "vcn_id"
 
@@ -488,12 +504,14 @@ class DesktopPoolPrivateAccessDetails(dict):
                  endpoint_fqdn: Optional[_builtins.str] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  private_ip: Optional[_builtins.str] = None,
+                 security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  vcn_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[_builtins.str] nsg_ids: A list of network security groups for the private access.
         :param _builtins.str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+        :param Mapping[str, _builtins.str] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -503,6 +521,8 @@ class DesktopPoolPrivateAccessDetails(dict):
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if vcn_id is not None:
             pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -510,7 +530,7 @@ class DesktopPoolPrivateAccessDetails(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -539,6 +559,14 @@ class DesktopPoolPrivateAccessDetails(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[_builtins.str]:
         """
@@ -553,7 +581,7 @@ class DesktopPoolSessionLifecycleActions(dict):
                  disconnect: Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect'] = None,
                  inactivity: Optional['outputs.DesktopPoolSessionLifecycleActionsInactivity'] = None):
         """
-        :param 'DesktopPoolSessionLifecycleActionsDisconnectArgs' disconnect: (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+        :param 'DesktopPoolSessionLifecycleActionsDisconnectArgs' disconnect: (Updatable) Action and grace period for disconnect
         :param 'DesktopPoolSessionLifecycleActionsInactivityArgs' inactivity: (Updatable) Action and grace period for inactivity
         """
         if disconnect is not None:
@@ -565,7 +593,7 @@ class DesktopPoolSessionLifecycleActions(dict):
     @pulumi.getter
     def disconnect(self) -> Optional['outputs.DesktopPoolSessionLifecycleActionsDisconnect']:
         """
-        (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+        (Updatable) Action and grace period for disconnect
         """
         return pulumi.get(self, "disconnect")
 
@@ -601,7 +629,7 @@ class DesktopPoolSessionLifecycleActionsDisconnect(dict):
                  action: _builtins.str,
                  grace_period_in_minutes: Optional[_builtins.int] = None):
         """
-        :param _builtins.str action: (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+        :param _builtins.str action: (Updatable) a disconnect action to be triggered
         :param _builtins.int grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -612,7 +640,7 @@ class DesktopPoolSessionLifecycleActionsDisconnect(dict):
     @pulumi.getter
     def action(self) -> _builtins.str:
         """
-        (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
+        (Updatable) a disconnect action to be triggered
         """
         return pulumi.get(self, "action")
 
@@ -648,7 +676,7 @@ class DesktopPoolSessionLifecycleActionsInactivity(dict):
                  action: _builtins.str,
                  grace_period_in_minutes: Optional[_builtins.int] = None):
         """
-        :param _builtins.str action: (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+        :param _builtins.str action: (Updatable) an inactivity action to be triggered
         :param _builtins.int grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
         """
         pulumi.set(__self__, "action", action)
@@ -659,7 +687,7 @@ class DesktopPoolSessionLifecycleActionsInactivity(dict):
     @pulumi.getter
     def action(self) -> _builtins.str:
         """
-        (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
+        (Updatable) an inactivity action to be triggered
         """
         return pulumi.get(self, "action")
 
@@ -1615,20 +1643,31 @@ class GetDesktopPoolImageResult(dict):
 @pulumi.output_type
 class GetDesktopPoolNetworkConfigurationResult(dict):
     def __init__(__self__, *,
+                 security_attributes: Mapping[str, _builtins.str],
                  subnet_id: _builtins.str,
                  vcn_id: _builtins.str):
         """
-        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1647,18 +1686,21 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
                  endpoint_fqdn: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  subnet_id: _builtins.str,
                  vcn_id: _builtins.str):
         """
-        :param _builtins.str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        :param _builtins.str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[_builtins.str] nsg_ids: A list of network security groups for the private access.
         :param _builtins.str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -1666,7 +1708,7 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
     @pulumi.getter(name="endpointFqdn")
     def endpoint_fqdn(self) -> _builtins.str:
         """
-        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
+        The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         """
         return pulumi.get(self, "endpoint_fqdn")
 
@@ -1687,10 +1729,18 @@ class GetDesktopPoolPrivateAccessDetailResult(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2017,6 +2067,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
                  network_configurations: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_access_details: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult'],
+                 security_attributes: Mapping[str, _builtins.str],
                  session_lifecycle_actions: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionResult'],
                  shape_configs: Sequence['outputs.GetDesktopPoolsDesktopPoolCollectionItemShapeConfigResult'],
                  shape_name: _builtins.str,
@@ -2048,6 +2099,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationArgs'] network_configurations: Provides information about the network configuration of the desktop pool.
         :param Sequence[_builtins.str] nsg_ids: A list of network security groups for the private access.
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailArgs'] private_access_details: The details of the desktop's private access network connectivity that were used to create the pool.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleActionArgs'] session_lifecycle_actions: Action to be triggered on inactivity or disconnect
         :param Sequence['GetDesktopPoolsDesktopPoolCollectionItemShapeConfigArgs'] shape_configs: The shape configuration used for each desktop compute instance in the desktop pool.
         :param _builtins.str shape_name: The shape of the desktop pool.
@@ -2080,6 +2132,7 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_access_details", private_access_details)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -2248,6 +2301,14 @@ class GetDesktopPoolsDesktopPoolCollectionItemResult(dict):
         The details of the desktop's private access network connectivity that were used to create the pool.
         """
         return pulumi.get(self, "private_access_details")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
@@ -2563,20 +2624,31 @@ class GetDesktopPoolsDesktopPoolCollectionItemImageResult(dict):
 @pulumi.output_type
 class GetDesktopPoolsDesktopPoolCollectionItemNetworkConfigurationResult(dict):
     def __init__(__self__, *,
+                 security_attributes: Mapping[str, _builtins.str],
                  subnet_id: _builtins.str,
                  vcn_id: _builtins.str):
         """
-        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2595,18 +2667,21 @@ class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
                  endpoint_fqdn: _builtins.str,
                  nsg_ids: Sequence[_builtins.str],
                  private_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  subnet_id: _builtins.str,
                  vcn_id: _builtins.str):
         """
         :param _builtins.str endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         :param Sequence[_builtins.str] nsg_ids: A list of network security groups for the private access.
         :param _builtins.str private_ip: The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -2635,10 +2710,18 @@ class GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetailResult(dict):
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the connectivity will be established.
         """
         return pulumi.get(self, "subnet_id")
 

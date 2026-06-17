@@ -16,6 +16,11 @@ public final class GetLinkResult {
      */
     private String childTenancyId;
     /**
+     * @return The feature associated with this link. Default value is CORE.
+     * 
+     */
+    private String feature;
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -54,6 +59,13 @@ public final class GetLinkResult {
      */
     public String childTenancyId() {
         return this.childTenancyId;
+    }
+    /**
+     * @return The feature associated with this link. Default value is CORE.
+     * 
+     */
+    public String feature() {
+        return this.feature;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -111,6 +123,7 @@ public final class GetLinkResult {
     @CustomType.Builder
     public static final class Builder {
         private String childTenancyId;
+        private String feature;
         private String id;
         private String linkId;
         private String parentTenancyId;
@@ -122,6 +135,7 @@ public final class GetLinkResult {
         public Builder(GetLinkResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.childTenancyId = defaults.childTenancyId;
+    	      this.feature = defaults.feature;
     	      this.id = defaults.id;
     	      this.linkId = defaults.linkId;
     	      this.parentTenancyId = defaults.parentTenancyId;
@@ -137,6 +151,14 @@ public final class GetLinkResult {
               throw new MissingRequiredPropertyException("GetLinkResult", "childTenancyId");
             }
             this.childTenancyId = childTenancyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder feature(String feature) {
+            if (feature == null) {
+              throw new MissingRequiredPropertyException("GetLinkResult", "feature");
+            }
+            this.feature = feature;
             return this;
         }
         @CustomType.Setter
@@ -198,6 +220,7 @@ public final class GetLinkResult {
         public GetLinkResult build() {
             final var _resultValue = new GetLinkResult();
             _resultValue.childTenancyId = childTenancyId;
+            _resultValue.feature = feature;
             _resultValue.id = id;
             _resultValue.linkId = linkId;
             _resultValue.parentTenancyId = parentTenancyId;

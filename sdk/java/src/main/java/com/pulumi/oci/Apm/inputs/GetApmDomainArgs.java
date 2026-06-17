@@ -15,14 +15,14 @@ public final class GetApmDomainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetApmDomainArgs Empty = new GetApmDomainArgs();
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      * 
      */
     @Import(name="apmDomainId", required=true)
     private Output<String> apmDomainId;
 
     /**
-     * @return The OCID of the APM domain
+     * @return The OCID of the APM domain.
      * 
      */
     public Output<String> apmDomainId() {
@@ -54,7 +54,7 @@ public final class GetApmDomainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The OCID of the APM domain
+         * @param apmDomainId The OCID of the APM domain.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetApmDomainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param apmDomainId The OCID of the APM domain
+         * @param apmDomainId The OCID of the APM domain.
          * 
          * @return builder
          * 

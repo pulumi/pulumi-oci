@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Psql
         ///         DisplayName = dbSystemDisplayName,
         ///         Id = dbSystemId,
         ///         State = dbSystemState,
+        ///         SystemRole = dbSystemSystemRole,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Psql
         ///         DisplayName = dbSystemDisplayName,
         ///         Id = dbSystemId,
         ///         State = dbSystemState,
+        ///         SystemRole = dbSystemSystemRole,
         ///     });
         /// 
         /// });
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.Psql
         ///         DisplayName = dbSystemDisplayName,
         ///         Id = dbSystemId,
         ///         State = dbSystemState,
+        ///         SystemRole = dbSystemSystemRole,
         ///     });
         /// 
         /// });
@@ -137,6 +140,12 @@ namespace Pulumi.Oci.Psql
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+        /// </summary>
+        [Input("systemRole")]
+        public string? SystemRole { get; set; }
+
         public GetDbSystemsArgs()
         {
         }
@@ -177,6 +186,12 @@ namespace Pulumi.Oci.Psql
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only DbSystem resources if their `systemRole` matches the given value.
+        /// </summary>
+        [Input("systemRole")]
+        public Input<string>? SystemRole { get; set; }
+
         public GetDbSystemsInvokeArgs()
         {
         }
@@ -208,6 +223,10 @@ namespace Pulumi.Oci.Psql
         /// The current state of the database system.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// Type of the database system.
+        /// </summary>
+        public readonly string? SystemRole;
 
         [OutputConstructor]
         private GetDbSystemsResult(
@@ -221,7 +240,9 @@ namespace Pulumi.Oci.Psql
 
             string? id,
 
-            string? state)
+            string? state,
+
+            string? systemRole)
         {
             CompartmentId = compartmentId;
             DbSystemCollections = dbSystemCollections;
@@ -229,6 +250,7 @@ namespace Pulumi.Oci.Psql
             Filters = filters;
             Id = id;
             State = state;
+            SystemRole = systemRole;
         }
     }
 }

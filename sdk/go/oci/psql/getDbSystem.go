@@ -62,12 +62,14 @@ type LookupDbSystemArgs struct {
 // A collection of values returned by getDbSystem.
 type LookupDbSystemResult struct {
 	// The database system administrator username.
-	AdminUsername string `pulumi:"adminUsername"`
-	ApplyConfig   string `pulumi:"applyConfig"`
+	AdminUsername               string `pulumi:"adminUsername"`
+	ApplyChangeModeToStandAlone string `pulumi:"applyChangeModeToStandAlone"`
+	ApplyConfig                 string `pulumi:"applyConfig"`
 	// target compartment to place a new backup
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
-	ConfigId    string                  `pulumi:"configId"`
+	ConfigId string `pulumi:"configId"`
+	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 	Credentials []GetDbSystemCredential `pulumi:"credentials"`
 	DbSystemId  string                  `pulumi:"dbSystemId"`
 	// The major and minor versions of the database system software.
@@ -92,13 +94,19 @@ type LookupDbSystemResult struct {
 	// The list of instances, or nodes, in the database system.
 	Instances        []GetDbSystemInstance        `pulumi:"instances"`
 	InstancesDetails []GetDbSystemInstancesDetail `pulumi:"instancesDetails"`
+	// Kerberos Authentication details for the database system.
+	KerberosAuthDetails []GetDbSystemKerberosAuthDetail `pulumi:"kerberosAuthDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// PostgreSQL database system management policy.
 	ManagementPolicies []GetDbSystemManagementPolicy `pulumi:"managementPolicies"`
 	// Network details for the database system.
-	NetworkDetails  []GetDbSystemNetworkDetail  `pulumi:"networkDetails"`
-	PatchOperations []GetDbSystemPatchOperation `pulumi:"patchOperations"`
+	NetworkDetails []GetDbSystemNetworkDetail `pulumi:"networkDetails"`
+	// ODSP Insight details for the database system.
+	OdspInsightDetails []GetDbSystemOdspInsightDetail `pulumi:"odspInsightDetails"`
+	PatchOperations    []GetDbSystemPatchOperation    `pulumi:"patchOperations"`
+	// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+	ReplicationConfigs []GetDbSystemReplicationConfig `pulumi:"replicationConfigs"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
 	// The source of the database system.
@@ -107,6 +115,8 @@ type LookupDbSystemResult struct {
 	State string `pulumi:"state"`
 	// Storage details of the database system.
 	StorageDetails []GetDbSystemStorageDetail `pulumi:"storageDetails"`
+	// Type of the database system.
+	SystemRole string `pulumi:"systemRole"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of the database system.
@@ -158,6 +168,10 @@ func (o LookupDbSystemResultOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
+func (o LookupDbSystemResultOutput) ApplyChangeModeToStandAlone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ApplyChangeModeToStandAlone }).(pulumi.StringOutput)
+}
+
 func (o LookupDbSystemResultOutput) ApplyConfig() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ApplyConfig }).(pulumi.StringOutput)
 }
@@ -172,6 +186,7 @@ func (o LookupDbSystemResultOutput) ConfigId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.ConfigId }).(pulumi.StringOutput)
 }
 
+// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 func (o LookupDbSystemResultOutput) Credentials() GetDbSystemCredentialArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemCredential { return v.Credentials }).(GetDbSystemCredentialArrayOutput)
 }
@@ -238,6 +253,11 @@ func (o LookupDbSystemResultOutput) InstancesDetails() GetDbSystemInstancesDetai
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemInstancesDetail { return v.InstancesDetails }).(GetDbSystemInstancesDetailArrayOutput)
 }
 
+// Kerberos Authentication details for the database system.
+func (o LookupDbSystemResultOutput) KerberosAuthDetails() GetDbSystemKerberosAuthDetailArrayOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemKerberosAuthDetail { return v.KerberosAuthDetails }).(GetDbSystemKerberosAuthDetailArrayOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupDbSystemResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -253,8 +273,18 @@ func (o LookupDbSystemResultOutput) NetworkDetails() GetDbSystemNetworkDetailArr
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemNetworkDetail { return v.NetworkDetails }).(GetDbSystemNetworkDetailArrayOutput)
 }
 
+// ODSP Insight details for the database system.
+func (o LookupDbSystemResultOutput) OdspInsightDetails() GetDbSystemOdspInsightDetailArrayOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemOdspInsightDetail { return v.OdspInsightDetails }).(GetDbSystemOdspInsightDetailArrayOutput)
+}
+
 func (o LookupDbSystemResultOutput) PatchOperations() GetDbSystemPatchOperationArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemPatchOperation { return v.PatchOperations }).(GetDbSystemPatchOperationArrayOutput)
+}
+
+// Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+func (o LookupDbSystemResultOutput) ReplicationConfigs() GetDbSystemReplicationConfigArrayOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemReplicationConfig { return v.ReplicationConfigs }).(GetDbSystemReplicationConfigArrayOutput)
 }
 
 // The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
@@ -275,6 +305,11 @@ func (o LookupDbSystemResultOutput) State() pulumi.StringOutput {
 // Storage details of the database system.
 func (o LookupDbSystemResultOutput) StorageDetails() GetDbSystemStorageDetailArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemStorageDetail { return v.StorageDetails }).(GetDbSystemStorageDetailArrayOutput)
+}
+
+// Type of the database system.
+func (o LookupDbSystemResultOutput) SystemRole() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) string { return v.SystemRole }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`

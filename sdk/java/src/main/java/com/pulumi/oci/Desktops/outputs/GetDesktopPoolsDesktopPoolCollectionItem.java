@@ -118,6 +118,11 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
      */
     private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Action to be triggered on inactivity or disconnect
      * 
      */
@@ -311,6 +316,13 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         return this.privateAccessDetails;
     }
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Action to be triggered on inactivity or disconnect
      * 
      */
@@ -417,6 +429,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
         private List<GetDesktopPoolsDesktopPoolCollectionItemNetworkConfiguration> networkConfigurations;
         private List<String> nsgIds;
         private List<GetDesktopPoolsDesktopPoolCollectionItemPrivateAccessDetail> privateAccessDetails;
+        private Map<String,String> securityAttributes;
         private List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions;
         private List<GetDesktopPoolsDesktopPoolCollectionItemShapeConfig> shapeConfigs;
         private String shapeName;
@@ -451,6 +464,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateAccessDetails = defaults.privateAccessDetails;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.sessionLifecycleActions = defaults.sessionLifecycleActions;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.shapeName = defaults.shapeName;
@@ -643,6 +657,14 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             return privateAccessDetails(List.of(privateAccessDetails));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sessionLifecycleActions(List<GetDesktopPoolsDesktopPoolCollectionItemSessionLifecycleAction> sessionLifecycleActions) {
             if (sessionLifecycleActions == null) {
               throw new MissingRequiredPropertyException("GetDesktopPoolsDesktopPoolCollectionItem", "sessionLifecycleActions");
@@ -758,6 +780,7 @@ public final class GetDesktopPoolsDesktopPoolCollectionItem {
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateAccessDetails = privateAccessDetails;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.sessionLifecycleActions = sessionLifecycleActions;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.shapeName = shapeName;

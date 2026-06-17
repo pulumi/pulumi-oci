@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isFreeTier: apmDomainIsFreeTier === "true",
+ *     logGroupId: testLogGroup.id,
  * });
  * ```
  *
@@ -94,12 +95,16 @@ export class ApmDomain extends pulumi.CustomResource {
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     */
+    declare public readonly isFreeTier: pulumi.Output<boolean>;
+    /**
+     * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly isFreeTier: pulumi.Output<boolean>;
+    declare public readonly logGroupId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the APM domain.
      */
@@ -133,6 +138,7 @@ export class ApmDomain extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isFreeTier"] = state?.isFreeTier;
+            resourceInputs["logGroupId"] = state?.logGroupId;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
@@ -150,6 +156,7 @@ export class ApmDomain extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isFreeTier"] = args?.isFreeTier;
+            resourceInputs["logGroupId"] = args?.logGroupId;
             resourceInputs["dataUploadEndpoint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -190,12 +197,16 @@ export interface ApmDomainState {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     */
+    isFreeTier?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isFreeTier?: pulumi.Input<boolean | undefined>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the APM domain.
      */
@@ -236,10 +247,14 @@ export interface ApmDomainArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this is an "Always Free" resource. The default value is false.
+     */
+    isFreeTier?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    isFreeTier?: pulumi.Input<boolean | undefined>;
+    logGroupId?: pulumi.Input<string | undefined>;
 }

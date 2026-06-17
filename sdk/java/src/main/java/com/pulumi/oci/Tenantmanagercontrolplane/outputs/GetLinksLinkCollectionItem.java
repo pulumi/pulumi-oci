@@ -16,6 +16,11 @@ public final class GetLinksLinkCollectionItem {
      */
     private String childTenancyId;
     /**
+     * @return The feature associated with this link.
+     * 
+     */
+    private String feature;
+    /**
      * @return OCID of the link.
      * 
      */
@@ -53,6 +58,13 @@ public final class GetLinksLinkCollectionItem {
      */
     public String childTenancyId() {
         return this.childTenancyId;
+    }
+    /**
+     * @return The feature associated with this link.
+     * 
+     */
+    public String feature() {
+        return this.feature;
     }
     /**
      * @return OCID of the link.
@@ -107,6 +119,7 @@ public final class GetLinksLinkCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String childTenancyId;
+        private String feature;
         private String id;
         private String parentTenancyId;
         private String state;
@@ -117,6 +130,7 @@ public final class GetLinksLinkCollectionItem {
         public Builder(GetLinksLinkCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.childTenancyId = defaults.childTenancyId;
+    	      this.feature = defaults.feature;
     	      this.id = defaults.id;
     	      this.parentTenancyId = defaults.parentTenancyId;
     	      this.state = defaults.state;
@@ -131,6 +145,14 @@ public final class GetLinksLinkCollectionItem {
               throw new MissingRequiredPropertyException("GetLinksLinkCollectionItem", "childTenancyId");
             }
             this.childTenancyId = childTenancyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder feature(String feature) {
+            if (feature == null) {
+              throw new MissingRequiredPropertyException("GetLinksLinkCollectionItem", "feature");
+            }
+            this.feature = feature;
             return this;
         }
         @CustomType.Setter
@@ -184,6 +206,7 @@ public final class GetLinksLinkCollectionItem {
         public GetLinksLinkCollectionItem build() {
             final var _resultValue = new GetLinksLinkCollectionItem();
             _resultValue.childTenancyId = childTenancyId;
+            _resultValue.feature = feature;
             _resultValue.id = id;
             _resultValue.parentTenancyId = parentTenancyId;
             _resultValue.state = state;

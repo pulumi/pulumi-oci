@@ -202,6 +202,9 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
     [OutputType]
     public sealed class GetDomainGovernancesResult
     {
+        /// <summary>
+        /// The OCID of the tenancy that owns this domain governance entity.
+        /// </summary>
         public readonly string CompartmentId;
         /// <summary>
         /// The list of domain_governance_collection.

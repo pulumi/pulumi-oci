@@ -68,6 +68,7 @@ namespace Pulumi.Oci.ObjectStorage
         public readonly ImmutableArray<string> NsgIds;
         public readonly string Prefix;
         public readonly string PrivateEndpointIp;
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly string State;
         public readonly string SubnetId;
         public readonly string TimeCreated;
@@ -103,6 +104,8 @@ namespace Pulumi.Oci.ObjectStorage
 
             string privateEndpointIp,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -125,6 +128,7 @@ namespace Pulumi.Oci.ObjectStorage
             NsgIds = nsgIds;
             Prefix = prefix;
             PrivateEndpointIp = privateEndpointIp;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

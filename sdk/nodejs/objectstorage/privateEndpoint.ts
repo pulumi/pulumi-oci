@@ -47,6 +47,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     declare public readonly prefix: pulumi.Output<string>;
     declare public readonly privateEndpointIp: pulumi.Output<string>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     declare public readonly state: pulumi.Output<string>;
     declare public readonly subnetId: pulumi.Output<string>;
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -78,6 +79,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["prefix"] = state?.prefix;
             resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -110,6 +112,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["prefix"] = args?.prefix;
             resourceInputs["privateEndpointIp"] = args?.privateEndpointIp;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["state"] = args?.state;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -139,6 +142,7 @@ export interface PrivateEndpointState {
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     prefix?: pulumi.Input<string | undefined>;
     privateEndpointIp?: pulumi.Input<string | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     state?: pulumi.Input<string | undefined>;
     subnetId?: pulumi.Input<string | undefined>;
     timeCreated?: pulumi.Input<string | undefined>;
@@ -160,6 +164,7 @@ export interface PrivateEndpointArgs {
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     prefix: pulumi.Input<string>;
     privateEndpointIp?: pulumi.Input<string | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     state?: pulumi.Input<string | undefined>;
     subnetId: pulumi.Input<string>;
 }

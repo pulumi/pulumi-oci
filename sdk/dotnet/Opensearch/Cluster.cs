@@ -62,6 +62,36 @@ namespace Pulumi.Oci.Opensearch
         public Output<int?> ConfigureOutboundClusterTrigger { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of coordinator nodes configured for the cluster.
+        /// </summary>
+        [Output("coordinatorNodeCount")]
+        public Output<int> CoordinatorNodeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        /// </summary>
+        [Output("coordinatorNodeHostMemoryGb")]
+        public Output<int> CoordinatorNodeHostMemoryGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        /// </summary>
+        [Output("coordinatorNodeHostOcpuCount")]
+        public Output<int> CoordinatorNodeHostOcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's coordinator nodes.
+        /// </summary>
+        [Output("coordinatorNodeHostShape")]
+        public Output<string> CoordinatorNodeHostShape { get; private set; } = null!;
+
+        /// <summary>
+        /// The instance type for the cluster's coordinator nodes.
+        /// </summary>
+        [Output("coordinatorNodeHostType")]
+        public Output<string> CoordinatorNodeHostType { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.
         /// </summary>
         [Output("dataNodeCount")]
@@ -507,6 +537,36 @@ namespace Pulumi.Oci.Opensearch
         public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
 
         /// <summary>
+        /// (Updatable) The number of coordinator nodes configured for the cluster.
+        /// </summary>
+        [Input("coordinatorNodeCount")]
+        public Input<int>? CoordinatorNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostMemoryGb")]
+        public Input<int>? CoordinatorNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostOcpuCount")]
+        public Input<int>? CoordinatorNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostShape")]
+        public Input<string>? CoordinatorNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostType")]
+        public Input<string>? CoordinatorNodeHostType { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.
         /// </summary>
         [Input("dataNodeCount", required: true)]
@@ -903,6 +963,36 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("configureOutboundClusterTrigger")]
         public Input<int>? ConfigureOutboundClusterTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of coordinator nodes configured for the cluster.
+        /// </summary>
+        [Input("coordinatorNodeCount")]
+        public Input<int>? CoordinatorNodeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The amount of memory in GB, for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostMemoryGb")]
+        public Input<int>? CoordinatorNodeHostMemoryGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of OCPUs configured for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostOcpuCount")]
+        public Input<int>? CoordinatorNodeHostOcpuCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The node shape for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostShape")]
+        public Input<string>? CoordinatorNodeHostShape { get; set; }
+
+        /// <summary>
+        /// The instance type for the cluster's coordinator nodes.
+        /// </summary>
+        [Input("coordinatorNodeHostType")]
+        public Input<string>? CoordinatorNodeHostType { get; set; }
 
         /// <summary>
         /// (Updatable) The number of data nodes to configure for the cluster.

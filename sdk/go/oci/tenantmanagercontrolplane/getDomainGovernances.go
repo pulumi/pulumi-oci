@@ -71,6 +71,7 @@ type GetDomainGovernancesArgs struct {
 
 // A collection of values returned by getDomainGovernances.
 type GetDomainGovernancesResult struct {
+	// The OCID of the tenancy that owns this domain governance entity.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of domain_governance_collection.
 	DomainGovernanceCollections []GetDomainGovernancesDomainGovernanceCollection `pulumi:"domainGovernanceCollections"`
@@ -128,6 +129,7 @@ func (o GetDomainGovernancesResultOutput) ToGetDomainGovernancesResultOutputWith
 	return o
 }
 
+// The OCID of the tenancy that owns this domain governance entity.
 func (o GetDomainGovernancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainGovernancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

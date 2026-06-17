@@ -20,6 +20,11 @@ public final class GetLinksResult {
      * 
      */
     private @Nullable String childTenancyId;
+    /**
+     * @return The feature associated with this link. Default value is CORE.
+     * 
+     */
+    private @Nullable String feature;
     private @Nullable List<GetLinksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -49,6 +54,13 @@ public final class GetLinksResult {
      */
     public Optional<String> childTenancyId() {
         return Optional.ofNullable(this.childTenancyId);
+    }
+    /**
+     * @return The feature associated with this link. Default value is CORE.
+     * 
+     */
+    public Optional<String> feature() {
+        return Optional.ofNullable(this.feature);
     }
     public List<GetLinksFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -92,6 +104,7 @@ public final class GetLinksResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String childTenancyId;
+        private @Nullable String feature;
         private @Nullable List<GetLinksFilter> filters;
         private String id;
         private List<GetLinksLinkCollection> linkCollections;
@@ -101,6 +114,7 @@ public final class GetLinksResult {
         public Builder(GetLinksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.childTenancyId = defaults.childTenancyId;
+    	      this.feature = defaults.feature;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.linkCollections = defaults.linkCollections;
@@ -112,6 +126,12 @@ public final class GetLinksResult {
         public Builder childTenancyId(@Nullable String childTenancyId) {
 
             this.childTenancyId = childTenancyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder feature(@Nullable String feature) {
+
+            this.feature = feature;
             return this;
         }
         @CustomType.Setter
@@ -157,6 +177,7 @@ public final class GetLinksResult {
         public GetLinksResult build() {
             final var _resultValue = new GetLinksResult();
             _resultValue.childTenancyId = childTenancyId;
+            _resultValue.feature = feature;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.linkCollections = linkCollections;

@@ -28,10 +28,13 @@ class GetLinksResult:
     """
     A collection of values returned by getLinks.
     """
-    def __init__(__self__, child_tenancy_id=None, filters=None, id=None, link_collections=None, parent_tenancy_id=None, state=None):
+    def __init__(__self__, child_tenancy_id=None, feature=None, filters=None, id=None, link_collections=None, parent_tenancy_id=None, state=None):
         if child_tenancy_id and not isinstance(child_tenancy_id, str):
             raise TypeError("Expected argument 'child_tenancy_id' to be a str")
         pulumi.set(__self__, "child_tenancy_id", child_tenancy_id)
+        if feature and not isinstance(feature, str):
+            raise TypeError("Expected argument 'feature' to be a str")
+        pulumi.set(__self__, "feature", feature)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -55,6 +58,14 @@ class GetLinksResult:
         OCID of the child tenancy.
         """
         return pulumi.get(self, "child_tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> Optional[_builtins.str]:
+        """
+        The feature associated with this link. Default value is CORE.
+        """
+        return pulumi.get(self, "feature")
 
     @_builtins.property
     @pulumi.getter
@@ -101,6 +112,7 @@ class AwaitableGetLinksResult(GetLinksResult):
             yield self
         return GetLinksResult(
             child_tenancy_id=self.child_tenancy_id,
+            feature=self.feature,
             filters=self.filters,
             id=self.id,
             link_collections=self.link_collections,
@@ -109,6 +121,7 @@ class AwaitableGetLinksResult(GetLinksResult):
 
 
 def get_links(child_tenancy_id: Optional[_builtins.str] = None,
+              feature: Optional[_builtins.str] = None,
               filters: Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]] = None,
               parent_tenancy_id: Optional[_builtins.str] = None,
               state: Optional[_builtins.str] = None,
@@ -125,17 +138,20 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+        feature=link_feature,
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)
     ```
 
 
     :param _builtins.str child_tenancy_id: The ID of the child tenancy this link is associated with.
+    :param _builtins.str feature: The feature associated with this link.
     :param _builtins.str parent_tenancy_id: The ID of the parent tenancy this link is associated with.
     :param _builtins.str state: The lifecycle state of the resource.
     """
     __args__ = dict()
     __args__['childTenancyId'] = child_tenancy_id
+    __args__['feature'] = feature
     __args__['filters'] = filters
     __args__['parentTenancyId'] = parent_tenancy_id
     __args__['state'] = state
@@ -144,12 +160,14 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
 
     return AwaitableGetLinksResult(
         child_tenancy_id=pulumi.get(__ret__, 'child_tenancy_id'),
+        feature=pulumi.get(__ret__, 'feature'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         link_collections=pulumi.get(__ret__, 'link_collections'),
         parent_tenancy_id=pulumi.get(__ret__, 'parent_tenancy_id'),
         state=pulumi.get(__ret__, 'state'))
 def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     feature: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]]]] = None,
                      parent_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -166,17 +184,20 @@ def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.
     import pulumi_oci as oci
 
     test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+        feature=link_feature,
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)
     ```
 
 
     :param _builtins.str child_tenancy_id: The ID of the child tenancy this link is associated with.
+    :param _builtins.str feature: The feature associated with this link.
     :param _builtins.str parent_tenancy_id: The ID of the parent tenancy this link is associated with.
     :param _builtins.str state: The lifecycle state of the resource.
     """
     __args__ = dict()
     __args__['childTenancyId'] = child_tenancy_id
+    __args__['feature'] = feature
     __args__['filters'] = filters
     __args__['parentTenancyId'] = parent_tenancy_id
     __args__['state'] = state
@@ -184,6 +205,7 @@ def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.
     __ret__ = pulumi.runtime.invoke_output('oci:Tenantmanagercontrolplane/getLinks:getLinks', __args__, opts=opts, typ=GetLinksResult)
     return __ret__.apply(lambda __response__: GetLinksResult(
         child_tenancy_id=pulumi.get(__response__, 'child_tenancy_id'),
+        feature=pulumi.get(__response__, 'feature'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         link_collections=pulumi.get(__response__, 'link_collections'),

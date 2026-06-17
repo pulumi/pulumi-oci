@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Apm
     ///             { "bar-key", "value" },
     ///         },
     ///         IsFreeTier = apmDomainIsFreeTier,
+    ///         LogGroupId = testLogGroup.Id,
     ///     });
     /// 
     /// });
@@ -95,13 +96,19 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// </summary>
+        [Output("isFreeTier")]
+        public Output<bool> IsFreeTier { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("isFreeTier")]
-        public Output<bool> IsFreeTier { get; private set; } = null!;
+        [Output("logGroupId")]
+        public Output<string> LogGroupId { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the APM domain.
@@ -211,13 +218,19 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// </summary>
+        [Input("isFreeTier")]
+        public Input<bool>? IsFreeTier { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("isFreeTier")]
-        public Input<bool>? IsFreeTier { get; set; }
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
 
         public ApmDomainArgs()
         {
@@ -277,13 +290,19 @@ namespace Pulumi.Oci.Apm
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
+        /// </summary>
+        [Input("isFreeTier")]
+        public Input<bool>? IsFreeTier { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("isFreeTier")]
-        public Input<bool>? IsFreeTier { get; set; }
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
         /// The current lifecycle state of the APM domain.

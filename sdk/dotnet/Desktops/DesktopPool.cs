@@ -17,109 +17,6 @@ namespace Pulumi.Oci.Desktops
     /// 
     /// Creates a desktop pool with the given configuration parameters.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDesktopPool = new Oci.Desktops.DesktopPool("test_desktop_pool", new()
-    ///     {
-    ///         ArePrivilegedUsers = desktopPoolArePrivilegedUsers,
-    ///         AvailabilityDomain = desktopPoolAvailabilityDomain,
-    ///         AvailabilityPolicy = new Oci.Desktops.Inputs.DesktopPoolAvailabilityPolicyArgs
-    ///         {
-    ///             StartSchedule = new Oci.Desktops.Inputs.DesktopPoolAvailabilityPolicyStartScheduleArgs
-    ///             {
-    ///                 CronExpression = "0 10 8 ? * 2",
-    ///                 Timezone = "America/Denver",
-    ///             },
-    ///             StopSchedule = new Oci.Desktops.Inputs.DesktopPoolAvailabilityPolicyStopScheduleArgs
-    ///             {
-    ///                 CronExpression = "0 20 18 ? * 6",
-    ///                 Timezone = "America/Denver",
-    ///             },
-    ///         },
-    ///         CompartmentId = compartmentId,
-    ///         ContactDetails = desktopPoolContactDetails,
-    ///         DevicePolicy = new Oci.Desktops.Inputs.DesktopPoolDevicePolicyArgs
-    ///         {
-    ///             AudioMode = desktopPoolDevicePolicyAudioMode,
-    ///             CdmMode = desktopPoolDevicePolicyCdmMode,
-    ///             ClipboardMode = desktopPoolDevicePolicyClipboardMode,
-    ///             IsDisplayEnabled = desktopPoolDevicePolicyIsDisplayEnabled,
-    ///             IsKeyboardEnabled = desktopPoolDevicePolicyIsKeyboardEnabled,
-    ///             IsPointerEnabled = desktopPoolDevicePolicyIsPointerEnabled,
-    ///             IsPrintingEnabled = desktopPoolDevicePolicyIsPrintingEnabled,
-    ///             IsVideoInputEnabled = desktopPoolDevicePolicyIsVideoInputEnabled,
-    ///         },
-    ///         DisplayName = desktopPoolDisplayName,
-    ///         Image = new Oci.Desktops.Inputs.DesktopPoolImageArgs
-    ///         {
-    ///             ImageId = testImage.Id,
-    ///             ImageName = desktopPoolImageImageName,
-    ///             OperatingSystem = desktopPoolImageOperatingSystem,
-    ///         },
-    ///         IsStorageEnabled = desktopPoolIsStorageEnabled,
-    ///         MaximumSize = desktopPoolMaximumSize,
-    ///         NetworkConfiguration = new Oci.Desktops.Inputs.DesktopPoolNetworkConfigurationArgs
-    ///         {
-    ///             SubnetId = testSubnet.Id,
-    ///             VcnId = testVcn.Id,
-    ///         },
-    ///         ShapeName = "VM.Standard.E4.Flex",
-    ///         StandbySize = desktopPoolStandbySize,
-    ///         StorageBackupPolicyId = "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-    ///         StorageSizeInGbs = desktopPoolStorageSizeInGbs,
-    ///         BootVolumeSizeInGbs = desktopPoolBootVolumeSizeInGbs,
-    ///         AreVolumesPreserved = desktopPoolAreVolumesPreserved,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = desktopPoolDescription,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         NsgIds = desktopPoolNsgIds,
-    ///         ShapeConfig = new Oci.Desktops.Inputs.DesktopPoolShapeConfigArgs
-    ///         {
-    ///             BaselineOcpuUtilization = desktopPoolShapeConfigBaselineOcpuUtilization,
-    ///             MemoryInGbs = desktopPoolShapeConfigMemoryInGbs,
-    ///             Ocpus = desktopPoolShapeConfigOcpus,
-    ///         },
-    ///         PrivateAccessDetails = new Oci.Desktops.Inputs.DesktopPoolPrivateAccessDetailsArgs
-    ///         {
-    ///             SubnetId = testSubnet.Id,
-    ///             NsgIds = desktopPoolPrivateAccessDetailsNsgIds,
-    ///             PrivateIp = desktopPoolPrivateAccessDetailsPrivateIp,
-    ///         },
-    ///         SessionLifecycleActions = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsArgs
-    ///         {
-    ///             Disconnect = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsDisconnectArgs
-    ///             {
-    ///                 Action = "STOP",
-    ///                 GracePeriodInMinutes = desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes,
-    ///             },
-    ///             Inactivity = new Oci.Desktops.Inputs.DesktopPoolSessionLifecycleActionsInactivityArgs
-    ///             {
-    ///                 Action = "DISCONNECT",
-    ///                 GracePeriodInMinutes = desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes,
-    ///             },
-    ///         },
-    ///         TimeStartScheduled = desktopPoolTimeStartScheduled,
-    ///         TimeStopScheduled = desktopPoolTimeStopScheduled,
-    ///         UseDedicatedVmHost = desktopPoolUseDedicatedVmHost,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// DesktopPools can be imported using the `Id`, e.g.
@@ -232,7 +129,7 @@ namespace Pulumi.Oci.Desktops
         public Output<int> MaximumSize { get; private set; } = null!;
 
         /// <summary>
-        /// Provides information about the network configuration of the desktop pool.
+        /// (Updatable) Provides information about the network configuration of the desktop pool.
         /// </summary>
         [Output("networkConfiguration")]
         public Output<Outputs.DesktopPoolNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
@@ -244,10 +141,16 @@ namespace Pulumi.Oci.Desktops
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
-        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         /// </summary>
         [Output("privateAccessDetails")]
         public Output<Outputs.DesktopPoolPrivateAccessDetails> PrivateAccessDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The details of action to be triggered in case of inactivity or disconnect
@@ -468,7 +371,7 @@ namespace Pulumi.Oci.Desktops
         public Input<int> MaximumSize { get; set; } = null!;
 
         /// <summary>
-        /// Provides information about the network configuration of the desktop pool.
+        /// (Updatable) Provides information about the network configuration of the desktop pool.
         /// </summary>
         [Input("networkConfiguration", required: true)]
         public Input<Inputs.DesktopPoolNetworkConfigurationArgs> NetworkConfiguration { get; set; } = null!;
@@ -486,10 +389,22 @@ namespace Pulumi.Oci.Desktops
         }
 
         /// <summary>
-        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         /// </summary>
         [Input("privateAccessDetails")]
         public Input<Inputs.DesktopPoolPrivateAccessDetailsArgs>? PrivateAccessDetails { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The details of action to be triggered in case of inactivity or disconnect
@@ -666,7 +581,7 @@ namespace Pulumi.Oci.Desktops
         public Input<int>? MaximumSize { get; set; }
 
         /// <summary>
-        /// Provides information about the network configuration of the desktop pool.
+        /// (Updatable) Provides information about the network configuration of the desktop pool.
         /// </summary>
         [Input("networkConfiguration")]
         public Input<Inputs.DesktopPoolNetworkConfigurationGetArgs>? NetworkConfiguration { get; set; }
@@ -684,10 +599,22 @@ namespace Pulumi.Oci.Desktops
         }
 
         /// <summary>
-        /// The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        /// (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         /// </summary>
         [Input("privateAccessDetails")]
         public Input<Inputs.DesktopPoolPrivateAccessDetailsGetArgs>? PrivateAccessDetails { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The details of action to be triggered in case of inactivity or disconnect

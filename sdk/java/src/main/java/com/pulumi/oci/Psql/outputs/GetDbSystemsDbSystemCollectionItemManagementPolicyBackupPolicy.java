@@ -34,7 +34,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
      */
     private List<String> daysOfTheWeeks;
     /**
-     * @return The kind of backup policy.
+     * @return Specifies the management of Insight for the dbSystem.
      * 
      */
     private String kind;
@@ -74,7 +74,7 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
         return this.daysOfTheWeeks;
     }
     /**
-     * @return The kind of backup policy.
+     * @return Specifies the management of Insight for the dbSystem.
      * 
      */
     public String kind() {

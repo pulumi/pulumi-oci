@@ -33,6 +33,7 @@ class PrivateEndpointArgs:
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateEndpoint resource.
@@ -56,6 +57,8 @@ class PrivateEndpointArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -168,6 +171,15 @@ class PrivateEndpointArgs:
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
@@ -193,6 +205,7 @@ class _PrivateEndpointState:
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -226,6 +239,8 @@ class _PrivateEndpointState:
             pulumi.set(__self__, "prefix", prefix)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -353,6 +368,15 @@ class _PrivateEndpointState:
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
@@ -406,6 +430,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -450,6 +475,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -480,6 +506,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                 raise TypeError("Missing required property 'prefix'")
             __props__.__dict__["prefix"] = prefix
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
@@ -511,6 +538,7 @@ class PrivateEndpoint(pulumi.CustomResource):
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             prefix: pulumi.Input[Optional[_builtins.str]] = None,
             private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -540,6 +568,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["prefix"] = prefix
         __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["time_created"] = time_created
@@ -610,6 +639,11 @@ class PrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "private_endpoint_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

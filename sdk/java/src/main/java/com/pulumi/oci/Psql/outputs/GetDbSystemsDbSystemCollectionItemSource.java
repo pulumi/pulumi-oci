@@ -22,6 +22,11 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
      */
     private Boolean isHavingRestoreConfigOverrides;
     /**
+     * @return The [OCID] of the primary database system.
+     * 
+     */
+    private String primaryDbSystemId;
+    /**
      * @return The source descriminator.
      * 
      */
@@ -43,6 +48,13 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
         return this.isHavingRestoreConfigOverrides;
     }
     /**
+     * @return The [OCID] of the primary database system.
+     * 
+     */
+    public String primaryDbSystemId() {
+        return this.primaryDbSystemId;
+    }
+    /**
      * @return The source descriminator.
      * 
      */
@@ -61,12 +73,14 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
     public static final class Builder {
         private String backupId;
         private Boolean isHavingRestoreConfigOverrides;
+        private String primaryDbSystemId;
         private String sourceType;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemCollectionItemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
     	      this.isHavingRestoreConfigOverrides = defaults.isHavingRestoreConfigOverrides;
+    	      this.primaryDbSystemId = defaults.primaryDbSystemId;
     	      this.sourceType = defaults.sourceType;
         }
 
@@ -87,6 +101,14 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
             return this;
         }
         @CustomType.Setter
+        public Builder primaryDbSystemId(String primaryDbSystemId) {
+            if (primaryDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemSource", "primaryDbSystemId");
+            }
+            this.primaryDbSystemId = primaryDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             if (sourceType == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemSource", "sourceType");
@@ -98,6 +120,7 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItemSource();
             _resultValue.backupId = backupId;
             _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            _resultValue.primaryDbSystemId = primaryDbSystemId;
             _resultValue.sourceType = sourceType;
             return _resultValue;
         }

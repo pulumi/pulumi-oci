@@ -144,6 +144,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSenderInvitationInvitationFeatureResult> InvitationFeatures;
+        /// <summary>
         /// Email address of the recipient.
         /// </summary>
         public readonly string RecipientEmailAddress;
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
 
             string id,
 
+            ImmutableArray<Outputs.GetSenderInvitationInvitationFeatureResult> invitationFeatures,
+
             string recipientEmailAddress,
 
             string recipientInvitationId,
@@ -218,6 +224,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InvitationFeatures = invitationFeatures;
             RecipientEmailAddress = recipientEmailAddress;
             RecipientInvitationId = recipientInvitationId;
             RecipientTenancyId = recipientTenancyId;

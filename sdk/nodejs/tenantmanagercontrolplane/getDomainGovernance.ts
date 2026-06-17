@@ -42,6 +42,10 @@ export interface GetDomainGovernanceArgs {
  */
 export interface GetDomainGovernanceResult {
     /**
+     * The OCID of the tenancy that owns this domain governance entity.
+     */
+    readonly compartmentId: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: string};

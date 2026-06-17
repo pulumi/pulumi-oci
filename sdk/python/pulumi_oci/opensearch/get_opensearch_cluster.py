@@ -27,7 +27,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, ml_node_count=None, ml_node_host_memory_gb=None, ml_node_host_ocpu_count=None, ml_node_host_shape=None, ml_node_host_type=None, ml_node_storage_gb=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, coordinator_node_count=None, coordinator_node_host_memory_gb=None, coordinator_node_host_ocpu_count=None, coordinator_node_host_shape=None, coordinator_node_host_type=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, ml_node_count=None, ml_node_host_memory_gb=None, ml_node_host_ocpu_count=None, ml_node_host_shape=None, ml_node_host_type=None, ml_node_storage_gb=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -40,6 +40,21 @@ class GetOpensearchClusterResult:
         if configure_outbound_cluster_trigger and not isinstance(configure_outbound_cluster_trigger, int):
             raise TypeError("Expected argument 'configure_outbound_cluster_trigger' to be a int")
         pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
+        if coordinator_node_count and not isinstance(coordinator_node_count, int):
+            raise TypeError("Expected argument 'coordinator_node_count' to be a int")
+        pulumi.set(__self__, "coordinator_node_count", coordinator_node_count)
+        if coordinator_node_host_memory_gb and not isinstance(coordinator_node_host_memory_gb, int):
+            raise TypeError("Expected argument 'coordinator_node_host_memory_gb' to be a int")
+        pulumi.set(__self__, "coordinator_node_host_memory_gb", coordinator_node_host_memory_gb)
+        if coordinator_node_host_ocpu_count and not isinstance(coordinator_node_host_ocpu_count, int):
+            raise TypeError("Expected argument 'coordinator_node_host_ocpu_count' to be a int")
+        pulumi.set(__self__, "coordinator_node_host_ocpu_count", coordinator_node_host_ocpu_count)
+        if coordinator_node_host_shape and not isinstance(coordinator_node_host_shape, str):
+            raise TypeError("Expected argument 'coordinator_node_host_shape' to be a str")
+        pulumi.set(__self__, "coordinator_node_host_shape", coordinator_node_host_shape)
+        if coordinator_node_host_type and not isinstance(coordinator_node_host_type, str):
+            raise TypeError("Expected argument 'coordinator_node_host_type' to be a str")
+        pulumi.set(__self__, "coordinator_node_host_type", coordinator_node_host_type)
         if data_node_count and not isinstance(data_node_count, int):
             raise TypeError("Expected argument 'data_node_count' to be a int")
         pulumi.set(__self__, "data_node_count", data_node_count)
@@ -261,6 +276,46 @@ class GetOpensearchClusterResult:
     @pulumi.getter(name="configureOutboundClusterTrigger")
     def configure_outbound_cluster_trigger(self) -> _builtins.int:
         return pulumi.get(self, "configure_outbound_cluster_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeCount")
+    def coordinator_node_count(self) -> _builtins.int:
+        """
+        The number of coordinator nodes configured for the cluster.
+        """
+        return pulumi.get(self, "coordinator_node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostMemoryGb")
+    def coordinator_node_host_memory_gb(self) -> _builtins.int:
+        """
+        The amount of memory in GB, for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_memory_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostOcpuCount")
+    def coordinator_node_host_ocpu_count(self) -> _builtins.int:
+        """
+        The number of OCPUs configured for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostShape")
+    def coordinator_node_host_shape(self) -> _builtins.str:
+        """
+        The node shape for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinatorNodeHostType")
+    def coordinator_node_host_type(self) -> _builtins.str:
+        """
+        The instance type for the cluster's coordinator nodes.
+        """
+        return pulumi.get(self, "coordinator_node_host_type")
 
     @_builtins.property
     @pulumi.getter(name="dataNodeCount")
@@ -776,6 +831,11 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             certificate_configs=self.certificate_configs,
             compartment_id=self.compartment_id,
             configure_outbound_cluster_trigger=self.configure_outbound_cluster_trigger,
+            coordinator_node_count=self.coordinator_node_count,
+            coordinator_node_host_memory_gb=self.coordinator_node_host_memory_gb,
+            coordinator_node_host_ocpu_count=self.coordinator_node_host_ocpu_count,
+            coordinator_node_host_shape=self.coordinator_node_host_shape,
+            coordinator_node_host_type=self.coordinator_node_host_type,
             data_node_count=self.data_node_count,
             data_node_host_bare_metal_shape=self.data_node_host_bare_metal_shape,
             data_node_host_memory_gb=self.data_node_host_memory_gb,
@@ -880,6 +940,11 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
         certificate_configs=pulumi.get(__ret__, 'certificate_configs'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         configure_outbound_cluster_trigger=pulumi.get(__ret__, 'configure_outbound_cluster_trigger'),
+        coordinator_node_count=pulumi.get(__ret__, 'coordinator_node_count'),
+        coordinator_node_host_memory_gb=pulumi.get(__ret__, 'coordinator_node_host_memory_gb'),
+        coordinator_node_host_ocpu_count=pulumi.get(__ret__, 'coordinator_node_host_ocpu_count'),
+        coordinator_node_host_shape=pulumi.get(__ret__, 'coordinator_node_host_shape'),
+        coordinator_node_host_type=pulumi.get(__ret__, 'coordinator_node_host_type'),
         data_node_count=pulumi.get(__ret__, 'data_node_count'),
         data_node_host_bare_metal_shape=pulumi.get(__ret__, 'data_node_host_bare_metal_shape'),
         data_node_host_memory_gb=pulumi.get(__ret__, 'data_node_host_memory_gb'),
@@ -981,6 +1046,11 @@ def get_opensearch_cluster_output(opensearch_cluster_id: pulumi.Input[Optional[_
         certificate_configs=pulumi.get(__response__, 'certificate_configs'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         configure_outbound_cluster_trigger=pulumi.get(__response__, 'configure_outbound_cluster_trigger'),
+        coordinator_node_count=pulumi.get(__response__, 'coordinator_node_count'),
+        coordinator_node_host_memory_gb=pulumi.get(__response__, 'coordinator_node_host_memory_gb'),
+        coordinator_node_host_ocpu_count=pulumi.get(__response__, 'coordinator_node_host_ocpu_count'),
+        coordinator_node_host_shape=pulumi.get(__response__, 'coordinator_node_host_shape'),
+        coordinator_node_host_type=pulumi.get(__response__, 'coordinator_node_host_type'),
         data_node_count=pulumi.get(__response__, 'data_node_count'),
         data_node_host_bare_metal_shape=pulumi.get(__response__, 'data_node_host_bare_metal_shape'),
         data_node_host_memory_gb=pulumi.get(__response__, 'data_node_host_memory_gb'),

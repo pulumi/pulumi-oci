@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane.Outputs
     [OutputType]
     public sealed class GetSenderInvitationsFilterResult
     {
+        /// <summary>
+        /// Name of the feature.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

@@ -65,6 +65,11 @@ public final class GetMigrationsMigrationCollectionItem {
      */
     private String replicationScheduleId;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return A filter to return only resources where the resource&#39;s lifecycle state matches the given lifecycle state.
      * 
      */
@@ -157,6 +162,13 @@ public final class GetMigrationsMigrationCollectionItem {
         return this.replicationScheduleId;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A filter to return only resources where the resource&#39;s lifecycle state matches the given lifecycle state.
      * 
      */
@@ -204,6 +216,7 @@ public final class GetMigrationsMigrationCollectionItem {
         private List<GetMigrationsMigrationCollectionItemMigrationConfig> migrationConfigs;
         private String migrationType;
         private String replicationScheduleId;
+        private Map<String,String> securityAttributes;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -221,6 +234,7 @@ public final class GetMigrationsMigrationCollectionItem {
     	      this.migrationConfigs = defaults.migrationConfigs;
     	      this.migrationType = defaults.migrationType;
     	      this.replicationScheduleId = defaults.replicationScheduleId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -311,6 +325,14 @@ public final class GetMigrationsMigrationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItem", "state");
@@ -354,6 +376,7 @@ public final class GetMigrationsMigrationCollectionItem {
             _resultValue.migrationConfigs = migrationConfigs;
             _resultValue.migrationType = migrationType;
             _resultValue.replicationScheduleId = replicationScheduleId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

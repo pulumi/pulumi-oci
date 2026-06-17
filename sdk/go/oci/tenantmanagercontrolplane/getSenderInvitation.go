@@ -68,6 +68,8 @@ type GetSenderInvitationResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+	InvitationFeatures []GetSenderInvitationInvitationFeature `pulumi:"invitationFeatures"`
 	// Email address of the recipient.
 	RecipientEmailAddress string `pulumi:"recipientEmailAddress"`
 	// OCID of the corresponding recipient invitation.
@@ -146,6 +148,11 @@ func (o GetSenderInvitationResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetSenderInvitationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSenderInvitationResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of features that the invitation is being sent for. Each feature would create one link, of that type.
+func (o GetSenderInvitationResultOutput) InvitationFeatures() GetSenderInvitationInvitationFeatureArrayOutput {
+	return o.ApplyT(func(v GetSenderInvitationResult) []GetSenderInvitationInvitationFeature { return v.InvitationFeatures }).(GetSenderInvitationInvitationFeatureArrayOutput)
 }
 
 // Email address of the recipient.

@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
         ///         ChildTenancyId = testTenancy.Id,
+        ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,
         ///     });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
         ///         ChildTenancyId = testTenancy.Id,
+        ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,
         ///     });
@@ -85,6 +87,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
         ///         ChildTenancyId = testTenancy.Id,
+        ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,
         ///     });
@@ -104,6 +107,12 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// </summary>
         [Input("childTenancyId")]
         public string? ChildTenancyId { get; set; }
+
+        /// <summary>
+        /// The feature associated with this link.
+        /// </summary>
+        [Input("feature")]
+        public string? Feature { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetLinksFilterArgs>? _filters;
@@ -139,6 +148,12 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         [Input("childTenancyId")]
         public Input<string>? ChildTenancyId { get; set; }
 
+        /// <summary>
+        /// The feature associated with this link.
+        /// </summary>
+        [Input("feature")]
+        public Input<string>? Feature { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetLinksFilterInputArgs>? _filters;
         public InputList<Inputs.GetLinksFilterInputArgs> Filters
@@ -173,6 +188,10 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// OCID of the child tenancy.
         /// </summary>
         public readonly string? ChildTenancyId;
+        /// <summary>
+        /// The feature associated with this link. Default value is CORE.
+        /// </summary>
+        public readonly string? Feature;
         public readonly ImmutableArray<Outputs.GetLinksFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -195,6 +214,8 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         private GetLinksResult(
             string? childTenancyId,
 
+            string? feature,
+
             ImmutableArray<Outputs.GetLinksFilterResult> filters,
 
             string id,
@@ -206,6 +227,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
             string? state)
         {
             ChildTenancyId = childTenancyId;
+            Feature = feature;
             Filters = filters;
             Id = id;
             LinkCollections = linkCollections;

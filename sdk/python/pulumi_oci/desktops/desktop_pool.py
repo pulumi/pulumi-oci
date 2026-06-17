@@ -43,6 +43,7 @@ class DesktopPoolArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_access_details: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  session_lifecycle_actions: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']] = None,
                  shape_config: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']] = None,
                  time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -61,7 +62,7 @@ class DesktopPoolArgs:
         :param pulumi.Input['DesktopPoolImageArgs'] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
         :param pulumi.Input[_builtins.int] standby_size: (Updatable) The maximum number of standby desktops available in the desktop pool.
         :param pulumi.Input[_builtins.str] storage_backup_policy_id: The backup policy OCID of the storage.
@@ -76,7 +77,8 @@ class DesktopPoolArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsArgs'] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] time_start_scheduled: (Updatable) The start time of the desktop pool.
@@ -112,6 +114,8 @@ class DesktopPoolArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_access_details is not None:
             pulumi.set(__self__, "private_access_details", private_access_details)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if session_lifecycle_actions is not None:
             pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         if shape_config is not None:
@@ -247,7 +251,7 @@ class DesktopPoolArgs:
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Input['DesktopPoolNetworkConfigurationArgs']:
         """
-        Provides information about the network configuration of the desktop pool.
+        (Updatable) Provides information about the network configuration of the desktop pool.
         """
         return pulumi.get(self, "network_configuration")
 
@@ -383,13 +387,25 @@ class DesktopPoolArgs:
     @pulumi.getter(name="privateAccessDetails")
     def private_access_details(self) -> pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]:
         """
-        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
 
     @private_access_details.setter
     def private_access_details(self, value: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]):
         pulumi.set(self, "private_access_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
@@ -474,6 +490,7 @@ class _DesktopPoolState:
                  network_configuration: pulumi.Input[Optional['DesktopPoolNetworkConfigurationArgs']] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_access_details: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  session_lifecycle_actions: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']] = None,
                  shape_config: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -508,9 +525,10 @@ class _DesktopPoolState:
         :param pulumi.Input['DesktopPoolImageArgs'] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input['DesktopPoolNetworkConfigurationArgs'] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input['DesktopPoolPrivateAccessDetailsArgs'] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsArgs'] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input['DesktopPoolShapeConfigArgs'] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
@@ -561,6 +579,8 @@ class _DesktopPoolState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_access_details is not None:
             pulumi.set(__self__, "private_access_details", private_access_details)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if session_lifecycle_actions is not None:
             pulumi.set(__self__, "session_lifecycle_actions", session_lifecycle_actions)
         if shape_config is not None:
@@ -784,7 +804,7 @@ class _DesktopPoolState:
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Input[Optional['DesktopPoolNetworkConfigurationArgs']]:
         """
-        Provides information about the network configuration of the desktop pool.
+        (Updatable) Provides information about the network configuration of the desktop pool.
         """
         return pulumi.get(self, "network_configuration")
 
@@ -808,13 +828,25 @@ class _DesktopPoolState:
     @pulumi.getter(name="privateAccessDetails")
     def private_access_details(self) -> pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]:
         """
-        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
 
     @private_access_details.setter
     def private_access_details(self, value: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]):
         pulumi.set(self, "private_access_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
@@ -973,6 +1005,7 @@ class DesktopPool(pulumi.CustomResource):
                  network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
                  shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -990,88 +1023,6 @@ class DesktopPool(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/desktops
 
         Creates a desktop pool with the given configuration parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users == "true",
-            availability_domain=desktop_pool_availability_domain,
-            availability_policy={
-                "start_schedule": {
-                    "cron_expression": "0 10 8 ? * 2",
-                    "timezone": "America/Denver",
-                },
-                "stop_schedule": {
-                    "cron_expression": "0 20 18 ? * 6",
-                    "timezone": "America/Denver",
-                },
-            },
-            compartment_id=compartment_id,
-            contact_details=desktop_pool_contact_details,
-            device_policy={
-                "audio_mode": desktop_pool_device_policy_audio_mode,
-                "cdm_mode": desktop_pool_device_policy_cdm_mode,
-                "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
-            },
-            display_name=desktop_pool_display_name,
-            image={
-                "image_id": test_image["id"],
-                "image_name": desktop_pool_image_image_name,
-                "operating_system": desktop_pool_image_operating_system,
-            },
-            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
-            maximum_size=int(desktop_pool_maximum_size),
-            network_configuration={
-                "subnet_id": test_subnet["id"],
-                "vcn_id": test_vcn["id"],
-            },
-            shape_name="VM.Standard.E4.Flex",
-            standby_size=int(desktop_pool_standby_size),
-            storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
-            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
-            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=desktop_pool_description,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            nsg_ids=desktop_pool_nsg_ids,
-            shape_config={
-                "baseline_ocpu_utilization": desktop_pool_shape_config_baseline_ocpu_utilization,
-                "memory_in_gbs": desktop_pool_shape_config_memory_in_gbs,
-                "ocpus": desktop_pool_shape_config_ocpus,
-            },
-            private_access_details={
-                "subnet_id": test_subnet["id"],
-                "nsg_ids": desktop_pool_private_access_details_nsg_ids,
-                "private_ip": desktop_pool_private_access_details_private_ip,
-            },
-            session_lifecycle_actions={
-                "disconnect": {
-                    "action": "STOP",
-                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
-                },
-                "inactivity": {
-                    "action": "DISCONNECT",
-                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
-                },
-            },
-            time_start_scheduled=desktop_pool_time_start_scheduled,
-            time_stop_scheduled=desktop_pool_time_stop_scheduled,
-            use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
-        ```
 
         ## Import
 
@@ -1103,9 +1054,10 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
@@ -1129,88 +1081,6 @@ class DesktopPool(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/desktops
 
         Creates a desktop pool with the given configuration parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users == "true",
-            availability_domain=desktop_pool_availability_domain,
-            availability_policy={
-                "start_schedule": {
-                    "cron_expression": "0 10 8 ? * 2",
-                    "timezone": "America/Denver",
-                },
-                "stop_schedule": {
-                    "cron_expression": "0 20 18 ? * 6",
-                    "timezone": "America/Denver",
-                },
-            },
-            compartment_id=compartment_id,
-            contact_details=desktop_pool_contact_details,
-            device_policy={
-                "audio_mode": desktop_pool_device_policy_audio_mode,
-                "cdm_mode": desktop_pool_device_policy_cdm_mode,
-                "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
-            },
-            display_name=desktop_pool_display_name,
-            image={
-                "image_id": test_image["id"],
-                "image_name": desktop_pool_image_image_name,
-                "operating_system": desktop_pool_image_operating_system,
-            },
-            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
-            maximum_size=int(desktop_pool_maximum_size),
-            network_configuration={
-                "subnet_id": test_subnet["id"],
-                "vcn_id": test_vcn["id"],
-            },
-            shape_name="VM.Standard.E4.Flex",
-            standby_size=int(desktop_pool_standby_size),
-            storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
-            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
-            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=desktop_pool_description,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            nsg_ids=desktop_pool_nsg_ids,
-            shape_config={
-                "baseline_ocpu_utilization": desktop_pool_shape_config_baseline_ocpu_utilization,
-                "memory_in_gbs": desktop_pool_shape_config_memory_in_gbs,
-                "ocpus": desktop_pool_shape_config_ocpus,
-            },
-            private_access_details={
-                "subnet_id": test_subnet["id"],
-                "nsg_ids": desktop_pool_private_access_details_nsg_ids,
-                "private_ip": desktop_pool_private_access_details_private_ip,
-            },
-            session_lifecycle_actions={
-                "disconnect": {
-                    "action": "STOP",
-                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
-                },
-                "inactivity": {
-                    "action": "DISCONNECT",
-                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
-                },
-            },
-            time_start_scheduled=desktop_pool_time_start_scheduled,
-            time_stop_scheduled=desktop_pool_time_stop_scheduled,
-            use_dedicated_vm_host=desktop_pool_use_dedicated_vm_host)
-        ```
 
         ## Import
 
@@ -1254,6 +1124,7 @@ class DesktopPool(pulumi.CustomResource):
                  network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
                  shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
                  shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1312,6 +1183,7 @@ class DesktopPool(pulumi.CustomResource):
             __props__.__dict__["network_configuration"] = network_configuration
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_access_details"] = private_access_details
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["session_lifecycle_actions"] = session_lifecycle_actions
             __props__.__dict__["shape_config"] = shape_config
             if shape_name is None and not opts.urn:
@@ -1361,6 +1233,7 @@ class DesktopPool(pulumi.CustomResource):
             network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
             shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
             shape_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1399,9 +1272,10 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']] image: (Updatable) Provides information about the desktop image.
         :param pulumi.Input[_builtins.bool] is_storage_enabled: Indicates whether storage is enabled for the desktop pool.
         :param pulumi.Input[_builtins.int] maximum_size: (Updatable) The maximum number of desktops permitted in the desktop pool.
-        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: Provides information about the network configuration of the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']] network_configuration: (Updatable) Provides information about the network configuration of the desktop pool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of network security groups for the private access.
-        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']] private_access_details: (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']] session_lifecycle_actions: The details of action to be triggered in case of inactivity or disconnect
         :param pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']] shape_config: The compute instance shape configuration requested for each desktop in the desktop pool.
         :param pulumi.Input[_builtins.str] shape_name: The shape of the desktop pool.
@@ -1437,6 +1311,7 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["network_configuration"] = network_configuration
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_access_details"] = private_access_details
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["session_lifecycle_actions"] = session_lifecycle_actions
         __props__.__dict__["shape_config"] = shape_config
         __props__.__dict__["shape_name"] = shape_name
@@ -1586,7 +1461,7 @@ class DesktopPool(pulumi.CustomResource):
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> pulumi.Output['outputs.DesktopPoolNetworkConfiguration']:
         """
-        Provides information about the network configuration of the desktop pool.
+        (Updatable) Provides information about the network configuration of the desktop pool.
         """
         return pulumi.get(self, "network_configuration")
 
@@ -1602,9 +1477,17 @@ class DesktopPool(pulumi.CustomResource):
     @pulumi.getter(name="privateAccessDetails")
     def private_access_details(self) -> pulumi.Output['outputs.DesktopPoolPrivateAccessDetails']:
         """
-        The details of the desktop's private access network connectivity to be set up for the desktop pool.
+        (Updatable) The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource. Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")

@@ -8,9 +8,12 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemCredential;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemInstance;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemInstancesDetail;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemKerberosAuthDetail;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemManagementPolicy;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemNetworkDetail;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemOdspInsightDetail;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemPatchOperation;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemReplicationConfig;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemSource;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemStorageDetail;
 import java.lang.Integer;
@@ -26,6 +29,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private String adminUsername;
+    private String applyChangeModeToStandAlone;
     private String applyConfig;
     /**
      * @return The ID of the compartment in which to list resources.
@@ -37,6 +41,10 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private String configId;
+    /**
+     * @return List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+     * 
+     */
     private List<GetDbSystemsDbSystemCollectionItemCredential> credentials;
     /**
      * @return The major and minor versions of the database system software.
@@ -90,6 +98,11 @@ public final class GetDbSystemsDbSystemCollectionItem {
     private List<GetDbSystemsDbSystemCollectionItemInstance> instances;
     private List<GetDbSystemsDbSystemCollectionItemInstancesDetail> instancesDetails;
     /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    private List<GetDbSystemsDbSystemCollectionItemKerberosAuthDetail> kerberosAuthDetails;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -104,7 +117,17 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails;
+    /**
+     * @return ODSP Insight details for the database system.
+     * 
+     */
+    private List<GetDbSystemsDbSystemCollectionItemOdspInsightDetail> odspInsightDetails;
     private List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations;
+    /**
+     * @return Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+     * 
+     */
+    private List<GetDbSystemsDbSystemCollectionItemReplicationConfig> replicationConfigs;
     /**
      * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
      * 
@@ -125,6 +148,11 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemStorageDetail> storageDetails;
+    /**
+     * @return A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     * 
+     */
+    private String systemRole;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -154,6 +182,9 @@ public final class GetDbSystemsDbSystemCollectionItem {
     public String adminUsername() {
         return this.adminUsername;
     }
+    public String applyChangeModeToStandAlone() {
+        return this.applyChangeModeToStandAlone;
+    }
     public String applyConfig() {
         return this.applyConfig;
     }
@@ -171,6 +202,10 @@ public final class GetDbSystemsDbSystemCollectionItem {
     public String configId() {
         return this.configId;
     }
+    /**
+     * @return List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
+     * 
+     */
     public List<GetDbSystemsDbSystemCollectionItemCredential> credentials() {
         return this.credentials;
     }
@@ -248,6 +283,13 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.instancesDetails;
     }
     /**
+     * @return Kerberos Authentication details for the database system.
+     * 
+     */
+    public List<GetDbSystemsDbSystemCollectionItemKerberosAuthDetail> kerberosAuthDetails() {
+        return this.kerberosAuthDetails;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -268,8 +310,22 @@ public final class GetDbSystemsDbSystemCollectionItem {
     public List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails() {
         return this.networkDetails;
     }
+    /**
+     * @return ODSP Insight details for the database system.
+     * 
+     */
+    public List<GetDbSystemsDbSystemCollectionItemOdspInsightDetail> odspInsightDetails() {
+        return this.odspInsightDetails;
+    }
     public List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations() {
         return this.patchOperations;
+    }
+    /**
+     * @return Replication configuration that is applicable on database systems with the PRIMARY_DB_SYSTEM  role.
+     * 
+     */
+    public List<GetDbSystemsDbSystemCollectionItemReplicationConfig> replicationConfigs() {
+        return this.replicationConfigs;
     }
     /**
      * @return The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
@@ -298,6 +354,13 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     public List<GetDbSystemsDbSystemCollectionItemStorageDetail> storageDetails() {
         return this.storageDetails;
+    }
+    /**
+     * @return A filter to return only DbSystem resources if their `systemRole` matches the given value.
+     * 
+     */
+    public String systemRole() {
+        return this.systemRole;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -338,6 +401,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
+        private String applyChangeModeToStandAlone;
         private String applyConfig;
         private String compartmentId;
         private String configId;
@@ -353,14 +417,18 @@ public final class GetDbSystemsDbSystemCollectionItem {
         private Integer instanceOcpuCount;
         private List<GetDbSystemsDbSystemCollectionItemInstance> instances;
         private List<GetDbSystemsDbSystemCollectionItemInstancesDetail> instancesDetails;
+        private List<GetDbSystemsDbSystemCollectionItemKerberosAuthDetail> kerberosAuthDetails;
         private String lifecycleDetails;
         private List<GetDbSystemsDbSystemCollectionItemManagementPolicy> managementPolicies;
         private List<GetDbSystemsDbSystemCollectionItemNetworkDetail> networkDetails;
+        private List<GetDbSystemsDbSystemCollectionItemOdspInsightDetail> odspInsightDetails;
         private List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations;
+        private List<GetDbSystemsDbSystemCollectionItemReplicationConfig> replicationConfigs;
         private String shape;
         private List<GetDbSystemsDbSystemCollectionItemSource> sources;
         private String state;
         private List<GetDbSystemsDbSystemCollectionItemStorageDetail> storageDetails;
+        private String systemRole;
         private Map<String,String> systemTags;
         private String systemType;
         private String timeCreated;
@@ -369,6 +437,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         public Builder(GetDbSystemsDbSystemCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
+    	      this.applyChangeModeToStandAlone = defaults.applyChangeModeToStandAlone;
     	      this.applyConfig = defaults.applyConfig;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configId = defaults.configId;
@@ -384,14 +453,18 @@ public final class GetDbSystemsDbSystemCollectionItem {
     	      this.instanceOcpuCount = defaults.instanceOcpuCount;
     	      this.instances = defaults.instances;
     	      this.instancesDetails = defaults.instancesDetails;
+    	      this.kerberosAuthDetails = defaults.kerberosAuthDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementPolicies = defaults.managementPolicies;
     	      this.networkDetails = defaults.networkDetails;
+    	      this.odspInsightDetails = defaults.odspInsightDetails;
     	      this.patchOperations = defaults.patchOperations;
+    	      this.replicationConfigs = defaults.replicationConfigs;
     	      this.shape = defaults.shape;
     	      this.sources = defaults.sources;
     	      this.state = defaults.state;
     	      this.storageDetails = defaults.storageDetails;
+    	      this.systemRole = defaults.systemRole;
     	      this.systemTags = defaults.systemTags;
     	      this.systemType = defaults.systemType;
     	      this.timeCreated = defaults.timeCreated;
@@ -404,6 +477,14 @@ public final class GetDbSystemsDbSystemCollectionItem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "adminUsername");
             }
             this.adminUsername = adminUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applyChangeModeToStandAlone(String applyChangeModeToStandAlone) {
+            if (applyChangeModeToStandAlone == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "applyChangeModeToStandAlone");
+            }
+            this.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             return this;
         }
         @CustomType.Setter
@@ -536,6 +617,17 @@ public final class GetDbSystemsDbSystemCollectionItem {
             return instancesDetails(List.of(instancesDetails));
         }
         @CustomType.Setter
+        public Builder kerberosAuthDetails(List<GetDbSystemsDbSystemCollectionItemKerberosAuthDetail> kerberosAuthDetails) {
+            if (kerberosAuthDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "kerberosAuthDetails");
+            }
+            this.kerberosAuthDetails = kerberosAuthDetails;
+            return this;
+        }
+        public Builder kerberosAuthDetails(GetDbSystemsDbSystemCollectionItemKerberosAuthDetail... kerberosAuthDetails) {
+            return kerberosAuthDetails(List.of(kerberosAuthDetails));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "lifecycleDetails");
@@ -566,6 +658,17 @@ public final class GetDbSystemsDbSystemCollectionItem {
             return networkDetails(List.of(networkDetails));
         }
         @CustomType.Setter
+        public Builder odspInsightDetails(List<GetDbSystemsDbSystemCollectionItemOdspInsightDetail> odspInsightDetails) {
+            if (odspInsightDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "odspInsightDetails");
+            }
+            this.odspInsightDetails = odspInsightDetails;
+            return this;
+        }
+        public Builder odspInsightDetails(GetDbSystemsDbSystemCollectionItemOdspInsightDetail... odspInsightDetails) {
+            return odspInsightDetails(List.of(odspInsightDetails));
+        }
+        @CustomType.Setter
         public Builder patchOperations(List<GetDbSystemsDbSystemCollectionItemPatchOperation> patchOperations) {
             if (patchOperations == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "patchOperations");
@@ -575,6 +678,17 @@ public final class GetDbSystemsDbSystemCollectionItem {
         }
         public Builder patchOperations(GetDbSystemsDbSystemCollectionItemPatchOperation... patchOperations) {
             return patchOperations(List.of(patchOperations));
+        }
+        @CustomType.Setter
+        public Builder replicationConfigs(List<GetDbSystemsDbSystemCollectionItemReplicationConfig> replicationConfigs) {
+            if (replicationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "replicationConfigs");
+            }
+            this.replicationConfigs = replicationConfigs;
+            return this;
+        }
+        public Builder replicationConfigs(GetDbSystemsDbSystemCollectionItemReplicationConfig... replicationConfigs) {
+            return replicationConfigs(List.of(replicationConfigs));
         }
         @CustomType.Setter
         public Builder shape(String shape) {
@@ -615,6 +729,14 @@ public final class GetDbSystemsDbSystemCollectionItem {
             return storageDetails(List.of(storageDetails));
         }
         @CustomType.Setter
+        public Builder systemRole(String systemRole) {
+            if (systemRole == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "systemRole");
+            }
+            this.systemRole = systemRole;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "systemTags");
@@ -649,6 +771,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         public GetDbSystemsDbSystemCollectionItem build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItem();
             _resultValue.adminUsername = adminUsername;
+            _resultValue.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             _resultValue.applyConfig = applyConfig;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configId = configId;
@@ -664,14 +787,18 @@ public final class GetDbSystemsDbSystemCollectionItem {
             _resultValue.instanceOcpuCount = instanceOcpuCount;
             _resultValue.instances = instances;
             _resultValue.instancesDetails = instancesDetails;
+            _resultValue.kerberosAuthDetails = kerberosAuthDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementPolicies = managementPolicies;
             _resultValue.networkDetails = networkDetails;
+            _resultValue.odspInsightDetails = odspInsightDetails;
             _resultValue.patchOperations = patchOperations;
+            _resultValue.replicationConfigs = replicationConfigs;
             _resultValue.shape = shape;
             _resultValue.sources = sources;
             _resultValue.state = state;
             _resultValue.storageDetails = storageDetails;
+            _resultValue.systemRole = systemRole;
             _resultValue.systemTags = systemTags;
             _resultValue.systemType = systemType;
             _resultValue.timeCreated = timeCreated;

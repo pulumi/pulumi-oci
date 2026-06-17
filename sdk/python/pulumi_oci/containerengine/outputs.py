@@ -2993,6 +2993,8 @@ class NodePoolNodeConfigDetails(dict):
         suggest = None
         if key == "placementConfigs":
             suggest = "placement_configs"
+        elif key == "computeClusterId":
+            suggest = "compute_cluster_id"
         elif key == "definedTags":
             suggest = "defined_tags"
         elif key == "freeformTags":
@@ -3020,6 +3022,7 @@ class NodePoolNodeConfigDetails(dict):
     def __init__(__self__, *,
                  placement_configs: Sequence['outputs.NodePoolNodeConfigDetailsPlacementConfig'],
                  size: _builtins.int,
+                 compute_cluster_id: Optional[_builtins.str] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[_builtins.bool] = None,
@@ -3031,6 +3034,7 @@ class NodePoolNodeConfigDetails(dict):
                
                To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
         :param _builtins.int size: (Updatable) The number of nodes that should be in the node pool.
+        :param _builtins.str compute_cluster_id: The OCID of the Compute Cluster to be associated with the worker node instance.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.bool is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -3040,6 +3044,8 @@ class NodePoolNodeConfigDetails(dict):
         """
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -3070,6 +3076,14 @@ class NodePoolNodeConfigDetails(dict):
         (Updatable) The number of nodes that should be in the node pool.
         """
         return pulumi.get(self, "size")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -3210,6 +3224,8 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
             suggest = "capacity_reservation_id"
         elif key == "faultDomains":
             suggest = "fault_domains"
+        elif key == "hostGroupId":
+            suggest = "host_group_id"
         elif key == "preemptibleNodeConfig":
             suggest = "preemptible_node_config"
 
@@ -3229,12 +3245,14 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
                  subnet_id: _builtins.str,
                  capacity_reservation_id: Optional[_builtins.str] = None,
                  fault_domains: Optional[Sequence[_builtins.str]] = None,
+                 host_group_id: Optional[_builtins.str] = None,
                  preemptible_node_config: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig'] = None):
         """
         :param _builtins.str availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param _builtins.str subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         :param _builtins.str capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[_builtins.str] fault_domains: (Updatable) A list of fault domains in which to place nodes.
+        :param _builtins.str host_group_id: (Updatable) The OCID of the Host Group to be associated with the worker node instance.
         :param 'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs' preemptible_node_config: (Updatable) Configuration options for preemptible nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3243,6 +3261,8 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
+        if host_group_id is not None:
+            pulumi.set(__self__, "host_group_id", host_group_id)
         if preemptible_node_config is not None:
             pulumi.set(__self__, "preemptible_node_config", preemptible_node_config)
 
@@ -3277,6 +3297,14 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
         (Updatable) A list of fault domains in which to place nodes.
         """
         return pulumi.get(self, "fault_domains")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupId")
+    def host_group_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "host_group_id")
 
     @_builtins.property
     @pulumi.getter(name="preemptibleNodeConfig")
@@ -6964,6 +6992,7 @@ class GetNodePoolNodeResult(dict):
 @pulumi.output_type
 class GetNodePoolNodeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 compute_cluster_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
@@ -6973,6 +7002,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
                  placement_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult'],
                  size: _builtins.int):
         """
+        :param _builtins.str compute_cluster_id: The OCID of the Compute Cluster to be associated with the worker node instance.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -6982,6 +7012,7 @@ class GetNodePoolNodeConfigDetailResult(dict):
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param _builtins.int size: The number of nodes in the node pool.
         """
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
@@ -6990,6 +7021,14 @@ class GetNodePoolNodeConfigDetailResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -7113,18 +7152,21 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
                  availability_domain: _builtins.str,
                  capacity_reservation_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
+                 host_group_id: _builtins.str,
                  preemptible_node_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
                  subnet_id: _builtins.str):
         """
         :param _builtins.str availability_domain: The name of the availability domain in which this node is placed.
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[_builtins.str] fault_domains: A list of fault domains in which to place nodes.
+        :param _builtins.str host_group_id: The OCID of the Host Group to be associated with the worker node instance.
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "host_group_id", host_group_id)
         pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -7151,6 +7193,14 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
         A list of fault domains in which to place nodes.
         """
         return pulumi.get(self, "fault_domains")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupId")
+    def host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the Host Group to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "host_group_id")
 
     @_builtins.property
     @pulumi.getter(name="preemptibleNodeConfigs")
@@ -8233,6 +8283,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
 @pulumi.output_type
 class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 compute_cluster_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str],
                  is_pv_encryption_in_transit_enabled: _builtins.bool,
@@ -8242,6 +8293,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
                  placement_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult'],
                  size: _builtins.int):
         """
+        :param _builtins.str compute_cluster_id: The OCID of the Compute Cluster to be associated with the worker node instance.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -8251,6 +8303,7 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param _builtins.int size: The number of nodes in the node pool.
         """
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
@@ -8259,6 +8312,14 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -8382,18 +8443,21 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
                  availability_domain: _builtins.str,
                  capacity_reservation_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
+                 host_group_id: _builtins.str,
                  preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
                  subnet_id: _builtins.str):
         """
         :param _builtins.str availability_domain: The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation in which to place the compute instance.
         :param Sequence[_builtins.str] fault_domains: A list of fault domains in which to place nodes.
+        :param _builtins.str host_group_id: The OCID of the Host Group to be associated with the worker node instance.
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
+        pulumi.set(__self__, "host_group_id", host_group_id)
         pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -8420,6 +8484,14 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
         A list of fault domains in which to place nodes.
         """
         return pulumi.get(self, "fault_domains")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupId")
+    def host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the Host Group to be associated with the worker node instance.
+        """
+        return pulumi.get(self, "host_group_id")
 
     @_builtins.property
     @pulumi.getter(name="preemptibleNodeConfigs")

@@ -28,7 +28,7 @@ class GetDbSystemsResult:
     """
     A collection of values returned by getDbSystems.
     """
-    def __init__(__self__, compartment_id=None, db_system_collections=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, db_system_collections=None, display_name=None, filters=None, id=None, state=None, system_role=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetDbSystemsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_role and not isinstance(system_role, str):
+            raise TypeError("Expected argument 'system_role' to be a str")
+        pulumi.set(__self__, "system_role", system_role)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -93,6 +96,14 @@ class GetDbSystemsResult:
         """
         return pulumi.get(self, "state")
 
+    @_builtins.property
+    @pulumi.getter(name="systemRole")
+    def system_role(self) -> Optional[_builtins.str]:
+        """
+        Type of the database system.
+        """
+        return pulumi.get(self, "system_role")
+
 
 class AwaitableGetDbSystemsResult(GetDbSystemsResult):
     # pylint: disable=using-constant-test
@@ -105,7 +116,8 @@ class AwaitableGetDbSystemsResult(GetDbSystemsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            state=self.state)
+            state=self.state,
+            system_role=self.system_role)
 
 
 def get_db_systems(compartment_id: Optional[_builtins.str] = None,
@@ -113,6 +125,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
                    filters: Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]] = None,
                    id: Optional[_builtins.str] = None,
                    state: Optional[_builtins.str] = None,
+                   system_role: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsResult:
     """
     This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
@@ -128,7 +141,8 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
     test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
-        state=db_system_state)
+        state=db_system_state,
+        system_role=db_system_system_role)
     ```
 
 
@@ -136,6 +150,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str id: A unique identifier for the database system.
     :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+    :param _builtins.str system_role: A filter to return only DbSystem resources if their `systemRole` matches the given value.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,6 +158,7 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['systemRole'] = system_role
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Psql/getDbSystems:getDbSystems', __args__, opts=opts, typ=GetDbSystemsResult).value
 
@@ -152,12 +168,14 @@ def get_db_systems(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        system_role=pulumi.get(__ret__, 'system_role'))
 def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemsFilterArgs', 'GetDbSystemsFilterArgsDict']]]]] = None,
                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          system_role: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemsResult]:
     """
     This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
@@ -173,7 +191,8 @@ def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builti
     test_db_systems = oci.psql.get_db_systems(compartment_id=compartment_id,
         display_name=db_system_display_name,
         id=db_system_id,
-        state=db_system_state)
+        state=db_system_state,
+        system_role=db_system_system_role)
     ```
 
 
@@ -181,6 +200,7 @@ def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builti
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str id: A unique identifier for the database system.
     :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
+    :param _builtins.str system_role: A filter to return only DbSystem resources if their `systemRole` matches the given value.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -188,6 +208,7 @@ def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builti
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['systemRole'] = system_role
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystems:getDbSystems', __args__, opts=opts, typ=GetDbSystemsResult)
     return __ret__.apply(lambda __response__: GetDbSystemsResult(
@@ -196,4 +217,5 @@ def get_db_systems_output(compartment_id: pulumi.Input[Optional[Optional[_builti
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        system_role=pulumi.get(__response__, 'system_role')))

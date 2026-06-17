@@ -75,6 +75,11 @@ public final class GetControlResult {
      */
     private String lastModifiedInfo;
     /**
+     * @return The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    private String notificationTopicId;
+    /**
      * @return Number of approvers required to approve an access request.
      * 
      */
@@ -207,6 +212,13 @@ public final class GetControlResult {
         return this.lastModifiedInfo;
     }
     /**
+     * @return The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    public String notificationTopicId() {
+        return this.notificationTopicId;
+    }
+    /**
      * @return Number of approvers required to approve an access request.
      * 
      */
@@ -294,6 +306,7 @@ public final class GetControlResult {
         private Boolean isDefaultOperatorControl;
         private Boolean isFullyPreApproved;
         private String lastModifiedInfo;
+        private String notificationTopicId;
         private Integer numberOfApprovers;
         private String operatorControlId;
         private String operatorControlName;
@@ -319,6 +332,7 @@ public final class GetControlResult {
     	      this.isDefaultOperatorControl = defaults.isDefaultOperatorControl;
     	      this.isFullyPreApproved = defaults.isFullyPreApproved;
     	      this.lastModifiedInfo = defaults.lastModifiedInfo;
+    	      this.notificationTopicId = defaults.notificationTopicId;
     	      this.numberOfApprovers = defaults.numberOfApprovers;
     	      this.operatorControlId = defaults.operatorControlId;
     	      this.operatorControlName = defaults.operatorControlName;
@@ -440,6 +454,14 @@ public final class GetControlResult {
             return this;
         }
         @CustomType.Setter
+        public Builder notificationTopicId(String notificationTopicId) {
+            if (notificationTopicId == null) {
+              throw new MissingRequiredPropertyException("GetControlResult", "notificationTopicId");
+            }
+            this.notificationTopicId = notificationTopicId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder numberOfApprovers(Integer numberOfApprovers) {
             if (numberOfApprovers == null) {
               throw new MissingRequiredPropertyException("GetControlResult", "numberOfApprovers");
@@ -536,6 +558,7 @@ public final class GetControlResult {
             _resultValue.isDefaultOperatorControl = isDefaultOperatorControl;
             _resultValue.isFullyPreApproved = isFullyPreApproved;
             _resultValue.lastModifiedInfo = lastModifiedInfo;
+            _resultValue.notificationTopicId = notificationTopicId;
             _resultValue.numberOfApprovers = numberOfApprovers;
             _resultValue.operatorControlId = operatorControlId;
             _resultValue.operatorControlName = operatorControlName;

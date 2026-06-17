@@ -22,12 +22,16 @@ import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstancePlainArgs;
+import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemsPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsPlainArgs;
+import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetShapesArgs;
 import com.pulumi.oci.Psql.inputs.GetShapesPlainArgs;
 import com.pulumi.oci.Psql.outputs.GetBackupResult;
@@ -36,10 +40,12 @@ import com.pulumi.oci.Psql.outputs.GetConfigurationResult;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemPrimaryDbInstanceResult;
+import com.pulumi.oci.Psql.outputs.GetDbSystemReplicasResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsResult;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationResult;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsResult;
+import com.pulumi.oci.Psql.outputs.GetInsightCapabilitiesResult;
 import com.pulumi.oci.Psql.outputs.GetShapesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -1787,6 +1793,216 @@ public final class PsqlFunctions {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", TypeShape.of(GetDbSystemPrimaryDbInstanceResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of replica database systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemReplicasResult> getDbSystemReplicas(GetDbSystemReplicasArgs args) {
+        return getDbSystemReplicas(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of replica database systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemReplicasResult> getDbSystemReplicasPlain(GetDbSystemReplicasPlainArgs args) {
+        return getDbSystemReplicasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of replica database systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemReplicasResult> getDbSystemReplicas(GetDbSystemReplicasArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemReplicas:getDbSystemReplicas", TypeShape.of(GetDbSystemReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of replica database systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemReplicasResult> getDbSystemReplicas(GetDbSystemReplicasArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemReplicas:getDbSystemReplicas", TypeShape.of(GetDbSystemReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns a list of replica database systems.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemReplicasArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemReplicasResult> getDbSystemReplicasPlain(GetDbSystemReplicasPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystemReplicas:getDbSystemReplicas", TypeShape.of(GetDbSystemReplicasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Psql service.
      * 
      * Returns a list of database systems.
@@ -1820,6 +2036,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -1865,6 +2082,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -1910,6 +2128,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -1955,6 +2174,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -2000,6 +2220,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -2045,6 +2266,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -2090,6 +2312,7 @@ public final class PsqlFunctions {
      *             .displayName(dbSystemDisplayName)
      *             .id(dbSystemId)
      *             .state(dbSystemState)
+     *             .systemRole(dbSystemSystemRole)
      *             .build());
      * 
      *     }
@@ -2646,6 +2869,328 @@ public final class PsqlFunctions {
      */
     public static CompletableFuture<GetDefaultConfigurationsResult> getDefaultConfigurationsPlain(GetDefaultConfigurationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", TypeShape.of(GetDefaultConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInsightCapabilitiesResult> getInsightCapabilities() {
+        return getInsightCapabilities(GetInsightCapabilitiesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetInsightCapabilitiesResult> getInsightCapabilitiesPlain() {
+        return getInsightCapabilitiesPlain(GetInsightCapabilitiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInsightCapabilitiesResult> getInsightCapabilities(GetInsightCapabilitiesArgs args) {
+        return getInsightCapabilities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetInsightCapabilitiesResult> getInsightCapabilitiesPlain(GetInsightCapabilitiesPlainArgs args) {
+        return getInsightCapabilitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInsightCapabilitiesResult> getInsightCapabilities(GetInsightCapabilitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getInsightCapabilities:getInsightCapabilities", TypeShape.of(GetInsightCapabilitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetInsightCapabilitiesResult> getInsightCapabilities(GetInsightCapabilitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getInsightCapabilities:getInsightCapabilities", TypeShape.of(GetInsightCapabilitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Insight Capabilities in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Returns the supported insight types and their capabilities.
+     * This API allows clients to discover:
+     * - Supported insight types
+     * - Supported insight data types for each insight type
+     * - Filters, sorting, pagination, limits, and data contracts
+     *   required to use the unified insights API.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetInsightCapabilitiesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInsightCapabilities = PsqlFunctions.getInsightCapabilities(GetInsightCapabilitiesArgs.builder()
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetInsightCapabilitiesResult> getInsightCapabilitiesPlain(GetInsightCapabilitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Psql/getInsightCapabilities:getInsightCapabilities", TypeShape.of(GetInsightCapabilitiesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Shapes in Oracle Cloud Infrastructure Psql service.

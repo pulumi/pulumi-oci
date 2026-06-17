@@ -66,6 +66,26 @@ export interface GetOpensearchClusterResult {
     readonly compartmentId: string;
     readonly configureOutboundClusterTrigger: number;
     /**
+     * The number of coordinator nodes configured for the cluster.
+     */
+    readonly coordinatorNodeCount: number;
+    /**
+     * The amount of memory in GB, for the cluster's coordinator nodes.
+     */
+    readonly coordinatorNodeHostMemoryGb: number;
+    /**
+     * The number of OCPUs configured for the cluster's coordinator nodes.
+     */
+    readonly coordinatorNodeHostOcpuCount: number;
+    /**
+     * The node shape for the cluster's coordinator nodes.
+     */
+    readonly coordinatorNodeHostShape: string;
+    /**
+     * The instance type for the cluster's coordinator nodes.
+     */
+    readonly coordinatorNodeHostType: string;
+    /**
      * The number of data nodes configured for the cluster.
      */
     readonly dataNodeCount: number;

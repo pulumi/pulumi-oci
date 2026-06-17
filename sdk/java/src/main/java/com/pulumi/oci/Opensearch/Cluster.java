@@ -108,6 +108,76 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.configureOutboundClusterTrigger);
     }
     /**
+     * (Updatable) The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    @Export(name="coordinatorNodeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> coordinatorNodeCount;
+
+    /**
+     * @return (Updatable) The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    public Output<Integer> coordinatorNodeCount() {
+        return this.coordinatorNodeCount;
+    }
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Export(name="coordinatorNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
+    private Output<Integer> coordinatorNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Output<Integer> coordinatorNodeHostMemoryGb() {
+        return this.coordinatorNodeHostMemoryGb;
+    }
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Export(name="coordinatorNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> coordinatorNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Output<Integer> coordinatorNodeHostOcpuCount() {
+        return this.coordinatorNodeHostOcpuCount;
+    }
+    /**
+     * (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Export(name="coordinatorNodeHostShape", refs={String.class}, tree="[0]")
+    private Output<String> coordinatorNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Output<String> coordinatorNodeHostShape() {
+        return this.coordinatorNodeHostShape;
+    }
+    /**
+     * The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Export(name="coordinatorNodeHostType", refs={String.class}, tree="[0]")
+    private Output<String> coordinatorNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Output<String> coordinatorNodeHostType() {
+        return this.coordinatorNodeHostType;
+    }
+    /**
      * (Updatable) The number of data nodes to configure for the cluster.
      * 
      */

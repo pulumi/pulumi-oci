@@ -75,6 +75,11 @@ public final class GetControlsOperatorControlCollectionItem {
      */
     private String lastModifiedInfo;
     /**
+     * @return The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    private String notificationTopicId;
+    /**
      * @return Number of approvers required to approve an access request.
      * 
      */
@@ -206,6 +211,13 @@ public final class GetControlsOperatorControlCollectionItem {
         return this.lastModifiedInfo;
     }
     /**
+     * @return The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+     * 
+     */
+    public String notificationTopicId() {
+        return this.notificationTopicId;
+    }
+    /**
      * @return Number of approvers required to approve an access request.
      * 
      */
@@ -290,6 +302,7 @@ public final class GetControlsOperatorControlCollectionItem {
         private Boolean isDefaultOperatorControl;
         private Boolean isFullyPreApproved;
         private String lastModifiedInfo;
+        private String notificationTopicId;
         private Integer numberOfApprovers;
         private String operatorControlName;
         private List<String> preApprovedOpActionLists;
@@ -314,6 +327,7 @@ public final class GetControlsOperatorControlCollectionItem {
     	      this.isDefaultOperatorControl = defaults.isDefaultOperatorControl;
     	      this.isFullyPreApproved = defaults.isFullyPreApproved;
     	      this.lastModifiedInfo = defaults.lastModifiedInfo;
+    	      this.notificationTopicId = defaults.notificationTopicId;
     	      this.numberOfApprovers = defaults.numberOfApprovers;
     	      this.operatorControlName = defaults.operatorControlName;
     	      this.preApprovedOpActionLists = defaults.preApprovedOpActionLists;
@@ -434,6 +448,14 @@ public final class GetControlsOperatorControlCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder notificationTopicId(String notificationTopicId) {
+            if (notificationTopicId == null) {
+              throw new MissingRequiredPropertyException("GetControlsOperatorControlCollectionItem", "notificationTopicId");
+            }
+            this.notificationTopicId = notificationTopicId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder numberOfApprovers(Integer numberOfApprovers) {
             if (numberOfApprovers == null) {
               throw new MissingRequiredPropertyException("GetControlsOperatorControlCollectionItem", "numberOfApprovers");
@@ -522,6 +544,7 @@ public final class GetControlsOperatorControlCollectionItem {
             _resultValue.isDefaultOperatorControl = isDefaultOperatorControl;
             _resultValue.isFullyPreApproved = isFullyPreApproved;
             _resultValue.lastModifiedInfo = lastModifiedInfo;
+            _resultValue.notificationTopicId = notificationTopicId;
             _resultValue.numberOfApprovers = numberOfApprovers;
             _resultValue.operatorControlName = operatorControlName;
             _resultValue.preApprovedOpActionLists = preApprovedOpActionLists;

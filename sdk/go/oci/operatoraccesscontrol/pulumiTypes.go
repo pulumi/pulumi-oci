@@ -2791,6 +2791,8 @@ type GetControlsOperatorControlCollectionItem struct {
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo string `pulumi:"lastModifiedInfo"`
+	// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId string `pulumi:"notificationTopicId"`
 	// Number of approvers required to approve an access request.
 	NumberOfApprovers int `pulumi:"numberOfApprovers"`
 	// Name of the operator control. The name must be unique.
@@ -2847,6 +2849,8 @@ type GetControlsOperatorControlCollectionItemArgs struct {
 	IsFullyPreApproved pulumi.BoolInput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
 	LastModifiedInfo pulumi.StringInput `pulumi:"lastModifiedInfo"`
+	// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+	NotificationTopicId pulumi.StringInput `pulumi:"notificationTopicId"`
 	// Number of approvers required to approve an access request.
 	NumberOfApprovers pulumi.IntInput `pulumi:"numberOfApprovers"`
 	// Name of the operator control. The name must be unique.
@@ -2976,6 +2980,11 @@ func (o GetControlsOperatorControlCollectionItemOutput) IsFullyPreApproved() pul
 // Description associated with the latest modification of the operator control.
 func (o GetControlsOperatorControlCollectionItemOutput) LastModifiedInfo() pulumi.StringOutput {
 	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this operator control.
+func (o GetControlsOperatorControlCollectionItemOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.NotificationTopicId }).(pulumi.StringOutput)
 }
 
 // Number of approvers required to approve an access request.

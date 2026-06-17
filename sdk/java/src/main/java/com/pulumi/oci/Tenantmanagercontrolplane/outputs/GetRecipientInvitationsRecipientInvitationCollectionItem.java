@@ -28,6 +28,11 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
      */
     private String displayName;
     /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    private List<String> features;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -104,6 +109,13 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * 
+     */
+    public List<String> features() {
+        return this.features;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -195,6 +207,7 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
+        private List<String> features;
         private Map<String,String> freeformTags;
         private String id;
         private String recipientEmailAddress;
@@ -212,6 +225,7 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.features = defaults.features;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.recipientEmailAddress = defaults.recipientEmailAddress;
@@ -248,6 +262,17 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder features(List<String> features) {
+            if (features == null) {
+              throw new MissingRequiredPropertyException("GetRecipientInvitationsRecipientInvitationCollectionItem", "features");
+            }
+            this.features = features;
+            return this;
+        }
+        public Builder features(String... features) {
+            return features(List.of(features));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -345,6 +370,7 @@ public final class GetRecipientInvitationsRecipientInvitationCollectionItem {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.features = features;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.recipientEmailAddress = recipientEmailAddress;

@@ -26,7 +26,10 @@ class GetDomainGovernanceResult:
     """
     A collection of values returned by getDomainGovernance.
     """
-    def __init__(__self__, defined_tags=None, domain_governance_id=None, domain_id=None, freeform_tags=None, id=None, is_governance_enabled=None, ons_subscription_id=None, ons_topic_id=None, owner_id=None, state=None, subscription_email=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, domain_governance_id=None, domain_id=None, freeform_tags=None, id=None, is_governance_enabled=None, ons_subscription_id=None, ons_topic_id=None, owner_id=None, state=None, subscription_email=None, system_tags=None, time_created=None, time_updated=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -69,6 +72,14 @@ class GetDomainGovernanceResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the tenancy that owns this domain governance entity.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -186,6 +197,7 @@ class AwaitableGetDomainGovernanceResult(GetDomainGovernanceResult):
         if False:
             yield self
         return GetDomainGovernanceResult(
+            compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             domain_governance_id=self.domain_governance_id,
             domain_id=self.domain_id,
@@ -227,6 +239,7 @@ def get_domain_governance(domain_governance_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Tenantmanagercontrolplane/getDomainGovernance:getDomainGovernance', __args__, opts=opts, typ=GetDomainGovernanceResult).value
 
     return AwaitableGetDomainGovernanceResult(
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         domain_governance_id=pulumi.get(__ret__, 'domain_governance_id'),
         domain_id=pulumi.get(__ret__, 'domain_id'),
@@ -265,6 +278,7 @@ def get_domain_governance_output(domain_governance_id: pulumi.Input[Optional[_bu
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Tenantmanagercontrolplane/getDomainGovernance:getDomainGovernance', __args__, opts=opts, typ=GetDomainGovernanceResult)
     return __ret__.apply(lambda __response__: GetDomainGovernanceResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         domain_governance_id=pulumi.get(__response__, 'domain_governance_id'),
         domain_id=pulumi.get(__response__, 'domain_id'),

@@ -31,6 +31,21 @@ public final class GetLinksPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.childTenancyId);
     }
 
+    /**
+     * The feature associated with this link.
+     * 
+     */
+    @Import(name="feature")
+    private @Nullable String feature;
+
+    /**
+     * @return The feature associated with this link.
+     * 
+     */
+    public Optional<String> feature() {
+        return Optional.ofNullable(this.feature);
+    }
+
     @Import(name="filters")
     private @Nullable List<GetLinksFilter> filters;
 
@@ -72,6 +87,7 @@ public final class GetLinksPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetLinksPlainArgs(GetLinksPlainArgs $) {
         this.childTenancyId = $.childTenancyId;
+        this.feature = $.feature;
         this.filters = $.filters;
         this.parentTenancyId = $.parentTenancyId;
         this.state = $.state;
@@ -103,6 +119,17 @@ public final class GetLinksPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder childTenancyId(@Nullable String childTenancyId) {
             $.childTenancyId = childTenancyId;
+            return this;
+        }
+
+        /**
+         * @param feature The feature associated with this link.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder feature(@Nullable String feature) {
+            $.feature = feature;
             return this;
         }
 

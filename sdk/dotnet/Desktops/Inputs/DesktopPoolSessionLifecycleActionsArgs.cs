@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Desktops.Inputs
     public sealed class DesktopPoolSessionLifecycleActionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `AvailabilityPolicy` schedule.
+        /// (Updatable) Action and grace period for disconnect
         /// </summary>
         [Input("disconnect")]
         public Input<Inputs.DesktopPoolSessionLifecycleActionsDisconnectArgs>? Disconnect { get; set; }

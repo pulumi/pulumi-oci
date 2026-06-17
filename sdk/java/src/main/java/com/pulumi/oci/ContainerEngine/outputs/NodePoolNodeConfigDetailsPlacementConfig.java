@@ -30,6 +30,11 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
      */
     private @Nullable List<String> faultDomains;
     /**
+     * @return (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    private @Nullable String hostGroupId;
+    /**
      * @return (Updatable) Configuration options for preemptible nodes.
      * 
      */
@@ -63,6 +68,13 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
+     * @return (Updatable) The OCID of the Host Group to be associated with the worker node instance.
+     * 
+     */
+    public Optional<String> hostGroupId() {
+        return Optional.ofNullable(this.hostGroupId);
+    }
+    /**
      * @return (Updatable) Configuration options for preemptible nodes.
      * 
      */
@@ -89,6 +101,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
         private String availabilityDomain;
         private @Nullable String capacityReservationId;
         private @Nullable List<String> faultDomains;
+        private @Nullable String hostGroupId;
         private @Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig;
         private String subnetId;
         public Builder() {}
@@ -97,6 +110,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.faultDomains = defaults.faultDomains;
+    	      this.hostGroupId = defaults.hostGroupId;
     	      this.preemptibleNodeConfig = defaults.preemptibleNodeConfig;
     	      this.subnetId = defaults.subnetId;
         }
@@ -125,6 +139,12 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
+        public Builder hostGroupId(@Nullable String hostGroupId) {
+
+            this.hostGroupId = hostGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder preemptibleNodeConfig(@Nullable NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig preemptibleNodeConfig) {
 
             this.preemptibleNodeConfig = preemptibleNodeConfig;
@@ -143,6 +163,7 @@ public final class NodePoolNodeConfigDetailsPlacementConfig {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.faultDomains = faultDomains;
+            _resultValue.hostGroupId = hostGroupId;
             _resultValue.preemptibleNodeConfig = preemptibleNodeConfig;
             _resultValue.subnetId = subnetId;
             return _resultValue;

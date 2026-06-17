@@ -70,6 +70,81 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    @Import(name="coordinatorNodeCount")
+    private @Nullable Output<Integer> coordinatorNodeCount;
+
+    /**
+     * @return (Updatable) The number of coordinator nodes configured for the cluster.
+     * 
+     */
+    public Optional<Output<Integer>> coordinatorNodeCount() {
+        return Optional.ofNullable(this.coordinatorNodeCount);
+    }
+
+    /**
+     * (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Import(name="coordinatorNodeHostMemoryGb")
+    private @Nullable Output<Integer> coordinatorNodeHostMemoryGb;
+
+    /**
+     * @return (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Optional<Output<Integer>> coordinatorNodeHostMemoryGb() {
+        return Optional.ofNullable(this.coordinatorNodeHostMemoryGb);
+    }
+
+    /**
+     * (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Import(name="coordinatorNodeHostOcpuCount")
+    private @Nullable Output<Integer> coordinatorNodeHostOcpuCount;
+
+    /**
+     * @return (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Optional<Output<Integer>> coordinatorNodeHostOcpuCount() {
+        return Optional.ofNullable(this.coordinatorNodeHostOcpuCount);
+    }
+
+    /**
+     * (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Import(name="coordinatorNodeHostShape")
+    private @Nullable Output<String> coordinatorNodeHostShape;
+
+    /**
+     * @return (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Optional<Output<String>> coordinatorNodeHostShape() {
+        return Optional.ofNullable(this.coordinatorNodeHostShape);
+    }
+
+    /**
+     * The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    @Import(name="coordinatorNodeHostType")
+    private @Nullable Output<String> coordinatorNodeHostType;
+
+    /**
+     * @return The instance type for the cluster&#39;s coordinator nodes.
+     * 
+     */
+    public Optional<Output<String>> coordinatorNodeHostType() {
+        return Optional.ofNullable(this.coordinatorNodeHostType);
+    }
+
+    /**
      * (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
@@ -831,6 +906,11 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.certificateConfig = $.certificateConfig;
         this.compartmentId = $.compartmentId;
         this.configureOutboundClusterTrigger = $.configureOutboundClusterTrigger;
+        this.coordinatorNodeCount = $.coordinatorNodeCount;
+        this.coordinatorNodeHostMemoryGb = $.coordinatorNodeHostMemoryGb;
+        this.coordinatorNodeHostOcpuCount = $.coordinatorNodeHostOcpuCount;
+        this.coordinatorNodeHostShape = $.coordinatorNodeHostShape;
+        this.coordinatorNodeHostType = $.coordinatorNodeHostType;
         this.dataNodeCount = $.dataNodeCount;
         this.dataNodeHostBareMetalShape = $.dataNodeHostBareMetalShape;
         this.dataNodeHostMemoryGb = $.dataNodeHostMemoryGb;
@@ -962,6 +1042,111 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder configureOutboundClusterTrigger(Integer configureOutboundClusterTrigger) {
             return configureOutboundClusterTrigger(Output.of(configureOutboundClusterTrigger));
+        }
+
+        /**
+         * @param coordinatorNodeCount (Updatable) The number of coordinator nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeCount(@Nullable Output<Integer> coordinatorNodeCount) {
+            $.coordinatorNodeCount = coordinatorNodeCount;
+            return this;
+        }
+
+        /**
+         * @param coordinatorNodeCount (Updatable) The number of coordinator nodes configured for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeCount(Integer coordinatorNodeCount) {
+            return coordinatorNodeCount(Output.of(coordinatorNodeCount));
+        }
+
+        /**
+         * @param coordinatorNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostMemoryGb(@Nullable Output<Integer> coordinatorNodeHostMemoryGb) {
+            $.coordinatorNodeHostMemoryGb = coordinatorNodeHostMemoryGb;
+            return this;
+        }
+
+        /**
+         * @param coordinatorNodeHostMemoryGb (Updatable) The amount of memory in GB, for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostMemoryGb(Integer coordinatorNodeHostMemoryGb) {
+            return coordinatorNodeHostMemoryGb(Output.of(coordinatorNodeHostMemoryGb));
+        }
+
+        /**
+         * @param coordinatorNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostOcpuCount(@Nullable Output<Integer> coordinatorNodeHostOcpuCount) {
+            $.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param coordinatorNodeHostOcpuCount (Updatable) The number of OCPUs configured for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostOcpuCount(Integer coordinatorNodeHostOcpuCount) {
+            return coordinatorNodeHostOcpuCount(Output.of(coordinatorNodeHostOcpuCount));
+        }
+
+        /**
+         * @param coordinatorNodeHostShape (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostShape(@Nullable Output<String> coordinatorNodeHostShape) {
+            $.coordinatorNodeHostShape = coordinatorNodeHostShape;
+            return this;
+        }
+
+        /**
+         * @param coordinatorNodeHostShape (Updatable) The node shape for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostShape(String coordinatorNodeHostShape) {
+            return coordinatorNodeHostShape(Output.of(coordinatorNodeHostShape));
+        }
+
+        /**
+         * @param coordinatorNodeHostType The instance type for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostType(@Nullable Output<String> coordinatorNodeHostType) {
+            $.coordinatorNodeHostType = coordinatorNodeHostType;
+            return this;
+        }
+
+        /**
+         * @param coordinatorNodeHostType The instance type for the cluster&#39;s coordinator nodes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder coordinatorNodeHostType(String coordinatorNodeHostType) {
+            return coordinatorNodeHostType(Output.of(coordinatorNodeHostType));
         }
 
         /**

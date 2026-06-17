@@ -44,6 +44,7 @@ import (
 //					"bar-key": pulumi.String("value"),
 //				},
 //				IsFreeTier: pulumi.Any(apmDomainIsFreeTier),
+//				LogGroupId: pulumi.Any(testLogGroup.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -77,10 +78,12 @@ type ApmDomain struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	IsFreeTier pulumi.BoolOutput `pulumi:"isFreeTier"`
+	// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier pulumi.BoolOutput `pulumi:"isFreeTier"`
+	LogGroupId pulumi.StringOutput `pulumi:"logGroupId"`
 	// The current lifecycle state of the APM domain.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
@@ -138,10 +141,12 @@ type apmDomainState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	IsFreeTier *bool `pulumi:"isFreeTier"`
+	// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier *bool `pulumi:"isFreeTier"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The current lifecycle state of the APM domain.
 	State *string `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
@@ -164,10 +169,12 @@ type ApmDomainState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	IsFreeTier pulumi.BoolPtrInput
+	// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier pulumi.BoolPtrInput
+	LogGroupId pulumi.StringPtrInput
 	// The current lifecycle state of the APM domain.
 	State pulumi.StringPtrInput
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
@@ -192,10 +199,12 @@ type apmDomainArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	IsFreeTier *bool `pulumi:"isFreeTier"`
+	// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier *bool `pulumi:"isFreeTier"`
+	LogGroupId *string `pulumi:"logGroupId"`
 }
 
 // The set of arguments for constructing a ApmDomain resource.
@@ -211,10 +220,12 @@ type ApmDomainArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
+	IsFreeTier pulumi.BoolPtrInput
+	// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier pulumi.BoolPtrInput
+	LogGroupId pulumi.StringPtrInput
 }
 
 func (ApmDomainArgs) ElementType() reflect.Type {
@@ -335,11 +346,16 @@ func (o ApmDomainOutput) FreeformTags() pulumi.StringMapOutput {
 }
 
 // Indicates whether this is an "Always Free" resource. The default value is false.
+func (o ApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.BoolOutput { return v.IsFreeTier }).(pulumi.BoolOutput)
+}
+
+// (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.BoolOutput { return v.IsFreeTier }).(pulumi.BoolOutput)
+func (o ApmDomainOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the APM domain.
